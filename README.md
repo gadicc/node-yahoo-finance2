@@ -4,7 +4,7 @@ Community API for Yahoo-Finance
 
 Copyright (c) 2021 by Gadi Cohen <dragon@wastelands.net>.  MIT licensed.
 
-![npm](https://img.shields.io/npm/v/yahoo-finance2) [![CircleCI](https://img.shields.io/circleci/build/github/gadicc/yahoo-finance2)](https://circleci.com/gh/gadicc/yahoo-finance2) [![coverage](https://img.shields.io/codecov/c/github/gadicc/yahoo-finance2)](https://codecov.io/gh/gadicc/yahoo-finance2) ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
+![npm](https://img.shields.io/npm/v/yahoo-finance2) [![CircleCI](https://img.shields.io/circleci/build/github/gadicc/node-yahoo-finance2)](https://circleci.com/gh/gadicc/node-yahoo-finance2) [![coverage](https://img.shields.io/codecov/c/github/gadicc/node-yahoo-finance2)](https://codecov.io/gh/gadicc/node-yahoo-finance2) ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Unofficial API
 
