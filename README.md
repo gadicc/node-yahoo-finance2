@@ -31,6 +31,7 @@ import { search } from 'yahoo-finance2';
 import search from 'yahoo-finance2/api/search';
 
 const results = await search('AAPL');
+const results = await search('AAPL', { someOption: true, etc });
 ```
 
 **CLI** (Command line interface)
@@ -38,7 +39,7 @@ const results = await search('AAPL');
 ```bash
 $ npm install -g yahoo-finance2
 $ yahoo-finance search AAPL
-$ yahoo-finance search AAPL { }
+$ yahoo-finance search AAPL '{ "someOption": true }'
 ```
 
 For the full list of modules, see the [Documentation](./docs/docs.md).
