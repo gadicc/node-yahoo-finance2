@@ -8,7 +8,7 @@ Copyright (c) 2021 by Gadi Cohen <dragon@wastelands.net>.  MIT licensed.
 
 In active development.  During the v0.x development cycle, API may change
 without notice.  Use the original
-[node-yahoo-finance]https://www.npmjs.com/package/yahoo-finance
+[node-yahoo-finance](https://www.npmjs.com/package/yahoo-finance)
 if you need something stable.
 
 ## Unofficial API
@@ -67,5 +67,5 @@ deployment to production is not supported.
 ## Credits
 
 * Massive thanks to [@pilwon](https://github.com/pilwon) for the original
-[node-yahoo-finance]https://www.npmjs.com/package/yahoo-finance
+[node-yahoo-finance](https://www.npmjs.com/package/yahoo-finance)
 and for all our prior collaborations on this and other projects 🙏
