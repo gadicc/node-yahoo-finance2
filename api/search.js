@@ -62,7 +62,7 @@ https://query2.finance.yahoo.com/v1/finance/search?q=BP41ZD1&lang=en-US&region=U
 const yahooFinanceFetch = require('./lib/yahooFinanceFetch');
 const SEARCH_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
 
-const optsDefaults = {
+const queryOptionsDefaults = {
   lang: 'en-US',
   region: 'US',
   quotesCount: 1,
@@ -76,14 +76,14 @@ const optsDefaults = {
   enableEnhancedTrivialQuery: 'true'
 };
 
-async function yahooFinanceSearch(query, opts={}) {
-  const finalOpts = {
+async function yahooFinanceSearch(query, queryOptionsOverrides={}, fetchOptions) {
+  const queryOptions = {
     q: query,
-    ...optsDefaults,
-    ...opts
+    ...queryOptionsDefaults,
+    ...queryOptionsOverrides
   };
 
-  return yahooFinanceFetch(SEARCH_URL, finalOpts);
+  return yahooFinanceFetch(SEARCH_URL, queryOptions, fetchOptions);
 }
 
 module.exports = yahooFinanceSearch;

@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?q=AAPL&lang=en-US&region=US&quotesCount=1&newsCount=0&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "e34rgmdg0o4di"
+      ],
+      "x-yahoo-request-id": [
+        "e34rgmdg0o4di"
+      ],
+      "x-request-id": [
+        "908aa19e-9edf-4647-9a94-3611be87f6c6"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "341"
+      ],
+      "x-envoy-upstream-service-time": [
+        "30"
+      ],
+      "date": [
+        "Sat, 23 Jan 2021 12:08:18 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "115"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"explains\":[],\"count\":2,\"quotes\":[{\"exchange\":\"NMS\",\"shortname\":\"Apple Inc.\",\"quoteType\":\"EQUITY\",\"symbol\":\"AAPL\",\"index\":\"quotes\",\"score\":2.403476E8,\"typeDisp\":\"Equity\",\"longname\":\"Apple Inc.\",\"isYahooFinance\":true},{\"index\":\"78ddc07626ff4bbcae663e88514c23a0\",\"name\":\"AAPlasma\",\"permalink\":\"aaplasma\",\"isYahooFinance\":false}],\"news\":[],\"nav\":[],\"lists\":[],\"researchReports\":[],\"totalTime\":27,\"timeTakenForQuotes\":422,\"timeTakenForNews\":0,\"timeTakenForAlgowatchlist\":400,\"timeTakenForPredefinedScreener\":400,\"timeTakenForCrunchbase\":400,\"timeTakenForNav\":400,\"timeTakenForResearchReports\":0}"
+  }
+}

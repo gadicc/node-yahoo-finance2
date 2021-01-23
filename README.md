@@ -49,6 +49,21 @@ $ yahoo-finance search AAPL '{ "someOption": true }'
 
 For the full list of modules, see the [Documentation](./docs/docs.md).
 
+## Devel Mode
+
+```js
+$ yahoo-finance search AAPL '{}' '{"devel":true}'
+```
+
+In "devel" mode, any URL will only be fetched *once* and cached on the disk.
+All future requests (for the rest of time) will return the cached result.
+This is very helpful to speed up development and is used extensively for
+our tests.
+
+Note: `require('yahooFinanceFetchDevel')` is called conditionally when
+`devel: true`.  It also uses packages from `devDependencies`.  As such,
+deployment to production is not supported.
+
 ## Credits
 
 * Massive thanks to [@pilwon](https://github.com/pilwon) for the original
