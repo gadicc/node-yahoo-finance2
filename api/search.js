@@ -59,8 +59,7 @@ https://query2.finance.yahoo.com/v1/finance/search?q=BP41ZD1&lang=en-US&region=U
 
  */
 
-const { URLSearchParams} = require('url');
-const fetch = require('node-fetch');
+const yahooFinanceFetch = require('./lib/yahooFinanceFetch');
 const SEARCH_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
 
 const optsDefaults = {
@@ -78,17 +77,13 @@ const optsDefaults = {
 };
 
 async function yahooFinanceSearch(query, opts={}) {
-  const params = new URLSearchParams({
+  const finalOpts = {
     q: query,
     ...optsDefaults,
     ...opts
-  });
+  };
 
-  const url = SEARCH_URL + '?' + params.toString();
-
-  const req = await fetch(url);
-  const json = await req.json();
-  return json;
+  return yahooFinanceFetch(SEARCH_URL, finalOpts);
 }
 
 module.exports = yahooFinanceSearch;
