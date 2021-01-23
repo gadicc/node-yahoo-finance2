@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?"
+  },
+  "response": {
+    "ok": false,
+    "status": 400,
+    "statusText": "Bad Request",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "y-rid": [
+        "c8e1mh5g0o74u"
+      ],
+      "x-yahoo-request-id": [
+        "c8e1mh5g0o74u"
+      ],
+      "x-request-id": [
+        "38593c09-1fdf-4783-8ee3-deedff47bfe4"
+      ],
+      "content-length": [
+        "109"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Sat, 23 Jan 2021 12:54:54 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "cache-control": [
+        "max-age=0, private"
+      ],
+      "expires": [
+        "-1"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"finance\":{\"result\":null,\"error\":{\"code\":\"Bad Request\",\"description\":\"Missing required query parameter=q\"}}}"
+  }
+}

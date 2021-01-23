@@ -1,11 +1,10 @@
+/* istanbul ignore file */
 const nodeFetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
 const FILE_BASE = path.join(__dirname, '..', '..', 'tests', 'http');
-
-console.log(5, __filename, __dirname);
 
 class FakeResponse {
 
@@ -19,16 +18,19 @@ class FakeResponse {
 
 }
 
-function urlToFilePath(url) {
+function urlHash(url) {
   var hash = crypto.createHash('sha1')
   hash.update(url);
-  return path.join(FILE_BASE, hash.digest('hex'));
+  return hash.digest('hex');
 }
 
 const cache = {};
 
 async function yahooFinanceFetchDevel(url, fetchOptions) {
-  const filename = urlToFilePath(url);
+  // If devel===true, hash the url, otherwise use the value of devel
+  // This allows us to specify our own static filename vs url hash.
+  const filename = path.join(FILE_BASE,
+    fetchOptions.devel === true ? urlHash(url) : fetchOptions.devel);
 
   if (cache[filename])
     return cache[filename];

@@ -19,8 +19,6 @@ async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}) {
     ...fetchOptionsOverrides
   };
 
-  console.log({ url, fetchOptions });
-
   const res = await fetch(url, fetchOptions);
   const json = await res.json();
 
