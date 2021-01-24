@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const yahooFinance = require('../index.js');
+const yahooFinance = require('../api/index.js');
 const moduleNames = Object.keys(yahooFinance);
 
 const node = process.argv[0];

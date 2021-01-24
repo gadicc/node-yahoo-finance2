@@ -68,4 +68,4 @@ async function yahooFinanceSearch(
   return yahooFinanceFetch(SEARCH_URL, queryOptions, fetchOptions);
 }
 
-exports = yahooFinanceSearch;
+export default yahooFinanceSearch;
