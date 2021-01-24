@@ -28,7 +28,15 @@ considered acknowledgement and acceptance of these terms and of it's license.
 
 ## Quickstart
 
-The library can be imported into your project or used directly as a CLI.
+**CLI** (Command line interface)
+
+```bash
+$ npx yahoo-finance2 search AAPL
+
+# or install it
+$ npm install -g yahoo-finance2
+$ yahoo-finance search AAPL '{ "someOption": true }'
+```
 
 **Importing**
 
@@ -39,14 +47,6 @@ import search from 'yahoo-finance2/api/search';
 
 const results = await search('AAPL');
 const results = await search('AAPL', { someOption: true, etc });
-```
-
-**CLI** (Command line interface)
-
-```bash
-$ npm install -g yahoo-finance2
-$ yahoo-finance search AAPL
-$ yahoo-finance search AAPL '{ "someOption": true }'
 ```
 
 For the full list of modules, see the [Documentation](./docs/docs.md).
