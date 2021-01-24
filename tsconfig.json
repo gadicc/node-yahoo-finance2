@@ -1,8 +1,10 @@
 {
+  "extends": "@tsconfig/node12/tsconfig.json",
+
   "compilerOptions": {
     "outDir": "./api",
     "allowJs": true,
-    "target": "es5"
+    "preserveConstEnums": true
   },
   "include": ["./src/**/*"]
 }

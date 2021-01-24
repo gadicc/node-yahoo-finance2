@@ -57,7 +57,7 @@ const queryOptionsDefaults = {
 async function yahooFinanceSearch(
   query: string,
   queryOptionsOverrides={},
-  fetchOptions
+  fetchOptions?: object
 ): Promise<YahooFinanceSearchResult> {
   const queryOptions = {
     q: query,
