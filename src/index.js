@@ -1,3 +1,4 @@
 module.exports = {
-  search: require('./search').default
+  autoc: require('./autoc').default,
+  search: require('./search').default,
 }
