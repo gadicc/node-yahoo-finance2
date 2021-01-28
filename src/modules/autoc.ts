@@ -1,12 +1,18 @@
-import yahooFinanceFetch = require('./lib/yahooFinanceFetch');
+import yahooFinanceFetch from '../lib/yahooFinanceFetch';
+import validate from '../lib/validate';
+
 const AUTOC_URL = 'https://autoc.finance.yahoo.com/autoc';
 
-interface YahooFinanceAutocResultSet {
+export interface YahooFinanceAutocResultSet {
   Query: string;
+  /**
+   * @minItems 0
+   * @maxItems 100
+   */
   Result: [YahooFinanceAutocResult]
 }
 
-interface YahooFinanceAutocResult {
+export interface YahooFinanceAutocResult {
   symbol: string;      // "AMZN"
   name: string;        // "Amazon.com, Inc."
   exch: string;        // "NMS"
@@ -33,8 +39,10 @@ async function yahooFinanceSearch(
 
   const result = await yahooFinanceFetch(AUTOC_URL, queryOptions, fetchOptions);
 
-  if (result.ResultSet)
+  if (result.ResultSet) {
+    validate(result.ResultSet, "#/definitions/YahooFinanceAutocResultSet");
     return result.ResultSet;
+  }
 
   throw new Error("Unexpected result: " + JSON.stringify(result));
 }

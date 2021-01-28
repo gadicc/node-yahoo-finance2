@@ -1,0 +1,226 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "YahooFinanceAutocResult": {
+      "additionalProperties": false,
+      "properties": {
+        "exch": {
+          "type": "string"
+        },
+        "exchDisp": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "typeDisp": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "name",
+        "exch",
+        "type",
+        "exchDisp",
+        "typeDisp"
+      ],
+      "type": "object"
+    },
+    "YahooFinanceAutocResultSet": {
+      "additionalProperties": false,
+      "properties": {
+        "Query": {
+          "type": "string"
+        },
+        "Result": {
+          "items": [
+            {
+              "$ref": "#/definitions/YahooFinanceAutocResult"
+            }
+          ],
+          "maxItems": 100,
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "required": [
+        "Query",
+        "Result"
+      ],
+      "type": "object"
+    },
+    "YahooFinanceSearchNews": {
+      "additionalProperties": false,
+      "properties": {
+        "link": {
+          "type": "string"
+        },
+        "providerPublishTime": {
+          "type": "number"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "uuid",
+        "title",
+        "publisher",
+        "link",
+        "providerPublishTime",
+        "type"
+      ],
+      "type": "object"
+    },
+    "YahooFinanceSearchQuote": {
+      "additionalProperties": false,
+      "properties": {
+        "exchange": {
+          "type": "string"
+        },
+        "index": {
+          "type": "string"
+        },
+        "isYahooFinance": {
+          "type": "boolean"
+        },
+        "longName": {
+          "type": "string"
+        },
+        "quoteType": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number"
+        },
+        "shortname": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "typeDisp": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "exchange",
+        "shortname",
+        "quoteType",
+        "symbol",
+        "index",
+        "score",
+        "typeDisp",
+        "longName",
+        "isYahooFinance"
+      ],
+      "type": "object"
+    },
+    "YahooFinanceSearchResult": {
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "type": "number"
+        },
+        "explains": {
+          "maxItems": 0,
+          "minItems": 0,
+          "type": "array"
+        },
+        "lists": {
+          "maxItems": 0,
+          "minItems": 0,
+          "type": "array"
+        },
+        "nav": {
+          "maxItems": 0,
+          "minItems": 0,
+          "type": "array"
+        },
+        "news": {
+          "items": [
+            {
+              "$ref": "#/definitions/YahooFinanceSearchNews"
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "quotes": {
+          "items": [
+            {
+              "$ref": "#/definitions/YahooFinanceSearchQuote"
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "researchReports": {
+          "maxItems": 0,
+          "minItems": 0,
+          "type": "array"
+        },
+        "timeTakenForAlgowatchlist": {
+          "type": "number"
+        },
+        "timeTakenForCrunchbase": {
+          "type": "number"
+        },
+        "timeTakenForNav": {
+          "type": "number"
+        },
+        "timeTakenForNews": {
+          "type": "number"
+        },
+        "timeTakenForPredefinedScreener": {
+          "type": "number"
+        },
+        "timeTakenForQuotes": {
+          "type": "number"
+        },
+        "timeTakenForResearchReports": {
+          "type": "number"
+        },
+        "totalTime": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "explains",
+        "count",
+        "quotes",
+        "news",
+        "nav",
+        "lists",
+        "researchReports",
+        "totalTime",
+        "timeTakenForQuotes",
+        "timeTakenForNews",
+        "timeTakenForAlgowatchlist",
+        "timeTakenForPredefinedScreener",
+        "timeTakenForCrunchbase",
+        "timeTakenForNav",
+        "timeTakenForResearchReports"
+      ],
+      "type": "object"
+    }
+  }
+}

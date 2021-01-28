@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-const yahooFinance = require('../api/index.js');
-const moduleNames = Object.keys(yahooFinance);
+const YahooFinance = require('../api/index.js').default;
+const { modules } = require('../api/index.js');
+const moduleNames = Object.keys(modules);
 
 const node = process.argv[0];
 const script = process.argv[1];
@@ -29,6 +30,8 @@ function decodeArgs(stringArgs) {
 
 (async function() {
   const args = decodeArgs(argsAsStrings);
-  const result = await yahooFinance[moduleName].apply(null, args);
+
+  const yahooFinance = new YahooFinance();
+  const result = await yahooFinance[moduleName](...args);
   console.log(result);
 })();

@@ -1,7 +1,7 @@
-import yahooFinanceFetch = require('./lib/yahooFinanceFetch');
+import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
 const SEARCH_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
 
-interface YahooFinanceSearchQuote {
+export interface YahooFinanceSearchQuote {
   exchange: string;        // "NYQ"
   shortname: string;       // "Alibaba Group Holding Limited"
   quoteType: string;       // "EQUITY"     TODO "EQUITY" | ???
@@ -13,7 +13,7 @@ interface YahooFinanceSearchQuote {
   isYahooFinance: boolean; // true
 }
 
-interface YahooFinanceSearchNews {
+export interface YahooFinanceSearchNews {
   uuid: string;                 // "9aff624a-e84c-35f3-9c23-db39852006dc"
   title: string;                // "Analyst Report: Alibaba Group Holding Limited"
   publisher: string;            // "Morningstar Research"
@@ -22,7 +22,7 @@ interface YahooFinanceSearchNews {
   type: string;                 // "STORY"    TODO "STORY" | ???
 }
 
-interface YahooFinanceSearchResult {
+export interface YahooFinanceSearchResult {
   explains: [];
   count: number;
   quotes: [YahooFinanceSearchQuote];
