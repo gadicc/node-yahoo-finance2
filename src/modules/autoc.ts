@@ -6,11 +6,7 @@ const QUERY_SCHEMA_KEY = "#/definitions/YahooFinanceAutocResultSet";
 
 export interface AutocResultSet {
   Query: string;
-  /**
-   * @minItems 0
-   * @maxItems 100
-   */
-  Result: [AutocResult]
+  Result: Array<AutocResult>
 }
 
 export interface AutocResult {

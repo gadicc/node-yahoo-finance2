@@ -4,7 +4,7 @@ import validate from '../lib/validate';
 const QUERY_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
 const QUERY_SCHEMA_KEY = "#/definitions/SearchResultOrig";
 
-export interface SearchQuote {
+export interface SearchQuoteYahoo {
   exchange: string;        // "NYQ"
   shortname: string;       // "Alibaba Group Holding Limited"
   quoteType: string;       // "EQUITY"     TODO "EQUITY" | ???
@@ -13,7 +13,13 @@ export interface SearchQuote {
   score: number;           // 1111958.0
   typeDisp: string;        // "Equity"
   longname: string;        // "Alibaba Group Holding Limited"
-  isYahooFinance: boolean; // true
+  isYahooFinance: true;    // true
+}
+export interface SearchQuoteNonYahoo {
+  index: string;           // '78ddc07626ff4bbcae663e88514c23a0'
+  name: string;            // 'AAPlasma'
+  permalink: string;       // 'aaplasma',
+  isYahooFinance: false    // false
 }
 
 export interface SearchNewsOrig {
@@ -30,33 +36,13 @@ export interface SearchNews extends Omit<SearchNewsOrig,'providerPublishTime'> {
 }
 
 export interface SearchResultOrig {
-  explains: [];
+  explains: Array<any>;
   count: number;
-  /**
-   * @minItems 0
-   * @maxItems 100
-   */
-  quotes: [SearchQuote];
-  /**
-   * @minItems 0
-   * @maxItems 100
-   */
-  news: [SearchNewsOrig];
-  /**
-   * @minItems 0
-   * @maxItems 100
-   */
-  nav: [];
-  /**
-   * @minItems 0
-   * @maxItems 100
-   */
-  lists: [],
-  /**
-   * @minItems 0
-   * @maxItems 100
-   */
-  researchReports: [],
+  quotes: Array<SearchQuoteYahoo | SearchQuoteNonYahoo>;
+  news: Array<SearchNewsOrig>;
+  nav: Array<any>;
+  lists: Array<any>,
+  researchReports: Array<any>,
   totalTime: number;
   timeTakenForQuotes: number;               // 26
   timeTakenForNews: number;                 // 419
@@ -68,7 +54,7 @@ export interface SearchResultOrig {
 }
 
 export interface SearchResult extends Omit<SearchResultOrig,'news'> {
-  news: [SearchNews];
+  news: Array<SearchNews>;
 }
 
 interface SearchOptions {

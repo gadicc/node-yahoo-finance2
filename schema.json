@@ -40,13 +40,9 @@
           "type": "string"
         },
         "Result": {
-          "items": [
-            {
-              "$ref": "#/definitions/AutocResult"
-            }
-          ],
-          "maxItems": 100,
-          "minItems": 0,
+          "items": {
+            "$ref": "#/definitions/AutocResult"
+          },
           "type": "array"
         }
       },
@@ -121,7 +117,32 @@
       ],
       "type": "object"
     },
-    "SearchQuote": {
+    "SearchQuoteNonYahoo": {
+      "additionalProperties": false,
+      "properties": {
+        "index": {
+          "type": "string"
+        },
+        "isYahooFinance": {
+          "const": false,
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "permalink": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "index",
+        "name",
+        "permalink",
+        "isYahooFinance"
+      ],
+      "type": "object"
+    },
+    "SearchQuoteYahoo": {
       "additionalProperties": false,
       "properties": {
         "exchange": {
@@ -131,6 +152,7 @@
           "type": "string"
         },
         "isYahooFinance": {
+          "const": true,
           "type": "boolean"
         },
         "longname": {
@@ -172,43 +194,42 @@
           "type": "number"
         },
         "explains": {
-          "maxItems": 0,
-          "minItems": 0,
+          "items": {
+          },
           "type": "array"
         },
         "lists": {
-          "maxItems": 100,
-          "minItems": 0,
+          "items": {
+          },
           "type": "array"
         },
         "nav": {
-          "maxItems": 100,
-          "minItems": 0,
+          "items": {
+          },
           "type": "array"
         },
         "news": {
-          "items": [
-            {
-              "$ref": "#/definitions/SearchNews"
-            }
-          ],
-          "maxItems": 1,
-          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/SearchNews"
+          },
           "type": "array"
         },
         "quotes": {
-          "items": [
-            {
-              "$ref": "#/definitions/SearchQuote"
-            }
-          ],
-          "maxItems": 100,
-          "minItems": 0,
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/SearchQuoteYahoo"
+              },
+              {
+                "$ref": "#/definitions/SearchQuoteNonYahoo"
+              }
+            ]
+          },
           "type": "array"
         },
         "researchReports": {
-          "maxItems": 100,
-          "minItems": 0,
+          "items": {
+          },
           "type": "array"
         },
         "timeTakenForAlgowatchlist": {
@@ -262,43 +283,42 @@
           "type": "number"
         },
         "explains": {
-          "maxItems": 0,
-          "minItems": 0,
+          "items": {
+          },
           "type": "array"
         },
         "lists": {
-          "maxItems": 100,
-          "minItems": 0,
+          "items": {
+          },
           "type": "array"
         },
         "nav": {
-          "maxItems": 100,
-          "minItems": 0,
+          "items": {
+          },
           "type": "array"
         },
         "news": {
-          "items": [
-            {
-              "$ref": "#/definitions/SearchNewsOrig"
-            }
-          ],
-          "maxItems": 100,
-          "minItems": 0,
+          "items": {
+            "$ref": "#/definitions/SearchNewsOrig"
+          },
           "type": "array"
         },
         "quotes": {
-          "items": [
-            {
-              "$ref": "#/definitions/SearchQuote"
-            }
-          ],
-          "maxItems": 100,
-          "minItems": 0,
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/SearchQuoteYahoo"
+              },
+              {
+                "$ref": "#/definitions/SearchQuoteNonYahoo"
+              }
+            ]
+          },
           "type": "array"
         },
         "researchReports": {
-          "maxItems": 100,
-          "minItems": 0,
+          "items": {
+          },
           "type": "array"
         },
         "timeTakenForAlgowatchlist": {
