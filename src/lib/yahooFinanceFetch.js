@@ -11,7 +11,7 @@ async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}) {
   const url = urlBase + '?' + urlSearchParams.toString();
 
   const fetch = fetchOptionsOverrides.devel
-    ? require('./yahooFinanceFetchDevel')
+    ? require('./fetchDevel')
     : nodeFetch;
 
   const fetchOptions = {
