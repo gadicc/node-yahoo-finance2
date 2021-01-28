@@ -4,7 +4,7 @@ import validate from '../lib/validate';
 const QUERY_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
 const QUERY_SCHEMA_KEY = "#/definitions/YahooFinanceSearchResult";
 
-export interface YahooFinanceSearchQuote {
+export interface SearchQuote {
   exchange: string;        // "NYQ"
   shortname: string;       // "Alibaba Group Holding Limited"
   quoteType: string;       // "EQUITY"     TODO "EQUITY" | ???
@@ -16,7 +16,7 @@ export interface YahooFinanceSearchQuote {
   isYahooFinance: boolean; // true
 }
 
-export interface YahooFinanceSearchNews {
+export interface SearchNews {
   uuid: string;                 // "9aff624a-e84c-35f3-9c23-db39852006dc"
   title: string;                // "Analyst Report: Alibaba Group Holding Limited"
   publisher: string;            // "Morningstar Research"
@@ -25,19 +25,19 @@ export interface YahooFinanceSearchNews {
   type: string;                 // "STORY"    TODO "STORY" | ???
 }
 
-export interface YahooFinanceSearchResult {
+export interface SearchResult {
   explains: [];
   count: number;
   /**
    * @minItems 0
    * @maxItems 100
    */
-  quotes: [YahooFinanceSearchQuote];
+  quotes: [SearchQuote];
   /**
    * @minItems 0
    * @maxItems 100
    */
-  news: [YahooFinanceSearchNews];
+  news: [SearchNews];
   /**
    * @minItems 0
    * @maxItems 100
@@ -63,6 +63,20 @@ export interface YahooFinanceSearchResult {
   timeTakenForResearchReports: number;      // 0
 }
 
+interface SearchOptions {
+  lang?: string;
+  region?: string;
+  quotesCount?: number;
+  newsCount?: number;
+  enableFuzzyQuery?: boolean;
+  quotesQueryId?: string;
+  multiQuoteQueryId?: string;
+  newsQueryId?: string;
+  enableCb?: boolean;
+  enableNavLinks?: boolean;
+  enableEnhancedTrivialQuery?: boolean;
+}
+
 const queryOptionsDefaults = {
   lang: 'en-US',
   region: 'US',
@@ -72,16 +86,16 @@ const queryOptionsDefaults = {
   quotesQueryId: 'tss_match_phrase_query',
   multiQuoteQueryId: 'multi_quote_single_token_query',
   newsQueryId: 'news_cie_vespa',
-  enableCb: 'true',
-  enableNavLinks: 'true',
-  enableEnhancedTrivialQuery: 'true'
+  enableCb: true,
+  enableNavLinks: true,
+  enableEnhancedTrivialQuery: true
 };
 
-async function yahooFinanceSearch(
+async function search(
   query: string,
-  queryOptionsOverrides={},
+  queryOptionsOverrides: SearchOptions = {},
   fetchOptions?: object
-): Promise<YahooFinanceSearchResult> {
+): Promise<SearchResult> {
   const queryOptions = {
     q: query,
     ...queryOptionsDefaults,
@@ -94,4 +108,4 @@ async function yahooFinanceSearch(
   return result;
 }
 
-export default yahooFinanceSearch;
+export default search;

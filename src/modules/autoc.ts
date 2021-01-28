@@ -4,16 +4,16 @@ import validate from '../lib/validate';
 const QUERY_URL = 'https://autoc.finance.yahoo.com/autoc';
 const QUERY_SCHEMA_KEY = "#/definitions/YahooFinanceAutocResultSet";
 
-export interface YahooFinanceAutocResultSet {
+export interface AutocResultSet {
   Query: string;
   /**
    * @minItems 0
    * @maxItems 100
    */
-  Result: [YahooFinanceAutocResult]
+  Result: [AutocResult]
 }
 
-export interface YahooFinanceAutocResult {
+export interface AutocResult {
   symbol: string;      // "AMZN"
   name: string;        // "Amazon.com, Inc."
   exch: string;        // "NMS"
@@ -22,16 +22,21 @@ export interface YahooFinanceAutocResult {
   typeDisp: string;    // "Equity"
 }
 
+interface AutocOptions {
+  region?: number;      // 1
+  lang?: string;        // "en"
+}
+
 const queryOptionsDefaults = {
   region: 1,
   lang: 'en'
 };
 
-async function yahooFinanceAutoc(
+async function autoc(
   query: string,
-  queryOptionsOverrides={},
+  queryOptionsOverrides: AutocOptions = {},
   fetchOptions?: object
-): Promise<YahooFinanceAutocResultSet> {
+): Promise<AutocResultSet> {
   const queryOptions = {
     query,
     ...queryOptionsDefaults,
@@ -48,4 +53,4 @@ async function yahooFinanceAutoc(
   throw new Error("Unexpected result: " + JSON.stringify(result));
 }
 
-export default yahooFinanceAutoc;
+export default autoc;
