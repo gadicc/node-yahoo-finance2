@@ -2,7 +2,7 @@ import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
 import validate from '../lib/validate';
 
 const QUERY_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
-const QUERY_SCHEMA_KEY = "#/definitions/YahooFinanceSearchResult";
+const QUERY_SCHEMA_KEY = "#/definitions/SearchResultOrig";
 
 export interface SearchQuote {
   exchange: string;        // "NYQ"
@@ -16,7 +16,7 @@ export interface SearchQuote {
   isYahooFinance: boolean; // true
 }
 
-export interface SearchNews {
+export interface SearchNewsOrig {
   uuid: string;                 // "9aff624a-e84c-35f3-9c23-db39852006dc"
   title: string;                // "Analyst Report: Alibaba Group Holding Limited"
   publisher: string;            // "Morningstar Research"
@@ -25,7 +25,11 @@ export interface SearchNews {
   type: string;                 // "STORY"    TODO "STORY" | ???
 }
 
-export interface SearchResult {
+export interface SearchNews extends Omit<SearchNewsOrig,'providerPublishTime'> {
+  providerPublishTime: Date;    // Date(1611286342 * 1000)
+}
+
+export interface SearchResultOrig {
   explains: [];
   count: number;
   /**
@@ -37,7 +41,7 @@ export interface SearchResult {
    * @minItems 0
    * @maxItems 100
    */
-  news: [SearchNews];
+  news: [SearchNewsOrig];
   /**
    * @minItems 0
    * @maxItems 100
@@ -61,6 +65,10 @@ export interface SearchResult {
   timeTakenForCrunchbase: number;           // 400
   timeTakenForNav: number;                  // 400
   timeTakenForResearchReports: number;      // 0
+}
+
+export interface SearchResult extends Omit<SearchResultOrig,'news'> {
+  news: [SearchNews];
 }
 
 interface SearchOptions {
@@ -104,6 +112,9 @@ async function search(
 
   const result = await yahooFinanceFetch(QUERY_URL, queryOptions, fetchOptions);
   validate(result, QUERY_SCHEMA_KEY);
+
+  for (let news of result.news)
+    news.providerPublishTime = new Date(news.providerPublishTime * 1000);
 
   return result;
 }

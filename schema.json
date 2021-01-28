@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "YahooFinanceAutocResult": {
+    "AutocResult": {
       "additionalProperties": false,
       "properties": {
         "exch": {
@@ -33,7 +33,7 @@
       ],
       "type": "object"
     },
-    "YahooFinanceAutocResultSet": {
+    "AutocResultSet": {
       "additionalProperties": false,
       "properties": {
         "Query": {
@@ -42,7 +42,7 @@
         "Result": {
           "items": [
             {
-              "$ref": "#/definitions/YahooFinanceAutocResult"
+              "$ref": "#/definitions/AutocResult"
             }
           ],
           "maxItems": 100,
@@ -56,7 +56,40 @@
       ],
       "type": "object"
     },
-    "YahooFinanceSearchNews": {
+    "SearchNews": {
+      "additionalProperties": false,
+      "properties": {
+        "link": {
+          "type": "string"
+        },
+        "providerPublishTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "link",
+        "providerPublishTime",
+        "publisher",
+        "title",
+        "type",
+        "uuid"
+      ],
+      "type": "object"
+    },
+    "SearchNewsOrig": {
       "additionalProperties": false,
       "properties": {
         "link": {
@@ -88,7 +121,7 @@
       ],
       "type": "object"
     },
-    "YahooFinanceSearchQuote": {
+    "SearchQuote": {
       "additionalProperties": false,
       "properties": {
         "exchange": {
@@ -132,7 +165,7 @@
       ],
       "type": "object"
     },
-    "YahooFinanceSearchResult": {
+    "SearchResult": {
       "additionalProperties": false,
       "properties": {
         "count": {
@@ -156,7 +189,97 @@
         "news": {
           "items": [
             {
-              "$ref": "#/definitions/YahooFinanceSearchNews"
+              "$ref": "#/definitions/SearchNews"
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "quotes": {
+          "items": [
+            {
+              "$ref": "#/definitions/SearchQuote"
+            }
+          ],
+          "maxItems": 100,
+          "minItems": 0,
+          "type": "array"
+        },
+        "researchReports": {
+          "maxItems": 100,
+          "minItems": 0,
+          "type": "array"
+        },
+        "timeTakenForAlgowatchlist": {
+          "type": "number"
+        },
+        "timeTakenForCrunchbase": {
+          "type": "number"
+        },
+        "timeTakenForNav": {
+          "type": "number"
+        },
+        "timeTakenForNews": {
+          "type": "number"
+        },
+        "timeTakenForPredefinedScreener": {
+          "type": "number"
+        },
+        "timeTakenForQuotes": {
+          "type": "number"
+        },
+        "timeTakenForResearchReports": {
+          "type": "number"
+        },
+        "totalTime": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "count",
+        "explains",
+        "lists",
+        "nav",
+        "news",
+        "quotes",
+        "researchReports",
+        "timeTakenForAlgowatchlist",
+        "timeTakenForCrunchbase",
+        "timeTakenForNav",
+        "timeTakenForNews",
+        "timeTakenForPredefinedScreener",
+        "timeTakenForQuotes",
+        "timeTakenForResearchReports",
+        "totalTime"
+      ],
+      "type": "object"
+    },
+    "SearchResultOrig": {
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "type": "number"
+        },
+        "explains": {
+          "maxItems": 0,
+          "minItems": 0,
+          "type": "array"
+        },
+        "lists": {
+          "maxItems": 100,
+          "minItems": 0,
+          "type": "array"
+        },
+        "nav": {
+          "maxItems": 100,
+          "minItems": 0,
+          "type": "array"
+        },
+        "news": {
+          "items": [
+            {
+              "$ref": "#/definitions/SearchNewsOrig"
             }
           ],
           "maxItems": 100,
@@ -166,7 +289,7 @@
         "quotes": {
           "items": [
             {
-              "$ref": "#/definitions/YahooFinanceSearchQuote"
+              "$ref": "#/definitions/SearchQuote"
             }
           ],
           "maxItems": 100,
