@@ -1,5 +1,8 @@
 import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
-const SEARCH_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
+import validate from '../lib/validate';
+
+const QUERY_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
+const QUERY_SCHEMA_KEY = "#/definitions/YahooFinanceSearchResult";
 
 export interface YahooFinanceSearchQuote {
   exchange: string;        // "NYQ"
@@ -9,7 +12,7 @@ export interface YahooFinanceSearchQuote {
   index: string;           // "quotes"
   score: number;           // 1111958.0
   typeDisp: string;        // "Equity"
-  longName: string;        // "Alibaba Group Holding Limited"
+  longname: string;        // "Alibaba Group Holding Limited"
   isYahooFinance: boolean; // true
 }
 
@@ -25,10 +28,30 @@ export interface YahooFinanceSearchNews {
 export interface YahooFinanceSearchResult {
   explains: [];
   count: number;
+  /**
+   * @minItems 0
+   * @maxItems 100
+   */
   quotes: [YahooFinanceSearchQuote];
+  /**
+   * @minItems 0
+   * @maxItems 100
+   */
   news: [YahooFinanceSearchNews];
+  /**
+   * @minItems 0
+   * @maxItems 100
+   */
   nav: [];
+  /**
+   * @minItems 0
+   * @maxItems 100
+   */
   lists: [],
+  /**
+   * @minItems 0
+   * @maxItems 100
+   */
   researchReports: [],
   totalTime: number;
   timeTakenForQuotes: number;               // 26
@@ -65,7 +88,10 @@ async function yahooFinanceSearch(
     ...queryOptionsOverrides
   };
 
-  return yahooFinanceFetch(SEARCH_URL, queryOptions, fetchOptions);
+  const result = await yahooFinanceFetch(QUERY_URL, queryOptions, fetchOptions);
+  validate(result, QUERY_SCHEMA_KEY);
+
+  return result;
 }
 
 export default yahooFinanceSearch;

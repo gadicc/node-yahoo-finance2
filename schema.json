@@ -100,7 +100,7 @@
         "isYahooFinance": {
           "type": "boolean"
         },
-        "longName": {
+        "longname": {
           "type": "string"
         },
         "quoteType": {
@@ -127,7 +127,7 @@
         "index",
         "score",
         "typeDisp",
-        "longName",
+        "longname",
         "isYahooFinance"
       ],
       "type": "object"
@@ -144,12 +144,12 @@
           "type": "array"
         },
         "lists": {
-          "maxItems": 0,
+          "maxItems": 100,
           "minItems": 0,
           "type": "array"
         },
         "nav": {
-          "maxItems": 0,
+          "maxItems": 100,
           "minItems": 0,
           "type": "array"
         },
@@ -159,8 +159,8 @@
               "$ref": "#/definitions/YahooFinanceSearchNews"
             }
           ],
-          "maxItems": 1,
-          "minItems": 1,
+          "maxItems": 100,
+          "minItems": 0,
           "type": "array"
         },
         "quotes": {
@@ -169,12 +169,12 @@
               "$ref": "#/definitions/YahooFinanceSearchQuote"
             }
           ],
-          "maxItems": 1,
-          "minItems": 1,
+          "maxItems": 100,
+          "minItems": 0,
           "type": "array"
         },
         "researchReports": {
-          "maxItems": 0,
+          "maxItems": 100,
           "minItems": 0,
           "type": "array"
         },

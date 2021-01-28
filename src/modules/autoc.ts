@@ -1,7 +1,8 @@
 import yahooFinanceFetch from '../lib/yahooFinanceFetch';
 import validate from '../lib/validate';
 
-const AUTOC_URL = 'https://autoc.finance.yahoo.com/autoc';
+const QUERY_URL = 'https://autoc.finance.yahoo.com/autoc';
+const QUERY_SCHEMA_KEY = "#/definitions/YahooFinanceAutocResultSet";
 
 export interface YahooFinanceAutocResultSet {
   Query: string;
@@ -26,7 +27,7 @@ const queryOptionsDefaults = {
   lang: 'en'
 };
 
-async function yahooFinanceSearch(
+async function yahooFinanceAutoc(
   query: string,
   queryOptionsOverrides={},
   fetchOptions?: object
@@ -37,14 +38,14 @@ async function yahooFinanceSearch(
     ...queryOptionsOverrides
   };
 
-  const result = await yahooFinanceFetch(AUTOC_URL, queryOptions, fetchOptions);
+  const result = await yahooFinanceFetch(QUERY_URL, queryOptions, fetchOptions);
 
   if (result.ResultSet) {
-    validate(result.ResultSet, "#/definitions/YahooFinanceAutocResultSet");
+    validate(result.ResultSet, QUERY_SCHEMA_KEY);
     return result.ResultSet;
   }
 
   throw new Error("Unexpected result: " + JSON.stringify(result));
 }
 
-export default yahooFinanceSearch;
+export default yahooFinanceAutoc;
