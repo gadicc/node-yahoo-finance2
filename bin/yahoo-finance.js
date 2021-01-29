@@ -33,5 +33,9 @@ function decodeArgs(stringArgs) {
 
   const yahooFinance = new YahooFinance();
   const result = await yahooFinance[moduleName](...args);
-  console.log(result);
+
+  if (process.stdout.isTTY)
+    console.dir(result, { depth: null, colors: true });
+  else
+    console.log(JSON.stringify(result, null, 2));
 })();
