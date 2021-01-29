@@ -20,16 +20,11 @@ async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}, f
   };
 
   const res = await fetch(url, fetchOptions);
-  if (!res.ok) {
-    console.error(url);
-    throw new Error("Error " + res.status + ": " + res.statusText)
-  }
-
   const result = await res[func]();
 
   /*
     {
-      finance: {
+      finance: {  // or quoteSummary, or any other single key
         result: null,
         error: {
           code: 'Bad Request',
@@ -38,11 +33,24 @@ async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}, f
       }
     }
    */
-  if (func==='json' && result.finance && result.finance.error) {
-    const errorObj = result.finance.error;
-    const errorName = errorObj.code.replace(/ /g, '') + 'Error';
-    const ErrorClass = errors[errorName] || Error;
-    throw new ErrorClass(errorObj.description);
+  if (func==='json') {
+    const keys = Object.keys(result);
+    if (keys.length === 1) {
+      const errorObj = result[keys[0]].error;
+      if (errorObj) {
+        const errorName = errorObj.code.replace(/ /g, '') + 'Error';
+        const ErrorClass = errors[errorName] || Error;
+        throw new ErrorClass(errorObj.description);
+      }
+    }
+  }
+
+  // We do this last as it generally contains less information (e.g. no desc).
+  if (!res.ok) {
+    console.error(url);
+    const error = new errors.HTTPError(res.statusText);
+    error.code = res.status;
+    throw new error;
   }
 
   return result;
