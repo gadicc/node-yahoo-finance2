@@ -16,6 +16,10 @@ class FakeResponse {
     return JSON.parse(this.body);
   }
 
+  async text() {
+    return this.body;
+  }
+
 }
 
 function urlHash(url) {
@@ -62,13 +66,10 @@ async function fetchDevel(url, fetchOptions) {
       };
 
       contentJson = JSON.stringify(contentObj, null, 2);
-      console.log('a')
       await fs.promises.writeFile(filename, contentJson, { encoding: 'utf8' });
-      console.log('b')
 
     } else {
 
-      console.log(8);
       throw error;
 
     }

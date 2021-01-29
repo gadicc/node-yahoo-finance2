@@ -6,7 +6,7 @@ const pkg = require('../../package.json');
 
 const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
 
-async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}) {
+async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}, func='json') {
   const urlSearchParams = new URLSearchParams(params);
   const url = urlBase + '?' + urlSearchParams.toString();
 
@@ -20,7 +20,12 @@ async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}) {
   };
 
   const res = await fetch(url, fetchOptions);
-  const json = await res.json();
+  if (!res.ok) {
+    console.error(url);
+    throw new Error("Error " + res.status + ": " + res.statusText)
+  }
+
+  const result = await res[func]();
 
   /*
     {
@@ -33,14 +38,14 @@ async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}) {
       }
     }
    */
-  if (json.finance && json.finance.error) {
-    const errorObj = json.finance.error;
+  if (func==='json' && result.finance && result.finance.error) {
+    const errorObj = result.finance.error;
     const errorName = errorObj.code.replace(/ /g, '') + 'Error';
     const ErrorClass = errors[errorName] || Error;
     throw new ErrorClass(errorObj.description);
   }
 
-  return json;
+  return result;
 }
 
 module.exports = yahooFinanceFetch;
