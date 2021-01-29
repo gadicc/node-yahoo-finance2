@@ -29,6 +29,11 @@ function decodeArgs(stringArgs) {
 
 (async function() {
   const args = decodeArgs(argsAsStrings);
-  const result = await yahooFinance[moduleName].apply(null, args);
-  console.log(result);
+
+  const result = await yahooFinance[moduleName](...args);
+
+  if (process.stdout.isTTY)
+    console.dir(result, { depth: null, colors: true });
+  else
+    console.log(JSON.stringify(result, null, 2));
 })();

@@ -2,13 +2,13 @@
 
 Community API for Yahoo-Finance
 
-Copyright (c) 2021 by Gadi Cohen <dragon@wastelands.net>.  MIT licensed.
+Copyright (c) 2021 by Gadi Cohen &lt;dragon@wastelands.net&gt;.  [MIT licensed](./LICENSE).
 
-[![npm](https://img.shields.io/npm/v/yahoo-finance2)](https://www.npmjs.com/package/yahoo-finance2) [![CircleCI](https://img.shields.io/circleci/build/github/gadicc/node-yahoo-finance2)](https://circleci.com/gh/gadicc/node-yahoo-finance2) [![coverage](https://img.shields.io/codecov/c/github/gadicc/node-yahoo-finance2)](https://codecov.io/gh/gadicc/node-yahoo-finance2) ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![npm](https://img.shields.io/npm/v/yahoo-finance2)](https://www.npmjs.com/package/yahoo-finance2) [![CircleCI](https://img.shields.io/circleci/build/github/gadicc/node-yahoo-finance2)](https://circleci.com/gh/gadicc/node-yahoo-finance2) [![coverage](https://img.shields.io/codecov/c/github/gadicc/node-yahoo-finance2)](https://codecov.io/gh/gadicc/node-yahoo-finance2) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/) [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 Supports Node 12.0.0 and up (tests are run against 12.0.0).
 
-DO NOT USE!  In active development.  API may change without warning until
+**DO NOT USE!**  In active development.  API may change without warning until
 stable release.  Use
 [node-yahoo-finance](https://www.npmjs.com/package/yahoo-finance)
 instead, unless you are contributing to development.
@@ -28,7 +28,15 @@ considered acknowledgement and acceptance of these terms and of it's license.
 
 ## Quickstart
 
-The library can be imported into your project or used directly as a CLI.
+**CLI** (Command line interface)
+
+```bash
+$ npx yahoo-finance2 search AAPL
+
+# or install it
+$ npm install -g yahoo-finance2
+$ yahoo-finance search AAPL '{ "someOption": true }'
+```
 
 **Importing**
 
@@ -39,14 +47,6 @@ import search from 'yahoo-finance2/api/search';
 
 const results = await search('AAPL');
 const results = await search('AAPL', { someOption: true, etc });
-```
-
-**CLI** (Command line interface)
-
-```bash
-$ npm install -g yahoo-finance2
-$ yahoo-finance search AAPL
-$ yahoo-finance search AAPL '{ "someOption": true }'
 ```
 
 For the full list of modules, see the [Documentation](./docs/docs.md).
@@ -66,6 +66,17 @@ await search('AAPL', {}, { devel: 'search-AAPL.json' });  // fixed filename
 Note: `require('yahooFinanceFetchDevel')` is called conditionally when
 `devel: true`.  It also uses packages from `devDependencies`.  As such,
 deployment to production is not supported.
+
+## Contributing
+
+Pull Requests welcome!  Please read [CONTRIBUTING.md](./CONTRIBUTING.md)
+to avoid friction :)  Mostly importantly, PRs should be submitted against
+the **devel branch** (our default branch) and **commit messages** should follow
+the [conventionalcommits](https://www.conventionalcommits.org/) standard
+(basically Angular).  This is important as we use
+[semantic-release](https://github.com/semantic-release/semantic-release)
+to automate releases and [CHANGELOG](./CHANGELOG.md) entries when we merge
+back to master.
 
 ## Credits
 

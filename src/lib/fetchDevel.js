@@ -16,6 +16,10 @@ class FakeResponse {
     return JSON.parse(this.body);
   }
 
+  async text() {
+    return this.body;
+  }
+
 }
 
 function urlHash(url) {
@@ -26,7 +30,7 @@ function urlHash(url) {
 
 const cache = {};
 
-async function yahooFinanceFetchDevel(url, fetchOptions) {
+async function fetchDevel(url, fetchOptions) {
   // If devel===true, hash the url, otherwise use the value of devel
   // This allows us to specify our own static filename vs url hash.
   const filename = path.join(FILE_BASE,
@@ -44,12 +48,8 @@ async function yahooFinanceFetchDevel(url, fetchOptions) {
 
   } catch (error) {
 
-    console.log(5, error);
-    console.log(5, error.code);
-
     if (error.code === 'ENOENT') {
 
-      console.log(6);
       const res = await nodeFetch(url, fetchOptions);
 
       contentObj = {
@@ -66,13 +66,10 @@ async function yahooFinanceFetchDevel(url, fetchOptions) {
       };
 
       contentJson = JSON.stringify(contentObj, null, 2);
-      console.log('a')
       await fs.promises.writeFile(filename, contentJson, { encoding: 'utf8' });
-      console.log('b')
 
     } else {
 
-      console.log(8);
       throw error;
 
     }
@@ -82,4 +79,4 @@ async function yahooFinanceFetchDevel(url, fetchOptions) {
   return res;
 }
 
-module.exports = yahooFinanceFetchDevel;
+module.exports = fetchDevel;
