@@ -67,6 +67,17 @@ Note: `require('yahooFinanceFetchDevel')` is called conditionally when
 `devel: true`.  It also uses packages from `devDependencies`.  As such,
 deployment to production is not supported.
 
+## Contributing
+
+Pull Requests welcome!  Please read [CONTRIBUTING.md](./CONTRIBUTING.md)
+to avoid friction :)  Mostly importantly, PRs should be submitted against
+the **devel branch** (our default branch) and **commit messages** should follow
+the [conventionalcommits](https://www.conventionalcommits.org/) standard
+(basically Angular).  This is important as we use
+[semantic-release](https://github.com/semantic-release/semantic-release)
+to automate releases and [CHANGELOG](./CHANGELOG.md) entries when we merge
+back to master.
+
 ## Credits
 
 * Massive thanks to [@pilwon](https://github.com/pilwon) for the original
