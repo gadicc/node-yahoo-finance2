@@ -1,8 +1,10 @@
 import autoc from './modules/autoc';
+import quoteSummary from './modules/quoteSummary';
 import search from './modules/search';
 
 export const modules = {
   autoc,
+  quoteSummary,
   search,
 };
 
@@ -12,6 +14,7 @@ class YahooFinance {
   }
 
   autoc = autoc;
+  quoteSummary = quoteSummary;
   search = search;
 }
 
