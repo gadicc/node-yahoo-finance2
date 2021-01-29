@@ -52,6 +52,384 @@
       ],
       "type": "object"
     },
+    "Price": {
+      "additionalProperties": false,
+      "properties": {
+        "averageDailyVolume10Day": {
+          "type": "number"
+        },
+        "averageDailyVolume3Month": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "currencySymbol": {
+          "type": "string"
+        },
+        "exchange": {
+          "type": "string"
+        },
+        "exchangeDataDelayedBy": {
+          "type": "number"
+        },
+        "exchangeName": {
+          "type": "string"
+        },
+        "fromCurrency": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "lastMarket": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "longName": {
+          "type": "string"
+        },
+        "marketCap": {
+          "type": "number"
+        },
+        "marketState": {
+          "type": "string"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "postMarketChange": {
+          "type": "number"
+        },
+        "postMarketChangePercent": {
+          "type": "number"
+        },
+        "postMarketPrice": {
+          "type": "number"
+        },
+        "postMarketSource": {
+          "type": "string"
+        },
+        "postMarketTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "preMarketSource": {
+          "type": "string"
+        },
+        "preMarketTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "priceHint": {
+          "type": "number"
+        },
+        "quoteSourceName": {
+          "type": "string"
+        },
+        "quoteType": {
+          "type": "string"
+        },
+        "regularMarketChange": {
+          "type": "number"
+        },
+        "regularMarketChangePercent": {
+          "type": "number"
+        },
+        "regularMarketDayHigh": {
+          "type": "number"
+        },
+        "regularMarketDayLow": {
+          "type": "number"
+        },
+        "regularMarketOpen": {
+          "type": "number"
+        },
+        "regularMarketPreviousClose": {
+          "type": "number"
+        },
+        "regularMarketPrice": {
+          "type": "number"
+        },
+        "regularMarketSource": {
+          "type": "string"
+        },
+        "regularMarketTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "regularMarketVolume": {
+          "type": "number"
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "toCurrency": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "underlyingSymbol": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "averageDailyVolume10Day",
+        "averageDailyVolume3Month",
+        "currency",
+        "currencySymbol",
+        "exchange",
+        "exchangeDataDelayedBy",
+        "exchangeName",
+        "fromCurrency",
+        "lastMarket",
+        "longName",
+        "marketCap",
+        "marketState",
+        "maxAge",
+        "postMarketChange",
+        "postMarketChangePercent",
+        "postMarketPrice",
+        "postMarketSource",
+        "postMarketTime",
+        "preMarketSource",
+        "preMarketTime",
+        "priceHint",
+        "quoteSourceName",
+        "quoteType",
+        "regularMarketChange",
+        "regularMarketChangePercent",
+        "regularMarketDayHigh",
+        "regularMarketDayLow",
+        "regularMarketOpen",
+        "regularMarketPreviousClose",
+        "regularMarketPrice",
+        "regularMarketSource",
+        "regularMarketTime",
+        "regularMarketVolume",
+        "shortName",
+        "symbol",
+        "toCurrency",
+        "underlyingSymbol"
+      ],
+      "type": "object"
+    },
+    "PriceOrig": {
+      "additionalProperties": false,
+      "properties": {
+        "averageDailyVolume10Day": {
+          "type": "number"
+        },
+        "averageDailyVolume3Month": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "currencySymbol": {
+          "type": "string"
+        },
+        "exchange": {
+          "type": "string"
+        },
+        "exchangeDataDelayedBy": {
+          "type": "number"
+        },
+        "exchangeName": {
+          "type": "string"
+        },
+        "fromCurrency": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "lastMarket": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "longName": {
+          "type": "string"
+        },
+        "marketCap": {
+          "type": "number"
+        },
+        "marketState": {
+          "type": "string"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "postMarketChange": {
+          "type": "number"
+        },
+        "postMarketChangePercent": {
+          "type": "number"
+        },
+        "postMarketPrice": {
+          "type": "number"
+        },
+        "postMarketSource": {
+          "type": "string"
+        },
+        "postMarketTime": {
+          "type": "number"
+        },
+        "preMarketSource": {
+          "type": "string"
+        },
+        "priceHint": {
+          "type": "number"
+        },
+        "quoteSourceName": {
+          "type": "string"
+        },
+        "quoteType": {
+          "type": "string"
+        },
+        "regularMarketChange": {
+          "type": "number"
+        },
+        "regularMarketChangePercent": {
+          "type": "number"
+        },
+        "regularMarketDayHigh": {
+          "type": "number"
+        },
+        "regularMarketDayLow": {
+          "type": "number"
+        },
+        "regularMarketOpen": {
+          "type": "number"
+        },
+        "regularMarketPreviousClose": {
+          "type": "number"
+        },
+        "regularMarketPrice": {
+          "type": "number"
+        },
+        "regularMarketSource": {
+          "type": "string"
+        },
+        "regularMarketTime": {
+          "type": "number"
+        },
+        "regularMarketVolume": {
+          "type": "number"
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "toCurrency": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "underlyingSymbol": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "maxAge",
+        "preMarketSource",
+        "postMarketChangePercent",
+        "postMarketChange",
+        "postMarketTime",
+        "postMarketPrice",
+        "postMarketSource",
+        "regularMarketChangePercent",
+        "regularMarketChange",
+        "regularMarketTime",
+        "priceHint",
+        "regularMarketPrice",
+        "regularMarketDayHigh",
+        "regularMarketDayLow",
+        "regularMarketVolume",
+        "averageDailyVolume10Day",
+        "averageDailyVolume3Month",
+        "regularMarketPreviousClose",
+        "regularMarketSource",
+        "regularMarketOpen",
+        "exchange",
+        "exchangeName",
+        "exchangeDataDelayedBy",
+        "marketState",
+        "quoteType",
+        "symbol",
+        "underlyingSymbol",
+        "shortName",
+        "longName",
+        "currency",
+        "quoteSourceName",
+        "currencySymbol",
+        "fromCurrency",
+        "toCurrency",
+        "lastMarket",
+        "marketCap"
+      ],
+      "type": "object"
+    },
+    "QuoteSummaryOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "formatted": {
+          "type": "boolean"
+        },
+        "modules": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "QuoteSummaryResult": {
+      "additionalProperties": false,
+      "properties": {
+        "price": {
+          "$ref": "#/definitions/Price"
+        },
+        "summaryDetail": {
+          "$ref": "#/definitions/SummaryDetail"
+        }
+      },
+      "required": [
+        "summaryDetail",
+        "price"
+      ],
+      "type": "object"
+    },
+    "QuoteSummaryResultOrig": {
+      "additionalProperties": false,
+      "properties": {
+        "price": {
+          "$ref": "#/definitions/PriceOrig"
+        },
+        "summaryDetail": {
+          "$ref": "#/definitions/SummaryDetailOrig"
+        }
+      },
+      "type": "object"
+    },
     "SearchNews": {
       "additionalProperties": false,
       "properties": {
@@ -362,6 +740,335 @@
         "timeTakenForCrunchbase",
         "timeTakenForNav",
         "timeTakenForResearchReports"
+      ],
+      "type": "object"
+    },
+    "SummaryDetail": {
+      "additionalProperties": false,
+      "properties": {
+        "algorithm": {
+        },
+        "ask": {
+          "type": "number"
+        },
+        "askSize": {
+          "type": "number"
+        },
+        "averageDailyVolume10Day": {
+          "type": "number"
+        },
+        "averageVolume": {
+          "type": "number"
+        },
+        "averageVolume10days": {
+          "type": "number"
+        },
+        "bid": {
+          "type": "number"
+        },
+        "bidSize": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "dayHigh": {
+          "type": "number"
+        },
+        "dayLow": {
+          "type": "number"
+        },
+        "dividendRate": {
+          "type": "number"
+        },
+        "dividendYield": {
+          "type": "number"
+        },
+        "exDividendDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "fiftyDayAverage": {
+          "type": "number"
+        },
+        "fiftyTwoWeekHigh": {
+          "type": "number"
+        },
+        "fiftyTwoWeekLow": {
+          "type": "number"
+        },
+        "fiveYearAvgDividendYield": {
+          "type": "number"
+        },
+        "forwardPE": {
+          "type": "number"
+        },
+        "fromCurrency": {
+        },
+        "lastMarket": {
+        },
+        "marketCap": {
+          "type": "number"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "open": {
+          "type": "number"
+        },
+        "payoutRatio": {
+          "type": "number"
+        },
+        "previousClose": {
+          "type": "number"
+        },
+        "priceHint": {
+          "type": "number"
+        },
+        "priceToSalesTrailing12Months": {
+          "type": "number"
+        },
+        "regularMarketDayHigh": {
+          "type": "number"
+        },
+        "regularMarketDayLow": {
+          "type": "number"
+        },
+        "regularMarketOpen": {
+          "type": "number"
+        },
+        "regularMarketPreviousClose": {
+          "type": "number"
+        },
+        "regularMarketVolume": {
+          "type": "number"
+        },
+        "toCurrency": {
+        },
+        "tradeable": {
+          "type": "boolean"
+        },
+        "trailingAnnualDividendRate": {
+          "type": "number"
+        },
+        "trailingAnnualDividendYield": {
+          "type": "number"
+        },
+        "trailingPE": {
+          "type": "number"
+        },
+        "twoHundredDayAverage": {
+          "type": "number"
+        },
+        "volume": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "algorithm",
+        "ask",
+        "askSize",
+        "averageDailyVolume10Day",
+        "averageVolume",
+        "averageVolume10days",
+        "bid",
+        "bidSize",
+        "currency",
+        "dayHigh",
+        "dayLow",
+        "dividendRate",
+        "dividendYield",
+        "exDividendDate",
+        "fiftyDayAverage",
+        "fiftyTwoWeekHigh",
+        "fiftyTwoWeekLow",
+        "fiveYearAvgDividendYield",
+        "forwardPE",
+        "fromCurrency",
+        "lastMarket",
+        "marketCap",
+        "maxAge",
+        "open",
+        "payoutRatio",
+        "previousClose",
+        "priceHint",
+        "priceToSalesTrailing12Months",
+        "regularMarketDayHigh",
+        "regularMarketDayLow",
+        "regularMarketOpen",
+        "regularMarketPreviousClose",
+        "regularMarketVolume",
+        "toCurrency",
+        "tradeable",
+        "trailingAnnualDividendRate",
+        "trailingAnnualDividendYield",
+        "trailingPE",
+        "twoHundredDayAverage",
+        "volume"
+      ],
+      "type": "object"
+    },
+    "SummaryDetailOrig": {
+      "additionalProperties": false,
+      "properties": {
+        "algorithm": {
+        },
+        "ask": {
+          "type": "number"
+        },
+        "askSize": {
+          "type": "number"
+        },
+        "averageDailyVolume10Day": {
+          "type": "number"
+        },
+        "averageVolume": {
+          "type": "number"
+        },
+        "averageVolume10days": {
+          "type": "number"
+        },
+        "bid": {
+          "type": "number"
+        },
+        "bidSize": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "dayHigh": {
+          "type": "number"
+        },
+        "dayLow": {
+          "type": "number"
+        },
+        "dividendRate": {
+          "type": "number"
+        },
+        "dividendYield": {
+          "type": "number"
+        },
+        "exDividendDate": {
+          "type": "number"
+        },
+        "fiftyDayAverage": {
+          "type": "number"
+        },
+        "fiftyTwoWeekHigh": {
+          "type": "number"
+        },
+        "fiftyTwoWeekLow": {
+          "type": "number"
+        },
+        "fiveYearAvgDividendYield": {
+          "type": "number"
+        },
+        "forwardPE": {
+          "type": "number"
+        },
+        "fromCurrency": {
+        },
+        "lastMarket": {
+        },
+        "marketCap": {
+          "type": "number"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "open": {
+          "type": "number"
+        },
+        "payoutRatio": {
+          "type": "number"
+        },
+        "previousClose": {
+          "type": "number"
+        },
+        "priceHint": {
+          "type": "number"
+        },
+        "priceToSalesTrailing12Months": {
+          "type": "number"
+        },
+        "regularMarketDayHigh": {
+          "type": "number"
+        },
+        "regularMarketDayLow": {
+          "type": "number"
+        },
+        "regularMarketOpen": {
+          "type": "number"
+        },
+        "regularMarketPreviousClose": {
+          "type": "number"
+        },
+        "regularMarketVolume": {
+          "type": "number"
+        },
+        "toCurrency": {
+        },
+        "tradeable": {
+          "type": "boolean"
+        },
+        "trailingAnnualDividendRate": {
+          "type": "number"
+        },
+        "trailingAnnualDividendYield": {
+          "type": "number"
+        },
+        "trailingPE": {
+          "type": "number"
+        },
+        "twoHundredDayAverage": {
+          "type": "number"
+        },
+        "volume": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "maxAge",
+        "priceHint",
+        "previousClose",
+        "open",
+        "dayLow",
+        "dayHigh",
+        "regularMarketPreviousClose",
+        "regularMarketOpen",
+        "regularMarketDayLow",
+        "regularMarketDayHigh",
+        "dividendRate",
+        "dividendYield",
+        "exDividendDate",
+        "payoutRatio",
+        "fiveYearAvgDividendYield",
+        "trailingPE",
+        "forwardPE",
+        "volume",
+        "regularMarketVolume",
+        "averageVolume",
+        "averageVolume10days",
+        "averageDailyVolume10Day",
+        "bid",
+        "ask",
+        "bidSize",
+        "askSize",
+        "marketCap",
+        "fiftyTwoWeekLow",
+        "fiftyTwoWeekHigh",
+        "priceToSalesTrailing12Months",
+        "fiftyDayAverage",
+        "twoHundredDayAverage",
+        "trailingAnnualDividendRate",
+        "trailingAnnualDividendYield",
+        "currency",
+        "fromCurrency",
+        "toCurrency",
+        "lastMarket",
+        "algorithm",
+        "tradeable"
       ],
       "type": "object"
     }
