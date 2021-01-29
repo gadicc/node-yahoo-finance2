@@ -52,6 +52,48 @@
       ],
       "type": "object"
     },
+    "HistoricalResult": {
+      "items": {
+        "$ref": "#/definitions/HistoricalRow"
+      },
+      "type": "array"
+    },
+    "HistoricalRow": {
+      "additionalProperties": false,
+      "properties": {
+        "adjClose": {
+          "type": "number"
+        },
+        "close": {
+          "type": "number"
+        },
+        "date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "high": {
+          "type": "number"
+        },
+        "low": {
+          "type": "number"
+        },
+        "open": {
+          "type": "number"
+        },
+        "volume": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "type": "object"
+    },
     "Price": {
       "additionalProperties": false,
       "properties": {

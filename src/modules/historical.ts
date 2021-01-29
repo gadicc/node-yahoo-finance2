@@ -1,11 +1,16 @@
 import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
+import validate from '../lib/validate';
 import csv2json from '../lib/csv2json';
 
 const QUERY_URL = 'https://query1.finance.yahoo.com/v7/finance/download';
+const QUERY_SCHEMA_KEY = "#/definitions/HistoricalResult";
+
+export type HistoricalResult = Array<HistoricalRow>;
 
 export interface HistoricalRow {
   date: Date;
   open: number;
+  high: number;
   low: number;
   close: number;
   adjClose?: number;
@@ -30,7 +35,7 @@ export default async function historical(
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
   fetchOptions?: object
-): Promise<Array<HistoricalRow>> {
+): Promise<HistoricalResult> {
   const queryOptions: HistoricalOptions = {
     ...queryOptionsDefaults,
     ...queryOptionsOverrides
@@ -51,5 +56,9 @@ export default async function historical(
   const url = QUERY_URL + '/' + symbol;
   const csv = await yahooFinanceFetch(url, queryOptions, fetchOptions, 'text');
   const result = csv2json(csv);
+
+  // this can't handle Dates.  let's decide where/when/how to validate.
+  // validate(result, QUERY_SCHEMA_KEY);
+
   return result;
 }
