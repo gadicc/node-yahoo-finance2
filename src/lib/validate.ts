@@ -1,10 +1,13 @@
 import Ajv, {JSONSchemaType, DefinedError, ValidateFunction} from "ajv";
+import addFormats from 'ajv-formats';
 
 //import schema from '../../schema.json';
 const schema = require('../../schema.json');
 const pkg = require('../../package.json');
 
 const ajv = new Ajv();
+addFormats(ajv);
+
 ajv.addSchema(schema);
 
 function validate(object: object, key: string): void {
