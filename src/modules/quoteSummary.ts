@@ -178,10 +178,6 @@ export default async function quoteSummary(
   if (!qsResult)
     throw new Error("Unexpected result: " + JSON.stringify(result));
 
-  // TODO, reuse error logic from fetch
-  if (qsResult.error)
-    throw new Error("Error: " + JSON.stringify(qsResult.error));
-
   const actualResult = qsResult.result[0];
 
   validate(actualResult, QUERY_RESULT_SCHEMA_KEY);
