@@ -3,7 +3,8 @@ import validate from '../lib/validate';
 import csv2json from '../lib/csv2json';
 
 const QUERY_URL = 'https://query1.finance.yahoo.com/v7/finance/download';
-const QUERY_SCHEMA_KEY = "#/definitions/HistoricalResult";
+const QUERY_RESULT_SCHEMA_KEY = "#/definitions/HistoricalResult";
+const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/HistoricalOptions';
 
 export type HistoricalResult = Array<HistoricalRow>;
 
@@ -17,7 +18,7 @@ export interface HistoricalRow {
   volume: number;
 }
 
-interface HistoricalOptions {
+export interface HistoricalOptions {
   period1: Date | string | number;
   period2?: Date | string | number;
   interval?: '1d' | '1wk' | '1mo';  // '1d',  TODO all | types
@@ -36,6 +37,8 @@ export default async function historical(
   queryOptionsOverrides: HistoricalOptions,
   fetchOptions?: object
 ): Promise<HistoricalResult> {
+  validate(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'historical');
+
   const queryOptions: HistoricalOptions = {
     ...queryOptionsDefaults,
     ...queryOptionsOverrides

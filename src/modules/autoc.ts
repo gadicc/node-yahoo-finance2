@@ -2,7 +2,8 @@ import yahooFinanceFetch from '../lib/yahooFinanceFetch';
 import validate from '../lib/validate';
 
 const QUERY_URL = 'https://autoc.finance.yahoo.com/autoc';
-const QUERY_SCHEMA_KEY = "#/definitions/YahooFinanceAutocResultSet";
+const QUERY_OPTIONS_SCHEMA_KEY = "#/definitions/AutocOptions"
+const QUERY_RESULT_SCHEMA_KEY = "#/definitions/AutocResultSet";
 
 export interface AutocResultSet {
   Query: string;
@@ -18,7 +19,7 @@ export interface AutocResult {
   typeDisp: string;    // "Equity"
 }
 
-interface AutocOptions {
+export interface AutocOptions {
   region?: number;      // 1
   lang?: string;        // "en"
 }
@@ -33,6 +34,8 @@ async function autoc(
   queryOptionsOverrides: AutocOptions = {},
   fetchOptions?: object
 ): Promise<AutocResultSet> {
+  validate(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'autoc');
+
   const queryOptions = {
     query,
     ...queryOptionsDefaults,
@@ -42,7 +45,7 @@ async function autoc(
   const result = await yahooFinanceFetch(QUERY_URL, queryOptions, fetchOptions);
 
   if (result.ResultSet) {
-    validate(result.ResultSet, QUERY_SCHEMA_KEY);
+    validate(result.ResultSet, QUERY_RESULT_SCHEMA_KEY);
     return result.ResultSet;
   }
 

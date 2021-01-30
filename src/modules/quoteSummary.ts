@@ -4,7 +4,8 @@ import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
 import validate from '../lib/validate';
 
 const QUERY_URL = 'https://query2.finance.yahoo.com/v10/finance/quoteSummary';
-const QUERY_SCHEMA_KEY = "#/definitions/QuoteSummaryResultOrig";
+const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/QuoteSummaryOptions'
+const QUERY_RESULT_SCHEMA_KEY = "#/definitions/QuoteSummaryResultOrig";
 
 /*
 const QUOTESUMMARY_MODULES = [
@@ -149,6 +150,8 @@ export default async function quoteSummary(
   queryOptionsOverrides: QuoteSummaryOptions = {},
   fetchOptions?: object
 ): Promise<QuoteSummaryResult> {
+  validate(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'quoteSummary');
+
   const queryOptions = {
     ...queryOptionsDefaults,
     ...queryOptionsOverrides
@@ -181,7 +184,7 @@ export default async function quoteSummary(
 
   const actualResult = qsResult.result[0];
 
-  validate(actualResult, QUERY_SCHEMA_KEY);
+  validate(actualResult, QUERY_RESULT_SCHEMA_KEY);
 
   for (let key of DATEFIELDS) {
     const value:number|undefined = dotProp.get(actualResult, key);

@@ -2,7 +2,8 @@ import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
 import validate from '../lib/validate';
 
 const QUERY_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
-const QUERY_SCHEMA_KEY = "#/definitions/SearchResultOrig";
+const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/SearchOptions';
+const QUERY_RESULT_SCHEMA_KEY = "#/definitions/SearchResultOrig";
 
 export interface SearchQuoteYahoo {
   exchange: string;        // "NYQ"
@@ -57,7 +58,7 @@ export interface SearchResult extends Omit<SearchResultOrig,'news'> {
   news: Array<SearchNews>;
 }
 
-interface SearchOptions {
+export interface SearchOptions {
   lang?: string;
   region?: string;
   quotesCount?: number;
@@ -90,6 +91,8 @@ async function search(
   queryOptionsOverrides: SearchOptions = {},
   fetchOptions?: object
 ): Promise<SearchResult> {
+  validate(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'search');
+
   const queryOptions = {
     q: query,
     ...queryOptionsDefaults,
@@ -97,7 +100,7 @@ async function search(
   };
 
   const result = await yahooFinanceFetch(QUERY_URL, queryOptions, fetchOptions);
-  validate(result, QUERY_SCHEMA_KEY);
+  validate(result, QUERY_RESULT_SCHEMA_KEY);
 
   for (let news of result.news)
     news.providerPublishTime = new Date(news.providerPublishTime * 1000);

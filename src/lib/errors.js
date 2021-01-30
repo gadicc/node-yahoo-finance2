@@ -1,4 +1,11 @@
-class BadRequestError extends Error {}
-class HTTPError extends Error {}
+class BadRequestError extends Error { name = "BadRequestError" }
+class HTTPError extends Error { name = "HTTPError" }
+class FailedYahooValidationError extends Error { name = "FailedYahooValidationError" }
+class InvalidOptionsError extends Error { name = "InvalidOptionsError" }
 
-module.exports = { BadRequestError, HTTPError };
+module.exports = {
+  BadRequestError,
+  HTTPError,
+  FailedYahooValidationError,
+  InvalidOptionsError,
+};

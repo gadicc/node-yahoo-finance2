@@ -30,7 +30,14 @@ function decodeArgs(stringArgs) {
 (async function() {
   const args = decodeArgs(argsAsStrings);
 
-  const result = await yahooFinance[moduleName](...args);
+  let result;
+  try {
+    result = await yahooFinance[moduleName](...args);
+  } catch (error) {
+    // No need for full stack trace for CLI scripts
+    console.error("Exiting with " + error.name + ": " + error.message);
+    process.exit(1);
+  }
 
   if (process.stdout.isTTY)
     console.dir(result, { depth: null, colors: true });

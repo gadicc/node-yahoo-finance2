@@ -1,6 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "AutocOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "lang": {
+          "type": "string"
+        },
+        "region": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
     "AutocResult": {
       "additionalProperties": false,
       "properties": {
@@ -49,6 +61,57 @@
       "required": [
         "Query",
         "Result"
+      ],
+      "type": "object"
+    },
+    "HistoricalOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "events": {
+          "type": "string"
+        },
+        "includeAdjustedClose": {
+          "type": "boolean"
+        },
+        "interval": {
+          "enum": [
+            "1d",
+            "1wk",
+            "1mo"
+          ],
+          "type": "string"
+        },
+        "period1": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "period1"
       ],
       "type": "object"
     },
@@ -535,6 +598,45 @@
         "providerPublishTime",
         "type"
       ],
+      "type": "object"
+    },
+    "SearchOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "enableCb": {
+          "type": "boolean"
+        },
+        "enableEnhancedTrivialQuery": {
+          "type": "boolean"
+        },
+        "enableFuzzyQuery": {
+          "type": "boolean"
+        },
+        "enableNavLinks": {
+          "type": "boolean"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "multiQuoteQueryId": {
+          "type": "string"
+        },
+        "newsCount": {
+          "type": "number"
+        },
+        "newsQueryId": {
+          "type": "string"
+        },
+        "quotesCount": {
+          "type": "number"
+        },
+        "quotesQueryId": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        }
+      },
       "type": "object"
     },
     "SearchQuoteNonYahoo": {

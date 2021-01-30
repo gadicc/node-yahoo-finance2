@@ -1,7 +1,0 @@
-describe('seach', () => {
-
-  it('passes :)', () => {
-
-  });
-
-});
