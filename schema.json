@@ -328,7 +328,7 @@
       ],
       "type": "object"
     },
-    "PriceOrig": {
+    "PriceJson": {
       "additionalProperties": false,
       "properties": {
         "averageDailyVolume10Day": {
@@ -523,14 +523,14 @@
       ],
       "type": "object"
     },
-    "QuoteSummaryResultOrig": {
+    "QuoteSummaryResultJson": {
       "additionalProperties": false,
       "properties": {
         "price": {
-          "$ref": "#/definitions/PriceOrig"
+          "$ref": "#/definitions/PriceJson"
         },
         "summaryDetail": {
-          "$ref": "#/definitions/SummaryDetailOrig"
+          "$ref": "#/definitions/SummaryDetailJson"
         }
       },
       "type": "object"
@@ -1052,7 +1052,7 @@
       ],
       "type": "object"
     },
-    "SummaryDetailOrig": {
+    "SummaryDetailJson": {
       "additionalProperties": false,
       "properties": {
         "algorithm": {
