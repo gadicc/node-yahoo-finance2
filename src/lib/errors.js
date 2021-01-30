@@ -1,11 +1,14 @@
-class BadRequestError extends Error { name = "BadRequestError" }
-class HTTPError extends Error { name = "HTTPError" }
-class FailedYahooValidationError extends Error { name = "FailedYahooValidationError" }
-class InvalidOptionsError extends Error { name = "InvalidOptionsError" }
+module.exports = {};
 
-module.exports = {
-  BadRequestError,
-  HTTPError,
-  FailedYahooValidationError,
-  InvalidOptionsError,
-};
+const errorNames = [
+  'BadRequestError',
+  'HTTPError',
+  'FailedYahooValidationError',
+  'InvalidOptionsError'
+];
+
+errorNames.forEach(name => {
+  // Support for the experimental syntax 'classProperties' isn't currently enabled (node 12.0.0)
+  module.exports[name] = class extends Error {};
+  module.exports[name].name = name;
+});
