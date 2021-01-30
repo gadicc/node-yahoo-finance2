@@ -8,12 +8,6 @@ const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/QuoteSummaryOptions'
 const QUERY_RESULT_SCHEMA_KEY = "#/definitions/QuoteSummaryResultOrig";
 
 /*
-const QUOTESUMMARY_MODULES = [
-  'summaryProfile', 'financialData', 'recommendationTrend',
-  'upgradeDowngradeHistory', 'earnings', 'price', 'summaryDetail',
-  'defaultKeyStatistics', 'calendarEvents'
-];
-
 const QUOTESUMMARY_DATEFIELDS = {
   summaryDetail: [ 'exDividendDate' ],
   calendarEvents: [ 'exDividendDate', 'dividendDate' ],
@@ -25,6 +19,43 @@ const QUOTESUMMARY_DATEFIELDS = {
   ]
 };
 */
+
+const quoteSummary_modules = [
+  'assetProfile',
+  'balanceSheetHistory',
+  'balanceSheetHistoryQuarterly',
+  'calendarEvents',
+  'cashflowStatementHistory',
+  'cashflowStatementHistoryQuarterly',
+  'defaultKeyStatistics',
+  'earnings',
+  'earningsHistory',
+  'earningsTrend',
+  'financialData',
+  'fundOwnership',
+  'fundPerformance',
+  'fundProfile',
+  'incomeStatementHistory',
+  'incomeStatementHistoryQuarterly',
+  'indexTrend',
+  'industryTrend',
+  'insiderHolders',
+  'insiderTransactions',
+  'institutionOwnership',
+  'majorDirectHolders',
+  'majorHoldersBreakdown',
+  'netSharePurchaseActivity',
+  'price',
+  'quoteType',
+  'recommendationTrend',
+  'secFilings',
+  'sectorTrend',
+  'summaryDetail',
+  'summaryProfile',
+  'symbol',
+  'topHoldings',
+  'upgradeDowngradeHistory',
+];
 
 const DATEFIELDS = [
   'summaryDetail.exDividendDate',
