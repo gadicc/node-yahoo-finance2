@@ -50,7 +50,7 @@ async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}, f
     console.error(url);
     const error = new errors.HTTPError(res.statusText);
     error.code = res.status;
-    throw new error;
+    throw error;
   }
 
   return result;
