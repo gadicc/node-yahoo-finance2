@@ -99,7 +99,7 @@ export interface BalanceSheetHistory {
 
 export interface BalanceSheetStatement {
   maxAge:                        number;
-  endDate:                       EndDate;
+  endDate:                       DateObj;
   cash:                          ExercisedValue;
   shortTermInvestments?:         ExercisedValue;
   netReceivables:                ExercisedValue;
@@ -131,12 +131,7 @@ export interface BalanceSheetStatement {
   capitalSurplus?:               ExercisedValue;
 }
 
-export interface EndDateJson {
-  raw: number;
-  fmt: string;
-}
-export interface EndDate {
-  date: Date;
+export interface DateObj {
   raw: number;
   fmt: string;
 }
@@ -165,7 +160,7 @@ export interface CashflowStatementHistory {
 
 export interface CashflowStatement {
   maxAge:                                number;
-  endDate:                               EndDate;
+  endDate:                               DateObj;
   netIncome:                             ExercisedValue;
   depreciation:                          ExercisedValue;
   changeToNetincome:                     ExercisedValue;
@@ -274,11 +269,11 @@ export interface EarningsHistory {
 
 export interface EarningsHistoryHistory {
   maxAge:          number;
-  epsActual:       EndDate;
-  epsEstimate:     EndDate;
-  epsDifference:   EndDate;
-  surprisePercent: EndDate;
-  quarter:         EndDate;
+  epsActual:       DateObj;
+  epsEstimate:     DateObj;
+  epsDifference:   DateObj;
+  surprisePercent: DateObj;
+  quarter:         DateObj;
   period:          string;
 }
 
@@ -291,7 +286,7 @@ export interface EarningsTrendTrend {
   maxAge:           number;
   period:           string;
   endDate:          Date | null;
-  growth:           EndDate;
+  growth:           DateObj;
   earningsEstimate: EarningsEstimate;
   revenueEstimate:  RevenueEstimate;
   epsTrend:         EpsTrend;
@@ -299,12 +294,12 @@ export interface EarningsTrendTrend {
 }
 
 export interface EarningsEstimate {
-  avg:              EndDate;
-  low:              EndDate;
-  high:             EndDate;
-  yearAgoEps:       EndDate;
+  avg:              DateObj;
+  low:              DateObj;
+  high:             DateObj;
+  yearAgoEps:       DateObj;
   numberOfAnalysts: ExercisedValue;
-  growth:           EndDate;
+  growth:           DateObj;
 }
 
 export interface EpsRevisions {
@@ -318,11 +313,11 @@ export interface DiscontinuedOperations {
 }
 
 export interface EpsTrend {
-  current:     EndDate;
-  "7daysAgo":  EndDate;
-  "30daysAgo": EndDate;
-  "60daysAgo": EndDate;
-  "90daysAgo": EndDate;
+  current:     DateObj;
+  "7daysAgo":  DateObj;
+  "30daysAgo": DateObj;
+  "60daysAgo": DateObj;
+  "90daysAgo": DateObj;
 }
 
 export interface RevenueEstimate {
@@ -331,7 +326,7 @@ export interface RevenueEstimate {
   high:             ExercisedValue;
   numberOfAnalysts: ExercisedValue;
   yearAgoRevenue:   ExercisedValue;
-  growth:           EndDate;
+  growth:           DateObj;
 }
 
 export interface FinancialData {
@@ -374,9 +369,9 @@ export interface Ownership {
 
 export interface OwnershipList {
   maxAge:       number;
-  reportDate:   EndDate;
+  reportDate:   DateObj;
   organization: string;
-  pctHeld:      EndDate;
+  pctHeld:      DateObj;
   position:     ExercisedValue;
   value:        ExercisedValue;
 }
@@ -388,7 +383,7 @@ export interface IncomeStatementHistory {
 
 export interface IncomeStatementHistoryElement {
   maxAge:                            number;
-  endDate:                           EndDate;
+  endDate:                           DateObj;
   totalRevenue:                      ExercisedValue;
   costOfRevenue:                     ExercisedValue;
   grossProfit:                       ExercisedValue;
@@ -443,11 +438,11 @@ export interface Holder {
   relation:               Relation;
   url:                    string;
   transactionDescription: string;
-  latestTransDate:        EndDate;
+  latestTransDate:        DateObj;
   positionDirect?:        ExercisedValue;
-  positionDirectDate?:    EndDate;
+  positionDirectDate?:    DateObj;
   positionIndirect?:      ExercisedValue;
-  positionIndirectDate?:  EndDate;
+  positionIndirectDate?:  DateObj;
 }
 
 export enum Relation {
@@ -478,7 +473,7 @@ export interface Transaction {
   filerName:       string;
   filerRelation:   Relation;
   moneyText:       string;
-  startDate:       EndDate;
+  startDate:       DateObj;
   ownership:       OwnershipEnum;
   value?:          ExercisedValue;
 }

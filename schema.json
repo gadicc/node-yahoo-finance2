@@ -210,7 +210,7 @@
           "$ref": "#/definitions/ExercisedValue"
         },
         "endDate": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "goodWill": {
           "$ref": "#/definitions/ExercisedValue"
@@ -400,7 +400,7 @@
           "$ref": "#/definitions/ExercisedValue"
         },
         "endDate": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "investments": {
           "$ref": "#/definitions/ExercisedValue"
@@ -510,6 +510,22 @@
         "title",
         "exercisedValue",
         "unexercisedValue"
+      ],
+      "type": "object"
+    },
+    "DateObj": {
+      "additionalProperties": false,
+      "properties": {
+        "fmt": {
+          "type": "string"
+        },
+        "raw": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "raw",
+        "fmt"
       ],
       "type": "object"
     },
@@ -718,22 +734,22 @@
       "additionalProperties": false,
       "properties": {
         "avg": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "growth": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "high": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "low": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "numberOfAnalysts": {
           "$ref": "#/definitions/ExercisedValue"
         },
         "yearAgoEps": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         }
       },
       "required": [
@@ -769,13 +785,13 @@
       "additionalProperties": false,
       "properties": {
         "epsActual": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "epsDifference": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "epsEstimate": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "maxAge": {
           "type": "number"
@@ -784,10 +800,10 @@
           "type": "string"
         },
         "quarter": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "surprisePercent": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         }
       },
       "required": [
@@ -844,7 +860,7 @@
           "$ref": "#/definitions/EpsTrend"
         },
         "growth": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "maxAge": {
           "type": "number"
@@ -865,43 +881,6 @@
         "revenueEstimate",
         "epsTrend",
         "epsRevisions"
-      ],
-      "type": "object"
-    },
-    "EndDate": {
-      "additionalProperties": false,
-      "properties": {
-        "date": {
-          "format": "date-time",
-          "type": "string"
-        },
-        "fmt": {
-          "type": "string"
-        },
-        "raw": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "date",
-        "raw",
-        "fmt"
-      ],
-      "type": "object"
-    },
-    "EndDateJson": {
-      "additionalProperties": false,
-      "properties": {
-        "fmt": {
-          "type": "string"
-        },
-        "raw": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "raw",
-        "fmt"
       ],
       "type": "object"
     },
@@ -933,19 +912,19 @@
       "additionalProperties": false,
       "properties": {
         "30daysAgo": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "60daysAgo": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "7daysAgo": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "90daysAgo": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "current": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         }
       },
       "required": [
@@ -1309,7 +1288,7 @@
       "additionalProperties": false,
       "properties": {
         "latestTransDate": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "maxAge": {
           "type": "number"
@@ -1321,13 +1300,13 @@
           "$ref": "#/definitions/ExercisedValue"
         },
         "positionDirectDate": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "positionIndirect": {
           "$ref": "#/definitions/ExercisedValue"
         },
         "positionIndirectDate": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "relation": {
           "$ref": "#/definitions/Relation"
@@ -1403,7 +1382,7 @@
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "endDate": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "extraordinaryItems": {
           "$ref": "#/definitions/DiscontinuedOperations"
@@ -1658,13 +1637,13 @@
           "type": "string"
         },
         "pctHeld": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "position": {
           "$ref": "#/definitions/ExercisedValue"
         },
         "reportDate": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "value": {
           "$ref": "#/definitions/ExercisedValue"
@@ -2398,7 +2377,7 @@
           "$ref": "#/definitions/ExercisedValue"
         },
         "growth": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "high": {
           "$ref": "#/definitions/ExercisedValue"
@@ -3207,7 +3186,7 @@
           "$ref": "#/definitions/ExercisedValue"
         },
         "startDate": {
-          "$ref": "#/definitions/EndDate"
+          "$ref": "#/definitions/DateObj"
         },
         "transactionText": {
           "type": "string"
