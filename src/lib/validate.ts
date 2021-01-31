@@ -27,8 +27,8 @@ function validate(object: object, key: string, module?: string): void {
 
     const title = encodeURIComponent("Failed validation: " + key);
     console.error("The following result did not validate with schema: " + key);
-    logObj(object);
     logObj(validator.errors);
+    logObj(object);
     console.error("You should handle occassional errors in your code, however if ");
     console.error("this happens every time, probably Yahoo have changed their API ");
     console.error("and node-yahoo-finance2 needs to be updated.  Please see if ");
@@ -44,7 +44,7 @@ function validate(object: object, key: string, module?: string): void {
   } else /* if (type === 'options') */ {
 
     console.error(`[yahooFinance.${module}] Invalid options ("${key}")`);
-    logObj({ input: object, errors: validator.errors });
+    logObj({ errors: validator.errors, input: object });
     throw new InvalidOptionsError(`yahooFinance.${module} called with invalid options.`);
 
   }
