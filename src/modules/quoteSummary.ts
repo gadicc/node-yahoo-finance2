@@ -180,7 +180,12 @@ export const quoteSummary_dateFields = {
   },
 };
 
-export function transformDate(input:any, format:string) {
+type DateObj = { [key: string]: any; raw: number; }
+type ObjectWithDate = { [key: string]: any, date: Date };
+export function transformDate(input:DateObj, format:string): ObjectWithDate;
+export function transformDate(input:any, format:string): Date;
+
+export function transformDate(input:any, format:string): Date|ObjectWithDate {
   if (format === 'epoch') {
     if (typeof input !== 'number')
       throw new Error("convertDate(input, format), format=epoch but typeof input !== 'number'");
