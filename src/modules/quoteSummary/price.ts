@@ -1,3 +1,4 @@
+/*
 export interface PriceJson {
   maxAge: number;                       // 1,
   preMarketSource: string;              // 'FREE_REALTIME',   TODO | allvalues
@@ -42,3 +43,4 @@ export interface Price extends Omit<PriceJson,'preMarketTime'|'postMarketTime'|'
   postMarketTime: Date;
   regularMarketTime: Date;
 }
+*/

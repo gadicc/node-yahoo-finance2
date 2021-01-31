@@ -1,6 +1,111 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "Action": {
+      "enum": [
+        "down",
+        "init",
+        "main",
+        "reit",
+        "up"
+      ],
+      "type": "string"
+    },
+    "AssetProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "auditRisk": {
+          "type": "number"
+        },
+        "boardRisk": {
+          "type": "number"
+        },
+        "city": {
+          "type": "string"
+        },
+        "companyOfficers": {
+          "items": {
+            "$ref": "#/definitions/CompanyOfficer"
+          },
+          "type": "array"
+        },
+        "compensationAsOfEpochDate": {
+          "type": "number"
+        },
+        "compensationRisk": {
+          "type": "number"
+        },
+        "country": {
+          "type": "string"
+        },
+        "fax": {
+          "type": "string"
+        },
+        "fullTimeEmployees": {
+          "type": "number"
+        },
+        "governanceEpochDate": {
+          "type": "number"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "longBusinessSummary": {
+          "type": "string"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "overallRisk": {
+          "type": "number"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "shareHolderRightsRisk": {
+          "type": "number"
+        },
+        "state": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "address1",
+        "city",
+        "zip",
+        "country",
+        "phone",
+        "website",
+        "industry",
+        "sector",
+        "longBusinessSummary",
+        "fullTimeEmployees",
+        "companyOfficers",
+        "auditRisk",
+        "boardRisk",
+        "compensationRisk",
+        "shareHolderRightsRisk",
+        "overallRisk",
+        "governanceEpochDate",
+        "maxAge"
+      ],
+      "type": "object"
+    },
     "AutocOptions": {
       "additionalProperties": false,
       "properties": {
@@ -63,6 +168,1049 @@
         "Result"
       ],
       "type": "object"
+    },
+    "BalanceSheetHistory": {
+      "additionalProperties": false,
+      "properties": {
+        "balanceSheetStatements": {
+          "items": {
+            "$ref": "#/definitions/BalanceSheetStatement"
+          },
+          "type": "array"
+        },
+        "maxAge": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "balanceSheetStatements",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "BalanceSheetStatement": {
+      "additionalProperties": false,
+      "properties": {
+        "accountsPayable": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "capitalSurplus": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "cash": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "commonStock": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "deferredLongTermAssetCharges": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "deferredLongTermLiab": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "endDate": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "goodWill": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "intangibleAssets": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "inventory": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "longTermDebt": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "longTermInvestments": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "minorityInterest": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "netReceivables": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "netTangibleAssets": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "otherAssets": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "otherCurrentAssets": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "otherCurrentLiab": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "otherLiab": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "otherStockholderEquity": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "propertyPlantEquipment": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "retainedEarnings": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "shortLongTermDebt": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "shortTermInvestments": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "totalAssets": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "totalCurrentAssets": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "totalCurrentLiabilities": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "totalLiab": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "totalStockholderEquity": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "treasuryStock": {
+          "$ref": "#/definitions/ExercisedValue"
+        }
+      },
+      "required": [
+        "maxAge",
+        "endDate",
+        "cash",
+        "netReceivables",
+        "inventory",
+        "otherCurrentAssets",
+        "totalCurrentAssets",
+        "longTermInvestments",
+        "propertyPlantEquipment",
+        "otherAssets",
+        "totalAssets",
+        "accountsPayable",
+        "otherCurrentLiab",
+        "longTermDebt",
+        "otherLiab",
+        "totalCurrentLiabilities",
+        "totalLiab",
+        "retainedEarnings",
+        "treasuryStock",
+        "otherStockholderEquity",
+        "totalStockholderEquity",
+        "netTangibleAssets"
+      ],
+      "type": "object"
+    },
+    "CalendarEvents": {
+      "additionalProperties": false,
+      "properties": {
+        "dividendDate": {
+          "type": "number"
+        },
+        "earnings": {
+          "$ref": "#/definitions/CalendarEventsEarnings"
+        },
+        "exDividendDate": {
+          "type": "number"
+        },
+        "maxAge": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "maxAge",
+        "earnings"
+      ],
+      "type": "object"
+    },
+    "CalendarEventsEarnings": {
+      "additionalProperties": false,
+      "properties": {
+        "earningsAverage": {
+          "type": "number"
+        },
+        "earningsDate": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "earningsHigh": {
+          "type": "number"
+        },
+        "earningsLow": {
+          "type": "number"
+        },
+        "revenueAverage": {
+          "type": "number"
+        },
+        "revenueHigh": {
+          "type": "number"
+        },
+        "revenueLow": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "earningsDate"
+      ],
+      "type": "object"
+    },
+    "CashflowStatement": {
+      "additionalProperties": false,
+      "properties": {
+        "capitalExpenditures": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "changeInCash": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "changeToAccountReceivables": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "changeToInventory": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "changeToLiabilities": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "changeToNetincome": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "changeToOperatingActivities": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "depreciation": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "dividendsPaid": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "effectOfExchangeRate": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "endDate": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "investments": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "issuanceOfStock": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "netBorrowings": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "netIncome": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "otherCashflowsFromFinancingActivities": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "otherCashflowsFromInvestingActivities": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "repurchaseOfStock": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "totalCashFromFinancingActivities": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "totalCashFromOperatingActivities": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "totalCashflowsFromInvestingActivities": {
+          "$ref": "#/definitions/ExercisedValue"
+        }
+      },
+      "required": [
+        "maxAge",
+        "endDate",
+        "netIncome",
+        "depreciation",
+        "changeToNetincome",
+        "changeToLiabilities",
+        "totalCashFromOperatingActivities",
+        "capitalExpenditures",
+        "otherCashflowsFromInvestingActivities",
+        "totalCashflowsFromInvestingActivities",
+        "netBorrowings",
+        "otherCashflowsFromFinancingActivities",
+        "totalCashFromFinancingActivities",
+        "changeInCash"
+      ],
+      "type": "object"
+    },
+    "CashflowStatementHistory": {
+      "additionalProperties": false,
+      "properties": {
+        "cashflowStatements": {
+          "items": {
+            "$ref": "#/definitions/CashflowStatement"
+          },
+          "type": "array"
+        },
+        "maxAge": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "cashflowStatements",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "CompanyOfficer": {
+      "additionalProperties": false,
+      "properties": {
+        "age": {
+          "type": "number"
+        },
+        "exercisedValue": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "fiscalYear": {
+          "type": "number"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "totalPay": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "unexercisedValue": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "yearBorn": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "maxAge",
+        "name",
+        "title",
+        "exercisedValue",
+        "unexercisedValue"
+      ],
+      "type": "object"
+    },
+    "DefaultKeyStatistics": {
+      "additionalProperties": false,
+      "properties": {
+        "52WeekChange": {
+          "type": "number"
+        },
+        "SandP52WeekChange": {
+          "type": "number"
+        },
+        "beta": {
+          "type": "number"
+        },
+        "bookValue": {
+          "type": "number"
+        },
+        "category": {
+          "type": "null"
+        },
+        "dateShortInterest": {
+          "type": "number"
+        },
+        "earningsQuarterlyGrowth": {
+          "type": "number"
+        },
+        "enterpriseToEbitda": {
+          "type": "number"
+        },
+        "enterpriseToRevenue": {
+          "type": "number"
+        },
+        "enterpriseValue": {
+          "type": "number"
+        },
+        "floatShares": {
+          "type": "number"
+        },
+        "forwardEps": {
+          "type": "number"
+        },
+        "forwardPE": {
+          "type": "number"
+        },
+        "fundFamily": {
+          "type": "null"
+        },
+        "heldPercentInsiders": {
+          "type": "number"
+        },
+        "heldPercentInstitutions": {
+          "type": "number"
+        },
+        "lastDividendDate": {
+          "type": "number"
+        },
+        "lastDividendValue": {
+          "type": "number"
+        },
+        "lastFiscalYearEnd": {
+          "type": "number"
+        },
+        "lastSplitDate": {
+          "type": "number"
+        },
+        "lastSplitFactor": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "legalType": {
+          "type": "null"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "mostRecentQuarter": {
+          "type": "number"
+        },
+        "netIncomeToCommon": {
+          "type": "number"
+        },
+        "nextFiscalYearEnd": {
+          "type": "number"
+        },
+        "pegRatio": {
+          "type": "number"
+        },
+        "priceHint": {
+          "type": "number"
+        },
+        "priceToBook": {
+          "type": "number"
+        },
+        "profitMargins": {
+          "type": "number"
+        },
+        "sharesOutstanding": {
+          "type": "number"
+        },
+        "sharesPercentSharesOut": {
+          "type": "number"
+        },
+        "sharesShort": {
+          "type": "number"
+        },
+        "sharesShortPreviousMonthDate": {
+          "type": "number"
+        },
+        "sharesShortPriorMonth": {
+          "type": "number"
+        },
+        "shortPercentOfFloat": {
+          "type": "number"
+        },
+        "shortRatio": {
+          "type": "number"
+        },
+        "trailingEps": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "maxAge",
+        "priceHint",
+        "enterpriseValue",
+        "profitMargins",
+        "floatShares",
+        "sharesOutstanding",
+        "heldPercentInsiders",
+        "heldPercentInstitutions",
+        "beta",
+        "category",
+        "bookValue",
+        "priceToBook",
+        "fundFamily",
+        "legalType",
+        "lastFiscalYearEnd",
+        "nextFiscalYearEnd",
+        "mostRecentQuarter",
+        "trailingEps",
+        "lastSplitFactor",
+        "52WeekChange",
+        "SandP52WeekChange"
+      ],
+      "type": "object"
+    },
+    "DiscontinuedOperations": {
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "EarningsChart": {
+      "additionalProperties": false,
+      "properties": {
+        "currentQuarterEstimate": {
+          "type": "number"
+        },
+        "currentQuarterEstimateDate": {
+          "type": "string"
+        },
+        "currentQuarterEstimateYear": {
+          "type": "number"
+        },
+        "earningsDate": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "quarterly": {
+          "items": {
+            "$ref": "#/definitions/EarningsChartQuarterly"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "quarterly",
+        "earningsDate"
+      ],
+      "type": "object"
+    },
+    "EarningsChartQuarterly": {
+      "additionalProperties": false,
+      "properties": {
+        "actual": {
+          "type": "number"
+        },
+        "date": {
+          "type": "string"
+        },
+        "estimate": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "date",
+        "actual",
+        "estimate"
+      ],
+      "type": "object"
+    },
+    "EarningsEstimate": {
+      "additionalProperties": false,
+      "properties": {
+        "avg": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "growth": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "high": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "low": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "numberOfAnalysts": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "yearAgoEps": {
+          "$ref": "#/definitions/EndDate"
+        }
+      },
+      "required": [
+        "avg",
+        "low",
+        "high",
+        "yearAgoEps",
+        "numberOfAnalysts",
+        "growth"
+      ],
+      "type": "object"
+    },
+    "EarningsHistory": {
+      "additionalProperties": false,
+      "properties": {
+        "history": {
+          "items": {
+            "$ref": "#/definitions/EarningsHistoryHistory"
+          },
+          "type": "array"
+        },
+        "maxAge": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "history",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "EarningsHistoryHistory": {
+      "additionalProperties": false,
+      "properties": {
+        "epsActual": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "epsDifference": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "epsEstimate": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "period": {
+          "type": "string"
+        },
+        "quarter": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "surprisePercent": {
+          "$ref": "#/definitions/EndDate"
+        }
+      },
+      "required": [
+        "maxAge",
+        "epsActual",
+        "epsEstimate",
+        "epsDifference",
+        "surprisePercent",
+        "quarter",
+        "period"
+      ],
+      "type": "object"
+    },
+    "EarningsTrend": {
+      "additionalProperties": false,
+      "properties": {
+        "maxAge": {
+          "type": "number"
+        },
+        "trend": {
+          "items": {
+            "$ref": "#/definitions/EarningsTrendTrend"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "trend",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "EarningsTrendTrend": {
+      "additionalProperties": false,
+      "properties": {
+        "earningsEstimate": {
+          "$ref": "#/definitions/EarningsEstimate"
+        },
+        "endDate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "epsRevisions": {
+          "$ref": "#/definitions/EpsRevisions"
+        },
+        "epsTrend": {
+          "$ref": "#/definitions/EpsTrend"
+        },
+        "growth": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "period": {
+          "type": "string"
+        },
+        "revenueEstimate": {
+          "$ref": "#/definitions/RevenueEstimate"
+        }
+      },
+      "required": [
+        "maxAge",
+        "period",
+        "endDate",
+        "growth",
+        "earningsEstimate",
+        "revenueEstimate",
+        "epsTrend",
+        "epsRevisions"
+      ],
+      "type": "object"
+    },
+    "EndDate": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "fmt": {
+          "type": "string"
+        },
+        "raw": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "date",
+        "raw",
+        "fmt"
+      ],
+      "type": "object"
+    },
+    "EndDateJson": {
+      "additionalProperties": false,
+      "properties": {
+        "fmt": {
+          "type": "string"
+        },
+        "raw": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "raw",
+        "fmt"
+      ],
+      "type": "object"
+    },
+    "EpsRevisions": {
+      "additionalProperties": false,
+      "properties": {
+        "downLast30days": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "downLast90days": {
+          "$ref": "#/definitions/DiscontinuedOperations"
+        },
+        "upLast30days": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "upLast7days": {
+          "$ref": "#/definitions/ExercisedValue"
+        }
+      },
+      "required": [
+        "upLast7days",
+        "upLast30days",
+        "downLast30days",
+        "downLast90days"
+      ],
+      "type": "object"
+    },
+    "EpsTrend": {
+      "additionalProperties": false,
+      "properties": {
+        "30daysAgo": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "60daysAgo": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "7daysAgo": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "90daysAgo": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "current": {
+          "$ref": "#/definitions/EndDate"
+        }
+      },
+      "required": [
+        "current",
+        "7daysAgo",
+        "30daysAgo",
+        "60daysAgo",
+        "90daysAgo"
+      ],
+      "type": "object"
+    },
+    "Estimate": {
+      "additionalProperties": false,
+      "properties": {
+        "growth": {
+          "type": "number"
+        },
+        "period": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "ExercisedValue": {
+      "additionalProperties": false,
+      "properties": {
+        "fmt": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "longFmt": {
+          "type": "string"
+        },
+        "raw": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "Filing": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "edgarUrl": {
+          "type": "string"
+        },
+        "epochDate": {
+          "type": "number"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/Type"
+        }
+      },
+      "required": [
+        "date",
+        "epochDate",
+        "type",
+        "title",
+        "edgarUrl",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "FinancialData": {
+      "additionalProperties": false,
+      "properties": {
+        "currentPrice": {
+          "type": "number"
+        },
+        "currentRatio": {
+          "type": "number"
+        },
+        "debtToEquity": {
+          "type": "number"
+        },
+        "earningsGrowth": {
+          "type": "number"
+        },
+        "ebitda": {
+          "type": "number"
+        },
+        "ebitdaMargins": {
+          "type": "number"
+        },
+        "financialCurrency": {
+          "type": "string"
+        },
+        "freeCashflow": {
+          "type": "number"
+        },
+        "grossMargins": {
+          "type": "number"
+        },
+        "grossProfits": {
+          "type": "number"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "numberOfAnalystOpinions": {
+          "type": "number"
+        },
+        "operatingCashflow": {
+          "type": "number"
+        },
+        "operatingMargins": {
+          "type": "number"
+        },
+        "profitMargins": {
+          "type": "number"
+        },
+        "quickRatio": {
+          "type": "number"
+        },
+        "recommendationKey": {
+          "type": "string"
+        },
+        "recommendationMean": {
+          "type": "number"
+        },
+        "returnOnAssets": {
+          "type": "number"
+        },
+        "returnOnEquity": {
+          "type": "number"
+        },
+        "revenueGrowth": {
+          "type": "number"
+        },
+        "revenuePerShare": {
+          "type": "number"
+        },
+        "targetHighPrice": {
+          "type": "number"
+        },
+        "targetLowPrice": {
+          "type": "number"
+        },
+        "targetMeanPrice": {
+          "type": "number"
+        },
+        "targetMedianPrice": {
+          "type": "number"
+        },
+        "totalCash": {
+          "type": "number"
+        },
+        "totalCashPerShare": {
+          "type": "number"
+        },
+        "totalDebt": {
+          "type": "number"
+        },
+        "totalRevenue": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "maxAge",
+        "currentPrice",
+        "targetHighPrice",
+        "targetLowPrice",
+        "targetMeanPrice",
+        "targetMedianPrice",
+        "recommendationKey",
+        "numberOfAnalystOpinions",
+        "quickRatio",
+        "currentRatio",
+        "debtToEquity",
+        "returnOnAssets",
+        "returnOnEquity",
+        "grossProfits",
+        "revenueGrowth",
+        "grossMargins",
+        "ebitdaMargins",
+        "operatingMargins",
+        "profitMargins",
+        "financialCurrency"
+      ],
+      "type": "object"
+    },
+    "FinancialsChart": {
+      "additionalProperties": false,
+      "properties": {
+        "quarterly": {
+          "items": {
+            "$ref": "#/definitions/FinancialsChartQuarterly"
+          },
+          "type": "array"
+        },
+        "yearly": {
+          "items": {
+            "$ref": "#/definitions/Yearly"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "yearly",
+        "quarterly"
+      ],
+      "type": "object"
+    },
+    "FinancialsChartQuarterly": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "earnings": {
+          "type": "number"
+        },
+        "revenue": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "date",
+        "revenue",
+        "earnings"
+      ],
+      "type": "object"
+    },
+    "Grade": {
+      "enum": [
+        "Accumulate",
+        "Buy",
+        "",
+        "Equal-Weight",
+        "Equal-weight",
+        "Long-term Buy",
+        "Hold",
+        "Long-Term Buy",
+        "Market Outperform",
+        "Market Perform",
+        "Negative",
+        "Neutral",
+        "Outperform",
+        "Overweight",
+        "Perform",
+        "Positive",
+        "Reduce",
+        "Sector Outperform",
+        "Sector Perform",
+        "Sector Weight",
+        "Sell",
+        "Strong Buy",
+        "Underperform",
+        "Underweight"
+      ],
+      "type": "string"
     },
     "HistoricalOptions": {
       "additionalProperties": false,
@@ -157,6 +1305,381 @@
       ],
       "type": "object"
     },
+    "Holder": {
+      "additionalProperties": false,
+      "properties": {
+        "latestTransDate": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "positionDirect": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "positionDirectDate": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "positionIndirect": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "positionIndirectDate": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "relation": {
+          "$ref": "#/definitions/Relation"
+        },
+        "transactionDescription": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "maxAge",
+        "name",
+        "relation",
+        "url",
+        "transactionDescription",
+        "latestTransDate"
+      ],
+      "type": "object"
+    },
+    "Holders": {
+      "additionalProperties": false,
+      "properties": {
+        "holders": {
+          "items": {
+            "$ref": "#/definitions/Holder"
+          },
+          "type": "array"
+        },
+        "maxAge": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "holders",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "IncomeStatementHistory": {
+      "additionalProperties": false,
+      "properties": {
+        "incomeStatementHistory": {
+          "items": {
+            "$ref": "#/definitions/IncomeStatementHistoryElement"
+          },
+          "type": "array"
+        },
+        "maxAge": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "incomeStatementHistory",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "IncomeStatementHistoryElement": {
+      "additionalProperties": false,
+      "properties": {
+        "costOfRevenue": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "discontinuedOperations": {
+          "$ref": "#/definitions/DiscontinuedOperations"
+        },
+        "ebit": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "effectOfAccountingCharges": {
+          "$ref": "#/definitions/DiscontinuedOperations"
+        },
+        "endDate": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "extraordinaryItems": {
+          "$ref": "#/definitions/DiscontinuedOperations"
+        },
+        "grossProfit": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "incomeBeforeTax": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "incomeTaxExpense": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "interestExpense": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "minorityInterest": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "netIncome": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "netIncomeApplicableToCommonShares": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "netIncomeFromContinuingOps": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "nonRecurring": {
+          "$ref": "#/definitions/DiscontinuedOperations"
+        },
+        "operatingIncome": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "otherItems": {
+          "$ref": "#/definitions/DiscontinuedOperations"
+        },
+        "otherOperatingExpenses": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "researchDevelopment": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "sellingGeneralAdministrative": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "totalOperatingExpenses": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "totalOtherIncomeExpenseNet": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "totalRevenue": {
+          "$ref": "#/definitions/ExercisedValue"
+        }
+      },
+      "required": [
+        "maxAge",
+        "endDate",
+        "totalRevenue",
+        "costOfRevenue",
+        "grossProfit",
+        "researchDevelopment",
+        "sellingGeneralAdministrative",
+        "nonRecurring",
+        "otherOperatingExpenses",
+        "totalOperatingExpenses",
+        "operatingIncome",
+        "totalOtherIncomeExpenseNet",
+        "ebit",
+        "interestExpense",
+        "incomeBeforeTax",
+        "incomeTaxExpense",
+        "minorityInterest",
+        "netIncomeFromContinuingOps",
+        "discontinuedOperations",
+        "extraordinaryItems",
+        "effectOfAccountingCharges",
+        "otherItems",
+        "netIncome",
+        "netIncomeApplicableToCommonShares"
+      ],
+      "type": "object"
+    },
+    "IndexTrend": {
+      "additionalProperties": false,
+      "properties": {
+        "estimates": {
+          "items": {
+            "$ref": "#/definitions/Estimate"
+          },
+          "type": "array"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "peRatio": {
+          "type": "number"
+        },
+        "pegRatio": {
+          "type": "number"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "maxAge",
+        "symbol",
+        "peRatio",
+        "pegRatio",
+        "estimates"
+      ],
+      "type": "object"
+    },
+    "InsiderTransactions": {
+      "additionalProperties": false,
+      "properties": {
+        "maxAge": {
+          "type": "number"
+        },
+        "transactions": {
+          "items": {
+            "$ref": "#/definitions/Transaction"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "transactions",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "MajorHoldersBreakdown": {
+      "additionalProperties": false,
+      "properties": {
+        "insidersPercentHeld": {
+          "type": "number"
+        },
+        "institutionsCount": {
+          "type": "number"
+        },
+        "institutionsFloatPercentHeld": {
+          "type": "number"
+        },
+        "institutionsPercentHeld": {
+          "type": "number"
+        },
+        "maxAge": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "maxAge",
+        "insidersPercentHeld",
+        "institutionsPercentHeld",
+        "institutionsFloatPercentHeld",
+        "institutionsCount"
+      ],
+      "type": "object"
+    },
+    "NetSharePurchaseActivity": {
+      "additionalProperties": false,
+      "properties": {
+        "buyInfoCount": {
+          "type": "number"
+        },
+        "buyInfoShares": {
+          "type": "number"
+        },
+        "buyPercentInsiderShares": {
+          "type": "number"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "netInfoCount": {
+          "type": "number"
+        },
+        "netInfoShares": {
+          "type": "number"
+        },
+        "netPercentInsiderShares": {
+          "type": "number"
+        },
+        "period": {
+          "type": "string"
+        },
+        "sellInfoCount": {
+          "type": "number"
+        },
+        "sellInfoShares": {
+          "type": "number"
+        },
+        "sellPercentInsiderShares": {
+          "type": "number"
+        },
+        "totalInsiderShares": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "maxAge",
+        "period",
+        "buyInfoCount",
+        "buyInfoShares",
+        "sellInfoCount",
+        "netInfoCount",
+        "netInfoShares",
+        "netPercentInsiderShares",
+        "totalInsiderShares"
+      ],
+      "type": "object"
+    },
+    "Ownership": {
+      "additionalProperties": false,
+      "properties": {
+        "maxAge": {
+          "type": "number"
+        },
+        "ownershipList": {
+          "items": {
+            "$ref": "#/definitions/OwnershipList"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "maxAge",
+        "ownershipList"
+      ],
+      "type": "object"
+    },
+    "OwnershipEnum": {
+      "enum": [
+        "D",
+        "I"
+      ],
+      "type": "string"
+    },
+    "OwnershipList": {
+      "additionalProperties": false,
+      "properties": {
+        "maxAge": {
+          "type": "number"
+        },
+        "organization": {
+          "type": "string"
+        },
+        "pctHeld": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "position": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "reportDate": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "value": {
+          "$ref": "#/definitions/ExercisedValue"
+        }
+      },
+      "required": [
+        "maxAge",
+        "reportDate",
+        "organization",
+        "pctHeld",
+        "position",
+        "value"
+      ],
+      "type": "object"
+    },
     "Price": {
       "additionalProperties": false,
       "properties": {
@@ -182,19 +1705,16 @@
           "type": "string"
         },
         "fromCurrency": {
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": "null"
         },
         "lastMarket": {
+          "type": "null"
+        },
+        "longName": {
           "type": [
             "null",
             "string"
           ]
-        },
-        "longName": {
-          "type": "string"
         },
         "marketCap": {
           "type": "number"
@@ -275,21 +1795,13 @@
           "type": "string"
         },
         "toCurrency": {
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": "null"
         },
         "underlyingSymbol": {
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": "null"
         }
       },
       "required": [
-        "averageDailyVolume10Day",
-        "averageDailyVolume3Month",
         "currency",
         "currencySymbol",
         "exchange",
@@ -298,16 +1810,8 @@
         "fromCurrency",
         "lastMarket",
         "longName",
-        "marketCap",
         "marketState",
         "maxAge",
-        "postMarketChange",
-        "postMarketChangePercent",
-        "postMarketPrice",
-        "postMarketSource",
-        "postMarketTime",
-        "preMarketSource",
-        "preMarketTime",
         "priceHint",
         "quoteSourceName",
         "quoteType",
@@ -319,7 +1823,6 @@
         "regularMarketPreviousClose",
         "regularMarketPrice",
         "regularMarketSource",
-        "regularMarketTime",
         "regularMarketVolume",
         "shortName",
         "symbol",
@@ -353,19 +1856,16 @@
           "type": "string"
         },
         "fromCurrency": {
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": "null"
         },
         "lastMarket": {
+          "type": "null"
+        },
+        "longName": {
           "type": [
             "null",
             "string"
           ]
-        },
-        "longName": {
-          "type": "string"
         },
         "marketCap": {
           "type": "number"
@@ -389,10 +1889,19 @@
           "type": "string"
         },
         "postMarketTime": {
-          "type": "number"
+          "type": [
+            "number",
+            "string"
+          ]
         },
         "preMarketSource": {
           "type": "string"
+        },
+        "preMarketTime": {
+          "type": [
+            "number",
+            "string"
+          ]
         },
         "priceHint": {
           "type": "number"
@@ -428,7 +1937,10 @@
           "type": "string"
         },
         "regularMarketTime": {
-          "type": "number"
+          "type": [
+            "number",
+            "string"
+          ]
         },
         "regularMarketVolume": {
           "type": "number"
@@ -440,26 +1952,14 @@
           "type": "string"
         },
         "toCurrency": {
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": "null"
         },
         "underlyingSymbol": {
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": "null"
         }
       },
       "required": [
         "maxAge",
-        "preMarketSource",
-        "postMarketChangePercent",
-        "postMarketChange",
-        "postMarketTime",
-        "postMarketPrice",
-        "postMarketSource",
         "regularMarketChangePercent",
         "regularMarketChange",
         "regularMarketTime",
@@ -468,8 +1968,6 @@
         "regularMarketDayHigh",
         "regularMarketDayLow",
         "regularMarketVolume",
-        "averageDailyVolume10Day",
-        "averageDailyVolume3Month",
         "regularMarketPreviousClose",
         "regularMarketSource",
         "regularMarketOpen",
@@ -487,8 +1985,31 @@
         "currencySymbol",
         "fromCurrency",
         "toCurrency",
-        "lastMarket",
-        "marketCap"
+        "lastMarket"
+      ],
+      "type": "object"
+    },
+    "QuoteSummaryEarnings": {
+      "additionalProperties": false,
+      "properties": {
+        "earningsChart": {
+          "$ref": "#/definitions/EarningsChart"
+        },
+        "financialCurrency": {
+          "type": "string"
+        },
+        "financialsChart": {
+          "$ref": "#/definitions/FinancialsChart"
+        },
+        "maxAge": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "maxAge",
+        "earningsChart",
+        "financialsChart",
+        "financialCurrency"
       ],
       "type": "object"
     },
@@ -500,6 +2021,42 @@
         },
         "modules": {
           "items": {
+            "enum": [
+              "assetProfile",
+              "balanceSheetHistory",
+              "balanceSheetHistoryQuarterly",
+              "calendarEvents",
+              "cashflowStatementHistory",
+              "cashflowStatementHistoryQuarterly",
+              "defaultKeyStatistics",
+              "earnings",
+              "earningsHistory",
+              "earningsTrend",
+              "financialData",
+              "fundOwnership",
+              "fundPerformance",
+              "fundProfile",
+              "incomeStatementHistory",
+              "incomeStatementHistoryQuarterly",
+              "indexTrend",
+              "industryTrend",
+              "insiderHolders",
+              "insiderTransactions",
+              "institutionOwnership",
+              "majorDirectHolders",
+              "majorHoldersBreakdown",
+              "netSharePurchaseActivity",
+              "price",
+              "quoteType",
+              "recommendationTrend",
+              "secFilings",
+              "sectorTrend",
+              "summaryDetail",
+              "summaryProfile",
+              "symbol",
+              "topHoldings",
+              "upgradeDowngradeHistory"
+            ],
             "type": "string"
           },
           "type": "array"
@@ -510,29 +2067,379 @@
     "QuoteSummaryResult": {
       "additionalProperties": false,
       "properties": {
+        "assetProfile": {
+          "$ref": "#/definitions/AssetProfile"
+        },
+        "balanceSheetHistory": {
+          "$ref": "#/definitions/BalanceSheetHistory"
+        },
+        "balanceSheetHistoryQuarterly": {
+          "$ref": "#/definitions/BalanceSheetHistory"
+        },
+        "calendarEvents": {
+          "$ref": "#/definitions/CalendarEvents"
+        },
+        "cashflowStatementHistory": {
+          "$ref": "#/definitions/CashflowStatementHistory"
+        },
+        "cashflowStatementHistoryQuarterly": {
+          "$ref": "#/definitions/CashflowStatementHistory"
+        },
+        "defaultKeyStatistics": {
+          "$ref": "#/definitions/DefaultKeyStatistics"
+        },
+        "earnings": {
+          "$ref": "#/definitions/QuoteSummaryEarnings"
+        },
+        "earningsHistory": {
+          "$ref": "#/definitions/EarningsHistory"
+        },
+        "earningsTrend": {
+          "$ref": "#/definitions/EarningsTrend"
+        },
+        "financialData": {
+          "$ref": "#/definitions/FinancialData"
+        },
+        "fundOwnership": {
+          "$ref": "#/definitions/Ownership"
+        },
+        "incomeStatementHistory": {
+          "$ref": "#/definitions/IncomeStatementHistory"
+        },
+        "incomeStatementHistoryQuarterly": {
+          "$ref": "#/definitions/IncomeStatementHistory"
+        },
+        "indexTrend": {
+          "$ref": "#/definitions/IndexTrend"
+        },
+        "industryTrend": {
+          "$ref": "#/definitions/Trend"
+        },
+        "insiderHolders": {
+          "$ref": "#/definitions/Holders"
+        },
+        "insiderTransactions": {
+          "$ref": "#/definitions/InsiderTransactions"
+        },
+        "institutionOwnership": {
+          "$ref": "#/definitions/Ownership"
+        },
+        "majorDirectHolders": {
+          "$ref": "#/definitions/Holders"
+        },
+        "majorHoldersBreakdown": {
+          "$ref": "#/definitions/MajorHoldersBreakdown"
+        },
+        "netSharePurchaseActivity": {
+          "$ref": "#/definitions/NetSharePurchaseActivity"
+        },
         "price": {
           "$ref": "#/definitions/Price"
         },
+        "quoteType": {
+          "$ref": "#/definitions/QuoteType"
+        },
+        "recommendationTrend": {
+          "$ref": "#/definitions/RecommendationTrend"
+        },
+        "secFilings": {
+          "$ref": "#/definitions/SECFilings"
+        },
+        "sectorTrend": {
+          "$ref": "#/definitions/Trend"
+        },
         "summaryDetail": {
           "$ref": "#/definitions/SummaryDetail"
+        },
+        "summaryProfile": {
+          "$ref": "#/definitions/SummaryProfile"
+        },
+        "upgradeDowngradeHistory": {
+          "$ref": "#/definitions/UpgradeDowngradeHistory"
         }
       },
       "required": [
-        "summaryDetail",
-        "price"
+        "price",
+        "summaryDetail"
       ],
       "type": "object"
     },
     "QuoteSummaryResultJson": {
       "additionalProperties": false,
       "properties": {
+        "assetProfile": {
+          "$ref": "#/definitions/AssetProfile"
+        },
+        "balanceSheetHistory": {
+          "$ref": "#/definitions/BalanceSheetHistory"
+        },
+        "balanceSheetHistoryQuarterly": {
+          "$ref": "#/definitions/BalanceSheetHistory"
+        },
+        "calendarEvents": {
+          "$ref": "#/definitions/CalendarEvents"
+        },
+        "cashflowStatementHistory": {
+          "$ref": "#/definitions/CashflowStatementHistory"
+        },
+        "cashflowStatementHistoryQuarterly": {
+          "$ref": "#/definitions/CashflowStatementHistory"
+        },
+        "defaultKeyStatistics": {
+          "$ref": "#/definitions/DefaultKeyStatistics"
+        },
+        "earnings": {
+          "$ref": "#/definitions/QuoteSummaryEarnings"
+        },
+        "earningsHistory": {
+          "$ref": "#/definitions/EarningsHistory"
+        },
+        "earningsTrend": {
+          "$ref": "#/definitions/EarningsTrend"
+        },
+        "financialData": {
+          "$ref": "#/definitions/FinancialData"
+        },
+        "fundOwnership": {
+          "$ref": "#/definitions/Ownership"
+        },
+        "incomeStatementHistory": {
+          "$ref": "#/definitions/IncomeStatementHistory"
+        },
+        "incomeStatementHistoryQuarterly": {
+          "$ref": "#/definitions/IncomeStatementHistory"
+        },
+        "indexTrend": {
+          "$ref": "#/definitions/IndexTrend"
+        },
+        "industryTrend": {
+          "$ref": "#/definitions/Trend"
+        },
+        "insiderHolders": {
+          "$ref": "#/definitions/Holders"
+        },
+        "insiderTransactions": {
+          "$ref": "#/definitions/InsiderTransactions"
+        },
+        "institutionOwnership": {
+          "$ref": "#/definitions/Ownership"
+        },
+        "majorDirectHolders": {
+          "$ref": "#/definitions/Holders"
+        },
+        "majorHoldersBreakdown": {
+          "$ref": "#/definitions/MajorHoldersBreakdown"
+        },
+        "netSharePurchaseActivity": {
+          "$ref": "#/definitions/NetSharePurchaseActivity"
+        },
         "price": {
           "$ref": "#/definitions/PriceJson"
         },
+        "quoteType": {
+          "$ref": "#/definitions/QuoteType"
+        },
+        "recommendationTrend": {
+          "$ref": "#/definitions/RecommendationTrend"
+        },
+        "secFilings": {
+          "$ref": "#/definitions/SECFilings"
+        },
+        "sectorTrend": {
+          "$ref": "#/definitions/Trend"
+        },
         "summaryDetail": {
           "$ref": "#/definitions/SummaryDetailJson"
+        },
+        "summaryProfile": {
+          "$ref": "#/definitions/SummaryProfile"
+        },
+        "upgradeDowngradeHistory": {
+          "$ref": "#/definitions/UpgradeDowngradeHistory"
         }
       },
+      "type": "object"
+    },
+    "QuoteType": {
+      "additionalProperties": false,
+      "properties": {
+        "exchange": {
+          "type": "string"
+        },
+        "firstTradeDateEpochUtc": {
+          "type": "number"
+        },
+        "gmtOffSetMilliseconds": {
+          "type": "number"
+        },
+        "longName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "messageBoardId": {
+          "type": "string"
+        },
+        "quoteType": {
+          "type": "string"
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "timeZoneFullName": {
+          "type": "string"
+        },
+        "timeZoneShortName": {
+          "type": "string"
+        },
+        "underlyingSymbol": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "exchange",
+        "quoteType",
+        "symbol",
+        "underlyingSymbol",
+        "shortName",
+        "longName",
+        "firstTradeDateEpochUtc",
+        "timeZoneFullName",
+        "timeZoneShortName",
+        "uuid",
+        "messageBoardId",
+        "gmtOffSetMilliseconds",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "RecommendationTrend": {
+      "additionalProperties": false,
+      "properties": {
+        "maxAge": {
+          "type": "number"
+        },
+        "trend": {
+          "items": {
+            "$ref": "#/definitions/RecommendationTrendTrend"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "trend",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "RecommendationTrendTrend": {
+      "additionalProperties": false,
+      "properties": {
+        "buy": {
+          "type": "number"
+        },
+        "hold": {
+          "type": "number"
+        },
+        "period": {
+          "type": "string"
+        },
+        "sell": {
+          "type": "number"
+        },
+        "strongBuy": {
+          "type": "number"
+        },
+        "strongSell": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "period",
+        "strongBuy",
+        "buy",
+        "hold",
+        "sell",
+        "strongSell"
+      ],
+      "type": "object"
+    },
+    "Relation": {
+      "enum": [
+        "Chairman of the Board",
+        "Chief Executive Officer",
+        "Chief Financial Officer",
+        "Chief Operating Officer",
+        "Chief Technology Officer",
+        "Director",
+        "Director (Independent)",
+        "",
+        "General Counsel",
+        "Independent Non-Executive Director",
+        "Officer",
+        "President"
+      ],
+      "type": "string"
+    },
+    "RevenueEstimate": {
+      "additionalProperties": false,
+      "properties": {
+        "avg": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "growth": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "high": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "low": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "numberOfAnalysts": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "yearAgoRevenue": {
+          "$ref": "#/definitions/ExercisedValue"
+        }
+      },
+      "required": [
+        "avg",
+        "low",
+        "high",
+        "numberOfAnalysts",
+        "yearAgoRevenue",
+        "growth"
+      ],
+      "type": "object"
+    },
+    "SECFilings": {
+      "additionalProperties": false,
+      "properties": {
+        "filings": {
+          "items": {
+            "$ref": "#/definitions/Filing"
+          },
+          "type": "array"
+        },
+        "maxAge": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "filings",
+        "maxAge"
+      ],
       "type": "object"
     },
     "SearchNews": {
@@ -891,6 +2798,7 @@
       "additionalProperties": false,
       "properties": {
         "algorithm": {
+          "type": "null"
         },
         "ask": {
           "type": "number"
@@ -905,6 +2813,9 @@
           "type": "number"
         },
         "averageVolume10days": {
+          "type": "number"
+        },
+        "beta": {
           "type": "number"
         },
         "bid": {
@@ -948,8 +2859,10 @@
           "type": "number"
         },
         "fromCurrency": {
+          "type": "null"
         },
         "lastMarket": {
+          "type": "null"
         },
         "marketCap": {
           "type": "number"
@@ -988,6 +2901,7 @@
           "type": "number"
         },
         "toCurrency": {
+          "type": "null"
         },
         "tradeable": {
           "type": "boolean"
@@ -1020,23 +2934,15 @@
         "currency",
         "dayHigh",
         "dayLow",
-        "dividendRate",
-        "dividendYield",
-        "exDividendDate",
         "fiftyDayAverage",
         "fiftyTwoWeekHigh",
         "fiftyTwoWeekLow",
-        "fiveYearAvgDividendYield",
-        "forwardPE",
         "fromCurrency",
         "lastMarket",
-        "marketCap",
         "maxAge",
         "open",
-        "payoutRatio",
         "previousClose",
         "priceHint",
-        "priceToSalesTrailing12Months",
         "regularMarketDayHigh",
         "regularMarketDayLow",
         "regularMarketOpen",
@@ -1044,9 +2950,6 @@
         "regularMarketVolume",
         "toCurrency",
         "tradeable",
-        "trailingAnnualDividendRate",
-        "trailingAnnualDividendYield",
-        "trailingPE",
         "twoHundredDayAverage",
         "volume"
       ],
@@ -1056,6 +2959,7 @@
       "additionalProperties": false,
       "properties": {
         "algorithm": {
+          "type": "null"
         },
         "ask": {
           "type": "number"
@@ -1070,6 +2974,9 @@
           "type": "number"
         },
         "averageVolume10days": {
+          "type": "number"
+        },
+        "beta": {
           "type": "number"
         },
         "bid": {
@@ -1112,8 +3019,10 @@
           "type": "number"
         },
         "fromCurrency": {
+          "type": "null"
         },
         "lastMarket": {
+          "type": "null"
         },
         "marketCap": {
           "type": "number"
@@ -1152,6 +3061,7 @@
           "type": "number"
         },
         "toCurrency": {
+          "type": "null"
         },
         "tradeable": {
           "type": "boolean"
@@ -1183,13 +3093,6 @@
         "regularMarketOpen",
         "regularMarketDayLow",
         "regularMarketDayHigh",
-        "dividendRate",
-        "dividendYield",
-        "exDividendDate",
-        "payoutRatio",
-        "fiveYearAvgDividendYield",
-        "trailingPE",
-        "forwardPE",
         "volume",
         "regularMarketVolume",
         "averageVolume",
@@ -1199,20 +3102,227 @@
         "ask",
         "bidSize",
         "askSize",
-        "marketCap",
         "fiftyTwoWeekLow",
         "fiftyTwoWeekHigh",
-        "priceToSalesTrailing12Months",
         "fiftyDayAverage",
         "twoHundredDayAverage",
-        "trailingAnnualDividendRate",
-        "trailingAnnualDividendYield",
         "currency",
         "fromCurrency",
         "toCurrency",
         "lastMarket",
         "algorithm",
         "tradeable"
+      ],
+      "type": "object"
+    },
+    "SummaryProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "companyOfficers": {
+          "items": {
+          },
+          "type": "array"
+        },
+        "country": {
+          "type": "string"
+        },
+        "fax": {
+          "type": "string"
+        },
+        "fullTimeEmployees": {
+          "type": "number"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "longBusinessSummary": {
+          "type": "string"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "address1",
+        "city",
+        "zip",
+        "country",
+        "phone",
+        "website",
+        "industry",
+        "sector",
+        "longBusinessSummary",
+        "fullTimeEmployees",
+        "companyOfficers",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "Transaction": {
+      "additionalProperties": false,
+      "properties": {
+        "filerName": {
+          "type": "string"
+        },
+        "filerRelation": {
+          "$ref": "#/definitions/Relation"
+        },
+        "filerUrl": {
+          "type": "string"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "moneyText": {
+          "type": "string"
+        },
+        "ownership": {
+          "$ref": "#/definitions/OwnershipEnum"
+        },
+        "shares": {
+          "$ref": "#/definitions/ExercisedValue"
+        },
+        "startDate": {
+          "$ref": "#/definitions/EndDate"
+        },
+        "transactionText": {
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/ExercisedValue"
+        }
+      },
+      "required": [
+        "maxAge",
+        "shares",
+        "filerUrl",
+        "transactionText",
+        "filerName",
+        "filerRelation",
+        "moneyText",
+        "startDate",
+        "ownership"
+      ],
+      "type": "object"
+    },
+    "Trend": {
+      "additionalProperties": false,
+      "properties": {
+        "estimates": {
+          "items": {
+          },
+          "type": "array"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "symbol": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "maxAge",
+        "symbol",
+        "estimates"
+      ],
+      "type": "object"
+    },
+    "Type": {
+      "enum": [
+        "10-K",
+        "10-Q",
+        "8-K"
+      ],
+      "type": "string"
+    },
+    "UpgradeDowngradeHistory": {
+      "additionalProperties": false,
+      "properties": {
+        "history": {
+          "items": {
+            "$ref": "#/definitions/UpgradeDowngradeHistoryHistory"
+          },
+          "type": "array"
+        },
+        "maxAge": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "history",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "UpgradeDowngradeHistoryHistory": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "$ref": "#/definitions/Action"
+        },
+        "epochGradeDate": {
+          "type": "number"
+        },
+        "firm": {
+          "type": "string"
+        },
+        "fromGrade": {
+          "$ref": "#/definitions/Grade"
+        },
+        "toGrade": {
+          "$ref": "#/definitions/Grade"
+        }
+      },
+      "required": [
+        "epochGradeDate",
+        "firm",
+        "toGrade",
+        "fromGrade",
+        "action"
+      ],
+      "type": "object"
+    },
+    "Yearly": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "type": "number"
+        },
+        "earnings": {
+          "type": "number"
+        },
+        "revenue": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "date",
+        "revenue",
+        "earnings"
       ],
       "type": "object"
     }

@@ -1,3 +1,4 @@
+/*
 export interface SummaryDetailJson {
   maxAge: number;                       // 1,
   priceHint: number;                    // 2,
@@ -44,3 +45,4 @@ export interface SummaryDetailJson {
 export interface SummaryDetail extends Omit<SummaryDetailJson,'exDividendDate'> {
   exDividendDate: Date;                 // Date(1611286342 * 1000)
 }
+*/
