@@ -6,7 +6,7 @@ const schema = require('../../schema.json');
 const pkg = require('../../package.json');
 import { InvalidOptionsError, FailedYahooValidationError } from './errors';
 
-const ajv = new Ajv();
+const ajv = new Ajv({ allowUnionTypes: true });
 addFormats(ajv);
 
 ajv.addSchema(schema);
