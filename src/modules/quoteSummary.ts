@@ -1,9 +1,6 @@
 import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
 import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
 
-//import { SummaryDetail, SummaryDetailJson } from './quoteSummary/summaryDetail';
-//import { Price, PriceJson } from './quoteSummary/price';
-
 // /// <reference path="quoteSummary.d.ts"/>
 // import QuoteSummaryResult from "QuoteSummaryIfaces";
 import { QuoteSummaryResult } from './quoteSummary.d';
