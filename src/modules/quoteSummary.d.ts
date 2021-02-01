@@ -8,6 +8,7 @@
  *  1) Spaces: 4 to 2
  *  ~~2) Wrapped in a module~~ <--- undid this after tooling issues.
  *  3) Alphabeticalize QuoteSummaryResult
+ *  4) RawNumberObj type, and transforms: result, resultJson.
  */
 
 export interface QuoteSummaryResultJson {
@@ -64,7 +65,7 @@ export interface AssetProfileJson {
   sector:                     string;
   longBusinessSummary:        string;
   fullTimeEmployees:          number;
-  companyOfficers:            CompanyOfficer[];
+  companyOfficers:            CompanyOfficerJson[];
   auditRisk:                  number;
   boardRisk:                  number;
   compensationRisk:           number;
@@ -76,12 +77,14 @@ export interface AssetProfileJson {
   address2?:                  string;
   fax?:                       string;
 }
-export interface AssetProfile extends Omit<AssetProfileJson,"governanceEpochDate"|"compensationAsOfEpochDate"> {
+export interface AssetProfile extends Omit<AssetProfileJson,
+"governanceEpochDate"|"compensationAsOfEpochDate"|"companyOfficers"> {
   governanceEpochDate:        Date;
   compensationAsOfEpochDate?: Date;
+  companyOfficers:            CompanyOfficer[];
 }
 
-export interface CompanyOfficer {
+export interface CompanyOfficerJson {
   maxAge:            number;
   name:              string;
   age?:              number;
@@ -91,6 +94,11 @@ export interface CompanyOfficer {
   totalPay?:         RawNumberObj;
   exercisedValue?:   RawNumberObj;
   unexercisedValue?: RawNumberObj;
+}
+export interface CompanyOfficer extends Omit<CompanyOfficerJson,"totalPay"|"exercisedValue"|"unexercisedValue"> {
+  totalPay?:         number|null;
+  exercisedValue?:   number|null;
+  unexercisedValue?: number|null;
 }
 
 export interface BalanceSheetHistory {

@@ -92,6 +92,13 @@ export const fieldTransformMap = {
   assetProfile: {
     governanceEpochDate: 'epoch',
     compensationAsOfEpochDate: 'epoch',
+    companyOfficers: [
+      {
+        totalPay: "rawNumberObj",
+        exercisedValue: "rawNumberObj",
+        unexercisedValue: "rawNumberObj",
+      }
+    ]
   },
   balanceSheetHistory: {
     balanceSheetStatements: [ { endDate: 'dateObj' } ],

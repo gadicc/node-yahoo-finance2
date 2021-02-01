@@ -128,7 +128,7 @@
         },
         "companyOfficers": {
           "items": {
-            "$ref": "#/definitions/CompanyOfficer"
+            "$ref": "#/definitions/CompanyOfficerJson"
           },
           "type": "array"
         },
@@ -571,6 +571,53 @@
       "type": "object"
     },
     "CompanyOfficer": {
+      "additionalProperties": false,
+      "properties": {
+        "age": {
+          "type": "number"
+        },
+        "exercisedValue": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "fiscalYear": {
+          "type": "number"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "totalPay": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unexercisedValue": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "yearBorn": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "maxAge",
+        "name",
+        "title"
+      ],
+      "type": "object"
+    },
+    "CompanyOfficerJson": {
       "additionalProperties": false,
       "properties": {
         "age": {

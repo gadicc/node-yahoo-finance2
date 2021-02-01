@@ -36,8 +36,11 @@ const formats: {[key:string]:Function} = {
   rawNumberObj(input: { raw: number; fmt?: string }) {
     if (typeof input !== 'object')
       throw new Error("transformField(input, format), format=rawNumberObj but typeof input !== 'object'");
-    if (typeof input.raw !== 'number')
+    if (typeof input.raw !== 'number') {
+      if (Object.keys(input).length === 0)
+        return null;
       throw new Error("transformField(input, format), format=rawNumberObj but typeof input.raw !== 'number'");
+    }
     return input.raw;
   },
 
