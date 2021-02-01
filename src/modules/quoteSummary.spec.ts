@@ -95,7 +95,6 @@ describe('quoteSummary', () => {
 
     });
 
-    /*
     describe('earningsTrend', () => {
 
       it('validates', async () => {
@@ -104,7 +103,6 @@ describe('quoteSummary', () => {
       });
 
     });
-    */
 
     describe('financialData', () => {
 
@@ -241,7 +239,6 @@ describe('quoteSummary', () => {
 
     });
 
-    /*
     describe('secFilings', () => {
 
       it('validates', async () => {
@@ -250,7 +247,6 @@ describe('quoteSummary', () => {
       });
 
     });
-    */
 
     describe('summaryDetail', () => {
 

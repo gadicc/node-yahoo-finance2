@@ -27,7 +27,7 @@ const formats: {[key:string]:Function} = {
   ISODate(input: string) {
     // 2021-02-05T00:00:00.000Z
     if (typeof input !== 'string')
-      throw new Error("transformField(input, format), format=ISODate but typeof input !== 'string'");
+      throw new Error("transformField(input, format), format=ISODate but typeof input !== 'string', got: " + JSON.stringify(input));
     if (!input.match(/^\d{4,4}-\d{2,2}-\d{2,2}T\d{2,2}:\d{2,2}:\d{2,2}\.\d{3,3}Z/))
       throw new Error("transformField(input, format), format=ISODate but got input " + input);
     return new Date(input);

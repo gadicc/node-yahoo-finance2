@@ -36,6 +36,103 @@
           "type": "array"
         },
         "compensationAsOfEpochDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "compensationRisk": {
+          "type": "number"
+        },
+        "country": {
+          "type": "string"
+        },
+        "fax": {
+          "type": "string"
+        },
+        "fullTimeEmployees": {
+          "type": "number"
+        },
+        "governanceEpochDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "longBusinessSummary": {
+          "type": "string"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "overallRisk": {
+          "type": "number"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "shareHolderRightsRisk": {
+          "type": "number"
+        },
+        "state": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "address1",
+        "auditRisk",
+        "boardRisk",
+        "city",
+        "companyOfficers",
+        "compensationRisk",
+        "country",
+        "fullTimeEmployees",
+        "governanceEpochDate",
+        "industry",
+        "longBusinessSummary",
+        "maxAge",
+        "overallRisk",
+        "phone",
+        "sector",
+        "shareHolderRightsRisk",
+        "website",
+        "zip"
+      ],
+      "type": "object"
+    },
+    "AssetProfileJson": {
+      "additionalProperties": false,
+      "properties": {
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "auditRisk": {
+          "type": "number"
+        },
+        "boardRisk": {
+          "type": "number"
+        },
+        "city": {
+          "type": "string"
+        },
+        "companyOfficers": {
+          "items": {
+            "$ref": "#/definitions/CompanyOfficer"
+          },
+          "type": "array"
+        },
+        "compensationAsOfEpochDate": {
           "type": "number"
         },
         "compensationRisk": {
@@ -192,97 +289,97 @@
       "additionalProperties": false,
       "properties": {
         "accountsPayable": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "capitalSurplus": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "cash": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "commonStock": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "deferredLongTermAssetCharges": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "deferredLongTermLiab": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "endDate": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "goodWill": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "intangibleAssets": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "inventory": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "longTermDebt": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "longTermInvestments": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "maxAge": {
           "type": "number"
         },
         "minorityInterest": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "netReceivables": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "netTangibleAssets": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "otherAssets": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "otherCurrentAssets": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "otherCurrentLiab": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "otherLiab": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "otherStockholderEquity": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "propertyPlantEquipment": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "retainedEarnings": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "shortLongTermDebt": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "shortTermInvestments": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "totalAssets": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "totalCurrentAssets": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "totalCurrentLiabilities": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "totalLiab": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "totalStockholderEquity": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "treasuryStock": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         }
       },
       "required": [
@@ -370,70 +467,70 @@
       "additionalProperties": false,
       "properties": {
         "capitalExpenditures": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "changeInCash": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "changeToAccountReceivables": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "changeToInventory": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "changeToLiabilities": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "changeToNetincome": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "changeToOperatingActivities": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "depreciation": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "dividendsPaid": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "effectOfExchangeRate": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "endDate": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "investments": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "issuanceOfStock": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "maxAge": {
           "type": "number"
         },
         "netBorrowings": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "netIncome": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "otherCashflowsFromFinancingActivities": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "otherCashflowsFromInvestingActivities": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "repurchaseOfStock": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "totalCashFromFinancingActivities": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "totalCashFromOperatingActivities": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "totalCashflowsFromInvestingActivities": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         }
       },
       "required": [
@@ -480,7 +577,7 @@
           "type": "number"
         },
         "exercisedValue": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "fiscalYear": {
           "type": "number"
@@ -495,10 +592,10 @@
           "type": "string"
         },
         "totalPay": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "unexercisedValue": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "yearBorn": {
           "type": "number"
@@ -507,25 +604,7 @@
       "required": [
         "maxAge",
         "name",
-        "title",
-        "exercisedValue",
-        "unexercisedValue"
-      ],
-      "type": "object"
-    },
-    "DateObj": {
-      "additionalProperties": false,
-      "properties": {
-        "fmt": {
-          "type": "string"
-        },
-        "raw": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "raw",
-        "fmt"
+        "title"
       ],
       "type": "object"
     },
@@ -734,22 +813,22 @@
       "additionalProperties": false,
       "properties": {
         "avg": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "growth": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "high": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "low": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "numberOfAnalysts": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "yearAgoEps": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         }
       },
       "required": [
@@ -785,13 +864,13 @@
       "additionalProperties": false,
       "properties": {
         "epsActual": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "epsDifference": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "epsEstimate": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "maxAge": {
           "type": "number"
@@ -800,10 +879,10 @@
           "type": "string"
         },
         "quarter": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "surprisePercent": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         }
       },
       "required": [
@@ -831,6 +910,25 @@
         }
       },
       "required": [
+        "maxAge",
+        "trend"
+      ],
+      "type": "object"
+    },
+    "EarningsTrendJson": {
+      "additionalProperties": false,
+      "properties": {
+        "maxAge": {
+          "type": "number"
+        },
+        "trend": {
+          "items": {
+            "$ref": "#/definitions/EarningsTrendTrendJson"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
         "trend",
         "maxAge"
       ],
@@ -843,14 +941,50 @@
           "$ref": "#/definitions/EarningsEstimate"
         },
         "endDate": {
-          "anyOf": [
-            {
-              "format": "date-time",
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
+          "format": "date-time",
+          "type": "string"
+        },
+        "epsRevisions": {
+          "$ref": "#/definitions/EpsRevisions"
+        },
+        "epsTrend": {
+          "$ref": "#/definitions/EpsTrend"
+        },
+        "growth": {
+          "$ref": "#/definitions/RawNumberObj"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "period": {
+          "type": "string"
+        },
+        "revenueEstimate": {
+          "$ref": "#/definitions/RevenueEstimate"
+        }
+      },
+      "required": [
+        "earningsEstimate",
+        "endDate",
+        "epsRevisions",
+        "epsTrend",
+        "growth",
+        "maxAge",
+        "period",
+        "revenueEstimate"
+      ],
+      "type": "object"
+    },
+    "EarningsTrendTrendJson": {
+      "additionalProperties": false,
+      "properties": {
+        "earningsEstimate": {
+          "$ref": "#/definitions/EarningsEstimate"
+        },
+        "endDate": {
+          "type": [
+            "string",
+            "null"
           ]
         },
         "epsRevisions": {
@@ -860,7 +994,7 @@
           "$ref": "#/definitions/EpsTrend"
         },
         "growth": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "maxAge": {
           "type": "number"
@@ -888,16 +1022,16 @@
       "additionalProperties": false,
       "properties": {
         "downLast30days": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "downLast90days": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "upLast30days": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "upLast7days": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         }
       },
       "required": [
@@ -912,19 +1046,19 @@
       "additionalProperties": false,
       "properties": {
         "30daysAgo": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "60daysAgo": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "7daysAgo": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "90daysAgo": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "current": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         }
       },
       "required": [
@@ -951,29 +1085,54 @@
       ],
       "type": "object"
     },
-    "ExercisedValue": {
-      "additionalProperties": false,
-      "properties": {
-        "fmt": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "longFmt": {
-          "type": "string"
-        },
-        "raw": {
-          "type": "number"
-        }
-      },
-      "type": "object"
-    },
     "Filing": {
       "additionalProperties": false,
       "properties": {
         "date": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {
+            "length": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "length"
+          ],
+          "type": "object"
+        },
+        "edgarUrl": {
+          "type": "string"
+        },
+        "epochDate": {
           "format": "date-time",
+          "type": "string"
+        },
+        "maxAge": {
+          "type": "number"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/Type"
+        }
+      },
+      "required": [
+        "date",
+        "edgarUrl",
+        "epochDate",
+        "maxAge",
+        "title",
+        "type"
+      ],
+      "type": "object"
+    },
+    "FilingJson": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
           "type": "string"
         },
         "edgarUrl": {
@@ -1288,7 +1447,7 @@
       "additionalProperties": false,
       "properties": {
         "latestTransDate": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "maxAge": {
           "type": "number"
@@ -1297,16 +1456,16 @@
           "type": "string"
         },
         "positionDirect": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "positionDirectDate": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "positionIndirect": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "positionIndirectDate": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "relation": {
           "$ref": "#/definitions/Relation"
@@ -1370,76 +1529,76 @@
       "additionalProperties": false,
       "properties": {
         "costOfRevenue": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "discontinuedOperations": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "ebit": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "effectOfAccountingCharges": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "endDate": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "extraordinaryItems": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "grossProfit": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "incomeBeforeTax": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "incomeTaxExpense": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "interestExpense": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "maxAge": {
           "type": "number"
         },
         "minorityInterest": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "netIncome": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "netIncomeApplicableToCommonShares": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "netIncomeFromContinuingOps": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "nonRecurring": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "operatingIncome": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "otherItems": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "otherOperatingExpenses": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "researchDevelopment": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "sellingGeneralAdministrative": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "totalOperatingExpenses": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "totalOtherIncomeExpenseNet": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "totalRevenue": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         }
       },
       "required": [
@@ -1637,16 +1796,16 @@
           "type": "string"
         },
         "pctHeld": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "position": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "reportDate": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "value": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         }
       },
       "required": [
@@ -2047,7 +2206,7 @@
       "additionalProperties": false,
       "properties": {
         "assetProfile": {
-          "$ref": "#/definitions/AssetProfile"
+          "$ref": "#/definitions/AssetProfileJson"
         },
         "balanceSheetHistory": {
           "$ref": "#/definitions/BalanceSheetHistory"
@@ -2147,7 +2306,7 @@
       "additionalProperties": false,
       "properties": {
         "assetProfile": {
-          "$ref": "#/definitions/AssetProfile"
+          "$ref": "#/definitions/AssetProfileJson"
         },
         "balanceSheetHistory": {
           "$ref": "#/definitions/BalanceSheetHistory"
@@ -2174,7 +2333,7 @@
           "$ref": "#/definitions/EarningsHistory"
         },
         "earningsTrend": {
-          "$ref": "#/definitions/EarningsTrend"
+          "$ref": "#/definitions/EarningsTrendJson"
         },
         "financialData": {
           "$ref": "#/definitions/FinancialData"
@@ -2222,7 +2381,7 @@
           "$ref": "#/definitions/RecommendationTrend"
         },
         "secFilings": {
-          "$ref": "#/definitions/SECFilings"
+          "$ref": "#/definitions/SECFilingsJson"
         },
         "sectorTrend": {
           "$ref": "#/definitions/Trend"
@@ -2302,6 +2461,24 @@
       ],
       "type": "object"
     },
+    "RawNumberObj": {
+      "additionalProperties": false,
+      "properties": {
+        "fmt": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "longFmt": {
+          "type": "string"
+        },
+        "raw": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
     "RecommendationTrend": {
       "additionalProperties": false,
       "properties": {
@@ -2374,22 +2551,22 @@
       "additionalProperties": false,
       "properties": {
         "avg": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "growth": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "high": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "low": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "numberOfAnalysts": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "yearAgoRevenue": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         }
       },
       "required": [
@@ -2408,6 +2585,25 @@
         "filings": {
           "items": {
             "$ref": "#/definitions/Filing"
+          },
+          "type": "array"
+        },
+        "maxAge": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "filings",
+        "maxAge"
+      ],
+      "type": "object"
+    },
+    "SECFilingsJson": {
+      "additionalProperties": false,
+      "properties": {
+        "filings": {
+          "items": {
+            "$ref": "#/definitions/FilingJson"
           },
           "type": "array"
         },
@@ -3183,16 +3379,16 @@
           "$ref": "#/definitions/OwnershipEnum"
         },
         "shares": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "startDate": {
-          "$ref": "#/definitions/DateObj"
+          "$ref": "#/definitions/RawNumberObj"
         },
         "transactionText": {
           "type": "string"
         },
         "value": {
-          "$ref": "#/definitions/ExercisedValue"
+          "$ref": "#/definitions/RawNumberObj"
         }
       },
       "required": [

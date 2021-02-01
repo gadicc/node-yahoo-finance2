@@ -1,7 +1,7 @@
-import dotProp = require('dot-prop');
-
 import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
 import validate from '../lib/validate';
+import transformField from '../lib/transformField';
+import mutateJson from '../lib/mutateJson';
 
 //import { SummaryDetail, SummaryDetailJson } from './quoteSummary/summaryDetail';
 //import { Price, PriceJson } from './quoteSummary/price';
@@ -88,7 +88,7 @@ type QuoteSummaryModules =
   "upgradeDowngradeHistory"
 ;
 
-export const quoteSummary_dateFields = {
+export const fieldTransformMap = {
   assetProfile: {
     governanceEpochDate: 'epoch',
     compensationAsOfEpochDate: 'epoch',
@@ -161,7 +161,7 @@ export const quoteSummary_dateFields = {
     firstTradeDateEpochUtc: 'epoch',
   },
   summaryDetail: {
-    exDividendDate: 'ISODate'  // not epoch like calendarEvents.exDividendDate
+    exDividendDate: 'epoch|ISODate'  // not epoch like calendarEvents.exDividendDate
   },
   upgradeDowngradeHistory: {
     history: {
@@ -169,14 +169,14 @@ export const quoteSummary_dateFields = {
     }
   },
   price: {
-    // these were num??  auto detecgt??  XXX TODO
     postMarketTime: 'epoch|ISODate',
     preMarketTime: 'epoch|ISODate',
     regularMarketTime: 'epoch|ISODate',
   },
   secFilings: {
     // "date": "2021-01-28", "epochDate": 1611831743
-    filings: [ 'objWithEpochDate' ]
+    // TODO filings: [ 'objWithEpochDate' ],
+    filings: [ { epochDate: 'epoch' } ],
   },
 };
 
@@ -242,6 +242,8 @@ export default async function quoteSummary(
 
   // useful to comment this out when working on new modules
   validate(actualResult, QUERY_RESULT_SCHEMA_KEY);
+
+  mutateJson(actualResult, fieldTransformMap, transformField);
 
   return actualResult;
 }

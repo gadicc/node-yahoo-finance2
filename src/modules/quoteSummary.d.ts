@@ -11,7 +11,7 @@
  */
 
 export interface QuoteSummaryResultJson {
-  assetProfile?:                      AssetProfile;
+  assetProfile?:                      AssetProfileJson;
   balanceSheetHistory?:               BalanceSheetHistory;
   balanceSheetHistoryQuarterly?:      BalanceSheetHistory;
   calendarEvents?:                    CalendarEvents;
@@ -20,7 +20,7 @@ export interface QuoteSummaryResultJson {
   defaultKeyStatistics?:              DefaultKeyStatistics;
   earnings?:                          QuoteSummaryEarnings;
   earningsHistory?:                   EarningsHistory;
-  earningsTrend?:                     EarningsTrend;
+  earningsTrend?:                     EarningsTrendJson;
   financialData?:                     FinancialData;
   fundOwnership?:                     Ownership;
   incomeStatementHistory?:            IncomeStatementHistory;
@@ -36,20 +36,23 @@ export interface QuoteSummaryResultJson {
   price?:                             PriceJson;
   quoteType?:                         QuoteType;
   recommendationTrend?:               RecommendationTrend;
-  secFilings?:                        SECFilings;
+  secFilings?:                        SECFilingsJson;
   sectorTrend?:                       Trend;
   summaryDetail?:                     SummaryDetailJson;
   summaryProfile?:                    SummaryProfile;
   upgradeDowngradeHistory?:           UpgradeDowngradeHistory;
 }
 
-export interface QuoteSummaryResult extends Omit<QuoteSummaryResultJson,"price"|
-"summaryDetail">  {
+export interface QuoteSummaryResult extends Omit<QuoteSummaryResultJson,
+"assetProfile"|"earningsTrend"|"price"|"secFilings"|"summaryDetail">  {
+  assetProfile?:                      AssetProfileJson;
+  earningsTrend?:                     EarningsTrend;
   price:                              Price;
+  secFilings?:                        SECFilings;
   summaryDetail:                      SummaryDetail;
 }
 
-export interface AssetProfile {
+export interface AssetProfileJson {
   address1:                   string;
   city:                       string;
   state?:                     string;
@@ -73,23 +76,21 @@ export interface AssetProfile {
   address2?:                  string;
   fax?:                       string;
 }
-
-export interface CompanyOfficer {
-  maxAge:           number;
-  name:             string;
-  age?:             number;
-  title:            string;
-  yearBorn?:        number;
-  fiscalYear?:      number;
-  totalPay?:        ExercisedValue;
-  exercisedValue:   ExercisedValue;
-  unexercisedValue: ExercisedValue;
+export interface AssetProfile extends Omit<AssetProfileJson,"governanceEpochDate"|"compensationAsOfEpochDate"> {
+  governanceEpochDate:        Date;
+  compensationAsOfEpochDate?: Date;
 }
 
-export interface ExercisedValue {
-  raw?:     number;
-  fmt?:     null | string;
-  longFmt?: string;
+export interface CompanyOfficer {
+  maxAge:            number;
+  name:              string;
+  age?:              number;
+  title:             string;
+  yearBorn?:         number;
+  fiscalYear?:       number;
+  totalPay?:         RawNumberObj;
+  exercisedValue?:   RawNumberObj;
+  unexercisedValue?: RawNumberObj;
 }
 
 export interface BalanceSheetHistory {
@@ -99,41 +100,42 @@ export interface BalanceSheetHistory {
 
 export interface BalanceSheetStatement {
   maxAge:                        number;
-  endDate:                       DateObj;
-  cash:                          ExercisedValue;
-  shortTermInvestments?:         ExercisedValue;
-  netReceivables:                ExercisedValue;
-  inventory:                     ExercisedValue;
-  otherCurrentAssets:            ExercisedValue;
-  totalCurrentAssets:            ExercisedValue;
-  longTermInvestments:           ExercisedValue;
-  propertyPlantEquipment:        ExercisedValue;
-  otherAssets:                   ExercisedValue;
-  totalAssets:                   ExercisedValue;
-  accountsPayable:               ExercisedValue;
-  shortLongTermDebt?:            ExercisedValue;
-  otherCurrentLiab:              ExercisedValue;
-  longTermDebt:                  ExercisedValue;
-  otherLiab:                     ExercisedValue;
-  totalCurrentLiabilities:       ExercisedValue;
-  totalLiab:                     ExercisedValue;
-  commonStock?:                  ExercisedValue;
-  retainedEarnings:              ExercisedValue;
-  treasuryStock:                 ExercisedValue;
-  otherStockholderEquity:        ExercisedValue;
-  totalStockholderEquity:        ExercisedValue;
-  netTangibleAssets:             ExercisedValue;
-  goodWill?:                     ExercisedValue;
-  intangibleAssets?:             ExercisedValue;
-  deferredLongTermAssetCharges?: ExercisedValue;
-  deferredLongTermLiab?:         ExercisedValue;
-  minorityInterest?:             ExercisedValue;
-  capitalSurplus?:               ExercisedValue;
+  endDate:                       RawNumberObj;
+  cash:                          RawNumberObj;
+  shortTermInvestments?:         RawNumberObj;
+  netReceivables:                RawNumberObj;
+  inventory:                     RawNumberObj;
+  otherCurrentAssets:            RawNumberObj;
+  totalCurrentAssets:            RawNumberObj;
+  longTermInvestments:           RawNumberObj;
+  propertyPlantEquipment:        RawNumberObj;
+  otherAssets:                   RawNumberObj;
+  totalAssets:                   RawNumberObj;
+  accountsPayable:               RawNumberObj;
+  shortLongTermDebt?:            RawNumberObj;
+  otherCurrentLiab:              RawNumberObj;
+  longTermDebt:                  RawNumberObj;
+  otherLiab:                     RawNumberObj;
+  totalCurrentLiabilities:       RawNumberObj;
+  totalLiab:                     RawNumberObj;
+  commonStock?:                  RawNumberObj;
+  retainedEarnings:              RawNumberObj;
+  treasuryStock:                 RawNumberObj;
+  otherStockholderEquity:        RawNumberObj;
+  totalStockholderEquity:        RawNumberObj;
+  netTangibleAssets:             RawNumberObj;
+  goodWill?:                     RawNumberObj;
+  intangibleAssets?:             RawNumberObj;
+  deferredLongTermAssetCharges?: RawNumberObj;
+  deferredLongTermLiab?:         RawNumberObj;
+  minorityInterest?:             RawNumberObj;
+  capitalSurplus?:               RawNumberObj;
 }
 
-export interface DateObj {
-  raw: number;
-  fmt: string;
+export interface RawNumberObj {
+  raw?:     number;
+  fmt?:     null | string;
+  longFmt?: string;
 }
 
 export interface CalendarEvents {
@@ -160,27 +162,27 @@ export interface CashflowStatementHistory {
 
 export interface CashflowStatement {
   maxAge:                                number;
-  endDate:                               DateObj;
-  netIncome:                             ExercisedValue;
-  depreciation:                          ExercisedValue;
-  changeToNetincome:                     ExercisedValue;
-  changeToAccountReceivables?:           ExercisedValue;
-  changeToLiabilities:                   ExercisedValue;
-  changeToInventory?:                    ExercisedValue;
-  changeToOperatingActivities?:          ExercisedValue;
-  totalCashFromOperatingActivities:      ExercisedValue;
-  capitalExpenditures:                   ExercisedValue;
-  investments?:                          ExercisedValue;
-  otherCashflowsFromInvestingActivities: ExercisedValue;
-  totalCashflowsFromInvestingActivities: ExercisedValue;
-  dividendsPaid?:                        ExercisedValue;
-  netBorrowings:                         ExercisedValue;
-  otherCashflowsFromFinancingActivities: ExercisedValue;
-  totalCashFromFinancingActivities:      ExercisedValue;
-  changeInCash:                          ExercisedValue;
-  repurchaseOfStock?:                    ExercisedValue;
-  issuanceOfStock?:                      ExercisedValue;
-  effectOfExchangeRate?:                 ExercisedValue;
+  endDate:                               RawNumberObj;
+  netIncome:                             RawNumberObj;
+  depreciation:                          RawNumberObj;
+  changeToNetincome:                     RawNumberObj;
+  changeToAccountReceivables?:           RawNumberObj;
+  changeToLiabilities:                   RawNumberObj;
+  changeToInventory?:                    RawNumberObj;
+  changeToOperatingActivities?:          RawNumberObj;
+  totalCashFromOperatingActivities:      RawNumberObj;
+  capitalExpenditures:                   RawNumberObj;
+  investments?:                          RawNumberObj;
+  otherCashflowsFromInvestingActivities: RawNumberObj;
+  totalCashflowsFromInvestingActivities: RawNumberObj;
+  dividendsPaid?:                        RawNumberObj;
+  netBorrowings:                         RawNumberObj;
+  otherCashflowsFromFinancingActivities: RawNumberObj;
+  totalCashFromFinancingActivities:      RawNumberObj;
+  changeInCash:                          RawNumberObj;
+  repurchaseOfStock?:                    RawNumberObj;
+  issuanceOfStock?:                      RawNumberObj;
+  effectOfExchangeRate?:                 RawNumberObj;
 }
 
 export interface DefaultKeyStatistics {
@@ -269,43 +271,50 @@ export interface EarningsHistory {
 
 export interface EarningsHistoryHistory {
   maxAge:          number;
-  epsActual:       DateObj;
-  epsEstimate:     DateObj;
-  epsDifference:   DateObj;
-  surprisePercent: DateObj;
-  quarter:         DateObj;
+  epsActual:       RawNumberObj;
+  epsEstimate:     RawNumberObj;
+  epsDifference:   RawNumberObj;
+  surprisePercent: RawNumberObj;
+  quarter:         RawNumberObj;
   period:          string;
 }
 
-export interface EarningsTrend {
+export interface EarningsTrendJson {
+  trend:  EarningsTrendTrendJson[];
+  maxAge: number;
+}
+export interface EarningsTrend extends Omit<EarningsTrendJson,"trend"> {
   trend:  EarningsTrendTrend[];
   maxAge: number;
 }
 
-export interface EarningsTrendTrend {
+export interface EarningsTrendTrendJson {
   maxAge:           number;
   period:           string;
-  endDate:          Date | null;
-  growth:           DateObj;
+  endDate:          string | null;
+  growth:           RawNumberObj;
   earningsEstimate: EarningsEstimate;
   revenueEstimate:  RevenueEstimate;
   epsTrend:         EpsTrend;
   epsRevisions:     EpsRevisions;
 }
+export interface EarningsTrendTrend extends Omit<EarningsTrendTrendJson,"endDate"> {
+  endDate:          Date;
+}
 
 export interface EarningsEstimate {
-  avg:              DateObj;
-  low:              DateObj;
-  high:             DateObj;
-  yearAgoEps:       DateObj;
-  numberOfAnalysts: ExercisedValue;
-  growth:           DateObj;
+  avg:              RawNumberObj;
+  low:              RawNumberObj;
+  high:             RawNumberObj;
+  yearAgoEps:       RawNumberObj;
+  numberOfAnalysts: RawNumberObj;
+  growth:           RawNumberObj;
 }
 
 export interface EpsRevisions {
-  upLast7days:    ExercisedValue;
-  upLast30days:   ExercisedValue;
-  downLast30days: ExercisedValue;
+  upLast7days:    RawNumberObj;
+  upLast30days:   RawNumberObj;
+  downLast30days: RawNumberObj;
   downLast90days: DiscontinuedOperations;
 }
 
@@ -313,20 +322,20 @@ export interface DiscontinuedOperations {
 }
 
 export interface EpsTrend {
-  current:     DateObj;
-  "7daysAgo":  DateObj;
-  "30daysAgo": DateObj;
-  "60daysAgo": DateObj;
-  "90daysAgo": DateObj;
+  current:     RawNumberObj;
+  "7daysAgo":  RawNumberObj;
+  "30daysAgo": RawNumberObj;
+  "60daysAgo": RawNumberObj;
+  "90daysAgo": RawNumberObj;
 }
 
 export interface RevenueEstimate {
-  avg:              ExercisedValue;
-  low:              ExercisedValue;
-  high:             ExercisedValue;
-  numberOfAnalysts: ExercisedValue;
-  yearAgoRevenue:   ExercisedValue;
-  growth:           DateObj;
+  avg:              RawNumberObj;
+  low:              RawNumberObj;
+  high:             RawNumberObj;
+  numberOfAnalysts: RawNumberObj;
+  yearAgoRevenue:   RawNumberObj;
+  growth:           RawNumberObj;
 }
 
 export interface FinancialData {
@@ -369,11 +378,11 @@ export interface Ownership {
 
 export interface OwnershipList {
   maxAge:       number;
-  reportDate:   DateObj;
+  reportDate:   RawNumberObj;
   organization: string;
-  pctHeld:      DateObj;
-  position:     ExercisedValue;
-  value:        ExercisedValue;
+  pctHeld:      RawNumberObj;
+  position:     RawNumberObj;
+  value:        RawNumberObj;
 }
 
 export interface IncomeStatementHistory {
@@ -383,29 +392,29 @@ export interface IncomeStatementHistory {
 
 export interface IncomeStatementHistoryElement {
   maxAge:                            number;
-  endDate:                           DateObj;
-  totalRevenue:                      ExercisedValue;
-  costOfRevenue:                     ExercisedValue;
-  grossProfit:                       ExercisedValue;
-  researchDevelopment:               ExercisedValue;
-  sellingGeneralAdministrative:      ExercisedValue;
+  endDate:                           RawNumberObj;
+  totalRevenue:                      RawNumberObj;
+  costOfRevenue:                     RawNumberObj;
+  grossProfit:                       RawNumberObj;
+  researchDevelopment:               RawNumberObj;
+  sellingGeneralAdministrative:      RawNumberObj;
   nonRecurring:                      DiscontinuedOperations;
-  otherOperatingExpenses:            ExercisedValue;
-  totalOperatingExpenses:            ExercisedValue;
-  operatingIncome:                   ExercisedValue;
-  totalOtherIncomeExpenseNet:        ExercisedValue;
-  ebit:                              ExercisedValue;
-  interestExpense:                   ExercisedValue;
-  incomeBeforeTax:                   ExercisedValue;
-  incomeTaxExpense:                  ExercisedValue;
-  minorityInterest:                  ExercisedValue;
-  netIncomeFromContinuingOps:        ExercisedValue;
+  otherOperatingExpenses:            RawNumberObj;
+  totalOperatingExpenses:            RawNumberObj;
+  operatingIncome:                   RawNumberObj;
+  totalOtherIncomeExpenseNet:        RawNumberObj;
+  ebit:                              RawNumberObj;
+  interestExpense:                   RawNumberObj;
+  incomeBeforeTax:                   RawNumberObj;
+  incomeTaxExpense:                  RawNumberObj;
+  minorityInterest:                  RawNumberObj;
+  netIncomeFromContinuingOps:        RawNumberObj;
   discontinuedOperations:            DiscontinuedOperations;
   extraordinaryItems:                DiscontinuedOperations;
   effectOfAccountingCharges:         DiscontinuedOperations;
   otherItems:                        DiscontinuedOperations;
-  netIncome:                         ExercisedValue;
-  netIncomeApplicableToCommonShares: ExercisedValue;
+  netIncome:                         RawNumberObj;
+  netIncomeApplicableToCommonShares: RawNumberObj;
 }
 
 export interface IndexTrend {
@@ -438,11 +447,11 @@ export interface Holder {
   relation:               Relation;
   url:                    string;
   transactionDescription: string;
-  latestTransDate:        DateObj;
-  positionDirect?:        ExercisedValue;
-  positionDirectDate?:    DateObj;
-  positionIndirect?:      ExercisedValue;
-  positionIndirectDate?:  DateObj;
+  latestTransDate:        RawNumberObj;
+  positionDirect?:        RawNumberObj;
+  positionDirectDate?:    RawNumberObj;
+  positionIndirect?:      RawNumberObj;
+  positionIndirectDate?:  RawNumberObj;
 }
 
 export enum Relation {
@@ -467,15 +476,15 @@ export interface InsiderTransactions {
 
 export interface Transaction {
   maxAge:          number;
-  shares:          ExercisedValue;
+  shares:          RawNumberObj;
   filerUrl:        string;
   transactionText: string;
   filerName:       string;
   filerRelation:   Relation;
   moneyText:       string;
-  startDate:       DateObj;
+  startDate:       RawNumberObj;
   ownership:       OwnershipEnum;
-  value?:          ExercisedValue;
+  value?:          RawNumberObj;
 }
 
 export enum OwnershipEnum {
@@ -585,18 +594,28 @@ export interface RecommendationTrendTrend {
   strongSell: number;
 }
 
-export interface SECFilings {
+export interface SECFilingsJson {
+  filings: FilingJson[];
+  maxAge:  number;
+}
+export interface SECFilings extends Omit<SECFilingsJson,"filings"> {
   filings: Filing[];
   maxAge:  number;
 }
 
-export interface Filing {
-  date:      Date;
+export interface FilingJson {
+  date:      string;
   epochDate: number;
   type:      Type;
   title:     string;
   edgarUrl:  string;
   maxAge:    number;
+}
+export interface Filing extends Omit<FilingJson,"date"|"epochDate"> {
+//  date:      Date;
+//  epochDate: number;
+  date:       String; // TODO
+  epochDate:  Date;
 }
 
 export enum Type {
