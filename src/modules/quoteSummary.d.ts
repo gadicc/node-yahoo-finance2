@@ -13,6 +13,50 @@
 
 export interface QuoteSummaryResultJson {
   assetProfile?:                      AssetProfileJson;
+  balanceSheetHistory?:               BalanceSheetHistoryJson;
+  balanceSheetHistoryQuarterly?:      BalanceSheetHistoryJson;
+  calendarEvents?:                    CalendarEventsJson;
+  cashflowStatementHistory?:          CashflowStatementHistoryJson;
+  cashflowStatementHistoryQuarterly?: CashflowStatementHistoryJson;
+  defaultKeyStatistics?:              DefaultKeyStatisticsJson;
+  earnings?:                          QuoteSummaryEarningsJson;
+  earningsHistory?:                   EarningsHistoryJson;
+  earningsTrend?:                     EarningsTrendJson;
+  financialData?:                     FinancialDataJson;
+  fundOwnership?:                     OwnershipJson;
+  incomeStatementHistory?:            IncomeStatementHistoryJson;
+  incomeStatementHistoryQuarterly?:   IncomeStatementHistoryJson;
+  indexTrend?:                        IndexTrendJson;
+  industryTrend?:                     TrendJson;
+  insiderHolders?:                    HoldersJson;
+  insiderTransactions?:               InsiderTransactionsJson;
+  institutionOwnership?:              OwnershipJson;
+  majorDirectHolders?:                HoldersJson;
+  majorHoldersBreakdown?:             MajorHoldersBreakdownJson;
+  netSharePurchaseActivity?:          NetSharePurchaseActivityJson;
+  price?:                             PriceJson;
+  quoteType?:                         QuoteTypeJson;
+  recommendationTrend?:               RecommendationTrendJson;
+  secFilings?:                        SECFilingsJson;
+  sectorTrend?:                       TrendJson;
+  summaryDetail?:                     SummaryDetailJson;
+  summaryProfile?:                    SummaryProfileJson;
+  upgradeDowngradeHistory?:           UpgradeDowngradeHistoryJson;
+}
+
+/*
+export interface QuoteSummaryResult extends Omit<QuoteSummaryResultJson,
+"assetProfile"|"earningsTrend"|"price"|"secFilings"|"summaryDetail">  {
+  assetProfile?:                      AssetProfileJson;
+  earningsTrend?:                     EarningsTrend;
+  price:                              Price;
+  secFilings?:                        SECFilings;
+  summaryDetail:                      SummaryDetail;
+}
+*/
+
+export interface QuoteSummaryResult {
+  assetProfile?:                      AssetProfile;
   balanceSheetHistory?:               BalanceSheetHistory;
   balanceSheetHistoryQuarterly?:      BalanceSheetHistory;
   calendarEvents?:                    CalendarEvents;
@@ -34,23 +78,14 @@ export interface QuoteSummaryResultJson {
   majorDirectHolders?:                Holders;
   majorHoldersBreakdown?:             MajorHoldersBreakdown;
   netSharePurchaseActivity?:          NetSharePurchaseActivity;
-  price?:                             PriceJson;
+  price?:                             Price;
   quoteType?:                         QuoteType;
   recommendationTrend?:               RecommendationTrend;
-  secFilings?:                        SECFilingsJson;
+  secFilings?:                        SECFilings;
   sectorTrend?:                       Trend;
-  summaryDetail?:                     SummaryDetailJson;
+  summaryDetail?:                     SummaryDetail;
   summaryProfile?:                    SummaryProfile;
   upgradeDowngradeHistory?:           UpgradeDowngradeHistory;
-}
-
-export interface QuoteSummaryResult extends Omit<QuoteSummaryResultJson,
-"assetProfile"|"earningsTrend"|"price"|"secFilings"|"summaryDetail">  {
-  assetProfile?:                      AssetProfileJson;
-  earningsTrend?:                     EarningsTrend;
-  price:                              Price;
-  secFilings?:                        SECFilings;
-  summaryDetail:                      SummaryDetail;
 }
 
 export interface AssetProfileJson {
@@ -101,12 +136,15 @@ export interface CompanyOfficer extends Omit<CompanyOfficerJson,"totalPay"|"exer
   unexercisedValue?: number|null;
 }
 
-export interface BalanceSheetHistory {
-  balanceSheetStatements: BalanceSheetStatement[];
+export interface BalanceSheetHistoryJson {
+  balanceSheetStatements: BalanceSheetStatementJson[];
   maxAge:                 number;
 }
+export interface BalanceSheetHistory extends Omit<BalanceSheetHistoryJson,"balanceSheetStatements"> {
+  balanceSheetStatements: BalanceSheetStatement[];
+}
 
-export interface BalanceSheetStatement {
+export interface BalanceSheetStatementJson {
   maxAge:                        number;
   endDate:                       RawNumberObj;
   cash:                          RawNumberObj;
@@ -139,6 +177,39 @@ export interface BalanceSheetStatement {
   minorityInterest?:             RawNumberObj;
   capitalSurplus?:               RawNumberObj;
 }
+export interface BalanceSheetStatement {
+  maxAge:                        number;
+  endDate:                       number;
+  cash:                          number;
+  shortTermInvestments?:         number;
+  netReceivables:                number;
+  inventory:                     number;
+  otherCurrentAssets:            number;
+  totalCurrentAssets:            number;
+  longTermInvestments:           number;
+  propertyPlantEquipment:        number;
+  otherAssets:                   number;
+  totalAssets:                   number;
+  accountsPayable:               number;
+  shortLongTermDebt?:            number;
+  otherCurrentLiab:              number;
+  longTermDebt:                  number;
+  otherLiab:                     number;
+  totalCurrentLiabilities:       number;
+  totalLiab:                     number;
+  commonStock?:                  number;
+  retainedEarnings:              number;
+  treasuryStock:                 number;
+  otherStockholderEquity:        number;
+  totalStockholderEquity:        number;
+  netTangibleAssets:             number;
+  goodWill?:                     number;
+  intangibleAssets?:             number;
+  deferredLongTermAssetCharges?: number;
+  deferredLongTermLiab?:         number;
+  minorityInterest?:             number;
+  capitalSurplus?:               number;
+}
 
 export interface RawNumberObj {
   raw?:     number;
@@ -146,14 +217,19 @@ export interface RawNumberObj {
   longFmt?: string;
 }
 
-export interface CalendarEvents {
+export interface CalendarEventsJson {
   maxAge:          number;
-  earnings:        CalendarEventsEarnings;
+  earnings:        CalendarEventsEarningsJson;
   exDividendDate?: number;
   dividendDate?:   number;
 }
+export interface CalendarEvents extends Omit<CalendarEventsJson,"earnigs"|"exDividendDate"|"dividentDate"> {
+  earnings:        CalendarEventsEarnings;
+  exDividendDate?: Date;
+  dividendDate?:   Date;
+}
 
-export interface CalendarEventsEarnings {
+export interface CalendarEventsEarningsJson {
   earningsDate:     number[];
   earningsAverage?: number;
   earningsLow?:     number;
@@ -162,13 +238,19 @@ export interface CalendarEventsEarnings {
   revenueLow?:      number;
   revenueHigh?:     number;
 }
-
-export interface CashflowStatementHistory {
-  cashflowStatements: CashflowStatement[];
-  maxAge:             number;
+export interface CalendarEventsEarnings extends Omit<CalendarEventsEarningsJson, "earningsDate"> {
+  earningsDate:     Date[];
 }
 
-export interface CashflowStatement {
+export interface CashflowStatementHistoryJson {
+  cashflowStatements: CashflowStatementJson[];
+  maxAge:             number;
+}
+export interface CashflowStatementHistory extends Omit<CashflowStatementHistoryJson,"cashflowStatements"> {
+  cashflowStatements: CashflowStatement[];
+}
+
+export interface CashflowStatementJson {
   maxAge:                                number;
   endDate:                               RawNumberObj;
   netIncome:                             RawNumberObj;
@@ -191,6 +273,30 @@ export interface CashflowStatement {
   repurchaseOfStock?:                    RawNumberObj;
   issuanceOfStock?:                      RawNumberObj;
   effectOfExchangeRate?:                 RawNumberObj;
+}
+export interface CashflowStatement {
+  maxAge:                                number;
+  endDate:                               number;
+  netIncome:                             number;
+  depreciation:                          number;
+  changeToNetincome:                     number;
+  changeToAccountReceivables?:           number;
+  changeToLiabilities:                   number;
+  changeToInventory?:                    number;
+  changeToOperatingActivities?:          number;
+  totalCashFromOperatingActivities:      number;
+  capitalExpenditures:                   number;
+  investments?:                          number;
+  otherCashflowsFromInvestingActivities: number;
+  totalCashflowsFromInvestingActivities: number;
+  dividendsPaid?:                        number;
+  netBorrowings:                         number;
+  otherCashflowsFromFinancingActivities: number;
+  totalCashFromFinancingActivities:      number;
+  changeInCash:                          number;
+  repurchaseOfStock?:                    number;
+  issuanceOfStock?:                      number;
+  effectOfExchangeRate?:                 number;
 }
 
 export interface DefaultKeyStatistics {

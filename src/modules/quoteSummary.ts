@@ -3,6 +3,11 @@ import validate from '../lib/validate';
 import transformField from '../lib/transformField';
 import mutateJson from '../lib/mutateJson';
 
+/*
+const schema = require('../../schema.json');
+const qsSchema = schema.
+*/
+
 //import { SummaryDetail, SummaryDetailJson } from './quoteSummary/summaryDetail';
 //import { Price, PriceJson } from './quoteSummary/price';
 
@@ -101,12 +106,8 @@ export const fieldTransformMap = {
     ]
   },
   balanceSheetHistory: {
-    balanceSheetStatements: [ { endDate: 'dateObj' } ],
-    earningsTrend: {
-      trend: {
-        endDate: 'dateStr' // not dateObj like other endDates!
-      }
-    }
+    balanceSheetStatements: [ {
+      endDate: 'dateObj' } ],
   },
   balanceSheetHistoryQuarterly: {
     balanceSheetStatements: [ { endDate: 'dateObj' } ]
@@ -138,6 +139,11 @@ export const fieldTransformMap = {
   },
   earnings: {
     earningsDate: [ 'epoch' ]
+  },
+  earningsTrend: {
+    trend: {
+      endDate: 'dateStr' // not dateObj like other endDates!
+    }
   },
   fundOwnership: {
     ownershipList: {
