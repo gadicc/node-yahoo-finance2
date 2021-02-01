@@ -1,9 +1,9 @@
 import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
 import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
 
-// /// <reference path="quoteSummary.d.ts"/>
+// /// <reference path="quoteSummary-iface.ts"/>
 // import QuoteSummaryResult from "QuoteSummaryIfaces";
-import { QuoteSummaryResult } from './quoteSummary.d';
+import { QuoteSummaryResult } from './quoteSummary-iface';
 
 const QUERY_URL = 'https://query2.finance.yahoo.com/v10/finance/quoteSummary';
 const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/QuoteSummaryOptions'
