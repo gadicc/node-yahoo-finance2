@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.3.0...v1.3.1) (2021-02-01)
+
+
+### Bug Fixes
+
+* **quoteSummary:** rename conflicting typedefs ([f824f88](https://github.com/gadicc/node-yahoo-finance2/commit/f824f886ffc5d507f57f3e2fdd8da4d485f20b7a))
+
 # [1.3.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.2.0...v1.3.0) (2021-02-01)
 
 
