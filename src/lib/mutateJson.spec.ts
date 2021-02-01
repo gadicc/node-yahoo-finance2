@@ -1,5 +1,5 @@
 import mutateJson from './mutateJson';
-import transformDate from './transformDate';
+import transformField from './transformField';
 import { quoteSummary_dateFields } from '../modules/quoteSummary';
 
 describe('mutateJson', () => {
@@ -9,7 +9,7 @@ describe('mutateJson', () => {
       earnings: { earningsDate: [ 1619568000, 1620000000 ] }
     };
 
-    mutateJson(obj, quoteSummary_dateFields, transformDate);
+    mutateJson(obj, quoteSummary_dateFields, transformField);
 
     expect(obj.earnings.earningsDate[0]).toBeInstanceOf(Date);
     expect(obj.earnings.earningsDate[1]).toBeInstanceOf(Date);
@@ -30,7 +30,7 @@ describe('mutateJson', () => {
       }
     };
 
-    mutateJson(obj, quoteSummary_dateFields, transformDate);
+    mutateJson(obj, quoteSummary_dateFields, transformField);
 
     const array = obj.cashflowStatementHistoryQuarterly.cashflowStatements;
     expect(array[0].endDate).toBeInstanceOf(Date);

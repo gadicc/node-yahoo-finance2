@@ -32,6 +32,28 @@ describe('transformField', () => {
 
   });
 
+  describe('ISODate', () => {
+
+    it('converts valid input', () => {
+      const input = '2021-02-01T07:38:07.751Z';
+      const date = transformField(input, 'dateStr');
+      expect(date).toBeInstanceOf(Date);
+      expect(date.getTime()).toBe(new Date(input).getTime());
+    });
+
+  });
+
+  describe('rawNumberObj', () => {
+
+    it('converts valid input', () => {
+      const input = { raw: 12.1, fmt: "12.1" };
+      const raw = transformField(input, 'rawNumberObj');
+      expect(raw).toBe(input.raw);
+    });
+
+  });
+
+
   describe('try multi', () => {
 
     it('works', () => {
