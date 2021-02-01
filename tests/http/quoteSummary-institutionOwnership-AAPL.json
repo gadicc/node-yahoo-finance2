@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AAPL?formatted=false&modules=institutionOwnership"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "7907ropg1f3ig"
+      ],
+      "x-yahoo-request-id": [
+        "7907ropg1f3ig"
+      ],
+      "x-request-id": [
+        "4a8c6b51-9262-4ba5-8275-96589529fed7"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "910"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Mon, 01 Feb 2021 05:14:56 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"institutionOwnership\":{\"maxAge\":1,\"ownershipList\":[{\"maxAge\":1,\"reportDate\":{\"raw\":1601424000,\"fmt\":\"2020-09-30\"},\"organization\":\"Vanguard Group, Inc. (The)\",\"pctHeld\":{\"raw\":0.0761,\"fmt\":\"7.61%\"},\"position\":{\"raw\":1280669129,\"fmt\":\"1.28B\",\"longFmt\":\"1,280,669,129\"},\"value\":{\"raw\":148314291829,\"fmt\":\"148.31B\",\"longFmt\":\"148,314,291,829\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1601424000,\"fmt\":\"2020-09-30\"},\"organization\":\"Blackrock Inc.\",\"pctHeld\":{\"raw\":0.0636,\"fmt\":\"6.36%\"},\"position\":{\"raw\":1069771045,\"fmt\":\"1.07B\",\"longFmt\":\"1,069,771,045\"},\"value\":{\"raw\":123890184721,\"fmt\":\"123.89B\",\"longFmt\":\"123,890,184,721\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1601424000,\"fmt\":\"2020-09-30\"},\"organization\":\"Berkshire Hathaway, Inc\",\"pctHeld\":{\"raw\":0.0561,\"fmt\":\"5.61%\"},\"position\":{\"raw\":944295554,\"fmt\":\"944.3M\",\"longFmt\":\"944,295,554\"},\"value\":{\"raw\":109358868108,\"fmt\":\"109.36B\",\"longFmt\":\"109,358,868,108\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1601424000,\"fmt\":\"2020-09-30\"},\"organization\":\"State Street Corporation\",\"pctHeld\":{\"raw\":0.04,\"fmt\":\"4.00%\"},\"position\":{\"raw\":672444836,\"fmt\":\"672.44M\",\"longFmt\":\"672,444,836\"},\"value\":{\"raw\":77875836457,\"fmt\":\"77.88B\",\"longFmt\":\"77,875,836,457\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1601424000,\"fmt\":\"2020-09-30\"},\"organization\":\"FMR, LLC\",\"pctHeld\":{\"raw\":0.020599999,\"fmt\":\"2.06%\"},\"position\":{\"raw\":346699497,\"fmt\":\"346.7M\",\"longFmt\":\"346,699,497\"},\"value\":{\"raw\":40151268747,\"fmt\":\"40.15B\",\"longFmt\":\"40,151,268,747\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1601424000,\"fmt\":\"2020-09-30\"},\"organization\":\"Geode Capital Management, LLC\",\"pctHeld\":{\"raw\":0.0147,\"fmt\":\"1.47%\"},\"position\":{\"raw\":247838449,\"fmt\":\"247.84M\",\"longFmt\":\"247,838,449\"},\"value\":{\"raw\":28702170778,\"fmt\":\"28.7B\",\"longFmt\":\"28,702,170,778\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1601424000,\"fmt\":\"2020-09-30\"},\"organization\":\"Price (T.Rowe) Associates Inc\",\"pctHeld\":{\"raw\":0.0136,\"fmt\":\"1.36%\"},\"position\":{\"raw\":228869394,\"fmt\":\"228.87M\",\"longFmt\":\"228,869,394\"},\"value\":{\"raw\":26505364519,\"fmt\":\"26.51B\",\"longFmt\":\"26,505,364,519\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1601424000,\"fmt\":\"2020-09-30\"},\"organization\":\"Northern Trust Corporation\",\"pctHeld\":{\"raw\":0.0125,\"fmt\":\"1.25%\"},\"position\":{\"raw\":210830547,\"fmt\":\"210.83M\",\"longFmt\":\"210,830,547\"},\"value\":{\"raw\":24416285648,\"fmt\":\"24.42B\",\"longFmt\":\"24,416,285,648\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1577750400,\"fmt\":\"2019-12-31\"},\"organization\":\"Norges Bank Investment Management\",\"pctHeld\":{\"raw\":0.0111,\"fmt\":\"1.11%\"},\"position\":{\"raw\":187425092,\"fmt\":\"187.43M\",\"longFmt\":\"187,425,092\"},\"value\":{\"raw\":13759344566,\"fmt\":\"13.76B\",\"longFmt\":\"13,759,344,566\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1601424000,\"fmt\":\"2020-09-30\"},\"organization\":\"Bank Of New York Mellon Corporation\",\"pctHeld\":{\"raw\":0.0099,\"fmt\":\"0.99%\"},\"position\":{\"raw\":166053767,\"fmt\":\"166.05M\",\"longFmt\":\"166,053,767\"},\"value\":{\"raw\":19230686756,\"fmt\":\"19.23B\",\"longFmt\":\"19,230,686,756\"}}]}}],\"error\":null}}"
+  }
+}
