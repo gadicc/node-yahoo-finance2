@@ -14,7 +14,7 @@
     "lint": "eslint",
     "test": "jest",
     "coverage": "jest --coverage",
-    "generateSchema": "ts-json-schema-generator -p 'src/**/*.ts' -t '*' > schema.json",
+    "generateSchema": "ts-json-schema-generator -p 'src/**/*.ts' -t '*' | node bin/modify-schema.js > schema.json",
     "prepublishOnly": "tsc && yarn generateSchema"
   },
   "files": [
@@ -37,6 +37,7 @@
     "@types/jest": "26.0.20",
     "eslint": "7.19.0",
     "jest": "26.6.3",
+    "oas-schema-walker": "^1.1.5",
     "semantic-release": "17.3.7",
     "ts-jest": "26.5.0",
     "ts-json-schema-generator": "0.83.2",

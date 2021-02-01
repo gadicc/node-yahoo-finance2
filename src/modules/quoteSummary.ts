@@ -1,12 +1,5 @@
 import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
-import validate from '../lib/validate';
-import transformField from '../lib/transformField';
-import mutateJson from '../lib/mutateJson';
-
-/*
-const schema = require('../../schema.json');
-const qsSchema = schema.
-*/
+import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
 
 //import { SummaryDetail, SummaryDetailJson } from './quoteSummary/summaryDetail';
 //import { Price, PriceJson } from './quoteSummary/price';
@@ -17,7 +10,7 @@ import { QuoteSummaryResult } from './quoteSummary.d';
 
 const QUERY_URL = 'https://query2.finance.yahoo.com/v10/finance/quoteSummary';
 const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/QuoteSummaryOptions'
-const QUERY_RESULT_SCHEMA_KEY = "#/definitions/QuoteSummaryResultJson";
+const QUERY_RESULT_SCHEMA_KEY = "#/definitions/QuoteSummaryResult";
 
 const quoteSummary_modules = [
   'assetProfile',
@@ -93,121 +86,9 @@ type QuoteSummaryModules =
   "upgradeDowngradeHistory"
 ;
 
-export const fieldTransformMap = {
-  assetProfile: {
-    governanceEpochDate: 'epoch',
-    compensationAsOfEpochDate: 'epoch',
-    companyOfficers: [
-      {
-        totalPay: "rawNumberObj",
-        exercisedValue: "rawNumberObj",
-        unexercisedValue: "rawNumberObj",
-      }
-    ]
-  },
-  balanceSheetHistory: {
-    balanceSheetStatements: [ {
-      endDate: 'dateObj' } ],
-  },
-  balanceSheetHistoryQuarterly: {
-    balanceSheetStatements: [ { endDate: 'dateObj' } ]
-  },
-  calendarEvents: {
-    earnings: {
-      earningsDate: [ 'epoch' ]
-    },
-    exDividendDate: 'epoch',  // not ISODate like summaryDetail.exDividendDate
-    dividendDate: 'epoch',
-  },
-  cashflowStatementHistory: {
-    cashflowStatements: {
-      endDate: 'dateObj',
-    }
-  },
-  cashflowStatementHistoryQuarterly: {
-    cashflowStatements: [ { endDate: 'dateObj' } ]
-  },
-  defaultKeyStatistics: {
-    // check these
-    sharesShortPreviousMonthDate: 'epoch',
-    dateShortInterest: 'epoch',
-    lastFiscalYearEnd: 'epoch',
-    nextFiscalYearEnd: 'epoch',
-    mostRecentQuarter: 'epoch',
-    lastSplitDate: 'epoch',
-    lastDividendDate: 'epoch',
-  },
-  earnings: {
-    earningsDate: [ 'epoch' ]
-  },
-  earningsTrend: {
-    trend: {
-      endDate: 'dateStr' // not dateObj like other endDates!
-    }
-  },
-  fundOwnership: {
-    ownershipList: {
-      reportDate: 'dateObj',
-    }
-  },
-  incomeStatementHistory: {
-    incomeStatementHistory: {
-      endDate: 'dateObj',
-    }
-  },
-  incomeStatementHistoryQuarterly: {
-    incomeStatementHistory: [ { endDate: 'dateObj' } ]
-  },
-  insiderHolders: {
-    holders: {
-      latestTransDate: 'dateObj',
-      positionDirectDate: 'dateObj',
-    }
-  },
-  insiderTransactions: {
-    transactions: [ { startDate: 'dateObj' } ]
-  },
-  institutionOwnership: {
-    ownershipList: [ { reportDate: 'dateObj' } ]
-  },
-  quoteType: {
-    firstTradeDateEpochUtc: 'epoch',
-  },
-  summaryDetail: {
-    exDividendDate: 'epoch|ISODate'  // not epoch like calendarEvents.exDividendDate
-  },
-  upgradeDowngradeHistory: {
-    history: {
-      epochGradeDate: 'epoch',
-    }
-  },
-  price: {
-    postMarketTime: 'epoch|ISODate',
-    preMarketTime: 'epoch|ISODate',
-    regularMarketTime: 'epoch|ISODate',
-  },
-  secFilings: {
-    // "date": "2021-01-28", "epochDate": 1611831743
-    // TODO filings: [ 'objWithEpochDate' ],
-    filings: [ { epochDate: 'epoch' } ],
-  },
-};
-
-/*
-export interface QuoteSummaryResultJson {
-  summaryDetail?: SummaryDetailJson;
-  price?: PriceJson;
-}
-
-export interface QuoteSummaryResult {
-  summaryDetail: SummaryDetail;
-  price: Price;
-}
-*/
-
 export interface QuoteSummaryOptions {
   formatted?: boolean;
-  modules?: Array<QuoteSummaryModules>;
+  modules?: Array<QuoteSummaryModules> | "all";
 }
 
 const queryOptionsDefaults = {
@@ -220,15 +101,15 @@ export default async function quoteSummary(
   queryOptionsOverrides: QuoteSummaryOptions = {},
   fetchOptions?: object
 ): Promise<QuoteSummaryResult> {
-  validate(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'quoteSummary');
+  validateAndCoerceTypes(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'quoteSummary');
+
+  if (queryOptionsOverrides.modules === 'all')
+    queryOptionsOverrides.modules = quoteSummary_modules as Array<QuoteSummaryModules>;
 
   const queryOptions = {
     ...queryOptionsDefaults,
     ...queryOptionsOverrides
   };
-
-  // allow an 'all' parameter?
-  // queryOptions.modules = quoteSummary_modules;
 
   const url = QUERY_URL + '/' + symbol;
 
@@ -252,11 +133,7 @@ export default async function quoteSummary(
     throw new Error("Unexpected result: " + JSON.stringify(result));
 
   const actualResult = qsResult.result[0];
-
-  // useful to comment this out when working on new modules
-  validate(actualResult, QUERY_RESULT_SCHEMA_KEY);
-
-  mutateJson(actualResult, fieldTransformMap, transformField);
+  validateAndCoerceTypes(actualResult, QUERY_RESULT_SCHEMA_KEY);
 
   return actualResult;
 }

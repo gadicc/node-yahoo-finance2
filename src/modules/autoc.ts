@@ -1,5 +1,5 @@
 import yahooFinanceFetch from '../lib/yahooFinanceFetch';
-import validate from '../lib/validate';
+import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
 
 const QUERY_URL = 'https://autoc.finance.yahoo.com/autoc';
 const QUERY_OPTIONS_SCHEMA_KEY = "#/definitions/AutocOptions"
@@ -34,7 +34,7 @@ async function autoc(
   queryOptionsOverrides: AutocOptions = {},
   fetchOptions?: object
 ): Promise<AutocResultSet> {
-  validate(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'autoc');
+  validateAndCoerceTypes(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'autoc');
 
   const queryOptions = {
     query,
@@ -45,7 +45,7 @@ async function autoc(
   const result = await yahooFinanceFetch(QUERY_URL, queryOptions, fetchOptions);
 
   if (result.ResultSet) {
-    validate(result.ResultSet, QUERY_RESULT_SCHEMA_KEY);
+    validateAndCoerceTypes(result.ResultSet, QUERY_RESULT_SCHEMA_KEY);
     return result.ResultSet;
   }
 

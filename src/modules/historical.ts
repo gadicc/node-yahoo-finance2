@@ -1,5 +1,5 @@
 import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
-import validate from '../lib/validate';
+import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
 import csv2json from '../lib/csv2json';
 
 const QUERY_URL = 'https://query1.finance.yahoo.com/v7/finance/download';
@@ -37,7 +37,7 @@ export default async function historical(
   queryOptionsOverrides: HistoricalOptions,
   fetchOptions?: object
 ): Promise<HistoricalResult> {
-  validate(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'historical');
+  validateAndCoerceTypes(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'historical');
 
   const queryOptions: HistoricalOptions = {
     ...queryOptionsDefaults,

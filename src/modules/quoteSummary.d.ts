@@ -8,52 +8,8 @@
  *  1) Spaces: 4 to 2
  *  ~~2) Wrapped in a module~~ <--- undid this after tooling issues.
  *  3) Alphabeticalize QuoteSummaryResult
- *  4) RawNumberObj type, and transforms: result, resultJson.
+ *  4) RawNumberObj type to Date|number for coersion
  */
-
-export interface QuoteSummaryResultJson {
-  assetProfile?:                      AssetProfileJson;
-  balanceSheetHistory?:               BalanceSheetHistoryJson;
-  balanceSheetHistoryQuarterly?:      BalanceSheetHistoryJson;
-  calendarEvents?:                    CalendarEventsJson;
-  cashflowStatementHistory?:          CashflowStatementHistoryJson;
-  cashflowStatementHistoryQuarterly?: CashflowStatementHistoryJson;
-  defaultKeyStatistics?:              DefaultKeyStatisticsJson;
-  earnings?:                          QuoteSummaryEarningsJson;
-  earningsHistory?:                   EarningsHistoryJson;
-  earningsTrend?:                     EarningsTrendJson;
-  financialData?:                     FinancialDataJson;
-  fundOwnership?:                     OwnershipJson;
-  incomeStatementHistory?:            IncomeStatementHistoryJson;
-  incomeStatementHistoryQuarterly?:   IncomeStatementHistoryJson;
-  indexTrend?:                        IndexTrendJson;
-  industryTrend?:                     TrendJson;
-  insiderHolders?:                    HoldersJson;
-  insiderTransactions?:               InsiderTransactionsJson;
-  institutionOwnership?:              OwnershipJson;
-  majorDirectHolders?:                HoldersJson;
-  majorHoldersBreakdown?:             MajorHoldersBreakdownJson;
-  netSharePurchaseActivity?:          NetSharePurchaseActivityJson;
-  price?:                             PriceJson;
-  quoteType?:                         QuoteTypeJson;
-  recommendationTrend?:               RecommendationTrendJson;
-  secFilings?:                        SECFilingsJson;
-  sectorTrend?:                       TrendJson;
-  summaryDetail?:                     SummaryDetailJson;
-  summaryProfile?:                    SummaryProfileJson;
-  upgradeDowngradeHistory?:           UpgradeDowngradeHistoryJson;
-}
-
-/*
-export interface QuoteSummaryResult extends Omit<QuoteSummaryResultJson,
-"assetProfile"|"earningsTrend"|"price"|"secFilings"|"summaryDetail">  {
-  assetProfile?:                      AssetProfileJson;
-  earningsTrend?:                     EarningsTrend;
-  price:                              Price;
-  secFilings?:                        SECFilings;
-  summaryDetail:                      SummaryDetail;
-}
-*/
 
 export interface QuoteSummaryResult {
   assetProfile?:                      AssetProfile;
@@ -65,7 +21,7 @@ export interface QuoteSummaryResult {
   defaultKeyStatistics?:              DefaultKeyStatistics;
   earnings?:                          QuoteSummaryEarnings;
   earningsHistory?:                   EarningsHistory;
-  earningsTrend?:                     EarningsTrendJson;
+  earningsTrend?:                     EarningsTrend;
   financialData?:                     FinancialData;
   fundOwnership?:                     Ownership;
   incomeStatementHistory?:            IncomeStatementHistory;
@@ -88,7 +44,7 @@ export interface QuoteSummaryResult {
   upgradeDowngradeHistory?:           UpgradeDowngradeHistory;
 }
 
-export interface AssetProfileJson {
+export interface AssetProfile {
   address1:                   string;
   city:                       string;
   state?:                     string;
@@ -100,86 +56,39 @@ export interface AssetProfileJson {
   sector:                     string;
   longBusinessSummary:        string;
   fullTimeEmployees:          number;
-  companyOfficers:            CompanyOfficerJson[];
+  companyOfficers:            CompanyOfficer[];
   auditRisk:                  number;
   boardRisk:                  number;
   compensationRisk:           number;
   shareHolderRightsRisk:      number;
   overallRisk:                number;
-  governanceEpochDate:        number;
-  compensationAsOfEpochDate?: number;
+  governanceEpochDate:        Date;
+  compensationAsOfEpochDate?: Date;
   maxAge:                     number;
   address2?:                  string;
   fax?:                       string;
 }
-export interface AssetProfile extends Omit<AssetProfileJson,
-"governanceEpochDate"|"compensationAsOfEpochDate"|"companyOfficers"> {
-  governanceEpochDate:        Date;
-  compensationAsOfEpochDate?: Date;
-  companyOfficers:            CompanyOfficer[];
-}
 
-export interface CompanyOfficerJson {
+export interface CompanyOfficer {
   maxAge:            number;
   name:              string;
   age?:              number;
   title:             string;
   yearBorn?:         number;
   fiscalYear?:       number;
-  totalPay?:         RawNumberObj;
-  exercisedValue?:   RawNumberObj;
-  unexercisedValue?: RawNumberObj;
-}
-export interface CompanyOfficer extends Omit<CompanyOfficerJson,"totalPay"|"exercisedValue"|"unexercisedValue"> {
-  totalPay?:         number|null;
-  exercisedValue?:   number|null;
-  unexercisedValue?: number|null;
+  totalPay?:         number;
+  exercisedValue?:   number;
+  unexercisedValue?: number;
 }
 
-export interface BalanceSheetHistoryJson {
-  balanceSheetStatements: BalanceSheetStatementJson[];
+export interface BalanceSheetHistory {
+  balanceSheetStatements: BalanceSheetStatement[];
   maxAge:                 number;
 }
-export interface BalanceSheetHistory extends Omit<BalanceSheetHistoryJson,"balanceSheetStatements"> {
-  balanceSheetStatements: BalanceSheetStatement[];
-}
 
-export interface BalanceSheetStatementJson {
-  maxAge:                        number;
-  endDate:                       RawNumberObj;
-  cash:                          RawNumberObj;
-  shortTermInvestments?:         RawNumberObj;
-  netReceivables:                RawNumberObj;
-  inventory:                     RawNumberObj;
-  otherCurrentAssets:            RawNumberObj;
-  totalCurrentAssets:            RawNumberObj;
-  longTermInvestments:           RawNumberObj;
-  propertyPlantEquipment:        RawNumberObj;
-  otherAssets:                   RawNumberObj;
-  totalAssets:                   RawNumberObj;
-  accountsPayable:               RawNumberObj;
-  shortLongTermDebt?:            RawNumberObj;
-  otherCurrentLiab:              RawNumberObj;
-  longTermDebt:                  RawNumberObj;
-  otherLiab:                     RawNumberObj;
-  totalCurrentLiabilities:       RawNumberObj;
-  totalLiab:                     RawNumberObj;
-  commonStock?:                  RawNumberObj;
-  retainedEarnings:              RawNumberObj;
-  treasuryStock:                 RawNumberObj;
-  otherStockholderEquity:        RawNumberObj;
-  totalStockholderEquity:        RawNumberObj;
-  netTangibleAssets:             RawNumberObj;
-  goodWill?:                     RawNumberObj;
-  intangibleAssets?:             RawNumberObj;
-  deferredLongTermAssetCharges?: RawNumberObj;
-  deferredLongTermLiab?:         RawNumberObj;
-  minorityInterest?:             RawNumberObj;
-  capitalSurplus?:               RawNumberObj;
-}
 export interface BalanceSheetStatement {
   maxAge:                        number;
-  endDate:                       number;
+  endDate:                       Date;
   cash:                          number;
   shortTermInvestments?:         number;
   netReceivables:                number;
@@ -211,26 +120,15 @@ export interface BalanceSheetStatement {
   capitalSurplus?:               number;
 }
 
-export interface RawNumberObj {
-  raw?:     number;
-  fmt?:     null | string;
-  longFmt?: string;
-}
-
-export interface CalendarEventsJson {
+export interface CalendarEvents {
   maxAge:          number;
-  earnings:        CalendarEventsEarningsJson;
+  earnings:        CalendarEventsEarnings;
   exDividendDate?: number;
   dividendDate?:   number;
 }
-export interface CalendarEvents extends Omit<CalendarEventsJson,"earnigs"|"exDividendDate"|"dividentDate"> {
-  earnings:        CalendarEventsEarnings;
-  exDividendDate?: Date;
-  dividendDate?:   Date;
-}
 
-export interface CalendarEventsEarningsJson {
-  earningsDate:     number[];
+export interface CalendarEventsEarnings {
+  earningsDate:     Date[];
   earningsAverage?: number;
   earningsLow?:     number;
   earningsHigh?:    number;
@@ -238,45 +136,15 @@ export interface CalendarEventsEarningsJson {
   revenueLow?:      number;
   revenueHigh?:     number;
 }
-export interface CalendarEventsEarnings extends Omit<CalendarEventsEarningsJson, "earningsDate"> {
-  earningsDate:     Date[];
-}
 
-export interface CashflowStatementHistoryJson {
-  cashflowStatements: CashflowStatementJson[];
+export interface CashflowStatementHistory {
+  cashflowStatements: CashflowStatement[];
   maxAge:             number;
 }
-export interface CashflowStatementHistory extends Omit<CashflowStatementHistoryJson,"cashflowStatements"> {
-  cashflowStatements: CashflowStatement[];
-}
 
-export interface CashflowStatementJson {
-  maxAge:                                number;
-  endDate:                               RawNumberObj;
-  netIncome:                             RawNumberObj;
-  depreciation:                          RawNumberObj;
-  changeToNetincome:                     RawNumberObj;
-  changeToAccountReceivables?:           RawNumberObj;
-  changeToLiabilities:                   RawNumberObj;
-  changeToInventory?:                    RawNumberObj;
-  changeToOperatingActivities?:          RawNumberObj;
-  totalCashFromOperatingActivities:      RawNumberObj;
-  capitalExpenditures:                   RawNumberObj;
-  investments?:                          RawNumberObj;
-  otherCashflowsFromInvestingActivities: RawNumberObj;
-  totalCashflowsFromInvestingActivities: RawNumberObj;
-  dividendsPaid?:                        RawNumberObj;
-  netBorrowings:                         RawNumberObj;
-  otherCashflowsFromFinancingActivities: RawNumberObj;
-  totalCashFromFinancingActivities:      RawNumberObj;
-  changeInCash:                          RawNumberObj;
-  repurchaseOfStock?:                    RawNumberObj;
-  issuanceOfStock?:                      RawNumberObj;
-  effectOfExchangeRate?:                 RawNumberObj;
-}
 export interface CashflowStatement {
   maxAge:                                number;
-  endDate:                               number;
+  endDate:                               Date;
   netIncome:                             number;
   depreciation:                          number;
   changeToNetincome:                     number;
@@ -352,7 +220,7 @@ export interface EarningsChart {
   currentQuarterEstimate?:     number;
   currentQuarterEstimateDate?: string;
   currentQuarterEstimateYear?: number;
-  earningsDate:                number[];
+  earningsDate:                Date[];
 }
 
 export interface EarningsChartQuarterly {
@@ -385,50 +253,43 @@ export interface EarningsHistory {
 
 export interface EarningsHistoryHistory {
   maxAge:          number;
-  epsActual:       RawNumberObj;
-  epsEstimate:     RawNumberObj;
-  epsDifference:   RawNumberObj;
-  surprisePercent: RawNumberObj;
-  quarter:         RawNumberObj;
+  epsActual:       number;
+  epsEstimate:     number;
+  epsDifference:   number;
+  surprisePercent: number;
+  quarter:         number;
   period:          string;
 }
 
-export interface EarningsTrendJson {
-  trend:  EarningsTrendTrendJson[];
-  maxAge: number;
-}
-export interface EarningsTrend extends Omit<EarningsTrendJson,"trend"> {
+export interface EarningsTrend {
   trend:  EarningsTrendTrend[];
   maxAge: number;
 }
 
-export interface EarningsTrendTrendJson {
+export interface EarningsTrendTrend {
   maxAge:           number;
   period:           string;
-  endDate:          string | null;
-  growth:           RawNumberObj;
+  endDate:          Date | null;
+  growth:           number;
   earningsEstimate: EarningsEstimate;
   revenueEstimate:  RevenueEstimate;
   epsTrend:         EpsTrend;
   epsRevisions:     EpsRevisions;
 }
-export interface EarningsTrendTrend extends Omit<EarningsTrendTrendJson,"endDate"> {
-  endDate:          Date;
-}
 
 export interface EarningsEstimate {
-  avg:              RawNumberObj;
-  low:              RawNumberObj;
-  high:             RawNumberObj;
-  yearAgoEps:       RawNumberObj;
-  numberOfAnalysts: RawNumberObj;
-  growth:           RawNumberObj;
+  avg:              number;
+  low:              number;
+  high:             number;
+  yearAgoEps:       number;
+  numberOfAnalysts: number;
+  growth:           number;
 }
 
 export interface EpsRevisions {
-  upLast7days:    RawNumberObj;
-  upLast30days:   RawNumberObj;
-  downLast30days: RawNumberObj;
+  upLast7days:    number;
+  upLast30days:   number;
+  downLast30days: number;
   downLast90days: DiscontinuedOperations;
 }
 
@@ -436,20 +297,20 @@ export interface DiscontinuedOperations {
 }
 
 export interface EpsTrend {
-  current:     RawNumberObj;
-  "7daysAgo":  RawNumberObj;
-  "30daysAgo": RawNumberObj;
-  "60daysAgo": RawNumberObj;
-  "90daysAgo": RawNumberObj;
+  current:     number;
+  "7daysAgo":  number;
+  "30daysAgo": number;
+  "60daysAgo": number;
+  "90daysAgo": number;
 }
 
 export interface RevenueEstimate {
-  avg:              RawNumberObj;
-  low:              RawNumberObj;
-  high:             RawNumberObj;
-  numberOfAnalysts: RawNumberObj;
-  yearAgoRevenue:   RawNumberObj;
-  growth:           RawNumberObj;
+  avg:              number;
+  low:              number;
+  high:             number;
+  numberOfAnalysts: number;
+  yearAgoRevenue:   number;
+  growth:           number;
 }
 
 export interface FinancialData {
@@ -492,11 +353,11 @@ export interface Ownership {
 
 export interface OwnershipList {
   maxAge:       number;
-  reportDate:   RawNumberObj;
+  reportDate:   Date;
   organization: string;
-  pctHeld:      RawNumberObj;
-  position:     RawNumberObj;
-  value:        RawNumberObj;
+  pctHeld:      number;
+  position:     number;
+  value:        number;
 }
 
 export interface IncomeStatementHistory {
@@ -506,29 +367,29 @@ export interface IncomeStatementHistory {
 
 export interface IncomeStatementHistoryElement {
   maxAge:                            number;
-  endDate:                           RawNumberObj;
-  totalRevenue:                      RawNumberObj;
-  costOfRevenue:                     RawNumberObj;
-  grossProfit:                       RawNumberObj;
-  researchDevelopment:               RawNumberObj;
-  sellingGeneralAdministrative:      RawNumberObj;
+  endDate:                           Date;
+  totalRevenue:                      number;
+  costOfRevenue:                     number;
+  grossProfit:                       number;
+  researchDevelopment:               number;
+  sellingGeneralAdministrative:      number;
   nonRecurring:                      DiscontinuedOperations;
-  otherOperatingExpenses:            RawNumberObj;
-  totalOperatingExpenses:            RawNumberObj;
-  operatingIncome:                   RawNumberObj;
-  totalOtherIncomeExpenseNet:        RawNumberObj;
-  ebit:                              RawNumberObj;
-  interestExpense:                   RawNumberObj;
-  incomeBeforeTax:                   RawNumberObj;
-  incomeTaxExpense:                  RawNumberObj;
-  minorityInterest:                  RawNumberObj;
-  netIncomeFromContinuingOps:        RawNumberObj;
+  otherOperatingExpenses:            number;
+  totalOperatingExpenses:            number;
+  operatingIncome:                   number;
+  totalOtherIncomeExpenseNet:        number;
+  ebit:                              number;
+  interestExpense:                   number;
+  incomeBeforeTax:                   number;
+  incomeTaxExpense:                  number;
+  minorityInterest:                  number;
+  netIncomeFromContinuingOps:        number;
   discontinuedOperations:            DiscontinuedOperations;
   extraordinaryItems:                DiscontinuedOperations;
   effectOfAccountingCharges:         DiscontinuedOperations;
   otherItems:                        DiscontinuedOperations;
-  netIncome:                         RawNumberObj;
-  netIncomeApplicableToCommonShares: RawNumberObj;
+  netIncome:                         number;
+  netIncomeApplicableToCommonShares: number;
 }
 
 export interface IndexTrend {
@@ -561,11 +422,11 @@ export interface Holder {
   relation:               Relation;
   url:                    string;
   transactionDescription: string;
-  latestTransDate:        RawNumberObj;
-  positionDirect?:        RawNumberObj;
-  positionDirectDate?:    RawNumberObj;
-  positionIndirect?:      RawNumberObj;
-  positionIndirectDate?:  RawNumberObj;
+  latestTransDate:        Date;
+  positionDirect?:        number;
+  positionDirectDate?:    number;
+  positionIndirect?:      number;
+  positionIndirectDate?:  number;
 }
 
 export enum Relation {
@@ -590,15 +451,15 @@ export interface InsiderTransactions {
 
 export interface Transaction {
   maxAge:          number;
-  shares:          RawNumberObj;
+  shares:          number;
   filerUrl:        string;
   transactionText: string;
   filerName:       string;
   filerRelation:   Relation;
   moneyText:       string;
-  startDate:       RawNumberObj;
+  startDate:       Date;
   ownership:       OwnershipEnum;
-  value?:          RawNumberObj;
+  value?:          number;
 }
 
 export enum OwnershipEnum {
@@ -633,49 +494,51 @@ export interface NetSharePurchaseActivity {
  * Dates are usually epoch numbers, but including other modules can change
  * result to include an ISODate.
  */
-export interface PriceJson {
+export interface Price {
+  averageDailyVolume10Day?:   number;
+  averageDailyVolume3Month?:  number;
+  exchange:                   string;
+  exchangeName:               string;
+  exchangeDataDelayedBy:      number;
   maxAge:                     number;
-  preMarketSource?:           string;
-  preMarketTime?:             number|string;
   postMarketChangePercent?:   number;
   postMarketChange?:          number;
-  postMarketTime?:            number|string;
+  postMarketTime?:            Date;
   postMarketPrice?:           number;
   postMarketSource?:          string;
+  preMarketChangePercent?:    number;
+  preMarketChange?:           number;
+  preMarketTime?:             Date;
+  preMarketPrice?:            number;
+  preMarketSource?:           string;
+  priceHint:                  number;
   regularMarketChangePercent: number;
   regularMarketChange:        number;
-  regularMarketTime:          number|string;
-  priceHint:                  number;
+  regularMarketTime:          Date;
   regularMarketPrice:         number;
   regularMarketDayHigh:       number;
   regularMarketDayLow:        number;
   regularMarketVolume:        number;
-  averageDailyVolume10Day?:   number;
-  averageDailyVolume3Month?:  number;
   regularMarketPreviousClose: number;
   regularMarketSource:        string;
   regularMarketOpen:          number;
-  exchange:                   string;
-  exchangeName:               string;
-  exchangeDataDelayedBy:      number;
-  marketState:                string;
+
+  quoteSourceName:            string;
   quoteType:                  string;
+
   symbol:                     string;
   underlyingSymbol:           null;
   shortName:                  string;
   longName:                   null | string;
-  currency:                   string;
-  quoteSourceName:            string;
-  currencySymbol:             string;
-  fromCurrency:               null;
-  toCurrency:                 null;
+
   lastMarket:                 null;
+  marketState:                string;
   marketCap?:                 number;
-}
-export interface Price extends Omit<PriceJson,"postMarketTime"|"regularMarketTime"|"preMarketTime"> {
-  preMarketTime?:             Date;
-  postMarketTime?:            Date;
-  regularMarketTime?:         Date;
+
+  currency:                   string;
+  currencySymbol:             string;
+  fromCurrency:               string | null;
+  toCurrency:                 string | null;
 }
 
 export interface QuoteType {
@@ -708,28 +571,18 @@ export interface RecommendationTrendTrend {
   strongSell: number;
 }
 
-export interface SECFilingsJson {
-  filings: FilingJson[];
-  maxAge:  number;
-}
-export interface SECFilings extends Omit<SECFilingsJson,"filings"> {
+export interface SECFilings {
   filings: Filing[];
   maxAge:  number;
 }
 
-export interface FilingJson {
-  date:      string;
-  epochDate: number;
+export interface Filing {
+  date:      string; // TODO
+  epochDate: Date;
   type:      Type;
   title:     string;
   edgarUrl:  string;
   maxAge:    number;
-}
-export interface Filing extends Omit<FilingJson,"date"|"epochDate"> {
-//  date:      Date;
-//  epochDate: number;
-  date:       String; // TODO
-  epochDate:  Date;
 }
 
 export enum Type {
@@ -738,7 +591,7 @@ export enum Type {
   The8K = "8-K",
 }
 
-export interface SummaryDetailJson {
+export interface SummaryDetail {
   maxAge:                        number;
   priceHint:                     number;
   previousClose:                 number;
@@ -751,7 +604,7 @@ export interface SummaryDetailJson {
   regularMarketDayHigh:          number;
   dividendRate?:                 number;
   dividendYield?:                number;
-  exDividendDate?:               number;
+  exDividendDate?:               Date;
   payoutRatio?:                  number;
   fiveYearAvgDividendYield?:     number;
   beta?:                         number;
@@ -781,9 +634,6 @@ export interface SummaryDetailJson {
   algorithm:                     null;
   tradeable:                     boolean;
 }
-export interface SummaryDetail extends Omit<SummaryDetailJson,"exDividendDate"> {
-  exDividendDate?:               Date;
-}
 
 export interface SummaryProfile {
   address1:            string;
@@ -809,7 +659,7 @@ export interface UpgradeDowngradeHistory {
 }
 
 export interface UpgradeDowngradeHistoryHistory {
-  epochGradeDate: number;
+  epochGradeDate: Date;
   firm:           string;
   toGrade:        Grade;
   fromGrade:      Grade;

@@ -21,10 +21,10 @@
           "type": "string"
         },
         "auditRisk": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "boardRisk": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "city": {
           "type": "string"
@@ -36,11 +36,10 @@
           "type": "array"
         },
         "compensationAsOfEpochDate": {
-          "format": "date-time",
-          "type": "string"
+          "yahooFinanceType": "date"
         },
         "compensationRisk": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "country": {
           "type": "string"
@@ -49,11 +48,10 @@
           "type": "string"
         },
         "fullTimeEmployees": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "governanceEpochDate": {
-          "format": "date-time",
-          "type": "string"
+          "yahooFinanceType": "date"
         },
         "industry": {
           "type": "string"
@@ -62,10 +60,10 @@
           "type": "string"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "overallRisk": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "phone": {
           "type": "string"
@@ -74,102 +72,7 @@
           "type": "string"
         },
         "shareHolderRightsRisk": {
-          "type": "number"
-        },
-        "state": {
-          "type": "string"
-        },
-        "website": {
-          "type": "string"
-        },
-        "zip": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "address1",
-        "auditRisk",
-        "boardRisk",
-        "city",
-        "companyOfficers",
-        "compensationRisk",
-        "country",
-        "fullTimeEmployees",
-        "governanceEpochDate",
-        "industry",
-        "longBusinessSummary",
-        "maxAge",
-        "overallRisk",
-        "phone",
-        "sector",
-        "shareHolderRightsRisk",
-        "website",
-        "zip"
-      ],
-      "type": "object"
-    },
-    "AssetProfileJson": {
-      "additionalProperties": false,
-      "properties": {
-        "address1": {
-          "type": "string"
-        },
-        "address2": {
-          "type": "string"
-        },
-        "auditRisk": {
-          "type": "number"
-        },
-        "boardRisk": {
-          "type": "number"
-        },
-        "city": {
-          "type": "string"
-        },
-        "companyOfficers": {
-          "items": {
-            "$ref": "#/definitions/CompanyOfficerJson"
-          },
-          "type": "array"
-        },
-        "compensationAsOfEpochDate": {
-          "type": "number"
-        },
-        "compensationRisk": {
-          "type": "number"
-        },
-        "country": {
-          "type": "string"
-        },
-        "fax": {
-          "type": "string"
-        },
-        "fullTimeEmployees": {
-          "type": "number"
-        },
-        "governanceEpochDate": {
-          "type": "number"
-        },
-        "industry": {
-          "type": "string"
-        },
-        "longBusinessSummary": {
-          "type": "string"
-        },
-        "maxAge": {
-          "type": "number"
-        },
-        "overallRisk": {
-          "type": "number"
-        },
-        "phone": {
-          "type": "string"
-        },
-        "sector": {
-          "type": "string"
-        },
-        "shareHolderRightsRisk": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "state": {
           "type": "string"
@@ -210,7 +113,7 @@
           "type": "string"
         },
         "region": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "type": "object"
@@ -276,7 +179,7 @@
           "type": "array"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -289,97 +192,97 @@
       "additionalProperties": false,
       "properties": {
         "accountsPayable": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "capitalSurplus": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "cash": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "commonStock": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "deferredLongTermAssetCharges": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "deferredLongTermLiab": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "endDate": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "date"
         },
         "goodWill": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "intangibleAssets": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "inventory": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "longTermDebt": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "longTermInvestments": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "minorityInterest": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "netReceivables": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "netTangibleAssets": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "otherAssets": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "otherCurrentAssets": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "otherCurrentLiab": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "otherLiab": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "otherStockholderEquity": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "propertyPlantEquipment": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "retainedEarnings": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "shortLongTermDebt": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "shortTermInvestments": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "totalAssets": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "totalCurrentAssets": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "totalCurrentLiabilities": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "totalLiab": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "totalStockholderEquity": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "treasuryStock": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -412,16 +315,16 @@
       "additionalProperties": false,
       "properties": {
         "dividendDate": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "earnings": {
           "$ref": "#/definitions/CalendarEventsEarnings"
         },
         "exDividendDate": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -434,28 +337,28 @@
       "additionalProperties": false,
       "properties": {
         "earningsAverage": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "earningsDate": {
           "items": {
-            "type": "number"
+            "yahooFinanceType": "date"
           },
           "type": "array"
         },
         "earningsHigh": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "earningsLow": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "revenueAverage": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "revenueHigh": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "revenueLow": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -467,70 +370,70 @@
       "additionalProperties": false,
       "properties": {
         "capitalExpenditures": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "changeInCash": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "changeToAccountReceivables": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "changeToInventory": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "changeToLiabilities": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "changeToNetincome": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "changeToOperatingActivities": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "depreciation": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "dividendsPaid": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "effectOfExchangeRate": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "endDate": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "date"
         },
         "investments": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "issuanceOfStock": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "netBorrowings": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "netIncome": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "otherCashflowsFromFinancingActivities": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "otherCashflowsFromInvestingActivities": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "repurchaseOfStock": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "totalCashFromFinancingActivities": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "totalCashFromOperatingActivities": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "totalCashflowsFromInvestingActivities": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -561,7 +464,7 @@
           "type": "array"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -574,19 +477,16 @@
       "additionalProperties": false,
       "properties": {
         "age": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "exercisedValue": {
-          "type": [
-            "number",
-            "null"
-          ]
+          "yahooFinanceType": "number"
         },
         "fiscalYear": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "name": {
           "type": "string"
@@ -595,57 +495,13 @@
           "type": "string"
         },
         "totalPay": {
-          "type": [
-            "number",
-            "null"
-          ]
+          "yahooFinanceType": "number"
         },
         "unexercisedValue": {
-          "type": [
-            "number",
-            "null"
-          ]
+          "yahooFinanceType": "number"
         },
         "yearBorn": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "maxAge",
-        "name",
-        "title"
-      ],
-      "type": "object"
-    },
-    "CompanyOfficerJson": {
-      "additionalProperties": false,
-      "properties": {
-        "age": {
-          "type": "number"
-        },
-        "exercisedValue": {
-          "$ref": "#/definitions/RawNumberObj"
-        },
-        "fiscalYear": {
-          "type": "number"
-        },
-        "maxAge": {
-          "type": "number"
-        },
-        "name": {
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "totalPay": {
-          "$ref": "#/definitions/RawNumberObj"
-        },
-        "unexercisedValue": {
-          "$ref": "#/definitions/RawNumberObj"
-        },
-        "yearBorn": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -659,64 +515,64 @@
       "additionalProperties": false,
       "properties": {
         "52WeekChange": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "SandP52WeekChange": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "beta": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "bookValue": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "category": {
           "type": "null"
         },
         "dateShortInterest": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "earningsQuarterlyGrowth": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "enterpriseToEbitda": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "enterpriseToRevenue": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "enterpriseValue": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "floatShares": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "forwardEps": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "forwardPE": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "fundFamily": {
           "type": "null"
         },
         "heldPercentInsiders": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "heldPercentInstitutions": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "lastDividendDate": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "lastDividendValue": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "lastFiscalYearEnd": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "lastSplitDate": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "lastSplitFactor": {
           "type": [
@@ -728,52 +584,52 @@
           "type": "null"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "mostRecentQuarter": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "netIncomeToCommon": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "nextFiscalYearEnd": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "pegRatio": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "priceHint": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "priceToBook": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "profitMargins": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "sharesOutstanding": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "sharesPercentSharesOut": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "sharesShort": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "sharesShortPreviousMonthDate": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "sharesShortPriorMonth": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "shortPercentOfFloat": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "shortRatio": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "trailingEps": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -809,17 +665,17 @@
       "additionalProperties": false,
       "properties": {
         "currentQuarterEstimate": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "currentQuarterEstimateDate": {
           "type": "string"
         },
         "currentQuarterEstimateYear": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "earningsDate": {
           "items": {
-            "type": "number"
+            "yahooFinanceType": "date"
           },
           "type": "array"
         },
@@ -840,13 +696,13 @@
       "additionalProperties": false,
       "properties": {
         "actual": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "date": {
           "type": "string"
         },
         "estimate": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -860,22 +716,22 @@
       "additionalProperties": false,
       "properties": {
         "avg": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "growth": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "high": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "low": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "numberOfAnalysts": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "yearAgoEps": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -898,7 +754,7 @@
           "type": "array"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -911,25 +767,25 @@
       "additionalProperties": false,
       "properties": {
         "epsActual": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "epsDifference": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "epsEstimate": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "period": {
           "type": "string"
         },
         "quarter": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "surprisePercent": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -947,30 +803,11 @@
       "additionalProperties": false,
       "properties": {
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "trend": {
           "items": {
             "$ref": "#/definitions/EarningsTrendTrend"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "maxAge",
-        "trend"
-      ],
-      "type": "object"
-    },
-    "EarningsTrendJson": {
-      "additionalProperties": false,
-      "properties": {
-        "maxAge": {
-          "type": "number"
-        },
-        "trend": {
-          "items": {
-            "$ref": "#/definitions/EarningsTrendTrendJson"
           },
           "type": "array"
         }
@@ -988,50 +825,13 @@
           "$ref": "#/definitions/EarningsEstimate"
         },
         "endDate": {
-          "format": "date-time",
-          "type": "string"
-        },
-        "epsRevisions": {
-          "$ref": "#/definitions/EpsRevisions"
-        },
-        "epsTrend": {
-          "$ref": "#/definitions/EpsTrend"
-        },
-        "growth": {
-          "$ref": "#/definitions/RawNumberObj"
-        },
-        "maxAge": {
-          "type": "number"
-        },
-        "period": {
-          "type": "string"
-        },
-        "revenueEstimate": {
-          "$ref": "#/definitions/RevenueEstimate"
-        }
-      },
-      "required": [
-        "earningsEstimate",
-        "endDate",
-        "epsRevisions",
-        "epsTrend",
-        "growth",
-        "maxAge",
-        "period",
-        "revenueEstimate"
-      ],
-      "type": "object"
-    },
-    "EarningsTrendTrendJson": {
-      "additionalProperties": false,
-      "properties": {
-        "earningsEstimate": {
-          "$ref": "#/definitions/EarningsEstimate"
-        },
-        "endDate": {
-          "type": [
-            "string",
-            "null"
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "null"
+            }
           ]
         },
         "epsRevisions": {
@@ -1041,10 +841,10 @@
           "$ref": "#/definitions/EpsTrend"
         },
         "growth": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "period": {
           "type": "string"
@@ -1069,16 +869,16 @@
       "additionalProperties": false,
       "properties": {
         "downLast30days": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "downLast90days": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "upLast30days": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "upLast7days": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1093,19 +893,19 @@
       "additionalProperties": false,
       "properties": {
         "30daysAgo": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "60daysAgo": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "7daysAgo": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "90daysAgo": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "current": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1121,7 +921,7 @@
       "additionalProperties": false,
       "properties": {
         "growth": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "period": {
           "type": "string"
@@ -1136,60 +936,16 @@
       "additionalProperties": false,
       "properties": {
         "date": {
-          "additionalProperties": {
-            "type": "string"
-          },
-          "properties": {
-            "length": {
-              "type": "number"
-            }
-          },
-          "required": [
-            "length"
-          ],
-          "type": "object"
-        },
-        "edgarUrl": {
-          "type": "string"
-        },
-        "epochDate": {
-          "format": "date-time",
-          "type": "string"
-        },
-        "maxAge": {
-          "type": "number"
-        },
-        "title": {
-          "type": "string"
-        },
-        "type": {
-          "$ref": "#/definitions/Type"
-        }
-      },
-      "required": [
-        "date",
-        "edgarUrl",
-        "epochDate",
-        "maxAge",
-        "title",
-        "type"
-      ],
-      "type": "object"
-    },
-    "FilingJson": {
-      "additionalProperties": false,
-      "properties": {
-        "date": {
           "type": "string"
         },
         "edgarUrl": {
           "type": "string"
         },
         "epochDate": {
-          "type": "number"
+          "yahooFinanceType": "date"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "title": {
           "type": "string"
@@ -1212,94 +968,94 @@
       "additionalProperties": false,
       "properties": {
         "currentPrice": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "currentRatio": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "debtToEquity": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "earningsGrowth": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "ebitda": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "ebitdaMargins": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "financialCurrency": {
           "type": "string"
         },
         "freeCashflow": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "grossMargins": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "grossProfits": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "numberOfAnalystOpinions": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "operatingCashflow": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "operatingMargins": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "profitMargins": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "quickRatio": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "recommendationKey": {
           "type": "string"
         },
         "recommendationMean": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "returnOnAssets": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "returnOnEquity": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "revenueGrowth": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "revenuePerShare": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "targetHighPrice": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "targetLowPrice": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "targetMeanPrice": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "targetMedianPrice": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "totalCash": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "totalCashPerShare": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "totalDebt": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "totalRevenue": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1355,10 +1111,10 @@
           "type": "string"
         },
         "earnings": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "revenue": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1417,28 +1173,26 @@
         "period1": {
           "anyOf": [
             {
-              "format": "date-time",
-              "type": "string"
+              "yahooFinanceType": "date"
             },
             {
               "type": "string"
             },
             {
-              "type": "number"
+              "yahooFinanceType": "number"
             }
           ]
         },
         "period2": {
           "anyOf": [
             {
-              "format": "date-time",
-              "type": "string"
+              "yahooFinanceType": "date"
             },
             {
               "type": "string"
             },
             {
-              "type": "number"
+              "yahooFinanceType": "number"
             }
           ]
         }
@@ -1458,26 +1212,25 @@
       "additionalProperties": false,
       "properties": {
         "adjClose": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "close": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "date": {
-          "format": "date-time",
-          "type": "string"
+          "yahooFinanceType": "date"
         },
         "high": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "low": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "open": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "volume": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1494,25 +1247,25 @@
       "additionalProperties": false,
       "properties": {
         "latestTransDate": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "date"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "name": {
           "type": "string"
         },
         "positionDirect": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "positionDirectDate": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "positionIndirect": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "positionIndirectDate": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "relation": {
           "$ref": "#/definitions/Relation"
@@ -1544,7 +1297,7 @@
           "type": "array"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1563,7 +1316,7 @@
           "type": "array"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1576,76 +1329,76 @@
       "additionalProperties": false,
       "properties": {
         "costOfRevenue": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "discontinuedOperations": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "ebit": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "effectOfAccountingCharges": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "endDate": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "date"
         },
         "extraordinaryItems": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "grossProfit": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "incomeBeforeTax": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "incomeTaxExpense": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "interestExpense": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "minorityInterest": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "netIncome": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "netIncomeApplicableToCommonShares": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "netIncomeFromContinuingOps": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "nonRecurring": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "operatingIncome": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "otherItems": {
           "$ref": "#/definitions/DiscontinuedOperations"
         },
         "otherOperatingExpenses": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "researchDevelopment": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "sellingGeneralAdministrative": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "totalOperatingExpenses": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "totalOtherIncomeExpenseNet": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "totalRevenue": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1686,13 +1439,13 @@
           "type": "array"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "peRatio": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "pegRatio": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "symbol": {
           "type": "string"
@@ -1711,7 +1464,7 @@
       "additionalProperties": false,
       "properties": {
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "transactions": {
           "items": {
@@ -1730,19 +1483,19 @@
       "additionalProperties": false,
       "properties": {
         "insidersPercentHeld": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "institutionsCount": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "institutionsFloatPercentHeld": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "institutionsPercentHeld": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1758,40 +1511,40 @@
       "additionalProperties": false,
       "properties": {
         "buyInfoCount": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "buyInfoShares": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "buyPercentInsiderShares": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "netInfoCount": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "netInfoShares": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "netPercentInsiderShares": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "period": {
           "type": "string"
         },
         "sellInfoCount": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "sellInfoShares": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "sellPercentInsiderShares": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "totalInsiderShares": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1811,7 +1564,7 @@
       "additionalProperties": false,
       "properties": {
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "ownershipList": {
           "items": {
@@ -1837,22 +1590,22 @@
       "additionalProperties": false,
       "properties": {
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "organization": {
           "type": "string"
         },
         "pctHeld": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "position": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "reportDate": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "date"
         },
         "value": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1869,10 +1622,10 @@
       "additionalProperties": false,
       "properties": {
         "averageDailyVolume10Day": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "averageDailyVolume3Month": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "currency": {
           "type": "string"
@@ -1884,13 +1637,16 @@
           "type": "string"
         },
         "exchangeDataDelayedBy": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "exchangeName": {
           "type": "string"
         },
         "fromCurrency": {
-          "type": "null"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "lastMarket": {
           "type": "null"
@@ -1902,39 +1658,46 @@
           ]
         },
         "marketCap": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "marketState": {
           "type": "string"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "postMarketChange": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "postMarketChangePercent": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "postMarketPrice": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "postMarketSource": {
           "type": "string"
         },
         "postMarketTime": {
-          "format": "date-time",
-          "type": "string"
+          "yahooFinanceType": "date"
+        },
+        "preMarketChange": {
+          "yahooFinanceType": "number"
+        },
+        "preMarketChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "preMarketPrice": {
+          "yahooFinanceType": "number"
         },
         "preMarketSource": {
           "type": "string"
         },
         "preMarketTime": {
-          "format": "date-time",
-          "type": "string"
+          "yahooFinanceType": "date"
         },
         "priceHint": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "quoteSourceName": {
           "type": "string"
@@ -1943,35 +1706,34 @@
           "type": "string"
         },
         "regularMarketChange": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketChangePercent": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketDayHigh": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketDayLow": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketOpen": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketPreviousClose": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketPrice": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketSource": {
           "type": "string"
         },
         "regularMarketTime": {
-          "format": "date-time",
-          "type": "string"
+          "yahooFinanceType": "date"
         },
         "regularMarketVolume": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "shortName": {
           "type": "string"
@@ -1980,175 +1742,24 @@
           "type": "string"
         },
         "toCurrency": {
-          "type": "null"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "underlyingSymbol": {
           "type": "null"
         }
       },
       "required": [
-        "currency",
-        "currencySymbol",
         "exchange",
-        "exchangeDataDelayedBy",
         "exchangeName",
-        "fromCurrency",
-        "lastMarket",
-        "longName",
-        "marketState",
+        "exchangeDataDelayedBy",
         "maxAge",
         "priceHint",
-        "quoteSourceName",
-        "quoteType",
-        "regularMarketChange",
-        "regularMarketChangePercent",
-        "regularMarketDayHigh",
-        "regularMarketDayLow",
-        "regularMarketOpen",
-        "regularMarketPreviousClose",
-        "regularMarketPrice",
-        "regularMarketSource",
-        "regularMarketVolume",
-        "shortName",
-        "symbol",
-        "toCurrency",
-        "underlyingSymbol"
-      ],
-      "type": "object"
-    },
-    "PriceJson": {
-      "additionalProperties": false,
-      "properties": {
-        "averageDailyVolume10Day": {
-          "type": "number"
-        },
-        "averageDailyVolume3Month": {
-          "type": "number"
-        },
-        "currency": {
-          "type": "string"
-        },
-        "currencySymbol": {
-          "type": "string"
-        },
-        "exchange": {
-          "type": "string"
-        },
-        "exchangeDataDelayedBy": {
-          "type": "number"
-        },
-        "exchangeName": {
-          "type": "string"
-        },
-        "fromCurrency": {
-          "type": "null"
-        },
-        "lastMarket": {
-          "type": "null"
-        },
-        "longName": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "marketCap": {
-          "type": "number"
-        },
-        "marketState": {
-          "type": "string"
-        },
-        "maxAge": {
-          "type": "number"
-        },
-        "postMarketChange": {
-          "type": "number"
-        },
-        "postMarketChangePercent": {
-          "type": "number"
-        },
-        "postMarketPrice": {
-          "type": "number"
-        },
-        "postMarketSource": {
-          "type": "string"
-        },
-        "postMarketTime": {
-          "type": [
-            "number",
-            "string"
-          ]
-        },
-        "preMarketSource": {
-          "type": "string"
-        },
-        "preMarketTime": {
-          "type": [
-            "number",
-            "string"
-          ]
-        },
-        "priceHint": {
-          "type": "number"
-        },
-        "quoteSourceName": {
-          "type": "string"
-        },
-        "quoteType": {
-          "type": "string"
-        },
-        "regularMarketChange": {
-          "type": "number"
-        },
-        "regularMarketChangePercent": {
-          "type": "number"
-        },
-        "regularMarketDayHigh": {
-          "type": "number"
-        },
-        "regularMarketDayLow": {
-          "type": "number"
-        },
-        "regularMarketOpen": {
-          "type": "number"
-        },
-        "regularMarketPreviousClose": {
-          "type": "number"
-        },
-        "regularMarketPrice": {
-          "type": "number"
-        },
-        "regularMarketSource": {
-          "type": "string"
-        },
-        "regularMarketTime": {
-          "type": [
-            "number",
-            "string"
-          ]
-        },
-        "regularMarketVolume": {
-          "type": "number"
-        },
-        "shortName": {
-          "type": "string"
-        },
-        "symbol": {
-          "type": "string"
-        },
-        "toCurrency": {
-          "type": "null"
-        },
-        "underlyingSymbol": {
-          "type": "null"
-        }
-      },
-      "required": [
-        "maxAge",
         "regularMarketChangePercent",
         "regularMarketChange",
         "regularMarketTime",
-        "priceHint",
         "regularMarketPrice",
         "regularMarketDayHigh",
         "regularMarketDayLow",
@@ -2156,21 +1767,18 @@
         "regularMarketPreviousClose",
         "regularMarketSource",
         "regularMarketOpen",
-        "exchange",
-        "exchangeName",
-        "exchangeDataDelayedBy",
-        "marketState",
+        "quoteSourceName",
         "quoteType",
         "symbol",
         "underlyingSymbol",
         "shortName",
         "longName",
+        "lastMarket",
+        "marketState",
         "currency",
-        "quoteSourceName",
         "currencySymbol",
         "fromCurrency",
-        "toCurrency",
-        "lastMarket"
+        "toCurrency"
       ],
       "type": "object"
     },
@@ -2187,7 +1795,7 @@
           "$ref": "#/definitions/FinancialsChart"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -2205,46 +1813,54 @@
           "type": "boolean"
         },
         "modules": {
-          "items": {
-            "enum": [
-              "assetProfile",
-              "balanceSheetHistory",
-              "balanceSheetHistoryQuarterly",
-              "calendarEvents",
-              "cashflowStatementHistory",
-              "cashflowStatementHistoryQuarterly",
-              "defaultKeyStatistics",
-              "earnings",
-              "earningsHistory",
-              "earningsTrend",
-              "financialData",
-              "fundOwnership",
-              "fundPerformance",
-              "fundProfile",
-              "incomeStatementHistory",
-              "incomeStatementHistoryQuarterly",
-              "indexTrend",
-              "industryTrend",
-              "insiderHolders",
-              "insiderTransactions",
-              "institutionOwnership",
-              "majorDirectHolders",
-              "majorHoldersBreakdown",
-              "netSharePurchaseActivity",
-              "price",
-              "quoteType",
-              "recommendationTrend",
-              "secFilings",
-              "sectorTrend",
-              "summaryDetail",
-              "summaryProfile",
-              "symbol",
-              "topHoldings",
-              "upgradeDowngradeHistory"
-            ],
-            "type": "string"
-          },
-          "type": "array"
+          "anyOf": [
+            {
+              "items": {
+                "enum": [
+                  "assetProfile",
+                  "balanceSheetHistory",
+                  "balanceSheetHistoryQuarterly",
+                  "calendarEvents",
+                  "cashflowStatementHistory",
+                  "cashflowStatementHistoryQuarterly",
+                  "defaultKeyStatistics",
+                  "earnings",
+                  "earningsHistory",
+                  "earningsTrend",
+                  "financialData",
+                  "fundOwnership",
+                  "fundPerformance",
+                  "fundProfile",
+                  "incomeStatementHistory",
+                  "incomeStatementHistoryQuarterly",
+                  "indexTrend",
+                  "industryTrend",
+                  "insiderHolders",
+                  "insiderTransactions",
+                  "institutionOwnership",
+                  "majorDirectHolders",
+                  "majorHoldersBreakdown",
+                  "netSharePurchaseActivity",
+                  "price",
+                  "quoteType",
+                  "recommendationTrend",
+                  "secFilings",
+                  "sectorTrend",
+                  "summaryDetail",
+                  "summaryProfile",
+                  "symbol",
+                  "topHoldings",
+                  "upgradeDowngradeHistory"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "const": "all",
+              "type": "string"
+            }
+          ]
         }
       },
       "type": "object"
@@ -2253,7 +1869,7 @@
       "additionalProperties": false,
       "properties": {
         "assetProfile": {
-          "$ref": "#/definitions/AssetProfileJson"
+          "$ref": "#/definitions/AssetProfile"
         },
         "balanceSheetHistory": {
           "$ref": "#/definitions/BalanceSheetHistory"
@@ -2343,106 +1959,6 @@
           "$ref": "#/definitions/UpgradeDowngradeHistory"
         }
       },
-      "required": [
-        "price",
-        "summaryDetail"
-      ],
-      "type": "object"
-    },
-    "QuoteSummaryResultJson": {
-      "additionalProperties": false,
-      "properties": {
-        "assetProfile": {
-          "$ref": "#/definitions/AssetProfileJson"
-        },
-        "balanceSheetHistory": {
-          "$ref": "#/definitions/BalanceSheetHistory"
-        },
-        "balanceSheetHistoryQuarterly": {
-          "$ref": "#/definitions/BalanceSheetHistory"
-        },
-        "calendarEvents": {
-          "$ref": "#/definitions/CalendarEvents"
-        },
-        "cashflowStatementHistory": {
-          "$ref": "#/definitions/CashflowStatementHistory"
-        },
-        "cashflowStatementHistoryQuarterly": {
-          "$ref": "#/definitions/CashflowStatementHistory"
-        },
-        "defaultKeyStatistics": {
-          "$ref": "#/definitions/DefaultKeyStatistics"
-        },
-        "earnings": {
-          "$ref": "#/definitions/QuoteSummaryEarnings"
-        },
-        "earningsHistory": {
-          "$ref": "#/definitions/EarningsHistory"
-        },
-        "earningsTrend": {
-          "$ref": "#/definitions/EarningsTrendJson"
-        },
-        "financialData": {
-          "$ref": "#/definitions/FinancialData"
-        },
-        "fundOwnership": {
-          "$ref": "#/definitions/Ownership"
-        },
-        "incomeStatementHistory": {
-          "$ref": "#/definitions/IncomeStatementHistory"
-        },
-        "incomeStatementHistoryQuarterly": {
-          "$ref": "#/definitions/IncomeStatementHistory"
-        },
-        "indexTrend": {
-          "$ref": "#/definitions/IndexTrend"
-        },
-        "industryTrend": {
-          "$ref": "#/definitions/Trend"
-        },
-        "insiderHolders": {
-          "$ref": "#/definitions/Holders"
-        },
-        "insiderTransactions": {
-          "$ref": "#/definitions/InsiderTransactions"
-        },
-        "institutionOwnership": {
-          "$ref": "#/definitions/Ownership"
-        },
-        "majorDirectHolders": {
-          "$ref": "#/definitions/Holders"
-        },
-        "majorHoldersBreakdown": {
-          "$ref": "#/definitions/MajorHoldersBreakdown"
-        },
-        "netSharePurchaseActivity": {
-          "$ref": "#/definitions/NetSharePurchaseActivity"
-        },
-        "price": {
-          "$ref": "#/definitions/PriceJson"
-        },
-        "quoteType": {
-          "$ref": "#/definitions/QuoteType"
-        },
-        "recommendationTrend": {
-          "$ref": "#/definitions/RecommendationTrend"
-        },
-        "secFilings": {
-          "$ref": "#/definitions/SECFilingsJson"
-        },
-        "sectorTrend": {
-          "$ref": "#/definitions/Trend"
-        },
-        "summaryDetail": {
-          "$ref": "#/definitions/SummaryDetailJson"
-        },
-        "summaryProfile": {
-          "$ref": "#/definitions/SummaryProfile"
-        },
-        "upgradeDowngradeHistory": {
-          "$ref": "#/definitions/UpgradeDowngradeHistory"
-        }
-      },
       "type": "object"
     },
     "QuoteType": {
@@ -2452,10 +1968,10 @@
           "type": "string"
         },
         "firstTradeDateEpochUtc": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "gmtOffSetMilliseconds": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "longName": {
           "type": [
@@ -2464,7 +1980,7 @@
           ]
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "messageBoardId": {
           "type": "string"
@@ -2508,29 +2024,11 @@
       ],
       "type": "object"
     },
-    "RawNumberObj": {
-      "additionalProperties": false,
-      "properties": {
-        "fmt": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "longFmt": {
-          "type": "string"
-        },
-        "raw": {
-          "type": "number"
-        }
-      },
-      "type": "object"
-    },
     "RecommendationTrend": {
       "additionalProperties": false,
       "properties": {
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "trend": {
           "items": {
@@ -2549,22 +2047,22 @@
       "additionalProperties": false,
       "properties": {
         "buy": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "hold": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "period": {
           "type": "string"
         },
         "sell": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "strongBuy": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "strongSell": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -2598,22 +2096,22 @@
       "additionalProperties": false,
       "properties": {
         "avg": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "growth": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "high": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "low": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "numberOfAnalysts": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "yearAgoRevenue": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -2636,26 +2134,7 @@
           "type": "array"
         },
         "maxAge": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "filings",
-        "maxAge"
-      ],
-      "type": "object"
-    },
-    "SECFilingsJson": {
-      "additionalProperties": false,
-      "properties": {
-        "filings": {
-          "items": {
-            "$ref": "#/definitions/FilingJson"
-          },
-          "type": "array"
-        },
-        "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -2671,8 +2150,7 @@
           "type": "string"
         },
         "providerPublishTime": {
-          "format": "date-time",
-          "type": "string"
+          "yahooFinanceType": "date"
         },
         "publisher": {
           "type": "string"
@@ -2704,7 +2182,7 @@
           "type": "string"
         },
         "providerPublishTime": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "publisher": {
           "type": "string"
@@ -2751,13 +2229,13 @@
           "type": "string"
         },
         "newsCount": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "newsQueryId": {
           "type": "string"
         },
         "quotesCount": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "quotesQueryId": {
           "type": "string"
@@ -2813,7 +2291,7 @@
           "type": "string"
         },
         "score": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "shortname": {
           "type": "string"
@@ -2842,21 +2320,18 @@
       "additionalProperties": false,
       "properties": {
         "count": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "explains": {
-          "items": {
-          },
+          "items": {},
           "type": "array"
         },
         "lists": {
-          "items": {
-          },
+          "items": {},
           "type": "array"
         },
         "nav": {
-          "items": {
-          },
+          "items": {},
           "type": "array"
         },
         "news": {
@@ -2879,33 +2354,32 @@
           "type": "array"
         },
         "researchReports": {
-          "items": {
-          },
+          "items": {},
           "type": "array"
         },
         "timeTakenForAlgowatchlist": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForCrunchbase": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForNav": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForNews": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForPredefinedScreener": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForQuotes": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForResearchReports": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "totalTime": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -2931,21 +2405,18 @@
       "additionalProperties": false,
       "properties": {
         "count": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "explains": {
-          "items": {
-          },
+          "items": {},
           "type": "array"
         },
         "lists": {
-          "items": {
-          },
+          "items": {},
           "type": "array"
         },
         "nav": {
-          "items": {
-          },
+          "items": {},
           "type": "array"
         },
         "news": {
@@ -2968,33 +2439,32 @@
           "type": "array"
         },
         "researchReports": {
-          "items": {
-          },
+          "items": {},
           "type": "array"
         },
         "timeTakenForAlgowatchlist": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForCrunchbase": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForNav": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForNews": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForPredefinedScreener": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForQuotes": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "timeTakenForResearchReports": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "totalTime": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -3023,62 +2493,61 @@
           "type": "null"
         },
         "ask": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "askSize": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "averageDailyVolume10Day": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "averageVolume": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "averageVolume10days": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "beta": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "bid": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "bidSize": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "currency": {
           "type": "string"
         },
         "dayHigh": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "dayLow": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "dividendRate": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "dividendYield": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "exDividendDate": {
-          "format": "date-time",
-          "type": "string"
+          "yahooFinanceType": "date"
         },
         "fiftyDayAverage": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "fiftyTwoWeekHigh": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "fiftyTwoWeekLow": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "fiveYearAvgDividendYield": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "forwardPE": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "fromCurrency": {
           "type": "null"
@@ -3087,40 +2556,40 @@
           "type": "null"
         },
         "marketCap": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "open": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "payoutRatio": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "previousClose": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "priceHint": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "priceToSalesTrailing12Months": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketDayHigh": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketDayLow": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketOpen": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketPreviousClose": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "regularMarketVolume": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "toCurrency": {
           "type": "null"
@@ -3129,179 +2598,19 @@
           "type": "boolean"
         },
         "trailingAnnualDividendRate": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "trailingAnnualDividendYield": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "trailingPE": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "twoHundredDayAverage": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "volume": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "algorithm",
-        "ask",
-        "askSize",
-        "averageDailyVolume10Day",
-        "averageVolume",
-        "averageVolume10days",
-        "bid",
-        "bidSize",
-        "currency",
-        "dayHigh",
-        "dayLow",
-        "fiftyDayAverage",
-        "fiftyTwoWeekHigh",
-        "fiftyTwoWeekLow",
-        "fromCurrency",
-        "lastMarket",
-        "maxAge",
-        "open",
-        "previousClose",
-        "priceHint",
-        "regularMarketDayHigh",
-        "regularMarketDayLow",
-        "regularMarketOpen",
-        "regularMarketPreviousClose",
-        "regularMarketVolume",
-        "toCurrency",
-        "tradeable",
-        "twoHundredDayAverage",
-        "volume"
-      ],
-      "type": "object"
-    },
-    "SummaryDetailJson": {
-      "additionalProperties": false,
-      "properties": {
-        "algorithm": {
-          "type": "null"
-        },
-        "ask": {
-          "type": "number"
-        },
-        "askSize": {
-          "type": "number"
-        },
-        "averageDailyVolume10Day": {
-          "type": "number"
-        },
-        "averageVolume": {
-          "type": "number"
-        },
-        "averageVolume10days": {
-          "type": "number"
-        },
-        "beta": {
-          "type": "number"
-        },
-        "bid": {
-          "type": "number"
-        },
-        "bidSize": {
-          "type": "number"
-        },
-        "currency": {
-          "type": "string"
-        },
-        "dayHigh": {
-          "type": "number"
-        },
-        "dayLow": {
-          "type": "number"
-        },
-        "dividendRate": {
-          "type": "number"
-        },
-        "dividendYield": {
-          "type": "number"
-        },
-        "exDividendDate": {
-          "type": "number"
-        },
-        "fiftyDayAverage": {
-          "type": "number"
-        },
-        "fiftyTwoWeekHigh": {
-          "type": "number"
-        },
-        "fiftyTwoWeekLow": {
-          "type": "number"
-        },
-        "fiveYearAvgDividendYield": {
-          "type": "number"
-        },
-        "forwardPE": {
-          "type": "number"
-        },
-        "fromCurrency": {
-          "type": "null"
-        },
-        "lastMarket": {
-          "type": "null"
-        },
-        "marketCap": {
-          "type": "number"
-        },
-        "maxAge": {
-          "type": "number"
-        },
-        "open": {
-          "type": "number"
-        },
-        "payoutRatio": {
-          "type": "number"
-        },
-        "previousClose": {
-          "type": "number"
-        },
-        "priceHint": {
-          "type": "number"
-        },
-        "priceToSalesTrailing12Months": {
-          "type": "number"
-        },
-        "regularMarketDayHigh": {
-          "type": "number"
-        },
-        "regularMarketDayLow": {
-          "type": "number"
-        },
-        "regularMarketOpen": {
-          "type": "number"
-        },
-        "regularMarketPreviousClose": {
-          "type": "number"
-        },
-        "regularMarketVolume": {
-          "type": "number"
-        },
-        "toCurrency": {
-          "type": "null"
-        },
-        "tradeable": {
-          "type": "boolean"
-        },
-        "trailingAnnualDividendRate": {
-          "type": "number"
-        },
-        "trailingAnnualDividendYield": {
-          "type": "number"
-        },
-        "trailingPE": {
-          "type": "number"
-        },
-        "twoHundredDayAverage": {
-          "type": "number"
-        },
-        "volume": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -3350,8 +2659,7 @@
           "type": "string"
         },
         "companyOfficers": {
-          "items": {
-          },
+          "items": {},
           "type": "array"
         },
         "country": {
@@ -3361,7 +2669,7 @@
           "type": "string"
         },
         "fullTimeEmployees": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "industry": {
           "type": "string"
@@ -3370,7 +2678,7 @@
           "type": "string"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "phone": {
           "type": "string"
@@ -3417,7 +2725,7 @@
           "type": "string"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "moneyText": {
           "type": "string"
@@ -3426,16 +2734,16 @@
           "$ref": "#/definitions/OwnershipEnum"
         },
         "shares": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         },
         "startDate": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "date"
         },
         "transactionText": {
           "type": "string"
         },
         "value": {
-          "$ref": "#/definitions/RawNumberObj"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -3455,12 +2763,11 @@
       "additionalProperties": false,
       "properties": {
         "estimates": {
-          "items": {
-          },
+          "items": {},
           "type": "array"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "symbol": {
           "type": "null"
@@ -3491,7 +2798,7 @@
           "type": "array"
         },
         "maxAge": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -3507,7 +2814,7 @@
           "$ref": "#/definitions/Action"
         },
         "epochGradeDate": {
-          "type": "number"
+          "yahooFinanceType": "date"
         },
         "firm": {
           "type": "string"
@@ -3532,13 +2839,13 @@
       "additionalProperties": false,
       "properties": {
         "date": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "earnings": {
-          "type": "number"
+          "yahooFinanceType": "number"
         },
         "revenue": {
-          "type": "number"
+          "yahooFinanceType": "number"
         }
       },
       "required": [

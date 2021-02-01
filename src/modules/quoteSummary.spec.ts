@@ -275,6 +275,16 @@ describe('quoteSummary', () => {
 
     });
 
+  }); /* modules */
+
+  describe('all modules at once', () => {
+
+    // Some modules change the output format of other modules!
+    it('validates', async () => {
+      const devel = 'quoteSummary-allModules-AAPL.json';
+      await quoteSummary('AAPL', { modules:'all' }, { devel });
+    });
+
   });
 
 });

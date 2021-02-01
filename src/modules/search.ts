@@ -1,5 +1,5 @@
 import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
-import validate from '../lib/validate';
+import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
 
 const QUERY_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
 const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/SearchOptions';
@@ -91,7 +91,7 @@ async function search(
   queryOptionsOverrides: SearchOptions = {},
   fetchOptions?: object
 ): Promise<SearchResult> {
-  validate(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'search');
+  validateAndCoerceTypes(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'search');
 
   const queryOptions = {
     q: query,
@@ -100,7 +100,7 @@ async function search(
   };
 
   const result = await yahooFinanceFetch(QUERY_URL, queryOptions, fetchOptions);
-  validate(result, QUERY_RESULT_SCHEMA_KEY);
+  validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
 
   for (let news of result.news)
     news.providerPublishTime = new Date(news.providerPublishTime * 1000);

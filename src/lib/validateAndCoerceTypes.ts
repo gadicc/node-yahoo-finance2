@@ -9,6 +9,61 @@ import { InvalidOptionsError, FailedYahooValidationError } from './errors';
 const ajv = new Ajv({ allowUnionTypes: true });
 addFormats(ajv);
 
+/* @ts-ignore */
+ajv.addKeyword('yahooFinanceType', {
+  modifying: true,
+  errors: true,
+  /* @ts-ignore */
+  compile(schema, parentSchema) {
+    /* @ts-ignore */
+    return function validate(data, { parentData, parentDataProperty }) {
+      function set(value: any) {
+        parentData[parentDataProperty] = value;
+        return true;
+      }
+
+    /* @ts-ignore */
+      if (!validate.errors)
+        /* @ts-ignore */
+        validate.errors = [];
+
+      if (schema === 'number') {
+        if (typeof data === 'number')
+          return true;
+
+        if (typeof data === 'object') {
+          if (Object.keys(data).length === 0)
+            return set(null);
+          if (typeof data.raw === 'number')
+            return set(data.raw);
+        }
+      }
+
+      if (schema === 'date') {
+        if (typeof data === 'number')
+          return set(new Date(data * 1000));
+        if (data === null)
+          return null;
+        if (typeof data === 'object')
+          return set(new Date(data.raw * 1000));
+        if (typeof data === 'string') {
+          if (data.match(/^\d{4,4}-\d{2,2}-\d{2,2}$/) ||
+              data.match(/^\d{4,4}-\d{2,2}-\d{2,2}T\d{2,2}:\d{2,2}:\d{2,2}\.\d{3,3}Z$/))
+            return set(new Date(data));
+        }
+      }
+
+      /* @ts-ignore */
+      validate.errors.push({
+        keyword: "yahooFinanceType",
+        message: "No matching type",
+        params: { schema, data }
+      });
+      return false;
+    };
+  }
+});
+
 ajv.addSchema(schema);
 
 const logObj = process.stdout.isTTY
