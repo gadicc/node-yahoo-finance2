@@ -13,6 +13,8 @@ If you're looking for something stable and battle-tested, use the
 current
 [node-yahoo-finance](https://www.npmjs.com/package/yahoo-finance).
 
+[Live Demo on CodeSandbox](https://codesandbox.io/s/yahoo-finance2-312x2?file=/src/index.ts)
+
 ## Unofficial API
 
 This project is neither created nor endorsed by Yahoo Inc.  Yahoo does not
@@ -69,6 +71,9 @@ Working with `yahoo-finance2` is a joy if you're using TypeScript (but you
 don't have to), with type checking and auto completion:
 
 ![Types Animation](./docs/img/yf-typescript-demo.gif)
+
+Try it yourself on our
+[Live CodeSandbox](https://codesandbox.io/s/yahoo-finance2-312x2?file=/src/index.ts).
 
 ## Devel Mode
 
