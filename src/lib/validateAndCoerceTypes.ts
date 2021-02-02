@@ -66,7 +66,7 @@ ajv.addKeyword('yahooFinanceType', {
 
 ajv.addSchema(schema);
 
-const logObj = process.stdout.isTTY
+const logObj = process?.stdout?.isTTY
   ? (obj:any) => console.dir(obj, { depth: 4, colors: true })
   : (obj:any) => console.log(JSON.stringify(obj, null, 2));
 
