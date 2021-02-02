@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.3.1...v1.4.0) (2021-02-02)
+
+
+### Features
+
+* **env:** multiple environments, browser entry point ([e18aa67](https://github.com/gadicc/node-yahoo-finance2/commit/e18aa67278ae613e8c7ecd93aedb5abcaeda2592))
+
 ## [1.3.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.3.0...v1.3.1) (2021-02-01)
 
 
