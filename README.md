@@ -1,6 +1,6 @@
 # node-yahoo-finance2
 
-Community API for Yahoo-Finance
+Community API for Yahoo-Finance.
 
 Copyright (c) 2021 by Gadi Cohen &lt;dragon@wastelands.net&gt;.  [MIT licensed](./LICENSE).
 
@@ -8,10 +8,10 @@ Copyright (c) 2021 by Gadi Cohen &lt;dragon@wastelands.net&gt;.  [MIT licensed](
 
 Supports Node 12.0.0 and up (tests are run against 12.0.0).
 
-**DO NOT USE!**  In active development.  API may change without warning until
-stable release.  Use
-[node-yahoo-finance](https://www.npmjs.com/package/yahoo-finance)
-instead, unless you are contributing to development.
+**Beta release**.  Please let us know of any issues or edge cases.
+If you're looking for something stable and battle-tested, use the
+current
+[node-yahoo-finance](https://www.npmjs.com/package/yahoo-finance).
 
 ## Unofficial API
 
@@ -49,7 +49,26 @@ const results = await search('AAPL');
 const results = await search('AAPL', { someOption: true, etc });
 ```
 
-For the full list of modules, see the [Documentation](./docs/docs.md).
+Available modules: `autoc`, `historical`, `quoteSummary` (submodules:
+assetProfile, balanceSheetHistory, balanceSheetHistoryQuarterly,
+calendarEvents, cashflowStatementHistory, cashflowStatementHistoryQuarterly,
+defaultKeyStatistics, earnings, earningsHistory, earningsTrend, financialData,
+fundOwnership, fundPerformance, fundProfile, incomeStatementHistory,
+incomeStatementHistoryQuarterly, indexTrend, industryTrend, insiderHolders
+insiderTransactions, institutionOwnership, majorDirectHolders,
+majorHoldersBreakdown, netSharePurchaseActivity, price, quoteType,
+recommendationTrend, secFilings, sectorTrend, summaryDetail, summaryProfile,
+symbol, topHoldings, upgradeDowngradeHistory), `search`, with more
+[coming soon](https://github.com/gadicc/node-yahoo-finance2/issues/8).
+
+[Documentation](./docs/docs.md) coming soon.
+
+## (Optional) TypeScript Love
+
+Working with `yahoo-finance2` is a joy if you're using TypeScript (but you
+don't have to), with type checking and auto completion:
+
+![Types Animation](./docs/img/yf-typescript-demo.gif)
 
 ## Devel Mode
 
