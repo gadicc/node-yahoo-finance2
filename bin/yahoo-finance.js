@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const yahooFinance = require('../api/index.js');
-const moduleNames = Object.keys(yahooFinance);
+const yahooFinance = require('../api/index-node.js').default;
+const moduleNames = Object.keys(yahooFinance).filter(n => !n.startsWith('_'));
 
 const node = process.argv[0];
 const script = process.argv[1];

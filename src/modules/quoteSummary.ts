@@ -1,4 +1,3 @@
-import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
 import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
 
 // /// <reference path="quoteSummary-iface.ts"/>
@@ -94,6 +93,7 @@ const queryOptionsDefaults = {
 };
 
 export default async function quoteSummary(
+  this: { [key:string]: any, _fetch: Function },
   symbol: string,
   queryOptionsOverrides: QuoteSummaryOptions = {},
   fetchOptions?: object
@@ -123,7 +123,7 @@ export default async function quoteSummary(
       }
     }
    */
-  const result = await yahooFinanceFetch(url, queryOptions, fetchOptions);
+  const result = await this._fetch(url, queryOptions, fetchOptions);
   const qsResult = result.quoteSummary;
 
   if (!qsResult)

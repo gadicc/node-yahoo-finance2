@@ -1,25 +1,27 @@
-const { URLSearchParams} = require('url');
-const nodeFetch = require('node-fetch');
-
 const errors = require('./errors');
 const pkg = require('../../package.json');
 
 const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
 
 async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}, func='json') {
+  if (!this._env)
+    throw new errors.NoEnvironmentError("yahooFinanceFetch called without this._env set");
+
+  const { URLSearchParams, fetch } = this._env;
+
   const urlSearchParams = new URLSearchParams(params);
   const url = urlBase + '?' + urlSearchParams.toString();
 
-  const fetch = fetchOptionsOverrides.devel
+  const fetchFunc = fetchOptionsOverrides.devel
     ? require('./fetchDevel')
-    : nodeFetch;
+    : fetch;
 
   const fetchOptions = {
     "User-Agent": userAgent,
     ...fetchOptionsOverrides
   };
 
-  const res = await fetch(url, fetchOptions);
+  const res = await fetchFunc(url, fetchOptions);
   const result = await res[func]();
 
   /*

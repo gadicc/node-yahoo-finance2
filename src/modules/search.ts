@@ -1,4 +1,3 @@
-import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
 import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
 
 const QUERY_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
@@ -87,6 +86,7 @@ const queryOptionsDefaults = {
 };
 
 async function search(
+  this: { [key:string]: any, _fetch: Function },
   query: string,
   queryOptionsOverrides: SearchOptions = {},
   fetchOptions?: object
@@ -99,7 +99,7 @@ async function search(
     ...queryOptionsOverrides
   };
 
-  const result = await yahooFinanceFetch(QUERY_URL, queryOptions, fetchOptions);
+  const result = await this._fetch(QUERY_URL, queryOptions, fetchOptions);
   validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
 
   for (let news of result.news)

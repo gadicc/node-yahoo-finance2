@@ -1,4 +1,3 @@
-import yahooFinanceFetch = require('../lib/yahooFinanceFetch');
 import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
 import csv2json from '../lib/csv2json';
 
@@ -33,6 +32,7 @@ const queryOptionsDefaults: Omit<HistoricalOptions,'period1'> = {
 };
 
 export default async function historical(
+  this: { [key:string]: any, _fetch: Function },
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
   fetchOptions?: object
@@ -57,7 +57,7 @@ export default async function historical(
   }
 
   const url = QUERY_URL + '/' + symbol;
-  const csv = await yahooFinanceFetch(url, queryOptions, fetchOptions, 'text');
+  const csv = await this._fetch(url, queryOptions, fetchOptions, 'text');
   const result = csv2json(csv);
 
   // this can't handle Dates.  let's decide where/when/how to validate.

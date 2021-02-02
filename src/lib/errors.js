@@ -16,9 +16,14 @@ class InvalidOptionsError extends Error {
   constructor(...args) { super(...args); this.name = 'InvalidOptionsError' }
 }
 
+class NoEnvironmentError extends Error {
+  constructor(...args) { super(...args); this.name = 'NoEnvironmentError' }
+}
+
 module.exports = {
   BadRequestError,
   HTTPError,
   FailedYahooValidationError,
   InvalidOptionsError,
+  NoEnvironmentError,
 };

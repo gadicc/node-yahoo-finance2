@@ -1,12 +1,21 @@
 import quoteSummary from './quoteSummary';
 const { InvalidOptionsError } = require('../lib/errors');
 
+import _env from '../env-node';
+import _fetch from '../lib/yahooFinanceFetch';
+
+const yf = {
+  _env,
+  _fetch,
+  quoteSummary
+};
+
 describe('quoteSummary', () => {
 
   describe('quoteSummary', () => {
 
     it('throws InvalidOptions on invalid options', async () => {
-      const rwo = (options:any) => quoteSummary('symbol', options);
+      const rwo = (options:any) => yf.quoteSummary('symbol', options);
       await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError)
     });
 
@@ -18,7 +27,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-assetProfile-AAPL.json';
-        await quoteSummary('AAPL', { modules:['assetProfile'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['assetProfile'] }, { devel });
       });
 
     });
@@ -27,7 +36,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-balanceSheetHistory-AAPL.json';
-        await quoteSummary('AAPL', { modules:['balanceSheetHistory'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['balanceSheetHistory'] }, { devel });
       });
 
     });
@@ -36,7 +45,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-balanceSheetHistoryQuarterly-AAPL.json';
-        await quoteSummary('AAPL', { modules:['balanceSheetHistoryQuarterly'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['balanceSheetHistoryQuarterly'] }, { devel });
       });
 
     });
@@ -45,7 +54,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-calendarEvents-AAPL.json';
-        await quoteSummary('AAPL', { modules:['calendarEvents'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['calendarEvents'] }, { devel });
       });
 
     });
@@ -54,7 +63,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-cashflowStatementHistory-AAPL.json';
-        await quoteSummary('AAPL', { modules:['cashflowStatementHistory'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['cashflowStatementHistory'] }, { devel });
       });
 
     });
@@ -63,7 +72,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-cashflowStatementHistoryQuarterly-AAPL.json';
-        await quoteSummary('AAPL', { modules:['cashflowStatementHistoryQuarterly'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['cashflowStatementHistoryQuarterly'] }, { devel });
       });
 
     });
@@ -72,7 +81,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-defaultKeyStatistics-AAPL.json';
-        await quoteSummary('AAPL', { modules:['defaultKeyStatistics'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['defaultKeyStatistics'] }, { devel });
       });
 
     });
@@ -81,7 +90,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-earnings-AAPL.json';
-        await quoteSummary('AAPL', { modules:['earnings'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['earnings'] }, { devel });
       });
 
     });
@@ -90,7 +99,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-earningsHistory-AAPL.json';
-        await quoteSummary('AAPL', { modules:['earningsHistory'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['earningsHistory'] }, { devel });
       });
 
     });
@@ -99,7 +108,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-earningsTrend-AAPL.json';
-        await quoteSummary('AAPL', { modules:['earningsTrend'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['earningsTrend'] }, { devel });
       });
 
     });
@@ -108,7 +117,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-financialData-AAPL.json';
-        await quoteSummary('AAPL', { modules:['financialData'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['financialData'] }, { devel });
       });
 
     });
@@ -117,7 +126,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-fundOwnership-AAPL.json';
-        await quoteSummary('AAPL', { modules:['fundOwnership'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['fundOwnership'] }, { devel });
       });
 
     });
@@ -126,7 +135,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-incomeStatementHistory-AAPL.json';
-        await quoteSummary('AAPL', { modules:['incomeStatementHistory'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['incomeStatementHistory'] }, { devel });
       });
 
     });
@@ -135,7 +144,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-incomeStatementHistoryQuarterly-AAPL.json';
-        await quoteSummary('AAPL', { modules:['incomeStatementHistoryQuarterly'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['incomeStatementHistoryQuarterly'] }, { devel });
       });
 
     });
@@ -144,7 +153,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-indexTrend-AAPL.json';
-        await quoteSummary('AAPL', { modules:['indexTrend'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['indexTrend'] }, { devel });
       });
 
     });
@@ -153,7 +162,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-industryTrend-AAPL.json';
-        await quoteSummary('AAPL', { modules:['industryTrend'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['industryTrend'] }, { devel });
       });
 
     });
@@ -162,7 +171,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-insiderHolders-AAPL.json';
-        await quoteSummary('AAPL', { modules:['insiderHolders'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['insiderHolders'] }, { devel });
       });
 
     });
@@ -171,7 +180,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-insiderTransactions-AAPL.json';
-        await quoteSummary('AAPL', { modules:['insiderTransactions'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['insiderTransactions'] }, { devel });
       });
 
     });
@@ -180,7 +189,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-institutionOwnership-AAPL.json';
-        await quoteSummary('AAPL', { modules:['institutionOwnership'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['institutionOwnership'] }, { devel });
       });
 
     });
@@ -189,7 +198,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-majorDirectHolders-AAPL.json';
-        await quoteSummary('AAPL', { modules:['majorDirectHolders'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['majorDirectHolders'] }, { devel });
       });
 
     });
@@ -198,7 +207,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-majorHoldersBreakdown-AAPL.json';
-        await quoteSummary('AAPL', { modules:['majorHoldersBreakdown'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['majorHoldersBreakdown'] }, { devel });
       });
 
     });
@@ -207,7 +216,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-netSharePurchaseActivity-AAPL.json';
-        await quoteSummary('AAPL', { modules:['netSharePurchaseActivity'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['netSharePurchaseActivity'] }, { devel });
       });
 
     });
@@ -216,7 +225,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-price-AAPL.json';
-        await quoteSummary('AAPL', { modules:['price'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['price'] }, { devel });
       });
 
     });
@@ -225,7 +234,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-quoteType-AAPL.json';
-        await quoteSummary('AAPL', { modules:['quoteType'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['quoteType'] }, { devel });
       });
 
     });
@@ -234,7 +243,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-recommendationTrend-AAPL.json';
-        await quoteSummary('AAPL', { modules:['recommendationTrend'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['recommendationTrend'] }, { devel });
       });
 
     });
@@ -243,7 +252,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-secFilings-AAPL.json';
-        await quoteSummary('AAPL', { modules:['secFilings'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['secFilings'] }, { devel });
       });
 
     });
@@ -252,7 +261,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-summaryDetail-AAPL.json';
-        await quoteSummary('AAPL', { modules:['summaryDetail'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['summaryDetail'] }, { devel });
       });
 
     });
@@ -261,7 +270,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-summaryProfile-AAPL.json';
-        await quoteSummary('AAPL', { modules:['summaryProfile'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['summaryProfile'] }, { devel });
       });
 
     });
@@ -270,7 +279,7 @@ describe('quoteSummary', () => {
 
       it('validates', async () => {
         const devel = 'quoteSummary-upgradeDowngradeHistory-AAPL.json';
-        await quoteSummary('AAPL', { modules:['upgradeDowngradeHistory'] }, { devel });
+        await yf.quoteSummary('AAPL', { modules:['upgradeDowngradeHistory'] }, { devel });
       });
 
     });
@@ -282,7 +291,7 @@ describe('quoteSummary', () => {
     // Some modules change the output format of other modules!
     it('validates', async () => {
       const devel = 'quoteSummary-allModules-AAPL.json';
-      await quoteSummary('AAPL', { modules:'all' }, { devel });
+      await yf.quoteSummary('AAPL', { modules:'all' }, { devel });
     });
 
   });
