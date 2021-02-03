@@ -63,7 +63,7 @@ recommendationTrend, secFilings, sectorTrend, summaryDetail, summaryProfile,
 symbol, topHoldings, upgradeDowngradeHistory), `search`, with more
 [coming soon](https://github.com/gadicc/node-yahoo-finance2/issues/8).
 
-[Documentation](./docs/docs.md) coming soon.
+[Documentation](./docs/README.md) coming soon.
 
 ## (Optional) TypeScript Love
 
