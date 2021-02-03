@@ -40,7 +40,6 @@ export const quoteSummary_modules = [
   'sectorTrend',
   'summaryDetail',
   'summaryProfile',
-  'symbol',
   'topHoldings',
   'upgradeDowngradeHistory',
 ];
@@ -77,7 +76,6 @@ export type QuoteSummaryModules =
   "sectorTrend" |
   "summaryDetail" |
   "summaryProfile" |
-  "symbol" |
   "topHoldings" |
   "upgradeDowngradeHistory"
 ;
