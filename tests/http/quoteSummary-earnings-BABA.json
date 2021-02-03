@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BABA?formatted=false&modules=earnings"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "b0sl0t9g1kjsu"
+      ],
+      "x-yahoo-request-id": [
+        "b0sl0t9g1kjsu"
+      ],
+      "x-request-id": [
+        "949729ef-09ec-4864-89eb-fe551563e292"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "378"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 03 Feb 2021 07:24:13 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"earnings\":{\"maxAge\":86400,\"earningsChart\":{\"quarterly\":[{\"date\":\"1Q2020\",\"actual\":1.31,\"estimate\":0.87},{\"date\":\"2Q2020\",\"actual\":2.21,\"estimate\":2.06},{\"date\":\"3Q2020\",\"actual\":2.78,\"estimate\":2.18},{\"date\":\"4Q2020\",\"actual\":3.41,\"estimate\":3.23}],\"currentQuarterEstimate\":2.04,\"currentQuarterEstimateDate\":\"1Q\",\"currentQuarterEstimateYear\":2021,\"earningsDate\":[1612224000]},\"financialsChart\":{\"yearly\":[{\"date\":2017,\"revenue\":158273000000,\"earnings\":43675000000},{\"date\":2018,\"revenue\":250266000000,\"earnings\":64093000000},{\"date\":2019,\"revenue\":376844000000,\"earnings\":87886000000},{\"date\":2020,\"revenue\":509711000000,\"earnings\":149433000000}],\"quarterly\":[{\"date\":\"4Q2019\",\"revenue\":161456000000,\"earnings\":52174000000},{\"date\":\"1Q2020\",\"revenue\":114314000000,\"earnings\":3220000000},{\"date\":\"2Q2020\",\"revenue\":153751000000,\"earnings\":47533000000},{\"date\":\"3Q2020\",\"revenue\":155059000000,\"earnings\":28876000000}]},\"financialCurrency\":\"CNY\"}}],\"error\":null}}"
+  }
+}

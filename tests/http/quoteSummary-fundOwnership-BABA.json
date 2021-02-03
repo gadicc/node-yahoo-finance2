@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BABA?formatted=false&modules=fundOwnership"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "9stuqelg1kjt2"
+      ],
+      "x-yahoo-request-id": [
+        "9stuqelg1kjt2"
+      ],
+      "x-request-id": [
+        "1a2ce098-b655-46b2-b9a0-b9f6be156996"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "876"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 03 Feb 2021 07:24:18 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"fundOwnership\":{\"maxAge\":1,\"ownershipList\":[{\"maxAge\":1,\"reportDate\":{\"raw\":1604102400,\"fmt\":\"2020-10-31\"},\"organization\":\"Vanguard International Stock Index-Total Intl Stock Indx\",\"pctHeld\":{\"raw\":0.0098,\"fmt\":\"0.98%\"},\"position\":{\"raw\":26647584,\"fmt\":\"26.65M\",\"longFmt\":\"26,647,584\"},\"value\":{\"raw\":8119252368,\"fmt\":\"8.12B\",\"longFmt\":\"8,119,252,368\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1604102400,\"fmt\":\"2020-10-31\"},\"organization\":\"Vanguard International Stock Index-Emerging Markets Stk\",\"pctHeld\":{\"raw\":0.0085,\"fmt\":\"0.85%\"},\"position\":{\"raw\":23132515,\"fmt\":\"23.13M\",\"longFmt\":\"23,132,515\"},\"value\":{\"raw\":7048245995,\"fmt\":\"7.05B\",\"longFmt\":\"7,048,245,995\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1609372800,\"fmt\":\"2020-12-31\"},\"organization\":\"iShares Core MSCI Emerging Markets ETF\",\"pctHeld\":{\"raw\":0.0055,\"fmt\":\"0.55%\"},\"position\":{\"raw\":14755978,\"fmt\":\"14.76M\",\"longFmt\":\"14,755,978\"},\"value\":{\"raw\":3434158759,\"fmt\":\"3.43B\",\"longFmt\":\"3,434,158,759\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1609372800,\"fmt\":\"2020-12-31\"},\"organization\":\"Price (T.Rowe) Blue Chip Growth Fund Inc.\",\"pctHeld\":{\"raw\":0.0046,\"fmt\":\"0.46%\"},\"position\":{\"raw\":12390029,\"fmt\":\"12.39M\",\"longFmt\":\"12,390,029\"},\"value\":{\"raw\":2883531449,\"fmt\":\"2.88B\",\"longFmt\":\"2,883,531,449\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1598832000,\"fmt\":\"2020-08-31\"},\"organization\":\"Vanguard International Growth Fund\",\"pctHeld\":{\"raw\":0.0043,\"fmt\":\"0.43%\"},\"position\":{\"raw\":11759473,\"fmt\":\"11.76M\",\"longFmt\":\"11,759,473\"},\"value\":{\"raw\":3375321535,\"fmt\":\"3.38B\",\"longFmt\":\"3,375,321,535\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1604102400,\"fmt\":\"2020-10-31\"},\"organization\":\"Invesco Oppenheimer Developing Markets Fund\",\"pctHeld\":{\"raw\":0.0033000002,\"fmt\":\"0.33%\"},\"position\":{\"raw\":8974336,\"fmt\":\"8.97M\",\"longFmt\":\"8,974,336\"},\"value\":{\"raw\":2734390435,\"fmt\":\"2.73B\",\"longFmt\":\"2,734,390,435\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1601424000,\"fmt\":\"2020-09-30\"},\"organization\":\"Vanguard/Primecap Fund\",\"pctHeld\":{\"raw\":0.0029,\"fmt\":\"0.29%\"},\"position\":{\"raw\":7779176,\"fmt\":\"7.78M\",\"longFmt\":\"7,779,176\"},\"value\":{\"raw\":2286922160,\"fmt\":\"2.29B\",\"longFmt\":\"2,286,922,160\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1609372800,\"fmt\":\"2020-12-31\"},\"organization\":\"iShares MSCI Emerging Markets ETF\",\"pctHeld\":{\"raw\":0.0025,\"fmt\":\"0.25%\"},\"position\":{\"raw\":6768689,\"fmt\":\"6.77M\",\"longFmt\":\"6,768,689\"},\"value\":{\"raw\":1575276990,\"fmt\":\"1.58B\",\"longFmt\":\"1,575,276,990\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1609372800,\"fmt\":\"2020-12-31\"},\"organization\":\"Price (T.Rowe) Growth Stock Fund Inc.\",\"pctHeld\":{\"raw\":0.0023999999,\"fmt\":\"0.24%\"},\"position\":{\"raw\":6509625,\"fmt\":\"6.51M\",\"longFmt\":\"6,509,625\"},\"value\":{\"raw\":1514985026,\"fmt\":\"1.51B\",\"longFmt\":\"1,514,985,026\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1606694400,\"fmt\":\"2020-11-30\"},\"organization\":\"Vanguard/Wellington Fund Inc.\",\"pctHeld\":{\"raw\":0.0017,\"fmt\":\"0.17%\"},\"position\":{\"raw\":4464653,\"fmt\":\"4.46M\",\"longFmt\":\"4,464,653\"},\"value\":{\"raw\":1175811014,\"fmt\":\"1.18B\",\"longFmt\":\"1,175,811,014\"}}]}}],\"error\":null}}"
+  }
+}

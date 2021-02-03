@@ -1,0 +1,70 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BABA?formatted=false&modules=recommendationTrend"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "59vo0b9g1kjtf"
+      ],
+      "x-yahoo-request-id": [
+        "59vo0b9g1kjtf"
+      ],
+      "x-request-id": [
+        "69b56502-b810-4065-86e6-833b73747fd9"
+      ],
+      "content-length": [
+        "388"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 03 Feb 2021 07:24:31 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "2"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"recommendationTrend\":{\"trend\":[{\"period\":\"0m\",\"strongBuy\":18,\"buy\":29,\"hold\":1,\"sell\":0,\"strongSell\":0},{\"period\":\"-1m\",\"strongBuy\":19,\"buy\":29,\"hold\":1,\"sell\":0,\"strongSell\":0},{\"period\":\"-2m\",\"strongBuy\":19,\"buy\":29,\"hold\":1,\"sell\":0,\"strongSell\":0},{\"period\":\"-3m\",\"strongBuy\":19,\"buy\":30,\"hold\":0,\"sell\":0,\"strongSell\":0}],\"maxAge\":86400}}],\"error\":null}}"
+  }
+}

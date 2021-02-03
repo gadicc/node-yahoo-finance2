@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BABA?formatted=false&modules=cashflowStatementHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "965uf79g1kjsr"
+      ],
+      "x-yahoo-request-id": [
+        "965uf79g1kjsr"
+      ],
+      "x-request-id": [
+        "834d6dab-6397-40fb-9179-db3ee819632d"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1339"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 03 Feb 2021 07:24:11 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"cashflowStatementHistory\":{\"cashflowStatements\":[{\"maxAge\":1,\"endDate\":{\"raw\":1585612800,\"fmt\":\"2020-03-31\"},\"netIncome\":{\"raw\":149433000000,\"fmt\":\"149.43B\",\"longFmt\":\"149,433,000,000\"},\"depreciation\":{\"raw\":42427000000,\"fmt\":\"42.43B\",\"longFmt\":\"42,427,000,000\"},\"changeToNetincome\":{\"raw\":-32671000000,\"fmt\":\"-32.67B\",\"longFmt\":\"-32,671,000,000\"},\"changeToLiabilities\":{\"raw\":7914000000,\"fmt\":\"7.91B\",\"longFmt\":\"7,914,000,000\"},\"changeToOperatingActivities\":{\"raw\":10966000000,\"fmt\":\"10.97B\",\"longFmt\":\"10,966,000,000\"},\"totalCashFromOperatingActivities\":{\"raw\":180607000000,\"fmt\":\"180.61B\",\"longFmt\":\"180,607,000,000\"},\"capitalExpenditures\":{\"raw\":-32550000000,\"fmt\":\"-32.55B\",\"longFmt\":\"-32,550,000,000\"},\"investments\":{\"raw\":-60463000000,\"fmt\":\"-60.46B\",\"longFmt\":\"-60,463,000,000\"},\"otherCashflowsFromInvestingActivities\":{\"raw\":-228000000,\"fmt\":\"-228M\",\"longFmt\":\"-228,000,000\"},\"totalCashflowsFromInvestingActivities\":{\"raw\":-108072000000,\"fmt\":\"-108.07B\",\"longFmt\":\"-108,072,000,000\"},\"netBorrowings\":{\"raw\":-15953000000,\"fmt\":\"-15.95B\",\"longFmt\":\"-15,953,000,000\"},\"otherCashflowsFromFinancingActivities\":{\"raw\":-4700000000,\"fmt\":\"-4.7B\",\"longFmt\":\"-4,700,000,000\"},\"totalCashFromFinancingActivities\":{\"raw\":70853000000,\"fmt\":\"70.85B\",\"longFmt\":\"70,853,000,000\"},\"effectOfExchangeRate\":{\"raw\":4100000000,\"fmt\":\"4.1B\",\"longFmt\":\"4,100,000,000\"},\"changeInCash\":{\"raw\":147488000000,\"fmt\":\"147.49B\",\"longFmt\":\"147,488,000,000\"},\"issuanceOfStock\":{\"raw\":91506000000,\"fmt\":\"91.51B\",\"longFmt\":\"91,506,000,000\"}},{\"maxAge\":1,\"endDate\":{\"raw\":1553990400,\"fmt\":\"2019-03-31\"},\"netIncome\":{\"raw\":87886000000,\"fmt\":\"87.89B\",\"longFmt\":\"87,886,000,000\"},\"depreciation\":{\"raw\":36936000000,\"fmt\":\"36.94B\",\"longFmt\":\"36,936,000,000\"},\"changeToNetincome\":{\"raw\":-6241000000,\"fmt\":\"-6.24B\",\"longFmt\":\"-6,241,000,000\"},\"changeToLiabilities\":{\"raw\":8639000000,\"fmt\":\"8.64B\",\"longFmt\":\"8,639,000,000\"},\"changeToOperatingActivities\":{\"raw\":20551000000,\"fmt\":\"20.55B\",\"longFmt\":\"20,551,000,000\"},\"totalCashFromOperatingActivities\":{\"raw\":150975000000,\"fmt\":\"150.97B\",\"longFmt\":\"150,975,000,000\"},\"capitalExpenditures\":{\"raw\":-35482000000,\"fmt\":\"-35.48B\",\"longFmt\":\"-35,482,000,000\"},\"investments\":{\"raw\":-65965000000,\"fmt\":\"-65.97B\",\"longFmt\":\"-65,965,000,000\"},\"otherCashflowsFromInvestingActivities\":{\"raw\":-8000000,\"fmt\":\"-8M\",\"longFmt\":\"-8,000,000\"},\"totalCashflowsFromInvestingActivities\":{\"raw\":-151060000000,\"fmt\":\"-151.06B\",\"longFmt\":\"-151,060,000,000\"},\"netBorrowings\":{\"raw\":-4231000000,\"fmt\":\"-4.23B\",\"longFmt\":\"-4,231,000,000\"},\"otherCashflowsFromFinancingActivities\":{\"raw\":7357000000,\"fmt\":\"7.36B\",\"longFmt\":\"7,357,000,000\"},\"totalCashFromFinancingActivities\":{\"raw\":-7392000000,\"fmt\":\"-7.39B\",\"longFmt\":\"-7,392,000,000\"},\"effectOfExchangeRate\":{\"raw\":3245000000,\"fmt\":\"3.25B\",\"longFmt\":\"3,245,000,000\"},\"changeInCash\":{\"raw\":-4232000000,\"fmt\":\"-4.23B\",\"longFmt\":\"-4,232,000,000\"},\"repurchaseOfStock\":{\"raw\":-10872000000,\"fmt\":\"-10.87B\",\"longFmt\":\"-10,872,000,000\"},\"issuanceOfStock\":{\"raw\":354000000,\"fmt\":\"354M\",\"longFmt\":\"354,000,000\"}},{\"maxAge\":1,\"endDate\":{\"raw\":1522454400,\"fmt\":\"2018-03-31\"},\"netIncome\":{\"raw\":64093000000,\"fmt\":\"64.09B\",\"longFmt\":\"64,093,000,000\"},\"depreciation\":{\"raw\":21885000000,\"fmt\":\"21.89B\",\"longFmt\":\"21,885,000,000\"},\"changeToNetincome\":{\"raw\":16967000000,\"fmt\":\"16.97B\",\"longFmt\":\"16,967,000,000\"},\"changeToLiabilities\":{\"raw\":5690000000,\"fmt\":\"5.69B\",\"longFmt\":\"5,690,000,000\"},\"changeToOperatingActivities\":{\"raw\":10425000000,\"fmt\":\"10.43B\",\"longFmt\":\"10,425,000,000\"},\"totalCashFromOperatingActivities\":{\"raw\":125805000000,\"fmt\":\"125.81B\",\"longFmt\":\"125,805,000,000\"},\"capitalExpenditures\":{\"raw\":-19628000000,\"fmt\":\"-19.63B\",\"longFmt\":\"-19,628,000,000\"},\"investments\":{\"raw\":-52936000000,\"fmt\":\"-52.94B\",\"longFmt\":\"-52,936,000,000\"},\"otherCashflowsFromInvestingActivities\":{\"raw\":-450000000,\"fmt\":\"-450M\",\"longFmt\":\"-450,000,000\"},\"totalCashflowsFromInvestingActivities\":{\"raw\":-83764000000,\"fmt\":\"-83.76B\",\"longFmt\":\"-83,764,000,000\"},\"netBorrowings\":{\"raw\":33625000000,\"fmt\":\"33.62B\",\"longFmt\":\"33,625,000,000\"},\"otherCashflowsFromFinancingActivities\":{\"raw\":-13665000000,\"fmt\":\"-13.66B\",\"longFmt\":\"-13,665,000,000\"},\"totalCashFromFinancingActivities\":{\"raw\":20359000000,\"fmt\":\"20.36B\",\"longFmt\":\"20,359,000,000\"},\"effectOfExchangeRate\":{\"raw\":-6065000000,\"fmt\":\"-6.07B\",\"longFmt\":\"-6,065,000,000\"},\"changeInCash\":{\"raw\":56335000000,\"fmt\":\"56.34B\",\"longFmt\":\"56,335,000,000\"},\"repurchaseOfStock\":{\"raw\":-10872000000,\"fmt\":\"-10.87B\",\"longFmt\":\"-10,872,000,000\"},\"issuanceOfStock\":{\"raw\":399000000,\"fmt\":\"399M\",\"longFmt\":\"399,000,000\"}},{\"maxAge\":1,\"endDate\":{\"raw\":1490918400,\"fmt\":\"2017-03-31\"},\"netIncome\":{\"raw\":43675000000,\"fmt\":\"43.67B\",\"longFmt\":\"43,675,000,000\"},\"depreciation\":{\"raw\":14185000000,\"fmt\":\"14.19B\",\"longFmt\":\"14,185,000,000\"},\"changeToNetincome\":{\"raw\":15100000000,\"fmt\":\"15.1B\",\"longFmt\":\"15,100,000,000\"},\"changeToLiabilities\":{\"raw\":4611000000,\"fmt\":\"4.61B\",\"longFmt\":\"4,611,000,000\"},\"changeToOperatingActivities\":{\"raw\":478000000,\"fmt\":\"478M\",\"longFmt\":\"478,000,000\"},\"totalCashFromOperatingActivities\":{\"raw\":82854000000,\"fmt\":\"82.85B\",\"longFmt\":\"82,854,000,000\"},\"capitalExpenditures\":{\"raw\":-11006000000,\"fmt\":\"-11.01B\",\"longFmt\":\"-11,006,000,000\"},\"investments\":{\"raw\":-28582000000,\"fmt\":\"-28.58B\",\"longFmt\":\"-28,582,000,000\"},\"otherCashflowsFromInvestingActivities\":{\"raw\":-253000000,\"fmt\":\"-253M\",\"longFmt\":\"-253,000,000\"},\"totalCashflowsFromInvestingActivities\":{\"raw\":-79579000000,\"fmt\":\"-79.58B\",\"longFmt\":\"-79,579,000,000\"},\"netBorrowings\":{\"raw\":29333000000,\"fmt\":\"29.33B\",\"longFmt\":\"29,333,000,000\"},\"otherCashflowsFromFinancingActivities\":{\"raw\":2069000000,\"fmt\":\"2.07B\",\"longFmt\":\"2,069,000,000\"},\"totalCashFromFinancingActivities\":{\"raw\":32914000000,\"fmt\":\"32.91B\",\"longFmt\":\"32,914,000,000\"},\"effectOfExchangeRate\":{\"raw\":2038000000,\"fmt\":\"2.04B\",\"longFmt\":\"2,038,000,000\"},\"changeInCash\":{\"raw\":38227000000,\"fmt\":\"38.23B\",\"longFmt\":\"38,227,000,000\"},\"repurchaseOfStock\":{\"raw\":-13182000000,\"fmt\":\"-13.18B\",\"longFmt\":\"-13,182,000,000\"},\"issuanceOfStock\":{\"raw\":14694000000,\"fmt\":\"14.69B\",\"longFmt\":\"14,694,000,000\"}}],\"maxAge\":86400}}],\"error\":null}}"
+  }
+}
