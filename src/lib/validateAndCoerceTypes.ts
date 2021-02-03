@@ -84,15 +84,18 @@ function validate(object: object, key: string, module?: string): void {
     console.error("The following result did not validate with schema: " + key);
     logObj(validator.errors);
     logObj(object);
-    console.error("You should handle occassional errors in your code, however if ");
-    console.error("this happens every time, probably Yahoo have changed their API ");
-    console.error("and node-yahoo-finance2 needs to be updated.  Please see if ");
-    console.error("anyone has reported this previously:");
-    console.error();
+    console.error(`
+This may happen intermittently and you should catch errors appropriately.
+However:  1) if this recently started happening on every request for a symbol
+that used to work, Yahoo may have changed their API.  2) If this happens on
+every request for a symbol you've never used before, but not for other
+symbols, you've found an edge-case.  Please see if anyone has reported
+this previously:
+`)
     console.error(`  ${pkg.repository}/issues?q=is%3Aissue+${title}`);
-    console.error();
-    console.error("or open a new issue:");
-    console.error();
+    console.error("");
+    console.error("or open a new issue (and mention the symbol):");
+    console.error("");
     console.error(`  ${pkg.repository}/issues/new?title=${title}`);
     throw new FailedYahooValidationError("Failed Yahoo Schema validation");
 
