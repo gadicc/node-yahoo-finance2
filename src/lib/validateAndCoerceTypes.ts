@@ -28,6 +28,7 @@ ajv.addKeyword('yahooFinanceType', {
         validate.errors = [];
 
       if (schema === 'number') {
+
         if (typeof data === 'number')
           return true;
 
@@ -37,20 +38,31 @@ ajv.addKeyword('yahooFinanceType', {
           if (typeof data.raw === 'number')
             return set(data.raw);
         }
-      }
 
-      if (schema === 'date') {
+      } else if (schema === 'date') {
+
+        if (data instanceof Date) {
+          /* @ts-ignore */
+          validate.errors.push({
+            keyword: "yahooFinanceType",
+            message: "Got a real Date object???  Bad test?",
+            params: { schema, data }
+          });
+          return false;
+        }
         if (typeof data === 'number')
           return set(new Date(data * 1000));
         if (data === null)
-          return null;
-        if (typeof data === 'object')
+          return set(null);
+        if (typeof data === 'object' && typeof data.raw === 'number')
           return set(new Date(data.raw * 1000));
         if (typeof data === 'string') {
           if (data.match(/^\d{4,4}-\d{2,2}-\d{2,2}$/) ||
               data.match(/^\d{4,4}-\d{2,2}-\d{2,2}T\d{2,2}:\d{2,2}:\d{2,2}\.\d{3,3}Z$/))
             return set(new Date(data));
+          data//?
         }
+
       }
 
       /* @ts-ignore */
@@ -77,6 +89,9 @@ function validate(object: object, key: string, module?: string): void {
 
   const valid = validator(object);
   if (valid) return;
+
+  // @ts-ignore
+  validate.errors = validator.errors;
 
   if (!module) {
 
