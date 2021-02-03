@@ -3,6 +3,7 @@
 ## Table of Contents
 
 1. [Common Options](#common-options)
+
 1. Modules
   1. [autoc](./modules/autoc.md)
   1. [historical](./modules/historical.md)
