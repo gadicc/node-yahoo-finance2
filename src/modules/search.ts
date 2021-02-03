@@ -74,8 +74,8 @@ export interface SearchOptions {
 const queryOptionsDefaults = {
   lang: 'en-US',
   region: 'US',
-  quotesCount: 1,
-  newsCount: 0,
+  quotesCount: 6,
+  newsCount: 4,
   enableFuzzyQuery: false,
   quotesQueryId: 'tss_match_phrase_query',
   multiQuoteQueryId: 'multi_quote_single_token_query',
