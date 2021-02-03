@@ -57,12 +57,12 @@ export interface AssetProfile {
   longBusinessSummary:        string;
   fullTimeEmployees:          number;
   companyOfficers:            CompanyOfficer[];
-  auditRisk:                  number;
-  boardRisk:                  number;
-  compensationRisk:           number;
-  shareHolderRightsRisk:      number;
-  overallRisk:                number;
-  governanceEpochDate:        Date;
+  auditRisk?:                 number;
+  boardRisk?:                 number;
+  compensationRisk?:          number;
+  shareHolderRightsRisk?:     number;
+  overallRisk?:               number;
+  governanceEpochDate?:       Date;
   compensationAsOfEpochDate?: Date;
   maxAge:                     number;
   address2?:                  string;
