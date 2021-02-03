@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/OCDO.L?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "d4vkns1g1kj2i"
+      ],
+      "x-yahoo-request-id": [
+        "d4vkns1g1kj2i"
+      ],
+      "x-request-id": [
+        "e11b9fd0-1299-44bd-a4d2-65e25e94935c"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "411"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 03 Feb 2021 07:10:10 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"price\":{\"maxAge\":1,\"regularMarketChangePercent\":-0.00990099,\"regularMarketChange\":-28.0,\"regularMarketTime\":1612283744,\"priceHint\":2,\"regularMarketPrice\":2800.0,\"regularMarketDayHigh\":2853.0,\"regularMarketDayLow\":2776.0,\"regularMarketVolume\":1004034,\"regularMarketPreviousClose\":2828.0,\"regularMarketSource\":\"DELAYED\",\"regularMarketOpen\":2843.0,\"exchange\":\"LSE\",\"exchangeName\":\"LSE\",\"exchangeDataDelayedBy\":20,\"marketState\":\"PREPRE\",\"quoteType\":\"EQUITY\",\"symbol\":\"OCDO.L\",\"underlyingSymbol\":null,\"shortName\":\"OCADO GROUP PLC ORD 2P\",\"longName\":\"Ocado Group plc\",\"currency\":\"GBp\",\"quoteSourceName\":\"Delayed Quote\",\"currencySymbol\":\"£\",\"fromCurrency\":null,\"toCurrency\":null,\"lastMarket\":null,\"marketCap\":20966455296}}],\"error\":null}}"
+  }
+}
