@@ -54,7 +54,7 @@ const results = await search('AAPL', { someOption: true, etc });
 Available modules:
 [`autoc`](./docs/modules/autoc.md),
 [`historical`](./docs/modules/historical.md),
-[`quoteSummary`](./docs/modules/quoteSummary.md), (submodules:
+[`quoteSummary`](./docs/modules/quoteSummary.md) (submodules:
 assetProfile, balanceSheetHistory, balanceSheetHistoryQuarterly,
 calendarEvents, cashflowStatementHistory, cashflowStatementHistoryQuarterly,
 defaultKeyStatistics, earnings, earningsHistory, earningsTrend, financialData,
