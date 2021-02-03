@@ -91,15 +91,15 @@ export interface BalanceSheetStatement {
   endDate:                       Date;
   cash:                          number;
   shortTermInvestments?:         number;
-  netReceivables:                number;
-  inventory:                     number;
+  netReceivables?:               number;
+  inventory?:                    number;
   otherCurrentAssets:            number;
   totalCurrentAssets:            number;
   longTermInvestments:           number;
   propertyPlantEquipment:        number;
   otherAssets:                   number;
   totalAssets:                   number;
-  accountsPayable:               number;
+  accountsPayable?:              number;
   shortLongTermDebt?:            number;
   otherCurrentLiab:              number;
   longTermDebt:                  number;
@@ -158,7 +158,7 @@ export interface CashflowStatement {
   otherCashflowsFromInvestingActivities: number;
   totalCashflowsFromInvestingActivities: number;
   dividendsPaid?:                        number;
-  netBorrowings:                         number;
+  netBorrowings?:                        number;
   otherCashflowsFromFinancingActivities: number;
   totalCashFromFinancingActivities:      number;
   changeInCash:                          number;

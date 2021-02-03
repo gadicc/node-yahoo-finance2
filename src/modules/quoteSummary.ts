@@ -8,7 +8,7 @@ const QUERY_URL = 'https://query2.finance.yahoo.com/v10/finance/quoteSummary';
 const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/QuoteSummaryOptions'
 const QUERY_RESULT_SCHEMA_KEY = "#/definitions/QuoteSummaryResult";
 
-const quoteSummary_modules = [
+export const quoteSummary_modules = [
   'assetProfile',
   'balanceSheetHistory',
   'balanceSheetHistoryQuarterly',
@@ -45,7 +45,7 @@ const quoteSummary_modules = [
   'upgradeDowngradeHistory',
 ];
 
-type QuoteSummaryModules =
+export type QuoteSummaryModules =
   "assetProfile" |
   "balanceSheetHistory" |
   "balanceSheetHistoryQuarterly" |

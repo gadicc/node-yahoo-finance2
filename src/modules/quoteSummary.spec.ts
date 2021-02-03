@@ -10,8 +10,21 @@ const yf = {
   quoteSummary
 };
 
-function itValidates(name: QuoteSummaryModules|"all", skip:Array<string>=[]) {
-  const symbols = ['AAPL','OCDO.L'].filter(s => !skip.includes(s));
+const testSymbols = [
+  'AAPL',    // NMS (Nasdaq)
+  'OCDO.L',  // LSE
+  'BABA',    // NYSE
+];
+
+interface itValidatesOpts {
+  skip?: Array<string>
+}
+
+function itValidates(name: QuoteSummaryModules|"all", opts:itValidatesOpts={}) {
+  let symbols = testSymbols;
+  if (opts.skip) // @ts-ignore
+    symbols = symbols.filter(s => !opts.skip.includes(s));
+
   const modules = name === 'all' ? 'all' : [name];
   symbols.forEach(symbol => {
     it(`validates ${symbol}`, async () => {
@@ -138,7 +151,7 @@ describe('quoteSummary', () => {
 
     describe('insiderTransactions', () => {
 
-      itValidates("insiderTransactions");
+      itValidates("insiderTransactions", { skip: ['BABA'] });
 
     });
 
@@ -186,7 +199,7 @@ describe('quoteSummary', () => {
 
     describe('secFilings', () => {
 
-      itValidates("secFilings", ['OCDO.L']);
+      itValidates("secFilings", { skip: ['OCDO.L','BABA'] });
 
     });
 
@@ -204,7 +217,7 @@ describe('quoteSummary', () => {
 
     describe('upgradeDowngradeHistory', () => {
 
-      itValidates("upgradeDowngradeHistory", ['OCDO.L']);
+      itValidates("upgradeDowngradeHistory", { skip: ['OCDO.L'] });
 
     });
 
