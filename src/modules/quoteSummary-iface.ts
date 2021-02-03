@@ -41,6 +41,7 @@ export interface QuoteSummaryResult {
   sectorTrend?:                       Trend;
   summaryDetail?:                     SummaryDetail;
   summaryProfile?:                    SummaryProfile;
+  topHoldings?:                       TopHoldings;
   upgradeDowngradeHistory?:           UpgradeDowngradeHistory;
 }
 
@@ -107,9 +108,9 @@ export interface BalanceSheetStatement {
   totalCurrentLiabilities:       number;
   totalLiab:                     number;
   commonStock?:                  number;
-  retainedEarnings:              number;
-  treasuryStock:                 number;
-  otherStockholderEquity:        number;
+  retainedEarnings?:             number;
+  treasuryStock?:                number;
+  otherStockholderEquity?:       number;
   totalStockholderEquity:        number;
   netTangibleAssets:             number;
   goodWill?:                     number;
@@ -123,8 +124,8 @@ export interface BalanceSheetStatement {
 export interface CalendarEvents {
   maxAge:          number;
   earnings:        CalendarEventsEarnings;
-  exDividendDate?: number;
-  dividendDate?:   number;
+  exDividendDate?: Date;
+  dividendDate?:   Date;
 }
 
 export interface CalendarEventsEarnings {
@@ -651,6 +652,56 @@ export interface SummaryProfile {
   maxAge:              number;
   address2?:           string;
   fax?:                string;
+}
+
+export interface TopHoldings {
+  maxAge:              number;
+  stockPosition:       number;
+  bondPosition:        number;
+  holdings:            TopHoldingsHolding[];
+  equityHoldings:      TopHoldingsEquityHoldings;
+  bondHoldings:        object;
+  bondRatings:         TopHoldingsBondRating[];
+  sectorWeightings:    TopHoldingsSectorWeighting[];
+}
+
+export interface TopHoldingsHolding {
+  symbol:              string;
+  holdingName:         string;
+  holdingPercent:      number;
+}
+
+export interface TopHoldingsEquityHoldings {
+  priceToEarnings:  number;
+  priceToBook:      number;
+  priceToSales:     number;
+  priceToCashflow:  number;
+}
+
+export interface TopHoldingsBondRating {
+  a?:             number;
+  aa?:            number;
+  aaa?:           number;
+  other?:         number;
+  b?:             number;
+  bb?:            number;
+  bbb?:           number;
+  below_b?:       number;
+  us_government?: number;
+}
+
+export interface TopHoldingsSectorWeighting {
+  realestate?:             number;
+  consumer_cyclical?:      number;
+  basic_materials?:        number;
+  consumer_defensive?:     number;
+  technology?:             number;
+  communication_services?: number;
+  financial_services?:     number;
+  utilities?:              number;
+  industrials?:            number;
+  energy?:                 number;
+  healthcare?:             number;
 }
 
 export interface UpgradeDowngradeHistory {

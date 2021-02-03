@@ -294,9 +294,6 @@
         "otherLiab",
         "totalCurrentLiabilities",
         "totalLiab",
-        "retainedEarnings",
-        "treasuryStock",
-        "otherStockholderEquity",
         "totalStockholderEquity",
         "netTangibleAssets"
       ],
@@ -306,13 +303,13 @@
       "additionalProperties": false,
       "properties": {
         "dividendDate": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "date"
         },
         "earnings": {
           "$ref": "#/definitions/CalendarEventsEarnings"
         },
         "exDividendDate": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "date"
         },
         "maxAge": {
           "yahooFinanceType": "number"
@@ -1948,6 +1945,9 @@
         "summaryProfile": {
           "$ref": "#/definitions/SummaryProfile"
         },
+        "topHoldings": {
+          "$ref": "#/definitions/TopHoldings"
+        },
         "upgradeDowngradeHistory": {
           "$ref": "#/definitions/UpgradeDowngradeHistory"
         }
@@ -2703,6 +2703,171 @@
         "companyOfficers",
         "maxAge"
       ],
+      "type": "object"
+    },
+    "TopHoldings": {
+      "additionalProperties": false,
+      "properties": {
+        "bondHoldings": {
+          "type": "object"
+        },
+        "bondPosition": {
+          "yahooFinanceType": "number"
+        },
+        "bondRatings": {
+          "items": {
+            "$ref": "#/definitions/TopHoldingsBondRating"
+          },
+          "type": "array"
+        },
+        "equityHoldings": {
+          "$ref": "#/definitions/TopHoldingsEquityHoldings"
+        },
+        "holdings": {
+          "items": {
+            "$ref": "#/definitions/TopHoldingsHolding"
+          },
+          "type": "array"
+        },
+        "maxAge": {
+          "yahooFinanceType": "number"
+        },
+        "sectorWeightings": {
+          "items": {
+            "$ref": "#/definitions/TopHoldingsSectorWeighting"
+          },
+          "type": "array"
+        },
+        "stockPosition": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "maxAge",
+        "stockPosition",
+        "bondPosition",
+        "holdings",
+        "equityHoldings",
+        "bondHoldings",
+        "bondRatings",
+        "sectorWeightings"
+      ],
+      "type": "object"
+    },
+    "TopHoldingsBondRating": {
+      "additionalProperties": false,
+      "properties": {
+        "a": {
+          "yahooFinanceType": "number"
+        },
+        "aa": {
+          "yahooFinanceType": "number"
+        },
+        "aaa": {
+          "yahooFinanceType": "number"
+        },
+        "b": {
+          "yahooFinanceType": "number"
+        },
+        "bb": {
+          "yahooFinanceType": "number"
+        },
+        "bbb": {
+          "yahooFinanceType": "number"
+        },
+        "below_b": {
+          "yahooFinanceType": "number"
+        },
+        "other": {
+          "yahooFinanceType": "number"
+        },
+        "us_government": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "type": "object"
+    },
+    "TopHoldingsEquityHoldings": {
+      "additionalProperties": false,
+      "properties": {
+        "priceToBook": {
+          "yahooFinanceType": "number"
+        },
+        "priceToCashflow": {
+          "yahooFinanceType": "number"
+        },
+        "priceToEarnings": {
+          "yahooFinanceType": "number"
+        },
+        "priceToSales": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "priceToEarnings",
+        "priceToBook",
+        "priceToSales",
+        "priceToCashflow"
+      ],
+      "type": "object"
+    },
+    "TopHoldingsHolding": {
+      "additionalProperties": false,
+      "properties": {
+        "holdingName": {
+          "type": "string"
+        },
+        "holdingPercent": {
+          "yahooFinanceType": "number"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "holdingName",
+        "holdingPercent"
+      ],
+      "type": "object"
+    },
+    "TopHoldingsSectorWeighting": {
+      "additionalProperties": false,
+      "properties": {
+        "basic_materials": {
+          "yahooFinanceType": "number"
+        },
+        "communication_services": {
+          "yahooFinanceType": "number"
+        },
+        "consumer_cyclical": {
+          "yahooFinanceType": "number"
+        },
+        "consumer_defensive": {
+          "yahooFinanceType": "number"
+        },
+        "energy": {
+          "yahooFinanceType": "number"
+        },
+        "financial_services": {
+          "yahooFinanceType": "number"
+        },
+        "healthcare": {
+          "yahooFinanceType": "number"
+        },
+        "industrials": {
+          "yahooFinanceType": "number"
+        },
+        "realestate": {
+          "yahooFinanceType": "number"
+        },
+        "technology": {
+          "yahooFinanceType": "number"
+        },
+        "utilities": {
+          "yahooFinanceType": "number"
+        }
+      },
       "type": "object"
     },
     "Transaction": {
