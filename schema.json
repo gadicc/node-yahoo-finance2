@@ -1826,7 +1826,6 @@
         "sectorTrend",
         "summaryDetail",
         "summaryProfile",
-        "symbol",
         "topHoldings",
         "upgradeDowngradeHistory"
       ],
@@ -2264,13 +2263,14 @@
       ],
       "type": "object"
     },
-    "SearchQuoteYahoo": {
+    "SearchQuoteYahooEquity": {
       "additionalProperties": false,
       "properties": {
         "exchange": {
           "type": "string"
         },
         "index": {
+          "const": "quotes",
           "type": "string"
         },
         "isYahooFinance": {
@@ -2281,6 +2281,7 @@
           "type": "string"
         },
         "quoteType": {
+          "const": "EQUITY",
           "type": "string"
         },
         "score": {
@@ -2293,6 +2294,7 @@
           "type": "string"
         },
         "typeDisp": {
+          "const": "Equity",
           "type": "string"
         }
       },
@@ -2305,6 +2307,50 @@
         "score",
         "typeDisp",
         "longname",
+        "isYahooFinance"
+      ],
+      "type": "object"
+    },
+    "SearchQuoteYahooOption": {
+      "additionalProperties": false,
+      "properties": {
+        "exchange": {
+          "type": "string"
+        },
+        "index": {
+          "const": "quotes",
+          "type": "string"
+        },
+        "isYahooFinance": {
+          "const": true,
+          "type": "boolean"
+        },
+        "quoteType": {
+          "const": "OPTION",
+          "type": "string"
+        },
+        "score": {
+          "yahooFinanceType": "number"
+        },
+        "shortname": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "typeDisp": {
+          "const": "Option",
+          "type": "string"
+        }
+      },
+      "required": [
+        "exchange",
+        "shortname",
+        "quoteType",
+        "symbol",
+        "index",
+        "score",
+        "typeDisp",
         "isYahooFinance"
       ],
       "type": "object"
@@ -2337,7 +2383,10 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "#/definitions/SearchQuoteYahoo"
+                "$ref": "#/definitions/SearchQuoteYahooEquity"
+              },
+              {
+                "$ref": "#/definitions/SearchQuoteYahooOption"
               },
               {
                 "$ref": "#/definitions/SearchQuoteNonYahoo"
@@ -2422,7 +2471,10 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "#/definitions/SearchQuoteYahoo"
+                "$ref": "#/definitions/SearchQuoteYahooEquity"
+              },
+              {
+                "$ref": "#/definitions/SearchQuoteYahooOption"
               },
               {
                 "$ref": "#/definitions/SearchQuoteNonYahoo"

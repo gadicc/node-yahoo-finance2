@@ -4,15 +4,25 @@ const QUERY_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
 const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/SearchOptions';
 const QUERY_RESULT_SCHEMA_KEY = "#/definitions/SearchResultOrig";
 
-export interface SearchQuoteYahoo {
+export interface SearchQuoteYahooEquity {
   exchange: string;        // "NYQ"
   shortname: string;       // "Alibaba Group Holding Limited"
-  quoteType: string;       // "EQUITY"     TODO "EQUITY" | ???
+  quoteType: "EQUITY";     // "EQUITY"
   symbol: string;          // "BABA"
-  index: string;           // "quotes"
+  index: "quotes";         // "quotes"
   score: number;           // 1111958.0
-  typeDisp: string;        // "Equity"
+  typeDisp: "Equity";        // "Equity"
   longname: string;        // "Alibaba Group Holding Limited"
+  isYahooFinance: true;    // true
+}
+export interface SearchQuoteYahooOption {
+  exchange: string;        // "OPR"
+  shortname: string;       // "AAPL Feb 2021 65.000 call"
+  quoteType: "OPTION";     // "EQUITY"     TODO "EQUITY" | ???
+  symbol: string;          // "AAPL210205C00065000"
+  index: "quotes";         // "quotes"
+  score: number;           // 1111958.0
+  typeDisp: "Option";      // "Option"
   isYahooFinance: true;    // true
 }
 export interface SearchQuoteNonYahoo {
@@ -38,7 +48,7 @@ export interface SearchNews extends Omit<SearchNewsOrig,'providerPublishTime'> {
 export interface SearchResultOrig {
   explains: Array<any>;
   count: number;
-  quotes: Array<SearchQuoteYahoo | SearchQuoteNonYahoo>;
+  quotes: Array<SearchQuoteYahooEquity | SearchQuoteYahooOption | SearchQuoteNonYahoo>;
   news: Array<SearchNewsOrig>;
   nav: Array<any>;
   lists: Array<any>,
