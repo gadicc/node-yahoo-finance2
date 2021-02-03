@@ -10,7 +10,8 @@ const ajv = new Ajv({ allowUnionTypes: true });
 addFormats(ajv);
 
 /* @ts-ignore */
-ajv.addKeyword('yahooFinanceType', {
+ajv.addKeyword({
+  keyword: 'yahooFinanceType',
   modifying: true,
   errors: true,
   /* @ts-ignore */
