@@ -51,7 +51,10 @@ const results = await search('AAPL');
 const results = await search('AAPL', { someOption: true, etc });
 ```
 
-Available modules: `autoc`, `historical`, `quoteSummary` (submodules:
+Available modules:
+[`autoc`](./docs/autoc.md),
+[`historical`](./docs/historical.md),
+[`quoteSummary`](./docs/quoteSummary.md), (submodules:
 assetProfile, balanceSheetHistory, balanceSheetHistoryQuarterly,
 calendarEvents, cashflowStatementHistory, cashflowStatementHistoryQuarterly,
 defaultKeyStatistics, earnings, earningsHistory, earningsTrend, financialData,
@@ -60,7 +63,8 @@ incomeStatementHistoryQuarterly, indexTrend, industryTrend, insiderHolders
 insiderTransactions, institutionOwnership, majorDirectHolders,
 majorHoldersBreakdown, netSharePurchaseActivity, price, quoteType,
 recommendationTrend, secFilings, sectorTrend, summaryDetail, summaryProfile,
-symbol, topHoldings, upgradeDowngradeHistory), `search`, with more
+symbol, topHoldings, upgradeDowngradeHistory),
+[`search`](./docs/search.md), with more
 [coming soon](https://github.com/gadicc/node-yahoo-finance2/issues/8).
 
 [Documentation](./docs/README.md) coming soon.
