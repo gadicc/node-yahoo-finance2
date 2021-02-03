@@ -1,3 +1,17 @@
+## [1.4.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.4.0...v1.4.1) (2021-02-03)
+
+
+### Bug Fixes
+
+* **quoteSummary:** iface fixes, TopHoldings ([904934a](https://github.com/gadicc/node-yahoo-finance2/commit/904934acfe05c21424daad21da93ab2141214de6))
+* **quoteSummary:** more optional props, more tests ([3fa958c](https://github.com/gadicc/node-yahoo-finance2/commit/3fa958c255bb374b71915a063b4f3d783fb39a50))
+* **quoteSummary:** remove non-existant "symbol" submodule ([eae40e2](https://github.com/gadicc/node-yahoo-finance2/commit/eae40e2c2a98c7bd17d431474bf70d9da5fdd94b))
+* **quoteSummary/assetProfile:** make *Risk fields optional ([08561c7](https://github.com/gadicc/node-yahoo-finance2/commit/08561c749f732757794447a543b6385ba9666f9b))
+* **search:** add SearchQuoteYahooOption type ([cf8dbdb](https://github.com/gadicc/node-yahoo-finance2/commit/cf8dbdb5cc86e7567ad89f5443374609d23f356e))
+* **search:** restore default query options ([e0169d1](https://github.com/gadicc/node-yahoo-finance2/commit/e0169d138724bf960623dc7491401ffbc2e679be))
+* **validate:** edge case, Date object w/ invalid raw field; add tests ([a98d306](https://github.com/gadicc/node-yahoo-finance2/commit/a98d30694dc4a7022cf57d409cd7d5c4b34295a2))
+* **validate:** use new ajv.addKeyword syntax ([f00a14e](https://github.com/gadicc/node-yahoo-finance2/commit/f00a14e86145dcd489fe393a60fa63f8d517d72c))
+
 # [1.4.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.3.1...v1.4.0) (2021-02-02)
 
 
