@@ -120,7 +120,6 @@ describe('validateAndCoerceTypes', () => {
         result.price = Object.assign({}, result.price);
         // @ts-ignore
         result.price.regularMarketTime = { weird: 1612313997 };
-        console.log(result);
 
         expect(
           () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
@@ -136,6 +135,12 @@ describe('validateAndCoerceTypes', () => {
         expect(error.params.data).toBe(result.price.regularMarketTime);
         expect(error.dataPath).toBe('/price/regularMarketTime');
         expect(error.schemaPath).toBe('#/definitions/Price/properties/regularMarketTime/yahooFinanceType');
+      });
+
+      it('fails on invalid schema key', () => {
+        expect(
+          () => validateAndCoerceTypes({}, "SOME_MISSING_KEY")
+        ).toThrow(/No such schema/)
       });
 
     });

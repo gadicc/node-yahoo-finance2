@@ -15,7 +15,7 @@ ajv.addKeyword({
   modifying: true,
   errors: true,
   /* @ts-ignore */
-  compile(schema, parentSchema) {
+  compile(schema /*, parentSchema */) {
     /* @ts-ignore */
     return function validate(data, { parentData, parentDataProperty }) {
       function set(value: any) {
@@ -59,7 +59,6 @@ ajv.addKeyword({
           if (data.match(/^\d{4,4}-\d{2,2}-\d{2,2}$/) ||
               data.match(/^\d{4,4}-\d{2,2}-\d{2,2}T\d{2,2}:\d{2,2}:\d{2,2}\.\d{3,3}Z$/))
             return set(new Date(data));
-          data//?
         }
 
       }
@@ -77,6 +76,7 @@ ajv.addKeyword({
 
 ajv.addSchema(schema);
 
+/* istanbul ignore next */
 const logObj = process?.stdout?.isTTY
   ? (obj:any) => console.dir(obj, { depth: 4, colors: true })
   : (obj:any) => console.log(JSON.stringify(obj, null, 2));
