@@ -43,12 +43,10 @@ $ yahoo-finance search AAPL '{ "someOption": true }'
 **Importing**
 
 ```js
-// Import the entire library or the specific module you need
-import { search } from 'yahoo-finance2';
-import search from 'yahoo-finance2/api/search';
+import yahooFinance from 'yahoo-finance2';
 
-const results = await search('AAPL');
-const results = await search('AAPL', { someOption: true, etc });
+const results = await yahooFinance.search('AAPL');
+const results = await yahooFInance.search('AAPL', { someOption: true, etc });
 ```
 
 Available modules:
