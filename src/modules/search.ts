@@ -2,7 +2,7 @@ import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
 
 const QUERY_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
 const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/SearchOptions';
-const QUERY_RESULT_SCHEMA_KEY = "#/definitions/SearchResultOrig";
+const QUERY_RESULT_SCHEMA_KEY = "#/definitions/SearchResult";
 
 export interface SearchQuoteYahooEquity {
   exchange: string;        // "NYQ"
@@ -32,24 +32,20 @@ export interface SearchQuoteNonYahoo {
   isYahooFinance: false    // false
 }
 
-export interface SearchNewsOrig {
+export interface SearchNews {
   uuid: string;                 // "9aff624a-e84c-35f3-9c23-db39852006dc"
   title: string;                // "Analyst Report: Alibaba Group Holding Limited"
   publisher: string;            // "Morningstar Research"
   link: string;                 // "https://finance.yahoo.com/m/9aff624a-e84c-35f3-9c23-db39852006dc/analyst-report%3A-alibaba-group.html"
-  providerPublishTime: number;  // 1611286342
+  providerPublishTime: Date;    // coerced to new Date(1611286342 * 1000)
   type: string;                 // "STORY"    TODO "STORY" | ???
 }
 
-export interface SearchNews extends Omit<SearchNewsOrig,'providerPublishTime'> {
-  providerPublishTime: Date;    // Date(1611286342 * 1000)
-}
-
-export interface SearchResultOrig {
+export interface SearchResult {
   explains: Array<any>;
   count: number;
   quotes: Array<SearchQuoteYahooEquity | SearchQuoteYahooOption | SearchQuoteNonYahoo>;
-  news: Array<SearchNewsOrig>;
+  news: Array<SearchNews>;
   nav: Array<any>;
   lists: Array<any>,
   researchReports: Array<any>,
@@ -61,10 +57,6 @@ export interface SearchResultOrig {
   timeTakenForCrunchbase: number;           // 400
   timeTakenForNav: number;                  // 400
   timeTakenForResearchReports: number;      // 0
-}
-
-export interface SearchResult extends Omit<SearchResultOrig,'news'> {
-  news: Array<SearchNews>;
 }
 
 export interface SearchOptions {
@@ -111,9 +103,6 @@ async function search(
 
   const result = await this._fetch(QUERY_URL, queryOptions, fetchOptions);
   validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
-
-  for (let news of result.news)
-    news.providerPublishTime = new Date(news.providerPublishTime * 1000);
 
   return result;
 }
