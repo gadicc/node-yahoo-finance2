@@ -1,4 +1,4 @@
-import validateAndCoerceTypes from './validateAndCoerceTypes';
+import validateAndCoerceTypes, { ajv } from './validateAndCoerceTypes';
 import { InvalidOptionsError, FailedYahooValidationError } from './errors';
 
 const QUERY_RESULT_SCHEMA_KEY = "#/definitions/QuoteSummaryResult";
@@ -66,6 +66,26 @@ describe('validateAndCoerceTypes', () => {
         expect(result.price.postMarketChangePercent).toBe(0.006599537);
       });
 
+      it('fails if data is not a number nor object', () => {
+        const result = Object.assign({}, priceResult);
+        result.price = Object.assign({}, result.price);
+        /* @ts-ignore */
+        result.price.postMarketChangePercent = true;
+        expect(
+          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
+        ).toThrow(/Failed Yahoo Schema/);
+      });
+
+      it('fails if data.raw is not a number', () => {
+        const result = Object.assign({}, priceResult);
+        result.price = Object.assign({}, result.price);
+        /* @ts-ignore */
+        result.price.postMarketChangePercent = { raw: "a string" };
+        expect(
+          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
+        ).toThrow(/Failed Yahoo Schema/);
+      });
+
     });
 
     describe('dates', () => {
@@ -92,13 +112,23 @@ describe('validateAndCoerceTypes', () => {
         .toBe(new Date(priceResult.price.regularMarketTime).getTime());
       });
 
-      it('coerces strings', () => {
+      it('coerces recognizable date string', () => {
         const result = Object.assign({}, priceResult);
         result.price = Object.assign({}, result.price);
         validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
         // @ts-ignore
         expect(result.price.regularMarketTime.getTime())
           .toBe(new Date(priceResult.price.regularMarketTime).getTime());
+      });
+
+      it('throws on non-matching strings', () => {
+        const result = Object.assign({}, priceResult);
+        result.price = Object.assign({}, result.price);
+        /* @ts-ignore */
+        result.price.postMarketTime = "clearly not a date";
+        expect(
+          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
+        ).toThrow(/Failed Yahoo Schema/);
       });
 
       it('passes through Date objects', () => {
@@ -114,6 +144,10 @@ describe('validateAndCoerceTypes', () => {
     });
 
     describe('failures', () => {
+
+      it('fails on key type that is not a number nor date', () => {
+
+      });
 
       it('fails on error', () => {
         const result = Object.assign({}, priceResult);
@@ -141,6 +175,14 @@ describe('validateAndCoerceTypes', () => {
         expect(
           () => validateAndCoerceTypes({}, "SOME_MISSING_KEY")
         ).toThrow(/No such schema/)
+      });
+
+      it('fails on output not from bin/modify-schema', () => {
+        const schema = { yahooFinanceType: "impossible" };
+        const validate = ajv.compile(schema);
+        expect(
+          () => validate({})
+        ).toThrow(/No such yahooFinanceType/);
       });
 
     });

@@ -7,7 +7,7 @@ const schema = require('../../schema.json');
 const pkg = require('../../package.json');
 import { InvalidOptionsError, FailedYahooValidationError } from './errors';
 
-const ajv = new Ajv({ allowUnionTypes: true });
+export const ajv = new Ajv({ allowUnionTypes: true });
 addFormats(ajv);
 
 ajv.addKeyword({
@@ -61,7 +61,11 @@ ajv.addKeyword({
             return set(new Date(data));
         }
 
-      } /* if (schema === 'date') */
+      } else {
+
+        throw new Error("No such yahooFinanceType: " + schema);
+
+      }
 
       validate.errors = validate.errors || [];
       validate.errors.push({
