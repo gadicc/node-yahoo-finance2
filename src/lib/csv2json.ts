@@ -17,7 +17,7 @@ function convert(input: any) {
 
 export default function csv2json(csv: string): Array<any> {
   const lines = csv.split('\n');
-  if (lines.length === 0)
+  if (lines.length === 1)
     throw new Error("No newlines in: " + csv);
 
   const headers = (lines.shift() as string).split(DELIMITER).map(camelize);
