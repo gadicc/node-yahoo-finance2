@@ -1,4 +1,5 @@
-import Ajv, {JSONSchemaType, DefinedError, ValidateFunction} from "ajv";
+import Ajv from "ajv";
+import type { SchemaValidateFunction } from "ajv/lib/types"
 import addFormats from 'ajv-formats';
 
 //import schema from '../../schema.json';
@@ -9,24 +10,19 @@ import { InvalidOptionsError, FailedYahooValidationError } from './errors';
 const ajv = new Ajv({ allowUnionTypes: true });
 addFormats(ajv);
 
-/* @ts-ignore */
 ajv.addKeyword({
   keyword: 'yahooFinanceType',
   modifying: true,
   errors: true,
-  /* @ts-ignore */
-  compile(schema /*, parentSchema */) {
-    /* @ts-ignore */
-    return function validate(data, { parentData, parentDataProperty }) {
+  schema: true,
+  compile(schema /*, parentSchema, it */) {
+    const validate: SchemaValidateFunction = (data, dataCtx) => {
+      const { parentData, parentDataProperty } = dataCtx;
+
       function set(value: any) {
         parentData[parentDataProperty] = value;
         return true;
       }
-
-    /* @ts-ignore */
-      if (!validate.errors)
-        /* @ts-ignore */
-        validate.errors = [];
 
       if (schema === 'number') {
 
@@ -49,21 +45,25 @@ ajv.addKeyword({
           // afterwards.
           return true;
         }
+
         if (typeof data === 'number')
           return set(new Date(data * 1000));
+
         if (data === null)
           return set(null);
+
         if (typeof data === 'object' && typeof data.raw === 'number')
           return set(new Date(data.raw * 1000));
+
         if (typeof data === 'string') {
           if (data.match(/^\d{4,4}-\d{2,2}-\d{2,2}$/) ||
               data.match(/^\d{4,4}-\d{2,2}-\d{2,2}T\d{2,2}:\d{2,2}:\d{2,2}\.\d{3,3}Z$/))
             return set(new Date(data));
         }
 
-      }
+      } /* if (schema === 'date') */
 
-      /* @ts-ignore */
+      validate.errors = validate.errors || [];
       validate.errors.push({
         keyword: "yahooFinanceType",
         message: "No matching type",
@@ -71,6 +71,8 @@ ajv.addKeyword({
       });
       return false;
     };
+
+    return validate;
   }
 });
 
