@@ -12,9 +12,10 @@ async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}, f
   const urlSearchParams = new URLSearchParams(params);
   const url = urlBase + '?' + urlSearchParams.toString();
 
+   /* istanbul ignore next */
   const fetchFunc = fetchOptionsOverrides.devel
     ? require('./fetchDevel')
-    : fetch;
+    : fetch; // no need to force coverage on real network request.
 
   const fetchOptions = {
     "User-Agent": userAgent,
