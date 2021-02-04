@@ -1,8 +1,3 @@
-
-const QUERY_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
-const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/SearchOptions';
-const QUERY_RESULT_SCHEMA_KEY = "#/definitions/SearchResult";
-
 export interface SearchQuoteYahooEquity {
   exchange: string;        // "NYQ"
   shortname: string;       // "Alibaba Group Holding Limited"

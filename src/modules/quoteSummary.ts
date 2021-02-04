@@ -2,10 +2,6 @@
 // import QuoteSummaryResult from "QuoteSummaryIfaces";
 import { QuoteSummaryResult } from './quoteSummary-iface';
 
-const QUERY_URL = 'https://query2.finance.yahoo.com/v10/finance/quoteSummary';
-const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/QuoteSummaryOptions'
-const QUERY_RESULT_SCHEMA_KEY = "#/definitions/QuoteSummaryResult";
-
 export const quoteSummary_modules = [
   'assetProfile',
   'balanceSheetHistory',
