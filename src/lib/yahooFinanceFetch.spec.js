@@ -15,4 +15,20 @@ describe('yahooFinanceFetch', () => {
     ).rejects.toBeInstanceOf(errors.BadRequestError);
   });
 
+  it('throws if no environmennt set', () => {
+    return expect(
+      _yahooFinanceFetch("")
+    ).rejects.toBeInstanceOf(errors.NoEnvironmentError);
+  });
+
+  it('throws if no environmennt set', () => {
+    return expect(
+      yahooFinanceFetch(
+        "https://query1.finance.yahoo.com/nonExistingURL-CACHED",
+        {},
+        { devel: 'pageWith404andJson.json'}
+      )
+    ).rejects.toBeInstanceOf(errors.HTTPError);
+  });
+
 });
