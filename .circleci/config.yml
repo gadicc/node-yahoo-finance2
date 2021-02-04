@@ -45,6 +45,5 @@ jobs:
           path: coverage
 
       - codecov/upload:
-          file: {{ coverage_report_filepath }}
 
       - run: yarn semantic-release
