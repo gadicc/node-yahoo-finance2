@@ -38,10 +38,13 @@ jobs:
       # run tests!
       - run: yarn test --collectCoverage=true
 
+      # Check for TypeScript errors
+      - run: yarn test:ts
+
       - store_artifacts:
           path: coverage
 
       - codecov/upload:
-        file: {{ coverage_report_filepath }}
+          file: "{{ coverage_report_filepath }}"
 
       - run: yarn semantic-release
