@@ -5,8 +5,8 @@ export interface SearchQuoteYahooEquity {
   symbol: string;          // "BABA"
   index: "quotes";         // "quotes"
   score: number;           // 1111958.0
-  typeDisp: "Equity";        // "Equity"
-  longname: string;        // "Alibaba Group Holding Limited"
+  typeDisp: "Equity";      // "Equity"
+  longname?: string;       // "Alibaba Group Holding Limited"
   isYahooFinance: true;    // true
 }
 export interface SearchQuoteYahooOption {

@@ -12,10 +12,22 @@ const yf = {
   search
 };
 
+const testSearches = [
+  "AAPL", // NMS (Nasdaq)
+  "OCDO.L", // LSE
+  "BABA", // NYSE
+  "Evolution Gaming Group", // STO
+  "Bayerische Motoren Werke AG", // GER
+];
+
 describe('search', () => {
 
-  it('passes validation', async () => {
-    await yf.search('AAPL', {}, { devel: "search-AAPL.json" });
+  // validate different searches
+  testSearches.forEach((search) => {
+    it(`passed validation for search: ${search}`, async () => {
+      const devel = `search-${search}.json`;
+      await yf.search(search, {}, { devel });
+    });
   });
 
   it('throws InvalidOptions on invalid options', async () => {
