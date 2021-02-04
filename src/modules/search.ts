@@ -84,7 +84,7 @@ const queryOptionsDefaults = {
 export default function search(
   this: { [key:string]: any, _moduleExec: Function },
   query: string,
-  queryOptionsOverrides: SearchOptions = {},
+  queryOptionsOverrides?: SearchOptions,
   fetchOptions?: object
 ): Promise<SearchResult> {
 

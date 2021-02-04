@@ -87,7 +87,7 @@ const queryOptionsDefaults = {
 export default function quoteSummary(
   this: { [key:string]: any, _moduleExec: Function },
   symbol: string,
-  queryOptionsOverrides: QuoteSummaryOptions = {},
+  queryOptionsOverrides?: QuoteSummaryOptions,
   fetchOptions?: object
 ): Promise<QuoteSummaryResult> {
 

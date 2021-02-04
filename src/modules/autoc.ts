@@ -25,7 +25,7 @@ const queryOptionsDefaults = {
 export default function autoc(
   this: { [key:string]: any, _moduleExec: Function },
   query: string,
-  queryOptionsOverrides: AutocOptions = {},
+  queryOptionsOverrides?: AutocOptions,
   fetchOptions?: object
 ): Promise<AutocResultSet> {
 
