@@ -45,6 +45,6 @@ jobs:
           path: coverage
 
       - codecov/upload:
-          file: './coverage/clover.xml'
+          file: './coverage/coverage-final.json'
 
       - run: yarn semantic-release
