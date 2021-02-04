@@ -1,4 +1,3 @@
-import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
 
 const QUERY_URL = 'https://query2.finance.yahoo.com/v1/finance/search';
 const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/SearchOptions';
@@ -87,24 +86,28 @@ const queryOptionsDefaults = {
   enableEnhancedTrivialQuery: true
 };
 
-async function search(
-  this: { [key:string]: any, _fetch: Function },
+export default function search(
+  this: { [key:string]: any, _moduleExec: Function },
   query: string,
   queryOptionsOverrides: SearchOptions = {},
   fetchOptions?: object
 ): Promise<SearchResult> {
-  validateAndCoerceTypes(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'search');
 
-  const queryOptions = {
-    q: query,
-    ...queryOptionsDefaults,
-    ...queryOptionsOverrides
-  };
+  return this._moduleExec({
+    moduleName: "search",
 
-  const result = await this._fetch(QUERY_URL, queryOptions, fetchOptions);
-  validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
+    query: {
+      url: "https://query2.finance.yahoo.com/v1/finance/search",
+      schemaKey: "#/definitions/SearchOptions",
+      defaults: queryOptionsDefaults,
+      runtime: { q: query },
+      overrides: queryOptionsOverrides,
+      fetchOptions,
+    },
 
-  return result;
+    result: {
+      schemaKey: "#/definitions/SearchResult",
+    }
+  });
+
 }
-
-export default search;

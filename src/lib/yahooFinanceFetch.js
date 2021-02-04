@@ -21,6 +21,10 @@ async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}, f
     ...fetchOptionsOverrides
   };
 
+  // used in moduleExec.ts
+  if (func === 'csv')
+    func = 'text';
+
   const res = await fetchFunc(url, fetchOptions);
   const result = await res[func]();
 

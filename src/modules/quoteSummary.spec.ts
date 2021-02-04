@@ -3,10 +3,12 @@ const { InvalidOptionsError } = require('../lib/errors');
 
 import _env from '../env-node';
 import _fetch from '../lib/yahooFinanceFetch';
+import _moduleExec from '../lib/moduleExec';
 
 const yf = {
   _env,
   _fetch,
+  _moduleExec,
   quoteSummary
 };
 

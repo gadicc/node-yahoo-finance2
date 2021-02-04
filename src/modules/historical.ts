@@ -31,37 +31,42 @@ const queryOptionsDefaults: Omit<HistoricalOptions,'period1'> = {
   includeAdjustedClose: true,
 };
 
-export default async function historical(
-  this: { [key:string]: any, _fetch: Function },
+export default function historical(
+  this: { [key:string]: any, _moduleExec: Function },
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
   fetchOptions?: object
 ): Promise<HistoricalResult> {
-  validateAndCoerceTypes(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'historical');
 
-  const queryOptions: HistoricalOptions = {
-    ...queryOptionsDefaults,
-    ...queryOptionsOverrides
-  };
+  return this._moduleExec({
+    moduleName: "historical",
 
-  if (!queryOptions.period2)
-    queryOptions.period2 = new Date();
+    query: {
+      url: "https://query1.finance.yahoo.com/v7/finance/download/" + symbol,
+      schemaKey: "#/definitions/HistoricalOptions",
+      defaults: queryOptionsDefaults,
+      overrides: queryOptionsOverrides,
+      fetchOptions,
+      fetchType: 'csv',
+      transformWith(queryOptions: HistoricalOptions) {
+        if (!queryOptions.period2)
+          queryOptions.period2 = new Date();
 
-  const dates = [ 'period1', 'period2' ] as const;
-  for (let fieldName of dates) {
-    const value = queryOptions[fieldName];
-    if (value instanceof Date)
-      queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
-    else (typeof value === 'string')
-      queryOptions[fieldName] = Math.floor(new Date(value as string).getTime() / 1000);
-  }
+        const dates = [ 'period1', 'period2' ] as const;
+        for (let fieldName of dates) {
+          const value = queryOptions[fieldName];
+          if (value instanceof Date)
+            queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
+          else (typeof value === 'string')
+            queryOptions[fieldName] = Math.floor(new Date(value as string).getTime() / 1000);
+        }
 
-  const url = QUERY_URL + '/' + symbol;
-  const csv = await this._fetch(url, queryOptions, fetchOptions, 'text');
-  const result = csv2json(csv);
+        return queryOptions;
+      }
+    },
 
-  // this can't handle Dates.  let's decide where/when/how to validate.
-  // validate(result, QUERY_SCHEMA_KEY);
-
-  return result;
+    result: {
+      schemaKey: "#/definitions/HistoricalResult",
+    }
+  });
 }

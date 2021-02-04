@@ -1,5 +1,3 @@
-import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
-
 // /// <reference path="quoteSummary-iface.ts"/>
 // import QuoteSummaryResult from "QuoteSummaryIfaces";
 import { QuoteSummaryResult } from './quoteSummary-iface';
@@ -90,45 +88,38 @@ const queryOptionsDefaults = {
   modules: ['price', 'summaryDetail']
 };
 
-export default async function quoteSummary(
-  this: { [key:string]: any, _fetch: Function },
+export default function quoteSummary(
+  this: { [key:string]: any, _moduleExec: Function },
   symbol: string,
   queryOptionsOverrides: QuoteSummaryOptions = {},
   fetchOptions?: object
 ): Promise<QuoteSummaryResult> {
-  validateAndCoerceTypes(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'quoteSummary');
 
-  if (queryOptionsOverrides.modules === 'all')
-    queryOptionsOverrides.modules = quoteSummary_modules as Array<QuoteSummaryModules>;
+  return this._moduleExec({
+    moduleName: "search",
 
-  const queryOptions = {
-    ...queryOptionsDefaults,
-    ...queryOptionsOverrides
-  };
+    query: {
+      url: "https://query2.finance.yahoo.com/v10/finance/quoteSummary/" + symbol,
+      schemaKey: "#/definitions/QuoteSummaryOptions",
+      defaults: queryOptionsDefaults,
+      overrides: queryOptionsOverrides,
+      fetchOptions,
+      transformWith(options: QuoteSummaryOptions) {
+        if (options.modules === 'all')
+          options.modules = quoteSummary_modules as Array<QuoteSummaryModules>;
+        return options;
+      }
+    },
 
-  const url = QUERY_URL + '/' + symbol;
+    result: {
+      schemaKey: "#/definitions/QuoteSummaryResult",
+      transformWith(result: any) {
+        if (!result.quoteSummary)
+          throw new Error("Unexpected result: " + JSON.stringify(result));
 
-  /*
-    {
-      quoteSummary: {
-        result: [
-          {
-            summaryDetail: {},
-            ...
-          }
-        ],
-        error: null
+        return result.quoteSummary.result[0];
       }
     }
-   */
-  const result = await this._fetch(url, queryOptions, fetchOptions);
-  const qsResult = result.quoteSummary;
+  });
 
-  if (!qsResult)
-    throw new Error("Unexpected result: " + JSON.stringify(result));
-
-  const actualResult = qsResult.result[0];
-  validateAndCoerceTypes(actualResult, QUERY_RESULT_SCHEMA_KEY);
-
-  return actualResult;
 }

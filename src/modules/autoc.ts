@@ -1,9 +1,3 @@
-import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
-
-const QUERY_URL = 'https://autoc.finance.yahoo.com/autoc';
-const QUERY_OPTIONS_SCHEMA_KEY = "#/definitions/AutocOptions"
-const QUERY_RESULT_SCHEMA_KEY = "#/definitions/AutocResultSet";
-
 export interface AutocResultSet {
   Query: string;
   Result: Array<AutocResult>
@@ -28,28 +22,33 @@ const queryOptionsDefaults = {
   lang: 'en'
 };
 
-async function autoc(
-  this: { [key:string]: any, _fetch: Function },
+export default function autoc(
+  this: { [key:string]: any, _moduleExec: Function },
   query: string,
   queryOptionsOverrides: AutocOptions = {},
   fetchOptions?: object
 ): Promise<AutocResultSet> {
-  validateAndCoerceTypes(queryOptionsOverrides, QUERY_OPTIONS_SCHEMA_KEY, 'autoc');
 
-  const queryOptions = {
-    query,
-    ...queryOptionsDefaults,
-    ...queryOptionsOverrides
-  };
+  return this._moduleExec({
+    moduleName: "autoc",
 
-  const result = await this._fetch(QUERY_URL, queryOptions, fetchOptions);
+    query: {
+      url: "https://autoc.finance.yahoo.com/autoc",
+      schemaKey: "#/definitions/AutocOptions",
+      defaults: queryOptionsDefaults,
+      runtime: { query },
+      overrides: queryOptionsOverrides,
+      fetchOptions,
+    },
 
-  if (result.ResultSet) {
-    validateAndCoerceTypes(result.ResultSet, QUERY_RESULT_SCHEMA_KEY);
-    return result.ResultSet;
-  }
+    result: {
+      schemaKey: "#/definitions/AutocResultSet",
+      transformWith(result: any) {
+        if (!result.ResultSet)
+          throw new Error("Unexpected result: " + JSON.stringify(result));
+        return result.ResultSet;
+      }
+    }
+  });
 
-  throw new Error("Unexpected result: " + JSON.stringify(result));
 }
-
-export default autoc;
