@@ -1,3 +1,11 @@
+## [1.4.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.4.1...v1.4.2) (2021-02-04)
+
+
+### Bug Fixes
+
+* **csv2json:** throw on invalid input.  add tests ([9a4d31a](https://github.com/gadicc/node-yahoo-finance2/commit/9a4d31ad7849b485e88b20a73e6436bdd30d67d8))
+* **readme:** show correct usage instructions (and update on npm) ([03afec8](https://github.com/gadicc/node-yahoo-finance2/commit/03afec81e617a744186451801d72124ac74e10b8))
+
 ## [1.4.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.4.0...v1.4.1) (2021-02-03)
 
 
