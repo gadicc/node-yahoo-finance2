@@ -45,6 +45,13 @@ describe('quoteSummary', () => {
       await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError)
     });
 
+    it('throws on invalid result', async () => {
+      // intentionally return output from "search" API
+      // i.e. invalid input for "quoteSummary"
+      await expect(yf.quoteSummary('AAPL', {}, { devel: 'search-AAPL.json' }))
+        .rejects.toThrow(/Unexpected result/)
+    });
+
   });
 
   describe('modules', () => {
