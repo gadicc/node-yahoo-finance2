@@ -1,5 +1,5 @@
 import Ajv from "ajv";
-import type { SchemaValidateFunction } from "ajv/lib/types"
+import type { SchemaValidateFunction } from "ajv/dist/types"
 import addFormats from 'ajv-formats';
 
 //import schema from '../../schema.json';
