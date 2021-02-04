@@ -43,13 +43,11 @@ ajv.addKeyword({
       } else if (schema === 'date') {
 
         if (data instanceof Date) {
-          /* @ts-ignore */
-          validate.errors.push({
-            keyword: "yahooFinanceType",
-            message: "Got a real Date object???  Bad test?",
-            params: { schema, data }
-          });
-          return false;
+          // Validate existing date objects.
+          // Generally we receive JSON but in the case of "historical", the
+          // csv parser does the date conversion, and we want to validate
+          // afterwards.
+          return true;
         }
         if (typeof data === 'number')
           return set(new Date(data * 1000));

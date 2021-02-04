@@ -101,6 +101,16 @@ describe('validateAndCoerceTypes', () => {
           .toBe(new Date(priceResult.price.regularMarketTime).getTime());
       });
 
+      it('passes through Date objects', () => {
+        const result = Object.assign({}, priceResult);
+        result.price = Object.assign({}, result.price);
+        const date = new Date();
+        // @ts-ignore
+        result.price.postMarketTime = date;
+        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
+        expect(result.price.postMarketTime).toBe(date);
+      });
+
     });
 
     describe('failures', () => {
@@ -126,20 +136,6 @@ describe('validateAndCoerceTypes', () => {
         expect(error.params.data).toBe(result.price.regularMarketTime);
         expect(error.dataPath).toBe('/price/regularMarketTime');
         expect(error.schemaPath).toBe('#/definitions/Price/properties/regularMarketTime/yahooFinanceType');
-      });
-
-      it('fails Date objects (catch bad tests)', () => {
-        const result = Object.assign({}, priceResult);
-        result.price = Object.assign({}, result.price);
-        // @ts-ignore
-        result.price.postMarketTime = new Date();
-        expect(
-          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
-        ).toThrow("Failed Yahoo Schema validation");
-
-        // @ts-ignore
-        const error = validateAndCoerceTypes.errors[0];
-        expect(error.message).toBe('Got a real Date object???  Bad test?');
       });
 
     });
