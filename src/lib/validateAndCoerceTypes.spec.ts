@@ -207,7 +207,7 @@ describe('validateAndCoerceTypes', () => {
         /* @ts-ignore */
         console = fakeConsole;
         expect(
-          () => validateAndCoerceTypes({ a: 1 }, QUERY_RESULT_SCHEMA_KEY, undefined, true)
+          () => validateAndCoerceTypes({ a: 1 }, QUERY_RESULT_SCHEMA_KEY, undefined, { logErrors: true })
         ).toThrow("Failed Yahoo Schema validation");
         console = origConsole;
 
@@ -221,7 +221,7 @@ describe('validateAndCoerceTypes', () => {
         /* @ts-ignore */
         console = fakeConsole;
         expect(
-          () => validateAndCoerceTypes({ a: 1 }, QUERY_RESULT_SCHEMA_KEY, undefined, false)
+          () => validateAndCoerceTypes({ a: 1 }, QUERY_RESULT_SCHEMA_KEY, undefined, { logErrors: false })
         ).toThrow("Failed Yahoo Schema validation");
         console = origConsole;
 

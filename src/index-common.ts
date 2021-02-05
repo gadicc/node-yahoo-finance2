@@ -1,6 +1,7 @@
 // libs
 import yahooFinanceFetch from './lib/yahooFinanceFetch';
 import moduleExec from './lib/moduleExec';
+import options from './lib/options';
 
 // modules
 import autoc from './modules/autoc';
@@ -12,6 +13,7 @@ export default {
   _env: {},
   _fetch: yahooFinanceFetch,
   _moduleExec: moduleExec,
+  _options: options,
 
   autoc,
   historical,

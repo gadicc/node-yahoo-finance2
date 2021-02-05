@@ -137,7 +137,7 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
    * The idea is that if you receive a result, it's safe to use / store in
    * database, etc.  Otherwise you'll receive an error.
    */
-  validateAndCoerceTypes(result, opts.result.schemaKey);
+  validateAndCoerceTypes(result, opts.result.schemaKey, undefined, this._options?.validation);
 
   return result;
 }

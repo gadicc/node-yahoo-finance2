@@ -87,7 +87,11 @@ const logObj = process?.stdout?.isTTY
   ? (obj:any) => console.dir(obj, { depth: 4, colors: true })
   : (obj:any) => console.log(JSON.stringify(obj, null, 2));
 
-function validate(object: object, key: string, module?: string, logErrors: boolean = true): void {
+interface ValidationOptions {
+  logErrors: boolean;
+}
+
+function validate(object: object, key: string, module?: string, options?: ValidationOptions): void {
   const validator = ajv.getSchema(key);
   if (!validator)
     throw new Error("No such schema with key: " + key);
@@ -97,7 +101,7 @@ function validate(object: object, key: string, module?: string, logErrors: boole
 
   if (!module) {
 
-    if (logErrors) {
+    if (options?.logErrors) {
       const title = encodeURIComponent("Failed validation: " + key);
       console.error("The following result did not validate with schema: " + key);
       logObj(validator.errors);
