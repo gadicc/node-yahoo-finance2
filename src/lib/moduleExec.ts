@@ -57,10 +57,6 @@ interface ModuleExecOptions {
      */
     overrides: any;
     /**
-     * Any options to pass to fetch() just for this request.
-     */
-    fetchOptions?: any;
-    /**
      * Called with the merged (defaults,runtime,overrides) before running
      * the query.  Useful to transform options we allow but not Yahoo, e.g.
      * allow a "2020-01-01" date but transform this to a UNIX epoch.
@@ -83,12 +79,24 @@ interface ModuleExecOptions {
      */
     transformWith?: TransformFunc;
   };
+
+  moduleOptions?: {
+    /**
+     * Allow validation failures to pass if false;
+     */
+    validateResult?: boolean;
+    /**
+     * Any options to pass to fetch() just for this request.
+     */
+    fetchOptions?: any;
+  }
 }
 
 type ThisWithFetch = { [key: string]: any; _moduleExec: Function };
 
 export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOptions) {
   const query = opts.query;
+  const moduleOpts = opts.moduleOptions;
 
   // Check that query options passed by the user are valid for this module
   validateAndCoerceTypes(query.overrides, query.schemaKey, opts.moduleName);
@@ -108,7 +116,7 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
     queryOptions = query.transformWith(queryOptions);
 
   // this._fetch is lib/yahooFinanceFetch
-  let result = await this._fetch(query.url, queryOptions, query.fetchOptions, query.fetchType);
+  let result = await this._fetch(query.url, queryOptions, moduleOpts, query.fetchType);
 
   if (query.fetchType === 'csv')
     result = csv2json(result);
@@ -137,7 +145,12 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
    * The idea is that if you receive a result, it's safe to use / store in
    * database, etc.  Otherwise you'll receive an error.
    */
-  validateAndCoerceTypes(result, opts.result.schemaKey, undefined, this._options?.validation);
+  try {
+    validateAndCoerceTypes(result, opts.result.schemaKey, undefined, this._options?.validation);
+  } catch (error) {
+    if (!moduleOpts || moduleOpts.validateResult === undefined || moduleOpts.validateResult === true)
+      throw error;
+  }
 
   return result;
 }

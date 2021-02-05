@@ -3,7 +3,7 @@ const pkg = require('../../package.json');
 
 const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
 
-async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}, func='json') {
+async function yahooFinanceFetch(urlBase, params={}, moduleOpts={}, func='json') {
   if (!this._env)
     throw new errors.NoEnvironmentError("yahooFinanceFetch called without this._env set");
 
@@ -13,13 +13,14 @@ async function yahooFinanceFetch(urlBase, params={}, fetchOptionsOverrides={}, f
   const url = urlBase + '?' + urlSearchParams.toString();
 
    /* istanbul ignore next */
-  const fetchFunc = fetchOptionsOverrides.devel
+  const fetchFunc = moduleOpts.devel
     ? require('./fetchDevel')
     : fetch; // no need to force coverage on real network request.
 
   const fetchOptions = {
     "User-Agent": userAgent,
-    ...fetchOptionsOverrides
+    ...moduleOpts.fetchOptions,
+    devel: moduleOpts.devel,
   };
 
   // used in moduleExec.ts

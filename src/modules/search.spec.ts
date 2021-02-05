@@ -35,4 +35,16 @@ describe('search', () => {
     await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError)
   });
 
+  it('throws on unexpected input', async () => {
+    await expect(yf.search('AAPL', {}, { devel: 'search-fakeBadResult.json' }))
+      .rejects.toThrow(/Failed Yahoo Schema/)
+  });
+
+  it('does not throw on unexpected input if called with {validateResult: false}', async () => {
+    await expect(yf.search('AAPL', {}, {
+      devel: 'search-fakeBadResult.json',
+      validateResult: false
+    })).resolves.toBeDefined();
+  });
+
 });

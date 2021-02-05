@@ -1,3 +1,10 @@
+import type {
+  ModuleOptions,
+  ModuleOptionsWithValidateTrue,
+  ModuleOptionsWithValidateFalse,
+  ModuleThis,
+} from '../lib/moduleCommon';
+
 export interface AutocResultSet {
   Query: string;
   Result: Array<AutocResult>
@@ -23,11 +30,25 @@ const queryOptionsDefaults = {
 };
 
 export default function autoc(
-  this: { [key:string]: any, _moduleExec: Function },
+  this: ModuleThis,
   query: string,
   queryOptionsOverrides?: AutocOptions,
-  fetchOptions?: object
-): Promise<AutocResultSet> {
+  moduleOptions?: ModuleOptionsWithValidateFalse
+): Promise<any>;
+
+export default function autoc(
+  this: ModuleThis,
+  query: string,
+  queryOptionsOverrides?: AutocOptions,
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<AutocResult>;
+
+export default function autoc(
+  this: ModuleThis,
+  query: string,
+  queryOptionsOverrides?: AutocOptions,
+  moduleOptions?: ModuleOptions
+): Promise<any> {
 
   return this._moduleExec({
     moduleName: "autoc",
@@ -38,7 +59,6 @@ export default function autoc(
       defaults: queryOptionsDefaults,
       runtime: { query },
       overrides: queryOptionsOverrides,
-      fetchOptions,
     },
 
     result: {
@@ -48,7 +68,9 @@ export default function autoc(
           throw new Error("Unexpected result: " + JSON.stringify(result));
         return result.ResultSet;
       }
-    }
+    },
+
+    moduleOptions,
   });
 
 }

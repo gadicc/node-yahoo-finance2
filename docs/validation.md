@@ -6,6 +6,7 @@ side-step this if you understand the risks.
 
 1. [Why Validate](#why-validate)
 1. [Using Unvalidated Data](#using-unvalidated-data)
+1. [Skip Validation Completely](#using-unvalidated-data)
 1. [Don't Log Validation Fails](#dont-log-validation-fails)
 
 <a name="why-validate"></a>
@@ -72,12 +73,33 @@ try {
   result = error.result;
 }
 // and will do my own validation
-if (result && isArray(result.Result) && result.Result[0] && typeof result.Result[0].name === 'string')
+if (result
+    && isArray(result.Result)
+    && result.Result[0]
+    && typeof result.Result[0].name === 'string')
   $('input').value(result.Result[0].name);
 ```
 
 You also have access to `error.errors` which is an array of schema validation
 errors.  You could decide that some errors are ok to ignore but others not.
+
+<a name="using-unvalidated-data"></a>
+## Skip Validation Completely
+
+Following on from the above, if you really don't care for validation, you can
+use the `{ validateResult: false }` module option to prevent throwing errors
+altogether on results that don't pass validation.
+
+```js
+const result = await yahooFinance.search('gold', {}, { validateResult: false });
+
+if (result
+    && isArray(result.Result)
+    && result.Result[0]
+    && typeof result.Result[0].name === 'string')
+  $('input').value(result.Result[0].name);
+
+```
 
 <a name="dont-log-validation-fails"></a>
 ## Don't Log Validation Fails

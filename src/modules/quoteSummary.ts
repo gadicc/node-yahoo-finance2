@@ -2,6 +2,13 @@
 // import QuoteSummaryResult from "QuoteSummaryIfaces";
 import { QuoteSummaryResult } from './quoteSummary-iface';
 
+import type {
+  ModuleOptions,
+  ModuleOptionsWithValidateTrue,
+  ModuleOptionsWithValidateFalse,
+  ModuleThis,
+} from '../lib/moduleCommon';
+
 export const quoteSummary_modules = [
   'assetProfile',
   'balanceSheetHistory',
@@ -85,10 +92,24 @@ const queryOptionsDefaults = {
 };
 
 export default function quoteSummary(
-  this: { [key:string]: any, _moduleExec: Function },
+  this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: QuoteSummaryOptions,
-  fetchOptions?: object
+  moduleOptions?: ModuleOptionsWithValidateFalse
+): Promise<any>;
+
+export default function quoteSummary(
+  this: ModuleThis,
+  symbol: string,
+  queryOptionsOverrides?: QuoteSummaryOptions,
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<QuoteSummaryResult>;
+
+export default function quoteSummary(
+  this: ModuleThis,
+  symbol: string,
+  queryOptionsOverrides?: QuoteSummaryOptions,
+  moduleOptions?: ModuleOptions
 ): Promise<QuoteSummaryResult> {
 
   return this._moduleExec({
@@ -99,7 +120,6 @@ export default function quoteSummary(
       schemaKey: "#/definitions/QuoteSummaryOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
-      fetchOptions,
       transformWith(options: QuoteSummaryOptions) {
         if (options.modules === 'all')
           options.modules = quoteSummary_modules as Array<QuoteSummaryModules>;
@@ -115,7 +135,9 @@ export default function quoteSummary(
 
         return result.quoteSummary.result[0];
       }
-    }
+    },
+
+    moduleOptions,
   });
 
 }

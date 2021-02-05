@@ -1,3 +1,10 @@
+import type {
+  ModuleOptions,
+  ModuleOptionsWithValidateTrue,
+  ModuleOptionsWithValidateFalse,
+  ModuleThis,
+} from '../lib/moduleCommon';
+
 export interface SearchQuoteYahooEquity {
   exchange: string;        // "NYQ"
   shortname: string;       // "Alibaba Group Holding Limited"
@@ -82,11 +89,25 @@ const queryOptionsDefaults = {
 };
 
 export default function search(
-  this: { [key:string]: any, _moduleExec: Function },
+  this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  fetchOptions?: object
-): Promise<SearchResult> {
+  moduleOptions?: ModuleOptionsWithValidateFalse,
+): Promise<any>;
+
+export default function search(
+  this: ModuleThis,
+  query: string,
+  queryOptionsOverrides?: SearchOptions,
+  moduleOptions?: ModuleOptionsWithValidateTrue,
+): Promise<SearchResult>;
+
+export default function search(
+  this: ModuleThis,
+  query: string,
+  queryOptionsOverrides?: SearchOptions,
+  moduleOptions?: ModuleOptions
+): Promise<any> {
 
   return this._moduleExec({
     moduleName: "search",
@@ -97,12 +118,13 @@ export default function search(
       defaults: queryOptionsDefaults,
       runtime: { q: query },
       overrides: queryOptionsOverrides,
-      fetchOptions,
     },
 
     result: {
       schemaKey: "#/definitions/SearchResult",
-    }
+    },
+
+    moduleOptions,
   });
 
 }

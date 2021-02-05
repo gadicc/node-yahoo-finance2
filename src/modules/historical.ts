@@ -1,9 +1,9 @@
-import validateAndCoerceTypes from '../lib/validateAndCoerceTypes';
-import csv2json from '../lib/csv2json';
-
-const QUERY_URL = 'https://query1.finance.yahoo.com/v7/finance/download';
-const QUERY_RESULT_SCHEMA_KEY = "#/definitions/HistoricalResult";
-const QUERY_OPTIONS_SCHEMA_KEY = '#/definitions/HistoricalOptions';
+import type {
+  ModuleOptions,
+  ModuleOptionsWithValidateTrue,
+  ModuleOptionsWithValidateFalse,
+  ModuleThis,
+} from '../lib/moduleCommon';
 
 export type HistoricalResult = Array<HistoricalRow>;
 
@@ -32,11 +32,25 @@ const queryOptionsDefaults: Omit<HistoricalOptions,'period1'> = {
 };
 
 export default function historical(
-  this: { [key:string]: any, _moduleExec: Function },
+  this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
-  fetchOptions?: object
-): Promise<HistoricalResult> {
+  moduleOptions?: ModuleOptionsWithValidateFalse
+): Promise<any>;
+
+export default function historical(
+  this: ModuleThis,
+  symbol: string,
+  queryOptionsOverrides: HistoricalOptions,
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<HistoricalResult>;
+
+export default function historical(
+  this: ModuleThis,
+  symbol: string,
+  queryOptionsOverrides: HistoricalOptions,
+  moduleOptions?: ModuleOptions
+): Promise<any> {
 
   return this._moduleExec({
     moduleName: "historical",
@@ -46,7 +60,6 @@ export default function historical(
       schemaKey: "#/definitions/HistoricalOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
-      fetchOptions,
       fetchType: 'csv',
       transformWith(queryOptions: HistoricalOptions) {
         if (!queryOptions.period2)
@@ -67,6 +80,8 @@ export default function historical(
 
     result: {
       schemaKey: "#/definitions/HistoricalResult",
-    }
+    },
+
+    moduleOptions,
   });
 }

@@ -17,7 +17,21 @@
 <a name="common-options"></a>
 ## Common Options
 
-Coming soon.
+Coming soon. Briefly:
+
+```js
+const queryOpts = {};     // query options specific to the module
+
+const moduleOpts = {
+  devel: boolean|string,  // see the main README
+  fetchOptions: {},       // options to pass to fetch
+  validateResult:boolean, // READ SUPER NB VALIDATION DOC BEFORE TURNING THIS OFF
+}
+
+const result = await yahooFinance.module(query, queryOpts, moduleOpts);
+```
+
+
 
 <a name="error-handling"></name>
 ## Error Handling and Validation.
