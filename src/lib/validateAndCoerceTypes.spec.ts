@@ -145,6 +145,13 @@ describe('validateAndCoerceTypes', () => {
 
     describe('failures', () => {
 
+      it('fails on invalid options usage', () => {
+        const options = { period1: true };
+        expect(
+          () => validateAndCoerceTypes(options, "#/definitions/HistoricalOptions", "historical")
+        ).toThrow(InvalidOptionsError)
+      });
+
       it('fails on error', () => {
         const result = Object.assign({}, priceResult);
         result.price = Object.assign({}, result.price);
