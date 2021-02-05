@@ -146,7 +146,7 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
    * database, etc.  Otherwise you'll receive an error.
    */
   try {
-    validateAndCoerceTypes(result, opts.result.schemaKey, undefined, this._options?.validation);
+    validateAndCoerceTypes(result, opts.result.schemaKey, undefined, this._opts?.validation);
   } catch (error) {
     if (!moduleOpts || moduleOpts.validateResult === undefined || moduleOpts.validateResult === true)
       throw error;

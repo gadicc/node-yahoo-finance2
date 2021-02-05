@@ -76,7 +76,7 @@ describe('validateAndCoerceTypes', () => {
         /* @ts-ignore */
         result.price.postMarketChangePercent = true;
         expect(
-          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
+          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions)
         ).toThrow(/Failed Yahoo Schema/);
       });
 
@@ -86,7 +86,7 @@ describe('validateAndCoerceTypes', () => {
         /* @ts-ignore */
         result.price.postMarketChangePercent = { raw: "a string" };
         expect(
-          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
+          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions)
         ).toThrow(/Failed Yahoo Schema/);
       });
 
@@ -131,7 +131,7 @@ describe('validateAndCoerceTypes', () => {
         /* @ts-ignore */
         result.price.postMarketTime = "clearly not a date";
         expect(
-          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
+          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions)
         ).toThrow(/Failed Yahoo Schema/);
       });
 
@@ -164,7 +164,7 @@ describe('validateAndCoerceTypes', () => {
 
         let error: FailedYahooValidationError;
         try {
-          validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
+          validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
         } catch (e) {
           error = e;
         }
@@ -240,7 +240,7 @@ describe('validateAndCoerceTypes', () => {
 
         let error;
         try {
-          validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
+          validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
         } catch (e) {
           error = e;
         }

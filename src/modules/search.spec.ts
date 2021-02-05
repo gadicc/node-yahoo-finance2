@@ -8,6 +8,7 @@ import _moduleExec from '../lib/moduleExec';
 const yf = {
   _env,
   _fetch,
+  _opts: { validation: { logErrors: true }},
   _moduleExec,
   search
 };
@@ -36,15 +37,19 @@ describe('search', () => {
   });
 
   it('throws on unexpected input', async () => {
+    yf._opts.validation.logErrors = false;
     await expect(yf.search('AAPL', {}, { devel: 'search-fakeBadResult.json' }))
       .rejects.toThrow(/Failed Yahoo Schema/)
+    yf._opts.validation.logErrors = true;
   });
 
   it('does not throw on unexpected input if called with {validateResult: false}', async () => {
+    yf._opts.validation.logErrors = false;
     await expect(yf.search('AAPL', {}, {
       devel: 'search-fakeBadResult.json',
       validateResult: false
     })).resolves.toBeDefined();
+    yf._opts.validation.logErrors = true;
   });
 
 });
