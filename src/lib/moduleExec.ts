@@ -1,3 +1,20 @@
+/*
+ * moduleExec(options: ModuleExecOptions)
+ *
+ * 1. Query Stage
+ *   1. Validate user-supplied module params, e.g. { period: '1d' }
+ *   2. Merge query params: (module defaults, user-supplied overrides, etc)
+ *   3. Optionally transform query params
+ *
+ * 2. Call lib/yahooFinanceFetch
+ *
+ * 3. Result Stage
+ *   1. Optional transform the result
+ *   2. Validate the result and coerce types
+ *
+ * Further info below, inline.
+ */
+
 import validateAndCoerceTypes from './validateAndCoerceTypes';
 import csv2json from './csv2json';
 
