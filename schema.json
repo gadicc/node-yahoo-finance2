@@ -2158,38 +2158,6 @@
         }
       },
       "required": [
-        "link",
-        "providerPublishTime",
-        "publisher",
-        "title",
-        "type",
-        "uuid"
-      ],
-      "type": "object"
-    },
-    "SearchNewsOrig": {
-      "additionalProperties": false,
-      "properties": {
-        "link": {
-          "type": "string"
-        },
-        "providerPublishTime": {
-          "yahooFinanceType": "number"
-        },
-        "publisher": {
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
-        },
-        "uuid": {
-          "type": "string"
-        }
-      },
-      "required": [
         "uuid",
         "title",
         "publisher",
@@ -2306,7 +2274,6 @@
         "index",
         "score",
         "typeDisp",
-        "longname",
         "isYahooFinance"
       ],
       "type": "object"
@@ -2376,94 +2343,6 @@
         "news": {
           "items": {
             "$ref": "#/definitions/SearchNews"
-          },
-          "type": "array"
-        },
-        "quotes": {
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/SearchQuoteYahooEquity"
-              },
-              {
-                "$ref": "#/definitions/SearchQuoteYahooOption"
-              },
-              {
-                "$ref": "#/definitions/SearchQuoteNonYahoo"
-              }
-            ]
-          },
-          "type": "array"
-        },
-        "researchReports": {
-          "items": {},
-          "type": "array"
-        },
-        "timeTakenForAlgowatchlist": {
-          "yahooFinanceType": "number"
-        },
-        "timeTakenForCrunchbase": {
-          "yahooFinanceType": "number"
-        },
-        "timeTakenForNav": {
-          "yahooFinanceType": "number"
-        },
-        "timeTakenForNews": {
-          "yahooFinanceType": "number"
-        },
-        "timeTakenForPredefinedScreener": {
-          "yahooFinanceType": "number"
-        },
-        "timeTakenForQuotes": {
-          "yahooFinanceType": "number"
-        },
-        "timeTakenForResearchReports": {
-          "yahooFinanceType": "number"
-        },
-        "totalTime": {
-          "yahooFinanceType": "number"
-        }
-      },
-      "required": [
-        "count",
-        "explains",
-        "lists",
-        "nav",
-        "news",
-        "quotes",
-        "researchReports",
-        "timeTakenForAlgowatchlist",
-        "timeTakenForCrunchbase",
-        "timeTakenForNav",
-        "timeTakenForNews",
-        "timeTakenForPredefinedScreener",
-        "timeTakenForQuotes",
-        "timeTakenForResearchReports",
-        "totalTime"
-      ],
-      "type": "object"
-    },
-    "SearchResultOrig": {
-      "additionalProperties": false,
-      "properties": {
-        "count": {
-          "yahooFinanceType": "number"
-        },
-        "explains": {
-          "items": {},
-          "type": "array"
-        },
-        "lists": {
-          "items": {},
-          "type": "array"
-        },
-        "nav": {
-          "items": {},
-          "type": "array"
-        },
-        "news": {
-          "items": {
-            "$ref": "#/definitions/SearchNewsOrig"
           },
           "type": "array"
         },
