@@ -103,3 +103,10 @@ if (result
 
 <a name="dont-log-validation-fails"></a>
 ## Don't Log Validation Fails
+
+To turn off the helpful but verbose error logging on validation fails,
+simply set:
+
+```js
+yahooFinance._opts.validation.logErrors = false;
+```
