@@ -212,6 +212,22 @@ describe('validateAndCoerceTypes', () => {
         expect(fakeConsole.dir).not.toHaveBeenCalled();
       });
 
+      it('returns results/errors in error object', () => {
+        const result = { nonExistingModule: true };
+
+        let error;
+        try {
+          validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
+        } catch (e) {
+          error = e;
+        }
+
+        expect(error).toBeDefined();
+        expect(error.message).toMatch(/Failed Yahoo/);
+        expect(error.result).toBe(result);
+        expect(error.errors).toBeType('array');
+      });
+
     });
 
   });
