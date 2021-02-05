@@ -145,10 +145,6 @@ describe('validateAndCoerceTypes', () => {
 
     describe('failures', () => {
 
-      it('fails on key type that is not a number nor date', () => {
-
-      });
-
       it('fails on error', () => {
         const result = Object.assign({}, priceResult);
         result.price = Object.assign({}, result.price);
@@ -177,12 +173,43 @@ describe('validateAndCoerceTypes', () => {
         ).toThrow(/No such schema/)
       });
 
-      it('fails on output not from bin/modify-schema', () => {
+      // i.e. on output not from bin/modify-schema
+      it('fails when yahooFinanceType is not "date"|"number"', () => {
         const schema = { yahooFinanceType: "impossible" };
         const validate = ajv.compile(schema);
         expect(
           () => validate({})
         ).toThrow(/No such yahooFinanceType/);
+      });
+
+      it('logs errors when logErrors=true', () => {
+        const origConsole = console;
+        const fakeConsole = { error: jest.fn(), log: jest.fn(), dir: jest.fn() };
+
+        /* @ts-ignore */
+        console = fakeConsole;
+        expect(
+          () => validateAndCoerceTypes({ a: 1 }, QUERY_RESULT_SCHEMA_KEY, undefined, true)
+        ).toThrow("Failed Yahoo Schema validation");
+        console = origConsole;
+
+        expect(fakeConsole.error).toHaveBeenCalled();
+      });
+
+      it('does not log errors when logErrors=false', () => {
+        const origConsole = console;
+        const fakeConsole = { error: jest.fn(), log: jest.fn(), dir: jest.fn() };
+
+        /* @ts-ignore */
+        console = fakeConsole;
+        expect(
+          () => validateAndCoerceTypes({ a: 1 }, QUERY_RESULT_SCHEMA_KEY, undefined, false)
+        ).toThrow("Failed Yahoo Schema validation");
+        console = origConsole;
+
+        expect(fakeConsole.log).not.toHaveBeenCalled();
+        expect(fakeConsole.error).not.toHaveBeenCalled();
+        expect(fakeConsole.dir).not.toHaveBeenCalled();
       });
 
     });

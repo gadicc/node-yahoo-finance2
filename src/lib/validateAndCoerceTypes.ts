@@ -87,7 +87,7 @@ const logObj = process?.stdout?.isTTY
   ? (obj:any) => console.dir(obj, { depth: 4, colors: true })
   : (obj:any) => console.log(JSON.stringify(obj, null, 2));
 
-function validate(object: object, key: string, module?: string): void {
+function validate(object: object, key: string, module?: string, logErrors: boolean = true): void {
   const validator = ajv.getSchema(key);
   if (!validator)
     throw new Error("No such schema with key: " + key);
@@ -100,24 +100,34 @@ function validate(object: object, key: string, module?: string): void {
 
   if (!module) {
 
-    const title = encodeURIComponent("Failed validation: " + key);
-    console.error("The following result did not validate with schema: " + key);
-    logObj(validator.errors);
-    logObj(object);
-    console.error(`
+    if (logErrors) {
+      const title = encodeURIComponent("Failed validation: " + key);
+      console.error("The following result did not validate with schema: " + key);
+      logObj(validator.errors);
+      logObj(object);
+      console.error(`
 This may happen intermittently and you should catch errors appropriately.
 However:  1) if this recently started happening on every request for a symbol
 that used to work, Yahoo may have changed their API.  2) If this happens on
 every request for a symbol you've never used before, but not for other
 symbols, you've found an edge-case.  Please see if anyone has reported
 this previously:
-`)
-    console.error(`  ${pkg.repository}/issues?q=is%3Aissue+${title}`);
-    console.error("");
-    console.error("or open a new issue (and mention the symbol):");
-    console.error("");
-    console.error(`  ${pkg.repository}/issues/new?title=${title}`);
-    throw new FailedYahooValidationError("Failed Yahoo Schema validation");
+`);
+      console.error(`  ${pkg.repository}/issues?q=is%3Aissue+${title}`);
+      console.error("");
+      console.error("or open a new issue (and mention the symbol):");
+      console.error("");
+      console.error(`  ${pkg.repository}/issues/new?title=${title}`);
+      console.error(`
+For information on how to turn off the above logging or skip these errors,
+see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.
+`);
+    } /* if (logErrors) */
+
+    const error = new FailedYahooValidationError("Failed Yahoo Schema validation");
+    error.result = object;
+    error.errors = validator.errors;
+    throw error;
 
   } else /* if (type === 'options') */ {
 
