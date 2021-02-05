@@ -151,20 +151,31 @@ describe('validateAndCoerceTypes', () => {
         // @ts-ignore
         result.price.regularMarketTime = { weird: 1612313997 };
 
-        expect(
-          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
-        ).toThrow("Failed Yahoo Schema validation");
+        let error: FailedYahooValidationError;
+        try {
+          validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY)
+        } catch (e) {
+          error = e;
+        }
 
-        // @ts-ignore
-        const error = validateAndCoerceTypes.errors[0];
+        /* @ts-ignore */
         expect(error).toBeDefined();
-        expect(error.keyword).toBe('yahooFinanceType');
-        expect(error.message).toBe('No matching type');
-        expect(error.params).toBeDefined();
-        expect(error.params.schema).toBe('date');
-        expect(error.params.data).toBe(result.price.regularMarketTime);
-        expect(error.dataPath).toBe('/price/regularMarketTime');
-        expect(error.schemaPath).toBe('#/definitions/Price/properties/regularMarketTime/yahooFinanceType');
+
+        /* @ts-ignore */
+        if (!error) return;
+        expect(error.message).toMatch(/Failed Yahoo Schema/);
+
+        const error0 = error.errors[0];
+        expect(error0).toBeDefined();
+        expect(error0.keyword).toBe('yahooFinanceType');
+        expect(error0.message).toBe('No matching type');
+        expect(error0.params).toBeDefined();
+
+        if (!error0.params) return;
+        expect(error0.params.schema).toBe('date');
+        expect(error0.params.data).toBe(result.price.regularMarketTime);
+        expect(error0.dataPath).toBe('/price/regularMarketTime');
+        expect(error0.schemaPath).toBe('#/definitions/Price/properties/regularMarketTime/yahooFinanceType');
       });
 
       it('fails on invalid schema key', () => {

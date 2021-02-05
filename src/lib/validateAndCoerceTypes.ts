@@ -95,9 +95,6 @@ function validate(object: object, key: string, module?: string, logErrors: boole
   const valid = validator(object);
   if (valid) return;
 
-  // @ts-ignore
-  validate.errors = validator.errors;
-
   if (!module) {
 
     if (logErrors) {
@@ -124,10 +121,13 @@ see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.
 `);
     } /* if (logErrors) */
 
-    const error = new FailedYahooValidationError("Failed Yahoo Schema validation");
-    error.result = object;
-    error.errors = validator.errors;
-    throw error;
+    throw new FailedYahooValidationError(
+      "Failed Yahoo Schema validation", {
+        result: object,
+        /* istanbul ignore next */
+        errors: validator.errors || []
+      }
+    );
 
   } else /* if (type === 'options') */ {
 
