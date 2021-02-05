@@ -128,8 +128,7 @@ see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.
     throw new FailedYahooValidationError(
       "Failed Yahoo Schema validation", {
         result: object,
-        /* istanbul ignore next */
-        errors: validator.errors || []
+        errors: validator.errors
       }
     );
 

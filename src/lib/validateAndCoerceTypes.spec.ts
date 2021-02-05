@@ -172,6 +172,7 @@ describe('validateAndCoerceTypes', () => {
         if (!error) return;
         expect(error.message).toMatch(/Failed Yahoo Schema/);
 
+        /* @ts-ignore */
         const error0 = error.errors[0];
         expect(error0).toBeDefined();
         expect(error0.keyword).toBe('yahooFinanceType');

@@ -8,11 +8,11 @@ export class NoEnvironmentError extends Error { name = 'NoEnvironmentError' }
 export class FailedYahooValidationError extends Error {
   name = 'FailedYahooValidationError';
   result: any;
-  errors: Partial<ErrorObject>[];
+  errors?: null | ErrorObject[];
 
   constructor(
     message: string,
-    { result, errors }: { result: any, errors: Array<ErrorObject> }
+    { result, errors }: { result: any, errors?: null | ErrorObject[] }
   ) {
     super(message);
     this.result = result;
