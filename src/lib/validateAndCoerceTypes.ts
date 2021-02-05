@@ -134,8 +134,10 @@ see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.
 
   } else /* if (type === 'options') */ {
 
-    console.error(`[yahooFinance.${module}] Invalid options ("${key}")`);
-    logObj({ errors: validator.errors, input: object });
+    if (options?.logErrors) {
+      console.error(`[yahooFinance.${module}] Invalid options ("${key}")`);
+      logObj({ errors: validator.errors, input: object });
+    }
     throw new InvalidOptionsError(`yahooFinance.${module} called with invalid options.`);
 
   }

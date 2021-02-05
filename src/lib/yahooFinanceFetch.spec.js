@@ -7,6 +7,13 @@ describe('yahooFinanceFetch', () => {
 
   const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env });
 
+  // Don't log errors during tests
+  const fakeConsole = { log: jest.fn(), error: jest.fn(), dir: jest.fn() };
+  const origConsole = console;
+
+  beforeEach(() => console = fakeConsole);
+  afterEach(() => console = origConsole);
+
   it('catches errors', () => {
     const url = 'https://query2.finance.yahoo.com/v1/finance/search';
 
@@ -40,5 +47,4 @@ describe('yahooFinanceFetch', () => {
       )
     ).rejects.toBeInstanceOf(Error);
   });
-
 });

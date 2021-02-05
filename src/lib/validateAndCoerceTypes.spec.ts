@@ -3,6 +3,10 @@ import { InvalidOptionsError, FailedYahooValidationError } from './errors';
 
 const QUERY_RESULT_SCHEMA_KEY = "#/definitions/QuoteSummaryResult";
 
+const defaultOptions = {
+  logErrors: false
+};
+
 const priceResult = {
   price: {
     maxAge: 1,
@@ -54,7 +58,7 @@ describe('validateAndCoerceTypes', () => {
       it('passes regular numbers', () => {
         const result = Object.assign({}, priceResult);
         result.price = Object.assign({}, result.price);
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
+        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
         expect(result.price.priceHint).toBe(2);
       });
 
@@ -62,7 +66,7 @@ describe('validateAndCoerceTypes', () => {
         const result = Object.assign({}, priceResult);
         result.price = Object.assign({}, result.price);
         result.price.postMarketChangePercent = { raw: 0.006599537, fmt: "6.5%" }
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
+        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
         expect(result.price.postMarketChangePercent).toBe(0.006599537);
       });
 
@@ -96,7 +100,7 @@ describe('validateAndCoerceTypes', () => {
         // @ts-ignore
         result.price.regularMarketTime = { raw: 1612313997 };
 
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
+        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
         // @ts-ignore
         expect(result.price.regularMarketTime.getTime())
           .toBe(1612313997 * 1000);
@@ -105,7 +109,7 @@ describe('validateAndCoerceTypes', () => {
       it('coerces epochs', () => {
         const result = Object.assign({}, priceResult);
         result.price = Object.assign({}, result.price);
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
+        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
         // @ts-ignore
         // @ts-ignore
         expect(result.price.regularMarketTime.getTime())
@@ -115,7 +119,7 @@ describe('validateAndCoerceTypes', () => {
       it('coerces recognizable date string', () => {
         const result = Object.assign({}, priceResult);
         result.price = Object.assign({}, result.price);
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
+        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
         // @ts-ignore
         expect(result.price.regularMarketTime.getTime())
           .toBe(new Date(priceResult.price.regularMarketTime).getTime());
@@ -137,7 +141,7 @@ describe('validateAndCoerceTypes', () => {
         const date = new Date();
         // @ts-ignore
         result.price.postMarketTime = date;
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY);
+        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
         expect(result.price.postMarketTime).toBe(date);
       });
 

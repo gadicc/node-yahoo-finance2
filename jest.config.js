@@ -8,8 +8,10 @@ module.exports = {
     "/node_modules/",
     "/api/"
   ],
+  /*
   reporters: [
     '<rootDir>/tests/reporter.js',
     '<rootDir>/tests/summary-reporter.js',
   ],
+  */
 };
