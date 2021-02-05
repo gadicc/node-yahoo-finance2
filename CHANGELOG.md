@@ -1,3 +1,17 @@
+# [1.5.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.4.2...v1.5.0) (2021-02-05)
+
+
+### Bug Fixes
+
+* **search:** change longname to be an optional property ([9b8128d](https://github.com/gadicc/node-yahoo-finance2/commit/9b8128d1abc33b1487264826454913f15fc90b3c))
+* **validate:** honor _opts: { validation: { logErrors: true }} ([1e0ebae](https://github.com/gadicc/node-yahoo-finance2/commit/1e0ebae2b516e15242ef592c814519e9a75bdf06))
+* **validate:** show errors by default ([ab87ad3](https://github.com/gadicc/node-yahoo-finance2/commit/ab87ad30dc4594b256940aebbe074baa8c4c55a8))
+
+
+### Features
+
+* **modules:** allow { validateResult: false } to not throw ([#16](https://github.com/gadicc/node-yahoo-finance2/issues/16)) ([dc199b5](https://github.com/gadicc/node-yahoo-finance2/commit/dc199b50d46dae26222ccf75bc5efa2c8eff7dcc))
+
 ## [1.4.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.4.1...v1.4.2) (2021-02-04)
 
 
