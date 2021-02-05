@@ -101,7 +101,7 @@ function validate(object: object, key: string, module?: string, options?: Valida
 
   if (!module) {
 
-    if (options?.logErrors) {
+    if (!options || options.logErrors === undefined || options.logErrors === true) {
       const title = encodeURIComponent("Failed validation: " + key);
       console.error("The following result did not validate with schema: " + key);
       logObj(validator.errors);
