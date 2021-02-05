@@ -1,13 +1,13 @@
 # Validation
 
 `yahoo-finance2` validates all results returned from Yahoo before returning
-them.  This document explains why this is import, but also how you can
+them.  This document explains why this is important, but also how you can
 side-step this if you understand the risks.
 
 1. [Why Validate](#why-validate)
 1. [Using Unvalidated Data](#using-unvalidated-data)
 1. [Skip Validation Completely](#using-unvalidated-data)
-1. [Don't Log Validation Fails](#dont-log-validation-fails)
+1. [Don't Log Validation Failures](#dont-log-validation-fails)
 
 <a name="why-validate"></a>
 ## Why Validate
@@ -102,7 +102,7 @@ if (result
 ```
 
 <a name="dont-log-validation-fails"></a>
-## Don't Log Validation Fails
+## Don't Log Validation Failures
 
 To turn off the helpful but verbose error logging on validation fails,
 simply set:
