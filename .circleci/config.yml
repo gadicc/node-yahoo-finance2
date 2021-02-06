@@ -35,11 +35,14 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run: yarn test --collectCoverage=true
-
       # Check for TypeScript errors
       - run: yarn test:ts
+
+      # Check that schema is up-to-date
+      - run: bin/schema-check.sh
+
+      # run tests!
+      - run: yarn test --collectCoverage=true
 
       - store_artifacts:
           path: coverage
