@@ -7,7 +7,10 @@ const schema = require('../../schema.json');
 const pkg = require('../../package.json');
 import { InvalidOptionsError, FailedYahooValidationError } from './errors';
 
-export const ajv = new Ajv({ allowUnionTypes: true });
+export const ajv = new Ajv({
+  allErrors: true,
+  allowUnionTypes: true,
+});
 addFormats(ajv);
 
 ajv.addKeyword({
