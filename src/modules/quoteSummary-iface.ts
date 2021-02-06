@@ -24,6 +24,8 @@ export interface QuoteSummaryResult {
   earningsTrend?:                     EarningsTrend;
   financialData?:                     FinancialData;
   fundOwnership?:                     Ownership;
+  fundPerformance?:                   FundPerformance;
+  fundProfile?:                       FundProfile;
   incomeStatementHistory?:            IncomeStatementHistory;
   incomeStatementHistoryQuarterly?:   IncomeStatementHistory;
   indexTrend?:                        IndexTrend;
@@ -46,17 +48,17 @@ export interface QuoteSummaryResult {
 }
 
 export interface AssetProfile {
-  address1:                   string;
-  city:                       string;
+  address1?:                  string;
+  city?:                      string;
   state?:                     string;
-  zip:                        string;
-  country:                    string;
+  zip?:                       string;
+  country?:                   string;
   phone:                      string;
-  website:                    string;
-  industry:                   string;
-  sector:                     string;
+  website?:                   string;
+  industry?:                  string;
+  sector?:                    string;
   longBusinessSummary:        string;
-  fullTimeEmployees:          number;
+  fullTimeEmployees?:         number;
   companyOfficers:            CompanyOfficer[];
   auditRisk?:                 number;
   boardRisk?:                 number;
@@ -171,42 +173,51 @@ export interface CashflowStatement {
 export interface DefaultKeyStatistics {
   maxAge:                        number;
   priceHint:                     number;
-  enterpriseValue:               number;
+  enterpriseValue?:              number;
   forwardPE?:                    number;
-  profitMargins:                 number;
-  floatShares:                   number;
-  sharesOutstanding:             number;
+  profitMargins?:                number;
+  floatShares?:                  number;
+  sharesOutstanding?:            number;
   sharesShort?:                  number;
   sharesShortPriorMonth?:        number;
   sharesShortPreviousMonthDate?: number;
   dateShortInterest?:            number;
   sharesPercentSharesOut?:       number;
-  heldPercentInsiders:           number;
-  heldPercentInstitutions:       number;
+  heldPercentInsiders?:          number;
+  heldPercentInstitutions?:      number;
   shortRatio?:                   number;
   shortPercentOfFloat?:          number;
-  beta:                          number;
-  category:                      null;
-  bookValue:                     number;
-  priceToBook:                   number;
-  fundFamily:                    null;
-  legalType:                     null;
-  lastFiscalYearEnd:             number;
-  nextFiscalYearEnd:             number;
-  mostRecentQuarter:             number;
+  beta?:                         number;
+  category:                      null | string;
+  bookValue?:                    number;
+  priceToBook?:                  number;
+  fundFamily:                    null | string;
+  legalType:                     null | string;
+  lastFiscalYearEnd?:            number;
+  nextFiscalYearEnd?:            number;
+  mostRecentQuarter?:            number;
   earningsQuarterlyGrowth?:      number;
   netIncomeToCommon?:            number;
-  trailingEps:                   number;
+  trailingEps?:                  number;
   forwardEps?:                   number;
   pegRatio?:                     number;
   lastSplitFactor:               null | string;
   lastSplitDate?:                number;
   enterpriseToRevenue?:          number;
   enterpriseToEbitda?:           number;
-  "52WeekChange":                number;
-  SandP52WeekChange:             number;
+  "52WeekChange"?:               number;
+  SandP52WeekChange?:            number;
   lastDividendValue?:            number;
   lastDividendDate?:             number;
+  ytdReturn?:                    number;
+  beta3Year?:                    number;
+  totalAssets?:                  number;
+  yield?:                        number;
+  fundInceptionDate?:            Date;
+  threeYearAverageReturn?:       number;
+  fiveYearAverageReturn?:        number;
+
+
 }
 
 export interface QuoteSummaryEarnings {
@@ -359,6 +370,105 @@ export interface OwnershipList {
   pctHeld:      number;
   position:     number;
   value:        number;
+}
+
+export interface FundPerformance {
+  maxAge:                      number;
+  performanceOverview:         FundPerformancePerformanceOverview;
+  performanceOverviewCat:      FundPerformancePerformanceOverviewCat;
+  trailingReturns:             FundPerformanceTrailingReturns;
+  trailingReturnsNav:          FundPerformanceTrailingReturns;
+  trailingReturnsCat:          FundPerformanceTrailingReturns;
+  annualTotalReturns:          FundPerformanceReturns;
+  pastQuarterlyReturns:        FundPerformanceReturns;
+  riskOverviewStatistics:      FundPerformanceRiskOverviewStats;
+  riskOverviewStatisticsCat:   FundPerformanceRiskOverviewStatsCat;
+}
+
+export interface FundPerformancePerformanceOverview {
+  asOfDate:             Date;
+  ytdReturnPct:         number;
+  oneYearTotalReturn:   number;
+  threeYearTotalReturn: number;
+}
+
+export interface FundPerformancePerformanceOverviewCat {
+  ytdReturnPct:       number;
+  fiveYrAvgReturnPct: number;
+}
+
+export interface FundPerformanceTrailingReturns {
+  asOfDate?:      Date;
+  ytd:            number;
+  oneMonth:       number;
+  threeMonth?:    number;
+  oneYear?:       number;
+  threeYear?:     number;
+  fiveYear?:      number;
+  tenYear?:       number;
+  lastBullMkt?:   number;
+  lastBearMkt?:   number;
+}
+
+export interface FundPerformanceReturns {
+  returns:        FundPerformanceReturnsRow[];
+  returnsCat?:    FundPerformanceReturnsRow[];
+}
+
+export interface FundPerformanceReturnsRow {
+  year:           number; // coerce to number from string "2020"
+  annualValue?:   number;
+}
+
+export interface FundPerformanceRiskOverviewStats {
+  riskStatistics: FundPerformanceRiskOverviewStatsRow[];
+}
+
+export interface FundPerformanceRiskOverviewStatsCat {
+  riskStatisticsCat: FundPerformanceRiskOverviewStatsRow[];
+}
+
+export interface FundPerformanceRiskOverviewStatsRow {
+  year:             string;   // "5y" | "3y" | "10y" | anything else?
+  alpha:            number;   // 7.76
+  beta:             number;   // 1.04
+  meanAnnualReturn: number;   // 2.05
+  rSquared:         number;   // 84.03
+  stdDev:           number;   // 17.12
+  sharpeRatio:      number;   // 1.37
+  treynorRatio:     number;   // 23.61
+}
+
+export interface FundProfile {
+  maxAge:                     number;
+  styleBoxUrl?:               string;
+  family:                     string;
+  categoryName:               string;
+  legalType:                  string;
+  managementInfo:             FundProfileManagementInfo;
+  feesExpensesInvestment?:    FundProfileFeesExpensesInvestment;
+  feesExpensesInvestmentCat?: FundProfileFeesExpensesInvestmentCat;
+  brokerages:                 FundProfileBrokerage[];
+}
+
+export interface FundProfileManagementInfo {
+  managerName: null | string;
+  managerBio:  null | string;
+}
+
+export interface FundProfileFeesExpensesInvestment {
+  annualReportExpenseRatio: number;
+  annualHoldingsTurnover:   number;
+  totalNetAssets:           number;
+  projectionValues:         object;
+}
+
+export interface FundProfileFeesExpensesInvestmentCat extends
+    Omit<FundProfileFeesExpensesInvestment,"projectionValues"> {
+  projectionValuesCat:      object;
+}
+
+export interface FundProfileBrokerage {
 }
 
 export interface IncomeStatementHistory {
@@ -634,24 +744,27 @@ export interface SummaryDetail {
   lastMarket:                    null;
   algorithm:                     null;
   tradeable:                     boolean;
+  yield?:                        number;
+  totalAssets?:                  number;
+  navPrice?:                     number;
 }
 
 export interface SummaryProfile {
-  address1:            string;
-  city:                string;
-  state?:              string;
-  zip:                 string;
-  country:             string;
-  phone:               string;
-  website:             string;
-  industry:            string;
-  sector:              string;
-  longBusinessSummary: string;
-  fullTimeEmployees:   number;
-  companyOfficers:     any[];
-  maxAge:              number;
-  address2?:           string;
-  fax?:                string;
+  address1?:            string;
+  city?:                string;
+  state?:               string;
+  zip?:                 string;
+  country?:             string;
+  phone?:               string;
+  website?:             string;
+  industry?:            string;
+  sector?:              string;
+  longBusinessSummary?: string;
+  fullTimeEmployees?:   number;
+  companyOfficers:      any[];
+  maxAge:               number;
+  address2?:            string;
+  fax?:                 string;
 }
 
 export interface TopHoldings {

@@ -11,6 +11,16 @@
       ],
       "type": "string"
     },
+    "AnySchemaObject": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/SchemaObject"
+        },
+        {
+          "$ref": "#/definitions/AsyncSchema"
+        }
+      ]
+    },
     "AssetProfile": {
       "additionalProperties": false,
       "properties": {
@@ -85,18 +95,28 @@
         }
       },
       "required": [
-        "address1",
-        "city",
-        "zip",
-        "country",
         "phone",
-        "website",
-        "industry",
-        "sector",
         "longBusinessSummary",
-        "fullTimeEmployees",
         "companyOfficers",
         "maxAge"
+      ],
+      "type": "object"
+    },
+    "AsyncSchema": {
+      "properties": {
+        "$async": {
+          "const": true,
+          "type": "boolean"
+        },
+        "$id": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "$async"
       ],
       "type": "object"
     },
@@ -160,6 +180,25 @@
       "required": [
         "Query",
         "Result"
+      ],
+      "type": "object"
+    },
+    "BadRequestError": {
+      "additionalProperties": false,
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "stack": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message",
+        "name"
       ],
       "type": "object"
     },
@@ -510,11 +549,17 @@
         "beta": {
           "yahooFinanceType": "number"
         },
+        "beta3Year": {
+          "yahooFinanceType": "number"
+        },
         "bookValue": {
           "yahooFinanceType": "number"
         },
         "category": {
-          "type": "null"
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "dateShortInterest": {
           "yahooFinanceType": "number"
@@ -531,6 +576,9 @@
         "enterpriseValue": {
           "yahooFinanceType": "number"
         },
+        "fiveYearAverageReturn": {
+          "yahooFinanceType": "number"
+        },
         "floatShares": {
           "yahooFinanceType": "number"
         },
@@ -541,7 +589,13 @@
           "yahooFinanceType": "number"
         },
         "fundFamily": {
-          "type": "null"
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "fundInceptionDate": {
+          "yahooFinanceType": "date"
         },
         "heldPercentInsiders": {
           "yahooFinanceType": "number"
@@ -568,7 +622,10 @@
           ]
         },
         "legalType": {
-          "type": "null"
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "maxAge": {
           "yahooFinanceType": "number"
@@ -615,32 +672,29 @@
         "shortRatio": {
           "yahooFinanceType": "number"
         },
+        "threeYearAverageReturn": {
+          "yahooFinanceType": "number"
+        },
+        "totalAssets": {
+          "yahooFinanceType": "number"
+        },
         "trailingEps": {
+          "yahooFinanceType": "number"
+        },
+        "yield": {
+          "yahooFinanceType": "number"
+        },
+        "ytdReturn": {
           "yahooFinanceType": "number"
         }
       },
       "required": [
         "maxAge",
         "priceHint",
-        "enterpriseValue",
-        "profitMargins",
-        "floatShares",
-        "sharesOutstanding",
-        "heldPercentInsiders",
-        "heldPercentInstitutions",
-        "beta",
         "category",
-        "bookValue",
-        "priceToBook",
         "fundFamily",
         "legalType",
-        "lastFiscalYearEnd",
-        "nextFiscalYearEnd",
-        "mostRecentQuarter",
-        "trailingEps",
-        "lastSplitFactor",
-        "52WeekChange",
-        "SandP52WeekChange"
+        "lastSplitFactor"
       ],
       "type": "object"
     },
@@ -904,6 +958,41 @@
       ],
       "type": "object"
     },
+    "ErrorObject": {
+      "additionalProperties": false,
+      "properties": {
+        "data": {},
+        "dataPath": {
+          "type": "string"
+        },
+        "keyword": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "params": {
+          "type": "object"
+        },
+        "parentSchema": {
+          "$ref": "#/definitions/AnySchemaObject"
+        },
+        "propertyName": {
+          "type": "string"
+        },
+        "schema": {},
+        "schemaPath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "keyword",
+        "dataPath",
+        "schemaPath",
+        "params"
+      ],
+      "type": "object"
+    },
     "Estimate": {
       "additionalProperties": false,
       "properties": {
@@ -916,6 +1005,40 @@
       },
       "required": [
         "period"
+      ],
+      "type": "object"
+    },
+    "FailedYahooValidationError": {
+      "additionalProperties": false,
+      "properties": {
+        "errors": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "items": {
+                "$ref": "#/definitions/ErrorObject"
+              },
+              "type": "array"
+            }
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "result": {},
+        "stack": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message",
+        "name",
+        "result"
       ],
       "type": "object"
     },
@@ -1111,6 +1234,358 @@
       ],
       "type": "object"
     },
+    "FundPerformance": {
+      "additionalProperties": false,
+      "properties": {
+        "annualTotalReturns": {
+          "$ref": "#/definitions/FundPerformanceReturns"
+        },
+        "maxAge": {
+          "yahooFinanceType": "number"
+        },
+        "pastQuarterlyReturns": {
+          "$ref": "#/definitions/FundPerformanceReturns"
+        },
+        "performanceOverview": {
+          "$ref": "#/definitions/FundPerformancePerformanceOverview"
+        },
+        "performanceOverviewCat": {
+          "$ref": "#/definitions/FundPerformancePerformanceOverviewCat"
+        },
+        "riskOverviewStatistics": {
+          "$ref": "#/definitions/FundPerformanceRiskOverviewStats"
+        },
+        "riskOverviewStatisticsCat": {
+          "$ref": "#/definitions/FundPerformanceRiskOverviewStatsCat"
+        },
+        "trailingReturns": {
+          "$ref": "#/definitions/FundPerformanceTrailingReturns"
+        },
+        "trailingReturnsCat": {
+          "$ref": "#/definitions/FundPerformanceTrailingReturns"
+        },
+        "trailingReturnsNav": {
+          "$ref": "#/definitions/FundPerformanceTrailingReturns"
+        }
+      },
+      "required": [
+        "maxAge",
+        "performanceOverview",
+        "performanceOverviewCat",
+        "trailingReturns",
+        "trailingReturnsNav",
+        "trailingReturnsCat",
+        "annualTotalReturns",
+        "pastQuarterlyReturns",
+        "riskOverviewStatistics",
+        "riskOverviewStatisticsCat"
+      ],
+      "type": "object"
+    },
+    "FundPerformancePerformanceOverview": {
+      "additionalProperties": false,
+      "properties": {
+        "asOfDate": {
+          "yahooFinanceType": "date"
+        },
+        "oneYearTotalReturn": {
+          "yahooFinanceType": "number"
+        },
+        "threeYearTotalReturn": {
+          "yahooFinanceType": "number"
+        },
+        "ytdReturnPct": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "asOfDate",
+        "ytdReturnPct",
+        "oneYearTotalReturn",
+        "threeYearTotalReturn"
+      ],
+      "type": "object"
+    },
+    "FundPerformancePerformanceOverviewCat": {
+      "additionalProperties": false,
+      "properties": {
+        "fiveYrAvgReturnPct": {
+          "yahooFinanceType": "number"
+        },
+        "ytdReturnPct": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "ytdReturnPct",
+        "fiveYrAvgReturnPct"
+      ],
+      "type": "object"
+    },
+    "FundPerformanceReturns": {
+      "additionalProperties": false,
+      "properties": {
+        "returns": {
+          "items": {
+            "$ref": "#/definitions/FundPerformanceReturnsRow"
+          },
+          "type": "array"
+        },
+        "returnsCat": {
+          "items": {
+            "$ref": "#/definitions/FundPerformanceReturnsRow"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "returns"
+      ],
+      "type": "object"
+    },
+    "FundPerformanceReturnsRow": {
+      "additionalProperties": false,
+      "properties": {
+        "annualValue": {
+          "yahooFinanceType": "number"
+        },
+        "year": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "year"
+      ],
+      "type": "object"
+    },
+    "FundPerformanceRiskOverviewStats": {
+      "additionalProperties": false,
+      "properties": {
+        "riskStatistics": {
+          "items": {
+            "$ref": "#/definitions/FundPerformanceRiskOverviewStatsRow"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "riskStatistics"
+      ],
+      "type": "object"
+    },
+    "FundPerformanceRiskOverviewStatsCat": {
+      "additionalProperties": false,
+      "properties": {
+        "riskStatisticsCat": {
+          "items": {
+            "$ref": "#/definitions/FundPerformanceRiskOverviewStatsRow"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "riskStatisticsCat"
+      ],
+      "type": "object"
+    },
+    "FundPerformanceRiskOverviewStatsRow": {
+      "additionalProperties": false,
+      "properties": {
+        "alpha": {
+          "yahooFinanceType": "number"
+        },
+        "beta": {
+          "yahooFinanceType": "number"
+        },
+        "meanAnnualReturn": {
+          "yahooFinanceType": "number"
+        },
+        "rSquared": {
+          "yahooFinanceType": "number"
+        },
+        "sharpeRatio": {
+          "yahooFinanceType": "number"
+        },
+        "stdDev": {
+          "yahooFinanceType": "number"
+        },
+        "treynorRatio": {
+          "yahooFinanceType": "number"
+        },
+        "year": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "year",
+        "alpha",
+        "beta",
+        "meanAnnualReturn",
+        "rSquared",
+        "stdDev",
+        "sharpeRatio",
+        "treynorRatio"
+      ],
+      "type": "object"
+    },
+    "FundPerformanceTrailingReturns": {
+      "additionalProperties": false,
+      "properties": {
+        "asOfDate": {
+          "yahooFinanceType": "date"
+        },
+        "fiveYear": {
+          "yahooFinanceType": "number"
+        },
+        "lastBearMkt": {
+          "yahooFinanceType": "number"
+        },
+        "lastBullMkt": {
+          "yahooFinanceType": "number"
+        },
+        "oneMonth": {
+          "yahooFinanceType": "number"
+        },
+        "oneYear": {
+          "yahooFinanceType": "number"
+        },
+        "tenYear": {
+          "yahooFinanceType": "number"
+        },
+        "threeMonth": {
+          "yahooFinanceType": "number"
+        },
+        "threeYear": {
+          "yahooFinanceType": "number"
+        },
+        "ytd": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "ytd",
+        "oneMonth"
+      ],
+      "type": "object"
+    },
+    "FundProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "brokerages": {
+          "items": {
+            "$ref": "#/definitions/FundProfileBrokerage"
+          },
+          "type": "array"
+        },
+        "categoryName": {
+          "type": "string"
+        },
+        "family": {
+          "type": "string"
+        },
+        "feesExpensesInvestment": {
+          "$ref": "#/definitions/FundProfileFeesExpensesInvestment"
+        },
+        "feesExpensesInvestmentCat": {
+          "$ref": "#/definitions/FundProfileFeesExpensesInvestmentCat"
+        },
+        "legalType": {
+          "type": "string"
+        },
+        "managementInfo": {
+          "$ref": "#/definitions/FundProfileManagementInfo"
+        },
+        "maxAge": {
+          "yahooFinanceType": "number"
+        },
+        "styleBoxUrl": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "maxAge",
+        "family",
+        "categoryName",
+        "legalType",
+        "managementInfo",
+        "brokerages"
+      ],
+      "type": "object"
+    },
+    "FundProfileBrokerage": {
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "FundProfileFeesExpensesInvestment": {
+      "additionalProperties": false,
+      "properties": {
+        "annualHoldingsTurnover": {
+          "yahooFinanceType": "number"
+        },
+        "annualReportExpenseRatio": {
+          "yahooFinanceType": "number"
+        },
+        "projectionValues": {
+          "type": "object"
+        },
+        "totalNetAssets": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "annualReportExpenseRatio",
+        "annualHoldingsTurnover",
+        "totalNetAssets",
+        "projectionValues"
+      ],
+      "type": "object"
+    },
+    "FundProfileFeesExpensesInvestmentCat": {
+      "additionalProperties": false,
+      "properties": {
+        "annualHoldingsTurnover": {
+          "yahooFinanceType": "number"
+        },
+        "annualReportExpenseRatio": {
+          "yahooFinanceType": "number"
+        },
+        "projectionValuesCat": {
+          "type": "object"
+        },
+        "totalNetAssets": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "annualHoldingsTurnover",
+        "annualReportExpenseRatio",
+        "projectionValuesCat",
+        "totalNetAssets"
+      ],
+      "type": "object"
+    },
+    "FundProfileManagementInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "managerBio": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "managerName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "managerName",
+        "managerBio"
+      ],
+      "type": "object"
+    },
     "Grade": {
       "enum": [
         "Accumulate",
@@ -1139,6 +1614,25 @@
         "Underweight"
       ],
       "type": "string"
+    },
+    "HTTPError": {
+      "additionalProperties": false,
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "stack": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message",
+        "name"
+      ],
+      "type": "object"
     },
     "HistoricalOptions": {
       "additionalProperties": false,
@@ -1466,6 +1960,25 @@
       ],
       "type": "object"
     },
+    "InvalidOptionsError": {
+      "additionalProperties": false,
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "stack": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message",
+        "name"
+      ],
+      "type": "object"
+    },
     "MajorHoldersBreakdown": {
       "additionalProperties": false,
       "properties": {
@@ -1491,6 +2004,93 @@
         "institutionsPercentHeld",
         "institutionsFloatPercentHeld",
         "institutionsCount"
+      ],
+      "type": "object"
+    },
+    "ModuleOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "devel": {
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "fetchOptions": {
+          "type": "object"
+        },
+        "validateResult": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "ModuleOptionsWithValidateFalse": {
+      "additionalProperties": false,
+      "properties": {
+        "devel": {
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "fetchOptions": {
+          "type": "object"
+        },
+        "validateResult": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "validateResult"
+      ],
+      "type": "object"
+    },
+    "ModuleOptionsWithValidateTrue": {
+      "additionalProperties": false,
+      "properties": {
+        "devel": {
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "fetchOptions": {
+          "type": "object"
+        },
+        "validateResult": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "ModuleThis": {
+      "properties": {
+        "_moduleExec": {
+          "additionalProperties": false,
+          "properties": {
+            "arguments": {},
+            "caller": {
+              "$ref": "#/definitions/interface-731470504-9814-11278-731470504-0-210955"
+            },
+            "length": {
+              "yahooFinanceType": "number"
+            },
+            "prototype": {}
+          },
+          "required": [
+            "prototype",
+            "length",
+            "arguments",
+            "caller"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "_moduleExec"
       ],
       "type": "object"
     },
@@ -1544,6 +2144,25 @@
         "netInfoShares",
         "netPercentInsiderShares",
         "totalInsiderShares"
+      ],
+      "type": "object"
+    },
+    "NoEnvironmentError": {
+      "additionalProperties": false,
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "stack": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message",
+        "name"
       ],
       "type": "object"
     },
@@ -1893,6 +2512,12 @@
         "fundOwnership": {
           "$ref": "#/definitions/Ownership"
         },
+        "fundPerformance": {
+          "$ref": "#/definitions/FundPerformance"
+        },
+        "fundProfile": {
+          "$ref": "#/definitions/FundProfile"
+        },
         "incomeStatementHistory": {
           "$ref": "#/definitions/IncomeStatementHistory"
         },
@@ -2133,6 +2758,21 @@
         "filings",
         "maxAge"
       ],
+      "type": "object"
+    },
+    "SchemaObject": {
+      "properties": {
+        "$async": {
+          "const": false,
+          "type": "boolean"
+        },
+        "$id": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
       "type": "object"
     },
     "SearchNews": {
@@ -2485,6 +3125,9 @@
         "maxAge": {
           "yahooFinanceType": "number"
         },
+        "navPrice": {
+          "yahooFinanceType": "number"
+        },
         "open": {
           "yahooFinanceType": "number"
         },
@@ -2518,6 +3161,9 @@
         "toCurrency": {
           "type": "null"
         },
+        "totalAssets": {
+          "yahooFinanceType": "number"
+        },
         "tradeable": {
           "type": "boolean"
         },
@@ -2534,6 +3180,9 @@
           "yahooFinanceType": "number"
         },
         "volume": {
+          "yahooFinanceType": "number"
+        },
+        "yield": {
           "yahooFinanceType": "number"
         }
       },
@@ -2621,16 +3270,6 @@
         }
       },
       "required": [
-        "address1",
-        "city",
-        "zip",
-        "country",
-        "phone",
-        "website",
-        "industry",
-        "sector",
-        "longBusinessSummary",
-        "fullTimeEmployees",
         "companyOfficers",
         "maxAge"
       ],
@@ -2941,6 +3580,26 @@
         "date",
         "revenue",
         "earnings"
+      ],
+      "type": "object"
+    },
+    "interface-731470504-9814-11278-731470504-0-210955": {
+      "additionalProperties": false,
+      "properties": {
+        "arguments": {},
+        "caller": {
+          "$ref": "#/definitions/interface-731470504-9814-11278-731470504-0-210955"
+        },
+        "length": {
+          "yahooFinanceType": "number"
+        },
+        "prototype": {}
+      },
+      "required": [
+        "prototype",
+        "length",
+        "arguments",
+        "caller"
       ],
       "type": "object"
     }
