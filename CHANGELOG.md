@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.5.1...v1.5.2) (2021-02-06)
+
+
+### Bug Fixes
+
+* **modules:** don't log errors when {validateResult:false} ([#16](https://github.com/gadicc/node-yahoo-finance2/issues/16)) ([29f23dc](https://github.com/gadicc/node-yahoo-finance2/commit/29f23dcf64d6b72a7d1d96c6baf8b70ff5f1c5bf))
+
 ## [1.5.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.5.0...v1.5.1) (2021-02-06)
 
 
