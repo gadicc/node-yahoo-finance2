@@ -1,3 +1,12 @@
+## [1.5.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.5.0...v1.5.1) (2021-02-06)
+
+
+### Bug Fixes
+
+* **quoteSummary/iface:** additional fixes for mutual fund types ([#20](https://github.com/gadicc/node-yahoo-finance2/issues/20)) ([4d19692](https://github.com/gadicc/node-yahoo-finance2/commit/4d19692dc80cca136eb97c88602a9f759b692195))
+* **quoteSummary/iface:** more optional fields, new Fund types ([#20](https://github.com/gadicc/node-yahoo-finance2/issues/20)) ([15bb4a1](https://github.com/gadicc/node-yahoo-finance2/commit/15bb4a109d96890ce9862bbeccb688689667478c))
+* **validate:** init ajv with { allErrors: true } ([9793718](https://github.com/gadicc/node-yahoo-finance2/commit/979371892967d2d61f9533f4fc4f37748b667110))
+
 # [1.5.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.4.2...v1.5.0) (2021-02-05)
 
 
