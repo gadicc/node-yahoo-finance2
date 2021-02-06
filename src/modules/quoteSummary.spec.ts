@@ -16,6 +16,7 @@ const testSymbols = [
   'AAPL',    // NMS (Nasdaq)
   'OCDO.L',  // LSE
   'BABA',    // NYSE
+  'QQQ',     // ETF
 ];
 
 interface itValidatesOpts {

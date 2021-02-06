@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/QQQ?formatted=false&modules=assetProfile%2CbalanceSheetHistory%2CbalanceSheetHistoryQuarterly%2CcalendarEvents%2CcashflowStatementHistory%2CcashflowStatementHistoryQuarterly%2CdefaultKeyStatistics%2Cearnings%2CearningsHistory%2CearningsTrend%2CfinancialData%2CfundOwnership%2CfundPerformance%2CfundProfile%2CincomeStatementHistory%2CincomeStatementHistoryQuarterly%2CindexTrend%2CindustryTrend%2CinsiderHolders%2CinsiderTransactions%2CinstitutionOwnership%2CmajorDirectHolders%2CmajorHoldersBreakdown%2CnetSharePurchaseActivity%2Cprice%2CquoteType%2CrecommendationTrend%2CsecFilings%2CsectorTrend%2CsummaryDetail%2CsummaryProfile%2CtopHoldings%2CupgradeDowngradeHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "7r1pf7tg1qt9c"
+      ],
+      "x-yahoo-request-id": [
+        "7r1pf7tg1qt9c"
+      ],
+      "x-request-id": [
+        "3fb0e0b1-8bde-47e5-9067-1e88051b8428"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "x-envoy-upstream-service-time": [
+        "12"
+      ],
+      "date": [
+        "Fri, 05 Feb 2021 16:41:16 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "transfer-encoding": [
+        "chunked"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"assetProfile\":{\"phone\":\"800-983-0903\",\"longBusinessSummary\":\"The investment seeks investment results that generally correspond to the price and yield performance of the NASDAQ-100 IndexÂ®.\\n To maintain the correspondence between the composition and weights of the securities in the trust (the \\\"securities\\\") and the stocks in the NASDAQ-100 IndexÂ®, the adviser adjusts the securities from time to time to conform to periodic changes in the identity and/or relative weights of index securities. The composition and weighting of the securities portion of a portfolio deposit are also adjusted to conform to changes in the index.\",\"companyOfficers\":[],\"maxAge\":86400},\"fundProfile\":{\"maxAge\":1,\"styleBoxUrl\":\"http://us.i1.yimg.com/us.yimg.com/i/fi/3_0stylelargeeq3.gif\",\"family\":\"Invesco\",\"categoryName\":\"Large Growth\",\"legalType\":\"Exchange Traded Fund\",\"managementInfo\":{\"managerName\":null,\"managerBio\":null},\"feesExpensesInvestment\":{\"annualReportExpenseRatio\":0.002,\"annualHoldingsTurnover\":0.076799996,\"totalNetAssets\":337774.38,\"projectionValues\":{}},\"feesExpensesInvestmentCat\":{\"annualReportExpenseRatio\":0.0039,\"annualHoldingsTurnover\":57.49,\"totalNetAssets\":337774.38,\"projectionValuesCat\":{}},\"brokerages\":[]},\"summaryDetail\":{\"maxAge\":1,\"priceHint\":2,\"previousClose\":330.24,\"open\":331.22,\"dayLow\":329.53,\"dayHigh\":331.31,\"regularMarketPreviousClose\":330.24,\"regularMarketOpen\":331.22,\"regularMarketDayLow\":329.53,\"regularMarketDayHigh\":331.31,\"trailingPE\":84.88832,\"volume\":9055723,\"regularMarketVolume\":9055723,\"averageVolume\":31198864,\"averageVolume10days\":36938775,\"averageDailyVolume10Day\":36938775,\"bid\":330.29,\"ask\":330.24,\"bidSize\":1100,\"askSize\":1400,\"yield\":0.0055,\"totalAssets\":148878360576,\"fiftyTwoWeekLow\":164.93,\"fiftyTwoWeekHigh\":331.31,\"fiftyDayAverage\":316.78333,\"twoHundredDayAverage\":290.56158,\"trailingAnnualDividendRate\":1.54,\"trailingAnnualDividendYield\":0.004663275,\"navPrice\":330.3,\"currency\":\"USD\",\"fromCurrency\":null,\"toCurrency\":null,\"lastMarket\":null,\"algorithm\":null,\"tradeable\":false},\"price\":{\"maxAge\":1,\"preMarketChangePercent\":0.00311894,\"preMarketChange\":1.03,\"preMarketTime\":1612535397,\"preMarketPrice\":331.27,\"preMarketSource\":\"FREE_REALTIME\",\"regularMarketChangePercent\":0.0012113142,\"regularMarketChange\":0.4000244,\"regularMarketTime\":1612543275,\"priceHint\":2,\"regularMarketPrice\":330.64,\"regularMarketDayHigh\":331.31,\"regularMarketDayLow\":329.53,\"regularMarketVolume\":9055723,\"averageDailyVolume10Day\":36938775,\"averageDailyVolume3Month\":31198864,\"regularMarketPreviousClose\":330.24,\"regularMarketSource\":\"FREE_REALTIME\",\"regularMarketOpen\":331.22,\"exchange\":\"NMS\",\"exchangeName\":\"NasdaqGS\",\"exchangeDataDelayedBy\":0,\"marketState\":\"REGULAR\",\"quoteType\":\"ETF\",\"symbol\":\"QQQ\",\"underlyingSymbol\":null,\"shortName\":\"Invesco QQQ Trust, Series 1\",\"longName\":\"Invesco QQQ Trust\",\"currency\":\"USD\",\"quoteSourceName\":\"Nasdaq Real Time Price\",\"currencySymbol\":\"$\",\"fromCurrency\":null,\"toCurrency\":null,\"lastMarket\":null,\"marketCap\":129974591488},\"defaultKeyStatistics\":{\"maxAge\":1,\"priceHint\":2,\"category\":\"Large Growth\",\"ytdReturn\":0.0525,\"beta3Year\":1.04,\"totalAssets\":148878360576,\"yield\":0.0055,\"fundFamily\":\"Invesco\",\"fundInceptionDate\":921024000,\"legalType\":\"Exchange Traded Fund\",\"threeYearAverageReturn\":0.2715,\"fiveYearAverageReturn\":0.277,\"lastSplitFactor\":null},\"summaryProfile\":{\"phone\":\"800-983-0903\",\"longBusinessSummary\":\"The investment seeks investment results that generally correspond to the price and yield performance of the NASDAQ-100 IndexÂ®.\\n To maintain the correspondence between the composition and weights of the securities in the trust (the \\\"securities\\\") and the stocks in the NASDAQ-100 IndexÂ®, the adviser adjusts the securities from time to time to conform to periodic changes in the identity and/or relative weights of index securities. The composition and weighting of the securities portion of a portfolio deposit are also adjusted to conform to changes in the index.\",\"companyOfficers\":[],\"maxAge\":86400},\"topHoldings\":{\"maxAge\":1,\"stockPosition\":0.9989,\"bondPosition\":0.0,\"holdings\":[{\"symbol\":\"AAPL\",\"holdingName\":\"Apple Inc\",\"holdingPercent\":0.121400006},{\"symbol\":\"MSFT\",\"holdingName\":\"Microsoft Corp\",\"holdingPercent\":0.0949},{\"symbol\":\"AMZN\",\"holdingName\":\"Amazon.com Inc\",\"holdingPercent\":0.0871},{\"symbol\":\"TSLA\",\"holdingName\":\"Tesla Inc\",\"holdingPercent\":0.0504},{\"symbol\":\"FB\",\"holdingName\":\"Facebook Inc A\",\"holdingPercent\":0.0336},{\"symbol\":\"GOOG\",\"holdingName\":\"Alphabet Inc Class C\",\"holdingPercent\":0.0328},{\"symbol\":\"GOOGL\",\"holdingName\":\"Alphabet Inc A\",\"holdingPercent\":0.0297},{\"symbol\":\"NVDA\",\"holdingName\":\"NVIDIA Corp\",\"holdingPercent\":0.026500002},{\"symbol\":\"PYPL\",\"holdingName\":\"PayPal Holdings Inc\",\"holdingPercent\":0.0226},{\"symbol\":\"NFLX\",\"holdingName\":\"Netflix Inc\",\"holdingPercent\":0.0194}],\"equityHoldings\":{\"priceToEarnings\":34.82,\"priceToBook\":8.07,\"priceToSales\":4.77,\"priceToCashflow\":21.51},\"bondHoldings\":{},\"bondRatings\":[{\"bb\":0.0},{\"aa\":0.0},{\"aaa\":0.0},{\"a\":0.0},{\"other\":0.0},{\"b\":0.0},{\"bbb\":0.0},{\"below_b\":0.0},{\"us_government\":0.0}],\"sectorWeightings\":[{\"realestate\":0.0},{\"consumer_cyclical\":0.19129999},{\"basic_materials\":0.0},{\"consumer_defensive\":0.0477},{\"technology\":0.4439},{\"communication_services\":0.1876},{\"financial_services\":0.0226},{\"utilities\":0.0094},{\"industrials\":0.025899999},{\"energy\":0.0},{\"healthcare\":0.0715}]},\"fundPerformance\":{\"maxAge\":1,\"performanceOverview\":{\"asOfDate\":1612396800,\"ytdReturnPct\":0.0525,\"oneYearTotalReturn\":0.4629,\"threeYearTotalReturn\":0.2715},\"performanceOverviewCat\":{\"ytdReturnPct\":0.048,\"fiveYrAvgReturnPct\":0.1705},\"trailingReturns\":{\"asOfDate\":1612051200,\"ytd\":0.0026,\"oneMonth\":0.0026,\"threeMonth\":0.1698,\"oneYear\":0.4461,\"threeYear\":0.23889999,\"fiveYear\":0.2585,\"tenYear\":0.2005,\"lastBullMkt\":0.0,\"lastBearMkt\":0.0},\"trailingReturnsNav\":{\"ytd\":0.0031,\"oneMonth\":0.0031,\"threeMonth\":0.1708,\"oneYear\":0.4473,\"threeYear\":0.23979999,\"fiveYear\":0.2584,\"tenYear\":0.2006},\"trailingReturnsCat\":{\"ytd\":0.048,\"oneMonth\":0.0031,\"threeMonth\":0.0511,\"oneYear\":0.1242,\"threeYear\":0.1146,\"fiveYear\":0.1705,\"tenYear\":0.094799995,\"lastBullMkt\":0.0,\"lastBearMkt\":0.0},\"annualTotalReturns\":{\"returns\":[{\"year\":\"2020\",\"annualValue\":0.48604858},{\"year\":\"2019\",\"annualValue\":0.39120528},{\"year\":\"2018\",\"annualValue\":-0.0014289},{\"year\":\"2017\",\"annualValue\":0.3269709},{\"year\":\"2016\",\"annualValue\":0.0701014},{\"year\":\"2015\",\"annualValue\":0.095405705},{\"year\":\"2014\",\"annualValue\":0.1911555},{\"year\":\"2013\",\"annualValue\":0.3660371},{\"year\":\"2012\",\"annualValue\":0.18094419},{\"year\":\"2011\",\"annualValue\":0.0343855},{\"year\":\"2010\",\"annualValue\":0.1989097},{\"year\":\"2009\",\"annualValue\":0.54454154},{\"year\":\"2008\",\"annualValue\":-0.41679358},{\"year\":\"2007\",\"annualValue\":0.19069509},{\"year\":\"2006\",\"annualValue\":0.0701767},{\"year\":\"2005\",\"annualValue\":0.0165483},{\"year\":\"2004\",\"annualValue\":0.1048975},{\"year\":\"2003\",\"annualValue\":0.4916712},{\"year\":\"2002\",\"annualValue\":-0.3766111},{\"year\":\"2001\",\"annualValue\":-0.3277795},{\"year\":\"2000\",\"annualValue\":-0.36934298},{\"year\":\"1999\"}],\"returnsCat\":[{\"year\":\"2015\",\"annualValue\":0.0397581},{\"year\":\"2014\",\"annualValue\":0.14093919},{\"year\":\"2013\",\"annualValue\":0.3602415},{\"year\":\"2012\",\"annualValue\":0.1640355},{\"year\":\"2011\",\"annualValue\":0.006872},{\"year\":\"2010\",\"annualValue\":0.1861735},{\"year\":\"2009\",\"annualValue\":0.4131807},{\"year\":\"2008\",\"annualValue\":-0.4157419},{\"year\":\"2007\",\"annualValue\":0.0963338},{\"year\":\"2006\",\"annualValue\":0.0997952},{\"year\":\"2005\",\"annualValue\":0.0272505},{\"year\":\"2004\",\"annualValue\":0.0698025},{\"year\":\"2003\",\"annualValue\":0.3092856},{\"year\":\"2002\",\"annualValue\":-0.2783116},{\"year\":\"2001\",\"annualValue\":-0.19168171},{\"year\":\"2000\",\"annualValue\":-0.36939862}]},\"pastQuarterlyReturns\":{\"returns\":[]},\"riskOverviewStatistics\":{\"riskStatistics\":[{\"year\":\"5y\",\"alpha\":7.76,\"beta\":1.04,\"meanAnnualReturn\":2.05,\"rSquared\":84.03,\"stdDev\":17.12,\"sharpeRatio\":1.37,\"treynorRatio\":23.61},{\"year\":\"3y\",\"alpha\":10.4,\"beta\":1.04,\"meanAnnualReturn\":1.97,\"rSquared\":90.58,\"stdDev\":20.38,\"sharpeRatio\":1.09,\"treynorRatio\":21.61},{\"year\":\"10y\",\"alpha\":5.26,\"beta\":1.06,\"meanAnnualReturn\":1.63,\"rSquared\":83.91,\"stdDev\":15.61,\"sharpeRatio\":1.22,\"treynorRatio\":18.44}]},\"riskOverviewStatisticsCat\":{\"riskStatisticsCat\":[{\"year\":\"5y\",\"alpha\":-0.12,\"beta\":1.05,\"meanAnnualReturn\":1.38,\"rSquared\":90.29,\"stdDev\":12.36,\"sharpeRatio\":1.34,\"treynorRatio\":16.11},{\"year\":\"3y\",\"alpha\":-0.19,\"beta\":1.05,\"meanAnnualReturn\":0.97,\"rSquared\":89.09,\"stdDev\":12.1,\"sharpeRatio\":0.96,\"treynorRatio\":10.86},{\"year\":\"10y\",\"alpha\":1.99,\"beta\":1.04,\"meanAnnualReturn\":0.88,\"rSquared\":91.36,\"stdDev\":16.71,\"sharpeRatio\":0.58,\"treynorRatio\":8.25}]}},\"quoteType\":{\"exchange\":\"NMS\",\"quoteType\":\"ETF\",\"symbol\":\"QQQ\",\"underlyingSymbol\":\"QQQ\",\"shortName\":\"Invesco QQQ Trust, Series 1\",\"longName\":\"Invesco QQQ Trust\",\"firstTradeDateEpochUtc\":921076200,\"timeZoneFullName\":\"America/New_York\",\"timeZoneShortName\":\"EST\",\"uuid\":\"714d32d4-5f6c-33bc-b36a-765119cb3c4c\",\"messageBoardId\":\"finmb_8108558\",\"gmtOffSetMilliseconds\":-18000000,\"maxAge\":1}}],\"error\":null}}"
+  }
+}

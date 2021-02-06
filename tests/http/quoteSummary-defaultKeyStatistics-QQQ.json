@@ -1,0 +1,70 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/QQQ?formatted=false&modules=defaultKeyStatistics"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "6cfilbdg1qt72"
+      ],
+      "x-yahoo-request-id": [
+        "6cfilbdg1qt72"
+      ],
+      "x-request-id": [
+        "eafcb8c7-da03-4051-b6e1-382be4eb1f1e"
+      ],
+      "content-length": [
+        "371"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Fri, 05 Feb 2021 16:40:01 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"defaultKeyStatistics\":{\"maxAge\":1,\"priceHint\":2,\"category\":\"Large Growth\",\"ytdReturn\":0.0525,\"beta3Year\":1.04,\"totalAssets\":148878360576,\"yield\":0.0055,\"fundFamily\":\"Invesco\",\"fundInceptionDate\":921024000,\"legalType\":\"Exchange Traded Fund\",\"threeYearAverageReturn\":0.2715,\"fiveYearAverageReturn\":0.277,\"lastSplitFactor\":null}}],\"error\":null}}"
+  }
+}

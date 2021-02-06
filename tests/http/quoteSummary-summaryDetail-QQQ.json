@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/QQQ?formatted=false&modules=summaryDetail"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "dfla95pg1qt94"
+      ],
+      "x-yahoo-request-id": [
+        "dfla95pg1qt94"
+      ],
+      "x-request-id": [
+        "8e4d1159-0d01-49f5-8ca1-7cb0b4b31c51"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "440"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Fri, 05 Feb 2021 16:41:08 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"summaryDetail\":{\"maxAge\":1,\"priceHint\":2,\"previousClose\":330.24,\"open\":331.22,\"dayLow\":329.53,\"dayHigh\":331.31,\"regularMarketPreviousClose\":330.24,\"regularMarketOpen\":331.22,\"regularMarketDayLow\":329.53,\"regularMarketDayHigh\":331.31,\"trailingPE\":84.90115,\"volume\":9044458,\"regularMarketVolume\":9044458,\"averageVolume\":31198864,\"averageVolume10days\":36938775,\"averageDailyVolume10Day\":36938775,\"bid\":330.22,\"ask\":330.24,\"bidSize\":1100,\"askSize\":1400,\"yield\":0.0055,\"totalAssets\":148878360576,\"fiftyTwoWeekLow\":164.93,\"fiftyTwoWeekHigh\":331.31,\"fiftyDayAverage\":316.78333,\"twoHundredDayAverage\":290.56158,\"trailingAnnualDividendRate\":1.54,\"trailingAnnualDividendYield\":0.004663275,\"navPrice\":330.3,\"currency\":\"USD\",\"fromCurrency\":null,\"toCurrency\":null,\"lastMarket\":null,\"algorithm\":null,\"tradeable\":false}}],\"error\":null}}"
+  }
+}
