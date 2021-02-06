@@ -43,13 +43,4 @@ describe('search', () => {
     yf._opts.validation.logErrors = true;
   });
 
-  it('does not throw on unexpected input if called with {validateResult: false}', async () => {
-    yf._opts.validation.logErrors = false;
-    await expect(yf.search('AAPL', {}, {
-      devel: 'search-fakeBadResult.json',
-      validateResult: false
-    })).resolves.toBeDefined();
-    yf._opts.validation.logErrors = true;
-  });
-
 });

@@ -128,6 +128,16 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
   if (opts.result.transformWith)
     result = opts.result.transformWith(result);
 
+  const validateResult = !moduleOpts
+    || moduleOpts.validateResult === undefined
+    || moduleOpts.validateResult === true;
+
+  const validationOpts = {
+    ...this._opts?.validation,
+    // Set logErrors=false if validateResult=false
+    logErrors: validateResult ? this._opts?.validation?.logErrors : false,
+  };
+
   /*
    * Validate the returned result (after transforming, above) and coerce types.
    *
@@ -146,9 +156,9 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
    * database, etc.  Otherwise you'll receive an error.
    */
   try {
-    validateAndCoerceTypes(result, opts.result.schemaKey, undefined, this._opts?.validation);
+    validateAndCoerceTypes(result, opts.result.schemaKey, undefined, validationOpts);
   } catch (error) {
-    if (!moduleOpts || moduleOpts.validateResult === undefined || moduleOpts.validateResult === true)
+    if (validateResult)
       throw error;
   }
 
