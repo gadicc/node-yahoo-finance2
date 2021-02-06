@@ -106,23 +106,23 @@ function validate(object: object, key: string, module?: string, options?: Valida
 
     if (!options || options.logErrors === undefined || options.logErrors === true) {
       const title = encodeURIComponent("Failed validation: " + key);
-      console.error("The following result did not validate with schema: " + key);
+      console.log("The following result did not validate with schema: " + key);
       logObj(validator.errors);
       logObj(object);
-      console.error(`
+      console.log(`
 This may happen intermittently and you should catch errors appropriately.
 However:  1) if this recently started happening on every request for a symbol
 that used to work, Yahoo may have changed their API.  2) If this happens on
 every request for a symbol you've never used before, but not for other
 symbols, you've found an edge-case.  Please see if anyone has reported
 this previously:
-`);
-      console.error(`  ${pkg.repository}/issues?q=is%3Aissue+${title}`);
-      console.error("");
-      console.error("or open a new issue (and mention the symbol):");
-      console.error("");
-      console.error(`  ${pkg.repository}/issues/new?title=${title}`);
-      console.error(`
+
+  ${pkg.repository}/issues?q=is%3Aissue+${title}
+
+or open a new issue (and mention the symbol):
+
+  ${pkg.repository}/issues/new?title=${title}
+
 For information on how to turn off the above logging or skip these errors,
 see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.
 `);

@@ -216,7 +216,7 @@ describe('validateAndCoerceTypes', () => {
         ).toThrow("Failed Yahoo Schema validation");
         console = origConsole;
 
-        expect(fakeConsole.error).toHaveBeenCalled();
+        expect(fakeConsole.log).toHaveBeenCalled();
       });
 
       it('does not log errors when logErrors=false', () => {
