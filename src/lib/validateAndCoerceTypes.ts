@@ -32,6 +32,13 @@ ajv.addKeyword({
         if (typeof data === 'number')
           return true;
 
+        if (typeof data === 'string') {
+          let float = Number.parseFloat(data);
+          if (Number.isNaN(float))
+            return false;
+          return set(float);
+        }
+
         if (typeof data === 'object') {
           if (Object.keys(data).length === 0)
             return set(null);
