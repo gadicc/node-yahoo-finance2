@@ -31,7 +31,13 @@ function itValidates(name: QuoteSummaryModules|"all", opts:itValidatesOpts={}) {
   symbols.forEach(symbol => {
     it(`validates ${symbol}`, async () => {
       const devel = `quoteSummary-${name}-${symbol}.json`;
-      await yf.quoteSummary(symbol, { modules }, { devel });
+      try {
+        await yf.quoteSummary(symbol, { modules }, { devel });
+      } catch (error) {
+        if (error.message.match(/^No fundamentals data found/))
+          return
+        throw error;
+      }
     });
   });
 }
@@ -160,7 +166,7 @@ describe('quoteSummary', () => {
 
     describe('insiderTransactions', () => {
 
-      itValidates("insiderTransactions", { skip: ['BABA'] });
+      itValidates("insiderTransactions");
 
     });
 
@@ -208,7 +214,7 @@ describe('quoteSummary', () => {
 
     describe('secFilings', () => {
 
-      itValidates("secFilings", { skip: ['OCDO.L','BABA'] });
+      itValidates("secFilings");
 
     });
 
@@ -226,7 +232,7 @@ describe('quoteSummary', () => {
 
     describe('upgradeDowngradeHistory', () => {
 
-      itValidates("upgradeDowngradeHistory", { skip: ['OCDO.L'] });
+      itValidates("upgradeDowngradeHistory");
 
     });
 
