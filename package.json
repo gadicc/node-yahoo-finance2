@@ -30,7 +30,7 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "test:ts": "tsc --noEmit",
-    "generateSchema": "ts-json-schema-generator -p 'src/**/*.ts' -t '*' | node bin/modify-schema.js > schema.json",
+    "generateSchema": "ts-json-schema-generator -p 'src/**/*.ts' -t '*' | node bin/schema-tweak.js > schema.json",
     "prepublishOnly": "tsc && yarn generateSchema"
   },
   "files": [
