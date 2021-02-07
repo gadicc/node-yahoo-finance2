@@ -1,10 +1,13 @@
 import validateAndCoerceTypes, { ajv } from './validateAndCoerceTypes';
 import { InvalidOptionsError, FailedYahooValidationError } from './errors';
 
-const QUERY_RESULT_SCHEMA_KEY = "#/definitions/QuoteSummaryResult";
-
-const defaultOptions = {
-  logErrors: false
+const defParams = {
+  source: "validateAndCoerceTypes.spec.js",
+  schemaKey: "#/definitions/QuoteSummaryResult",
+  options: {
+    logErrors: true,
+    logOptionsErrors: true,
+  }
 };
 
 const priceResult = {
@@ -58,7 +61,7 @@ describe('validateAndCoerceTypes', () => {
       it('passes regular numbers', () => {
         const result = Object.assign({}, priceResult);
         result.price = Object.assign({}, result.price);
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
+        validateAndCoerceTypes({ ...defParams, type: 'result', object: result });
         expect(result.price.priceHint).toBe(2);
       });
 
@@ -66,7 +69,7 @@ describe('validateAndCoerceTypes', () => {
         const result = Object.assign({}, priceResult);
         result.price = Object.assign({}, result.price);
         result.price.postMarketChangePercent = { raw: 0.006599537, fmt: "6.5%" }
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
+        validateAndCoerceTypes({ ...defParams, type: 'result', object: result });
         expect(result.price.postMarketChangePercent).toBe(0.006599537);
       });
 
@@ -76,7 +79,10 @@ describe('validateAndCoerceTypes', () => {
         /* @ts-ignore */
         result.price.postMarketChangePercent = true;
         expect(
-          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions)
+          () => validateAndCoerceTypes({
+            ...defParams, type: 'result', object: result,
+            options: { ...defParams.options, logErrors: false }
+          })
         ).toThrow(/Failed Yahoo Schema/);
       });
 
@@ -86,7 +92,23 @@ describe('validateAndCoerceTypes', () => {
         /* @ts-ignore */
         result.price.postMarketChangePercent = { raw: "a string" };
         expect(
-          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions)
+          () => validateAndCoerceTypes({
+            ...defParams, type: 'result', object: result,
+            options: { ...defParams.options, logErrors: false }
+          })
+        ).toThrow(/Failed Yahoo Schema/);
+      });
+
+      it('fails if string returns a NaN', () => {
+        const result = Object.assign({}, priceResult);
+        result.price = Object.assign({}, result.price);
+        /* @ts-ignore */
+        result.price.postMarketChangePercent = "not-a-number";
+        expect(
+          () => validateAndCoerceTypes({
+            ...defParams, type: 'result', object: result,
+            options: { ...defParams.options, logErrors: false }
+          })
         ).toThrow(/Failed Yahoo Schema/);
       });
 
@@ -100,7 +122,7 @@ describe('validateAndCoerceTypes', () => {
         // @ts-ignore
         result.price.regularMarketTime = { raw: 1612313997 };
 
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
+        validateAndCoerceTypes({ ...defParams, type: 'result', object: result });
         // @ts-ignore
         expect(result.price.regularMarketTime.getTime())
           .toBe(1612313997 * 1000);
@@ -109,8 +131,7 @@ describe('validateAndCoerceTypes', () => {
       it('coerces epochs', () => {
         const result = Object.assign({}, priceResult);
         result.price = Object.assign({}, result.price);
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
-        // @ts-ignore
+        validateAndCoerceTypes({ ...defParams, type: 'result', object: result });
         // @ts-ignore
         expect(result.price.regularMarketTime.getTime())
         .toBe(new Date(priceResult.price.regularMarketTime).getTime());
@@ -119,7 +140,7 @@ describe('validateAndCoerceTypes', () => {
       it('coerces recognizable date string', () => {
         const result = Object.assign({}, priceResult);
         result.price = Object.assign({}, result.price);
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
+        validateAndCoerceTypes({ ...defParams, type: 'result', object: result });
         // @ts-ignore
         expect(result.price.regularMarketTime.getTime())
           .toBe(new Date(priceResult.price.regularMarketTime).getTime());
@@ -131,7 +152,10 @@ describe('validateAndCoerceTypes', () => {
         /* @ts-ignore */
         result.price.postMarketTime = "clearly not a date";
         expect(
-          () => validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions)
+          () => validateAndCoerceTypes({
+            ...defParams, type: 'result', object: result,
+            options: { ...defParams.options, logErrors: false }
+          })
         ).toThrow(/Failed Yahoo Schema/);
       });
 
@@ -141,7 +165,7 @@ describe('validateAndCoerceTypes', () => {
         const date = new Date();
         // @ts-ignore
         result.price.postMarketTime = date;
-        validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
+        validateAndCoerceTypes({ ...defParams, type: 'result', object: result });
         expect(result.price.postMarketTime).toBe(date);
       });
 
@@ -152,7 +176,14 @@ describe('validateAndCoerceTypes', () => {
       it('fails on invalid options usage', () => {
         const options = { period1: true };
         expect(
-          () => validateAndCoerceTypes(options, "#/definitions/HistoricalOptions", "historical")
+          () => validateAndCoerceTypes({
+            ...defParams,
+            object: options,
+            type: 'options',
+            schemaKey: "#/definitions/HistoricalOptions",
+            source: "historical-in-validate.spec",
+            options: { ...defParams.options, logOptionsErrors: false }
+          })
         ).toThrow(InvalidOptionsError)
       });
 
@@ -164,7 +195,10 @@ describe('validateAndCoerceTypes', () => {
 
         let error: FailedYahooValidationError;
         try {
-          validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
+          validateAndCoerceTypes({
+            ...defParams, object: result, type: 'result',
+            options: { ...defParams.options, logErrors: false }
+          });
         } catch (e) {
           error = e;
         }
@@ -192,7 +226,13 @@ describe('validateAndCoerceTypes', () => {
 
       it('fails on invalid schema key', () => {
         expect(
-          () => validateAndCoerceTypes({}, "SOME_MISSING_KEY")
+          () => validateAndCoerceTypes({
+            ...defParams,
+            object: {},
+            type: 'result',
+            schemaKey: "SOME_MISSING_KEY",
+            options: { ...defParams.options, logErrors: false }
+          })
         ).toThrow(/No such schema/)
       });
 
@@ -212,7 +252,12 @@ describe('validateAndCoerceTypes', () => {
         /* @ts-ignore */
         console = fakeConsole;
         expect(
-          () => validateAndCoerceTypes({ a: 1 }, QUERY_RESULT_SCHEMA_KEY, undefined, { logErrors: true })
+          () => validateAndCoerceTypes({
+            ...defParams,
+            object: { a: 1 },
+            type: 'result',
+            options: { ...defParams.options, logErrors: true }
+          })
         ).toThrow("Failed Yahoo Schema validation");
         console = origConsole;
 
@@ -226,7 +271,12 @@ describe('validateAndCoerceTypes', () => {
         /* @ts-ignore */
         console = fakeConsole;
         expect(
-          () => validateAndCoerceTypes({ a: 1 }, QUERY_RESULT_SCHEMA_KEY, undefined, { logErrors: false })
+          () => validateAndCoerceTypes({
+            ...defParams,
+            object: { a: 1 },
+            type: 'result',
+            options: { ...defParams.options, logErrors: false }
+          })
         ).toThrow("Failed Yahoo Schema validation");
         console = origConsole;
 
@@ -240,7 +290,10 @@ describe('validateAndCoerceTypes', () => {
 
         let error;
         try {
-          validateAndCoerceTypes(result, QUERY_RESULT_SCHEMA_KEY, undefined, defaultOptions);
+          validateAndCoerceTypes({
+              ...defParams, object: result, type: "result",
+              options: { ...defParams.options, logErrors: false }
+            });
         } catch (e) {
           error = e;
         }

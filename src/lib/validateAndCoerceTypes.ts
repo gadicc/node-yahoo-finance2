@@ -99,21 +99,30 @@ const logObj = process?.stdout?.isTTY
 
 interface ValidationOptions {
   logErrors: boolean;
+  logOptionsErrors: boolean;
 }
 
-function validate(object: object, key: string, module?: string, options?: ValidationOptions): void {
-  const validator = ajv.getSchema(key);
+interface ValidateParams {
+  source: string;
+  type: "options" | "result";
+  object: object;
+  schemaKey: string;
+  options: ValidationOptions;
+}
+
+function validate({ source, type, object, schemaKey, options }: ValidateParams): void {
+  const validator = ajv.getSchema(schemaKey);
   if (!validator)
-    throw new Error("No such schema with key: " + key);
+    throw new Error("No such schema with key: " + schemaKey);
 
   const valid = validator(object);
   if (valid) return;
 
-  if (!module) {
+  if (type === 'result') {
 
-    if (!options || options.logErrors === undefined || options.logErrors === true) {
-      const title = encodeURIComponent("Failed validation: " + key);
-      console.log("The following result did not validate with schema: " + key);
+    if (options.logErrors) {
+      const title = encodeURIComponent("Failed validation: " + schemaKey);
+      console.log("The following result did not validate with schema: " + schemaKey);
       logObj(validator.errors);
       logObj(object);
       console.log(`
@@ -144,11 +153,11 @@ see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.
 
   } else /* if (type === 'options') */ {
 
-    if (options?.logErrors) {
-      console.error(`[yahooFinance.${module}] Invalid options ("${key}")`);
+    if (options.logOptionsErrors) {
+      console.error(`[yahooFinance.${source}] Invalid options ("${schemaKey}")`);
       logObj({ errors: validator.errors, input: object });
     }
-    throw new InvalidOptionsError(`yahooFinance.${module} called with invalid options.`);
+    throw new InvalidOptionsError(`yahooFinance.${source} called with invalid options.`);
 
   }
 }

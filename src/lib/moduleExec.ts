@@ -17,6 +17,7 @@
 
 import validateAndCoerceTypes from './validateAndCoerceTypes';
 import csv2json from './csv2json';
+import _opts from './options';
 
 interface TransformFunc {
   // The consuming module itself will have a stricter return type.
@@ -95,16 +96,24 @@ interface ModuleExecOptions {
 type ThisWithFetch = { [key: string]: any; _moduleExec: Function };
 
 export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOptions) {
-  const query = opts.query;
+  const queryOpts = opts.query;
   const moduleOpts = opts.moduleOptions;
+  const moduleName = opts.moduleName;
+  const resultOpts = opts.result;
 
   // Check that query options passed by the user are valid for this module
-  validateAndCoerceTypes(query.overrides, query.schemaKey, opts.moduleName);
+  validateAndCoerceTypes({
+    source: moduleName,
+    type: 'options',
+    object: queryOpts.overrides,
+    schemaKey: queryOpts.schemaKey,
+    options: this._opts ? this._opts.validation : _opts.validation
+  });
 
   let queryOptions = {
-    ...query.defaults,    // Module defaults e.g. { period: '1wk', lang: 'en' }
-    ...query.runtime,     // Runtime params e.g. { q: query }
-    ...query.overrides,   // User supplied options that override above
+    ...queryOpts.defaults,    // Module defaults e.g. { period: '1wk', lang: 'en' }
+    ...queryOpts.runtime,     // Runtime params e.g. { q: query }
+    ...queryOpts.overrides,   // User supplied options that override above
   };
 
   /*
@@ -112,13 +121,13 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
    * the query.  Useful to transform options we allow but not Yahoo, e.g.
    * allow a "2020-01-01" date but transform this to a UNIX epoch.
    */
-  if (query.transformWith)
-    queryOptions = query.transformWith(queryOptions);
+  if (queryOpts.transformWith)
+    queryOptions = queryOpts.transformWith(queryOptions);
 
   // this._fetch is lib/yahooFinanceFetch
-  let result = await this._fetch(query.url, queryOptions, moduleOpts, query.fetchType);
+  let result = await this._fetch(queryOpts.url, queryOptions, moduleOpts, queryOpts.fetchType);
 
-  if (query.fetchType === 'csv')
+  if (queryOpts.fetchType === 'csv')
     result = csv2json(result);
 
   /*
@@ -133,7 +142,7 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
     || moduleOpts.validateResult === true;
 
   const validationOpts = {
-    ...this._opts?.validation,
+    ...(this._opts ? this._opts.validation : _opts.validation),
     // Set logErrors=false if validateResult=false
     logErrors: validateResult ? this._opts?.validation?.logErrors : false,
   };
@@ -156,7 +165,13 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
    * database, etc.  Otherwise you'll receive an error.
    */
   try {
-    validateAndCoerceTypes(result, opts.result.schemaKey, undefined, validationOpts);
+    validateAndCoerceTypes({
+      source: moduleName,
+      type: 'result',
+      object: result,
+      schemaKey: resultOpts.schemaKey,
+      options: validationOpts
+    });
   } catch (error) {
     if (validateResult)
       throw error;

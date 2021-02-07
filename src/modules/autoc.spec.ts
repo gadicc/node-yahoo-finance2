@@ -14,13 +14,10 @@ const yf = {
 
 describe('autoc', () => {
 
+  // See also common module tests in moduleExec.spec.js
+
   it('passes validation', async () => {
     await yf.autoc('AAPL', {}, { devel: "autoc-AAPL.json" })
-  });
-
-  it('throws InvalidOptions on invalid options', async () => {
-    const rwo = (options:any) => yf.autoc('symbol', options);
-    await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError)
   });
 
   it('throws on unexpected input', async () => {

@@ -23,24 +23,14 @@ const testSearches = [
 
 describe('search', () => {
 
+  // See also common module tests in moduleExec.spec.js
+
   // validate different searches
   testSearches.forEach((search) => {
     it(`passed validation for search: ${search}`, async () => {
       const devel = `search-${search}.json`;
       await yf.search(search, {}, { devel });
     });
-  });
-
-  it('throws InvalidOptions on invalid options', async () => {
-    const rwo = (options:any) => yf.search('symbol', options);
-    await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError)
-  });
-
-  it('throws on unexpected input', async () => {
-    yf._opts.validation.logErrors = false;
-    await expect(yf.search('AAPL', {}, { devel: 'search-fakeBadResult.json' }))
-      .rejects.toThrow(/Failed Yahoo Schema/)
-    yf._opts.validation.logErrors = true;
   });
 
 });

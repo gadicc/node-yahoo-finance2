@@ -9,10 +9,13 @@ const yf = {
   _env,
   _fetch,
   _moduleExec,
+  _opts: { validation: { logErrors: true }},
   historical
 };
 
 describe('historical', () => {
+
+  // See also common module tests in moduleExec.spec.js
 
   it('passes validation', async () => {
     const result = await yf.historical('AAPL', {
@@ -34,11 +37,6 @@ describe('historical', () => {
       expect(options.period2).toBe(Math.floor(now.getTime() / 1000));
     });
 
-  });
-
-  it('throws InvalidOptions on invalid options', async () => {
-    const rwo = (options:any) => yf.historical('symbol', options);
-    await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError)
   });
 
 });

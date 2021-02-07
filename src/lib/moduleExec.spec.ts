@@ -9,12 +9,58 @@ import _moduleExec from './moduleExec';
 const yf = {
   _env,
   _fetch,
-  _opts: { validation: { logErrors: true }},
+  _opts: { validation: { logErrors: true, logOptionsErrors: false }},
   _moduleExec,
   search
 };
 
 describe('moduleExec', () => {
+
+  describe('options validation', () => {
+
+    it('throws InvalidOptions on invalid options', async () => {
+      const rwo = (options:any) => yf.search('symbol', options);
+      await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError)
+    });
+
+    it('logs errors on invalid options when logOptionsErrors = true', async () => {
+      yf._opts.validation.logOptionsErrors = true;
+      const realConsole = console;
+      const fakeConsole = { error: jest.fn(), log: jest.fn(), dir: jest.fn() };
+
+      /* @ts-ignore */
+      console = fakeConsole;
+      const rwo = (options:any) => yf.search('symbol', options);
+      await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError)
+      console = realConsole;
+
+      expect(
+        fakeConsole.log.mock.calls.length +
+        fakeConsole.error.mock.calls.length +
+        fakeConsole.dir.mock.calls.length
+      ).toBeGreaterThan(1);
+      yf._opts.validation.logOptionsErrors = false;
+    });
+
+    it('does not log errors on invalid options when logOptionsErrors = false', async () => {
+      yf._opts.validation.logOptionsErrors = false;
+      const realConsole = console;
+      const fakeConsole = { error: jest.fn(), log: jest.fn(), dir: jest.fn() };
+
+      /* @ts-ignore */
+      console = fakeConsole;
+      const rwo = (options:any) => yf.search('symbol', options);
+      await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError)
+      console = realConsole;
+
+      expect(
+        fakeConsole.log.mock.calls.length +
+        fakeConsole.error.mock.calls.length +
+        fakeConsole.dir.mock.calls.length
+      ).toBe(0);
+    });
+
+  });
 
   describe('result validation', () => {
 

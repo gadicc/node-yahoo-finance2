@@ -1,5 +1,6 @@
 export default {
   validation: {
-    logErrors: true
+    logErrors: true,
+    logOptionsErrors: true,
   }
 }

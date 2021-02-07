@@ -48,10 +48,7 @@ describe('quoteSummary', () => {
 
   describe('quoteSummary', () => {
 
-    it('throws InvalidOptions on invalid options', async () => {
-      const rwo = (options:any) => yf.quoteSummary('symbol', options);
-      await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError)
-    });
+    // See also common module tests in moduleExec.spec.js
 
     it('throws on invalid result', async () => {
       // intentionally return output from "search" API
