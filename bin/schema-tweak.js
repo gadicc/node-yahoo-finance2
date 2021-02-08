@@ -22,13 +22,28 @@ process.stdin.on('end', () => {
   }
 
   function callback(schema, parent, state) {
-    if (schema.type === 'number') {
+
+    if (schema.$ref === '#/definitions/TwoNumberRange') {
+
+      const key = state.property.split('/').pop();
+      parent.properties[key] = { yahooFinanceType: 'TwoNumberRange' };
+
+    } else if (schema.$ref === '#/definitions/DateInMs') {
+
+      const key = state.property.split('/').pop();
+      parent.properties[key] = { yahooFinanceType: 'DateInMs' };
+
+    } else if (schema.type === 'number') {
+
       delete schema.type;
       schema.yahooFinanceType = 'number';
+
     } else if (schema.type === 'string' && schema.format === 'date-time') {
+
       delete schema.format;
       delete schema.type;
       schema.yahooFinanceType = 'date';
+
     }
   }
 

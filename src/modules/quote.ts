@@ -8,6 +8,12 @@ import type {
 export type Quote = QuoteEquity | QuoteEtf | QuoteMutualfund;
 export type QuoteResponse = Quote[];
 
+export type DateInMs = Date;
+export interface TwoNumberRange {
+  low: number;
+  high: number;
+}
+
 export interface QuoteBase {
   language: string;                      // "en-US",
   region: string;                        // "US",
@@ -28,7 +34,7 @@ export interface QuoteBase {
   esgPopulated: boolean;                 // false,
   fiftyTwoWeekLowChange: number;         // 362.96002,
   fiftyTwoWeekLowChangePercent: number;  // 2.0088556,
-  fiftyTwoWeekRange: string;             // "180.68 - 589.07",  // TODO, CONVERT?
+  fiftyTwoWeekRange: TwoNumberRange;     // "180.68 - 589.07" -> { low, high }
   fiftyTwoWeekHighChange: number;        // -45.429993,
   fiftyTwoWeekHighChangePercent: number; // -0.07712155,
   fiftyTwoWeekLow: number;               // 180.68,
@@ -58,7 +64,7 @@ export interface QuoteBase {
   priceToBook?: number;                  // 21.945745,
   sourceInterval: number;                // 15,
   exchangeDataDelayedBy: number;         // 0,
-  firstTradeDateMilliseconds: Date;      // 917015400000,  XXX TODO first time in ms!
+  firstTradeDateMilliseconds: DateInMs;  // 917015400000 -> Date
   priceHint: number;                     // 2,
   postMarketChangePercent?: number;      // 0.093813874,
   postMarketTime?: Date;                 // 1612573179,
@@ -69,7 +75,7 @@ export interface QuoteBase {
   regularMarketTime?: number;            // 1612558802,
   regularMarketPrice?: number;           // 543.64,
   regularMarketDayHigh?: number;         // 549.19,
-  regularMarketDayRange?: string;        // "541.867 - 549.19",
+  regularMarketDayRange?: TwoNumberRange;// "541.867 - 549.19" -> { low, high }
   regularMarketDayLow?: number;          // 541.867,
   regularMarketVolume?: number;          // 4228841,
   regularMarketPreviousClose?: number;   // 546.57,

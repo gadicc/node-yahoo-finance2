@@ -541,6 +541,9 @@
       ],
       "type": "object"
     },
+    "DateInMs": {
+      "yahooFinanceType": "date"
+    },
     "DefaultKeyStatistics": {
       "additionalProperties": false,
       "properties": {
@@ -2600,13 +2603,13 @@
           "yahooFinanceType": "number"
         },
         "fiftyTwoWeekRange": {
-          "type": "string"
+          "yahooFinanceType": "TwoNumberRange"
         },
         "financialCurrency": {
           "type": "string"
         },
         "firstTradeDateMilliseconds": {
-          "yahooFinanceType": "date"
+          "yahooFinanceType": "DateInMs"
         },
         "forwardPE": {
           "yahooFinanceType": "number"
@@ -2682,7 +2685,7 @@
           "yahooFinanceType": "number"
         },
         "regularMarketDayRange": {
-          "type": "string"
+          "yahooFinanceType": "TwoNumberRange"
         },
         "regularMarketOpen": {
           "yahooFinanceType": "number"
@@ -2880,13 +2883,13 @@
           "yahooFinanceType": "number"
         },
         "fiftyTwoWeekRange": {
-          "type": "string"
+          "yahooFinanceType": "TwoNumberRange"
         },
         "financialCurrency": {
           "type": "string"
         },
         "firstTradeDateMilliseconds": {
-          "yahooFinanceType": "date"
+          "yahooFinanceType": "DateInMs"
         },
         "forwardPE": {
           "yahooFinanceType": "number"
@@ -2963,7 +2966,7 @@
           "yahooFinanceType": "number"
         },
         "regularMarketDayRange": {
-          "type": "string"
+          "yahooFinanceType": "TwoNumberRange"
         },
         "regularMarketOpen": {
           "yahooFinanceType": "number"
@@ -3161,13 +3164,13 @@
           "yahooFinanceType": "number"
         },
         "fiftyTwoWeekRange": {
-          "type": "string"
+          "yahooFinanceType": "TwoNumberRange"
         },
         "financialCurrency": {
           "type": "string"
         },
         "firstTradeDateMilliseconds": {
-          "yahooFinanceType": "date"
+          "yahooFinanceType": "DateInMs"
         },
         "forwardPE": {
           "yahooFinanceType": "number"
@@ -3244,7 +3247,7 @@
           "yahooFinanceType": "number"
         },
         "regularMarketDayRange": {
-          "type": "string"
+          "yahooFinanceType": "TwoNumberRange"
         },
         "regularMarketOpen": {
           "yahooFinanceType": "number"
@@ -3442,13 +3445,13 @@
           "yahooFinanceType": "number"
         },
         "fiftyTwoWeekRange": {
-          "type": "string"
+          "yahooFinanceType": "TwoNumberRange"
         },
         "financialCurrency": {
           "type": "string"
         },
         "firstTradeDateMilliseconds": {
-          "yahooFinanceType": "date"
+          "yahooFinanceType": "DateInMs"
         },
         "forwardPE": {
           "yahooFinanceType": "number"
@@ -3525,7 +3528,7 @@
           "yahooFinanceType": "number"
         },
         "regularMarketDayRange": {
-          "type": "string"
+          "yahooFinanceType": "TwoNumberRange"
         },
         "regularMarketOpen": {
           "yahooFinanceType": "number"
@@ -4789,6 +4792,22 @@
         "maxAge",
         "symbol",
         "estimates"
+      ],
+      "type": "object"
+    },
+    "TwoNumberRange": {
+      "additionalProperties": false,
+      "properties": {
+        "high": {
+          "yahooFinanceType": "number"
+        },
+        "low": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "low",
+        "high"
       ],
       "type": "object"
     },

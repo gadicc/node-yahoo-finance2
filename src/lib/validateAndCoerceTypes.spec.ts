@@ -52,6 +52,83 @@ const priceResult = {
   }
 };
 
+const quoteResult = [{
+  language: "en-US",
+  region: "US",
+  quoteType: "EQUITY",
+  quoteSourceName: "Delayed Quote",
+  triggerable: true,
+  currency: "USD",
+  exchange: "NMS",
+  shortName: "NVIDIA Corporation",
+  longName: "NVIDIA Corporation",
+  messageBoardId: "finmb_32307",
+  exchangeTimezoneName: "America/New_York",
+  exchangeTimezoneShortName: "EST",
+  gmtOffSetMilliseconds: -18000000,
+  market: "us_market",
+  esgPopulated: false,
+  epsCurrentYear: 9.72,
+  priceEpsCurrentYear: 55.930042,
+  sharesOutstanding: 619000000,
+  bookValue: 24.772,
+  fiftyDayAverage: 530.8828,
+  fiftyDayAverageChange: 12.757202,
+  fiftyDayAverageChangePercent: 0.024030166,
+  twoHundredDayAverage: 515.8518,
+  twoHundredDayAverageChange: 27.788208,
+  twoHundredDayAverageChangePercent: 0.053868588,
+  marketCap: 336513171456,
+  forwardPE: 46.54452,
+  priceToBook: 21.945745,
+  sourceInterval: 15,
+  exchangeDataDelayedBy: 0,
+  tradeable: false,
+  firstTradeDateMilliseconds: 917015400000,
+  priceHint: 2,
+  marketState: "PREPRE",
+  postMarketChangePercent: 0.093813874,
+  postMarketTime: 1612573179,
+  postMarketPrice: 544.15,
+  postMarketChange: 0.51000977,
+  regularMarketChange: -2.9299927,
+  regularMarketChangePercent: -0.53606904,
+  regularMarketTime: 1612558802,
+  regularMarketPrice: 543.64,
+  regularMarketDayHigh: 549.19,
+  regularMarketDayRange: "541.867 - 549.19",
+  regularMarketDayLow: 541.867,
+  regularMarketVolume: 4228841,
+  regularMarketPreviousClose: 546.57,
+  bid: 0.0,
+  ask: 0.0,
+  bidSize: 18,
+  askSize: 8,
+  fullExchangeName: "NasdaqGS",
+  financialCurrency: "USD",
+  regularMarketOpen: 549.0,
+  averageDailyVolume3Month: 7475022,
+  averageDailyVolume10Day: 5546385,
+  fiftyTwoWeekLowChange: 362.96002,
+  fiftyTwoWeekLowChangePercent: 2.0088556,
+  fiftyTwoWeekRange: "180.68 - 589.07",
+  fiftyTwoWeekHighChange: -45.429993,
+  fiftyTwoWeekHighChangePercent: -0.07712155,
+  fiftyTwoWeekLow: 180.68,
+  fiftyTwoWeekHigh: 589.07,
+  dividendDate: 1609200000,
+  earningsTimestamp: 1614200400,
+  earningsTimestampStart: 1614200400,
+  earningsTimestampEnd: 1614200400,
+  trailingAnnualDividendRate: 0.64,
+  trailingPE: 88.873634,
+  trailingAnnualDividendYield: 0.0011709387,
+  epsTrailingTwelveMonths: 6.117,
+  epsForward: 11.68,
+  displayName: "NVIDIA",
+  symbol: "NVDA"
+}];
+
 describe('validateAndCoerceTypes', () => {
 
   describe('coersion', () => {
@@ -167,6 +244,65 @@ describe('validateAndCoerceTypes', () => {
         result.price.postMarketTime = date;
         validateAndCoerceTypes({ ...defParams, type: 'result', object: result });
         expect(result.price.postMarketTime).toBe(date);
+      });
+
+    });
+
+    describe('DateInMs', () => {
+
+      const _defParams = {
+        ...defParams,
+        schemaKey: '#/definitions/QuoteResponse'
+      };
+
+      it('works with date in milliseconds', () => {
+        const result = [ Object.assign({}, quoteResult[0]) ];
+        /* @ts-ignore */
+        expect(result[0].firstTradeDateMilliseconds).toBeType('number');
+        validateAndCoerceTypes({ ..._defParams, type: 'result', object: result });
+        expect(result[0].firstTradeDateMilliseconds).toBeInstanceOf(Date);
+      });
+
+    });
+
+    describe('TwoNumberRange', () => {
+
+      const _defParams = {
+        ...defParams,
+        schemaKey: '#/definitions/QuoteResponse'
+      };
+
+      it('works with valid input', () => {
+        const result = [ Object.assign({}, quoteResult[0]) ];
+        result[0].regularMarketDayRange = "541.867 - 549.19";
+        validateAndCoerceTypes({ ..._defParams, type: 'result', object: result });
+        expect(result[0].regularMarketDayRange).toMatchObject({
+          low: 541.867,
+          high: 549.19
+        });
+      });
+
+      it('throws on invalid input', () => {
+        const result = [ Object.assign({}, quoteResult[0]) ];
+        result[0].regularMarketDayRange = "X - 549.19";
+        expect(
+          () => validateAndCoerceTypes({
+            ..._defParams, type: 'result', object: result,
+            options: { ..._defParams.options, logErrors: false }
+          })
+        ).toThrow(/^Failed Yahoo/);
+      });
+
+      it('throws no matching type on weird input', () => {
+        const result = [ Object.assign({}, quoteResult[0]) ];
+        /* @ts-ignore */
+        result[0].regularMarketDayRange = 12;
+        expect(
+          () => validateAndCoerceTypes({
+            ..._defParams, type: 'result', object: result,
+            options: { ..._defParams.options, logErrors: false }
+          })
+        ).toThrow(/^Failed Yahoo/);        
       });
 
     });

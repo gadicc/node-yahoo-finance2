@@ -71,6 +71,21 @@ ajv.addKeyword({
             return set(new Date(data));
         }
 
+      } else if (schema === 'DateInMs') {
+
+        return set(new Date(data));
+
+      } else if (schema === 'TwoNumberRange') {
+
+        if (typeof data === 'object' && typeof data.low === 'number' && typeof data.high === 'number')
+          return true;
+        if (typeof data === 'string') {
+          const parts = data.split('-').map(parseFloat);
+          if (Number.isNaN(parts[0]) || Number.isNaN(parts[1]))
+            return false;
+          return set({ low: parts[0], high: parts[1] });
+        }
+
       } else {
 
         throw new Error("No such yahooFinanceType: " + schema);
