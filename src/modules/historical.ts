@@ -1,7 +1,5 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
-  ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from '../lib/moduleCommon';
 
@@ -35,22 +33,8 @@ export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
-): Promise<any>;
-
-export default function historical(
-  this: ModuleThis,
-  symbol: string,
-  queryOptionsOverrides: HistoricalOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<HistoricalResult>;
-
-export default function historical(
-  this: ModuleThis,
-  symbol: string,
-  queryOptionsOverrides: HistoricalOptions,
   moduleOptions?: ModuleOptions
-): Promise<any> {
+): Promise<HistoricalResult> {
 
   return this._moduleExec({
     moduleName: "historical",

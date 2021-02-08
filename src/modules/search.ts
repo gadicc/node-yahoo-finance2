@@ -1,7 +1,5 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
-  ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from '../lib/moduleCommon';
 
@@ -92,22 +90,8 @@ export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse,
-): Promise<any>;
-
-export default function search(
-  this: ModuleThis,
-  query: string,
-  queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue,
-): Promise<SearchResult>;
-
-export default function search(
-  this: ModuleThis,
-  query: string,
-  queryOptionsOverrides?: SearchOptions,
   moduleOptions?: ModuleOptions
-): Promise<any> {
+): Promise<SearchResult> {
 
   return this._moduleExec({
     moduleName: "search",

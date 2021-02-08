@@ -1,7 +1,5 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
-  ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from '../lib/moduleCommon';
 
@@ -118,29 +116,8 @@ export default function quote(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: QuoteOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
-): Promise<any>;
-
-export default function quote(
-  this: ModuleThis,
-  query: string[],
-  queryOptionsOverrides?: QuoteOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<QuoteResponse>;
-
-export default function quote(
-  this: ModuleThis,
-  query: string,
-  queryOptionsOverrides?: QuoteOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<Quote>;
-
-export default function quote(
-  this: ModuleThis,
-  query: string | string[],
-  queryOptionsOverrides?: QuoteOptions,
   moduleOptions?: ModuleOptions
-): Promise<any> {
+): Promise<QuoteResponse> {
   const symbols = typeof query === 'string' ? query : query.join(',');
 
   return this._moduleExec({

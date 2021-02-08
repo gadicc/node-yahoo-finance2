@@ -4,8 +4,6 @@ import { QuoteSummaryResult } from './quoteSummary-iface';
 
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
-  ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from '../lib/moduleCommon';
 
@@ -90,20 +88,6 @@ const queryOptionsDefaults = {
   formatted: false,
   modules: ['price', 'summaryDetail']
 };
-
-export default function quoteSummary(
-  this: ModuleThis,
-  symbol: string,
-  queryOptionsOverrides?: QuoteSummaryOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
-): Promise<any>;
-
-export default function quoteSummary(
-  this: ModuleThis,
-  symbol: string,
-  queryOptionsOverrides?: QuoteSummaryOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<QuoteSummaryResult>;
 
 export default function quoteSummary(
   this: ModuleThis,

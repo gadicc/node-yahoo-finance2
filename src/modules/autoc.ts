@@ -1,7 +1,5 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
-  ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from '../lib/moduleCommon';
 
@@ -33,22 +31,8 @@ export default function autoc(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: AutocOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
-): Promise<any>;
-
-export default function autoc(
-  this: ModuleThis,
-  query: string,
-  queryOptionsOverrides?: AutocOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<AutocResult>;
-
-export default function autoc(
-  this: ModuleThis,
-  query: string,
-  queryOptionsOverrides?: AutocOptions,
   moduleOptions?: ModuleOptions
-): Promise<any> {
+): Promise<AutocResult> {
 
   return this._moduleExec({
     moduleName: "autoc",
