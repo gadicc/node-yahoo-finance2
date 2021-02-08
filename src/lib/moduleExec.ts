@@ -15,13 +15,13 @@
  * Further info below, inline.
  */
 
-import validateAndCoerceTypes from './validateAndCoerceTypes';
-import csv2json from './csv2json';
-import _opts from './options';
+import csv2json from "./csv2json";
+import _opts from "./options";
+import validateAndCoerceTypes from "./validateAndCoerceTypes";
 
 interface TransformFunc {
   // The consuming module itself will have a stricter return type.
-  (result: {[key: string]: any}): {[key: string]: any};
+  (result: { [key: string]: any }): { [key: string]: any };
 }
 
 interface ModuleExecOptions {
@@ -90,12 +90,15 @@ interface ModuleExecOptions {
      * Any options to pass to fetch() just for this request.
      */
     fetchOptions?: any;
-  }
+  };
 }
 
 type ThisWithFetch = { [key: string]: any; _moduleExec: Function };
 
-export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOptions) {
+export default async function moduleExec(
+  this: ThisWithFetch,
+  opts: ModuleExecOptions
+) {
   const queryOpts = opts.query;
   const moduleOpts = opts.moduleOptions;
   const moduleName = opts.moduleName;
@@ -104,16 +107,16 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
   // Check that query options passed by the user are valid for this module
   validateAndCoerceTypes({
     source: moduleName,
-    type: 'options',
-    object: queryOpts.overrides,
+    type: "options",
+    object: { ...(queryOpts.overrides ?? {}) },
     schemaKey: queryOpts.schemaKey,
-    options: this._opts ? this._opts.validation : _opts.validation
+    options: this._opts ? this._opts.validation : _opts.validation,
   });
 
   let queryOptions = {
-    ...queryOpts.defaults,    // Module defaults e.g. { period: '1wk', lang: 'en' }
-    ...queryOpts.runtime,     // Runtime params e.g. { q: query }
-    ...queryOpts.overrides,   // User supplied options that override above
+    ...queryOpts.defaults, // Module defaults e.g. { period: '1wk', lang: 'en' }
+    ...queryOpts.runtime, // Runtime params e.g. { q: query }
+    ...queryOpts.overrides, // User supplied options that override above
   };
 
   /*
@@ -125,21 +128,25 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
     queryOptions = queryOpts.transformWith(queryOptions);
 
   // this._fetch is lib/yahooFinanceFetch
-  let result = await this._fetch(queryOpts.url, queryOptions, moduleOpts, queryOpts.fetchType);
+  let result = await this._fetch(
+    queryOpts.url,
+    queryOptions,
+    moduleOpts,
+    queryOpts.fetchType
+  );
 
-  if (queryOpts.fetchType === 'csv')
-    result = csv2json(result);
+  if (queryOpts.fetchType === "csv") result = csv2json(result);
 
   /*
    * Mutate the Yahoo result *before* validating and coercion.  Mostly used
    * to e.g. throw if no (resault.returnField) and return result.returnField.
    */
-  if (opts.result.transformWith)
-    result = opts.result.transformWith(result);
+  if (opts.result.transformWith) result = opts.result.transformWith(result);
 
-  const validateResult = !moduleOpts
-    || moduleOpts.validateResult === undefined
-    || moduleOpts.validateResult === true;
+  const validateResult =
+    !moduleOpts ||
+    moduleOpts.validateResult === undefined ||
+    moduleOpts.validateResult === true;
 
   const validationOpts = {
     ...(this._opts ? this._opts.validation : _opts.validation),
@@ -167,14 +174,13 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
   try {
     validateAndCoerceTypes({
       source: moduleName,
-      type: 'result',
+      type: "result",
       object: result,
       schemaKey: resultOpts.schemaKey,
-      options: validationOpts
+      options: validationOpts,
     });
   } catch (error) {
-    if (validateResult)
-      throw error;
+    if (validateResult) throw error;
   }
 
   return result;
