@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.5.2...v1.6.0) (2021-02-08)
+
+
+### Features
+
+* **quote:** add quote module ([e0f8d35](https://github.com/gadicc/node-yahoo-finance2/commit/e0f8d35f857826d394c6e3e811fc054e53540533))
+
 ## [1.5.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.5.1...v1.5.2) (2021-02-06)
 
 
