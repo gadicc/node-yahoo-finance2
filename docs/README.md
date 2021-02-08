@@ -7,6 +7,7 @@
 1. Modules
     1. [autoc](./modules/autoc.md)
     1. [historical](./modules/historical.md)
+    1. [quote](./modules/quote.md)
     1. [quoteSummary](./modules/quoteSummary.md)
     1. [search](./modules/search.md)
 
