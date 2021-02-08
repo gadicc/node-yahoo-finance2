@@ -1,16 +1,9 @@
 import autoc from './autoc';
 const { InvalidOptionsError } = require('../lib/errors');
 
-import _env from '../env-node';
-import _fetch from '../lib/yahooFinanceFetch';
-import _moduleExec from '../lib/moduleExec';
+import testYf from '../../tests/testYf';
 
-const yf = {
-  _env,
-  _fetch,
-  _moduleExec,
-  autoc
-};
+const yf = testYf({ autoc });
 
 describe('autoc', () => {
 

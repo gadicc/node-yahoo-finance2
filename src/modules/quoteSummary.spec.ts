@@ -1,24 +1,10 @@
 import quoteSummary, { QuoteSummaryModules } from './quoteSummary';
 const { InvalidOptionsError } = require('../lib/errors');
 
-import _env from '../env-node';
-import _fetch from '../lib/yahooFinanceFetch';
-import _moduleExec from '../lib/moduleExec';
+import { testSymbols } from '../../tests/symbols';
+import testYf from '../../tests/testYf';
 
-const yf = {
-  _env,
-  _fetch,
-  _moduleExec,
-  quoteSummary
-};
-
-const testSymbols = [
-  'AAPL',          // NMS (Nasdaq)
-  'OCDO.L',        // LSE
-  'BABA',          // NYSE
-  'QQQ',           // ETF
-  '0P000071W8.TO', // Mutual Fund
-];
+const yf = testYf({ quoteSummary });
 
 interface itValidatesOpts {
   skip?: Array<string>

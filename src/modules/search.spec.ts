@@ -1,17 +1,10 @@
 import search from './search';
 const { InvalidOptionsError } = require('../lib/errors');
 
-import _env from '../env-node';
-import _fetch from '../lib/yahooFinanceFetch';
-import _moduleExec from '../lib/moduleExec';
+import { testSymbols } from '../../tests/symbols';
+import testYf from '../../tests/testYf';
 
-const yf = {
-  _env,
-  _fetch,
-  _opts: { validation: { logErrors: true }},
-  _moduleExec,
-  search
-};
+const yf = testYf({ search });
 
 const testSearches = [
   "AAPL", // NMS (Nasdaq)

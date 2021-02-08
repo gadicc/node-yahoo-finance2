@@ -1,17 +1,9 @@
 import historical from './historical';
 const { InvalidOptionsError } = require('../lib/errors');
 
-import _env from '../env-node';
-import _fetch from '../lib/yahooFinanceFetch';
-import _moduleExec from '../lib/moduleExec';
+import testYf from '../../tests/testYf';
 
-const yf = {
-  _env,
-  _fetch,
-  _moduleExec,
-  _opts: { validation: { logErrors: true }},
-  historical
-};
+const yf = testYf({ historical });
 
 describe('historical', () => {
 
