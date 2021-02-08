@@ -9,6 +9,7 @@
     1. [historical](./modules/historical.md)
     1. [quoteSummary](./modules/quoteSummary.md)
     1. [search](./modules/search.md)
+    1. [recommendationsBySymbol](./modules/recommendationsBySymbol.md)
 
 1. [Errors Handling](#error-handling)
 
