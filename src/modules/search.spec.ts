@@ -1,5 +1,4 @@
 import search from './search';
-const { InvalidOptionsError } = require('../lib/errors');
 
 import _env from '../env-node';
 import _fetch from '../lib/yahooFinanceFetch';
@@ -31,6 +30,33 @@ describe('search', () => {
       const devel = `search-${search}.json`;
       await yf.search(search, {}, { devel });
     });
+  });
+
+  it('successfully figure out symbol for Evolution Gaming Group', async () => {
+    const response = await yf.search('Apple', {}, { devel: 'search-Evolution Gaming Group.json'});
+
+    const onlyQuotesWithQuoteTypeEquity = response.quotes.filter(
+      (searchQuote) => {
+        if ('quoteType' in searchQuote && searchQuote.quoteType === 'EQUITY') {
+          return true;
+        } else {
+          return false;
+        }
+      },
+    );
+
+    let symbol;
+    if (
+      'quoteType' in onlyQuotesWithQuoteTypeEquity[0] &&
+      'symbol' in onlyQuotesWithQuoteTypeEquity[0]
+    ) {
+      symbol = onlyQuotesWithQuoteTypeEquity[0].symbol;
+    } else {
+      throw new Error(`The quote we found din't have a symbol`);
+    }
+
+    expect(symbol).toBe('AAPL');
+
   });
 
 });
