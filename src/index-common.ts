@@ -6,6 +6,7 @@ import options from './lib/options';
 // modules
 import autoc from './modules/autoc';
 import historical from './modules/historical';
+import quote from './modules/quote';
 import quoteSummary from './modules/quoteSummary';
 import search from './modules/search';
 
@@ -17,6 +18,7 @@ export default {
 
   autoc,
   historical,
+  quote,
   quoteSummary,
   search,
 };
