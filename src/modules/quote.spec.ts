@@ -15,6 +15,12 @@ describe('quote', () => {
     });
   });
 
+  it('allows blank options', async () => {
+    await expect(
+      () => yf.quote('AAPL', undefined, { devel: 'quote-AAPL.json' })
+    ).not.toThrow();
+  });
+
   it('returns an array for an array', async () => {
     const devel = 'quote-AAPL-BABA.json';
     const results = await yf.quote(['AAPL', 'BABA'], {}, { devel });
@@ -28,6 +34,13 @@ describe('quote', () => {
     const result = await yf.quote('AAPL', {}, { devel });
     expect(Array.isArray(result)).toBe(false);
     expect(result.symbol).toBe('AAPL');
+  });
+
+  it('throws on unexpected result', async () => {
+    // intentionally return output from "search" API
+    // i.e. invalid input for "quote"
+    await expect(yf.quote('AAPL', {}, { devel: 'search-AAPL.json' }))
+      .rejects.toThrow(/Unexpected result/)
   });
 
 });
