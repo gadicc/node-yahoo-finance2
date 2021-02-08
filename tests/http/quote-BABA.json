@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=BABA"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "7vmkqs5g21fjs"
+      ],
+      "x-yahoo-request-id": [
+        "7vmkqs5g21fjs"
+      ],
+      "x-request-id": [
+        "b35816fc-5404-4543-b8b6-575babefb3c6"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "969"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Mon, 08 Feb 2021 04:30:52 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteResponse\":{\"result\":[{\"language\":\"en-US\",\"region\":\"US\",\"quoteType\":\"EQUITY\",\"quoteSourceName\":\"Nasdaq Real Time Price\",\"triggerable\":true,\"currency\":\"USD\",\"marketState\":\"CLOSED\",\"tradeable\":false,\"exchange\":\"NYQ\",\"shortName\":\"Alibaba Group Holding Limited\",\"longName\":\"Alibaba Group Holding Limited\",\"messageBoardId\":\"finmb_42083601\",\"exchangeTimezoneName\":\"America/New_York\",\"exchangeTimezoneShortName\":\"EST\",\"gmtOffSetMilliseconds\":-18000000,\"market\":\"us_market\",\"esgPopulated\":false,\"fiftyTwoWeekLowChange\":95.72002,\"fiftyTwoWeekLowChangePercent\":0.5632246,\"fiftyTwoWeekRange\":\"169.95 - 319.32\",\"fiftyTwoWeekHighChange\":-53.649994,\"fiftyTwoWeekHighChangePercent\":-0.16801326,\"fiftyTwoWeekLow\":169.95,\"fiftyTwoWeekHigh\":319.32,\"earningsTimestamp\":1612249320,\"earningsTimestampStart\":1612249320,\"earningsTimestampEnd\":1612249320,\"trailingPE\":28.535982,\"epsTrailingTwelveMonths\":9.31,\"epsForward\":12.06,\"epsCurrentYear\":10.32,\"priceEpsCurrentYear\":25.74322,\"sharesOutstanding\":2705639936,\"bookValue\":24.798,\"fiftyDayAverage\":247.21844,\"fiftyDayAverageChange\":18.451569,\"fiftyDayAverageChangePercent\":0.0746367,\"twoHundredDayAverage\":269.34253,\"twoHundredDayAverageChange\":-3.6725159,\"twoHundredDayAverageChangePercent\":-0.013635113,\"marketCap\":722120278016,\"forwardPE\":22.029022,\"priceToBook\":10.713365,\"sourceInterval\":15,\"exchangeDataDelayedBy\":0,\"firstTradeDateMilliseconds\":1411133400000,\"priceHint\":2,\"postMarketChangePercent\":0.293597,\"postMarketTime\":1612573196,\"postMarketPrice\":266.45,\"postMarketChange\":0.779999,\"regularMarketChange\":-1.289978,\"regularMarketChangePercent\":-0.48321024,\"regularMarketTime\":1612558801,\"regularMarketPrice\":265.67,\"regularMarketDayHigh\":266.45,\"regularMarketDayRange\":\"263.21 - 266.45\",\"regularMarketDayLow\":263.21,\"regularMarketVolume\":11018671,\"regularMarketPreviousClose\":266.96,\"bid\":266.44,\"ask\":266.47,\"bidSize\":10,\"askSize\":8,\"fullExchangeName\":\"NYSE\",\"financialCurrency\":\"CNY\",\"regularMarketOpen\":264.61,\"averageDailyVolume3Month\":25947704,\"averageDailyVolume10Day\":18244085,\"displayName\":\"Alibaba\",\"symbol\":\"BABA\"}],\"error\":null}}"
+  }
+}
