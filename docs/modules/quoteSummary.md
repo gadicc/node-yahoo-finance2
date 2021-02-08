@@ -1,5 +1,9 @@
 # quoteSummary
 
+Note: in the original `node-yahoo-finance`, we incorrectly called this
+"`quote`".  See the [quote](./quote.md) docs, for this similar but
+different module.
+
 ## Usage:
 
 ```js
@@ -83,13 +87,17 @@ const result = await yahooFinance.quoteSummary(symbol, queryOptions);
 ## API
 
 ```js
-await yahooFinance.quoteSummary(symbol, queryOptions, fetchOptions);
+await yahooFinance.quoteSummary(symbol, queryOptions, moduleOptions);
 ```
 
 ### Symbol
 
 Symbol name as used by Yahoo (often the stock ticker).  You can find it
 using [autoc](./auto.md) or [search](./search.md).
+
+### Module Options
+
+See [Common Options](../README.md#common-options).
 
 ### Query Options
 

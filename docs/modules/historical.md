@@ -34,7 +34,7 @@ const result = await yahooFinance.search(query, queryOptions);
 ## API
 
 ```js
-await yahooFinance.historical(query, queryOptions, fetchOptions);
+await yahooFinance.historical(query, queryOptions, moduleOptions);
 ```
 
 ### Query term
@@ -55,3 +55,7 @@ Dates* can be:
 
 * A **Date** instance, e.g. `new Date(something)`
 * A **string** that can be parsed by `Date()`, e.g. `"2020-01-01"`.
+
+### Module Options
+
+See [Common Options](../README.md#common-options).

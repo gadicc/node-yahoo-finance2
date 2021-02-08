@@ -52,6 +52,7 @@ const results = await yahooFInance.search('AAPL', { someOption: true, etc });
 Available modules:
 [`autoc`](./docs/modules/autoc.md),
 [`historical`](./docs/modules/historical.md),
+[`quote`](./docs/modules/quote.md),
 [`quoteSummary`](./docs/modules/quoteSummary.md) (submodules:
 assetProfile, balanceSheetHistory, balanceSheetHistoryQuarterly,
 calendarEvents, cashflowStatementHistory, cashflowStatementHistoryQuarterly,
@@ -66,6 +67,13 @@ symbol, topHoldings, upgradeDowngradeHistory),
 [coming soon](https://github.com/gadicc/node-yahoo-finance2/issues/8).
 
 See the [Full Documentation](./docs/README.md).
+
+## Even Quicker Start - Stock Price
+
+```js
+const quote = await yahooFinance.quote('AAPL');
+const { regularMarketPrice as price, currency } = quote;
+```
 
 ## (Optional) TypeScript Love
 

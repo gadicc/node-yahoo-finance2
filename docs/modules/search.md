@@ -56,7 +56,7 @@ See also: [autoc](./autoc.md) (auto complete).
 ## API
 
 ```js
-await yahooFinance.search(query, queryOptions, fetchOptions);
+await yahooFinance.search(query, queryOptions, moduleOptions);
 ```
 
 ### Query term
@@ -82,3 +82,7 @@ Useful things we've found include: listing SEDOL.
 | `enableCb`          | boolean | true,
 | `enableNavLinks`    | boolean | true,
 | `enableEnhancedTrivialQuery` | boolean | true
+
+### Module Options
+
+See [Common Options](../README.md#common-options).

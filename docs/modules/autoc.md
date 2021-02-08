@@ -44,7 +44,7 @@ See also: [search](./search.md).
 ## API
 
 ```js
-await yahooFinance.autoc(query, queryOptions, fetchOptions);
+await yahooFinance.autoc(query, queryOptions, moduleOptions);
 ```
 
 ### Query term
@@ -57,3 +57,7 @@ Symbol, company name, SEDOL, etc.
 | ------------- | ----------| ---------- | --------------------------------- |
 | `region`      | number    | 1          |                                   |
 | `lang`        | string    | "en"       |                                   |
+
+### Module Options
+
+See [Common Options](../README.md#common-options).
