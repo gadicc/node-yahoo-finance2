@@ -5,14 +5,10 @@ import type {
   ModuleThis,
 } from '../lib/moduleCommon';
 
+import type { DateInMs, TwoNumberRange } from '../lib/commonTypes';
+
 export type Quote = QuoteEquity | QuoteEtf | QuoteMutualfund;
 export type QuoteResponse = Quote[];
-
-export type DateInMs = Date;
-export interface TwoNumberRange {
-  low: number;
-  high: number;
-}
 
 export interface QuoteBase {
   language: string;                      // "en-US",
