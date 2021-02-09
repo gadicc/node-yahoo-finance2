@@ -147,7 +147,7 @@ export default function quote(
       schemaKey: "#/definitions/QuoteOptions",
       defaults: queryOptionsDefaults,
       runtime: { symbols },
-      overrides: queryOptionsOverrides || {},
+      overrides: queryOptionsOverrides,
     },
 
     result: {

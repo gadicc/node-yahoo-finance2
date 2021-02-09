@@ -105,7 +105,7 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
   validateAndCoerceTypes({
     source: moduleName,
     type: 'options',
-    object: queryOpts.overrides,
+    object: queryOpts.overrides ?? {},
     schemaKey: queryOpts.schemaKey,
     options: this._opts ? this._opts.validation : _opts.validation
   });
