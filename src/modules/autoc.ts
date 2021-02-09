@@ -33,15 +33,15 @@ export default function autoc(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: AutocOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
-): Promise<any>;
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<AutocResult>;
 
 export default function autoc(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: AutocOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<AutocResult>;
+  moduleOptions?: ModuleOptionsWithValidateFalse
+): Promise<any>;
 
 export default function autoc(
   this: ModuleThis,

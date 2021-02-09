@@ -35,15 +35,15 @@ export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
-): Promise<any>;
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<HistoricalResult>;
 
 export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<HistoricalResult>;
+  moduleOptions?: ModuleOptionsWithValidateFalse
+): Promise<any>;
 
 export default function historical(
   this: ModuleThis,

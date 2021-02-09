@@ -95,15 +95,15 @@ export default function quoteSummary(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: QuoteSummaryOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
-): Promise<any>;
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<QuoteSummaryResult>;
 
 export default function quoteSummary(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: QuoteSummaryOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<QuoteSummaryResult>;
+  moduleOptions?: ModuleOptionsWithValidateFalse
+): Promise<any>;
 
 export default function quoteSummary(
   this: ModuleThis,

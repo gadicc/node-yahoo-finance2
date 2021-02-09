@@ -92,15 +92,15 @@ export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse,
-): Promise<any>;
+  moduleOptions?: ModuleOptionsWithValidateTrue,
+): Promise<SearchResult>;
 
 export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue,
-): Promise<SearchResult>;
+  moduleOptions?: ModuleOptionsWithValidateFalse,
+): Promise<any>;
 
 export default function search(
   this: ModuleThis,
