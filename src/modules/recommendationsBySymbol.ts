@@ -28,15 +28,15 @@ export default function recommendationsBySymbol(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse,
-): Promise<any>;
+  moduleOptions?: ModuleOptionsWithValidateTrue,
+): Promise<RecommendationsBySymbolResult>;
 
 export default function recommendationsBySymbol(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue,
-): Promise<RecommendationsBySymbolResult>;
+  moduleOptions?: ModuleOptionsWithValidateFalse,
+): Promise<any>;
 
 export default function recommendationsBySymbol(
   this: ModuleThis,
