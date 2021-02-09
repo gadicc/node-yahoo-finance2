@@ -3949,6 +3949,48 @@
       ],
       "type": "object"
     },
+    "RecommendationsBySymbolOptions": {
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "RecommendationsBySymbolResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "recommendedSymbols": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "score": {
+                "yahooFinanceType": "number"
+              },
+              "symbol": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "score",
+              "symbol"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "recommendedSymbols",
+        "symbol"
+      ],
+      "type": "object"
+    },
+    "RecommendationsBySymbolResponseArray": {
+      "items": {
+        "$ref": "#/definitions/RecommendationsBySymbolResponse"
+      },
+      "type": "array"
+    },
     "Relation": {
       "enum": [
         "Chairman of the Board",

@@ -9,6 +9,7 @@ import historical from './modules/historical';
 import quote from './modules/quote';
 import quoteSummary from './modules/quoteSummary';
 import search from './modules/search';
+import recommendationsBySymbol from './modules/recommendationsBySymbol';
 
 export default {
   _env: {},
@@ -21,4 +22,5 @@ export default {
   quote,
   quoteSummary,
   search,
+  recommendationsBySymbol,
 };

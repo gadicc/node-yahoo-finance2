@@ -63,7 +63,8 @@ insiderTransactions, institutionOwnership, majorDirectHolders,
 majorHoldersBreakdown, netSharePurchaseActivity, price, quoteType,
 recommendationTrend, secFilings, sectorTrend, summaryDetail, summaryProfile,
 symbol, topHoldings, upgradeDowngradeHistory),
-[`search`](./docs/modules/search.md), with more
+[`search`](./docs/modules/search.md),
+[`recommendationsBySymbol`](./docs/modules/recommendationsBySymbol.md), with more
 [coming soon](https://github.com/gadicc/node-yahoo-finance2/issues/8).
 
 See the [Full Documentation](./docs/README.md).
