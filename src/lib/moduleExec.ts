@@ -101,16 +101,11 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
   const moduleName = opts.moduleName;
   const resultOpts = opts.result;
 
-  const objectToValidate = {
-    ...queryOpts.defaults,    // Module defaults e.g. { period: '1wk', lang: 'en' }
-    ...queryOpts.overrides,   // User supplied options that override above
-  };
-
   // Check that query options passed by the user are valid for this module
   validateAndCoerceTypes({
     source: moduleName,
     type: 'options',
-    object: objectToValidate,
+    object: queryOpts.overrides ?? {},
     schemaKey: queryOpts.schemaKey,
     options: this._opts ? this._opts.validation : _opts.validation
   });
