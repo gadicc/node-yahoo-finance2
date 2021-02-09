@@ -3949,69 +3949,47 @@
       ],
       "type": "object"
     },
-    "RecommendationsBySymbolItem": {
+    "RecommendationsBySymbolOptions": {
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "RecommendationsBySymbolResponse": {
       "additionalProperties": false,
       "properties": {
-        "score": {
-          "yahooFinanceType": "number"
+        "recommendedSymbols": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "score": {
+                "yahooFinanceType": "number"
+              },
+              "symbol": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "score",
+              "symbol"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "symbol": {
           "type": "string"
         }
       },
       "required": [
-        "score",
+        "recommendedSymbols",
         "symbol"
       ],
       "type": "object"
     },
-    "RecommendationsBySymbolOptions": {
-      "additionalProperties": false,
-      "type": "object"
-    },
-    "RecommendationsBySymbolResult": {
-      "additionalProperties": false,
-      "properties": {
-        "finance": {
-          "additionalProperties": false,
-          "properties": {
-            "error": {
-              "type": "null"
-            },
-            "result": {
-              "items": {
-                "additionalProperties": false,
-                "properties": {
-                  "recommendedSymbols": {
-                    "items": {
-                      "$ref": "#/definitions/RecommendationsBySymbolItem"
-                    },
-                    "type": "array"
-                  },
-                  "symbol": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "recommendedSymbols",
-                  "symbol"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "error",
-            "result"
-          ],
-          "type": "object"
-        }
+    "RecommendationsBySymbolResponseArray": {
+      "items": {
+        "$ref": "#/definitions/RecommendationsBySymbolResponse"
       },
-      "required": [
-        "finance"
-      ],
-      "type": "object"
+      "type": "array"
     },
     "Relation": {
       "enum": [

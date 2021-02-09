@@ -5,20 +5,15 @@ import type {
   ModuleThis,
 } from '../lib/moduleCommon';
 
-export interface RecommendationsBySymbolItem {
-  score: number; // 0.1927
-  symbol: string; // "BMW.DE"
+export interface RecommendationsBySymbolResponse {
+  recommendedSymbols: Array<{
+    score: number; // 0.1927
+    symbol: string; // "BMW.DE"
+  }>,
+  symbol: string,
 }
 
-export interface RecommendationsBySymbolResult {
-  finance: {
-    error: null,
-    result: Array<{
-      recommendedSymbols: Array<RecommendationsBySymbolItem>,
-      symbol: string,
-    }>
-  }
-}
+export type RecommendationsBySymbolResponseArray = RecommendationsBySymbolResponse[];
 
 export interface RecommendationsBySymbolOptions {}
 
@@ -26,10 +21,17 @@ const queryOptionsDefaults = {};
 
 export default function recommendationsBySymbol(
   this: ModuleThis,
+  query: string,
+  queryOptionsOverrides?: RecommendationsBySymbolOptions,
+  moduleOptions?: ModuleOptionsWithValidateTrue,
+): Promise<RecommendationsBySymbolResponse>;
+
+export default function recommendationsBySymbol(
+  this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
   moduleOptions?: ModuleOptionsWithValidateTrue,
-): Promise<RecommendationsBySymbolResult>;
+): Promise<RecommendationsBySymbolResponseArray>;
 
 export default function recommendationsBySymbol(
   this: ModuleThis,
@@ -43,7 +45,7 @@ export default function recommendationsBySymbol(
   query: string | string[],
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
   moduleOptions?: ModuleOptions
-): Promise<RecommendationsBySymbolResult> {
+): Promise<any> {
 
   const symbols = typeof query === 'string' ? query : query.join(',');
 
@@ -58,10 +60,17 @@ export default function recommendationsBySymbol(
     },
 
     result: {
-      schemaKey: "#/definitions/RecommendationsBySymbolResult",
+      schemaKey: "#/definitions/RecommendationsBySymbolResponseArray",
+      transformWith(result: any) {
+        if (!result.finance)
+          throw new Error("Unexpected result: " + JSON.stringify(result));
+        return result.finance.result;
+      }
     },
 
     moduleOptions,
-  });
+  }).then((results: RecommendationsBySymbolResponseArray) => {
+    return typeof query === 'string' ? results[0] as RecommendationsBySymbolResponse : results as RecommendationsBySymbolResponseArray;
+  });;
 
 }
