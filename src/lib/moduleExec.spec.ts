@@ -23,6 +23,12 @@ describe('moduleExec', () => {
       await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError)
     });
 
+    it('accepts empty queryOptions', async () => {
+      await expect(
+        yf.search('AAPL', undefined, { devel: 'search-AAPL.json' })
+      ).resolves.toBeDefined();
+    });
+
     it('logs errors on invalid options when logOptionsErrors = true', async () => {
       yf._opts.validation.logOptionsErrors = true;
       const realConsole = console;
