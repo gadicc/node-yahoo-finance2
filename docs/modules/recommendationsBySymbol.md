@@ -5,35 +5,36 @@
 ```js
 import yahooFinance from 'yahoo-finance2';
 
-const result = await yahooFinance.recommendationsBySymbol(['AAPL', 'BMW.DE'], /* queryOptions */);
+// 1. Get recommended symbols for Apple
+const searchSingle = await yahooFinance2.recommendationsBySymbol('AAPL');
 
 {
-  "finance": {
-    "result": [
-      {
-        "symbol": "AAPL",
-        "recommendedSymbols": [
-          { "symbol": "AMZN", "score": 0.292276 },
-          { "symbol": "FB", "score": 0.274045 },
-          { "symbol": "GOOG", "score": 0.272778 },
-          { "symbol": "TSLA", "score": 0.270931 },
-          { "symbol": "NFLX", "score": 0.209186 }
-        ]
-      },
-      {
-        "symbol": "BMW.DE",
-        "recommendedSymbols": [
-          { "symbol": "DAI.DE", "score": 0.1927 },
-          { "symbol": "VOW.DE", "score": 0.105787 },
-          { "symbol": "SIE.DE", "score": 0.102734 },
-          { "symbol": "VOW3.DE", "score": 0.098733 },
-          { "symbol": "BAS.DE", "score": 0.098715 }
-        ]
-      }
-    ],
-    "error": null
-  }
+  symbol: 'AAPL',
+  recommendedSymbols: [
+    { symbol: 'AMZN', score: 0.292276 },
+    { symbol: 'FB', score: 0.274045 },
+    { symbol: 'GOOG', score: 0.272778 },
+    { symbol: 'TSLA', score: 0.270931 },
+    { symbol: 'NFLX', score: 0.209186 }
+  ]
 }
+
+// 2. Get recommended symbols for Apple and BMW
+const searchMultiple = await yahooFinance2.recommendationsBySymbol([
+'AAPL',
+'BMW.DE',
+]);
+
+[
+  {
+    symbol: 'AAPL',
+    recommendedSymbols: [ [Object], [Object], [Object], [Object], [Object] ]
+  },
+  {
+    symbol: 'BMW.DE',
+    recommendedSymbols: [ [Object], [Object], [Object], [Object], [Object] ]
+  }
+]
 ```
 
 ## API
