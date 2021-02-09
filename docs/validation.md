@@ -83,6 +83,20 @@ if (result
 You also have access to `error.errors` which is an array of schema validation
 errors.  You could decide that some errors are ok to ignore but others not.
 
+**TypeScript note**: By default you get an interface back, but if validation
+fails, obviously we can't guarantee the shape anymore.  Consequently, the
+return result will be of type `any` so TypeScript will still ensure that
+your code is safe safe, e.g.
+
+```js
+let result;
+try {
+  result = await yahooFinance.search('gold');  // result is a SearchResult
+} catch (error) {
+  result = error.result;                       // result is an any
+}
+```
+
 <a name="using-unvalidated-data"></a>
 ## Skip Validation Completely
 
@@ -100,6 +114,12 @@ if (result
   $('input').value(result.Result[0].name);
 
 ```
+
+**TypeScript note**: Following on from the the previous section, with
+`{ validateResult: false }` we can no longer guarantee the shape
+of the return result, so it will be of type `any`:
+
+![validation typescript example](./img/validation-typescript.gif)
 
 <a name="dont-log-validation-fails"></a>
 ## Don't Log Validation Failures
