@@ -17,7 +17,6 @@
 
 import validateAndCoerceTypes from './validateAndCoerceTypes';
 import csv2json from './csv2json';
-import _opts from './options';
 
 interface TransformFunc {
   // The consuming module itself will have a stricter return type.
@@ -107,7 +106,7 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
     type: 'options',
     object: queryOpts.overrides ?? {},
     schemaKey: queryOpts.schemaKey,
-    options: this._opts ? this._opts.validation : _opts.validation
+    options: this._opts.validation,
   });
 
   let queryOptions = {
@@ -142,9 +141,9 @@ export default async function moduleExec(this: ThisWithFetch, opts: ModuleExecOp
     || moduleOpts.validateResult === true;
 
   const validationOpts = {
-    ...(this._opts ? this._opts.validation : _opts.validation),
+    ...this._opts.validation,
     // Set logErrors=false if validateResult=false
-    logErrors: validateResult ? this._opts?.validation?.logErrors : false,
+    logErrors: validateResult ? this._opts.validation.logErrors : false,
   };
 
   /*
