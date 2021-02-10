@@ -12,6 +12,9 @@ extends:
   - 'eslint:recommended'
   - 'plugin:@typescript-eslint/recommended'
   # - 'plugin:@typescript-eslint/recommended-requiring-type-checking'
+  # prettier goes last, to override other configs
+  - 'prettier'
+  - 'prettier/@typescript-eslint'
 plugins:
   - '@typescript-eslint'
 rules:
