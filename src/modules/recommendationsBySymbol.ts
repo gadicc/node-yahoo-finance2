@@ -56,7 +56,7 @@ export default function recommendationsBySymbol(
       url: `https://query2.finance.yahoo.com/v6/finance/recommendationsbysymbol/${symbols}`,
       schemaKey: "#/definitions/RecommendationsBySymbolOptions",
       defaults: queryOptionsDefaults,
-      overrides: queryOptionsOverrides || {},
+      overrides: queryOptionsOverrides,
     },
 
     result: {
