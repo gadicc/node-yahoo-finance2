@@ -72,7 +72,7 @@ describe('moduleExec', () => {
 
     it('throws on unexpected input', async () => {
       yf._opts.validation.logErrors = false;
-      await expect(yf.search('AAPL', {}, { devel: 'search-fakeBadResult.json' }))
+      await expect(yf.search('AAPL', {}, { devel: 'search-badResult.fake.json' }))
         .rejects.toThrow(/Failed Yahoo Schema/)
       yf._opts.validation.logErrors = true;
     });
@@ -85,7 +85,7 @@ describe('moduleExec', () => {
       /* @ts-ignore */
       console = fakeConsole;
       await expect(yf.search('AAPL', {}, {
-        devel: 'search-fakeBadResult.json',
+        devel: 'search-badResult.fake.json',
         validateResult: false
       })).resolves.toBeDefined();
       console = realConsole;

@@ -37,9 +37,7 @@ describe('quote', () => {
   });
 
   it('throws on unexpected result', async () => {
-    // intentionally return output from "search" API
-    // i.e. invalid input for "quote"
-    await expect(yf.quote('AAPL', {}, { devel: 'search-AAPL.json' }))
+    await expect(yf.quote('AAPL', {}, { devel: 'weirdJsonResult.fake.json' }))
       .rejects.toThrow(/Unexpected result/)
   });
 

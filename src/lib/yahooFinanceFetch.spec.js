@@ -33,7 +33,7 @@ describe('yahooFinanceFetch', () => {
       yahooFinanceFetch(
         "https://query1.finance.yahoo.com/nonExistingURL-CACHED",
         {},
-        { devel: 'pageWith404andJson.json'}
+        { devel: 'pageWith404andJson.fake.json'}
       )
     ).rejects.toBeInstanceOf(errors.HTTPError);
   });

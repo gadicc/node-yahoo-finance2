@@ -37,9 +37,7 @@ describe('quoteSummary', () => {
     // See also common module tests in moduleExec.spec.js
 
     it('throws on invalid result', async () => {
-      // intentionally return output from "search" API
-      // i.e. invalid input for "quoteSummary"
-      await expect(yf.quoteSummary('AAPL', {}, { devel: 'search-AAPL.json' }))
+      await expect(yf.quoteSummary('AAPL', {}, { devel: 'weirdJsonResult.fake.json' }))
         .rejects.toThrow(/Unexpected result/)
     });
 

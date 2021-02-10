@@ -14,9 +14,7 @@ describe('autoc', () => {
   });
 
   it('throws on unexpected input', async () => {
-    // intentionally return output from "search" API
-    // i.e. invalid input for "autoc"
-    await expect(yf.autoc('AAPL', {}, { devel: 'search-AAPL.json' }))
+    await expect(yf.autoc('AAPL', {}, { devel: 'weirdJsonResult.fake.json' }))
       .rejects.toThrow(/Unexpected result/)
   });
 
