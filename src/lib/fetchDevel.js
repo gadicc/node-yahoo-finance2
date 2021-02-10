@@ -75,6 +75,16 @@ async function fetchDevel(url, fetchOptions) {
     }
   }
 
+  if (contentObj.request.url !== url && !filename.match(/\.fake\.json$/)) {
+    const message = "URL mismatch - did you want to delete stale cached " +
+      "result or rename to .fake.json?\n\n" +
+      "  Requested URL: " + url + "\n" +
+      "  Cached URL:    " + contentObj.request.url + "\n" +
+      "\n" +
+      "File: " + filename;
+    throw new Error(message)
+  }
+
   const res = cache[filename] = new FakeResponse(contentObj.response);
   return res;
 }
