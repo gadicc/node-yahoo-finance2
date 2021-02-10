@@ -1,6 +1,14 @@
 # Contributing to yahoo-finance2
 
-## Development Guidelines
+## General Guidelines
+
+**editorconfig**
+
+We have an [`.editorconfig.js`](./editorconfig) which specifies our
+requirements for indentation, newlines, etc.  If you're not sure, please
+check at https://editorconfig.org/ if your editor has built in support
+for this format or if you need to download a plugin (e.g. for
+[Atom](https://atom.io/packages/editorconfig)).
 
 **Default branch: devel**
 
@@ -19,3 +27,13 @@ Commit messages should follow the
 [semantic-release](https://github.com/semantic-release/semantic-release)
 to automate releases and [CHANGELOG](./CHANGELOG.md) entries when we merge
 back to master.
+
+## Specific Guidelines
+
+### Fixing a bug
+
+TODO
+
+### Adding a new module
+
+TODO
