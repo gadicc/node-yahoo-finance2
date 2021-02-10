@@ -70,6 +70,7 @@ describe('moduleExec', () => {
 
   describe('result validation', () => {
 
+    if (process.env.FETCH_DEVEL !== "nocache")
     it('throws on unexpected input', async () => {
       yf._opts.validation.logErrors = false;
       await expect(yf.search('AAPL', {}, { devel: 'search-badResult.fake.json' }))
@@ -84,6 +85,7 @@ describe('moduleExec', () => {
 
       /* @ts-ignore */
       console = fakeConsole;
+      if (process.env.FETCH_DEVEL !== "nocache")
       await expect(yf.search('AAPL', {}, {
         devel: 'search-badResult.fake.json',
         validateResult: false

@@ -44,6 +44,7 @@ describe('recommendationsBySymbol', () => {
     expect(result.symbol).toBe('AAPL');
   });
 
+  if (process.env.FETCH_DEVEL !== "nocache")
   it('throws on weird result', () => {
     const devel = 'weirdJsonResult.fake.json';
     return expect(

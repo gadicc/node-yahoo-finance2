@@ -36,6 +36,7 @@ describe('quoteSummary', () => {
 
     // See also common module tests in moduleExec.spec.js
 
+    if (process.env.FETCH_DEVEL !== "nocache")
     it('throws on invalid result', async () => {
       await expect(yf.quoteSummary('AAPL', {}, { devel: 'weirdJsonResult.fake.json' }))
         .rejects.toThrow(/Unexpected result/)

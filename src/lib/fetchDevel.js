@@ -31,6 +31,9 @@ function urlHash(url) {
 const cache = {};
 
 async function fetchDevel(url, fetchOptions) {
+  if (process.env.FETCH_DEVEL === "nocache")
+    return await nodeFetch(url, fetchOptions);
+
   // If devel===true, hash the url, otherwise use the value of devel
   // This allows us to specify our own static filename vs url hash.
   const filename = path.join(FILE_BASE,

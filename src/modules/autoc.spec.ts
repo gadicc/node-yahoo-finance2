@@ -13,6 +13,7 @@ describe('autoc', () => {
     await yf.autoc('AAPL', {}, { devel: "autoc-AAPL.json" })
   });
 
+  if (process.env.FETCH_DEVEL !== "nocache")
   it('throws on unexpected input', async () => {
     await expect(yf.autoc('AAPL', {}, { devel: 'weirdJsonResult.fake.json' }))
       .rejects.toThrow(/Unexpected result/)

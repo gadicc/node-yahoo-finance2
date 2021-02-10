@@ -102,6 +102,18 @@ Note: `require('yahooFinanceFetchDevel')` is called conditionally when
 `devel: true`.  It also uses packages from `devDependencies`.  As such,
 deployment to production is not supported.
 
+Note: Even with fixed filename, URLs are verified and fetchDevel will
+throw if they don't match.  If you're returning a fake result, name
+your file `.fake.json`.
+
+Occasionally we want to skip caching and only return live results, e.g.
+to check if our validation pasts at different times of the day (when
+different markets are open):
+
+```bash
+$ FETCH_DEVEL="nocache" yarn test
+```
+
 ## Contributing
 
 Pull Requests welcome!  Please read [CONTRIBUTING.md](./CONTRIBUTING.md)

@@ -28,6 +28,7 @@ describe('yahooFinanceFetch', () => {
     ).rejects.toBeInstanceOf(errors.NoEnvironmentError);
   });
 
+  if (process.env.FETCH_DEVEL !== "nocache")
   it('throws HTTPError if !res.ok and no error in json result', () => {
     return expect(
       yahooFinanceFetch(

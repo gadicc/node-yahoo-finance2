@@ -36,6 +36,7 @@ describe('quote', () => {
     expect(result.symbol).toBe('AAPL');
   });
 
+  if (process.env.FETCH_DEVEL !== "nocache")
   it('throws on unexpected result', async () => {
     await expect(yf.quote('AAPL', {}, { devel: 'weirdJsonResult.fake.json' }))
       .rejects.toThrow(/Unexpected result/)
