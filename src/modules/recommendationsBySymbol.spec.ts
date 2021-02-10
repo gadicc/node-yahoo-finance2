@@ -29,4 +29,18 @@ describe('recommendationsBySymbol', () => {
     await yf.recommendationsBySymbol(['AAPL', 'BMW.DE'], {}, { devel });
   });
 
+  it('returns an array for an array', async () => {
+    const devel = 'recommendationsBySymbol-AAPL-BMW.DE.json';
+    const results = await yf.recommendationsBySymbol(['AAPL', 'BMW.DE'], {}, { devel });
+    expect(results.length).toBe(2);
+    expect(results[0].symbol).toBe('AAPL');
+    expect(results[1].symbol).toBe('BMW.DE');
+  });
+
+  it('returns single for a string', async () => {
+    const devel = 'recommendationsBySymbol-AAPL.json';
+    const result = await yf.recommendationsBySymbol('AAPL', {}, { devel });
+    expect(Array.isArray(result)).toBe(false);
+    expect(result.symbol).toBe('AAPL');
+  });
 });
