@@ -1,3 +1,19 @@
+# [1.7.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.6.0...v1.7.0) (2021-02-10)
+
+
+### Bug Fixes
+
+* **index:** uhhhh s/_options/_opts/ like it's called everywhere else ([4492993](https://github.com/gadicc/node-yahoo-finance2/commit/44929939aed693c95b65f2e266014692695ad76d))
+* **moduleExec:** pass correct object to validation ([#27](https://github.com/gadicc/node-yahoo-finance2/issues/27)) ([8b0f9c7](https://github.com/gadicc/node-yahoo-finance2/commit/8b0f9c7a109cbcb2a30943ccb43f04653238380c))
+* **modules:** change overloading order specificy (fixes [#21](https://github.com/gadicc/node-yahoo-finance2/issues/21)) ([1806e61](https://github.com/gadicc/node-yahoo-finance2/commit/1806e61940f30ceaf53f6af50dbd7230df511759))
+* **quote:** extend marketState property ([0c36a60](https://github.com/gadicc/node-yahoo-finance2/commit/0c36a60362e180045b867277d2126800e22d3035))
+* **quote:** interface fixes, 10am UTC tests ([#35](https://github.com/gadicc/node-yahoo-finance2/issues/35)) ([1c256c7](https://github.com/gadicc/node-yahoo-finance2/commit/1c256c7d67ca2b4d4728c8044a095e047c118914))
+
+
+### Features
+
+* new module recommendationsBySymbol ([#28](https://github.com/gadicc/node-yahoo-finance2/issues/28)) ([b467acb](https://github.com/gadicc/node-yahoo-finance2/commit/b467acb9bdca7c12ee23c9949985c6e703e064d1))
+
 # [1.6.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.5.2...v1.6.0) (2021-02-08)
 
 
