@@ -17,7 +17,7 @@ export interface QuoteBase {
   quoteSourceName: string;               // "Delayed Quote",
   triggerable: boolean;                  // true,
   currency: string;                      // "USD",
-  marketState: "CLOSED" | "PREPRE";
+  marketState: "CLOSED" | "PREPRE" | "POST" | "POSTPOST";
   tradeable: boolean;                    // false,
   exchange: string;                      // "NMS",
   shortName: string;                     // "NVIDIA Corporation",
