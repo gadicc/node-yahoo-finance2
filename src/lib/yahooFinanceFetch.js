@@ -1,21 +1,26 @@
-const errors = require('./errors');
-const pkg = require('../../package.json');
+const errors = require("./errors");
+const pkg = require("../../package.json");
 
 const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
 
-async function yahooFinanceFetch(urlBase, params={}, moduleOpts={}, func='json') {
+async function yahooFinanceFetch(
+  urlBase,
+  params = {},
+  moduleOpts = {},
+  func = "json"
+) {
   if (!this._env)
-    throw new errors.NoEnvironmentError("yahooFinanceFetch called without this._env set");
+    throw new errors.NoEnvironmentError(
+      "yahooFinanceFetch called without this._env set"
+    );
 
   const { URLSearchParams, fetch } = this._env;
 
   const urlSearchParams = new URLSearchParams(params);
-  const url = urlBase + '?' + urlSearchParams.toString();
+  const url = urlBase + "?" + urlSearchParams.toString();
 
-   /* istanbul ignore next */
-  const fetchFunc = moduleOpts.devel
-    ? require('./fetchDevel')
-    : fetch; // no need to force coverage on real network request.
+  /* istanbul ignore next */
+  const fetchFunc = moduleOpts.devel ? require("./fetchDevel") : fetch; // no need to force coverage on real network request.
 
   const fetchOptions = {
     "User-Agent": userAgent,
@@ -24,8 +29,7 @@ async function yahooFinanceFetch(urlBase, params={}, moduleOpts={}, func='json')
   };
 
   // used in moduleExec.ts
-  if (func === 'csv')
-    func = 'text';
+  if (func === "csv") func = "text";
 
   const res = await fetchFunc(url, fetchOptions);
   const result = await res[func]();
@@ -41,12 +45,12 @@ async function yahooFinanceFetch(urlBase, params={}, moduleOpts={}, func='json')
       }
     }
    */
-  if (func==='json') {
+  if (func === "json") {
     const keys = Object.keys(result);
     if (keys.length === 1) {
       const errorObj = result[keys[0]].error;
       if (errorObj) {
-        const errorName = errorObj.code.replace(/ /g, '') + 'Error';
+        const errorName = errorObj.code.replace(/ /g, "") + "Error";
         const ErrorClass = errors[errorName] || Error;
         throw new ErrorClass(errorObj.description);
       }

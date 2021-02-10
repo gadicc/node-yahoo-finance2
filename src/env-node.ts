@@ -1,7 +1,7 @@
-const { URLSearchParams } = require('url');
-const fetch = require('node-fetch');
+const { URLSearchParams } = require("url");
+const fetch = require("node-fetch");
 
 export default {
   fetch,
   URLSearchParams,
-}
+};

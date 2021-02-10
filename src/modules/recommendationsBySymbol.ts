@@ -3,14 +3,14 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from '../lib/moduleCommon';
+} from "../lib/moduleCommon";
 
 export interface RecommendationsBySymbolResponse {
   recommendedSymbols: Array<{
     score: number; // 0.1927
     symbol: string; // "BMW.DE"
-  }>,
-  symbol: string,
+  }>;
+  symbol: string;
 }
 
 export type RecommendationsBySymbolResponseArray = RecommendationsBySymbolResponse[];
@@ -23,21 +23,21 @@ export default function recommendationsBySymbol(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue,
+  moduleOptions?: ModuleOptionsWithValidateTrue
 ): Promise<RecommendationsBySymbolResponse>;
 
 export default function recommendationsBySymbol(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue,
+  moduleOptions?: ModuleOptionsWithValidateTrue
 ): Promise<RecommendationsBySymbolResponseArray>;
 
 export default function recommendationsBySymbol(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse,
+  moduleOptions?: ModuleOptionsWithValidateFalse
 ): Promise<any>;
 
 export default function recommendationsBySymbol(
@@ -46,8 +46,7 @@ export default function recommendationsBySymbol(
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-
-  const symbols = typeof query === 'string' ? query : query.join(',');
+  const symbols = typeof query === "string" ? query : query.join(",");
 
   return this._moduleExec({
     moduleName: "recommendationsBySymbol",
@@ -65,12 +64,13 @@ export default function recommendationsBySymbol(
         if (!result.finance)
           throw new Error("Unexpected result: " + JSON.stringify(result));
         return result.finance.result;
-      }
+      },
     },
 
     moduleOptions,
   }).then((results: RecommendationsBySymbolResponseArray) => {
-    return typeof query === 'string' ? results[0] as RecommendationsBySymbolResponse : results as RecommendationsBySymbolResponseArray;
-  });;
-
+    return typeof query === "string"
+      ? (results[0] as RecommendationsBySymbolResponse)
+      : (results as RecommendationsBySymbolResponseArray);
+  });
 }

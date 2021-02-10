@@ -12,4 +12,4 @@ export interface ModuleOptionsWithValidateTrue extends ModuleOptions {
   validateResult?: true;
 }
 
-export type ModuleThis = { [key:string]: any, _moduleExec: Function };
+export type ModuleThis = { [key: string]: any; _moduleExec: Function };

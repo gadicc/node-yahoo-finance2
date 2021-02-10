@@ -3,7 +3,7 @@ import type {
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
-} from '../lib/moduleCommon';
+} from "../lib/moduleCommon";
 
 export type HistoricalResult = Array<HistoricalRow>;
 
@@ -20,14 +20,14 @@ export interface HistoricalRow {
 export interface HistoricalOptions {
   period1: Date | string | number;
   period2?: Date | string | number;
-  interval?: '1d' | '1wk' | '1mo';  // '1d',  TODO all | types
-  events?: string;                  // 'history',
-  includeAdjustedClose?: boolean;   // true,
+  interval?: "1d" | "1wk" | "1mo"; // '1d',  TODO all | types
+  events?: string; // 'history',
+  includeAdjustedClose?: boolean; // true,
 }
 
-const queryOptionsDefaults: Omit<HistoricalOptions,'period1'> = {
-  interval: '1d',
-  events: 'history',
+const queryOptionsDefaults: Omit<HistoricalOptions, "period1"> = {
+  interval: "1d",
+  events: "history",
   includeAdjustedClose: true,
 };
 
@@ -51,7 +51,6 @@ export default function historical(
   queryOptionsOverrides: HistoricalOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-
   return this._moduleExec({
     moduleName: "historical",
 
@@ -60,22 +59,23 @@ export default function historical(
       schemaKey: "#/definitions/HistoricalOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
-      fetchType: 'csv',
+      fetchType: "csv",
       transformWith(queryOptions: HistoricalOptions) {
-        if (!queryOptions.period2)
-          queryOptions.period2 = new Date();
+        if (!queryOptions.period2) queryOptions.period2 = new Date();
 
-        const dates = [ 'period1', 'period2' ] as const;
+        const dates = ["period1", "period2"] as const;
         for (let fieldName of dates) {
           const value = queryOptions[fieldName];
           if (value instanceof Date)
             queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
-          else (typeof value === 'string')
-            queryOptions[fieldName] = Math.floor(new Date(value as string).getTime() / 1000);
+          else typeof value === "string";
+          queryOptions[fieldName] = Math.floor(
+            new Date(value as string).getTime() / 1000
+          );
         }
 
         return queryOptions;
-      }
+      },
     },
 
     result: {

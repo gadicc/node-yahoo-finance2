@@ -1,85 +1,84 @@
 // /// <reference path="quoteSummary-iface.ts"/>
 // import QuoteSummaryResult from "QuoteSummaryIfaces";
-import { QuoteSummaryResult } from './quoteSummary-iface';
+import { QuoteSummaryResult } from "./quoteSummary-iface";
 
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
-} from '../lib/moduleCommon';
+} from "../lib/moduleCommon";
 
 export const quoteSummary_modules = [
-  'assetProfile',
-  'balanceSheetHistory',
-  'balanceSheetHistoryQuarterly',
-  'calendarEvents',
-  'cashflowStatementHistory',
-  'cashflowStatementHistoryQuarterly',
-  'defaultKeyStatistics',
-  'earnings',
-  'earningsHistory',
-  'earningsTrend',
-  'financialData',
-  'fundOwnership',
-  'fundPerformance',
-  'fundProfile',
-  'incomeStatementHistory',
-  'incomeStatementHistoryQuarterly',
-  'indexTrend',
-  'industryTrend',
-  'insiderHolders',
-  'insiderTransactions',
-  'institutionOwnership',
-  'majorDirectHolders',
-  'majorHoldersBreakdown',
-  'netSharePurchaseActivity',
-  'price',
-  'quoteType',
-  'recommendationTrend',
-  'secFilings',
-  'sectorTrend',
-  'summaryDetail',
-  'summaryProfile',
-  'topHoldings',
-  'upgradeDowngradeHistory',
+  "assetProfile",
+  "balanceSheetHistory",
+  "balanceSheetHistoryQuarterly",
+  "calendarEvents",
+  "cashflowStatementHistory",
+  "cashflowStatementHistoryQuarterly",
+  "defaultKeyStatistics",
+  "earnings",
+  "earningsHistory",
+  "earningsTrend",
+  "financialData",
+  "fundOwnership",
+  "fundPerformance",
+  "fundProfile",
+  "incomeStatementHistory",
+  "incomeStatementHistoryQuarterly",
+  "indexTrend",
+  "industryTrend",
+  "insiderHolders",
+  "insiderTransactions",
+  "institutionOwnership",
+  "majorDirectHolders",
+  "majorHoldersBreakdown",
+  "netSharePurchaseActivity",
+  "price",
+  "quoteType",
+  "recommendationTrend",
+  "secFilings",
+  "sectorTrend",
+  "summaryDetail",
+  "summaryProfile",
+  "topHoldings",
+  "upgradeDowngradeHistory",
 ];
 
 export type QuoteSummaryModules =
-  "assetProfile" |
-  "balanceSheetHistory" |
-  "balanceSheetHistoryQuarterly" |
-  "calendarEvents" |
-  "cashflowStatementHistory" |
-  "cashflowStatementHistoryQuarterly" |
-  "defaultKeyStatistics" |
-  "earnings" |
-  "earningsHistory" |
-  "earningsTrend" |
-  "financialData" |
-  "fundOwnership" |
-  "fundPerformance" |
-  "fundProfile" |
-  "incomeStatementHistory" |
-  "incomeStatementHistoryQuarterly" |
-  "indexTrend" |
-  "industryTrend" |
-  "insiderHolders" |
-  "insiderTransactions" |
-  "institutionOwnership" |
-  "majorDirectHolders" |
-  "majorHoldersBreakdown" |
-  "netSharePurchaseActivity" |
-  "price" |
-  "quoteType" |
-  "recommendationTrend" |
-  "secFilings" |
-  "sectorTrend" |
-  "summaryDetail" |
-  "summaryProfile" |
-  "topHoldings" |
-  "upgradeDowngradeHistory"
-;
+  | "assetProfile"
+  | "balanceSheetHistory"
+  | "balanceSheetHistoryQuarterly"
+  | "calendarEvents"
+  | "cashflowStatementHistory"
+  | "cashflowStatementHistoryQuarterly"
+  | "defaultKeyStatistics"
+  | "earnings"
+  | "earningsHistory"
+  | "earningsTrend"
+  | "financialData"
+  | "fundOwnership"
+  | "fundPerformance"
+  | "fundProfile"
+  | "incomeStatementHistory"
+  | "incomeStatementHistoryQuarterly"
+  | "indexTrend"
+  | "industryTrend"
+  | "insiderHolders"
+  | "insiderTransactions"
+  | "institutionOwnership"
+  | "majorDirectHolders"
+  | "majorHoldersBreakdown"
+  | "netSharePurchaseActivity"
+  | "price"
+  | "quoteType"
+  | "recommendationTrend"
+  | "secFilings"
+  | "sectorTrend"
+  | "summaryDetail"
+  | "summaryProfile"
+  | "topHoldings"
+  | "upgradeDowngradeHistory";
 
 export interface QuoteSummaryOptions {
   formatted?: boolean;
@@ -88,7 +87,7 @@ export interface QuoteSummaryOptions {
 
 const queryOptionsDefaults = {
   formatted: false,
-  modules: ['price', 'summaryDetail']
+  modules: ["price", "summaryDetail"],
 };
 
 export default function quoteSummary(
@@ -111,20 +110,20 @@ export default function quoteSummary(
   queryOptionsOverrides?: QuoteSummaryOptions,
   moduleOptions?: ModuleOptions
 ): Promise<QuoteSummaryResult> {
-
   return this._moduleExec({
     moduleName: "search",
 
     query: {
-      url: "https://query2.finance.yahoo.com/v10/finance/quoteSummary/" + symbol,
+      url:
+        "https://query2.finance.yahoo.com/v10/finance/quoteSummary/" + symbol,
       schemaKey: "#/definitions/QuoteSummaryOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       transformWith(options: QuoteSummaryOptions) {
-        if (options.modules === 'all')
+        if (options.modules === "all")
           options.modules = quoteSummary_modules as Array<QuoteSummaryModules>;
         return options;
-      }
+      },
     },
 
     result: {
@@ -134,10 +133,9 @@ export default function quoteSummary(
           throw new Error("Unexpected result: " + JSON.stringify(result));
 
         return result.quoteSummary.result[0];
-      }
+      },
     },
 
     moduleOptions,
   });
-
 }

@@ -1,27 +1,23 @@
 // https://github.com/facebook/jest/issues/4156#issuecomment-757376195
 
-const { DefaultReporter } = require('@jest/reporters')
+const { DefaultReporter } = require("@jest/reporters");
 
-class Reporter extends DefaultReporter
-{
-	constructor()
-	{
-		super(...arguments)
-	}
+class Reporter extends DefaultReporter {
+  constructor() {
+    super(...arguments);
+  }
 
-	printTestFileHeader(_testPath, config, result)
-	{
-		const console = result.console
+  printTestFileHeader(_testPath, config, result) {
+    const console = result.console;
 
-		if(result.numFailingTests === 0 && !result.testExecError)
-		{
-			result.console = null
-		}
+    if (result.numFailingTests === 0 && !result.testExecError) {
+      result.console = null;
+    }
 
-		super.printTestFileHeader(...arguments)
+    super.printTestFileHeader(...arguments);
 
-		result.console = console
-	}
+    result.console = console;
+  }
 }
 
-module.exports = Reporter
+module.exports = Reporter;

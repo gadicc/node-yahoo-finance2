@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const yahooFinance = require('../api/index-node.js').default;
-const moduleNames = Object.keys(yahooFinance).filter(n => !n.startsWith('_'));
+const yahooFinance = require("../api/index-node.js").default;
+const moduleNames = Object.keys(yahooFinance).filter((n) => !n.startsWith("_"));
 
 const node = process.argv[0];
 const script = process.argv[1];
@@ -10,24 +10,21 @@ const argsAsStrings = process.argv.slice(3);
 
 if (!moduleNames.includes(moduleName)) {
   console.log("No such module: " + moduleName);
-  console.log("Available modules: " + moduleNames.join(', '));
+  console.log("Available modules: " + moduleNames.join(", "));
   process.exit();
 }
 
 function decodeArgs(stringArgs) {
-  return stringArgs.map(arg => {
+  return stringArgs.map((arg) => {
+    if (arg[0] === "{") return JSON.parse(arg);
 
-    if (arg[0] === '{')
-      return JSON.parse(arg);
-
-    if (arg.match(/^[0-9\.]+$/))
-      return Number(arg);
+    if (arg.match(/^[0-9\.]+$/)) return Number(arg);
 
     return arg;
   });
 }
 
-(async function() {
+(async function () {
   const args = decodeArgs(argsAsStrings);
 
   let result;
@@ -39,8 +36,6 @@ function decodeArgs(stringArgs) {
     process.exit(1);
   }
 
-  if (process.stdout.isTTY)
-    console.dir(result, { depth: null, colors: true });
-  else
-    console.log(JSON.stringify(result, null, 2));
+  if (process.stdout.isTTY) console.dir(result, { depth: null, colors: true });
+  else console.log(JSON.stringify(result, null, 2));
 })();

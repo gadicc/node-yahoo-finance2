@@ -1,8 +1,8 @@
-import search from './search';
-const { InvalidOptionsError } = require('../lib/errors');
+import search from "./search";
+const { InvalidOptionsError } = require("../lib/errors");
 
-import { testSymbols } from '../../tests/symbols';
-import testYf from '../../tests/testYf';
+import { testSymbols } from "../../tests/symbols";
+import testYf from "../../tests/testYf";
 
 const yf = testYf({ search });
 
@@ -14,8 +14,7 @@ const testSearches = [
   "Bayerische Motoren Werke AG", // GER
 ];
 
-describe('search', () => {
-
+describe("search", () => {
   // See also common module tests in moduleExec.spec.js
 
   // validate different searches
@@ -25,5 +24,4 @@ describe('search', () => {
       await yf.search(search, {}, { devel });
     });
   });
-
 });

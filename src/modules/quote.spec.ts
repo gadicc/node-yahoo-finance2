@@ -1,13 +1,12 @@
-import quote from './quote';
-import { testSymbols } from '../../tests/symbols';
-import testYf from '../../tests/testYf';
+import quote from "./quote";
+import { testSymbols } from "../../tests/symbols";
+import testYf from "../../tests/testYf";
 
 const yf = testYf({ quote });
 
-describe('quote', () => {
-
-  describe('passes validation', () => {
-    testSymbols.forEach(symbol => {
+describe("quote", () => {
+  describe("passes validation", () => {
+    testSymbols.forEach((symbol) => {
       it(symbol, async () => {
         const devel = `quote-${symbol}.json`;
         await yf.quote(symbol, {}, { devel });
@@ -15,8 +14,8 @@ describe('quote', () => {
     });
   });
 
-  describe('passes validation', () => {
-    testSymbols.forEach(symbol => {
+  describe("passes validation", () => {
+    testSymbols.forEach((symbol) => {
       it(symbol, async () => {
         const devel = `quote-${symbol}-10am.json`;
         await yf.quote(symbol, {}, { devel });
@@ -24,31 +23,31 @@ describe('quote', () => {
     });
   });
 
-  it('allows blank options', async () => {
-    await expect(
-      () => yf.quote('AAPL', undefined, { devel: 'quote-AAPL.json' })
+  it("allows blank options", async () => {
+    await expect(() =>
+      yf.quote("AAPL", undefined, { devel: "quote-AAPL.json" })
     ).not.toThrow();
   });
 
-  it('returns an array for an array', async () => {
-    const devel = 'quote-AAPL-BABA.json';
-    const results = await yf.quote(['AAPL', 'BABA'], {}, { devel });
+  it("returns an array for an array", async () => {
+    const devel = "quote-AAPL-BABA.json";
+    const results = await yf.quote(["AAPL", "BABA"], {}, { devel });
     expect(results.length).toBe(2);
-    expect(results[0].symbol).toBe('AAPL');
-    expect(results[1].symbol).toBe('BABA');
+    expect(results[0].symbol).toBe("AAPL");
+    expect(results[1].symbol).toBe("BABA");
   });
 
-  it('returns single for a string', async () => {
-    const devel = 'quote-AAPL.json';
-    const result = await yf.quote('AAPL', {}, { devel });
+  it("returns single for a string", async () => {
+    const devel = "quote-AAPL.json";
+    const result = await yf.quote("AAPL", {}, { devel });
     expect(Array.isArray(result)).toBe(false);
-    expect(result.symbol).toBe('AAPL');
+    expect(result.symbol).toBe("AAPL");
   });
 
   if (process.env.FETCH_DEVEL !== "nocache")
-  it('throws on unexpected result', async () => {
-    await expect(yf.quote('AAPL', {}, { devel: 'weirdJsonResult.fake.json' }))
-      .rejects.toThrow(/Unexpected result/)
-  });
-
+    it("throws on unexpected result", async () => {
+      await expect(
+        yf.quote("AAPL", {}, { devel: "weirdJsonResult.fake.json" })
+      ).rejects.toThrow(/Unexpected result/);
+    });
 });

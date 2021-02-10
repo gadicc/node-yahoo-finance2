@@ -3,61 +3,63 @@ import type {
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
-} from '../lib/moduleCommon';
+} from "../lib/moduleCommon";
 
 export interface SearchQuoteYahooEquity {
-  exchange: string;        // "NYQ"
-  shortname: string;       // "Alibaba Group Holding Limited"
-  quoteType: "EQUITY";     // "EQUITY"
-  symbol: string;          // "BABA"
-  index: "quotes";         // "quotes"
-  score: number;           // 1111958.0
-  typeDisp: "Equity";      // "Equity"
-  longname?: string;       // "Alibaba Group Holding Limited"
-  isYahooFinance: true;    // true
+  exchange: string; // "NYQ"
+  shortname: string; // "Alibaba Group Holding Limited"
+  quoteType: "EQUITY"; // "EQUITY"
+  symbol: string; // "BABA"
+  index: "quotes"; // "quotes"
+  score: number; // 1111958.0
+  typeDisp: "Equity"; // "Equity"
+  longname?: string; // "Alibaba Group Holding Limited"
+  isYahooFinance: true; // true
 }
 export interface SearchQuoteYahooOption {
-  exchange: string;        // "OPR"
-  shortname: string;       // "AAPL Feb 2021 65.000 call"
-  quoteType: "OPTION";     // "EQUITY"     TODO "EQUITY" | ???
-  symbol: string;          // "AAPL210205C00065000"
-  index: "quotes";         // "quotes"
-  score: number;           // 1111958.0
-  typeDisp: "Option";      // "Option"
-  isYahooFinance: true;    // true
+  exchange: string; // "OPR"
+  shortname: string; // "AAPL Feb 2021 65.000 call"
+  quoteType: "OPTION"; // "EQUITY"     TODO "EQUITY" | ???
+  symbol: string; // "AAPL210205C00065000"
+  index: "quotes"; // "quotes"
+  score: number; // 1111958.0
+  typeDisp: "Option"; // "Option"
+  isYahooFinance: true; // true
 }
 export interface SearchQuoteNonYahoo {
-  index: string;           // '78ddc07626ff4bbcae663e88514c23a0'
-  name: string;            // 'AAPlasma'
-  permalink: string;       // 'aaplasma',
-  isYahooFinance: false    // false
+  index: string; // '78ddc07626ff4bbcae663e88514c23a0'
+  name: string; // 'AAPlasma'
+  permalink: string; // 'aaplasma',
+  isYahooFinance: false; // false
 }
 
 export interface SearchNews {
-  uuid: string;                 // "9aff624a-e84c-35f3-9c23-db39852006dc"
-  title: string;                // "Analyst Report: Alibaba Group Holding Limited"
-  publisher: string;            // "Morningstar Research"
-  link: string;                 // "https://finance.yahoo.com/m/9aff624a-e84c-35f3-9c23-db39852006dc/analyst-report%3A-alibaba-group.html"
-  providerPublishTime: Date;    // coerced to new Date(1611286342 * 1000)
-  type: string;                 // "STORY"    TODO "STORY" | ???
+  uuid: string; // "9aff624a-e84c-35f3-9c23-db39852006dc"
+  title: string; // "Analyst Report: Alibaba Group Holding Limited"
+  publisher: string; // "Morningstar Research"
+  link: string; // "https://finance.yahoo.com/m/9aff624a-e84c-35f3-9c23-db39852006dc/analyst-report%3A-alibaba-group.html"
+  providerPublishTime: Date; // coerced to new Date(1611286342 * 1000)
+  type: string; // "STORY"    TODO "STORY" | ???
 }
 
 export interface SearchResult {
   explains: Array<any>;
   count: number;
-  quotes: Array<SearchQuoteYahooEquity | SearchQuoteYahooOption | SearchQuoteNonYahoo>;
+  quotes: Array<
+    SearchQuoteYahooEquity | SearchQuoteYahooOption | SearchQuoteNonYahoo
+  >;
   news: Array<SearchNews>;
   nav: Array<any>;
-  lists: Array<any>,
-  researchReports: Array<any>,
+  lists: Array<any>;
+  researchReports: Array<any>;
   totalTime: number;
-  timeTakenForQuotes: number;               // 26
-  timeTakenForNews: number;                 // 419
-  timeTakenForAlgowatchlist: number;        // 700
-  timeTakenForPredefinedScreener: number;   // 400
-  timeTakenForCrunchbase: number;           // 400
-  timeTakenForNav: number;                  // 400
-  timeTakenForResearchReports: number;      // 0
+  timeTakenForQuotes: number; // 26
+  timeTakenForNews: number; // 419
+  timeTakenForAlgowatchlist: number; // 700
+  timeTakenForPredefinedScreener: number; // 400
+  timeTakenForCrunchbase: number; // 400
+  timeTakenForNav: number; // 400
+  timeTakenForResearchReports: number; // 0
 }
 
 export interface SearchOptions {
@@ -75,31 +77,31 @@ export interface SearchOptions {
 }
 
 const queryOptionsDefaults = {
-  lang: 'en-US',
-  region: 'US',
+  lang: "en-US",
+  region: "US",
   quotesCount: 6,
   newsCount: 4,
   enableFuzzyQuery: false,
-  quotesQueryId: 'tss_match_phrase_query',
-  multiQuoteQueryId: 'multi_quote_single_token_query',
-  newsQueryId: 'news_cie_vespa',
+  quotesQueryId: "tss_match_phrase_query",
+  multiQuoteQueryId: "multi_quote_single_token_query",
+  newsQueryId: "news_cie_vespa",
   enableCb: true,
   enableNavLinks: true,
-  enableEnhancedTrivialQuery: true
+  enableEnhancedTrivialQuery: true,
 };
 
 export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue,
+  moduleOptions?: ModuleOptionsWithValidateTrue
 ): Promise<SearchResult>;
 
 export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse,
+  moduleOptions?: ModuleOptionsWithValidateFalse
 ): Promise<any>;
 
 export default function search(
@@ -108,7 +110,6 @@ export default function search(
   queryOptionsOverrides?: SearchOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-
   return this._moduleExec({
     moduleName: "search",
 
@@ -126,5 +127,4 @@ export default function search(
 
     moduleOptions,
   });
-
 }
