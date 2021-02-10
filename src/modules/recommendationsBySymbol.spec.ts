@@ -43,4 +43,11 @@ describe('recommendationsBySymbol', () => {
     expect(Array.isArray(result)).toBe(false);
     expect(result.symbol).toBe('AAPL');
   });
+
+  it('throws on weird result', () => {
+    const devel = 'weirdJsonResult.fake.json';
+    return expect(
+      yf.recommendationsBySymbol('AAPL', {}, { devel })
+    ).rejects.toThrow(/^Unexpected result/)
+  });
 });
