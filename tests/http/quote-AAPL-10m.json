@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=AAPL"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "2gtsmp1g27b6c"
+      ],
+      "x-yahoo-request-id": [
+        "2gtsmp1g27b6c"
+      ],
+      "x-request-id": [
+        "04af3571-b3d0-44ae-946a-d9b566e8ecc2"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1015"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 10 Feb 2021 09:52:11 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteResponse\":{\"result\":[{\"language\":\"en-US\",\"region\":\"US\",\"quoteType\":\"EQUITY\",\"quoteSourceName\":\"Nasdaq Real Time Price\",\"triggerable\":true,\"currency\":\"USD\",\"tradeable\":false,\"averageDailyVolume3Month\":104997270,\"averageDailyVolume10Day\":83876142,\"fiftyTwoWeekLowChange\":82.8575,\"fiftyTwoWeekLowChangePercent\":1.5588636,\"fiftyTwoWeekRange\":\"53.1525 - 145.09\",\"fiftyTwoWeekHighChange\":-9.080002,\"fiftyTwoWeekHighChangePercent\":-0.06258186,\"fiftyTwoWeekLow\":53.1525,\"fiftyTwoWeekHigh\":145.09,\"dividendDate\":1613001600,\"earningsTimestamp\":1611765000,\"earningsTimestampStart\":1619607540,\"earningsTimestampEnd\":1620043200,\"trailingAnnualDividendRate\":0.807,\"trailingPE\":36.88907,\"trailingAnnualDividendYield\":0.005894383,\"epsTrailingTwelveMonths\":3.687,\"epsForward\":4.69,\"epsCurrentYear\":4.45,\"priceEpsCurrentYear\":30.564045,\"sharesOutstanding\":16788100096,\"bookValue\":3.936,\"fiftyDayAverage\":133.65515,\"fiftyDayAverageChange\":2.3548431,\"fiftyDayAverageChangePercent\":0.017618798,\"twoHundredDayAverage\":120.74684,\"twoHundredDayAverageChange\":15.263153,\"twoHundredDayAverageChangePercent\":0.12640624,\"marketCap\":2283349475328,\"forwardPE\":28.999998,\"priceToBook\":34.555386,\"sourceInterval\":15,\"exchangeDataDelayedBy\":0,\"marketState\":\"PRE\",\"exchange\":\"NMS\",\"shortName\":\"Apple Inc.\",\"longName\":\"Apple Inc.\",\"messageBoardId\":\"finmb_24937\",\"exchangeTimezoneName\":\"America/New_York\",\"exchangeTimezoneShortName\":\"EST\",\"gmtOffSetMilliseconds\":-18000000,\"market\":\"us_market\",\"esgPopulated\":false,\"firstTradeDateMilliseconds\":345479400000,\"priceHint\":2,\"preMarketChange\":0.3899994,\"preMarketChangePercent\":0.2867432,\"preMarketTime\":1612950728,\"preMarketPrice\":136.4,\"regularMarketChange\":-0.90000916,\"regularMarketChangePercent\":-0.65737283,\"regularMarketTime\":1612904402,\"regularMarketPrice\":136.01,\"regularMarketDayHigh\":137.877,\"regularMarketDayRange\":\"135.85 - 137.877\",\"regularMarketDayLow\":135.85,\"regularMarketVolume\":76774213,\"regularMarketPreviousClose\":136.91,\"bid\":136.6,\"ask\":136.67,\"bidSize\":13,\"askSize\":29,\"fullExchangeName\":\"NasdaqGS\",\"financialCurrency\":\"USD\",\"regularMarketOpen\":136.62,\"displayName\":\"Apple\",\"symbol\":\"AAPL\"}],\"error\":null}}"
+  }
+}

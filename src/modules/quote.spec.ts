@@ -15,6 +15,15 @@ describe('quote', () => {
     });
   });
 
+  describe('passes validation', () => {
+    testSymbols.forEach(symbol => {
+      it(symbol, async () => {
+        const devel = `quote-${symbol}-10am.json`;
+        await yf.quote(symbol, {}, { devel });
+      });
+    });
+  });
+
   it('allows blank options', async () => {
     await expect(
       () => yf.quote('AAPL', undefined, { devel: 'quote-AAPL.json' })

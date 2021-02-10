@@ -17,7 +17,7 @@ export interface QuoteBase {
   quoteSourceName: string;               // "Delayed Quote",
   triggerable: boolean;                  // true,
   currency: string;                      // "USD",
-  marketState: "CLOSED" | "PREPRE" | "POST" | "POSTPOST";
+  marketState: "REGULAR" | "CLOSED" | "PRE" | "PREPRE" | "POST" | "POSTPOST";
   tradeable: boolean;                    // false,
   exchange: string;                      // "NMS",
   shortName: string;                     // "NVIDIA Corporation",
@@ -75,6 +75,10 @@ export interface QuoteBase {
   regularMarketDayLow?: number;          // 541.867,
   regularMarketVolume?: number;          // 4228841,
   regularMarketPreviousClose?: number;   // 546.57,
+  preMarketChange?: number;              // -2.9299927,
+  preMarketChangePercent?: number;       // -0.53606904,
+  preMarketTime?: number;                // 1612558802,
+  preMarketPrice?: number;               // 543.64,
   bid?: number;                          // 543.84,
   ask?: number;                          // 544.15,
   bidSize?: number;                      // 18,
