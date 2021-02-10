@@ -86,44 +86,9 @@ don't have to), with type checking and auto completion:
 Try it yourself on our
 [Live CodeSandbox](https://codesandbox.io/s/yahoo-finance2-312x2?file=/src/index.ts).
 
-## Devel Mode
-
-In "devel" mode, any URL will only be fetched *once* and cached in memory
-and on the disk.  All future requests (for the rest of time) will return the
-cached result. This is very helpful to speed up development and is used
-extensively for our tests.
-
-```js
-await search('AAPL', {}, { devel: true });                // uses sha1 from URL
-await search('AAPL', {}, { devel: 'search-AAPL.json' });  // fixed filename
-```
-
-Note: `require('yahooFinanceFetchDevel')` is called conditionally when
-`devel: true`.  It also uses packages from `devDependencies`.  As such,
-deployment to production is not supported.
-
-Note: Even with fixed filename, URLs are verified and fetchDevel will
-throw if they don't match.  If you're returning a fake result, name
-your file `.fake.json`.
-
-Occasionally we want to skip caching and only return live results, e.g.
-to check if our validation pasts at different times of the day (when
-different markets are open):
-
-```bash
-$ FETCH_DEVEL="nocache" yarn test
-```
-
 ## Contributing
 
-Pull Requests welcome!  Please read [CONTRIBUTING.md](./CONTRIBUTING.md)
-to avoid friction :)  Mostly importantly, PRs should be submitted against
-the **devel branch** (our default branch) and **commit messages** should follow
-the [conventionalcommits](https://www.conventionalcommits.org/) standard
-(basically Angular).  This is important as we use
-[semantic-release](https://github.com/semantic-release/semantic-release)
-to automate releases and [CHANGELOG](./CHANGELOG.md) entries when we merge
-back to master.
+Pull Requests welcome!  Please read [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Credits
 
