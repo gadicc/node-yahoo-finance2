@@ -15,7 +15,7 @@ export default {
   _env: {},
   _fetch: yahooFinanceFetch,
   _moduleExec: moduleExec,
-  _options: options,
+  _opts: options,
 
   autoc,
   historical,
