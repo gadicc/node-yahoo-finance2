@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.7.0...v1.7.1) (2021-02-12)
+
+
+### Bug Fixes
+
+* **search:** ETF/Fund types, ?shortname, more tests ([#31](https://github.com/gadicc/node-yahoo-finance2/issues/31)) ([28a9b03](https://github.com/gadicc/node-yahoo-finance2/commit/28a9b03ff62c0305ec2b28b8945088050a1ed84c))
+
 # [1.7.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.6.0...v1.7.0) (2021-02-10)
 
 
