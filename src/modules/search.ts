@@ -5,26 +5,30 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon";
 
-export interface SearchQuoteYahooEquity {
-  exchange: string; // "NYQ"
-  shortname: string; // "Alibaba Group Holding Limited"
-  quoteType: "EQUITY"; // "EQUITY"
+export interface SearchQuoteYahoo {
   symbol: string; // "BABA"
-  index: "quotes"; // "quotes"
-  score: number; // 1111958.0
-  typeDisp: "Equity"; // "Equity"
+  isYahooFinance: true; // true
+  exchange: string; // "NYQ"
+  shortname?: string; // "Alibaba Group Holding Limited"
   longname?: string; // "Alibaba Group Holding Limited"
-  isYahooFinance: true; // true
-}
-export interface SearchQuoteYahooOption {
-  exchange: string; // "OPR"
-  shortname: string; // "AAPL Feb 2021 65.000 call"
-  quoteType: "OPTION"; // "EQUITY"     TODO "EQUITY" | ???
-  symbol: string; // "AAPL210205C00065000"
   index: "quotes"; // "quotes"
   score: number; // 1111958.0
-  typeDisp: "Option"; // "Option"
-  isYahooFinance: true; // true
+}
+export interface SearchQuoteYahooEquity extends SearchQuoteYahoo {
+  quoteType: "EQUITY";
+  typeDisp: "Equity";
+}
+export interface SearchQuoteYahooOption extends SearchQuoteYahoo {
+  quoteType: "OPTION";
+  typeDisp: "Option";
+}
+export interface SearchQuoteYahooETF extends SearchQuoteYahoo {
+  quoteType: "ETF";
+  typeDisp: "ETF"; // "Option"
+}
+export interface SearchQuoteYahooFund extends SearchQuoteYahoo {
+  quoteType: "MUTUALFUND";
+  typeDisp: "Fund";
 }
 export interface SearchQuoteNonYahoo {
   index: string; // '78ddc07626ff4bbcae663e88514c23a0'
@@ -46,7 +50,11 @@ export interface SearchResult {
   explains: Array<any>;
   count: number;
   quotes: Array<
-    SearchQuoteYahooEquity | SearchQuoteYahooOption | SearchQuoteNonYahoo
+    | SearchQuoteYahooEquity
+    | SearchQuoteYahooOption
+    | SearchQuoteYahooETF
+    | SearchQuoteYahooFund
+    | SearchQuoteNonYahoo
   >;
   news: Array<SearchNews>;
   nav: Array<any>;
