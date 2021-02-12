@@ -4234,6 +4234,88 @@
       ],
       "type": "object"
     },
+    "SearchQuoteYahoo": {
+      "additionalProperties": false,
+      "properties": {
+        "exchange": {
+          "type": "string"
+        },
+        "index": {
+          "const": "quotes",
+          "type": "string"
+        },
+        "isYahooFinance": {
+          "const": true,
+          "type": "boolean"
+        },
+        "longname": {
+          "type": "string"
+        },
+        "score": {
+          "yahooFinanceType": "number"
+        },
+        "shortname": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "isYahooFinance",
+        "exchange",
+        "index",
+        "score"
+      ],
+      "type": "object"
+    },
+    "SearchQuoteYahooETF": {
+      "additionalProperties": false,
+      "properties": {
+        "exchange": {
+          "type": "string"
+        },
+        "index": {
+          "const": "quotes",
+          "type": "string"
+        },
+        "isYahooFinance": {
+          "const": true,
+          "type": "boolean"
+        },
+        "longname": {
+          "type": "string"
+        },
+        "quoteType": {
+          "const": "ETF",
+          "type": "string"
+        },
+        "score": {
+          "yahooFinanceType": "number"
+        },
+        "shortname": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "typeDisp": {
+          "const": "ETF",
+          "type": "string"
+        }
+      },
+      "required": [
+        "exchange",
+        "index",
+        "isYahooFinance",
+        "quoteType",
+        "score",
+        "symbol",
+        "typeDisp"
+      ],
+      "type": "object"
+    },
     "SearchQuoteYahooEquity": {
       "additionalProperties": false,
       "properties": {
@@ -4271,13 +4353,58 @@
       },
       "required": [
         "exchange",
-        "shortname",
-        "quoteType",
-        "symbol",
         "index",
+        "isYahooFinance",
+        "quoteType",
         "score",
-        "typeDisp",
-        "isYahooFinance"
+        "symbol",
+        "typeDisp"
+      ],
+      "type": "object"
+    },
+    "SearchQuoteYahooFund": {
+      "additionalProperties": false,
+      "properties": {
+        "exchange": {
+          "type": "string"
+        },
+        "index": {
+          "const": "quotes",
+          "type": "string"
+        },
+        "isYahooFinance": {
+          "const": true,
+          "type": "boolean"
+        },
+        "longname": {
+          "type": "string"
+        },
+        "quoteType": {
+          "const": "MUTUALFUND",
+          "type": "string"
+        },
+        "score": {
+          "yahooFinanceType": "number"
+        },
+        "shortname": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "typeDisp": {
+          "const": "Fund",
+          "type": "string"
+        }
+      },
+      "required": [
+        "exchange",
+        "index",
+        "isYahooFinance",
+        "quoteType",
+        "score",
+        "symbol",
+        "typeDisp"
       ],
       "type": "object"
     },
@@ -4294,6 +4421,9 @@
         "isYahooFinance": {
           "const": true,
           "type": "boolean"
+        },
+        "longname": {
+          "type": "string"
         },
         "quoteType": {
           "const": "OPTION",
@@ -4315,13 +4445,12 @@
       },
       "required": [
         "exchange",
-        "shortname",
-        "quoteType",
-        "symbol",
         "index",
+        "isYahooFinance",
+        "quoteType",
         "score",
-        "typeDisp",
-        "isYahooFinance"
+        "symbol",
+        "typeDisp"
       ],
       "type": "object"
     },
@@ -4357,6 +4486,12 @@
               },
               {
                 "$ref": "#/definitions/SearchQuoteYahooOption"
+              },
+              {
+                "$ref": "#/definitions/SearchQuoteYahooETF"
+              },
+              {
+                "$ref": "#/definitions/SearchQuoteYahooFund"
               },
               {
                 "$ref": "#/definitions/SearchQuoteNonYahoo"

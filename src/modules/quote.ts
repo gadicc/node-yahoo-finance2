@@ -121,17 +121,17 @@ export default function quote(
 
 export default function quote(
   this: ModuleThis,
-  query: string | string[],
-  queryOptionsOverrides?: QuoteOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
-): Promise<any>;
-
-export default function quote(
-  this: ModuleThis,
   query: string,
   queryOptionsOverrides?: QuoteOptions,
   moduleOptions?: ModuleOptionsWithValidateTrue
 ): Promise<Quote>;
+
+export default function quote(
+  this: ModuleThis,
+  query: string | string[],
+  queryOptionsOverrides?: QuoteOptions,
+  moduleOptions?: ModuleOptionsWithValidateFalse
+): Promise<any>;
 
 export default function quote(
   this: ModuleThis,

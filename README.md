@@ -90,6 +90,8 @@ Try it yourself on our
 
 Pull Requests welcome!  Please read [CONTRIBUTING.md](./CONTRIBUTING.md).
 
+![contributor-faces](https://contributors-svg.vercel.app/api/svg?user=gadicc&repo=node-yahoo-finance2)
+
 ## Credits
 
 * Massive thanks to [@pilwon](https://github.com/pilwon) for the original

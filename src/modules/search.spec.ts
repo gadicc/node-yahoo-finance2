@@ -7,11 +7,10 @@ import testYf from "../../tests/testYf";
 const yf = testYf({ search });
 
 const testSearches = [
-  "AAPL", // NMS (Nasdaq)
-  "OCDO.L", // LSE
-  "BABA", // NYSE
+  ...testSymbols,
   "Evolution Gaming Group", // STO
   "Bayerische Motoren Werke AG", // GER
+  "NO0010123060", // has no shortname! (#31)
 ];
 
 describe("search", () => {

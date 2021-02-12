@@ -1,0 +1,76 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=QQQ"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "5k0a2ppg2csol"
+      ],
+      "x-yahoo-request-id": [
+        "5k0a2ppg2csol"
+      ],
+      "x-request-id": [
+        "a0793622-1e86-462b-84fc-f341b0bc3eb5"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "954"
+      ],
+      "x-envoy-upstream-service-time": [
+        "37"
+      ],
+      "date": [
+        "Fri, 12 Feb 2021 12:22:45 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "196"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "warning": [
+        "110 Response is stale"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"explains\":[],\"count\":10,\"quotes\":[{\"exchange\":\"NGM\",\"shortname\":\"Invesco QQQ Trust, Series 1\",\"quoteType\":\"ETF\",\"symbol\":\"QQQ\",\"index\":\"quotes\",\"score\":2.0405E7,\"typeDisp\":\"ETF\",\"longname\":\"Invesco QQQ Trust\",\"isYahooFinance\":true},{\"exchange\":\"NGM\",\"shortname\":\"ProShares UltraPro QQQ\",\"quoteType\":\"ETF\",\"symbol\":\"TQQQ\",\"index\":\"quotes\",\"score\":101891.0,\"typeDisp\":\"ETF\",\"longname\":\"ProShares UltraPro QQQ\",\"isYahooFinance\":true},{\"exchange\":\"NGM\",\"shortname\":\"ProShares UltraPro Short QQQ\",\"quoteType\":\"ETF\",\"symbol\":\"SQQQ\",\"index\":\"quotes\",\"score\":72732.0,\"typeDisp\":\"ETF\",\"longname\":\"ProShares UltraPro Short QQQ\",\"isYahooFinance\":true},{\"exchange\":\"NGM\",\"shortname\":\"Invesco NASDAQ Next Gen 100 ETF\",\"quoteType\":\"ETF\",\"symbol\":\"QQQJ\",\"index\":\"quotes\",\"score\":34425.0,\"typeDisp\":\"ETF\",\"longname\":\"Invesco NASDAQ Next Gen 100 ETF\",\"isYahooFinance\":true},{\"exchange\":\"NGM\",\"shortname\":\"Invesco NASDAQ 100 ETF\",\"quoteType\":\"ETF\",\"symbol\":\"QQQM\",\"index\":\"quotes\",\"score\":26229.0,\"typeDisp\":\"ETF\",\"longname\":\"Invesco NASDAQ 100 ETF\",\"isYahooFinance\":true},{\"exchange\":\"PCX\",\"shortname\":\"ProShares Ultra QQQ\",\"quoteType\":\"ETF\",\"symbol\":\"QLD\",\"index\":\"quotes\",\"score\":25451.0,\"typeDisp\":\"ETF\",\"longname\":\"ProShares Ultra QQQ\",\"isYahooFinance\":true}],\"news\":[{\"uuid\":\"29efda2a-ef97-3e00-8055-e295b2fc7793\",\"title\":\"The stock market is a fascinating place right now: Morning Brief\",\"publisher\":\"Yahoo Finance\",\"link\":\"https://finance.yahoo.com/news/stock-market-a-fascinating-place-right-now-morning-brief-104849511.html\",\"providerPublishTime\":1613126929,\"type\":\"STORY\"},{\"uuid\":\"2436aff5-8edd-3571-91f7-4f1fcae9ecaa\",\"title\":\"Better Buy: QQQ vs. VOO\",\"publisher\":\"Motley Fool\",\"link\":\"https://finance.yahoo.com/m/2436aff5-8edd-3571-91f7-4f1fcae9ecaa/better-buy%3A-qqq-vs.-voo.html\",\"providerPublishTime\":1605881460,\"type\":\"STORY\"},{\"uuid\":\"d6338d30-39a8-3ea8-b37c-7bafdabed280\",\"title\":\"Is QQQ Stock A Buy Right Now? Here's What Earnings, Charts Show\",\"publisher\":\"Investor's Business Daily\",\"link\":\"https://finance.yahoo.com/m/d6338d30-39a8-3ea8-b37c-7bafdabed280/is-qqq-stock-a-buy-right-now%3F.html\",\"providerPublishTime\":1611858977,\"type\":\"STORY\"},{\"uuid\":\"bd0df2bd-7297-369d-a675-d3c1f4d44001\",\"title\":\"If History Repeats, Nasdaq’s QQQ Will Deliver Again in 2021\",\"publisher\":\"ETF Trends\",\"link\":\"https://finance.yahoo.com/news/history-repeats-nasdaq-qqq-deliver-161458348.html\",\"providerPublishTime\":1612282498,\"type\":\"STORY\"}],\"nav\":[],\"lists\":[],\"researchReports\":[],\"totalTime\":36,\"timeTakenForQuotes\":419,\"timeTakenForNews\":700,\"timeTakenForAlgowatchlist\":400,\"timeTakenForPredefinedScreener\":400,\"timeTakenForCrunchbase\":400,\"timeTakenForNav\":400,\"timeTakenForResearchReports\":0}"
+  }
+}
