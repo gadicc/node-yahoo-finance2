@@ -88,7 +88,8 @@ Try it yourself on our
 
 ## Contributing
 
-Pull Requests welcome!  Please read [CONTRIBUTING.md](./CONTRIBUTING.md).
+Pull Requests welcome!  Read [CONTRIBUTING.md](./CONTRIBUTING.md) and join
+our list of heroes:
 
 ![contributor-faces](https://contributors-svg.vercel.app/api/svg?user=gadicc&repo=node-yahoo-finance2)
 
