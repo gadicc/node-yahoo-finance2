@@ -14,7 +14,7 @@ export interface QuoteBase {
   language: string; // "en-US",
   region: string; // "US",
   quoteType: string; // "EQUITY" | "ETF" | "MUTUALFUND";
-  quoteSourceName: string; // "Delayed Quote",
+  quoteSourceName?: string; // "Delayed Quote",
   triggerable: boolean; // true,
   currency: string; // "USD",
   marketState: "REGULAR" | "CLOSED" | "PRE" | "PREPRE" | "POST" | "POSTPOST";
@@ -49,18 +49,18 @@ export interface QuoteBase {
   priceEpsCurrentYear?: number; // 55.930042,
   sharesOutstanding?: number; // 619000000,
   bookValue?: number; // 24.772,
-  fiftyDayAverage: number; // 530.8828,
-  fiftyDayAverageChange: number; // 12.757202,
-  fiftyDayAverageChangePercent: number; // 0.024030166,
-  twoHundredDayAverage: number; // 515.8518,
-  twoHundredDayAverageChange: number; // 27.788208,
-  twoHundredDayAverageChangePercent: number; // 0.053868588,
+  fiftyDayAverage?: number; // 530.8828,
+  fiftyDayAverageChange?: number; // 12.757202,
+  fiftyDayAverageChangePercent?: number; // 0.024030166,
+  twoHundredDayAverage?: number; // 515.8518,
+  twoHundredDayAverageChange?: number; // 27.788208,
+  twoHundredDayAverageChangePercent?: number; // 0.053868588,
   marketCap?: number; // 336513171456,
   forwardPE?: number; // 46.54452,
   priceToBook?: number; // 21.945745,
   sourceInterval: number; // 15,
   exchangeDataDelayedBy: number; // 0,
-  firstTradeDateMilliseconds: DateInMs; // 917015400000 -> Date
+  firstTradeDateMilliseconds?: DateInMs; // 917015400000 -> Date
   priceHint: number; // 2,
   postMarketChangePercent?: number; // 0.093813874,
   postMarketTime?: Date; // 1612573179,
@@ -86,8 +86,8 @@ export interface QuoteBase {
   fullExchangeName: string; // "NasdaqGS",
   financialCurrency?: string; // "USD",
   regularMarketOpen?: number; // 549.0,
-  averageDailyVolume3Month: number; // 7475022,
-  averageDailyVolume10Day: number; // 5546385,
+  averageDailyVolume3Month?: number; // 7475022,
+  averageDailyVolume10Day?: number; // 5546385,
   displayName?: string; // "NVIDIA",
   symbol: string; // "NVDA"
   // only on ETF?  not on EQUITY?

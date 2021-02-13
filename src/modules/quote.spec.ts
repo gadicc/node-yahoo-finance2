@@ -1,6 +1,11 @@
 import quote from "./quote";
-import { testSymbols } from "../../tests/symbols";
+import { testSymbols as testSymbolsOriginal } from "../../tests/symbols";
 import testYf from "../../tests/testYf";
+
+const testSymbols = [
+  ...testSymbolsOriginal,
+  "AZT.OL", // Far less properties than other symbols (#42)
+];
 
 const yf = testYf({ quote });
 
