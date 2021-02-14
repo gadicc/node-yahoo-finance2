@@ -56,7 +56,7 @@ export interface AssetProfile {
   state?: string;
   zip?: string;
   country?: string;
-  phone: string;
+  phone?: string;
   fax?: string;
   website?: string;
   industry?: string;
