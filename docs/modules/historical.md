@@ -7,7 +7,7 @@ import yahooFinance from 'yahoo-finance2';
 
 const query = 'TSLA';
 const queryOptions = { period1: '2021-02-01', /* ... */ };
-const result = await yahooFinance.search(query, queryOptions);
+const result = await yahooFinance.historical(query, queryOptions);
 
 [
   {
