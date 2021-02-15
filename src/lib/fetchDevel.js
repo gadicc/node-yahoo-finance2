@@ -12,7 +12,7 @@ class FakeResponse {
   }
 
   async json() {
-    return JSON.parse(this.body);
+    return this.bodyJson || JSON.parse(this.body);
   }
 
   async text() {
@@ -59,9 +59,18 @@ async function fetchDevel(url, fetchOptions) {
           status: res.status,
           statusText: res.statusText,
           headers: res.headers.raw(),
-          body: await res.text(),
+          // body: await res.text(),
         },
       };
+
+      const contentType = contentObj.response.headers["content-type"][0].split(
+        ";"
+      );
+      if (contentType[0] === "application/json") {
+        contentObj.response.bodyJson = await res.json();
+      } else {
+        contentObj.response.body = await res.text();
+      }
 
       contentJson = JSON.stringify(contentObj, null, 2);
       await fs.promises.writeFile(filename, contentJson, { encoding: "utf8" });
