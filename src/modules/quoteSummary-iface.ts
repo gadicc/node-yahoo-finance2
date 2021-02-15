@@ -147,25 +147,25 @@ export interface CashflowStatementHistory {
 }
 
 export interface CashflowStatement {
-  maxAge: number;
-  endDate: Date;
-  netIncome: number;
-  depreciation: number;
-  changeToNetincome: number;
+  maxAge?: number;
+  endDate?: Date;
+  netIncome?: number;
+  depreciation?: number;
+  changeToNetincome?: number;
   changeToAccountReceivables?: number;
-  changeToLiabilities: number;
+  changeToLiabilities?: number;
   changeToInventory?: number;
   changeToOperatingActivities?: number;
-  totalCashFromOperatingActivities: number;
-  capitalExpenditures: number;
+  totalCashFromOperatingActivities?: number;
+  capitalExpenditures?: number;
   investments?: number;
-  otherCashflowsFromInvestingActivities: number;
-  totalCashflowsFromInvestingActivities: number;
+  otherCashflowsFromInvestingActivities?: number;
+  totalCashflowsFromInvestingActivities?: number;
   dividendsPaid?: number;
   netBorrowings?: number;
-  otherCashflowsFromFinancingActivities: number;
-  totalCashFromFinancingActivities: number;
-  changeInCash: number;
+  otherCashflowsFromFinancingActivities?: number;
+  totalCashFromFinancingActivities?: number;
+  changeInCash?: number;
   repurchaseOfStock?: number;
   issuanceOfStock?: number;
   effectOfExchangeRate?: number;
@@ -663,7 +663,7 @@ export interface Price {
   regularMarketSource: string;
   regularMarketOpen?: number;
 
-  quoteSourceName: string;
+  quoteSourceName?: string;
   quoteType: string;
 
   symbol: string;

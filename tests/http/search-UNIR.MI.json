@@ -1,0 +1,70 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=UNIR.MI"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "d1dulp9g2lbsf"
+      ],
+      "x-yahoo-request-id": [
+        "d1dulp9g2lbsf"
+      ],
+      "x-request-id": [
+        "b36293d9-69bd-4333-80fb-91b8dbd9a0b7"
+      ],
+      "content-length": [
+        "488"
+      ],
+      "x-envoy-upstream-service-time": [
+        "45"
+      ],
+      "date": [
+        "Mon, 15 Feb 2021 17:29:51 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"explains\":[],\"count\":1,\"quotes\":[{\"exchange\":\"MIL\",\"shortname\":\"UNIEURO\",\"quoteType\":\"EQUITY\",\"symbol\":\"UNIR.MI\",\"index\":\"quotes\",\"score\":2000500.0,\"typeDisp\":\"Equity\",\"longname\":\"Unieuro S.p.A.\",\"isYahooFinance\":true}],\"news\":[],\"nav\":[],\"lists\":[],\"researchReports\":[],\"totalTime\":43,\"timeTakenForQuotes\":419,\"timeTakenForNews\":700,\"timeTakenForAlgowatchlist\":400,\"timeTakenForPredefinedScreener\":400,\"timeTakenForCrunchbase\":400,\"timeTakenForNav\":400,\"timeTakenForResearchReports\":0}"
+  }
+}
