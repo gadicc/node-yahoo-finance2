@@ -91,25 +91,25 @@ export interface BalanceSheetHistory {
 }
 
 export interface BalanceSheetStatement {
-  maxAge: number;
-  endDate: Date;
-  cash: number;
+  maxAge?: number;
+  endDate?: Date;
+  cash?: number;
   shortTermInvestments?: number;
   netReceivables?: number;
   inventory?: number;
-  otherCurrentAssets: number;
-  totalCurrentAssets: number;
-  longTermInvestments: number;
-  propertyPlantEquipment: number;
-  otherAssets: number;
-  totalAssets: number;
+  otherCurrentAssets?: number;
+  totalCurrentAssets?: number;
+  longTermInvestments?: number;
+  propertyPlantEquipment?: number;
+  otherAssets?: number;
+  totalAssets?: number;
   accountsPayable?: number;
   shortLongTermDebt?: number;
-  otherCurrentLiab: number;
-  longTermDebt: number;
-  otherLiab: number;
-  totalCurrentLiabilities: number;
-  totalLiab: number;
+  otherCurrentLiab?: number;
+  longTermDebt?: number;
+  otherLiab?: number;
+  totalCurrentLiabilities?: number;
+  totalLiab?: number;
   commonStock?: number;
   retainedEarnings?: number;
   treasuryStock?: number;
@@ -189,6 +189,7 @@ export interface DefaultKeyStatistics {
   shortRatio?: number;
   shortPercentOfFloat?: number;
   beta?: number;
+  impliedSharesOutstanding?: number;
   category: null | string;
   bookValue?: number;
   priceToBook?: number;
@@ -558,7 +559,7 @@ export interface Holders {
 export interface Holder {
   maxAge: number;
   name: string;
-  relation: Relation;
+  relation: Relation | string;
   url: string;
   transactionDescription: string;
   latestTransDate: Date;
@@ -594,10 +595,10 @@ export interface Transaction {
   filerUrl: string;
   transactionText: string;
   filerName: string;
-  filerRelation: Relation;
+  filerRelation: Relation | string;
   moneyText: string;
   startDate: Date;
-  ownership: OwnershipEnum;
+  ownership: OwnershipEnum | string;
   value?: number;
 }
 
@@ -716,7 +717,7 @@ export interface SECFilings {
 }
 
 export interface Filing {
-  date: string; // TODO
+  date: string; // TODO: check the format
   epochDate: Date;
   type: Type;
   title: string;
@@ -728,6 +729,7 @@ export enum Type {
   The10K = "10-K",
   The10Q = "10-Q",
   The8K = "8-K",
+  The8KA = "8-K/A",
 }
 
 export interface SummaryDetail {
@@ -865,11 +867,11 @@ export interface UpgradeDowngradeHistory {
 }
 
 export interface UpgradeDowngradeHistoryHistory {
-  epochGradeDate: Date;
-  firm: string;
-  toGrade: Grade;
-  fromGrade: Grade;
-  action: Action;
+  epochGradeDate?: Date;
+  firm?: string;
+  toGrade?: Grade;
+  fromGrade?: Grade;
+  action?: Action;
 }
 
 export enum Action {
@@ -893,6 +895,7 @@ export enum Grade {
   MarketPerform = "Market Perform",
   Negative = "Negative",
   Neutral = "Neutral",
+  InLine = "In-Line",
   Outperform = "Outperform",
   Overweight = "Overweight",
   Perform = "Perform",

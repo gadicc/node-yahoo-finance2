@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/GOOG?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "dkiucc1g2l3vd"
+      ],
+      "x-yahoo-request-id": [
+        "dkiucc1g2l3vd"
+      ],
+      "x-request-id": [
+        "97d05445-9e06-48fc-9a20-9d26bca7fbb9"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "471"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Mon, 15 Feb 2021 15:14:53 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"price\":{\"maxAge\":1,\"preMarketSource\":\"FREE_REALTIME\",\"postMarketChangePercent\":0.0018487115,\"postMarketChange\":3.8898926,\"postMarketTime\":1613177974,\"postMarketPrice\":2108.0,\"postMarketSource\":\"DELAYED\",\"regularMarketChangePercent\":0.0039220643,\"regularMarketChange\":8.220215,\"regularMarketTime\":1613163603,\"priceHint\":2,\"regularMarketPrice\":2104.11,\"regularMarketDayHigh\":2108.82,\"regularMarketDayLow\":2083.13,\"regularMarketVolume\":855865,\"regularMarketPreviousClose\":2095.89,\"regularMarketSource\":\"FREE_REALTIME\",\"regularMarketOpen\":2090.25,\"exchange\":\"NMS\",\"exchangeName\":\"NasdaqGS\",\"exchangeDataDelayedBy\":0,\"marketState\":\"CLOSED\",\"quoteType\":\"EQUITY\",\"symbol\":\"GOOG\",\"underlyingSymbol\":null,\"shortName\":\"Alphabet Inc.\",\"longName\":\"Alphabet Inc.\",\"currency\":\"USD\",\"quoteSourceName\":\"Delayed Quote\",\"currencySymbol\":\"$\",\"fromCurrency\":null,\"toCurrency\":null,\"lastMarket\":null,\"marketCap\":1415310737408}}],\"error\":null}}"
+  }
+}

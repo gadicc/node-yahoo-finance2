@@ -1,0 +1,70 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/GOOG?formatted=false&modules=netSharePurchaseActivity"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "f1894qpg2l3vd"
+      ],
+      "x-yahoo-request-id": [
+        "f1894qpg2l3vd"
+      ],
+      "x-request-id": [
+        "83fce19b-d376-45e8-b5f1-78278d069d14"
+      ],
+      "content-length": [
+        "281"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Mon, 15 Feb 2021 15:14:53 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"netSharePurchaseActivity\":{\"maxAge\":1,\"period\":\"6m\",\"buyInfoCount\":16,\"buyInfoShares\":47312,\"sellInfoCount\":13,\"sellInfoShares\":5589,\"netInfoCount\":29,\"netInfoShares\":41723,\"netPercentInsiderShares\":0.001,\"totalInsiderShares\":39490920}}],\"error\":null}}"
+  }
+}
