@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=SPOT"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "94lapedg2l2jk"
+      ],
+      "x-yahoo-request-id": [
+        "94lapedg2l2jk"
+      ],
+      "x-request-id": [
+        "510749a4-f256-43a7-8877-d8b9d975ac1c"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "949"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Mon, 15 Feb 2021 14:51:31 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteResponse\":{\"result\":[{\"language\":\"en-US\",\"region\":\"US\",\"quoteType\":\"EQUITY\",\"quoteSourceName\":\"Delayed Quote\",\"triggerable\":true,\"currency\":\"USD\",\"marketState\":\"CLOSED\",\"postMarketChangePercent\":-0.0883186,\"postMarketTime\":1613177967,\"postMarketPrice\":339.4,\"postMarketChange\":-0.3000183,\"regularMarketChange\":7.80002,\"regularMarketChangePercent\":2.35011,\"regularMarketTime\":1613163602,\"regularMarketPrice\":339.7,\"regularMarketDayHigh\":340.43,\"regularMarketDayRange\":\"329.395 - 340.43\",\"regularMarketDayLow\":329.395,\"regularMarketVolume\":1119505,\"regularMarketPreviousClose\":331.9,\"bid\":339.06,\"ask\":339.4,\"bidSize\":13,\"askSize\":11,\"fullExchangeName\":\"NYSE\",\"financialCurrency\":\"EUR\",\"regularMarketOpen\":333.94,\"averageDailyVolume3Month\":1528480,\"averageDailyVolume10Day\":1505766,\"fiftyTwoWeekLowChange\":230.52002,\"fiftyTwoWeekLowChangePercent\":2.1113758,\"fiftyTwoWeekRange\":\"109.18 - 370.95\",\"fiftyTwoWeekHighChange\":-31.25,\"fiftyTwoWeekHighChangePercent\":-0.084243156,\"fiftyTwoWeekLow\":109.18,\"fiftyTwoWeekHigh\":370.95,\"earningsTimestamp\":1612332000,\"earningsTimestampStart\":1619526600,\"earningsTimestampEnd\":1620045000,\"epsTrailingTwelveMonths\":-7.629,\"epsForward\":-0.86,\"epsCurrentYear\":-1.9,\"priceEpsCurrentYear\":-178.78949,\"sharesOutstanding\":189586000,\"bookValue\":10.251,\"fiftyDayAverage\":329.04788,\"fiftyDayAverageChange\":10.65213,\"fiftyDayAverageChangePercent\":0.032372583,\"twoHundredDayAverage\":283.17914,\"twoHundredDayAverageChange\":56.520874,\"twoHundredDayAverageChangePercent\":0.19959407,\"marketCap\":64615354368,\"firstTradeDateMilliseconds\":1522762200000,\"priceHint\":2,\"exchange\":\"NYQ\",\"shortName\":\"Spotify Technology S.A.\",\"longName\":\"Spotify Technology S.A.\",\"messageBoardId\":\"finmb_225595077\",\"exchangeTimezoneName\":\"America/New_York\",\"exchangeTimezoneShortName\":\"EST\",\"gmtOffSetMilliseconds\":-18000000,\"market\":\"us_market\",\"esgPopulated\":false,\"forwardPE\":-395.0,\"priceToBook\":33.13823,\"sourceInterval\":15,\"exchangeDataDelayedBy\":0,\"tradeable\":false,\"displayName\":\"Spotify \",\"symbol\":\"SPOT\"}],\"error\":null}}"
+  }
+}

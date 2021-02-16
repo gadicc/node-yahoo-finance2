@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SPOT?formatted=false&modules=earningsTrend"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "6n4t7hdg2l2jm"
+      ],
+      "x-yahoo-request-id": [
+        "6n4t7hdg2l2jm"
+      ],
+      "x-request-id": [
+        "58b20236-cf10-463b-93f9-dc8d08ff37ca"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1076"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Mon, 15 Feb 2021 14:51:33 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"earningsTrend\":{\"trend\":[{\"maxAge\":1,\"period\":\"0q\",\"endDate\":\"2021-03-31\",\"growth\":{\"raw\":-1.3,\"fmt\":\"-130.00%\"},\"earningsEstimate\":{\"avg\":{\"raw\":-0.46,\"fmt\":\"-0.46\"},\"low\":{\"raw\":-1.18,\"fmt\":\"-1.18\"},\"high\":{\"raw\":0.15,\"fmt\":\"0.15\"},\"yearAgoEps\":{\"raw\":-0.2,\"fmt\":\"-0.2\"},\"numberOfAnalysts\":{\"raw\":23,\"fmt\":\"23\",\"longFmt\":\"23\"},\"growth\":{\"raw\":-1.3,\"fmt\":\"-130.00%\"}},\"revenueEstimate\":{\"avg\":{\"raw\":2614010000,\"fmt\":\"2.61B\",\"longFmt\":\"2,614,010,000\"},\"low\":{\"raw\":2512620000,\"fmt\":\"2.51B\",\"longFmt\":\"2,512,620,000\"},\"high\":{\"raw\":2794640000,\"fmt\":\"2.79B\",\"longFmt\":\"2,794,640,000\"},\"numberOfAnalysts\":{\"raw\":20,\"fmt\":\"20\",\"longFmt\":\"20\"},\"yearAgoRevenue\":{\"raw\":1848000000,\"fmt\":\"1.85B\",\"longFmt\":\"1,848,000,000\"},\"growth\":{\"raw\":0.415,\"fmt\":\"41.50%\"}},\"epsTrend\":{\"current\":{\"raw\":-0.46,\"fmt\":\"-0.46\"},\"7daysAgo\":{\"raw\":-0.47,\"fmt\":\"-0.47\"},\"30daysAgo\":{\"raw\":-0.31,\"fmt\":\"-0.31\"},\"60daysAgo\":{\"raw\":-0.32,\"fmt\":\"-0.32\"},\"90daysAgo\":{\"raw\":-0.29,\"fmt\":\"-0.29\"}},\"epsRevisions\":{\"upLast7days\":{\"raw\":1,\"fmt\":\"1\",\"longFmt\":\"1\"},\"upLast30days\":{\"raw\":5,\"fmt\":\"5\",\"longFmt\":\"5\"},\"downLast30days\":{\"raw\":1,\"fmt\":\"1\",\"longFmt\":\"1\"},\"downLast90days\":{}}},{\"maxAge\":1,\"period\":\"+1q\",\"endDate\":\"2021-06-30\",\"growth\":{\"raw\":0.731,\"fmt\":\"73.10%\"},\"earningsEstimate\":{\"avg\":{\"raw\":-0.6,\"fmt\":\"-0.6\"},\"low\":{\"raw\":-1.51,\"fmt\":\"-1.51\"},\"high\":{\"raw\":-0.08,\"fmt\":\"-0.08\"},\"yearAgoEps\":{\"raw\":-2.23,\"fmt\":\"-2.23\"},\"numberOfAnalysts\":{\"raw\":22,\"fmt\":\"22\",\"longFmt\":\"22\"},\"growth\":{\"raw\":0.731,\"fmt\":\"73.10%\"}},\"revenueEstimate\":{\"avg\":{\"raw\":2763070000,\"fmt\":\"2.76B\",\"longFmt\":\"2,763,070,000\"},\"low\":{\"raw\":2648000000,\"fmt\":\"2.65B\",\"longFmt\":\"2,648,000,000\"},\"high\":{\"raw\":2959460000,\"fmt\":\"2.96B\",\"longFmt\":\"2,959,460,000\"},\"numberOfAnalysts\":{\"raw\":20,\"fmt\":\"20\",\"longFmt\":\"20\"},\"yearAgoRevenue\":{\"raw\":2206050000,\"fmt\":\"2.21B\",\"longFmt\":\"2,206,050,000\"},\"growth\":{\"raw\":0.252,\"fmt\":\"25.20%\"}},\"epsTrend\":{\"current\":{\"raw\":-0.6,\"fmt\":\"-0.6\"},\"7daysAgo\":{\"raw\":-0.58,\"fmt\":\"-0.58\"},\"30daysAgo\":{\"raw\":-0.36,\"fmt\":\"-0.36\"},\"60daysAgo\":{\"raw\":-0.37,\"fmt\":\"-0.37\"},\"90daysAgo\":{\"raw\":-0.35,\"fmt\":\"-0.35\"}},\"epsRevisions\":{\"upLast7days\":{\"raw\":0,\"fmt\":null,\"longFmt\":\"0\"},\"upLast30days\":{\"raw\":2,\"fmt\":\"2\",\"longFmt\":\"2\"},\"downLast30days\":{\"raw\":2,\"fmt\":\"2\",\"longFmt\":\"2\"},\"downLast90days\":{}}},{\"maxAge\":1,\"period\":\"0y\",\"endDate\":\"2021-12-31\",\"growth\":{\"raw\":0.495,\"fmt\":\"49.50%\"},\"earningsEstimate\":{\"avg\":{\"raw\":-1.9,\"fmt\":\"-1.9\"},\"low\":{\"raw\":-4.46,\"fmt\":\"-4.46\"},\"high\":{\"raw\":-0.45,\"fmt\":\"-0.45\"},\"yearAgoEps\":{\"raw\":-3.76,\"fmt\":\"-3.76\"},\"numberOfAnalysts\":{\"raw\":27,\"fmt\":\"27\",\"longFmt\":\"27\"},\"growth\":{\"raw\":0.495,\"fmt\":\"49.50%\"}},\"revenueEstimate\":{\"avg\":{\"raw\":11433500000,\"fmt\":\"11.43B\",\"longFmt\":\"11,433,500,000\"},\"low\":{\"raw\":11222400000,\"fmt\":\"11.22B\",\"longFmt\":\"11,222,400,000\"},\"high\":{\"raw\":12138400000,\"fmt\":\"12.14B\",\"longFmt\":\"12,138,400,000\"},\"numberOfAnalysts\":{\"raw\":27,\"fmt\":\"27\",\"longFmt\":\"27\"},\"yearAgoRevenue\":{\"raw\":9549770000,\"fmt\":\"9.55B\",\"longFmt\":\"9,549,770,000\"},\"growth\":{\"raw\":0.19700001,\"fmt\":\"19.70%\"}},\"epsTrend\":{\"current\":{\"raw\":-1.9,\"fmt\":\"-1.9\"},\"7daysAgo\":{\"raw\":-1.82,\"fmt\":\"-1.82\"},\"30daysAgo\":{\"raw\":-1.49,\"fmt\":\"-1.49\"},\"60daysAgo\":{\"raw\":-1.51,\"fmt\":\"-1.51\"},\"90daysAgo\":{\"raw\":-1.42,\"fmt\":\"-1.42\"}},\"epsRevisions\":{\"upLast7days\":{\"raw\":0,\"fmt\":null,\"longFmt\":\"0\"},\"upLast30days\":{\"raw\":4,\"fmt\":\"4\",\"longFmt\":\"4\"},\"downLast30days\":{\"raw\":5,\"fmt\":\"5\",\"longFmt\":\"5\"},\"downLast90days\":{}}},{\"maxAge\":1,\"period\":\"+1y\",\"endDate\":\"2022-12-31\",\"growth\":{\"raw\":0.547,\"fmt\":\"54.70%\"},\"earningsEstimate\":{\"avg\":{\"raw\":-0.86,\"fmt\":\"-0.86\"},\"low\":{\"raw\":-3.99,\"fmt\":\"-3.99\"},\"high\":{\"raw\":0.8,\"fmt\":\"0.8\"},\"yearAgoEps\":{\"raw\":-1.9,\"fmt\":\"-1.9\"},\"numberOfAnalysts\":{\"raw\":26,\"fmt\":\"26\",\"longFmt\":\"26\"},\"growth\":{\"raw\":0.547,\"fmt\":\"54.70%\"}},\"revenueEstimate\":{\"avg\":{\"raw\":13619700000,\"fmt\":\"13.62B\",\"longFmt\":\"13,619,700,000\"},\"low\":{\"raw\":13015100000,\"fmt\":\"13.02B\",\"longFmt\":\"13,015,100,000\"},\"high\":{\"raw\":14518600000,\"fmt\":\"14.52B\",\"longFmt\":\"14,518,600,000\"},\"numberOfAnalysts\":{\"raw\":26,\"fmt\":\"26\",\"longFmt\":\"26\"},\"yearAgoRevenue\":{\"raw\":11433500000,\"fmt\":\"11.43B\",\"longFmt\":\"11,433,500,000\"},\"growth\":{\"raw\":0.191,\"fmt\":\"19.10%\"}},\"epsTrend\":{\"current\":{\"raw\":-0.86,\"fmt\":\"-0.86\"},\"7daysAgo\":{\"raw\":-0.82,\"fmt\":\"-0.82\"},\"30daysAgo\":{\"raw\":-0.17,\"fmt\":\"-0.17\"},\"60daysAgo\":{\"raw\":-0.18,\"fmt\":\"-0.18\"},\"90daysAgo\":{\"raw\":-0.09,\"fmt\":\"-0.09\"}},\"epsRevisions\":{\"upLast7days\":{\"raw\":0,\"fmt\":null,\"longFmt\":\"0\"},\"upLast30days\":{\"raw\":4,\"fmt\":\"4\",\"longFmt\":\"4\"},\"downLast30days\":{\"raw\":4,\"fmt\":\"4\",\"longFmt\":\"4\"},\"downLast90days\":{}}},{\"maxAge\":1,\"period\":\"+5y\",\"endDate\":null,\"growth\":{\"raw\":1.4191,\"fmt\":\"141.91%\"},\"earningsEstimate\":{\"avg\":{},\"low\":{},\"high\":{},\"yearAgoEps\":{},\"numberOfAnalysts\":{},\"growth\":{}},\"revenueEstimate\":{\"avg\":{},\"low\":{},\"high\":{},\"numberOfAnalysts\":{},\"yearAgoRevenue\":{},\"growth\":{}},\"epsTrend\":{\"current\":{},\"7daysAgo\":{},\"30daysAgo\":{},\"60daysAgo\":{},\"90daysAgo\":{}},\"epsRevisions\":{\"upLast7days\":{},\"upLast30days\":{},\"downLast30days\":{},\"downLast90days\":{}}},{\"maxAge\":1,\"period\":\"-5y\",\"endDate\":null,\"growth\":{},\"earningsEstimate\":{\"avg\":{},\"low\":{},\"high\":{},\"yearAgoEps\":{},\"numberOfAnalysts\":{},\"growth\":{}},\"revenueEstimate\":{\"avg\":{},\"low\":{},\"high\":{},\"numberOfAnalysts\":{},\"yearAgoRevenue\":{},\"growth\":{}},\"epsTrend\":{\"current\":{},\"7daysAgo\":{},\"30daysAgo\":{},\"60daysAgo\":{},\"90daysAgo\":{}},\"epsRevisions\":{\"upLast7days\":{},\"upLast30days\":{},\"downLast30days\":{},\"downLast90days\":{}}}],\"maxAge\":1}}],\"error\":null}}"
+  }
+}

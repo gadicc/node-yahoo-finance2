@@ -30,6 +30,10 @@ export interface SearchQuoteYahooFund extends SearchQuoteYahoo {
   quoteType: "MUTUALFUND";
   typeDisp: "Fund";
 }
+export interface SearchQuoteYahooIndex extends SearchQuoteYahoo {
+  quoteType: "INDEX";
+  typeDisp: "Index";
+}
 export interface SearchQuoteNonYahoo {
   index: string; // '78ddc07626ff4bbcae663e88514c23a0'
   name: string; // 'AAPlasma'
@@ -54,6 +58,7 @@ export interface SearchResult {
     | SearchQuoteYahooOption
     | SearchQuoteYahooETF
     | SearchQuoteYahooFund
+    | SearchQuoteYahooIndex
     | SearchQuoteNonYahoo
   >;
   news: Array<SearchNews>;

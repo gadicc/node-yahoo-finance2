@@ -1,5 +1,8 @@
 export const testSymbols = [
   "AAPL", // NMS (Nasdaq)
+  "SPOT", // NMS (Nasdaq)
+  "GOOG", // NMS (Nasdaq)
+  "UNIR.MI", // FTSE MIB
   "OCDO.L", // LSE
   "BABA", // NYSE
   "QQQ", // ETF

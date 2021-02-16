@@ -14,7 +14,7 @@ export interface AutocResult {
   symbol: string; // "AMZN"
   name: string; // "Amazon.com, Inc."
   exch: string; // "NMS"
-  type: string; // "S".    TODO "S" | "I" | ???
+  type: string; // "S".    TODO: "S" | "I" | ???
   exchDisp: string; // "NASDAQ"
   typeDisp: string; // "Equity"
 }

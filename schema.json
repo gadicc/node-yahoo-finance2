@@ -100,7 +100,6 @@
       },
       "required": [
         "maxAge",
-        "phone",
         "longBusinessSummary",
         "companyOfficers"
       ],
@@ -323,20 +322,6 @@
         }
       },
       "required": [
-        "maxAge",
-        "endDate",
-        "cash",
-        "otherCurrentAssets",
-        "totalCurrentAssets",
-        "longTermInvestments",
-        "propertyPlantEquipment",
-        "otherAssets",
-        "totalAssets",
-        "otherCurrentLiab",
-        "longTermDebt",
-        "otherLiab",
-        "totalCurrentLiabilities",
-        "totalLiab",
         "totalStockholderEquity",
         "netTangibleAssets"
       ],
@@ -467,21 +452,6 @@
           "yahooFinanceType": "number"
         }
       },
-      "required": [
-        "maxAge",
-        "endDate",
-        "netIncome",
-        "depreciation",
-        "changeToNetincome",
-        "changeToLiabilities",
-        "totalCashFromOperatingActivities",
-        "capitalExpenditures",
-        "otherCashflowsFromInvestingActivities",
-        "totalCashflowsFromInvestingActivities",
-        "otherCashflowsFromFinancingActivities",
-        "totalCashFromFinancingActivities",
-        "changeInCash"
-      ],
       "type": "object"
     },
     "CashflowStatementHistory": {
@@ -614,6 +584,9 @@
           "yahooFinanceType": "number"
         },
         "heldPercentInstitutions": {
+          "yahooFinanceType": "number"
+        },
+        "impliedSharesOutstanding": {
           "yahooFinanceType": "number"
         },
         "lastCapGain": {
@@ -1682,6 +1655,7 @@
         "Market Perform",
         "Negative",
         "Neutral",
+        "In-Line",
         "Outperform",
         "Overweight",
         "Perform",
@@ -1831,7 +1805,14 @@
           "yahooFinanceType": "number"
         },
         "relation": {
-          "$ref": "#/definitions/Relation"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Relation"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "transactionDescription": {
           "type": "string"
@@ -2481,7 +2462,6 @@
         "regularMarketPrice",
         "regularMarketPreviousClose",
         "regularMarketSource",
-        "quoteSourceName",
         "quoteType",
         "symbol",
         "underlyingSymbol",
@@ -4368,6 +4348,52 @@
       ],
       "type": "object"
     },
+    "SearchQuoteYahooIndex": {
+      "additionalProperties": false,
+      "properties": {
+        "exchange": {
+          "type": "string"
+        },
+        "index": {
+          "const": "quotes",
+          "type": "string"
+        },
+        "isYahooFinance": {
+          "const": true,
+          "type": "boolean"
+        },
+        "longname": {
+          "type": "string"
+        },
+        "quoteType": {
+          "const": "INDEX",
+          "type": "string"
+        },
+        "score": {
+          "yahooFinanceType": "number"
+        },
+        "shortname": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "typeDisp": {
+          "const": "Index",
+          "type": "string"
+        }
+      },
+      "required": [
+        "exchange",
+        "index",
+        "isYahooFinance",
+        "quoteType",
+        "score",
+        "symbol",
+        "typeDisp"
+      ],
+      "type": "object"
+    },
     "SearchQuoteYahooOption": {
       "additionalProperties": false,
       "properties": {
@@ -4452,6 +4478,9 @@
               },
               {
                 "$ref": "#/definitions/SearchQuoteYahooFund"
+              },
+              {
+                "$ref": "#/definitions/SearchQuoteYahooIndex"
               },
               {
                 "$ref": "#/definitions/SearchQuoteNonYahoo"
@@ -4935,7 +4964,14 @@
           "type": "string"
         },
         "filerRelation": {
-          "$ref": "#/definitions/Relation"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Relation"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "filerUrl": {
           "type": "string"
@@ -4947,7 +4983,14 @@
           "type": "string"
         },
         "ownership": {
-          "$ref": "#/definitions/OwnershipEnum"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/OwnershipEnum"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "shares": {
           "yahooFinanceType": "number"
@@ -5016,7 +5059,8 @@
       "enum": [
         "10-K",
         "10-Q",
-        "8-K"
+        "8-K",
+        "8-K/A"
       ],
       "type": "string"
     },
@@ -5058,13 +5102,6 @@
           "$ref": "#/definitions/Grade"
         }
       },
-      "required": [
-        "epochGradeDate",
-        "firm",
-        "toGrade",
-        "fromGrade",
-        "action"
-      ],
       "type": "object"
     },
     "Yearly": {

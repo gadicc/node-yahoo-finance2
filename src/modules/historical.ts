@@ -20,7 +20,7 @@ export interface HistoricalRow {
 export interface HistoricalOptions {
   period1: Date | string | number;
   period2?: Date | string | number;
-  interval?: "1d" | "1wk" | "1mo"; // '1d',  TODO all | types
+  interval?: "1d" | "1wk" | "1mo"; // '1d',  TODO: all | types
   events?: string; // 'history',
   includeAdjustedClose?: boolean; // true,
 }
