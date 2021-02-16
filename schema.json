@@ -322,6 +322,10 @@
         }
       },
       "required": [
+        "maxAge",
+        "endDate",
+        "totalAssets",
+        "totalLiab",
         "totalStockholderEquity",
         "netTangibleAssets"
       ],
@@ -452,6 +456,11 @@
           "yahooFinanceType": "number"
         }
       },
+      "required": [
+        "maxAge",
+        "endDate",
+        "netIncome"
+      ],
       "type": "object"
     },
     "CashflowStatementHistory": {
@@ -5102,6 +5111,12 @@
           "$ref": "#/definitions/Grade"
         }
       },
+      "required": [
+        "epochGradeDate",
+        "firm",
+        "toGrade",
+        "action"
+      ],
       "type": "object"
     },
     "Yearly": {

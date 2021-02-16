@@ -91,8 +91,8 @@ export interface BalanceSheetHistory {
 }
 
 export interface BalanceSheetStatement {
-  maxAge?: number;
-  endDate?: Date;
+  maxAge: number;
+  endDate: Date;
   cash?: number;
   shortTermInvestments?: number;
   netReceivables?: number;
@@ -102,14 +102,14 @@ export interface BalanceSheetStatement {
   longTermInvestments?: number;
   propertyPlantEquipment?: number;
   otherAssets?: number;
-  totalAssets?: number;
+  totalAssets: number;
   accountsPayable?: number;
   shortLongTermDebt?: number;
   otherCurrentLiab?: number;
   longTermDebt?: number;
   otherLiab?: number;
   totalCurrentLiabilities?: number;
-  totalLiab?: number;
+  totalLiab: number;
   commonStock?: number;
   retainedEarnings?: number;
   treasuryStock?: number;
@@ -147,9 +147,9 @@ export interface CashflowStatementHistory {
 }
 
 export interface CashflowStatement {
-  maxAge?: number;
-  endDate?: Date;
-  netIncome?: number;
+  maxAge: number;
+  endDate: Date;
+  netIncome: number;
   depreciation?: number;
   changeToNetincome?: number;
   changeToAccountReceivables?: number;
@@ -867,11 +867,11 @@ export interface UpgradeDowngradeHistory {
 }
 
 export interface UpgradeDowngradeHistoryHistory {
-  epochGradeDate?: Date;
-  firm?: string;
-  toGrade?: Grade;
+  epochGradeDate: Date;
+  firm: string;
+  toGrade: Grade;
   fromGrade?: Grade;
-  action?: Action;
+  action: Action;
 }
 
 export enum Action {
