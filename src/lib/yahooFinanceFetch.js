@@ -14,13 +14,14 @@ async function yahooFinanceFetch(
       "yahooFinanceFetch called without this._env set"
     );
 
-  const { URLSearchParams, fetch } = this._env;
+  const { URLSearchParams, fetch, fetchDevel } = this._env;
 
   const urlSearchParams = new URLSearchParams(params);
   const url = urlBase + "?" + urlSearchParams.toString();
 
   /* istanbul ignore next */
-  const fetchFunc = moduleOpts.devel ? require("./fetchDevel") : fetch; // no need to force coverage on real network request.
+  // no need to force coverage on real network request.
+  const fetchFunc = moduleOpts.devel ? fetchDevel() : fetch;
 
   const fetchOptions = {
     "User-Agent": userAgent,
