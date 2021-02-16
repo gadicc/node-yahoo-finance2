@@ -14,10 +14,15 @@ const yf = {
 };
 
 describe("recommendationsBySymbol", () => {
-  // make sure it passes validation for some symbols
-  it.each(testSymbols)("passes validation for symbol '%s'", async (symbol) => {
-    const devel = `recommendationsBySymbol-${symbol}.json`;
-    await yf.recommendationsBySymbol(symbol, {}, { devel });
+
+  describe('passes validation', () => {
+
+    // make sure it passes validation for some symbols
+    it.each(testSymbols)("for symbol '%s'", async (symbol) => {
+      const devel = `recommendationsBySymbol-${symbol}.json`;
+      await yf.recommendationsBySymbol(symbol, {}, { devel });
+    });
+
   });
 
   // make sure it passes validation for multiple symbols
