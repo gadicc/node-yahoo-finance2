@@ -10,6 +10,8 @@
 <a name="common-options"></a>
 ## Common Options
 
+**NOTE:** Setting the `devel` option to true will not work in the browser, as it requires a filesystem and some modules only available in node. However, the real API can be used as normal in a browser environment.
+
 Coming soon. Briefly:
 
 ```js
