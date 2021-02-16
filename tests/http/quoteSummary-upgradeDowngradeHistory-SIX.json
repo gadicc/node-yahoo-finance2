@@ -1,0 +1,639 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SIX?formatted=false&modules=upgradeDowngradeHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "ba5qdfpg2nuhf"
+      ],
+      "x-yahoo-request-id": [
+        "ba5qdfpg2nuhf"
+      ],
+      "x-request-id": [
+        "f60e9cc4-230c-4882-82ba-722eb948809b"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 17:00:31 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "transfer-encoding": [
+        "chunked"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "upgradeDowngradeHistory": {
+              "history": [
+                {
+                  "epochGradeDate": 1604307883,
+                  "firm": "KeyBanc",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1604054666,
+                  "firm": "Jefferies",
+                  "toGrade": "Buy",
+                  "fromGrade": "Hold",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1601631741,
+                  "firm": "Goldman Sachs",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Sell",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1596122329,
+                  "firm": "SunTrust Robinson Humphrey",
+                  "toGrade": "Hold",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1596099323,
+                  "firm": "KeyBanc",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1595938492,
+                  "firm": "Credit Suisse",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1594295238,
+                  "firm": "Janney Capital",
+                  "toGrade": "Buy",
+                  "fromGrade": "Neutral",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1592217228,
+                  "firm": "B. Riley FBR",
+                  "toGrade": "Buy",
+                  "fromGrade": "Neutral",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1590684068,
+                  "firm": "Goldman Sachs",
+                  "toGrade": "Sell",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1588683873,
+                  "firm": "Wells Fargo",
+                  "toGrade": "Equal-Weight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1588352480,
+                  "firm": "SunTrust Robinson Humphrey",
+                  "toGrade": "Hold",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1588346698,
+                  "firm": "B. Riley FBR",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1588328370,
+                  "firm": "KeyBanc",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1587397727,
+                  "firm": "KeyBanc",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1586431567,
+                  "firm": "B. Riley FBR",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1584961440,
+                  "firm": "B. Riley FBR",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Buy",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1584954791,
+                  "firm": "B. Riley",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Buy",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1584523978,
+                  "firm": "Oppenheimer",
+                  "toGrade": "Perform",
+                  "fromGrade": "Outperform",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1583838519,
+                  "firm": "B. Riley FBR",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1582289408,
+                  "firm": "Wedbush",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1582289366,
+                  "firm": "B. Riley FBR",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1582279486,
+                  "firm": "KeyBanc",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1578939768,
+                  "firm": "B. Riley FBR",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1578678953,
+                  "firm": "SunTrust Robinson Humphrey",
+                  "toGrade": "Hold",
+                  "fromGrade": "Buy",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1578668517,
+                  "firm": "Janney Capital",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Buy",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1578664468,
+                  "firm": "Wells Fargo",
+                  "toGrade": "Equal-Weight",
+                  "fromGrade": "Overweight",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1578318281,
+                  "firm": "Wedbush",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Outperform",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1577969059,
+                  "firm": "KeyBanc",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "reit"
+                },
+                {
+                  "epochGradeDate": 1572610015,
+                  "firm": "Berenberg",
+                  "toGrade": "Hold",
+                  "fromGrade": "Buy",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1571996638,
+                  "firm": "KeyBanc",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1571921789,
+                  "firm": "B. Riley",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1571918123,
+                  "firm": "Wedbush",
+                  "toGrade": "Outperform",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1562673853,
+                  "firm": "Wells Fargo",
+                  "toGrade": "Outperform",
+                  "fromGrade": "Market Perform",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1561978552,
+                  "firm": "KeyBanc",
+                  "toGrade": "Overweight",
+                  "fromGrade": "Sector Weight",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1560942985,
+                  "firm": "Wedbush",
+                  "toGrade": "Outperform",
+                  "fromGrade": "Neutral",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1555933988,
+                  "firm": "Jefferies",
+                  "toGrade": "Hold",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1550230402,
+                  "firm": "KeyBanc",
+                  "toGrade": "Sector Weight",
+                  "fromGrade": "Overweight",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1544624375,
+                  "firm": "Berenberg",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1541076814,
+                  "firm": "B. Riley FBR",
+                  "toGrade": "Buy",
+                  "fromGrade": "Buy",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1540550519,
+                  "firm": "Macquarie",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Underperform",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1540475034,
+                  "firm": "KeyBanc",
+                  "toGrade": "Overweight",
+                  "fromGrade": "Overweight",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1532604530,
+                  "firm": "KeyBanc",
+                  "toGrade": "Overweight",
+                  "fromGrade": "Overweight",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1532086418,
+                  "firm": "Wedbush",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Outperform",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1531147804,
+                  "firm": "Wells Fargo",
+                  "toGrade": "Market Perform",
+                  "fromGrade": "Outperform",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1524757362,
+                  "firm": "Macquarie",
+                  "toGrade": "Underperform",
+                  "fromGrade": "Underperform",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1525528839,
+                  "firm": "B. Riley FBR",
+                  "toGrade": "Buy",
+                  "fromGrade": "Buy",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1524741944,
+                  "firm": "Stifel Nicolaus",
+                  "toGrade": "Buy",
+                  "fromGrade": "Buy",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1507210154,
+                  "firm": "Hilliard Lyons",
+                  "toGrade": "Long-Term Buy",
+                  "fromGrade": "Buy",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1504113822,
+                  "firm": "Hilliard Lyons",
+                  "toGrade": "Buy",
+                  "fromGrade": "Neutral",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1501161984,
+                  "firm": "Macquarie",
+                  "toGrade": "Underperform",
+                  "fromGrade": "Neutral",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1500642892,
+                  "firm": "William Blair",
+                  "toGrade": "Outperform",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1492793311,
+                  "firm": "Stifel Nicolaus",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1492086133,
+                  "firm": "SunTrust Robinson Humphrey",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1491485581,
+                  "firm": "Goldman Sachs",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1525528838,
+                  "firm": "B. Riley FBR",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1480534304,
+                  "firm": "Credit Suisse",
+                  "toGrade": "Outperform",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1471944610,
+                  "firm": "Hilliard Lyons",
+                  "toGrade": "Long-Term Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1469797779,
+                  "firm": "FBR Capital",
+                  "toGrade": "Outperform",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1461060494,
+                  "firm": "Stephens & Co.",
+                  "toGrade": "Equal-Weight",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1459944784,
+                  "firm": "Oppenheimer",
+                  "toGrade": "Outperform",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1459492987,
+                  "firm": "FBR Capital",
+                  "toGrade": "Outperform",
+                  "fromGrade": "Market Perform",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1459234553,
+                  "firm": "Sterne Agee CRT",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1456153042,
+                  "firm": "Macquarie",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1449650364,
+                  "firm": "Macquarie",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1442384686,
+                  "firm": "Janney Capital",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1442340055,
+                  "firm": "Janney Capital",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1525528838,
+                  "firm": "B. Riley FBR",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1431706999,
+                  "firm": "Wedbush",
+                  "toGrade": "Outperform",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1430109789,
+                  "firm": "Goldman Sachs",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Buy",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1403297662,
+                  "firm": "Credit Suisse",
+                  "toGrade": "Outperform",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1394693271,
+                  "firm": "Credit Suisse",
+                  "toGrade": "Outperform",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1385537388,
+                  "firm": "FBR Capital",
+                  "toGrade": "Market Perform",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1366356493,
+                  "firm": "Credit Suisse",
+                  "toGrade": "Outperform",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1364970865,
+                  "firm": "Goldman Sachs",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1355477782,
+                  "firm": "Wells Fargo",
+                  "toGrade": "Outperform",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1355306183,
+                  "firm": "Miller Tabak",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1353404640,
+                  "firm": "Longbow Research",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1346835360,
+                  "firm": "Oppenheimer",
+                  "toGrade": "Outperform",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1342605600,
+                  "firm": "Miller Tabak",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "main"
+                }
+              ],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

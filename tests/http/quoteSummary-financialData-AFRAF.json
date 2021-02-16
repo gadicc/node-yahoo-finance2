@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AFRAF?formatted=false&modules=financialData"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "5p5h3hdg2nrr8"
+      ],
+      "x-yahoo-request-id": [
+        "5p5h3hdg2nrr8"
+      ],
+      "x-request-id": [
+        "fb9f499f-a772-49e9-bff5-dd5d258192c4"
+      ],
+      "content-length": [
+        "359"
+      ],
+      "x-envoy-upstream-service-time": [
+        "75"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:31 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "financialData": {
+              "maxAge": 86400,
+              "currentPrice": 5.9,
+              "recommendationKey": "none",
+              "quickRatio": 0.56,
+              "currentRatio": 0.624,
+              "returnOnAssets": -0.07041,
+              "grossProfits": 5916000000,
+              "revenueGrowth": -0.668,
+              "grossMargins": 0.05006,
+              "ebitdaMargins": -0.12091,
+              "operatingMargins": 0,
+              "profitMargins": -0.38606,
+              "financialCurrency": "EUR"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

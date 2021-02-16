@@ -1,0 +1,161 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SIX?formatted=false&modules=earnings"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "351l4c9g2nuh9"
+      ],
+      "x-yahoo-request-id": [
+        "351l4c9g2nuh9"
+      ],
+      "x-request-id": [
+        "06da5f6f-cba6-4ff8-a16a-37d661a09494"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "376"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 17:00:24 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earnings": {
+              "maxAge": 86400,
+              "earningsChart": {
+                "quarterly": [
+                  {
+                    "date": "4Q2019",
+                    "actual": -0.13,
+                    "estimate": 0.14
+                  },
+                  {
+                    "date": "1Q2020",
+                    "actual": -1,
+                    "estimate": -1.06
+                  },
+                  {
+                    "date": "2Q2020",
+                    "actual": -1.62,
+                    "estimate": -1.01
+                  },
+                  {
+                    "date": "3Q2020",
+                    "actual": -1.37,
+                    "estimate": -1
+                  }
+                ],
+                "currentQuarterEstimate": -0.89,
+                "currentQuarterEstimateDate": "4Q",
+                "currentQuarterEstimateYear": 2020,
+                "earningsDate": [
+                  1614124800
+                ]
+              },
+              "financialsChart": {
+                "yearly": [
+                  {
+                    "date": 2016,
+                    "revenue": 1319398000,
+                    "earnings": 118302000
+                  },
+                  {
+                    "date": 2017,
+                    "revenue": 1359074000,
+                    "earnings": 273816000
+                  },
+                  {
+                    "date": 2018,
+                    "revenue": 1463707000,
+                    "earnings": 275996000
+                  },
+                  {
+                    "date": 2019,
+                    "revenue": 1487583000,
+                    "earnings": 179065000
+                  }
+                ],
+                "quarterly": [
+                  {
+                    "date": "4Q2019",
+                    "revenue": 261000000,
+                    "earnings": -11155000
+                  },
+                  {
+                    "date": "1Q2020",
+                    "revenue": 102503000,
+                    "earnings": -84546000
+                  },
+                  {
+                    "date": "2Q2020",
+                    "revenue": 19143000,
+                    "earnings": -136894000
+                  },
+                  {
+                    "date": "3Q2020",
+                    "revenue": 126327000,
+                    "earnings": -116172000
+                  }
+                ]
+              },
+              "financialCurrency": "USD"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

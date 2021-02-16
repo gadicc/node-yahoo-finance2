@@ -1,0 +1,109 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AFRAF?formatted=false&modules=indexTrend"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "2fr8eehg2nrra"
+      ],
+      "x-yahoo-request-id": [
+        "2fr8eehg2nrra"
+      ],
+      "x-request-id": [
+        "7c178e85-757e-48ae-b7fd-0dfd5e1ac522"
+      ],
+      "content-length": [
+        "321"
+      ],
+      "x-envoy-upstream-service-time": [
+        "8"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:34 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "indexTrend": {
+              "maxAge": 1,
+              "symbol": "SP5",
+              "peRatio": 6.26429,
+              "pegRatio": 0.655216,
+              "estimates": [
+                {
+                  "period": "0q",
+                  "growth": 0.258
+                },
+                {
+                  "period": "+1q",
+                  "growth": 0.97400004
+                },
+                {
+                  "period": "0y",
+                  "growth": 0.144
+                },
+                {
+                  "period": "+1y",
+                  "growth": 0.158
+                },
+                {
+                  "period": "+5y",
+                  "growth": 0.0820068
+                },
+                {
+                  "period": "-5y"
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
