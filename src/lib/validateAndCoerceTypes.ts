@@ -7,8 +7,11 @@ const schema = require("../../schema.json");
 const pkg = require("../../package.json");
 import { InvalidOptionsError, FailedYahooValidationError } from "./errors";
 
+// https://ajv.js.org/docs/api.html#options
 export const ajv = new Ajv({
+  // All rules, all errors.  Don't end early after first error.
   allErrors: true,
+  // Allow multiple non-null types, like in TypeSript.
   allowUnionTypes: true,
 });
 addFormats(ajv);
