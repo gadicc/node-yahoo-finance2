@@ -85,6 +85,9 @@ different markets are open):
 $ FETCH_DEVEL="nocache" yarn test
 ```
 
+**NOTE:** Setting the `devel` option to true will not work in the browser, as
+it requires a filesystem and some modules only available in node.
+
 ## Specific Guidelines
 
 <a name="fix-bug"></a>
