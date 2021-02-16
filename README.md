@@ -86,6 +86,18 @@ don't have to), with type checking and auto completion:
 Try it yourself on our
 [Live CodeSandbox](https://codesandbox.io/s/yahoo-finance2-312x2?file=/src/index.ts).
 
+## Using in the Browser (tl;dr: possible but unsupported)
+
+This project is primarily developed to be used server-side in `node`.
+Nevertheless, due to the large number on requests on this issue, we have
+taken care to ensure the package can be imported in the browser too.
+
+HOWEVER: you'll run into other challenges there that we can't help you with,
+particularly CORS issues when trying to query Yahoo's servers in the browser
+from non-Yahoo origins.  Since Yahoo is specifically blocking such requests,
+we will not help you bypass them.  (One way around this is to run your own
+server to proxy your requests, but we won't help you with this).
+
 ## Contributing
 
 Pull Requests welcome!  Read [CONTRIBUTING.md](./CONTRIBUTING.md) and join
