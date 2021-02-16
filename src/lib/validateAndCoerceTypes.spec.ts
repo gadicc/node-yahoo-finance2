@@ -492,6 +492,31 @@ describe("validateAndCoerceTypes", () => {
         expect(error.result).toBe(result);
         expect(error.errors).toBeType("array");
       });
+
+      it("returns ref to problem data in error object", () => {
+        const result = { price: "str", nonExistingModule: true };
+
+        let error;
+        try {
+          validateAndCoerceTypes({
+            ...defParams,
+            object: result,
+            type: "result",
+            options: { ...defParams.options, logErrors: false },
+          });
+        } catch (e) {
+          error = e;
+        }
+
+        expect(error).toBeDefined();
+        expect(error.message).toMatch(/Failed Yahoo/);
+
+        // dataPath: '', params: { additionalProperty: 'nonExistingModule' }
+        expect(error.errors[0].data).not.toBeDefined();
+
+        // schemaPath: .../type.  params: { type: 'object' }
+        expect(error.errors[1].data).toBe("str");
+      });
     });
   });
 });

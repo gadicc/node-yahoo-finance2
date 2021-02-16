@@ -106,6 +106,13 @@ const logObj = process?.stdout?.isTTY
   ? (obj: any) => console.dir(obj, { depth: 4, colors: true })
   : (obj: any) => console.log(JSON.stringify(obj, null, 2));
 
+export function resolvePath(obj: any, dataPath: string) {
+  const path = dataPath.split("/");
+  let ref = obj;
+  for (let i = 1; i < path.length; i++) ref = ref[path[i]];
+  return ref;
+}
+
 interface ValidationOptions {
   logErrors: boolean;
   logOptionsErrors: boolean;
@@ -133,13 +140,20 @@ function validate({
   if (valid) return;
 
   if (type === "result") {
+    if (validator.errors)
+      validator.errors.forEach((error) => {
+        if (error.dataPath !== "")
+          // Note, not the regular ajv data value from verbose:true
+          error.data = resolvePath(object, error.dataPath);
+      });
+
     if (options.logErrors) {
       const title = encodeURIComponent("Failed validation: " + schemaKey);
       console.log(
         "The following result did not validate with schema: " + schemaKey
       );
       logObj(validator.errors);
-      logObj(object);
+      // logObj(object);
       console.log(`
 This may happen intermittently and you should catch errors appropriately.
 However:  1) if this recently started happening on every request for a symbol
