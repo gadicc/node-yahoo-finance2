@@ -11,20 +11,14 @@ const yf = testYf({ quote });
 
 describe("quote", () => {
   describe("passes validation", () => {
-    testSymbols.forEach((symbol) => {
-      it(symbol, async () => {
-        const devel = `quote-${symbol}.json`;
-        await yf.quote(symbol, {}, { devel });
-      });
+    it.each(testSymbols)("for symbol '%s'", async (symbol) => {
+      const devel = `quote-${symbol}.json`;
+      await yf.quote(symbol, {}, { devel });
     });
-  });
 
-  describe("passes validation", () => {
-    testSymbols.forEach((symbol) => {
-      it(symbol, async () => {
-        const devel = `quote-${symbol}-10am.json`;
-        await yf.quote(symbol, {}, { devel });
-      });
+    it.each(testSymbols)("for symbol %s (for 10AM data)", async (symbol) => {
+      const devel = `quote-${symbol}-10am.json`;
+      await yf.quote(symbol, {}, { devel });
     });
   });
 

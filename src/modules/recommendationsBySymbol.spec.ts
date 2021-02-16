@@ -15,11 +15,9 @@ const yf = {
 
 describe("recommendationsBySymbol", () => {
   // make sure it passes validation for some symbols
-  testSymbols.forEach((symbol) => {
-    it(`passes validation for symbol: ${symbol}`, async () => {
-      const devel = `recommendationsBySymbol-${symbol}.json`;
-      await yf.recommendationsBySymbol(symbol, {}, { devel });
-    });
+  it.each(testSymbols)("passes validation for symbol '%s'", async (symbol) => {
+    const devel = `recommendationsBySymbol-${symbol}.json`;
+    await yf.recommendationsBySymbol(symbol, {}, { devel });
   });
 
   // make sure it passes validation for multiple symbols
