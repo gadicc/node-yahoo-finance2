@@ -323,11 +323,7 @@
       },
       "required": [
         "maxAge",
-        "endDate",
-        "totalAssets",
-        "totalLiab",
-        "totalStockholderEquity",
-        "netTangibleAssets"
+        "endDate"
       ],
       "type": "object"
     },
@@ -1096,7 +1092,10 @@
           "yahooFinanceType": "number"
         },
         "financialCurrency": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "freeCashflow": {
           "yahooFinanceType": "number"
@@ -1172,15 +1171,6 @@
         "maxAge",
         "currentPrice",
         "recommendationKey",
-        "quickRatio",
-        "currentRatio",
-        "returnOnAssets",
-        "grossProfits",
-        "revenueGrowth",
-        "grossMargins",
-        "ebitdaMargins",
-        "operatingMargins",
-        "profitMargins",
         "financialCurrency"
       ],
       "type": "object"
@@ -3652,8 +3642,7 @@
       "required": [
         "maxAge",
         "earningsChart",
-        "financialsChart",
-        "financialCurrency"
+        "financialsChart"
       ],
       "type": "object"
     },
@@ -4185,6 +4174,9 @@
         "longname": {
           "type": "string"
         },
+        "newListingDate": {
+          "yahooFinanceType": "date"
+        },
         "score": {
           "yahooFinanceType": "number"
         },
@@ -4220,6 +4212,9 @@
         },
         "longname": {
           "type": "string"
+        },
+        "newListingDate": {
+          "yahooFinanceType": "date"
         },
         "quoteType": {
           "const": "ETF",
@@ -4267,6 +4262,9 @@
         "longname": {
           "type": "string"
         },
+        "newListingDate": {
+          "yahooFinanceType": "date"
+        },
         "quoteType": {
           "const": "EQUITY",
           "type": "string"
@@ -4312,6 +4310,9 @@
         },
         "longname": {
           "type": "string"
+        },
+        "newListingDate": {
+          "yahooFinanceType": "date"
         },
         "quoteType": {
           "const": "MUTUALFUND",
@@ -4359,6 +4360,9 @@
         "longname": {
           "type": "string"
         },
+        "newListingDate": {
+          "yahooFinanceType": "date"
+        },
         "quoteType": {
           "const": "INDEX",
           "type": "string"
@@ -4404,6 +4408,9 @@
         },
         "longname": {
           "type": "string"
+        },
+        "newListingDate": {
+          "yahooFinanceType": "date"
         },
         "quoteType": {
           "const": "OPTION",

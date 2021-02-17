@@ -13,6 +13,7 @@ export interface SearchQuoteYahoo {
   longname?: string; // "Alibaba Group Holding Limited"
   index: "quotes"; // "quotes"
   score: number; // 1111958.0
+  newListingDate?: Date; // "2021-02-16"
 }
 export interface SearchQuoteYahooEquity extends SearchQuoteYahoo {
   quoteType: "EQUITY";

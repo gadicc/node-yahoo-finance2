@@ -102,20 +102,20 @@ export interface BalanceSheetStatement {
   longTermInvestments?: number;
   propertyPlantEquipment?: number;
   otherAssets?: number;
-  totalAssets: number;
+  totalAssets?: number;
   accountsPayable?: number;
   shortLongTermDebt?: number;
   otherCurrentLiab?: number;
   longTermDebt?: number;
   otherLiab?: number;
   totalCurrentLiabilities?: number;
-  totalLiab: number;
+  totalLiab?: number;
   commonStock?: number;
   retainedEarnings?: number;
   treasuryStock?: number;
   otherStockholderEquity?: number;
-  totalStockholderEquity: number;
-  netTangibleAssets: number;
+  totalStockholderEquity?: number;
+  netTangibleAssets?: number;
   goodWill?: number;
   intangibleAssets?: number;
   deferredLongTermAssetCharges?: number;
@@ -229,7 +229,7 @@ export interface QuoteSummaryEarnings {
   maxAge: number;
   earningsChart: EarningsChart;
   financialsChart: FinancialsChart;
-  financialCurrency: string;
+  financialCurrency?: string;
 }
 
 export interface EarningsChart {
@@ -341,23 +341,23 @@ export interface FinancialData {
   totalCashPerShare?: number;
   ebitda?: number;
   totalDebt?: number;
-  quickRatio: number;
-  currentRatio: number;
+  quickRatio?: number;
+  currentRatio?: number;
   totalRevenue?: number;
   debtToEquity?: number;
   revenuePerShare?: number;
-  returnOnAssets: number;
+  returnOnAssets?: number;
   returnOnEquity?: number;
-  grossProfits: number;
+  grossProfits?: number;
   freeCashflow?: number;
   operatingCashflow?: number;
   earningsGrowth?: number;
-  revenueGrowth: number;
-  grossMargins: number;
-  ebitdaMargins: number;
-  operatingMargins: number;
-  profitMargins: number;
-  financialCurrency: string;
+  revenueGrowth?: number;
+  grossMargins?: number;
+  ebitdaMargins?: number;
+  operatingMargins?: number;
+  profitMargins?: number;
+  financialCurrency: string | null;
 }
 
 export interface Ownership {
