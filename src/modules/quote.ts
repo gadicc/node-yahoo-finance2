@@ -94,6 +94,8 @@ export interface QuoteBase {
   ytdReturn?: number; // 0.31
   trailingThreeMonthReturns?: number; // 16.98
   trailingThreeMonthNavReturns?: number; // 17.08
+  ipoExpectedDate?: Date; // "2020-08-13",
+  newListingDate?: Date; // "2021-02-16",
 }
 
 export interface QuoteEquity extends QuoteBase {

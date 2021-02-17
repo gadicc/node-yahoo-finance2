@@ -1,0 +1,143 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=BEKE"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "7ic0d7lg2q0sn"
+      ],
+      "x-yahoo-request-id": [
+        "7ic0d7lg2q0sn"
+      ],
+      "x-request-id": [
+        "f716fcf9-8937-45d1-83f9-ef67ebe5e8a6"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "845"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 11:52:55 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-sg3.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "regularMarketChange": 0.6800003,
+            "regularMarketChangePercent": 1.0101014,
+            "regularMarketTime": 1613509202,
+            "regularMarketPrice": 68,
+            "regularMarketDayHigh": 68.99,
+            "regularMarketDayRange": "65.88 - 68.99",
+            "regularMarketDayLow": 65.88,
+            "regularMarketVolume": 8990127,
+            "regularMarketPreviousClose": 67.32,
+            "bid": 67.51,
+            "ask": 68,
+            "bidSize": 8,
+            "askSize": 10,
+            "fullExchangeName": "NYSE",
+            "financialCurrency": "CNY",
+            "regularMarketOpen": 67.41,
+            "averageDailyVolume3Month": 3760300,
+            "averageDailyVolume10Day": 5531066,
+            "fiftyTwoWeekLowChange": 36.21,
+            "fiftyTwoWeekLowChangePercent": 1.1390374,
+            "fiftyTwoWeekRange": "31.79 - 79.4",
+            "fiftyTwoWeekHighChange": -11.400002,
+            "fiftyTwoWeekHighChangePercent": -0.14357685,
+            "fiftyTwoWeekLow": 31.79,
+            "fiftyTwoWeekHigh": 79.4,
+            "epsCurrentYear": 0.75,
+            "priceEpsCurrentYear": 90.666664,
+            "sharesOutstanding": 1143379968,
+            "fiftyDayAverage": 64.594246,
+            "fiftyDayAverageChange": 3.405754,
+            "fiftyDayAverageChangePercent": 0.05272535,
+            "twoHundredDayAverage": 61.68664,
+            "twoHundredDayAverageChange": 6.3133583,
+            "twoHundredDayAverageChangePercent": 0.10234563,
+            "marketCap": 80157040640,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "ipoExpectedDate": "2020-08-13",
+            "firstTradeDateMilliseconds": 1597325400000,
+            "priceHint": 2,
+            "preMarketChange": 0,
+            "preMarketChangePercent": 0,
+            "preMarketTime": 1613562741,
+            "preMarketPrice": 68,
+            "marketState": "PRE",
+            "exchange": "NYQ",
+            "shortName": "KE Holdings Inc",
+            "longName": "KE Holdings Inc.",
+            "messageBoardId": "finmb_665898843",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "tradeable": false,
+            "symbol": "BEKE"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
