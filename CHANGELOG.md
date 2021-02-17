@@ -1,3 +1,17 @@
+## [1.7.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.7.1...v1.7.2) (2021-02-17)
+
+
+### Bug Fixes
+
+* **browser:** mv fetchDevel to _env, fixes issues w/ `ng build` ([#50](https://github.com/gadicc/node-yahoo-finance2/issues/50)) ([7528580](https://github.com/gadicc/node-yahoo-finance2/commit/75285807114062ea96ba2c74ddf0df01bee393cd))
+* **quote:** add additional properties ([4ab73c1](https://github.com/gadicc/node-yahoo-finance2/commit/4ab73c16a27c0d034a539cb1451e5110f3915fd2))
+* **quote:** make certain properties optional ([1881bcb](https://github.com/gadicc/node-yahoo-finance2/commit/1881bcbdde4b4229585a00e2eecdbf317314e335))
+* **quote:** more optional properties ([#51](https://github.com/gadicc/node-yahoo-finance2/issues/51)) ([631ed45](https://github.com/gadicc/node-yahoo-finance2/commit/631ed459125cbe2ae2381f16adef2e513f4887e6))
+* **quoteSummary:** more optionality, enum types, to fix tests ([#51](https://github.com/gadicc/node-yahoo-finance2/issues/51)) ([bc47bdf](https://github.com/gadicc/node-yahoo-finance2/commit/bc47bdfd781a7f7d4013c01848820ec929ccaeae))
+* **types:** more optionality in quoteSummary,search for newer stocks ([b230635](https://github.com/gadicc/node-yahoo-finance2/commit/b230635e15dd3801761dc9211989cbf01c8e98e0))
+* **validate:** stricter nulls, number|null type, better errors ([#51](https://github.com/gadicc/node-yahoo-finance2/issues/51)) ([93dafc6](https://github.com/gadicc/node-yahoo-finance2/commit/93dafc63c1a2ee3dbec423513a89376348915ccd))
+* QuoteSummary & Search validation ([28f0487](https://github.com/gadicc/node-yahoo-finance2/commit/28f04871a1140d0a337bb777454afdb8467c67fd))
+
 ## [1.7.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.7.0...v1.7.1) (2021-02-12)
 
 
