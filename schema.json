@@ -5073,6 +5073,51 @@
       ],
       "type": "object"
     },
+    "ValidateParams": {
+      "additionalProperties": false,
+      "properties": {
+        "object": {
+          "type": "object"
+        },
+        "options": {
+          "additionalProperties": false,
+          "properties": {
+            "logErrors": {
+              "type": "boolean"
+            },
+            "logOptionsErrors": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "logErrors",
+            "logOptionsErrors"
+          ],
+          "type": "object"
+        },
+        "schemaKey": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "options",
+            "result"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "type",
+        "object",
+        "schemaKey",
+        "options"
+      ],
+      "type": "object"
+    },
     "Yearly": {
       "additionalProperties": false,
       "properties": {
