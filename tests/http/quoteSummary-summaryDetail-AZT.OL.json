@@ -1,0 +1,110 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AZT.OL?formatted=false&modules=summaryDetail"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "0eo1ia1g2nrrh"
+      ],
+      "x-yahoo-request-id": [
+        "0eo1ia1g2nrrh"
+      ],
+      "x-request-id": [
+        "aa3c072c-22a0-40e0-b7e7-f6524739a1f1"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "345"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:40 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 69.4,
+              "open": 68.6,
+              "dayLow": 68.4,
+              "dayHigh": 70.8,
+              "regularMarketPreviousClose": 69.4,
+              "regularMarketOpen": 68.6,
+              "regularMarketDayLow": 68.4,
+              "regularMarketDayHigh": 70.8,
+              "payoutRatio": 0,
+              "beta": 1.681382,
+              "trailingPE": 40.81395,
+              "volume": 286580,
+              "regularMarketVolume": 286580,
+              "bid": 68.6,
+              "ask": 70.8,
+              "marketCap": 3393095680,
+              "fiftyTwoWeekLow": 68.4,
+              "fiftyTwoWeekHigh": 70.8,
+              "priceToSalesTrailing12Months": 34.686073,
+              "currency": "NOK",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "algorithm": null,
+              "tradeable": false
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

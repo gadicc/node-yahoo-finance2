@@ -1,0 +1,95 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AFRAF?formatted=false&modules=summaryProfile"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "a5hifnlg2nrrh"
+      ],
+      "x-yahoo-request-id": [
+        "a5hifnlg2nrrh"
+      ],
+      "x-request-id": [
+        "efcb0c51-9928-4da0-a37c-a20b772a2095"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "611"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:41 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "2 rue Robert Esnault-Pelterie",
+              "city": "Paris",
+              "zip": "75007",
+              "country": "France",
+              "phone": "33 1 43 17 21 96",
+              "website": "http://www.airfranceklm.com",
+              "industry": "Airlines",
+              "sector": "Industrials",
+              "longBusinessSummary": "Air France-KLM SA, together with its subsidiaries, provides passenger transportation services on scheduled flights. The company operates through Network, Maintenance, Transavia, and Other segments. It also offers cargo transportation and aeronautics maintenance, and other air-transport-related services. The company operates in France, Benelux, Europe, Africa, the Middle East, Gulf, India, the Asia-Pacific, North America, Caribbean, West Indies, French Guyana, Indian Ocean, and South America. As of December 31, 2019, it operated fleet of 554 aircraft. The company was founded in 1919 and is headquartered in Paris, France.",
+              "fullTimeEmployees": 82122,
+              "companyOfficers": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

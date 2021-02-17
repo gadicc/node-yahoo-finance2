@@ -1,0 +1,151 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=AMZN"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "6on8u4dg2nrqt"
+      ],
+      "x-yahoo-request-id": [
+        "6on8u4dg2nrqt"
+      ],
+      "x-request-id": [
+        "02bb0302-7743-45a3-b1df-49820f5011e6"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "948"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:21 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "5"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "warning": [
+        "110 Response is stale"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "marketState": "REGULAR",
+            "exchange": "NMS",
+            "shortName": "Amazon.com, Inc.",
+            "longName": "Amazon.com, Inc.",
+            "messageBoardId": "finmb_18749",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "twoHundredDayAverage": 3205.9446,
+            "twoHundredDayAverageChange": 72.52539,
+            "twoHundredDayAverageChangePercent": 0.02262216,
+            "marketCap": 1650922749952,
+            "forwardPE": 49.32997,
+            "priceToBook": 17.655228,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "regularMarketChange": 0.76000977,
+            "regularMarketChangePercent": 0.023187218,
+            "regularMarketTime": 1613492043,
+            "regularMarketPrice": 3278.47,
+            "regularMarketDayHigh": 3308,
+            "regularMarketDayRange": "3257.75 - 3308.0",
+            "regularMarketDayLow": 3257.75,
+            "regularMarketVolume": 1135659,
+            "regularMarketPreviousClose": 3277.71,
+            "bid": 3277.55,
+            "ask": 3281.27,
+            "bidSize": 9,
+            "askSize": 11,
+            "fullExchangeName": "NasdaqGS",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 3254.05,
+            "averageDailyVolume3Month": 3657442,
+            "averageDailyVolume10Day": 2649840,
+            "fiftyTwoWeekLowChange": 1652.44,
+            "fiftyTwoWeekLowChangePercent": 1.0162419,
+            "fiftyTwoWeekRange": "1626.03 - 3552.25",
+            "fiftyTwoWeekHighChange": -273.78003,
+            "fiftyTwoWeekHighChangePercent": -0.077072285,
+            "fiftyTwoWeekLow": 1626.03,
+            "fiftyTwoWeekHigh": 3552.25,
+            "earningsTimestamp": 1612281780,
+            "earningsTimestampStart": 1619640000,
+            "earningsTimestampEnd": 1620072000,
+            "trailingPE": 78.376045,
+            "epsTrailingTwelveMonths": 41.83,
+            "epsForward": 66.46,
+            "epsCurrentYear": 47.68,
+            "priceEpsCurrentYear": 68.75986,
+            "sharesOutstanding": 500889984,
+            "bookValue": 185.694,
+            "fiftyDayAverage": 3246.1387,
+            "fiftyDayAverageChange": 32.3313,
+            "fiftyDayAverageChangePercent": 0.009959925,
+            "firstTradeDateMilliseconds": 863703000000,
+            "priceHint": 2,
+            "displayName": "Amazon.com",
+            "symbol": "AMZN"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

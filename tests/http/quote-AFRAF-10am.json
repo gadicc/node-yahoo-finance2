@@ -1,0 +1,140 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=AFRAF"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "co9le7pg2nrr2"
+      ],
+      "x-yahoo-request-id": [
+        "co9le7pg2nrr2"
+      ],
+      "x-request-id": [
+        "c2736799-106c-4acf-b0bf-4dd10e5a70ed"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "820"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:26 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Delayed Quote",
+            "triggerable": false,
+            "currency": "USD",
+            "exchange": "PNK",
+            "shortName": "AIR FRANCE-KLM",
+            "longName": "Air France-KLM SA",
+            "messageBoardId": "finmb_4463198",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "firstTradeDateMilliseconds": 1331731800000,
+            "marketState": "REGULAR",
+            "priceHint": 2,
+            "regularMarketChange": -0.099999905,
+            "regularMarketChangePercent": -1.6666651,
+            "regularMarketTime": 1613486803,
+            "regularMarketPrice": 5.9,
+            "regularMarketDayHigh": 5.9,
+            "regularMarketDayRange": "5.9 - 5.9",
+            "regularMarketDayLow": 5.9,
+            "regularMarketVolume": 1050,
+            "regularMarketPreviousClose": 6,
+            "bid": 0,
+            "ask": 0,
+            "bidSize": 0,
+            "askSize": 0,
+            "fullExchangeName": "Other OTC",
+            "financialCurrency": "EUR",
+            "regularMarketOpen": 5.9,
+            "averageDailyVolume3Month": 2859,
+            "averageDailyVolume10Day": 1600,
+            "fiftyTwoWeekLowChange": 2.63,
+            "fiftyTwoWeekLowChangePercent": 0.8042814,
+            "fiftyTwoWeekRange": "3.27 - 10.95",
+            "fiftyTwoWeekHighChange": -5.0499997,
+            "fiftyTwoWeekHighChangePercent": -0.46118718,
+            "fiftyTwoWeekLow": 3.27,
+            "fiftyTwoWeekHigh": 10.95,
+            "dividendDate": 1216252800,
+            "epsTrailingTwelveMonths": -1.903,
+            "sharesOutstanding": 427432000,
+            "bookValue": 8.847,
+            "fiftyDayAverage": 5.9954543,
+            "fiftyDayAverageChange": -0.095454216,
+            "fiftyDayAverageChangePercent": -0.015921097,
+            "twoHundredDayAverage": 4.939559,
+            "twoHundredDayAverageChange": 0.9604411,
+            "twoHundredDayAverageChangePercent": 0.19443864,
+            "marketCap": 2474265344,
+            "priceToBook": 0.6668927,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "symbol": "AFRAF"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

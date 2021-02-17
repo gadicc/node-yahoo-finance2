@@ -1,0 +1,188 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=AMZN"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "9r2n8tlg2nrr2"
+      ],
+      "x-yahoo-request-id": [
+        "9r2n8tlg2nrr2"
+      ],
+      "x-request-id": [
+        "a25ee52c-0537-422f-b78b-3d06f35aae2f"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "970"
+      ],
+      "x-envoy-upstream-service-time": [
+        "32"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:26 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 10,
+      "quotes": [
+        {
+          "exchange": "NMS",
+          "shortname": "Amazon.com, Inc.",
+          "quoteType": "EQUITY",
+          "symbol": "AMZN",
+          "index": "quotes",
+          "score": 20322700,
+          "typeDisp": "Equity",
+          "longname": "Amazon.com, Inc.",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "MEX",
+          "shortname": "AMAZON COM INC",
+          "quoteType": "EQUITY",
+          "symbol": "AMZN.MX",
+          "index": "quotes",
+          "score": 20436,
+          "typeDisp": "Equity",
+          "longname": "Amazon.com, Inc.",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "BUE",
+          "shortname": "AMAZON COM INC",
+          "quoteType": "EQUITY",
+          "symbol": "AMZN.BA",
+          "index": "quotes",
+          "score": 20049,
+          "typeDisp": "Equity",
+          "longname": "Amazon.com, Inc.",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "MIL",
+          "shortname": "AMAZON",
+          "quoteType": "EQUITY",
+          "symbol": "AMZN.MI",
+          "index": "quotes",
+          "score": 20042,
+          "typeDisp": "Equity",
+          "longname": "Amazon.com, Inc.",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "AMZN Feb 2021 3275.000 call",
+          "quoteType": "OPTION",
+          "symbol": "AMZN210219C03275000",
+          "index": "quotes",
+          "score": 20020,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "SGO",
+          "shortname": "AMAZON COM INC",
+          "quoteType": "EQUITY",
+          "symbol": "AMZN.SN",
+          "index": "quotes",
+          "score": 20012,
+          "typeDisp": "Equity",
+          "longname": "Amazon.com, Inc.",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [
+        {
+          "uuid": "04b7cfbd-12fa-30e2-90fc-de9b79d5b310",
+          "title": "ROKU Stock: Earnings Option Trade Idea",
+          "publisher": "Investor's Business Daily",
+          "link": "https://finance.yahoo.com/m/04b7cfbd-12fa-30e2-90fc-de9b79d5b310/roku-stock%3A-earnings-option.html",
+          "providerPublishTime": 1613487676,
+          "type": "STORY"
+        },
+        {
+          "uuid": "91d95e98-fcbc-35f0-886b-1a2999cc0b14",
+          "title": "Chart Reading For Beginners: Nvidia, Amazon, DocuSign Reveal This Key Investing Skill",
+          "publisher": "Investor's Business Daily",
+          "link": "https://finance.yahoo.com/m/91d95e98-fcbc-35f0-886b-1a2999cc0b14/chart-reading-for-beginners%3A.html",
+          "providerPublishTime": 1613488272,
+          "type": "STORY"
+        },
+        {
+          "uuid": "c3960464-575e-31fa-99d4-b7950bd426db",
+          "title": "O’Shares Global Internet Giants ETF (OGIG) +107% in 2020, +10% YTD 2021. Why Kevin O’Leary is Buying More",
+          "publisher": "Business Wire",
+          "link": "https://finance.yahoo.com/news/o-shares-global-internet-giants-151500978.html",
+          "providerPublishTime": 1613488500,
+          "type": "STORY"
+        },
+        {
+          "uuid": "1c49bd26-bc2d-3c72-bc47-76159b91316a",
+          "title": "How Amazon Is Becoming a Digital Ad Titan",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/m/1c49bd26-bc2d-3c72-bc47-76159b91316a/how-amazon-is-becoming-a.html",
+          "providerPublishTime": 1613478120,
+          "type": "STORY"
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "totalTime": 30,
+      "timeTakenForQuotes": 420,
+      "timeTakenForNews": 600,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0
+    }
+  }
+}

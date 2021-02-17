@@ -1,0 +1,116 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AMZN?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "6cb5rodg2nrre"
+      ],
+      "x-yahoo-request-id": [
+        "6cb5rodg2nrre"
+      ],
+      "x-request-id": [
+        "645b0c4b-e8e0-4464-a5ee-12f213e0f857"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "468"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:38 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "preMarketChangePercent": -0.00722148,
+              "preMarketChange": -23.6699,
+              "preMarketTime": 1613485799,
+              "preMarketPrice": 3254.04,
+              "preMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": 0.0005163309,
+              "regularMarketChange": 1.6923828,
+              "regularMarketTime": 1613492068,
+              "priceHint": 2,
+              "regularMarketPrice": 3279.4023,
+              "regularMarketDayHigh": 3308,
+              "regularMarketDayLow": 3257.75,
+              "regularMarketVolume": 1136617,
+              "regularMarketPreviousClose": 3277.71,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 3254.05,
+              "exchange": "NMS",
+              "exchangeName": "NasdaqGS",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "EQUITY",
+              "symbol": "AMZN",
+              "underlyingSymbol": null,
+              "shortName": "Amazon.com, Inc.",
+              "longName": "Amazon.com, Inc.",
+              "currency": "USD",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 1651392249856
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

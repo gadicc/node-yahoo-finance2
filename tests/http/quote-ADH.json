@@ -1,0 +1,109 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=ADH"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "cbp8g15g2nrr2"
+      ],
+      "x-yahoo-request-id": [
+        "cbp8g15g2nrr2"
+      ],
+      "x-request-id": [
+        "ece0bc93-6ee2-4717-a9ce-6157be81b084"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "464"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:26 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "MUTUALFUND",
+            "quoteSourceName": "Delayed Quote",
+            "triggerable": false,
+            "fullExchangeName": "YHD",
+            "averageDailyVolume3Month": 212316,
+            "averageDailyVolume10Day": 66219,
+            "fiftyTwoWeekRange": "5.6 - 9.24",
+            "fiftyTwoWeekLow": 5.6,
+            "fiftyTwoWeekHigh": 9.24,
+            "fiftyDayAverage": 6.7838235,
+            "twoHundredDayAverage": 6.3983088,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1152538200000,
+            "priceHint": 2,
+            "regularMarketTime": 1561759658,
+            "tradeable": false,
+            "marketState": "REGULAR",
+            "exchange": "YHD",
+            "shortName": "54688",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "symbol": "ADH"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

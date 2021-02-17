@@ -1,0 +1,135 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ADH?formatted=false&modules=assetProfile%2CbalanceSheetHistory%2CbalanceSheetHistoryQuarterly%2CcalendarEvents%2CcashflowStatementHistory%2CcashflowStatementHistoryQuarterly%2CdefaultKeyStatistics%2Cearnings%2CearningsHistory%2CearningsTrend%2CfinancialData%2CfundOwnership%2CfundPerformance%2CfundProfile%2CincomeStatementHistory%2CincomeStatementHistoryQuarterly%2CindexTrend%2CindustryTrend%2CinsiderHolders%2CinsiderTransactions%2CinstitutionOwnership%2CmajorDirectHolders%2CmajorHoldersBreakdown%2CnetSharePurchaseActivity%2Cprice%2CquoteType%2CrecommendationTrend%2CsecFilings%2CsectorTrend%2CsummaryDetail%2CsummaryProfile%2CtopHoldings%2CupgradeDowngradeHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "40ffqo5g2nrri"
+      ],
+      "x-yahoo-request-id": [
+        "40ffqo5g2nrri"
+      ],
+      "x-request-id": [
+        "8ab17996-40b3-4479-9e4a-b810348c5a38"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "570"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:42 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundProfile": {
+              "maxAge": 1,
+              "styleBoxUrl": null,
+              "family": null,
+              "categoryName": null,
+              "legalType": null,
+              "managementInfo": {
+                "managerName": null,
+                "managerBio": null
+              },
+              "feesExpensesInvestment": {
+                "projectionValues": {}
+              },
+              "feesExpensesInvestmentCat": {
+                "projectionValuesCat": {}
+              },
+              "brokerages": []
+            },
+            "quoteType": {
+              "exchange": "YHD",
+              "quoteType": "MUTUALFUND",
+              "symbol": "ADH",
+              "underlyingSymbol": "ADH",
+              "shortName": "54688",
+              "longName": null,
+              "firstTradeDateEpochUtc": 1152538200,
+              "timeZoneFullName": "America/New_York",
+              "timeZoneShortName": "EST",
+              "uuid": "b5097600-41ff-3349-b2d2-500df46ffd88",
+              "messageBoardId": null,
+              "gmtOffSetMilliseconds": -18000000,
+              "maxAge": 1
+            },
+            "price": {
+              "maxAge": 1,
+              "regularMarketTime": 1561759658,
+              "priceHint": 2,
+              "averageDailyVolume10Day": 66219,
+              "averageDailyVolume3Month": 212316,
+              "regularMarketSource": "DELAYED",
+              "exchange": "YHD",
+              "exchangeName": "YHD",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "MUTUALFUND",
+              "symbol": "ADH",
+              "underlyingSymbol": null,
+              "shortName": "54688",
+              "longName": null,
+              "quoteSourceName": "Delayed Quote",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

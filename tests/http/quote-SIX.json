@@ -1,0 +1,150 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=SIX"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "2ooqvfdg2nuh6"
+      ],
+      "x-yahoo-request-id": [
+        "2ooqvfdg2nuh6"
+      ],
+      "x-request-id": [
+        "e6995fef-63ce-4cc7-aec7-20b12d4d972f"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "967"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 17:00:22 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "marketState": "REGULAR",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "exchange": "NYQ",
+            "shortName": "Six Flags Entertainment Corpora",
+            "longName": "Six Flags Entertainment Corporation",
+            "messageBoardId": "finmb_435998",
+            "exchangeTimezoneName": "America/New_York",
+            "fiftyTwoWeekHighChange": -0.7350006,
+            "fiftyTwoWeekHighChangePercent": -0.018025765,
+            "fiftyTwoWeekLow": 8.75,
+            "fiftyTwoWeekHigh": 40.775,
+            "earningsTimestamp": 1614173400,
+            "earningsTimestampStart": 1614173400,
+            "earningsTimestampEnd": 1614173400,
+            "trailingAnnualDividendRate": 1.08,
+            "trailingAnnualDividendYield": 0.027115239,
+            "epsTrailingTwelveMonths": -4.118,
+            "epsForward": -1.09,
+            "epsCurrentYear": -4.85,
+            "priceEpsCurrentYear": -8.255671,
+            "sharesOutstanding": 84977104,
+            "bookValue": -12.674,
+            "fiftyDayAverage": 36.065453,
+            "fiftyDayAverageChange": 3.9745483,
+            "fiftyDayAverageChangePercent": 0.11020376,
+            "twoHundredDayAverage": 27.273088,
+            "twoHundredDayAverageChange": 12.766912,
+            "twoHundredDayAverageChangePercent": 0.46811393,
+            "marketCap": 3402483200,
+            "forwardPE": -36.733944,
+            "priceToBook": -3.1592238,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "regularMarketChange": 0.20999908,
+            "regularMarketChangePercent": 0.5272384,
+            "regularMarketTime": 1613494813,
+            "regularMarketPrice": 40.04,
+            "regularMarketDayHigh": 40.775,
+            "regularMarketDayRange": "39.92 - 40.775",
+            "regularMarketDayLow": 39.92,
+            "regularMarketVolume": 405501,
+            "regularMarketPreviousClose": 39.83,
+            "bid": 40.54,
+            "ask": 40.57,
+            "bidSize": 12,
+            "askSize": 8,
+            "fullExchangeName": "NYSE",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 39.89,
+            "averageDailyVolume3Month": 1642390,
+            "averageDailyVolume10Day": 1090080,
+            "fiftyTwoWeekLowChange": 31.29,
+            "fiftyTwoWeekLowChangePercent": 3.5760002,
+            "fiftyTwoWeekRange": "8.75 - 40.775",
+            "dividendDate": 1583884800,
+            "firstTradeDateMilliseconds": 1273584600000,
+            "priceHint": 2,
+            "displayName": "Six Flags",
+            "symbol": "SIX"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
