@@ -1,5 +1,6 @@
 # Contributing to yahoo-finance2
 
+1. [Local Development](#local-dev)
 1. General Guidelines
     1. [Editing](#editing)
     1. [Code](#code)
@@ -8,6 +9,36 @@
 1. Specific Guidelines
     1. [Fixing a bug](#fix-bug)
     1. [Adding a module](#new-module)
+
+<a name="local-dev"></a>
+## Local Development
+
+The following instructions will help you run the latest development release
+locally.  If you plan to make changes to the code and submit them back to us
+(in pull requests), please first FORK our repo and clone YOUR FORK instead
+of the URL used below.
+
+1. Install [git](https://git-scm.com/) if you haven't already.
+1. Change to the directory where you want to keep these files.
+1. `git clone https://github.com/gadicc/node-yahoo-finance2.git`
+1. `cd node-yahoo-finance2`
+1. `yarn tsc`
+1. `yarn link`
+
+And now, in any of your own projects where you use `node-yahoo-finance2`:
+
+  `yarn link yahoo-finance2`
+
+Now your project will use the latest development version instead of the version
+on npm.  You can revert this for your project by typing:
+
+  `yarn unlink yahoo-finance2`.
+
+To update your local development copy at any time:
+
+1. `cd node-yahoo-finance2`
+1. `git pull`
+1. `yarn tsc`
 
 ## General Guidelines
 
