@@ -1,0 +1,122 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BFLY?formatted=false&modules=earningsHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "ds90ab9g2qh3p"
+      ],
+      "x-yahoo-request-id": [
+        "ds90ab9g2qh3p"
+      ],
+      "x-request-id": [
+        "299f3e60-7caa-4d54-a9c7-34dac8bb082c"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "176"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 16:29:45 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earningsHistory": {
+              "history": [
+                {
+                  "maxAge": 1,
+                  "epsActual": {},
+                  "epsEstimate": {},
+                  "epsDifference": {},
+                  "surprisePercent": {},
+                  "quarter": {},
+                  "period": "-4q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {},
+                  "epsEstimate": {},
+                  "epsDifference": {},
+                  "surprisePercent": {},
+                  "quarter": {},
+                  "period": "-3q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {},
+                  "epsEstimate": {},
+                  "epsDifference": {},
+                  "surprisePercent": {},
+                  "quarter": {},
+                  "period": "-2q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {},
+                  "epsEstimate": {},
+                  "epsDifference": {},
+                  "surprisePercent": {},
+                  "quarter": {},
+                  "period": "-1q"
+                }
+              ],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

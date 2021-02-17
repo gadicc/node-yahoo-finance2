@@ -1,0 +1,88 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BFLY?formatted=false&modules=netSharePurchaseActivity"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "32h1hc9g2qh3u"
+      ],
+      "x-yahoo-request-id": [
+        "32h1hc9g2qh3u"
+      ],
+      "x-request-id": [
+        "ddcce27b-62cf-489b-a9eb-a63f3db84b9f"
+      ],
+      "content-length": [
+        "209"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 16:29:50 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "netSharePurchaseActivity": {
+              "maxAge": 1,
+              "period": "6m",
+              "buyInfoCount": 0,
+              "buyInfoShares": 0,
+              "sellInfoCount": 0,
+              "netInfoCount": 0,
+              "netInfoShares": 0,
+              "totalInsiderShares": 0
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

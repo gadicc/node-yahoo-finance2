@@ -1,0 +1,115 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BFLY?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "3nc1hg5g2qh3u"
+      ],
+      "x-yahoo-request-id": [
+        "3nc1hg5g2qh3u"
+      ],
+      "x-request-id": [
+        "a980ed48-2241-4321-984f-aadcaeb2263a"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "450"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 16:29:50 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "preMarketChangePercent": 0.0288889,
+              "preMarketChange": 0.65,
+              "preMarketTime": 1613572193,
+              "preMarketPrice": 23.15,
+              "preMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": -0.008222198,
+              "regularMarketChange": -0.18499947,
+              "regularMarketTime": 1613579380,
+              "priceHint": 2,
+              "regularMarketPrice": 22.315,
+              "regularMarketDayHigh": 23.31,
+              "regularMarketDayLow": 22.1807,
+              "regularMarketVolume": 1508514,
+              "regularMarketPreviousClose": 22.5,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 23.11,
+              "exchange": "NYQ",
+              "exchangeName": "NYSE",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "EQUITY",
+              "symbol": "BFLY",
+              "underlyingSymbol": null,
+              "shortName": "Butterfly Network, Inc. Class A",
+              "longName": "Butterfly Network, Inc.",
+              "currency": "USD",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
