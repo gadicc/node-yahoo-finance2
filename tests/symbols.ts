@@ -4,7 +4,7 @@ export const testSymbols = [
   "AFRAF", // PNK
   "AMZN", // NMS (Nasdaq)
   "AZT.OL", // Far less properties than other symbols (#42), OSL
-  "BEKE", // NYSE 
+  "BEKE", // NYSE
   "BFLY", // NYSE
   "WSKT.JK", // JKT
   "SIX", // NYSE
