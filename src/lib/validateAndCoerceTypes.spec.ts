@@ -1,6 +1,19 @@
 import validateAndCoerceTypes, { ajv } from "./validateAndCoerceTypes";
 import { InvalidOptionsError, FailedYahooValidationError } from "./errors";
 
+ajv.addSchema({
+  $id: "testSchema",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  properties: {
+    date: { yahooFinanceType: "date" },
+    dateInMs: { yahooFinanceType: "DateInMs" },
+    twoNumberRange: { yahooFinanceType: "TwoNumberRange" },
+    number: { yahooFinanceType: "number" },
+    numberNull: { yahooFinanceType: "number|null" },
+  },
+  type: "object",
+});
+
 const defParams = {
   source: "validateAndCoerceTypes.spec.js",
   schemaKey: "#/definitions/QuoteSummaryResult",
@@ -158,6 +171,64 @@ describe("validateAndCoerceTypes", () => {
           object: result,
         });
         expect(result.price.postMarketChangePercent).toBe(0.006599537);
+      });
+
+      it("passes if data is null and type IS number|null", () => {
+        expect(() =>
+          validateAndCoerceTypes({
+            ...defParams,
+            schemaKey: "testSchema",
+            type: "result",
+            object: { numberNull: null },
+          })
+        ).not.toThrow();
+      });
+
+      it("fails if data is null and type IS NOT number|null", () => {
+        let error;
+        try {
+          validateAndCoerceTypes({
+            ...defParams,
+            schemaKey: "testSchema",
+            type: "result",
+            object: { number: null },
+            options: { ...defParams.options, logErrors: false },
+          });
+        } catch (e) {
+          error = e;
+        }
+        expect(error).toBeDefined();
+        expect(error.errors[0].message).toMatch(/Expecting number/);
+      });
+
+      it("passes and coerces {} to null if type IS number|null", () => {
+        const object = { numberNull: {} };
+        expect(() =>
+          validateAndCoerceTypes({
+            ...defParams,
+            schemaKey: "testSchema",
+            type: "result",
+            object,
+          })
+        ).not.toThrow();
+        expect(object.numberNull).toBe(null);
+      });
+
+      it("fails when receiving {} if type IS NOT number|null", () => {
+        let error;
+        try {
+          validateAndCoerceTypes({
+            ...defParams,
+            schemaKey: "testSchema",
+            type: "result",
+            object: { number: {} },
+            options: { ...defParams.options, logErrors: false },
+          });
+        } catch (e) {
+          error = e;
+        }
+        expect(error).toBeDefined();
+        expect(error.errors[0].message).toMatch(/number \| null/);
       });
 
       it("fails if data is not a number nor object", () => {
