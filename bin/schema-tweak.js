@@ -27,6 +27,15 @@ process.stdin.on("end", () => {
     } else if (schema.$ref === "#/definitions/DateInMs") {
       const key = state.property.split("/").pop();
       parent.properties[key] = { yahooFinanceType: "DateInMs" };
+    } else if (Array.isArray(schema.type)) {
+      if (
+        schema.type.length === 2 &&
+        schema.type.includes("number") &&
+        schema.type.includes("null")
+      ) {
+        delete schema.type;
+        schema.yahooFinanceType = "number|null";
+      }
     } else if (schema.type === "number") {
       delete schema.type;
       schema.yahooFinanceType = "number";
