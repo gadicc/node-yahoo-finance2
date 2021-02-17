@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/download/AFRAF?interval=1d&events=history&includeAdjustedClose=true&period1=1577836800&period2=1578009600"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-disposition": [
+        "attachment; filename=AFRAF.csv"
+      ],
+      "content-type": [
+        "text/csv"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "cache-control": [
+        "private, max-age=10, stale-while-revalidate=20"
+      ],
+      "y-rid": [
+        "beeb1flg2qe7e"
+      ],
+      "x-yahoo-request-id": [
+        "beeb1flg2qe7e"
+      ],
+      "x-request-id": [
+        "7c979620-7bdc-4877-ab2b-b63fc3289e02"
+      ],
+      "content-length": [
+        "104"
+      ],
+      "x-envoy-upstream-service-time": [
+        "7"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 15:40:30 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-chart-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "Date,Open,High,Low,Close,Adj Close,Volume\n2020-01-02,11.270000,11.270000,11.270000,11.270000,11.270000,0"
+  }
+}

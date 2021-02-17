@@ -1,5 +1,5 @@
 import historical from "./historical";
-const { InvalidOptionsError } = require("../lib/errors");
+import { testSymbols } from "../../tests/symbols";
 
 import testYf from "../../tests/testYf";
 
@@ -8,14 +8,16 @@ const yf = testYf({ historical });
 describe("historical", () => {
   // See also common module tests in moduleExec.spec.js
 
-  it("passes validation", async () => {
-    const result = await yf.historical(
-      "AAPL",
+  const symbolsToSkip = ["BEKE", "BFLY"];
+  const symbols = testSymbols.filter((s) => symbolsToSkip.indexOf(s) === -1);
+  it.each(symbols)("passes validation for symbol '%s'", async (symbol) => {
+    await yf.historical(
+      symbol,
       {
         period1: "2020-01-01",
         period2: "2020-01-03",
       },
-      { devel: "historical-AAPL-2020-01-01-to-2020-01-03.json" }
+      { devel: `historical-${symbol}-2020-01-01-to-2020-01-03.json` }
     );
   });
 
