@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BEKE?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "7m275f1g2r54l"
+      ],
+      "x-yahoo-request-id": [
+        "7m275f1g2r54l"
+      ],
+      "x-request-id": [
+        "7e62cd94-9f8c-4e8a-a923-d3afe59fe421"
+      ],
+      "content-length": [
+        "424"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 22:11:33 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "NYQ",
+              "quoteType": "EQUITY",
+              "symbol": "BEKE",
+              "underlyingSymbol": "BEKE",
+              "shortName": "KE Holdings Inc",
+              "longName": "KE Holdings Inc.",
+              "firstTradeDateEpochUtc": 1597325400,
+              "timeZoneFullName": "America/New_York",
+              "timeZoneShortName": "EST",
+              "uuid": "36c211a8-04c4-368b-8141-b3e0d4048354",
+              "messageBoardId": "finmb_665898843",
+              "gmtOffSetMilliseconds": -18000000,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

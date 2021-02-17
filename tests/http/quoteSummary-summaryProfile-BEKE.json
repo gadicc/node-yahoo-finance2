@@ -1,0 +1,95 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BEKE?formatted=false&modules=summaryProfile"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "044omo5g2r54m"
+      ],
+      "x-yahoo-request-id": [
+        "044omo5g2r54m"
+      ],
+      "x-request-id": [
+        "81b56ef8-6d74-471a-a616-8617d55772a6"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "502"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 22:11:34 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "Building Fudao",
+              "address2": "No.11 Kaituo Road Haidian District",
+              "city": "Beijing",
+              "zip": "100085",
+              "country": "China",
+              "phone": "86 10 5810 4689",
+              "website": "http://ke.com",
+              "industry": "Real Estate Services",
+              "sector": "Real Estate",
+              "longBusinessSummary": "KE Holdings Inc. operates an integrated online and offline platform for housing transactions and services in the People's Republic of China. The company facilitates various housing transactions ranging from existing and new home sales and home rentals to home renovation, real estate financial solutions, and other services. It also owns and operates Lianjia, a real estate brokerage branded store. The company was founded in 2001 and is headquartered in Beijing, China.",
+              "companyOfficers": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
