@@ -17,10 +17,11 @@ describe("search", () => {
   // See also common module tests in moduleExec.spec.js
 
   // validate different searches
-  testSearches.forEach((search) => {
-    it(`passed validation for search: ${search}`, async () => {
-      const devel = `search-${search}.json`;
-      await yf.search(search, {}, { devel });
-    });
-  });
+  it.each(testSearches)(
+    "passed validation for search '%s'",
+    async (testSearch) => {
+      const devel = `search-${testSearch}.json`;
+      await yf.search(testSearch, {}, { devel });
+    }
+  );
 });

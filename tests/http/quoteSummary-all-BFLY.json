@@ -1,0 +1,951 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BFLY?formatted=false&modules=assetProfile%2CbalanceSheetHistory%2CbalanceSheetHistoryQuarterly%2CcalendarEvents%2CcashflowStatementHistory%2CcashflowStatementHistoryQuarterly%2CdefaultKeyStatistics%2Cearnings%2CearningsHistory%2CearningsTrend%2CfinancialData%2CfundOwnership%2CfundPerformance%2CfundProfile%2CincomeStatementHistory%2CincomeStatementHistoryQuarterly%2CindexTrend%2CindustryTrend%2CinsiderHolders%2CinsiderTransactions%2CinstitutionOwnership%2CmajorDirectHolders%2CmajorHoldersBreakdown%2CnetSharePurchaseActivity%2Cprice%2CquoteType%2CrecommendationTrend%2CsecFilings%2CsectorTrend%2CsummaryDetail%2CsummaryProfile%2CtopHoldings%2CupgradeDowngradeHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "euk9hphg2qdtb"
+      ],
+      "x-yahoo-request-id": [
+        "euk9hphg2qdtb"
+      ],
+      "x-request-id": [
+        "2157791f-f3dd-432c-b1ec-efb3f7563a28"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "x-envoy-upstream-service-time": [
+        "10"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 15:35:07 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "transfer-encoding": [
+        "chunked"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "assetProfile": {
+              "address1": "530 Old Whitfield Street",
+              "city": "Guilford",
+              "state": "CT",
+              "zip": "06437",
+              "country": "United States",
+              "phone": "203-458-2514",
+              "website": "http://english.butterflynetwork.com",
+              "industry": "Medical Devices",
+              "sector": "Healthcare",
+              "longBusinessSummary": "Butterfly Network, Inc. develops medical imaging device for hospitals and organizations to scale their point of care ultrasound programs through a new suite of tools that enable ultrasound workflow mobile and system integrations simple and secure. The company's device provides diagnostic imaging and measurement of blood vessels and examines the cardiac, abdominal, urological, fetal, gynecological, and musculoskeletal systems. The company also offers Butterfly iQ, a handheld and single-probe whole body ultrasound system. The company was founded in 2011 and is based in Guilford, Connecticut.",
+              "companyOfficers": [
+                {
+                  "maxAge": 1,
+                  "name": "Mr. Darius  Shahida",
+                  "age": 29,
+                  "title": "Chief Strategy Officer & Chief Bus. Devel. Officer",
+                  "yearBorn": 1991,
+                  "fiscalYear": 2019,
+                  "totalPay": {
+                    "raw": 413625,
+                    "fmt": "413.62k",
+                    "longFmt": "413,625"
+                  },
+                  "exercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "unexercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "Dr. Jonathan M. Rothberg",
+                  "age": 56,
+                  "title": "Founder & Chairman",
+                  "yearBorn": 1964,
+                  "exercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "unexercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "Dr. Todd M. Fruchterman",
+                  "age": 50,
+                  "title": "Pres & CEO",
+                  "yearBorn": 1970,
+                  "exercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "unexercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "Mr. Gregory C. Fergus",
+                  "age": 56,
+                  "title": "Board Member and Chief Commercial Officer",
+                  "yearBorn": 1964,
+                  "exercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "unexercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "Michael J. Rothberg",
+                  "title": "Chief Financial Officer",
+                  "exercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "unexercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "Elizabeth A. Whayland",
+                  "title": "Sec. & Director",
+                  "exercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "unexercisedValue": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  }
+                }
+              ],
+              "compensationAsOfEpochDate": 1577750400,
+              "maxAge": 86400
+            },
+            "recommendationTrend": {
+              "trend": [
+                {
+                  "period": "0m",
+                  "strongBuy": 0,
+                  "buy": 0,
+                  "hold": 0,
+                  "sell": 0,
+                  "strongSell": 0
+                },
+                {
+                  "period": "-1m",
+                  "strongBuy": 0,
+                  "buy": 0,
+                  "hold": 0,
+                  "sell": 0,
+                  "strongSell": 0
+                },
+                {
+                  "period": "-2m",
+                  "strongBuy": 0,
+                  "buy": 0,
+                  "hold": 0,
+                  "sell": 0,
+                  "strongSell": 0
+                },
+                {
+                  "period": "-3m",
+                  "strongBuy": 0,
+                  "buy": 0,
+                  "hold": 0,
+                  "sell": 0,
+                  "strongSell": 0
+                }
+              ],
+              "maxAge": 86400
+            },
+            "cashflowStatementHistory": {
+              "cashflowStatements": [],
+              "maxAge": 86400
+            },
+            "indexTrend": {
+              "maxAge": 1,
+              "symbol": "SP5",
+              "peRatio": 5.56217,
+              "pegRatio": 0.991258,
+              "estimates": [
+                {
+                  "period": "0q",
+                  "growth": 0.269
+                },
+                {
+                  "period": "+1q",
+                  "growth": 0.96099997
+                },
+                {
+                  "period": "0y",
+                  "growth": 0.148
+                },
+                {
+                  "period": "+1y",
+                  "growth": 0.155
+                },
+                {
+                  "period": "+5y",
+                  "growth": 0.0821053
+                },
+                {
+                  "period": "-5y"
+                }
+              ]
+            },
+            "defaultKeyStatistics": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "profitMargins": 0,
+              "category": null,
+              "fundFamily": null,
+              "legalType": null,
+              "lastSplitFactor": null,
+              "52WeekChange": 0,
+              "SandP52WeekChange": 0.16137505
+            },
+            "industryTrend": {
+              "maxAge": 1,
+              "symbol": null,
+              "estimates": []
+            },
+            "quoteType": {
+              "exchange": "NYQ",
+              "quoteType": "EQUITY",
+              "symbol": "BFLY",
+              "underlyingSymbol": "BFLY",
+              "shortName": "Butterfly Network, Inc. Class A",
+              "longName": "Butterfly Network, Inc.",
+              "firstTradeDateEpochUtc": 1594647000,
+              "timeZoneFullName": "America/New_York",
+              "timeZoneShortName": "EST",
+              "uuid": "5f9449d1-1162-3804-a742-88e2f8b5fb0e",
+              "messageBoardId": null,
+              "gmtOffSetMilliseconds": -18000000,
+              "maxAge": 1
+            },
+            "incomeStatementHistory": {
+              "incomeStatementHistory": [],
+              "maxAge": 86400
+            },
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": []
+            },
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 22.5,
+              "open": 23.11,
+              "dayLow": 22.1807,
+              "dayHigh": 23.31,
+              "regularMarketPreviousClose": 22.5,
+              "regularMarketOpen": 23.11,
+              "regularMarketDayLow": 22.1807,
+              "regularMarketDayHigh": 23.31,
+              "volume": 1122067,
+              "regularMarketVolume": 1122067,
+              "averageVolume": 2347300,
+              "averageVolume10days": 2347300,
+              "averageDailyVolume10Day": 2347300,
+              "bid": 22.52,
+              "ask": 22.56,
+              "bidSize": 1000,
+              "askSize": 900,
+              "fiftyTwoWeekLow": 21.95,
+              "fiftyTwoWeekHigh": 24.8,
+              "fiftyDayAverage": 22.5,
+              "twoHundredDayAverage": 22.5,
+              "currency": "USD",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "algorithm": null,
+              "tradeable": false
+            },
+            "insiderHolders": {
+              "holders": [],
+              "maxAge": 1
+            },
+            "calendarEvents": {
+              "maxAge": 1,
+              "earnings": {
+                "earningsDate": []
+              }
+            },
+            "price": {
+              "maxAge": 1,
+              "preMarketChangePercent": 0.0288889,
+              "preMarketChange": 0.65,
+              "preMarketTime": 1613572193,
+              "preMarketPrice": 23.15,
+              "preMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": 0.004888916,
+              "regularMarketChange": 0.11000061,
+              "regularMarketTime": 1613576106,
+              "priceHint": 2,
+              "regularMarketPrice": 22.61,
+              "regularMarketDayHigh": 23.31,
+              "regularMarketDayLow": 22.1807,
+              "regularMarketVolume": 1122067,
+              "averageDailyVolume10Day": 2347300,
+              "averageDailyVolume3Month": 2347300,
+              "regularMarketPreviousClose": 22.5,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 23.11,
+              "exchange": "NYQ",
+              "exchangeName": "NYSE",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "EQUITY",
+              "symbol": "BFLY",
+              "underlyingSymbol": null,
+              "shortName": "Butterfly Network, Inc. Class A",
+              "longName": "Butterfly Network, Inc.",
+              "currency": "USD",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null
+            },
+            "balanceSheetHistory": {
+              "balanceSheetStatements": [],
+              "maxAge": 86400
+            },
+            "earningsTrend": {
+              "trend": [
+                {
+                  "maxAge": 1,
+                  "period": "0q",
+                  "endDate": null,
+                  "growth": {},
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "yearAgoEps": {},
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "growth": {}
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "yearAgoRevenue": {},
+                    "growth": {}
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "7daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "30daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "60daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "90daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    }
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast90days": {}
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "+1q",
+                  "endDate": null,
+                  "growth": {},
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "yearAgoEps": {},
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "growth": {}
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "yearAgoRevenue": {},
+                    "growth": {}
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "7daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "30daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "60daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "90daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    }
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast90days": {}
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "0y",
+                  "endDate": null,
+                  "growth": {},
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "yearAgoEps": {},
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "growth": {}
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "yearAgoRevenue": {},
+                    "growth": {}
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "7daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "30daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "60daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "90daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    }
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast90days": {}
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "+1y",
+                  "endDate": null,
+                  "growth": {},
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "yearAgoEps": {},
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "growth": {}
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "yearAgoRevenue": {},
+                    "growth": {}
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "7daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "30daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "60daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "90daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    }
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast90days": {}
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "+5y",
+                  "endDate": null,
+                  "growth": {},
+                  "earningsEstimate": {
+                    "avg": {},
+                    "low": {},
+                    "high": {},
+                    "yearAgoEps": {},
+                    "numberOfAnalysts": {},
+                    "growth": {}
+                  },
+                  "revenueEstimate": {
+                    "avg": {},
+                    "low": {},
+                    "high": {},
+                    "numberOfAnalysts": {},
+                    "yearAgoRevenue": {},
+                    "growth": {}
+                  },
+                  "epsTrend": {
+                    "current": {},
+                    "7daysAgo": {},
+                    "30daysAgo": {},
+                    "60daysAgo": {},
+                    "90daysAgo": {}
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {},
+                    "upLast30days": {},
+                    "downLast30days": {},
+                    "downLast90days": {}
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "-5y",
+                  "endDate": null,
+                  "growth": {},
+                  "earningsEstimate": {
+                    "avg": {},
+                    "low": {},
+                    "high": {},
+                    "yearAgoEps": {},
+                    "numberOfAnalysts": {},
+                    "growth": {}
+                  },
+                  "revenueEstimate": {
+                    "avg": {},
+                    "low": {},
+                    "high": {},
+                    "numberOfAnalysts": {},
+                    "yearAgoRevenue": {},
+                    "growth": {}
+                  },
+                  "epsTrend": {
+                    "current": {},
+                    "7daysAgo": {},
+                    "30daysAgo": {},
+                    "60daysAgo": {},
+                    "90daysAgo": {}
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {},
+                    "upLast30days": {},
+                    "downLast30days": {},
+                    "downLast90days": {}
+                  }
+                }
+              ],
+              "maxAge": 1
+            },
+            "institutionOwnership": {
+              "maxAge": 1,
+              "ownershipList": []
+            },
+            "majorHoldersBreakdown": {
+              "maxAge": 1
+            },
+            "balanceSheetHistoryQuarterly": {
+              "balanceSheetStatements": [],
+              "maxAge": 86400
+            },
+            "earningsHistory": {
+              "history": [
+                {
+                  "maxAge": 1,
+                  "epsActual": {},
+                  "epsEstimate": {},
+                  "epsDifference": {},
+                  "surprisePercent": {},
+                  "quarter": {},
+                  "period": "-4q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {},
+                  "epsEstimate": {},
+                  "epsDifference": {},
+                  "surprisePercent": {},
+                  "quarter": {},
+                  "period": "-3q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {},
+                  "epsEstimate": {},
+                  "epsDifference": {},
+                  "surprisePercent": {},
+                  "quarter": {},
+                  "period": "-2q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {},
+                  "epsEstimate": {},
+                  "epsDifference": {},
+                  "surprisePercent": {},
+                  "quarter": {},
+                  "period": "-1q"
+                }
+              ],
+              "maxAge": 86400
+            },
+            "majorDirectHolders": {
+              "holders": [],
+              "maxAge": 1
+            },
+            "summaryProfile": {
+              "address1": "530 Old Whitfield Street",
+              "city": "Guilford",
+              "state": "CT",
+              "zip": "06437",
+              "country": "United States",
+              "phone": "203-458-2514",
+              "website": "http://english.butterflynetwork.com",
+              "industry": "Medical Devices",
+              "sector": "Healthcare",
+              "longBusinessSummary": "Butterfly Network, Inc. develops medical imaging device for hospitals and organizations to scale their point of care ultrasound programs through a new suite of tools that enable ultrasound workflow mobile and system integrations simple and secure. The company's device provides diagnostic imaging and measurement of blood vessels and examines the cardiac, abdominal, urological, fetal, gynecological, and musculoskeletal systems. The company also offers Butterfly iQ, a handheld and single-probe whole body ultrasound system. The company was founded in 2011 and is based in Guilford, Connecticut.",
+              "companyOfficers": [],
+              "maxAge": 86400
+            },
+            "netSharePurchaseActivity": {
+              "maxAge": 1,
+              "period": "6m",
+              "buyInfoCount": 0,
+              "buyInfoShares": 0,
+              "sellInfoCount": 0,
+              "netInfoCount": 0,
+              "netInfoShares": 0,
+              "totalInsiderShares": 0
+            },
+            "sectorTrend": {
+              "maxAge": 1,
+              "symbol": null,
+              "estimates": []
+            },
+            "incomeStatementHistoryQuarterly": {
+              "incomeStatementHistory": [],
+              "maxAge": 86400
+            },
+            "cashflowStatementHistoryQuarterly": {
+              "cashflowStatements": [],
+              "maxAge": 86400
+            },
+            "earnings": {
+              "maxAge": 86400,
+              "earningsChart": {
+                "quarterly": [],
+                "earningsDate": []
+              },
+              "financialsChart": {
+                "yearly": [],
+                "quarterly": []
+              }
+            },
+            "financialData": {
+              "maxAge": 86400,
+              "currentPrice": 22.61,
+              "targetHighPrice": 15,
+              "targetLowPrice": 15,
+              "targetMeanPrice": 15,
+              "targetMedianPrice": 15,
+              "recommendationKey": "none",
+              "numberOfAnalystOpinions": 1,
+              "grossMargins": 0,
+              "ebitdaMargins": 0,
+              "operatingMargins": 0,
+              "profitMargins": 0,
+              "financialCurrency": null
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
