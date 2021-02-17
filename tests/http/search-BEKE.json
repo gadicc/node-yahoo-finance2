@@ -1,0 +1,186 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=BEKE"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "7omig7pg2qh3l"
+      ],
+      "x-yahoo-request-id": [
+        "7omig7pg2qh3l"
+      ],
+      "x-request-id": [
+        "e542847b-c6cc-4b2d-afa2-4daaacc3afe3"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "973"
+      ],
+      "x-envoy-upstream-service-time": [
+        "74"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 16:29:41 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 10,
+      "quotes": [
+        {
+          "exchange": "NYQ",
+          "shortname": "KE Holdings Inc",
+          "quoteType": "EQUITY",
+          "symbol": "BEKE",
+          "index": "quotes",
+          "score": 3180600,
+          "typeDisp": "Equity",
+          "longname": "KE Holdings Inc.",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "PNK",
+          "shortname": "BEKEM METALS INC",
+          "quoteType": "EQUITY",
+          "symbol": "BKMM",
+          "index": "quotes",
+          "score": 20032,
+          "typeDisp": "Equity",
+          "longname": "Bekem Metals, Inc.",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "BRU",
+          "shortname": "TER BEKE",
+          "quoteType": "EQUITY",
+          "symbol": "TERB.BR",
+          "index": "quotes",
+          "score": 20030,
+          "typeDisp": "Equity",
+          "longname": "Ter Beke NV",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BEKE Mar 2021 80.000 call",
+          "quoteType": "OPTION",
+          "symbol": "BEKE210319C00080000",
+          "index": "quotes",
+          "score": 20006,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BEKE Jan 2023 80.000 call",
+          "quoteType": "OPTION",
+          "symbol": "BEKE230120C00080000",
+          "index": "quotes",
+          "score": 20004,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BEKE Apr 2021 115.000 call",
+          "quoteType": "OPTION",
+          "symbol": "BEKE210416C00115000",
+          "index": "quotes",
+          "score": 20003,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [
+        {
+          "uuid": "3f33877f-d553-3330-be49-03f87c8cabc4",
+          "title": "Is the Options Market Predicting a Spike in KE Holdings (BEKE) Stock?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/news/options-market-predicting-spike-ke-134701283.html",
+          "providerPublishTime": 1610027221,
+          "type": "STORY"
+        },
+        {
+          "uuid": "533b5a72-a0b2-3fdf-a82f-a946f0905d74",
+          "title": "Why This 'Redfin of China' Should Be on Your Stock Watch List",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/m/533b5a72-a0b2-3fdf-a82f-a946f0905d74/why-this-%27redfin-of-china%27.html",
+          "providerPublishTime": 1608126147,
+          "type": "STORY"
+        },
+        {
+          "uuid": "235e86f1-ba04-3066-8d49-be911ecab0d1",
+          "title": "JLL vs. BEKE: Which Stock Should Value Investors Buy Now?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/news/jll-vs-beke-stock-value-164004152.html",
+          "providerPublishTime": 1610037604,
+          "type": "STORY"
+        },
+        {
+          "uuid": "e45f1067-7704-3d7d-ad65-8a669633c34a",
+          "title": "Breakeven Is Near for KE Holdings Inc. (NYSE:BEKE)",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/news/breakeven-near-ke-holdings-inc-052423184.html",
+          "providerPublishTime": 1613021063,
+          "type": "STORY"
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "totalTime": 73,
+      "timeTakenForQuotes": 466,
+      "timeTakenForNews": 600,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0
+    }
+  }
+}

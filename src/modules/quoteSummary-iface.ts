@@ -607,12 +607,11 @@ export enum OwnershipEnum {
 
 export interface MajorHoldersBreakdown {
   maxAge: number;
-  insidersPercentHeld: number;
-  institutionsPercentHeld: number;
-  institutionsFloatPercentHeld: number;
-  institutionsCount: number;
+  insidersPercentHeld?: number;
+  institutionsPercentHeld?: number;
+  institutionsFloatPercentHeld?: number;
+  institutionsCount?: number;
 }
-
 export interface NetSharePurchaseActivity {
   maxAge: number;
   period: string;
@@ -624,7 +623,7 @@ export interface NetSharePurchaseActivity {
   sellPercentInsiderShares?: number;
   netInfoCount: number;
   netInfoShares: number;
-  netPercentInsiderShares: number;
+  netPercentInsiderShares?: number;
   totalInsiderShares: number;
 }
 
