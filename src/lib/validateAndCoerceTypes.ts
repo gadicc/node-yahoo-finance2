@@ -164,7 +164,7 @@ interface ValidationOptions {
   logOptionsErrors: boolean;
 }
 
-interface ValidateParams {
+export interface ValidateParams {
   source: string;
   type: "options" | "result";
   object: object;
