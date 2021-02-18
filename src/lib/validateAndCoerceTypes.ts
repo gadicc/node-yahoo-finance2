@@ -186,8 +186,11 @@ function validate({
   if (valid) return;
 
   if (type === "result") {
+    /* istanbul ignore else */
     if (validator.errors)
       validator.errors.forEach((error) => {
+        // For now let's ignore the base object which could be huge.
+        /* istanbul ignore else */
         if (error.dataPath !== "")
           // Note, not the regular ajv data value from verbose:true
           error.data = resolvePath(object, error.dataPath);
