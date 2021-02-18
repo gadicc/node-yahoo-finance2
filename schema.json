@@ -4191,6 +4191,104 @@
       ],
       "type": "object"
     },
+    "SearchQuoteYahooCryptocurrency": {
+      "additionalProperties": false,
+      "properties": {
+        "exchange": {
+          "type": "string"
+        },
+        "index": {
+          "const": "quotes",
+          "type": "string"
+        },
+        "isYahooFinance": {
+          "const": true,
+          "type": "boolean"
+        },
+        "longname": {
+          "type": "string"
+        },
+        "newListingDate": {
+          "yahooFinanceType": "date"
+        },
+        "quoteType": {
+          "const": "CRYPTOCURRENCY",
+          "type": "string"
+        },
+        "score": {
+          "yahooFinanceType": "number"
+        },
+        "shortname": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "typeDisp": {
+          "const": "Cryptocurrency",
+          "type": "string"
+        }
+      },
+      "required": [
+        "exchange",
+        "index",
+        "isYahooFinance",
+        "quoteType",
+        "score",
+        "symbol",
+        "typeDisp"
+      ],
+      "type": "object"
+    },
+    "SearchQuoteYahooCurrency": {
+      "additionalProperties": false,
+      "properties": {
+        "exchange": {
+          "type": "string"
+        },
+        "index": {
+          "const": "quotes",
+          "type": "string"
+        },
+        "isYahooFinance": {
+          "const": true,
+          "type": "boolean"
+        },
+        "longname": {
+          "type": "string"
+        },
+        "newListingDate": {
+          "yahooFinanceType": "date"
+        },
+        "quoteType": {
+          "const": "CURRENCY",
+          "type": "string"
+        },
+        "score": {
+          "yahooFinanceType": "number"
+        },
+        "shortname": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "typeDisp": {
+          "const": "Currency",
+          "type": "string"
+        }
+      },
+      "required": [
+        "exchange",
+        "index",
+        "isYahooFinance",
+        "quoteType",
+        "score",
+        "symbol",
+        "typeDisp"
+      ],
+      "type": "object"
+    },
     "SearchQuoteYahooETF": {
       "additionalProperties": false,
       "properties": {
@@ -4477,6 +4575,12 @@
               },
               {
                 "$ref": "#/definitions/SearchQuoteYahooIndex"
+              },
+              {
+                "$ref": "#/definitions/SearchQuoteYahooCurrency"
+              },
+              {
+                "$ref": "#/definitions/SearchQuoteYahooCryptocurrency"
               },
               {
                 "$ref": "#/definitions/SearchQuoteNonYahoo"

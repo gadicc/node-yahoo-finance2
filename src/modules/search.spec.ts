@@ -11,6 +11,7 @@ const testSearches = [
   "Evolution Gaming Group", // STO
   "Bayerische Motoren Werke AG", // GER
   "NO0010123060", // has no shortname! (#31)
+  "EUR", // a currency
 ];
 
 describe("search", () => {

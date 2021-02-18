@@ -35,6 +35,14 @@ export interface SearchQuoteYahooIndex extends SearchQuoteYahoo {
   quoteType: "INDEX";
   typeDisp: "Index";
 }
+export interface SearchQuoteYahooCurrency extends SearchQuoteYahoo {
+  quoteType: "CURRENCY";
+  typeDisp: "Currency";
+}
+export interface SearchQuoteYahooCryptocurrency extends SearchQuoteYahoo {
+  quoteType: "CRYPTOCURRENCY";
+  typeDisp: "Cryptocurrency";
+}
 export interface SearchQuoteNonYahoo {
   index: string; // '78ddc07626ff4bbcae663e88514c23a0'
   name: string; // 'AAPlasma'
@@ -60,6 +68,8 @@ export interface SearchResult {
     | SearchQuoteYahooETF
     | SearchQuoteYahooFund
     | SearchQuoteYahooIndex
+    | SearchQuoteYahooCurrency
+    | SearchQuoteYahooCryptocurrency
     | SearchQuoteNonYahoo
   >;
   news: Array<SearchNews>;
