@@ -5028,6 +5028,60 @@
       ],
       "type": "object"
     },
+    "TrendingSymbol": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "type": "object"
+    },
+    "TrendingSymbolsOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "yahooFinanceType": "number"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TrendingSymbolsResult": {
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "yahooFinanceType": "number"
+        },
+        "jobTimestamp": {
+          "yahooFinanceType": "number"
+        },
+        "quotes": {
+          "items": {
+            "$ref": "#/definitions/TrendingSymbol"
+          },
+          "type": "array"
+        },
+        "startInterval": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "count",
+        "quotes",
+        "jobTimestamp",
+        "startInterval"
+      ],
+      "type": "object"
+    },
     "TwoNumberRange": {
       "additionalProperties": false,
       "properties": {

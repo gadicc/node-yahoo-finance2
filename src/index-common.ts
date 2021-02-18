@@ -10,6 +10,7 @@ import quote from "./modules/quote";
 import quoteSummary from "./modules/quoteSummary";
 import search from "./modules/search";
 import recommendationsBySymbol from "./modules/recommendationsBySymbol";
+import trendingSymbols from "./modules/trendingSymbols";
 
 export default {
   _env: {},
@@ -23,4 +24,5 @@ export default {
   quoteSummary,
   search,
   recommendationsBySymbol,
+  trendingSymbols,
 };

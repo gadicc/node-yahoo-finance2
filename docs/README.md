@@ -33,6 +33,7 @@ const result = await yahooFinance.module(query, queryOpts, moduleOpts);
 1. [quoteSummary](./modules/quoteSummary.md) - comprehensive symbol info.
 1. [search](./modules/search.md) - symbol lookup, news and articles.
 1. [recommendationsBySymbol](./modules/recommendationsBySymbol.md) - similar symbols.
+1. [trendingSymbols](./modules/trendingSymbols.md) - symbols trending in a country.
 
 <a name="error-handling"></a>
 ## Error Handling
