@@ -1,5 +1,5 @@
 import autoc from "./autoc";
-const { InvalidOptionsError } = require("../lib/errors");
+import { testSymbols } from "../../tests/symbols";
 
 import testYf from "../../tests/testYf";
 
@@ -8,8 +8,8 @@ const yf = testYf({ autoc });
 describe("autoc", () => {
   // See also common module tests in moduleExec.spec.js
 
-  it("passes validation", async () => {
-    await yf.autoc("AAPL", {}, { devel: "autoc-AAPL.json" });
+  it.each(testSymbols)("passes validation for symbol '%s'", async (symbol) => {
+    await yf.autoc(symbol, {}, { devel: `autoc-${symbol}.json` });
   });
 
   if (process.env.FETCH_DEVEL !== "nocache")

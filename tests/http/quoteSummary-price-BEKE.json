@@ -1,0 +1,116 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BEKE?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "0qghb5dg2qdt8"
+      ],
+      "x-yahoo-request-id": [
+        "0qghb5dg2qdt8"
+      ],
+      "x-request-id": [
+        "2223cb0a-e968-4920-a30f-71411971db34"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "454"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 15:35:04 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "preMarketChangePercent": -0.0220588,
+              "preMarketChange": -1.5,
+              "preMarketTime": 1613572197,
+              "preMarketPrice": 66.5,
+              "preMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": -0.03132349,
+              "regularMarketChange": -2.1299973,
+              "regularMarketTime": 1613576103,
+              "priceHint": 2,
+              "regularMarketPrice": 65.87,
+              "regularMarketDayHigh": 67.82,
+              "regularMarketDayLow": 65.25,
+              "regularMarketVolume": 2244401,
+              "regularMarketPreviousClose": 68,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 66.39,
+              "exchange": "NYQ",
+              "exchangeName": "NYSE",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "EQUITY",
+              "symbol": "BEKE",
+              "underlyingSymbol": null,
+              "shortName": "KE Holdings Inc",
+              "longName": "KE Holdings Inc.",
+              "currency": "USD",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 77646241792
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
