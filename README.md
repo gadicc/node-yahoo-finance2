@@ -106,6 +106,10 @@ our list of heroes:
 
 ![contributor-faces](https://contributors-svg.vercel.app/api/svg?user=gadicc&repo=node-yahoo-finance2)
 
+Special mention goes out to [pudgereyem](https://github.com/pudgereyem) and
+[PythonCreator27](https://github.com/PythonCreator27) who made significant
+contributions in the very early days of this project.
+
 ## Credits
 
 * Massive thanks to [@pilwon](https://github.com/pilwon) for the original
