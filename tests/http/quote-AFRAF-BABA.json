@@ -1,0 +1,209 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=AFRAF%2CBABA"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "cbe2sptg2tgsm"
+      ],
+      "x-yahoo-request-id": [
+        "cbe2sptg2tgsm"
+      ],
+      "x-request-id": [
+        "b2398f2c-5b97-4627-9f14-42cf4bc69cb9"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1293"
+      ],
+      "x-envoy-upstream-service-time": [
+        "19"
+      ],
+      "date": [
+        "Thu, 18 Feb 2021 19:44:22 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Delayed Quote",
+            "triggerable": false,
+            "currency": "USD",
+            "firstTradeDateMilliseconds": 1331731800000,
+            "priceHint": 2,
+            "regularMarketChange": -0.21499968,
+            "regularMarketChangePercent": -3.61344,
+            "regularMarketTime": 1613661689,
+            "regularMarketPrice": 5.735,
+            "regularMarketDayHigh": 5.735,
+            "regularMarketDayRange": "5.735 - 5.735",
+            "regularMarketDayLow": 5.735,
+            "regularMarketVolume": 210,
+            "regularMarketPreviousClose": 5.95,
+            "bid": 0,
+            "ask": 0,
+            "bidSize": 0,
+            "askSize": 0,
+            "fullExchangeName": "Other OTC",
+            "financialCurrency": "EUR",
+            "regularMarketOpen": 5.735,
+            "averageDailyVolume3Month": 2700,
+            "averageDailyVolume10Day": 1857,
+            "fiftyTwoWeekLowChange": 2.4650002,
+            "fiftyTwoWeekLowChangePercent": 0.7538227,
+            "fiftyTwoWeekRange": "3.27 - 10.95",
+            "fiftyTwoWeekHighChange": -5.2149997,
+            "fiftyTwoWeekHighChangePercent": -0.47625569,
+            "fiftyTwoWeekLow": 3.27,
+            "fiftyTwoWeekHigh": 10.95,
+            "dividendDate": 1216252800,
+            "epsTrailingTwelveMonths": -1.903,
+            "sharesOutstanding": 427432000,
+            "bookValue": 8.847,
+            "fiftyDayAverage": 5.971212,
+            "fiftyDayAverageChange": -0.23621178,
+            "fiftyDayAverageChangePercent": -0.039558433,
+            "twoHundredDayAverage": 4.960219,
+            "twoHundredDayAverageChange": 0.7747812,
+            "twoHundredDayAverageChangePercent": 0.156199,
+            "marketCap": 2389229568,
+            "priceToBook": 0.64824235,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "exchange": "PNK",
+            "shortName": "AIR FRANCE-KLM",
+            "longName": "Air France-KLM SA",
+            "messageBoardId": "finmb_4463198",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "marketState": "REGULAR",
+            "symbol": "AFRAF"
+          },
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "firstTradeDateMilliseconds": 1411133400000,
+            "priceHint": 2,
+            "regularMarketChange": -5.899994,
+            "regularMarketChangePercent": -2.178486,
+            "regularMarketTime": 1613677455,
+            "regularMarketPrice": 264.93,
+            "regularMarketDayHigh": 265.425,
+            "regularMarketDayRange": "262.33 - 265.425",
+            "regularMarketDayLow": 262.33,
+            "regularMarketVolume": 9700864,
+            "regularMarketPreviousClose": 270.83,
+            "bid": 265.08,
+            "ask": 265.15,
+            "bidSize": 8,
+            "askSize": 10,
+            "fullExchangeName": "NYSE",
+            "financialCurrency": "CNY",
+            "regularMarketOpen": 265.23,
+            "averageDailyVolume3Month": 23712808,
+            "averageDailyVolume10Day": 12949357,
+            "fiftyTwoWeekLowChange": 94.979996,
+            "fiftyTwoWeekLowChangePercent": 0.55887026,
+            "fiftyTwoWeekRange": "169.95 - 319.32",
+            "fiftyTwoWeekHighChange": -54.390015,
+            "fiftyTwoWeekHighChangePercent": -0.17033075,
+            "fiftyTwoWeekLow": 169.95,
+            "fiftyTwoWeekHigh": 319.32,
+            "earningsTimestamp": 1612249320,
+            "earningsTimestampStart": 1612249320,
+            "earningsTimestampEnd": 1612249320,
+            "trailingPE": 28.456497,
+            "epsTrailingTwelveMonths": 9.31,
+            "epsForward": 12.09,
+            "epsCurrentYear": 10.39,
+            "priceEpsCurrentYear": 25.498554,
+            "sharesOutstanding": 2705639936,
+            "bookValue": 24.798,
+            "fiftyDayAverage": 252.51848,
+            "fiftyDayAverageChange": 12.411514,
+            "fiftyDayAverageChangePercent": 0.049150914,
+            "twoHundredDayAverage": 270.33395,
+            "twoHundredDayAverageChange": -5.403961,
+            "twoHundredDayAverageChangePercent": -0.019989947,
+            "marketCap": 731055718400,
+            "forwardPE": 21.91315,
+            "priceToBook": 10.683522,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "exchange": "NYQ",
+            "shortName": "Alibaba Group Holding Limited",
+            "longName": "Alibaba Group Holding Limited",
+            "messageBoardId": "finmb_42083601",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "marketState": "REGULAR",
+            "displayName": "Alibaba",
+            "symbol": "BABA"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

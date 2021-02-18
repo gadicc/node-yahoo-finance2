@@ -1,0 +1,212 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=WSKT.JK%2CSIX"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "dqdeu9dg2tgsn"
+      ],
+      "x-yahoo-request-id": [
+        "dqdeu9dg2tgsn"
+      ],
+      "x-request-id": [
+        "4f8940d3-95f3-4845-821b-b0bbe6d84a8b"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1378"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Thu, 18 Feb 2021 19:44:23 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Delayed Quote",
+            "triggerable": false,
+            "currency": "IDR",
+            "tradeable": false,
+            "firstTradeDateMilliseconds": 1355882400000,
+            "priceHint": 2,
+            "regularMarketChange": -25,
+            "regularMarketChangePercent": -1.6501651,
+            "regularMarketTime": 1613636074,
+            "regularMarketPrice": 1490,
+            "regularMarketDayHigh": 1545,
+            "regularMarketDayRange": "1470.0 - 1545.0",
+            "regularMarketDayLow": 1470,
+            "regularMarketVolume": 99867400,
+            "regularMarketPreviousClose": 1515,
+            "bid": 1490,
+            "ask": 1495,
+            "bidSize": 0,
+            "askSize": 0,
+            "fullExchangeName": "Jakarta",
+            "financialCurrency": "IDR",
+            "regularMarketOpen": 1520,
+            "averageDailyVolume3Month": 269827553,
+            "averageDailyVolume10Day": 198514460,
+            "fiftyTwoWeekLowChange": 1096,
+            "fiftyTwoWeekLowChangePercent": 2.781726,
+            "fiftyTwoWeekRange": "394.0 - 2080.0",
+            "fiftyTwoWeekHighChange": -590,
+            "fiftyTwoWeekHighChangePercent": -0.28365386,
+            "fiftyTwoWeekLow": 394,
+            "fiftyTwoWeekHigh": 2080,
+            "epsTrailingTwelveMonths": -209.899,
+            "epsForward": 234.26,
+            "sharesOutstanding": 13573900288,
+            "bookValue": 983.154,
+            "fiftyDayAverage": 1595.1562,
+            "fiftyDayAverageChange": -105.15625,
+            "fiftyDayAverageChangePercent": -0.06592222,
+            "twoHundredDayAverage": 980.8309,
+            "twoHundredDayAverageChange": 509.16913,
+            "twoHundredDayAverageChangePercent": 0.5191202,
+            "marketCap": 20225112145920,
+            "forwardPE": 6.3604546,
+            "priceToBook": 1.5155306,
+            "sourceInterval": 10,
+            "exchangeDataDelayedBy": 0,
+            "marketState": "PREPRE",
+            "exchange": "JKT",
+            "shortName": "Waskita Karya (Persero) Tbk.",
+            "longName": "PT Waskita Karya (Persero) Tbk",
+            "messageBoardId": "finmb_32989878",
+            "exchangeTimezoneName": "Asia/Jakarta",
+            "exchangeTimezoneShortName": "WIB",
+            "gmtOffSetMilliseconds": 25200000,
+            "market": "id_market",
+            "esgPopulated": false,
+            "symbol": "WSKT.JK"
+          },
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "tradeable": false,
+            "firstTradeDateMilliseconds": 1273584600000,
+            "priceHint": 2,
+            "regularMarketChange": -0.18500137,
+            "regularMarketChangePercent": -0.4575844,
+            "regularMarketTime": 1613677438,
+            "regularMarketPrice": 40.245,
+            "regularMarketDayHigh": 40.3,
+            "regularMarketDayRange": "38.96 - 40.3",
+            "regularMarketDayLow": 38.96,
+            "regularMarketVolume": 689923,
+            "regularMarketPreviousClose": 40.43,
+            "bid": 39.98,
+            "ask": 40.04,
+            "bidSize": 9,
+            "askSize": 8,
+            "fullExchangeName": "NYSE",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 40.11,
+            "averageDailyVolume3Month": 1608519,
+            "averageDailyVolume10Day": 1130285,
+            "fiftyTwoWeekLowChange": 31.494999,
+            "fiftyTwoWeekLowChangePercent": 3.5994284,
+            "fiftyTwoWeekRange": "8.75 - 40.98",
+            "fiftyTwoWeekHighChange": -0.7350006,
+            "fiftyTwoWeekHighChangePercent": -0.017935593,
+            "fiftyTwoWeekLow": 8.75,
+            "fiftyTwoWeekHigh": 40.98,
+            "dividendDate": 1583884800,
+            "earningsTimestamp": 1614173400,
+            "earningsTimestampStart": 1614173400,
+            "earningsTimestampEnd": 1614173400,
+            "trailingAnnualDividendRate": 1.08,
+            "trailingAnnualDividendYield": 0.026712839,
+            "epsTrailingTwelveMonths": -4.118,
+            "epsForward": -1.09,
+            "epsCurrentYear": -4.85,
+            "priceEpsCurrentYear": -8.297938,
+            "sharesOutstanding": 84977104,
+            "bookValue": -12.674,
+            "fiftyDayAverage": 36.487274,
+            "fiftyDayAverageChange": 3.7577248,
+            "fiftyDayAverageChangePercent": 0.10298727,
+            "twoHundredDayAverage": 27.534307,
+            "twoHundredDayAverageChange": 12.710691,
+            "twoHundredDayAverageChangePercent": 0.46163106,
+            "marketCap": 3419903488,
+            "forwardPE": -36.922016,
+            "priceToBook": -3.1753983,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "marketState": "REGULAR",
+            "exchange": "NYQ",
+            "shortName": "Six Flags Entertainment Corpora",
+            "longName": "Six Flags Entertainment Corporation",
+            "messageBoardId": "finmb_435998",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "displayName": "Six Flags",
+            "symbol": "SIX"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

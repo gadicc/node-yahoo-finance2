@@ -1,0 +1,211 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=OCDO.L%2CAMZN"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "83o6b5hg2tgso"
+      ],
+      "x-yahoo-request-id": [
+        "83o6b5hg2tgso"
+      ],
+      "x-request-id": [
+        "6c20a588-4bb0-4fb0-8acf-138d826fbaf1"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1319"
+      ],
+      "x-envoy-upstream-service-time": [
+        "6"
+      ],
+      "date": [
+        "Thu, 18 Feb 2021 19:44:24 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Delayed Quote",
+            "triggerable": false,
+            "currency": "GBp",
+            "tradeable": false,
+            "fiftyTwoWeekLowChange": 1573.988,
+            "fiftyTwoWeekLowChangePercent": 1.5834699,
+            "fiftyTwoWeekRange": "994.012 - 2914.0",
+            "fiftyTwoWeekHighChange": -346,
+            "fiftyTwoWeekHighChangePercent": -0.11873713,
+            "fiftyTwoWeekLow": 994.012,
+            "fiftyTwoWeekHigh": 2914,
+            "earningsTimestamp": 1612836000,
+            "earningsTimestampStart": 1612836000,
+            "earningsTimestampEnd": 1612836000,
+            "epsTrailingTwelveMonths": -17.5,
+            "sharesOutstanding": 748801984,
+            "bookValue": 2.394,
+            "fiftyDayAverage": 2614.5881,
+            "fiftyDayAverageChange": -46.588135,
+            "fiftyDayAverageChangePercent": -0.017818537,
+            "twoHundredDayAverage": 2443.1,
+            "twoHundredDayAverageChange": 124.8999,
+            "twoHundredDayAverageChangePercent": 0.05112353,
+            "marketCap": 19229235200,
+            "priceToBook": 1072.6816,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 20,
+            "firstTradeDateMilliseconds": 1279695600000,
+            "priceHint": 2,
+            "regularMarketChange": -25,
+            "regularMarketChangePercent": -0.9641342,
+            "regularMarketTime": 1613666318,
+            "regularMarketPrice": 2568,
+            "regularMarketDayHigh": 2598,
+            "regularMarketDayRange": "2528.0 - 2598.0",
+            "regularMarketDayLow": 2528,
+            "regularMarketVolume": 885289,
+            "regularMarketPreviousClose": 2593,
+            "bid": 2551,
+            "ask": 2553,
+            "bidSize": 0,
+            "askSize": 0,
+            "fullExchangeName": "LSE",
+            "financialCurrency": "GBP",
+            "regularMarketOpen": 2570,
+            "averageDailyVolume3Month": 1636988,
+            "averageDailyVolume10Day": 1293261,
+            "exchange": "LSE",
+            "shortName": "OCADO GROUP PLC ORD 2P",
+            "longName": "Ocado Group plc",
+            "messageBoardId": "finmb_109303666",
+            "exchangeTimezoneName": "Europe/London",
+            "exchangeTimezoneShortName": "GMT",
+            "gmtOffSetMilliseconds": 0,
+            "market": "gb_market",
+            "esgPopulated": false,
+            "marketState": "POSTPOST",
+            "symbol": "OCDO.L"
+          },
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "tradeable": false,
+            "fiftyTwoWeekLowChange": 1698.1199,
+            "fiftyTwoWeekLowChangePercent": 1.0443349,
+            "fiftyTwoWeekRange": "1626.03 - 3552.25",
+            "fiftyTwoWeekHighChange": -228.1001,
+            "fiftyTwoWeekHighChangePercent": -0.06421285,
+            "fiftyTwoWeekLow": 1626.03,
+            "fiftyTwoWeekHigh": 3552.25,
+            "earningsTimestamp": 1612281780,
+            "earningsTimestampStart": 1619640000,
+            "earningsTimestampEnd": 1620072000,
+            "trailingPE": 79.46808,
+            "epsTrailingTwelveMonths": 41.83,
+            "epsForward": 66.45,
+            "epsCurrentYear": 47.62,
+            "priceEpsCurrentYear": 69.805756,
+            "sharesOutstanding": 500889984,
+            "bookValue": 185.694,
+            "fiftyDayAverage": 3245.279,
+            "fiftyDayAverageChange": 78.87085,
+            "fiftyDayAverageChangePercent": 0.024303257,
+            "twoHundredDayAverage": 3207.455,
+            "twoHundredDayAverageChange": 116.694824,
+            "twoHundredDayAverageChangePercent": 0.036382373,
+            "marketCap": 1673925492736,
+            "forwardPE": 50.02483,
+            "priceToBook": 17.901224,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 863703000000,
+            "priceHint": 2,
+            "regularMarketChange": 15.51001,
+            "regularMarketChangePercent": 0.46877298,
+            "regularMarketTime": 1613677436,
+            "regularMarketPrice": 3324.15,
+            "regularMarketDayHigh": 3338,
+            "regularMarketDayRange": "3273.94 - 3338.0",
+            "regularMarketDayLow": 3273.94,
+            "regularMarketVolume": 2228116,
+            "regularMarketPreviousClose": 3308.64,
+            "bid": 3325.74,
+            "ask": 3328.6,
+            "bidSize": 9,
+            "askSize": 9,
+            "fullExchangeName": "NasdaqGS",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 3282.42,
+            "averageDailyVolume3Month": 3634800,
+            "averageDailyVolume10Day": 2731628,
+            "exchange": "NMS",
+            "shortName": "Amazon.com, Inc.",
+            "longName": "Amazon.com, Inc.",
+            "messageBoardId": "finmb_18749",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "marketState": "REGULAR",
+            "displayName": "Amazon.com",
+            "symbol": "AMZN"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

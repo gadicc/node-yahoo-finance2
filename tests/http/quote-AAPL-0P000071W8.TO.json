@@ -1,0 +1,197 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=AAPL%2C0P000071W8.TO"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "7lhfp0tg2tgsm"
+      ],
+      "x-yahoo-request-id": [
+        "7lhfp0tg2tgsm"
+      ],
+      "x-request-id": [
+        "412cbfa8-464e-4421-a5f4-2f5c5edda335"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1263"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Thu, 18 Feb 2021 19:44:22 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "marketState": "REGULAR",
+            "regularMarketChange": -2.1149902,
+            "regularMarketChangePercent": -1.6164707,
+            "regularMarketTime": 1613677461,
+            "regularMarketPrice": 128.725,
+            "regularMarketDayHigh": 129.68,
+            "regularMarketDayRange": "127.41 - 129.68",
+            "regularMarketDayLow": 127.41,
+            "regularMarketVolume": 73640163,
+            "regularMarketPreviousClose": 130.84,
+            "bid": 128.73,
+            "ask": 128.74,
+            "bidSize": 8,
+            "askSize": 18,
+            "fullExchangeName": "NasdaqGS",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 129.2,
+            "averageDailyVolume3Month": 103041345,
+            "averageDailyVolume10Day": 74862557,
+            "fiftyTwoWeekLowChange": 75.57251,
+            "fiftyTwoWeekLowChangePercent": 1.4218054,
+            "fiftyTwoWeekRange": "53.1525 - 145.09",
+            "fiftyTwoWeekHighChange": -16.36499,
+            "fiftyTwoWeekHighChangePercent": -0.11279199,
+            "fiftyTwoWeekLow": 53.1525,
+            "fiftyTwoWeekHigh": 145.09,
+            "dividendDate": 1613001600,
+            "earningsTimestamp": 1611765000,
+            "earningsTimestampStart": 1619607540,
+            "earningsTimestampEnd": 1620043200,
+            "trailingAnnualDividendRate": 0.807,
+            "trailingPE": 34.913208,
+            "trailingAnnualDividendYield": 0.006167839,
+            "epsTrailingTwelveMonths": 3.687,
+            "epsForward": 4.68,
+            "epsCurrentYear": 4.45,
+            "priceEpsCurrentYear": 28.92697,
+            "sharesOutstanding": 16788100096,
+            "bookValue": 3.936,
+            "fiftyDayAverage": 133.76273,
+            "fiftyDayAverageChange": -5.0377197,
+            "fiftyDayAverageChangePercent": -0.037661612,
+            "twoHundredDayAverage": 122.09259,
+            "twoHundredDayAverageChange": 6.632416,
+            "twoHundredDayAverageChangePercent": 0.054322835,
+            "marketCap": 2161048289280,
+            "forwardPE": 27.505344,
+            "priceToBook": 32.70452,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 345479400000,
+            "priceHint": 2,
+            "tradeable": false,
+            "exchange": "NMS",
+            "shortName": "Apple Inc.",
+            "longName": "Apple Inc.",
+            "messageBoardId": "finmb_24937",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "displayName": "Apple",
+            "symbol": "AAPL"
+          },
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "MUTUALFUND",
+            "quoteSourceName": "Delayed Quote",
+            "triggerable": true,
+            "currency": "CAD",
+            "marketState": "REGULAR",
+            "regularMarketChange": -0.20999908,
+            "regularMarketChangePercent": -0.23440015,
+            "regularMarketTime": 1613592000,
+            "regularMarketPrice": 89.38,
+            "regularMarketPreviousClose": 89.59,
+            "fullExchangeName": "Toronto",
+            "averageDailyVolume3Month": 0,
+            "averageDailyVolume10Day": 0,
+            "fiftyTwoWeekLowChange": 32.199997,
+            "fiftyTwoWeekLowChangePercent": 0.5631339,
+            "fiftyTwoWeekRange": "57.18 - 89.59",
+            "fiftyTwoWeekHighChange": -0.20999908,
+            "fiftyTwoWeekHighChangePercent": -0.0023440016,
+            "fiftyTwoWeekLow": 57.18,
+            "fiftyTwoWeekHigh": 89.59,
+            "ytdReturn": 18.12,
+            "trailingThreeMonthReturns": 7.59,
+            "fiftyDayAverage": 86.81087,
+            "fiftyDayAverageChange": 2.56913,
+            "fiftyDayAverageChangePercent": 0.029594567,
+            "twoHundredDayAverage": 82.695,
+            "twoHundredDayAverageChange": 6.6849976,
+            "twoHundredDayAverageChangePercent": 0.0808392,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 15,
+            "firstTradeDateMilliseconds": 1344519000000,
+            "priceHint": 2,
+            "tradeable": false,
+            "exchange": "TOR",
+            "shortName": "TD U.S. Index Fund - e",
+            "longName": "TD U.S. Index Fund - e",
+            "exchangeTimezoneName": "America/Toronto",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "ca_market",
+            "esgPopulated": false,
+            "symbol": "0P000071W8.TO"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

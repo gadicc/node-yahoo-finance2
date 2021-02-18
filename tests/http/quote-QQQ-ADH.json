@@ -1,0 +1,175 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=QQQ%2CADH"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "e53uafpg2tgsp"
+      ],
+      "x-yahoo-request-id": [
+        "e53uafpg2tgsp"
+      ],
+      "x-request-id": [
+        "d711751e-f4e7-480e-8f1f-8a060b143e3f"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1054"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Thu, 18 Feb 2021 19:44:25 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "ETF",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "sharesOutstanding": 393100000,
+            "bookValue": 188.775,
+            "fiftyDayAverage": 322.49728,
+            "fiftyDayAverageChange": 9.4227295,
+            "fiftyDayAverageChangePercent": 0.029218012,
+            "twoHundredDayAverage": 295.23254,
+            "twoHundredDayAverageChange": 36.68747,
+            "twoHundredDayAverageChangePercent": 0.12426635,
+            "marketCap": 130477760512,
+            "priceToBook": 1.7582839,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "regularMarketChange": -2.0099792,
+            "regularMarketChangePercent": -0.6019163,
+            "regularMarketTime": 1613677462,
+            "regularMarketPrice": 331.92,
+            "regularMarketDayHigh": 333.8661,
+            "regularMarketDayRange": "328.36 - 333.8661",
+            "regularMarketDayLow": 328.36,
+            "regularMarketVolume": 23574225,
+            "regularMarketPreviousClose": 333.93,
+            "bid": 331.87,
+            "ask": 331.83,
+            "bidSize": 18,
+            "askSize": 11,
+            "fullExchangeName": "NasdaqGS",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 330.23,
+            "averageDailyVolume3Month": 28331339,
+            "averageDailyVolume10Day": 23851857,
+            "fiftyTwoWeekLowChange": 166.99002,
+            "fiftyTwoWeekLowChangePercent": 1.0124903,
+            "fiftyTwoWeekRange": "164.93 - 338.19",
+            "fiftyTwoWeekHighChange": -6.269989,
+            "fiftyTwoWeekHighChangePercent": -0.018539842,
+            "fiftyTwoWeekLow": 164.93,
+            "fiftyTwoWeekHigh": 338.19,
+            "trailingAnnualDividendRate": 1.54,
+            "trailingPE": 85.21695,
+            "trailingAnnualDividendYield": 0.004611745,
+            "ytdReturn": 0.31,
+            "trailingThreeMonthReturns": 16.98,
+            "trailingThreeMonthNavReturns": 17.08,
+            "epsTrailingTwelveMonths": 3.895,
+            "firstTradeDateMilliseconds": 921076200000,
+            "priceHint": 2,
+            "exchange": "NMS",
+            "shortName": "Invesco QQQ Trust, Series 1",
+            "longName": "Invesco QQQ Trust",
+            "messageBoardId": "finmb_8108558",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "marketState": "REGULAR",
+            "symbol": "QQQ"
+          },
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "MUTUALFUND",
+            "quoteSourceName": "Delayed Quote",
+            "triggerable": false,
+            "fiftyDayAverage": 6.794706,
+            "twoHundredDayAverage": 6.402117,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "regularMarketTime": 1561759658,
+            "fullExchangeName": "YHD",
+            "averageDailyVolume3Month": 212721,
+            "averageDailyVolume10Day": 100595,
+            "fiftyTwoWeekRange": "5.6 - 9.24",
+            "fiftyTwoWeekLow": 5.6,
+            "fiftyTwoWeekHigh": 9.24,
+            "firstTradeDateMilliseconds": 1152538200000,
+            "priceHint": 2,
+            "exchange": "YHD",
+            "shortName": "54688",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "marketState": "REGULAR",
+            "symbol": "ADH"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

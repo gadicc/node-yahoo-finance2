@@ -1,0 +1,120 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v6/finance/recommendationsbysymbol/AAPL,0P000071W8.TO?"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "x-yahoo-request-id": [
+        "2e1kpcpg2tgsm"
+      ],
+      "cache-control": [
+        "max-age=60, stale-while-revalidate=15, stale-if-error=3600"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "content-length": [
+        "218"
+      ],
+      "date": [
+        "Thu, 18 Feb 2021 19:44:22 GMT"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "public-key-pins-report-only": [
+        "max-age=2592000; pin-sha256=\"2fRAUXyxl4A1/XHrKNBmc8bTkzA7y4FB/GLJuNAzCqY=\"; pin-sha256=\"I/Lt/z7ekCWanjD0Cvj5EqXls2lOaThEA0H2Bg4BT/o=\"; pin-sha256=\"K87oWBWM9UZfyddvDfoxL+8lpNyoUB2ptGtn0fv6G2Q=\"; pin-sha256=\"Wd8xe/qfTwq3ylFNd3IpaqLHZbh2ZNCLluVzmeNkcpw=\"; pin-sha256=\"WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=\"; pin-sha256=\"cGuxAXyFXFkWm61cF4HPWX8S0srS9j0aSqN0k4AP+4A=\"; pin-sha256=\"dolnbtzEBnELx/9lOEQ22e6OZO/QNb6VSSX2XHA3E7A=\"; pin-sha256=\"i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY=\"; pin-sha256=\"r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=\"; pin-sha256=\"uUwZgwDOxcBXrQcntwu+kYFpkiVkOaezL0WYEZ3anJc=\"; includeSubdomains; report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-hpkp-report-only\""
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": [
+          {
+            "symbol": "AAPL",
+            "recommendedSymbols": [
+              {
+                "symbol": "AMZN",
+                "score": 0.292695
+              },
+              {
+                "symbol": "FB",
+                "score": 0.273764
+              },
+              {
+                "symbol": "GOOG",
+                "score": 0.272766
+              },
+              {
+                "symbol": "TSLA",
+                "score": 0.272246
+              },
+              {
+                "symbol": "NFLX",
+                "score": 0.209203
+              }
+            ]
+          },
+          {
+            "symbol": "0P000071W8.TO",
+            "recommendedSymbols": [
+              {
+                "symbol": "0P000071WA.TO",
+                "score": 0.027855
+              },
+              {
+                "symbol": "0P000071AX.TO",
+                "score": 0.025188
+              },
+              {
+                "symbol": "0P000071B1.TO",
+                "score": 0.0178
+              },
+              {
+                "symbol": "0P000071W5.TO",
+                "score": 0.006958
+              },
+              {
+                "symbol": "0P000071WU.TO",
+                "score": 0.004539
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
