@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.8.0...v1.8.1) (2021-02-19)
+
+
+### Bug Fixes
+
+* **ci:** empty-commit to trigger ci publish after token change ([947be37](https://github.com/gadicc/node-yahoo-finance2/commit/947be378dcc41ec622ef106ccc5843dc1aacdfe5))
+
 # [1.8.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.7.2...v1.8.0) (2021-02-19)
 
 
