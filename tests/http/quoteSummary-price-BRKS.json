@@ -1,0 +1,116 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BRKS?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "3vvq6q9g2vseq"
+      ],
+      "x-yahoo-request-id": [
+        "3vvq6q9g2vseq"
+      ],
+      "x-request-id": [
+        "4f5ed991-2927-4dbc-80f1-176b69cafad1"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "454"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:14:02 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "preMarketChangePercent": 0.020725401,
+              "preMarketChange": 1.72,
+              "preMarketTime": 1613744999,
+              "preMarketPrice": 84.71,
+              "preMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": 0.052897934,
+              "regularMarketChange": 4.3899994,
+              "regularMarketTime": 1613754822,
+              "priceHint": 2,
+              "regularMarketPrice": 87.38,
+              "regularMarketDayHigh": 87.9,
+              "regularMarketDayLow": 84.56,
+              "regularMarketVolume": 146528,
+              "regularMarketPreviousClose": 82.99,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 84.56,
+              "exchange": "NMS",
+              "exchangeName": "NasdaqGS",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "EQUITY",
+              "symbol": "BRKS",
+              "underlyingSymbol": null,
+              "shortName": "Brooks Automation, Inc.",
+              "longName": "Brooks Automation, Inc.",
+              "currency": "USD",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 6485351936
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

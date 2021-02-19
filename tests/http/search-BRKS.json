@@ -1,0 +1,185 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=BRKS"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "3khrm49g2vsdu"
+      ],
+      "x-yahoo-request-id": [
+        "3khrm49g2vsdu"
+      ],
+      "x-request-id": [
+        "5234cf80-c23b-469e-bbf2-95486b455fec"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "964"
+      ],
+      "x-envoy-upstream-service-time": [
+        "36"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:34 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 10,
+      "quotes": [
+        {
+          "exchange": "NMS",
+          "shortname": "Brooks Automation, Inc.",
+          "quoteType": "EQUITY",
+          "symbol": "BRKS",
+          "index": "quotes",
+          "score": 2494100,
+          "typeDisp": "Equity",
+          "longname": "Brooks Automation, Inc.",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BRKS Apr 2021 60.000 put",
+          "quoteType": "OPTION",
+          "symbol": "BRKS210416P00060000",
+          "index": "quotes",
+          "score": 20029,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BRKS Feb 2021 55.000 call",
+          "quoteType": "OPTION",
+          "symbol": "BRKS210219C00055000",
+          "index": "quotes",
+          "score": 20004,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "IST",
+          "shortname": "BERKOSAN YALITIM",
+          "quoteType": "EQUITY",
+          "symbol": "BRKSN.IS",
+          "index": "quotes",
+          "score": 20004,
+          "typeDisp": "Equity",
+          "longname": "Berkosan Yalitim Ve Tecrit Maddeleri Üretim Ve Ticaret A.S.",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BRKS Feb 2021 77.500 call",
+          "quoteType": "OPTION",
+          "symbol": "BRKS210219C00077500",
+          "index": "quotes",
+          "score": 20003,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BRKS Feb 2021 87.500 call",
+          "quoteType": "OPTION",
+          "symbol": "BRKS210219C00087500",
+          "index": "quotes",
+          "score": 20003,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [
+        {
+          "uuid": "23d77b86-f2c0-3762-b0ab-760cb73ec39e",
+          "title": "Should You Investigate Brooks Automation, Inc. (NASDAQ:BRKS) At US$82.99?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/news/investigate-brooks-automation-inc-nasdaq-052842325.html",
+          "providerPublishTime": 1613712522,
+          "type": "STORY"
+        },
+        {
+          "uuid": "38810c2a-da5e-3f7e-b237-6851baff63f9",
+          "title": "Brooks Automation (BRKS) Surpasses Q1 Earnings and Revenue Estimates",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/news/brooks-automation-brks-surpasses-q1-225510117.html",
+          "providerPublishTime": 1612306510,
+          "type": "STORY"
+        },
+        {
+          "uuid": "4ff31c48-641a-3b8a-bebf-f33693aa4934",
+          "title": "Earnings Estimates Rising for Brooks (BRKS): Will It Gain?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/news/earnings-estimates-rising-brooks-brks-172005988.html",
+          "providerPublishTime": 1612545605,
+          "type": "STORY"
+        },
+        {
+          "uuid": "08565e32-d33a-312e-9099-c309180da1df",
+          "title": "Why Brooks (BRKS) Stock Might be a Great Pick",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/news/why-brooks-brks-stock-might-135101124.html",
+          "providerPublishTime": 1606744261,
+          "type": "STORY"
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "totalTime": 35,
+      "timeTakenForQuotes": 422,
+      "timeTakenForNews": 600,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0
+    }
+  }
+}

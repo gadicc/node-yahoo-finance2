@@ -1,0 +1,148 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=MDLY"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "a8o8uqdg2vse0"
+      ],
+      "x-yahoo-request-id": [
+        "a8o8uqdg2vse0"
+      ],
+      "x-request-id": [
+        "037c564b-504d-4492-b675-5d8b37f0a40e"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "933"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:35 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "epsTrailingTwelveMonths": -7.855,
+            "epsForward": 0.25,
+            "sharesOutstanding": 3045180,
+            "bookValue": -12.142,
+            "fiftyDayAverage": 9.882728,
+            "fiftyDayAverageChange": 0.5292721,
+            "fiftyDayAverageChangePercent": 0.053555265,
+            "twoHundredDayAverage": 7.6748624,
+            "twoHundredDayAverageChange": 2.7371373,
+            "twoHundredDayAverageChangePercent": 0.35663667,
+            "marketCap": 59543104,
+            "forwardPE": 41.648,
+            "priceToBook": -0.8575193,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "firstTradeDateMilliseconds": 1411565400000,
+            "priceHint": 2,
+            "regularMarketChange": 0.30200005,
+            "regularMarketChangePercent": 2.987142,
+            "regularMarketTime": 1613753447,
+            "regularMarketPrice": 10.412,
+            "regularMarketDayHigh": 10.42,
+            "regularMarketDayRange": "10.14 - 10.42",
+            "regularMarketDayLow": 10.14,
+            "regularMarketVolume": 19267,
+            "regularMarketPreviousClose": 10.11,
+            "bid": 10.3,
+            "ask": 10.41,
+            "bidSize": 14,
+            "askSize": 12,
+            "fullExchangeName": "NYSE",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 10.22,
+            "averageDailyVolume3Month": 205062,
+            "averageDailyVolume10Day": 167414,
+            "fiftyTwoWeekLowChange": 7.6119995,
+            "fiftyTwoWeekLowChangePercent": 2.7185712,
+            "fiftyTwoWeekRange": "2.8 - 29.0",
+            "fiftyTwoWeekHighChange": -18.588001,
+            "fiftyTwoWeekHighChangePercent": -0.6409656,
+            "fiftyTwoWeekLow": 2.8,
+            "fiftyTwoWeekHigh": 29,
+            "dividendDate": 1556841600,
+            "earningsTimestamp": 1605533400,
+            "earningsTimestampStart": 1605533400,
+            "earningsTimestampEnd": 1605533400,
+            "trailingAnnualDividendRate": 0.03,
+            "trailingAnnualDividendYield": 0.002967359,
+            "exchange": "NYQ",
+            "shortName": "Medley Management Inc.",
+            "longName": "Medley Management Inc.",
+            "messageBoardId": "finmb_269214791",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "marketState": "REGULAR",
+            "displayName": "Medley Management",
+            "symbol": "MDLY"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

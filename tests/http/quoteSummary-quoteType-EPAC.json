@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EPAC?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "fos0mr9g2vser"
+      ],
+      "x-yahoo-request-id": [
+        "fos0mr9g2vser"
+      ],
+      "x-request-id": [
+        "651d5d49-7dd6-4260-bac8-c6b0ebb26ca4"
+      ],
+      "content-length": [
+        "437"
+      ],
+      "x-envoy-upstream-service-time": [
+        "85"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:14:03 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "2"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "NYQ",
+              "quoteType": "EQUITY",
+              "symbol": "EPAC",
+              "underlyingSymbol": "EPAC",
+              "shortName": "Enerpac Tool Group Corp.",
+              "longName": "Enerpac Tool Group Corp.",
+              "firstTradeDateEpochUtc": 964445400,
+              "timeZoneFullName": "America/New_York",
+              "timeZoneShortName": "EST",
+              "uuid": "2d82682e-c536-3e44-8626-b4fbe62d66ab",
+              "messageBoardId": "finmb_251258",
+              "gmtOffSetMilliseconds": -18000000,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

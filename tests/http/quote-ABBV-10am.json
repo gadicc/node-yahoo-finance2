@@ -1,0 +1,154 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=ABBV"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "1f4pcohg2vse0"
+      ],
+      "x-yahoo-request-id": [
+        "1f4pcohg2vse0"
+      ],
+      "x-request-id": [
+        "741d4f02-b37c-4513-874e-33fc736033ab"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "975"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:35 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "2"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "warning": [
+        "110 Response is stale"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "marketState": "REGULAR",
+            "exchange": "NYQ",
+            "shortName": "AbbVie Inc.",
+            "longName": "AbbVie Inc.",
+            "messageBoardId": "finmb_141885706",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "earningsTimestamp": 1612337885,
+            "earningsTimestampStart": 1619699400,
+            "earningsTimestampEnd": 1620045000,
+            "trailingAnnualDividendRate": 4.84,
+            "trailingPE": 38.8125,
+            "trailingAnnualDividendYield": 0.04563455,
+            "epsTrailingTwelveMonths": 2.72,
+            "epsForward": 13.75,
+            "epsCurrentYear": 12.43,
+            "priceEpsCurrentYear": 8.493161,
+            "sharesOutstanding": 1765469952,
+            "bookValue": 8.65,
+            "fiftyDayAverage": 107.234245,
+            "fiftyDayAverageChange": -1.6642456,
+            "fiftyDayAverageChangePercent": -0.015519721,
+            "twoHundredDayAverage": 97.44348,
+            "twoHundredDayAverageChange": 8.126518,
+            "twoHundredDayAverageChangePercent": 0.08339725,
+            "marketCap": 186380664832,
+            "forwardPE": 7.6778183,
+            "priceToBook": 12.204625,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "priceHint": 2,
+            "regularMarketChange": -0.48999786,
+            "regularMarketChangePercent": -0.46200064,
+            "regularMarketTime": 1613754810,
+            "regularMarketPrice": 105.57,
+            "regularMarketDayHigh": 106.35,
+            "regularMarketDayRange": "104.91 - 106.35",
+            "regularMarketDayLow": 104.91,
+            "regularMarketVolume": 2380410,
+            "regularMarketPreviousClose": 106.06,
+            "bid": 105.65,
+            "ask": 105.65,
+            "bidSize": 12,
+            "askSize": 8,
+            "fullExchangeName": "NYSE",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 106.23,
+            "averageDailyVolume3Month": 7408847,
+            "averageDailyVolume10Day": 5676571,
+            "fiftyTwoWeekLowChange": 43.02,
+            "fiftyTwoWeekLowChangePercent": 0.6877698,
+            "fiftyTwoWeekRange": "62.55 - 113.41",
+            "fiftyTwoWeekHighChange": -7.840004,
+            "fiftyTwoWeekHighChangePercent": -0.06912974,
+            "fiftyTwoWeekLow": 62.55,
+            "fiftyTwoWeekHigh": 113.41,
+            "dividendDate": 1613433600,
+            "tradeable": false,
+            "firstTradeDateMilliseconds": 1357137000000,
+            "displayName": "AbbVie",
+            "symbol": "ABBV"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

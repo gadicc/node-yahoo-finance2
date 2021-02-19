@@ -1,0 +1,228 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=SI"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "49iq48hg2vsdt"
+      ],
+      "x-yahoo-request-id": [
+        "49iq48hg2vsdt"
+      ],
+      "x-request-id": [
+        "33770cef-9ff7-4a85-a09d-2bb1a3ebc441"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1444"
+      ],
+      "x-envoy-upstream-service-time": [
+        "30"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:33 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 16,
+      "quotes": [
+        {
+          "exchange": "CMX",
+          "shortname": "Silver Mar 21",
+          "quoteType": "FUTURE",
+          "symbol": "SI=F",
+          "index": "quotes",
+          "score": 9815800,
+          "typeDisp": "Future",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NYQ",
+          "shortname": "Silvergate Capital Corporation",
+          "quoteType": "EQUITY",
+          "symbol": "SI",
+          "index": "quotes",
+          "score": 6604300,
+          "typeDisp": "Equity",
+          "longname": "Silvergate Capital Corporation",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "PCX",
+          "shortname": "iShares Silver Trust",
+          "quoteType": "ETF",
+          "symbol": "SLV",
+          "index": "quotes",
+          "score": 121829,
+          "typeDisp": "ETF",
+          "longname": "iShares Silver Trust",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NYQ",
+          "shortname": "First Majestic Silver Corp.",
+          "quoteType": "EQUITY",
+          "symbol": "AG",
+          "index": "quotes",
+          "score": 82802,
+          "typeDisp": "Equity",
+          "longname": "First Majestic Silver Corp.",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "PNK",
+          "shortname": "SOLAR INTEGRATED ROOFING CORP",
+          "quoteType": "EQUITY",
+          "symbol": "SIRC",
+          "index": "quotes",
+          "score": 81376,
+          "typeDisp": "Equity",
+          "longname": "Solar Integrated Roofing Corporation",
+          "isYahooFinance": true
+        },
+        {
+          "index": "b918293c44a94b6f9ee06fce98530f28",
+          "name": "Signal",
+          "permalink": "signal",
+          "isYahooFinance": false
+        },
+        {
+          "index": "7bbe743b7e73e6f0cfecff756701f3a1",
+          "name": "Silver Lake",
+          "permalink": "silver-lake",
+          "isYahooFinance": false
+        }
+      ],
+      "news": [
+        {
+          "uuid": "d6b876d0-7558-39de-a949-d324173d7592",
+          "title": "Gold Goes From a Star Commodity to Laggard in Shocking Reversal",
+          "publisher": "Bloomberg",
+          "link": "https://finance.yahoo.com/news/gold-driven-two-month-low-001726468.html",
+          "providerPublishTime": 1613751886,
+          "type": "STORY"
+        },
+        {
+          "uuid": "50628f31-5e77-31c5-99c2-7312d11a6668",
+          "title": "First Mover: Bitcoin Meets ‘Torrent’ as Lowly Binance Coin Gets $40B Valuation",
+          "publisher": "CoinDesk",
+          "link": "https://finance.yahoo.com/news/first-mover-bitcoin-meets-torrent-150325564.html",
+          "providerPublishTime": 1613747005,
+          "type": "STORY"
+        },
+        {
+          "uuid": "1d8e0f01-66c5-374a-b031-3f9f8e5e0594",
+          "title": "These Were The 50 Best-Performing Companies On The OTCQX Market In 2020",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/news/were-50-best-performing-companies-130530867.html",
+          "providerPublishTime": 1613739930,
+          "type": "STORY"
+        },
+        {
+          "uuid": "ff7d80db-9340-3bde-b123-7ee77ebc17cc",
+          "title": "Gold hits lowest in more than seven months as rising yields dent appeal",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/gold-slips-over-seventh-month-033241118.html",
+          "providerPublishTime": 1613705561,
+          "type": "STORY"
+        }
+      ],
+      "nav": [
+        {
+          "navName": "Sibile Marcellus",
+          "navUrl": "https://www.yahoo.com/author/sibile-marcellus"
+        }
+      ],
+      "lists": [
+        {
+          "slug": "sinful-stocks",
+          "name": "Sinful Stocks",
+          "index": "sinful-stocks",
+          "score": 1.9286566,
+          "type": "ALGO_WATCHLIST",
+          "brandSlug": "yahoo-finance",
+          "pfId": "the_naughty_list"
+        },
+        {
+          "index": "96384b8f-b161-4eef-abf8-d1ce290da125",
+          "id": "96384b8f-b161-4eef-abf8-d1ce290da125",
+          "title": "Most Actives - Singapore",
+          "canonicalName": "MOST_ACTIVES_SG",
+          "score": 1,
+          "type": "PREDEFINED_SCREENER"
+        },
+        {
+          "index": "fd2e2676-b2a8-4c45-ac10-e76a9be49151",
+          "id": "fd2e2676-b2a8-4c45-ac10-e76a9be49151",
+          "title": "Silver",
+          "canonicalName": "SILVER",
+          "score": 1,
+          "type": "PREDEFINED_SCREENER"
+        },
+        {
+          "index": "4d834f86-c0a9-4211-b7a4-3290011892eb",
+          "id": "4d834f86-c0a9-4211-b7a4-3290011892eb",
+          "title": "Day Gainers - Singapore",
+          "canonicalName": "DAY_GAINERS_SG",
+          "score": 1,
+          "type": "PREDEFINED_SCREENER"
+        }
+      ],
+      "researchReports": [],
+      "totalTime": 29,
+      "timeTakenForQuotes": 423,
+      "timeTakenForNews": 600,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0
+    }
+  }
+}

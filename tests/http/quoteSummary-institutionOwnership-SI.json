@@ -1,0 +1,306 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SI?formatted=false&modules=institutionOwnership"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "98v8gplg2vsel"
+      ],
+      "x-yahoo-request-id": [
+        "98v8gplg2vsel"
+      ],
+      "x-request-id": [
+        "2b0044f8-c799-4a25-acda-ae1619856857"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "807"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:57 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "institutionOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Senvest Management LLC",
+                  "pctHeld": {
+                    "raw": 0.0842,
+                    "fmt": "8.42%"
+                  },
+                  "position": {
+                    "raw": 1581333,
+                    "fmt": "1.58M",
+                    "longFmt": "1,581,333"
+                  },
+                  "value": {
+                    "raw": 22771195,
+                    "fmt": "22.77M",
+                    "longFmt": "22,771,195"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Park West Asset Management LLC",
+                  "pctHeld": {
+                    "raw": 0.082600005,
+                    "fmt": "8.26%"
+                  },
+                  "position": {
+                    "raw": 1552000,
+                    "fmt": "1.55M",
+                    "longFmt": "1,552,000"
+                  },
+                  "value": {
+                    "raw": 22348800,
+                    "fmt": "22.35M",
+                    "longFmt": "22,348,800"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Blackrock Inc.",
+                  "pctHeld": {
+                    "raw": 0.060900003,
+                    "fmt": "6.09%"
+                  },
+                  "position": {
+                    "raw": 1144811,
+                    "fmt": "1.14M",
+                    "longFmt": "1,144,811"
+                  },
+                  "value": {
+                    "raw": 85070905,
+                    "fmt": "85.07M",
+                    "longFmt": "85,070,905"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "EJF Capital LLC",
+                  "pctHeld": {
+                    "raw": 0.0444,
+                    "fmt": "4.44%"
+                  },
+                  "position": {
+                    "raw": 833350,
+                    "fmt": "833.35k",
+                    "longFmt": "833,350"
+                  },
+                  "value": {
+                    "raw": 12000240,
+                    "fmt": "12M",
+                    "longFmt": "12,000,240"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Vanguard Group, Inc. (The)",
+                  "pctHeld": {
+                    "raw": 0.0337,
+                    "fmt": "3.37%"
+                  },
+                  "position": {
+                    "raw": 633506,
+                    "fmt": "633.51k",
+                    "longFmt": "633,506"
+                  },
+                  "value": {
+                    "raw": 9122486,
+                    "fmt": "9.12M",
+                    "longFmt": "9,122,486"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Bank Of New York Mellon Corporation",
+                  "pctHeld": {
+                    "raw": 0.0216,
+                    "fmt": "2.16%"
+                  },
+                  "position": {
+                    "raw": 404851,
+                    "fmt": "404.85k",
+                    "longFmt": "404,851"
+                  },
+                  "value": {
+                    "raw": 30084477,
+                    "fmt": "30.08M",
+                    "longFmt": "30,084,477"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Ameriprise Financial, Inc.",
+                  "pctHeld": {
+                    "raw": 0.021300001,
+                    "fmt": "2.13%"
+                  },
+                  "position": {
+                    "raw": 399968,
+                    "fmt": "399.97k",
+                    "longFmt": "399,968"
+                  },
+                  "value": {
+                    "raw": 5759539,
+                    "fmt": "5.76M",
+                    "longFmt": "5,759,539"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "CSat Investment Advisory, L.P.",
+                  "pctHeld": {
+                    "raw": 0.0128,
+                    "fmt": "1.28%"
+                  },
+                  "position": {
+                    "raw": 239754,
+                    "fmt": "239.75k",
+                    "longFmt": "239,754"
+                  },
+                  "value": {
+                    "raw": 3452457,
+                    "fmt": "3.45M",
+                    "longFmt": "3,452,457"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "State Street Corporation",
+                  "pctHeld": {
+                    "raw": 0.0128,
+                    "fmt": "1.28%"
+                  },
+                  "position": {
+                    "raw": 239536,
+                    "fmt": "239.54k",
+                    "longFmt": "239,536"
+                  },
+                  "value": {
+                    "raw": 3449318,
+                    "fmt": "3.45M",
+                    "longFmt": "3,449,318"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "ARK Investment Management, LLC",
+                  "pctHeld": {
+                    "raw": 0.0121,
+                    "fmt": "1.21%"
+                  },
+                  "position": {
+                    "raw": 226764,
+                    "fmt": "226.76k",
+                    "longFmt": "226,764"
+                  },
+                  "value": {
+                    "raw": 3265401,
+                    "fmt": "3.27M",
+                    "longFmt": "3,265,401"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
