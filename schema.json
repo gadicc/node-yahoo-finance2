@@ -1639,6 +1639,7 @@
     "Grade": {
       "enum": [
         "Accumulate",
+        "Add",
         "Buy",
         "",
         "Equal-Weight",
@@ -1664,6 +1665,7 @@
         "Sell",
         "Strong Buy",
         "Underperform",
+        "Underperformer",
         "Underweight"
       ],
       "type": "string"
@@ -1897,7 +1899,7 @@
           "yahooFinanceType": "number"
         },
         "interestExpense": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "number|null"
         },
         "maxAge": {
           "yahooFinanceType": "number"
@@ -4212,7 +4214,10 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "const": "CRYPTOCURRENCY",
+          "enum": [
+            "CRYPTOCURRENCY",
+            "FUTURE"
+          ],
           "type": "string"
         },
         "score": {
@@ -4225,7 +4230,10 @@
           "type": "string"
         },
         "typeDisp": {
-          "const": "Cryptocurrency",
+          "enum": [
+            "Cryptocurrency",
+            "Future"
+          ],
           "type": "string"
         }
       },
@@ -4261,7 +4269,10 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "const": "CURRENCY",
+          "enum": [
+            "CURRENCY",
+            "FUTURE"
+          ],
           "type": "string"
         },
         "score": {
@@ -4274,7 +4285,10 @@
           "type": "string"
         },
         "typeDisp": {
-          "const": "Currency",
+          "enum": [
+            "Currency",
+            "Future"
+          ],
           "type": "string"
         }
       },
@@ -4310,7 +4324,10 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "const": "ETF",
+          "enum": [
+            "ETF",
+            "FUTURE"
+          ],
           "type": "string"
         },
         "score": {
@@ -4323,7 +4340,10 @@
           "type": "string"
         },
         "typeDisp": {
-          "const": "ETF",
+          "enum": [
+            "ETF",
+            "Future"
+          ],
           "type": "string"
         }
       },
@@ -4359,7 +4379,10 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "const": "EQUITY",
+          "enum": [
+            "EQUITY",
+            "FUTURE"
+          ],
           "type": "string"
         },
         "score": {
@@ -4372,7 +4395,10 @@
           "type": "string"
         },
         "typeDisp": {
-          "const": "Equity",
+          "enum": [
+            "Equity",
+            "Future"
+          ],
           "type": "string"
         }
       },
@@ -4408,7 +4434,10 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "const": "MUTUALFUND",
+          "enum": [
+            "MUTUALFUND",
+            "FUTURE"
+          ],
           "type": "string"
         },
         "score": {
@@ -4421,7 +4450,10 @@
           "type": "string"
         },
         "typeDisp": {
-          "const": "Fund",
+          "enum": [
+            "Fund",
+            "Future"
+          ],
           "type": "string"
         }
       },
@@ -4457,7 +4489,10 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "const": "INDEX",
+          "enum": [
+            "INDEX",
+            "FUTURE"
+          ],
           "type": "string"
         },
         "score": {
@@ -4470,7 +4505,10 @@
           "type": "string"
         },
         "typeDisp": {
-          "const": "Index",
+          "enum": [
+            "Index",
+            "Future"
+          ],
           "type": "string"
         }
       },
@@ -4506,7 +4544,10 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "const": "OPTION",
+          "enum": [
+            "OPTION",
+            "FUTURE"
+          ],
           "type": "string"
         },
         "score": {
@@ -4519,7 +4560,10 @@
           "type": "string"
         },
         "typeDisp": {
-          "const": "Option",
+          "enum": [
+            "Option",
+            "Future"
+          ],
           "type": "string"
         }
       },
@@ -5207,7 +5251,8 @@
         "10-K",
         "10-Q",
         "8-K",
-        "8-K/A"
+        "8-K/A",
+        "10-K/A"
       ],
       "type": "string"
     },

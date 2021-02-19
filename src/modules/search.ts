@@ -16,32 +16,32 @@ export interface SearchQuoteYahoo {
   newListingDate?: Date; // "2021-02-16"
 }
 export interface SearchQuoteYahooEquity extends SearchQuoteYahoo {
-  quoteType: "EQUITY";
-  typeDisp: "Equity";
+  quoteType: "EQUITY" | "FUTURE";
+  typeDisp: "Equity" | "Future";
 }
 export interface SearchQuoteYahooOption extends SearchQuoteYahoo {
-  quoteType: "OPTION";
-  typeDisp: "Option";
+  quoteType: "OPTION" | "FUTURE";
+  typeDisp: "Option" | "Future";
 }
 export interface SearchQuoteYahooETF extends SearchQuoteYahoo {
-  quoteType: "ETF";
-  typeDisp: "ETF"; // "Option"
+  quoteType: "ETF" | "FUTURE";
+  typeDisp: "ETF" | "Future"; // "Option"
 }
 export interface SearchQuoteYahooFund extends SearchQuoteYahoo {
-  quoteType: "MUTUALFUND";
-  typeDisp: "Fund";
+  quoteType: "MUTUALFUND" | "FUTURE";
+  typeDisp: "Fund" | "Future";
 }
 export interface SearchQuoteYahooIndex extends SearchQuoteYahoo {
-  quoteType: "INDEX";
-  typeDisp: "Index";
+  quoteType: "INDEX" | "FUTURE";
+  typeDisp: "Index" | "Future";
 }
 export interface SearchQuoteYahooCurrency extends SearchQuoteYahoo {
-  quoteType: "CURRENCY";
-  typeDisp: "Currency";
+  quoteType: "CURRENCY" | "FUTURE";
+  typeDisp: "Currency" | "Future";
 }
 export interface SearchQuoteYahooCryptocurrency extends SearchQuoteYahoo {
-  quoteType: "CRYPTOCURRENCY";
-  typeDisp: "Cryptocurrency";
+  quoteType: "CRYPTOCURRENCY" | "FUTURE";
+  typeDisp: "Cryptocurrency" | "Future";
 }
 export interface SearchQuoteNonYahoo {
   index: string; // '78ddc07626ff4bbcae663e88514c23a0'
