@@ -20,16 +20,14 @@ function itValidates(
     symbols = symbols.filter((s) => !opts.skip.includes(s));
 
   const modules = name === "all" ? "all" : [name];
-  symbols.forEach((symbol) => {
-    it(`validates ${symbol}`, async () => {
-      const devel = `quoteSummary-${name}-${symbol}.json`;
-      try {
-        await yf.quoteSummary(symbol, { modules }, { devel });
-      } catch (error) {
-        if (error.message.match(/^No fundamentals data found/)) return;
-        throw error;
-      }
-    });
+  it.each(symbols)("validates %s", async (symbol) => {
+    const devel = `quoteSummary-${name}-${symbol}.json`;
+    try {
+      await yf.quoteSummary(symbol, { modules }, { devel });
+    } catch (error) {
+      if (error.message.match(/^No fundamentals data found/)) return;
+      throw error;
+    }
   });
 }
 
