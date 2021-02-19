@@ -1,3 +1,17 @@
+# [1.8.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.7.2...v1.8.0) (2021-02-19)
+
+
+### Bug Fixes
+
+* **search:** add CURRENCY and CRYPTOCURRENCY types, EUR search test ([5ac971a](https://github.com/gadicc/node-yahoo-finance2/commit/5ac971a13f1c97786b3fcebe7d1cfda79ffe55a9))
+* **validation:** make a few quoteSummary properties optional ([fbe9310](https://github.com/gadicc/node-yahoo-finance2/commit/fbe9310e0d9455355c60dc36bdd7a0e3f0d1f5d0))
+* **validation:** make a few quoteSummary properties optional ([a6535ee](https://github.com/gadicc/node-yahoo-finance2/commit/a6535ee41e5f82f8a7991c2740b3960cccd4c475))
+
+
+### Features
+
+* **modules:** add a new module (trendingSymbols) ([4f486f7](https://github.com/gadicc/node-yahoo-finance2/commit/4f486f779ea77ce23f4fe0edd401d3da1c7366ac))
+
 ## [1.7.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.7.1...v1.7.2) (2021-02-17)
 
 
