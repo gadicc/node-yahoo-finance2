@@ -4214,10 +4214,7 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "enum": [
-            "CRYPTOCURRENCY",
-            "FUTURE"
-          ],
+          "const": "CRYPTOCURRENCY",
           "type": "string"
         },
         "score": {
@@ -4230,10 +4227,7 @@
           "type": "string"
         },
         "typeDisp": {
-          "enum": [
-            "Cryptocurrency",
-            "Future"
-          ],
+          "const": "Cryptocurrency",
           "type": "string"
         }
       },
@@ -4269,10 +4263,7 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "enum": [
-            "CURRENCY",
-            "FUTURE"
-          ],
+          "const": "CURRENCY",
           "type": "string"
         },
         "score": {
@@ -4285,10 +4276,7 @@
           "type": "string"
         },
         "typeDisp": {
-          "enum": [
-            "Currency",
-            "Future"
-          ],
+          "const": "Currency",
           "type": "string"
         }
       },
@@ -4324,10 +4312,7 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "enum": [
-            "ETF",
-            "FUTURE"
-          ],
+          "const": "ETF",
           "type": "string"
         },
         "score": {
@@ -4340,10 +4325,7 @@
           "type": "string"
         },
         "typeDisp": {
-          "enum": [
-            "ETF",
-            "Future"
-          ],
+          "const": "ETF",
           "type": "string"
         }
       },
@@ -4379,10 +4361,7 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "enum": [
-            "EQUITY",
-            "FUTURE"
-          ],
+          "const": "EQUITY",
           "type": "string"
         },
         "score": {
@@ -4395,10 +4374,7 @@
           "type": "string"
         },
         "typeDisp": {
-          "enum": [
-            "Equity",
-            "Future"
-          ],
+          "const": "Equity",
           "type": "string"
         }
       },
@@ -4434,10 +4410,7 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "enum": [
-            "MUTUALFUND",
-            "FUTURE"
-          ],
+          "const": "MUTUALFUND",
           "type": "string"
         },
         "score": {
@@ -4450,10 +4423,56 @@
           "type": "string"
         },
         "typeDisp": {
-          "enum": [
-            "Fund",
-            "Future"
-          ],
+          "const": "Fund",
+          "type": "string"
+        }
+      },
+      "required": [
+        "exchange",
+        "index",
+        "isYahooFinance",
+        "quoteType",
+        "score",
+        "symbol",
+        "typeDisp"
+      ],
+      "type": "object"
+    },
+    "SearchQuoteYahooFuture": {
+      "additionalProperties": false,
+      "properties": {
+        "exchange": {
+          "type": "string"
+        },
+        "index": {
+          "const": "quotes",
+          "type": "string"
+        },
+        "isYahooFinance": {
+          "const": true,
+          "type": "boolean"
+        },
+        "longname": {
+          "type": "string"
+        },
+        "newListingDate": {
+          "yahooFinanceType": "date"
+        },
+        "quoteType": {
+          "const": "FUTURE",
+          "type": "string"
+        },
+        "score": {
+          "yahooFinanceType": "number"
+        },
+        "shortname": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "typeDisp": {
+          "const": "Future",
           "type": "string"
         }
       },
@@ -4489,10 +4508,7 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "enum": [
-            "INDEX",
-            "FUTURE"
-          ],
+          "const": "INDEX",
           "type": "string"
         },
         "score": {
@@ -4505,10 +4521,7 @@
           "type": "string"
         },
         "typeDisp": {
-          "enum": [
-            "Index",
-            "Future"
-          ],
+          "const": "Index",
           "type": "string"
         }
       },
@@ -4544,10 +4557,7 @@
           "yahooFinanceType": "date"
         },
         "quoteType": {
-          "enum": [
-            "OPTION",
-            "FUTURE"
-          ],
+          "const": "OPTION",
           "type": "string"
         },
         "score": {
@@ -4560,10 +4570,7 @@
           "type": "string"
         },
         "typeDisp": {
-          "enum": [
-            "Option",
-            "Future"
-          ],
+          "const": "Option",
           "type": "string"
         }
       },
@@ -4628,6 +4635,9 @@
               },
               {
                 "$ref": "#/definitions/SearchQuoteNonYahoo"
+              },
+              {
+                "$ref": "#/definitions/SearchQuoteYahooFuture"
               }
             ]
           },
