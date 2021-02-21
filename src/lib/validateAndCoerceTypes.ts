@@ -148,9 +148,10 @@ ajv.addKeyword({
 ajv.addSchema(schema);
 
 /* istanbul ignore next */
-const logObj = process?.stdout?.isTTY
-  ? (obj: any) => console.dir(obj, { depth: 4, colors: true })
-  : (obj: any) => console.log(JSON.stringify(obj, null, 2));
+const logObj =
+  typeof process !== "undefined" && process?.stdout?.isTTY
+    ? (obj: any) => console.dir(obj, { depth: 4, colors: true })
+    : (obj: any) => console.log(JSON.stringify(obj, null, 2));
 
 export function resolvePath(obj: any, dataPath: string) {
   const path = dataPath.split("/");
