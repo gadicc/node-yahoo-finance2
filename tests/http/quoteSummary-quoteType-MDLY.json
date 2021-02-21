@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/MDLY?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "6vf816dg2vser"
+      ],
+      "x-yahoo-request-id": [
+        "6vf816dg2vser"
+      ],
+      "x-request-id": [
+        "feb9a45d-5cba-4a20-b60f-6b83ff32d138"
+      ],
+      "content-length": [
+        "437"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:14:02 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "NYQ",
+              "quoteType": "EQUITY",
+              "symbol": "MDLY",
+              "underlyingSymbol": "MDLY",
+              "shortName": "Medley Management Inc.",
+              "longName": "Medley Management Inc.",
+              "firstTradeDateEpochUtc": 1411565400,
+              "timeZoneFullName": "America/New_York",
+              "timeZoneShortName": "EST",
+              "uuid": "5c7a2af9-da78-3b57-8755-1c4c2ec9ea8b",
+              "messageBoardId": "finmb_269214791",
+              "gmtOffSetMilliseconds": -18000000,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

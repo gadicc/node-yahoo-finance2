@@ -1,0 +1,92 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SI?formatted=false&modules=netSharePurchaseActivity"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "3nnpjmdg2vseo"
+      ],
+      "x-yahoo-request-id": [
+        "3nnpjmdg2vseo"
+      ],
+      "x-request-id": [
+        "af715279-1827-4306-ac7e-a21f8313dcfc"
+      ],
+      "content-length": [
+        "355"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:14:00 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "netSharePurchaseActivity": {
+              "maxAge": 1,
+              "period": "6m",
+              "buyInfoCount": 22,
+              "buyInfoShares": 357238,
+              "buyPercentInsiderShares": 0.30200002,
+              "sellInfoCount": 8,
+              "sellInfoShares": 510148,
+              "sellPercentInsiderShares": 0.432,
+              "netInfoCount": 30,
+              "netInfoShares": -152910,
+              "netPercentInsiderShares": -0.129,
+              "totalInsiderShares": 1028483
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

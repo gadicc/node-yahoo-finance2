@@ -1,0 +1,116 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CRON?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "68bmrd1g2vseq"
+      ],
+      "x-yahoo-request-id": [
+        "68bmrd1g2vseq"
+      ],
+      "x-request-id": [
+        "fdae2ec6-0024-46f4-a5ad-8d66ed5609c0"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "473"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:14:02 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "preMarketChangePercent": 0.0051194085,
+              "preMarketChange": 0.059999466,
+              "preMarketTime": 1613744995,
+              "preMarketPrice": 11.78,
+              "preMarketSource": "DELAYED",
+              "regularMarketChangePercent": 0.037124537,
+              "regularMarketChange": 0.4350996,
+              "regularMarketTime": 1613754832,
+              "priceHint": 2,
+              "regularMarketPrice": 12.1551,
+              "regularMarketDayHigh": 12.38,
+              "regularMarketDayLow": 11.77,
+              "regularMarketVolume": 2580169,
+              "regularMarketPreviousClose": 11.72,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 11.79,
+              "exchange": "NMS",
+              "exchangeName": "NasdaqGS",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "EQUITY",
+              "symbol": "CRON",
+              "underlyingSymbol": null,
+              "shortName": "Cronos Group Inc. Common Share",
+              "longName": "Cronos Group Inc.",
+              "currency": "USD",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 4318755840
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

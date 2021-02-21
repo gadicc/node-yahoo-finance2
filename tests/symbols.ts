@@ -15,4 +15,10 @@ export const testSymbols = [
   "BABA", // NYSE
   "QQQ", // ETF
   "0P000071W8.TO", // Mutual Fund
+  "SI", // NYSE
+  "MDLY", // NYSE
+  "ABBV", // NYSE
+  "BRKS", // NMS
+  "CRON", // NMS
+  "EPAC", // NYSE
 ];

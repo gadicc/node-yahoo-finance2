@@ -1,0 +1,97 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/MDLY?formatted=false&modules=summaryProfile"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "d2dmhalg2vsev"
+      ],
+      "x-yahoo-request-id": [
+        "d2dmhalg2vsev"
+      ],
+      "x-request-id": [
+        "df015ce1-33a2-487a-ade4-cfc3c0148304"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "420"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:14:07 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "280 Park Avenue",
+              "address2": "6th Floor East",
+              "city": "New York",
+              "state": "NY",
+              "zip": "10017",
+              "country": "United States",
+              "phone": "212-759-0777",
+              "website": "http://www.mdly.com",
+              "industry": "Asset Management",
+              "sector": "Financial Services",
+              "longBusinessSummary": "Medley Management Inc. is an investment holding company and operate and control all of the business and affairs of Medley LLC and its subsidiaries. Medley Management Inc. was incorporated on June 13, 2014 and is based in New York, New York.",
+              "fullTimeEmployees": 65,
+              "companyOfficers": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

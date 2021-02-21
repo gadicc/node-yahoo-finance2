@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CRON?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "bi59blhg2vser"
+      ],
+      "x-yahoo-request-id": [
+        "bi59blhg2vser"
+      ],
+      "x-request-id": [
+        "7310001a-0dd2-4956-97d2-69a3c3e95219"
+      ],
+      "content-length": [
+        "440"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:14:03 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "NMS",
+              "quoteType": "EQUITY",
+              "symbol": "CRON",
+              "underlyingSymbol": "CRON",
+              "shortName": "Cronos Group Inc. Common Share",
+              "longName": "Cronos Group Inc.",
+              "firstTradeDateEpochUtc": 1519741800,
+              "timeZoneFullName": "America/New_York",
+              "timeZoneShortName": "EST",
+              "uuid": "c16afd87-8f99-3c59-851c-860ea909059d",
+              "messageBoardId": "finmb_253038643",
+              "gmtOffSetMilliseconds": -18000000,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

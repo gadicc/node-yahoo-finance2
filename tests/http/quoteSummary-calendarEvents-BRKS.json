@@ -1,0 +1,95 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BRKS?formatted=false&modules=calendarEvents"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "56gg8c1g2vse3"
+      ],
+      "x-yahoo-request-id": [
+        "56gg8c1g2vse3"
+      ],
+      "x-request-id": [
+        "10860ce8-c6e8-47bc-9a3e-1506dbc8d41c"
+      ],
+      "content-length": [
+        "315"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:38 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "calendarEvents": {
+              "maxAge": 1,
+              "earnings": {
+                "earningsDate": [
+                  1619568000,
+                  1620000000
+                ],
+                "earningsAverage": 0.5,
+                "earningsLow": 0.47,
+                "earningsHigh": 0.52,
+                "revenueAverage": 272280000,
+                "revenueLow": 267000000,
+                "revenueHigh": 275000000
+              },
+              "exDividendDate": 1614816000,
+              "dividendDate": 1616716800
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

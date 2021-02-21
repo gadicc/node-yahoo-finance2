@@ -1,0 +1,83 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BRKS?formatted=false&modules=industryTrend"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "6f04b55g2vsei"
+      ],
+      "x-yahoo-request-id": [
+        "6f04b55g2vsei"
+      ],
+      "x-request-id": [
+        "813bb942-86d3-4977-a7db-e72890a32779"
+      ],
+      "content-length": [
+        "102"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:54 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "industryTrend": {
+              "maxAge": 1,
+              "symbol": null,
+              "estimates": []
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

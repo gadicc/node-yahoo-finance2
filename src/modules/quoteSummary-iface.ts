@@ -517,7 +517,7 @@ export interface IncomeStatementHistoryElement {
   operatingIncome: number;
   totalOtherIncomeExpenseNet: number;
   ebit: number;
-  interestExpense: number;
+  interestExpense: number | null;
   incomeBeforeTax: number;
   incomeTaxExpense: number;
   minorityInterest: number | null;
@@ -727,6 +727,7 @@ export enum Type {
   The10Q = "10-Q",
   The8K = "8-K",
   The8KA = "8-K/A",
+  The10KA = "10-K/A",
 }
 
 export interface SummaryDetail {
@@ -881,6 +882,7 @@ export enum Action {
 
 export enum Grade {
   Accumulate = "Accumulate",
+  Add = "Add",
   Buy = "Buy",
   Empty = "",
   EqualWeight = "Equal-Weight",
@@ -906,5 +908,6 @@ export enum Grade {
   Sell = "Sell",
   StrongBuy = "Strong Buy",
   Underperform = "Underperform",
+  Underperformer = "Underperformer",
   Underweight = "Underweight",
 }

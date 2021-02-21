@@ -1,0 +1,113 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EPAC?formatted=false&modules=financialData"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "anf3fctg2vsec"
+      ],
+      "x-yahoo-request-id": [
+        "anf3fctg2vsec"
+      ],
+      "x-request-id": [
+        "b41b280c-7d72-4204-b0c1-0ea593a09549"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "452"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:48 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "financialData": {
+              "maxAge": 86400,
+              "currentPrice": 23.3,
+              "targetHighPrice": 20,
+              "targetLowPrice": 16,
+              "targetMeanPrice": 18.75,
+              "targetMedianPrice": 19.5,
+              "recommendationMean": 3.2,
+              "recommendationKey": "hold",
+              "numberOfAnalystOpinions": 4,
+              "totalCash": 158568000,
+              "totalCashPerShare": 2.648,
+              "ebitda": 43889000,
+              "totalDebt": 255000000,
+              "quickRatio": 2.317,
+              "currentRatio": 3.262,
+              "totalRevenue": 466048000,
+              "debtToEquity": 69.304,
+              "revenuePerShare": 7.782,
+              "returnOnAssets": 0.01609,
+              "returnOnEquity": 0.011109999,
+              "grossProfits": 217993000,
+              "freeCashflow": 39089624,
+              "operatingCashflow": 28435000,
+              "earningsGrowth": 1.161,
+              "revenueGrowth": -0.186,
+              "grossMargins": 0.43894002,
+              "ebitdaMargins": 0.09417,
+              "operatingMargins": 0.048260003,
+              "profitMargins": 0.0068699997,
+              "financialCurrency": "USD"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
