@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cp schema.json schema.json.bak
-yarn generateSchema
+yarn schema
 
 MD5SUM_OLD=$(md5sum schema.json.bak | awk '{print $1}')
 MD5SUM_NEW=$(md5sum schema.json | awk '{print $1}')

@@ -26,12 +26,13 @@
     "yahoo-finance": "bin/yahoo-finance.js"
   },
   "scripts": {
-    "lint": "eslint . --ext .js,.ts",
-    "test": "jest",
     "coverage": "jest --coverage",
-    "test:ts": "tsc --noEmit",
-    "generateSchema": "ts-json-schema-generator -p 'src/**/*.ts' -t '*' | node bin/schema-tweak.js > schema.json",
-    "prepublishOnly": "tsc && yarn generateSchema"
+    "lint": "eslint . --ext .js,.ts",
+    "schema": "ts-json-schema-generator -p 'src/**/*.ts' -t '*' | node bin/schema-tweak.js > schema.json",
+    "generateSchema": "yarn schema",
+    "prepublishOnly": "tsc && yarn generateSchema",
+    "test": "jest",
+    "test:ts": "tsc --noEmit"
   },
   "files": [
     "api",
