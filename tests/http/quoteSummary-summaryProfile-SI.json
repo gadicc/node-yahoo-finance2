@@ -1,0 +1,97 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SI?formatted=false&modules=summaryProfile"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "8tl5695g2vsev"
+      ],
+      "x-yahoo-request-id": [
+        "8tl5695g2vsev"
+      ],
+      "x-request-id": [
+        "07c0f99d-a526-4863-a44a-c6cc15bc9d6e"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "687"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:14:07 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "4250 Executive Square",
+              "address2": "Suite 300",
+              "city": "La Jolla",
+              "state": "CA",
+              "zip": "92037",
+              "country": "United States",
+              "phone": "858-362-6300",
+              "website": "http://www.silvergatebank.com",
+              "industry": "Banks—Regional",
+              "sector": "Financial Services",
+              "longBusinessSummary": "Silvergate Capital Corporation operates as a bank holding company for Silvergate Bank that provides banking products and services to business and individual clients in the United States and internationally. The company accepts deposit products, including interest and noninterest bearing demand accounts, money market and savings accounts, and certificates of deposit accounts. Its loan products include one-to-four family real estate loans, multi-family real estate loans, commercial real estate loans, construction loans, commercial and industrial loans, mortgage warehouse loans, and reverse mortgage loans, as well as consumer loans and other loans secured by personal property. The company also provides cash management services for digital currency-related businesses. The company was founded in 1988 and is headquartered in La Jolla, California.",
+              "fullTimeEmployees": 218,
+              "companyOfficers": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

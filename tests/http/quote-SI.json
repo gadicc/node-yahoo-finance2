@@ -1,0 +1,148 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=SI"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "1163dtlg2vsdv"
+      ],
+      "x-yahoo-request-id": [
+        "1163dtlg2vsdv"
+      ],
+      "x-request-id": [
+        "0fb902db-fefe-4f4f-b8a4-7dcb15ce1215"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "932"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:35 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "firstTradeDateMilliseconds": 1573137000000,
+            "priceHint": 2,
+            "regularMarketChange": 18.14,
+            "regularMarketChangePercent": 11.798374,
+            "regularMarketTime": 1613754783,
+            "regularMarketPrice": 171.89,
+            "regularMarketDayHigh": 174.5,
+            "regularMarketDayRange": "154.0101 - 174.5",
+            "regularMarketDayLow": 154.0101,
+            "regularMarketVolume": 570805,
+            "regularMarketPreviousClose": 153.75,
+            "bid": 171.5,
+            "ask": 172.21,
+            "bidSize": 31,
+            "askSize": 14,
+            "fullExchangeName": "NYSE",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 157.91,
+            "averageDailyVolume3Month": 1145291,
+            "averageDailyVolume10Day": 1460285,
+            "fiftyTwoWeekLowChange": 164.29,
+            "fiftyTwoWeekLowChangePercent": 21.617105,
+            "fiftyTwoWeekRange": "7.6 - 187.864",
+            "fiftyTwoWeekHighChange": -15.973999,
+            "fiftyTwoWeekHighChangePercent": -0.085029595,
+            "fiftyTwoWeekLow": 7.6,
+            "fiftyTwoWeekHigh": 187.864,
+            "exchange": "NYQ",
+            "shortName": "Silvergate Capital Corporation",
+            "longName": "Silvergate Capital Corporation",
+            "messageBoardId": "finmb_53838840",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "earningsTimestamp": 1611216000,
+            "earningsTimestampStart": 1611216000,
+            "earningsTimestampEnd": 1611216000,
+            "trailingPE": 126.3897,
+            "epsTrailingTwelveMonths": 1.36,
+            "epsForward": 2.51,
+            "epsCurrentYear": 1.91,
+            "priceEpsCurrentYear": 89.99477,
+            "sharesOutstanding": 22754500,
+            "bookValue": 15.701,
+            "fiftyDayAverage": 99.940605,
+            "fiftyDayAverageChange": 71.949394,
+            "fiftyDayAverageChangePercent": 0.7199215,
+            "twoHundredDayAverage": 43.128407,
+            "twoHundredDayAverageChange": 128.7616,
+            "twoHundredDayAverageChangePercent": 2.9855404,
+            "marketCap": 3922306304,
+            "forwardPE": 68.48207,
+            "priceToBook": 10.94771,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "marketState": "REGULAR",
+            "displayName": "Silvergate Capital",
+            "symbol": "SI"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

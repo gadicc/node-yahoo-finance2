@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/download/ABBV?interval=1d&events=history&includeAdjustedClose=true&period1=1577836800&period2=1578009600"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-disposition": [
+        "attachment; filename=ABBV.csv"
+      ],
+      "content-type": [
+        "text/csv"
+      ],
+      "cache-control": [
+        "private, max-age=10, stale-while-revalidate=20"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "y-rid": [
+        "86rfdqdg2vsdu"
+      ],
+      "x-yahoo-request-id": [
+        "86rfdqdg2vsdu"
+      ],
+      "x-request-id": [
+        "24b2c143-55dd-4fd3-a501-42a12dd8b6ee"
+      ],
+      "content-length": [
+        "110"
+      ],
+      "x-envoy-upstream-service-time": [
+        "12"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:34 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-chart-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "Date,Open,High,Low,Close,Adj Close,Volume\n2020-01-02,89.080002,89.570000,88.510002,89.550003,83.871666,5639200"
+  }
+}
