@@ -1,3 +1,12 @@
+## [1.8.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.8.1...v1.8.2) (2021-02-22)
+
+
+### Bug Fixes
+
+* **ci:** empty-commit to trigger ci publish after token change ([f678c21](https://github.com/gadicc/node-yahoo-finance2/commit/f678c216c33fec7b8272e88a8b675cf84fe9fbbb))
+* **validation:** load process only when defined during validation logging ([#50](https://github.com/gadicc/node-yahoo-finance2/issues/50)) ([2f97923](https://github.com/gadicc/node-yahoo-finance2/commit/2f97923ff13e0c6d2314a9d1c8095891a9296dd7))
+* **validation:** more optionality, SQYFuture type, more tests ([4377fdf](https://github.com/gadicc/node-yahoo-finance2/commit/4377fdfda6e214ed0b5bf22d3639c888be4ef6d6))
+
 ## [1.8.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.8.0...v1.8.1) (2021-02-19)
 
 
