@@ -1,17 +1,8 @@
 import recommendationsBySymbol from "./recommendationsBySymbol";
 import { testSymbols } from "../../tests/symbols";
+import testYf from "../../tests/testYf";
 
-import _env from "../env-node";
-import _fetch from "../lib/yahooFinanceFetch";
-import _moduleExec from "../lib/moduleExec";
-
-const yf = {
-  _env,
-  _fetch,
-  _opts: { validation: { logErrors: true } },
-  _moduleExec,
-  recommendationsBySymbol,
-};
+const yf = testYf({ recommendationsBySymbol });
 
 describe("recommendationsBySymbol", () => {
   // make sure it passes validation for some symbols

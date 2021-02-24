@@ -2,9 +2,10 @@ const _yahooFinanceFetch = require("./yahooFinanceFetch");
 const errors = require("./errors");
 
 const _env = require("../env-node").default;
+const _opts = require("./options").default;
 
 describe("yahooFinanceFetch", () => {
-  const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env });
+  const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env, _opts });
 
   // Don't log errors during tests
   const fakeConsole = { log: jest.fn(), error: jest.fn(), dir: jest.fn() };

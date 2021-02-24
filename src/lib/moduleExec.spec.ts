@@ -1,18 +1,9 @@
 import search from "../modules/search";
 const { InvalidOptionsError } = require("./errors");
-import moduleExec from "./moduleExec";
+import testYf from "../../tests/testYf";
 
-import _env from "../env-node";
-import _fetch from "./yahooFinanceFetch";
-import _moduleExec from "./moduleExec";
-
-const yf = {
-  _env,
-  _fetch,
-  _opts: { validation: { logErrors: true, logOptionsErrors: false } },
-  _moduleExec,
-  search,
-};
+const yf = testYf({ search });
+yf._opts.validation.logOptionsErrors = false;
 
 describe("moduleExec", () => {
   describe("options validation", () => {
