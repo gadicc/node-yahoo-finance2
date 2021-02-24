@@ -1,3 +1,5 @@
+import PQueue from "p-queue";
+
 import errors from "./errors";
 import pkg from "../../package.json";
 
@@ -33,6 +35,14 @@ async function yahooFinanceFetch(
       "yahooFinanceFetch called without this._env set"
     );
 
+  const qOpts = this._opts.queue;
+  let queue = yahooFinanceFetch.queue;
+
+  if (!queue) queue = yahooFinanceFetch.queue = new PQueue(this._opts.queue);
+  if (queue.concurrency !== qOpts.concurrency)
+    queue.concurrency = qOpts.concurrency;
+  if (queue.timeout !== qOpts.timeout) queue.timeout = qOpts.timeout;
+
   const { URLSearchParams, fetch, fetchDevel } = this._env;
 
   // @ts-ignore TODO copy interface? @types lib?
@@ -52,7 +62,7 @@ async function yahooFinanceFetch(
   // used in moduleExec.ts
   if (func === "csv") func = "text";
 
-  const res = await fetchFunc(url, fetchOptions);
+  const res = await queue.add(() => fetchFunc(url, fetchOptions));
   const result = await res[func]();
 
   /*
@@ -89,4 +99,10 @@ async function yahooFinanceFetch(
   return result;
 }
 
+<<<<<<< HEAD:src/lib/yahooFinanceFetch.ts
 export default yahooFinanceFetch;
+=======
+yahooFinanceFetch.queue = null;
+
+module.exports = yahooFinanceFetch;
+>>>>>>> de41435 (chore(concurrency): early support):src/lib/yahooFinanceFetch.js
