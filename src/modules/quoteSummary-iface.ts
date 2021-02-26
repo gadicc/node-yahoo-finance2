@@ -61,7 +61,7 @@ export interface AssetProfile {
   website?: string;
   industry?: string;
   sector?: string;
-  longBusinessSummary: string;
+  longBusinessSummary?: string;
   fullTimeEmployees?: number;
   companyOfficers: CompanyOfficer[];
   auditRisk?: number;
@@ -71,6 +71,9 @@ export interface AssetProfile {
   overallRisk?: number;
   governanceEpochDate?: Date;
   compensationAsOfEpochDate?: Date;
+  name?: string; // 'Bitcoin';
+  startDate?: Date; // new Date('2013-04-28')
+  description?: string; // 'Bitcoin (BTC) is a cryptocurrency...'
 }
 
 export interface CompanyOfficer {
@@ -668,14 +671,18 @@ export interface Price {
   shortName: string;
   longName: null | string;
 
-  lastMarket: null;
+  lastMarket: null | string;
   marketState: string;
   marketCap?: number;
 
+  // Crypto only?  Is Price actually Quote?  TODO after
   currency?: string;
   currencySymbol?: string;
   fromCurrency: string | null;
   toCurrency: string | null;
+  volume24Hr?: number;
+  volumeAllCurrencies?: number;
+  circulatingSupply?: number;
 }
 
 export interface QuoteType {
@@ -767,15 +774,22 @@ export interface SummaryDetail {
   trailingAnnualDividendRate?: number;
   trailingAnnualDividendYield?: number;
   currency: string;
-  fromCurrency: null;
-  toCurrency: null;
-  lastMarket: null;
   algorithm: null;
   tradeable: boolean;
   yield?: number;
   totalAssets?: number;
   navPrice?: number;
   ytdReturn?: number;
+
+  // crypto only (optional, or null in other types)
+  // TODO: how does Price / SummaryDetail compare? common base?
+  fromCurrency: string | null; // 'BTC'
+  toCurrency: string | null; // 'USD-X'
+  lastMarket: string | null; // 'CoinMarketCap'
+  volume24Hr?: number; // 62650314752
+  volumeAllCurrencies?: number; // 62650314752
+  circulatingSupply?: number; // 18638932
+  startDate?: Date; // new Date(1367107200 * 1000)
 }
 
 export interface SummaryProfile {
@@ -795,6 +809,12 @@ export interface SummaryProfile {
   fullTimeEmployees?: number;
   companyOfficers: any[];
   maxAge: number;
+
+  // seems like for cryptocurency only
+  // TODO: how does this relate to Quote type.  Common base?
+  name?: string; // 'Bitcoin'
+  startDate?: Date; // new Date('2013-04-28')
+  description?: string; // 'Bitcoin (BTC) is a cryptocurrency...'
 }
 
 export interface TopHoldings {

@@ -58,6 +58,9 @@
         "country": {
           "type": "string"
         },
+        "description": {
+          "type": "string"
+        },
         "fax": {
           "type": "string"
         },
@@ -76,6 +79,9 @@
         "maxAge": {
           "yahooFinanceType": "number"
         },
+        "name": {
+          "type": "string"
+        },
         "overallRisk": {
           "yahooFinanceType": "number"
         },
@@ -87,6 +93,9 @@
         },
         "shareHolderRightsRisk": {
           "yahooFinanceType": "number"
+        },
+        "startDate": {
+          "yahooFinanceType": "date"
         },
         "state": {
           "type": "string"
@@ -100,7 +109,6 @@
       },
       "required": [
         "maxAge",
-        "longBusinessSummary",
         "companyOfficers"
       ],
       "type": "object"
@@ -2320,6 +2328,9 @@
         "averageDailyVolume3Month": {
           "yahooFinanceType": "number"
         },
+        "circulatingSupply": {
+          "yahooFinanceType": "number"
+        },
         "currency": {
           "type": "string"
         },
@@ -2342,7 +2353,10 @@
           ]
         },
         "lastMarket": {
-          "type": "null"
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "longName": {
           "type": [
@@ -2442,6 +2456,12 @@
         },
         "underlyingSymbol": {
           "type": "null"
+        },
+        "volume24Hr": {
+          "yahooFinanceType": "number"
+        },
+        "volumeAllCurrencies": {
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -5040,6 +5060,9 @@
         "bidSize": {
           "yahooFinanceType": "number"
         },
+        "circulatingSupply": {
+          "yahooFinanceType": "number"
+        },
         "currency": {
           "type": "string"
         },
@@ -5074,10 +5097,16 @@
           "yahooFinanceType": "number"
         },
         "fromCurrency": {
-          "type": "null"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "lastMarket": {
-          "type": "null"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "marketCap": {
           "yahooFinanceType": "number"
@@ -5118,8 +5147,14 @@
         "regularMarketVolume": {
           "yahooFinanceType": "number"
         },
+        "startDate": {
+          "yahooFinanceType": "date"
+        },
         "toCurrency": {
-          "type": "null"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "totalAssets": {
           "yahooFinanceType": "number"
@@ -5142,6 +5177,12 @@
         "volume": {
           "yahooFinanceType": "number"
         },
+        "volume24Hr": {
+          "yahooFinanceType": "number"
+        },
+        "volumeAllCurrencies": {
+          "yahooFinanceType": "number"
+        },
         "yield": {
           "yahooFinanceType": "number"
         },
@@ -5155,11 +5196,11 @@
         "previousClose",
         "regularMarketPreviousClose",
         "currency",
+        "algorithm",
+        "tradeable",
         "fromCurrency",
         "toCurrency",
-        "lastMarket",
-        "algorithm",
-        "tradeable"
+        "lastMarket"
       ],
       "type": "object"
     },
@@ -5185,6 +5226,9 @@
         "country": {
           "type": "string"
         },
+        "description": {
+          "type": "string"
+        },
         "fax": {
           "type": "string"
         },
@@ -5200,11 +5244,17 @@
         "maxAge": {
           "yahooFinanceType": "number"
         },
+        "name": {
+          "type": "string"
+        },
         "phone": {
           "type": "string"
         },
         "sector": {
           "type": "string"
+        },
+        "startDate": {
+          "yahooFinanceType": "date"
         },
         "state": {
           "type": "string"
