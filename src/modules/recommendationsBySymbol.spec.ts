@@ -8,7 +8,9 @@ describe("recommendationsBySymbol", () => {
   // make sure it passes validation for some symbols
   describe("passes validation", () => {
     const symbolsToSkip = [
-      "ADH", // 404 Not Found
+      // 404 Not Found
+      "ADH",
+      "BTC-USD",
     ];
     const symbols = testSymbols.filter((s) => !symbolsToSkip.includes(s));
     it.each(symbols)("for symbol '%s'", async (symbol) => {
