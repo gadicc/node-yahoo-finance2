@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BTC-USD?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "6i4taq5g3ha00"
+      ],
+      "x-yahoo-request-id": [
+        "6i4taq5g3ha00"
+      ],
+      "x-request-id": [
+        "0a3fd23c-66ba-435a-a43c-896d254419ef"
+      ],
+      "content-length": [
+        "407"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Fri, 26 Feb 2021 07:49:20 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "CCC",
+              "quoteType": "CRYPTOCURRENCY",
+              "symbol": "BTC-USD",
+              "underlyingSymbol": "BTC-USD",
+              "shortName": "Bitcoin USD",
+              "longName": null,
+              "firstTradeDateEpochUtc": 1410908400,
+              "timeZoneFullName": "Europe/London",
+              "timeZoneShortName": "GMT",
+              "uuid": "74397779-1589-3270-8c45-b7f1a7345b3a",
+              "messageBoardId": "finmb_BTC_CCC",
+              "gmtOffSetMilliseconds": 0,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
