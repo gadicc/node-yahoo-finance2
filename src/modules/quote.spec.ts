@@ -7,6 +7,15 @@ const testSymbols = [
   "AZT.OL", // Far less properties than other symbols (#42)
 ];
 
+const marketStates = [
+  "PREPRE",
+  "CLOSED",
+  "PRE",
+  "REGULAR",
+  "POSTPOST",
+  //"POST" -- missing test!
+];
+
 const yf = testYf({ quote });
 
 describe("quote", () => {
@@ -16,9 +25,15 @@ describe("quote", () => {
       await yf.quote(symbol, {}, { devel });
     });
 
-    it.each(testSymbols)("for symbol %s (for 10AM data)", async (symbol) => {
-      const devel = `quote-${symbol}-10am.json`;
-      await yf.quote(symbol, {}, { devel });
+    if (0)
+      it.each(testSymbols)("for symbol %s (for 10AM data)", async (symbol) => {
+        const devel = `old/quote-${symbol}-10am.json`;
+        await yf.quote(symbol, {}, { devel });
+      });
+
+    it.each(marketStates)("for marketState %s", async (state) => {
+      const devel = `quote-marketState-${state}.fake.json`;
+      await yf.quote("fake", {}, { devel });
     });
   });
 
