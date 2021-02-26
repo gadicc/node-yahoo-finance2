@@ -7,9 +7,6 @@ import type {
 
 import type { DateInMs, TwoNumberRange } from "../lib/commonTypes";
 
-export type Quote = QuoteEquity | QuoteEtf | QuoteMutualfund;
-export type QuoteResponse = Quote[];
-
 export interface QuoteBase {
   language: string; // "en-US",
   region: string; // "US",
@@ -109,6 +106,26 @@ export interface QuoteEtf extends QuoteBase {
 export interface QuoteMutualfund extends QuoteBase {
   quoteType: "MUTUALFUND";
 }
+
+export interface QuoteCryptoCurrency extends QuoteBase {
+  quoteType: "CRYPTOCURRENCY";
+  circulatingSupply: number;
+  fromCurrency: string; // 'BTC'
+  toCurrency: string; // 'USD=X'
+  lastMarket: string; // 'CoinMarketCap'
+  coinImageUrl: string; // 'https://s.yimg.com/uc/fin/img/reports-thumbnails/1.png'
+  volume24Hr: number; // 62631043072
+  volumeAllCurrencies: number; // 62631043072
+  startDate: Date; // new Date(1367103600 * 1000)
+}
+
+export type Quote =
+  | QuoteEquity
+  | QuoteEtf
+  | QuoteMutualfund
+  | QuoteCryptoCurrency;
+
+export type QuoteResponse = Quote[];
 
 export interface QuoteOptions {}
 

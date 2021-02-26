@@ -2472,6 +2472,9 @@
         },
         {
           "$ref": "#/definitions/QuoteMutualfund"
+        },
+        {
+          "$ref": "#/definitions/QuoteCryptoCurrency"
         }
       ]
     },
@@ -2755,6 +2758,322 @@
         "priceHint",
         "fullExchangeName",
         "symbol"
+      ],
+      "type": "object"
+    },
+    "QuoteCryptoCurrency": {
+      "additionalProperties": false,
+      "properties": {
+        "ask": {
+          "yahooFinanceType": "number"
+        },
+        "askSize": {
+          "yahooFinanceType": "number"
+        },
+        "averageDailyVolume10Day": {
+          "yahooFinanceType": "number"
+        },
+        "averageDailyVolume3Month": {
+          "yahooFinanceType": "number"
+        },
+        "bid": {
+          "yahooFinanceType": "number"
+        },
+        "bidSize": {
+          "yahooFinanceType": "number"
+        },
+        "bookValue": {
+          "yahooFinanceType": "number"
+        },
+        "circulatingSupply": {
+          "yahooFinanceType": "number"
+        },
+        "coinImageUrl": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "dividendDate": {
+          "yahooFinanceType": "date"
+        },
+        "earningsTimestamp": {
+          "yahooFinanceType": "date"
+        },
+        "earningsTimestampEnd": {
+          "yahooFinanceType": "date"
+        },
+        "earningsTimestampStart": {
+          "yahooFinanceType": "date"
+        },
+        "epsCurrentYear": {
+          "yahooFinanceType": "number"
+        },
+        "epsForward": {
+          "yahooFinanceType": "number"
+        },
+        "epsTrailingTwelveMonths": {
+          "yahooFinanceType": "number"
+        },
+        "esgPopulated": {
+          "type": "boolean"
+        },
+        "exchange": {
+          "type": "string"
+        },
+        "exchangeDataDelayedBy": {
+          "yahooFinanceType": "number"
+        },
+        "exchangeTimezoneName": {
+          "type": "string"
+        },
+        "exchangeTimezoneShortName": {
+          "type": "string"
+        },
+        "fiftyDayAverage": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyDayAverageChange": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyDayAverageChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekHigh": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekHighChange": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekHighChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekLow": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekLowChange": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekLowChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekRange": {
+          "yahooFinanceType": "TwoNumberRange"
+        },
+        "financialCurrency": {
+          "type": "string"
+        },
+        "firstTradeDateMilliseconds": {
+          "yahooFinanceType": "DateInMs"
+        },
+        "forwardPE": {
+          "yahooFinanceType": "number"
+        },
+        "fromCurrency": {
+          "type": "string"
+        },
+        "fullExchangeName": {
+          "type": "string"
+        },
+        "gmtOffSetMilliseconds": {
+          "yahooFinanceType": "number"
+        },
+        "ipoExpectedDate": {
+          "yahooFinanceType": "date"
+        },
+        "language": {
+          "type": "string"
+        },
+        "lastMarket": {
+          "type": "string"
+        },
+        "longName": {
+          "type": "string"
+        },
+        "market": {
+          "type": "string"
+        },
+        "marketCap": {
+          "yahooFinanceType": "number"
+        },
+        "marketState": {
+          "enum": [
+            "REGULAR",
+            "CLOSED",
+            "PRE",
+            "PREPRE",
+            "POST",
+            "POSTPOST"
+          ],
+          "type": "string"
+        },
+        "messageBoardId": {
+          "type": "string"
+        },
+        "newListingDate": {
+          "yahooFinanceType": "date"
+        },
+        "postMarketChange": {
+          "yahooFinanceType": "number"
+        },
+        "postMarketChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "postMarketPrice": {
+          "yahooFinanceType": "number"
+        },
+        "postMarketTime": {
+          "yahooFinanceType": "date"
+        },
+        "preMarketChange": {
+          "yahooFinanceType": "number"
+        },
+        "preMarketChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "preMarketPrice": {
+          "yahooFinanceType": "number"
+        },
+        "preMarketTime": {
+          "yahooFinanceType": "number"
+        },
+        "priceEpsCurrentYear": {
+          "yahooFinanceType": "number"
+        },
+        "priceHint": {
+          "yahooFinanceType": "number"
+        },
+        "priceToBook": {
+          "yahooFinanceType": "number"
+        },
+        "quoteSourceName": {
+          "type": "string"
+        },
+        "quoteType": {
+          "const": "CRYPTOCURRENCY",
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "regularMarketChange": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketDayHigh": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketDayLow": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketDayRange": {
+          "yahooFinanceType": "TwoNumberRange"
+        },
+        "regularMarketOpen": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketPreviousClose": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketPrice": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketTime": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketVolume": {
+          "yahooFinanceType": "number"
+        },
+        "sharesOutstanding": {
+          "yahooFinanceType": "number"
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "sourceInterval": {
+          "yahooFinanceType": "number"
+        },
+        "startDate": {
+          "yahooFinanceType": "date"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "toCurrency": {
+          "type": "string"
+        },
+        "tradeable": {
+          "type": "boolean"
+        },
+        "trailingAnnualDividendRate": {
+          "yahooFinanceType": "number"
+        },
+        "trailingAnnualDividendYield": {
+          "yahooFinanceType": "number"
+        },
+        "trailingPE": {
+          "yahooFinanceType": "number"
+        },
+        "trailingThreeMonthNavReturns": {
+          "yahooFinanceType": "number"
+        },
+        "trailingThreeMonthReturns": {
+          "yahooFinanceType": "number"
+        },
+        "triggerable": {
+          "type": "boolean"
+        },
+        "twoHundredDayAverage": {
+          "yahooFinanceType": "number"
+        },
+        "twoHundredDayAverageChange": {
+          "yahooFinanceType": "number"
+        },
+        "twoHundredDayAverageChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "volume24Hr": {
+          "yahooFinanceType": "number"
+        },
+        "volumeAllCurrencies": {
+          "yahooFinanceType": "number"
+        },
+        "ytdReturn": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "circulatingSupply",
+        "coinImageUrl",
+        "esgPopulated",
+        "exchange",
+        "exchangeDataDelayedBy",
+        "exchangeTimezoneName",
+        "exchangeTimezoneShortName",
+        "fromCurrency",
+        "fullExchangeName",
+        "gmtOffSetMilliseconds",
+        "language",
+        "lastMarket",
+        "market",
+        "marketState",
+        "priceHint",
+        "quoteType",
+        "region",
+        "shortName",
+        "sourceInterval",
+        "startDate",
+        "symbol",
+        "toCurrency",
+        "tradeable",
+        "triggerable",
+        "volume24Hr",
+        "volumeAllCurrencies"
       ],
       "type": "object"
     },
