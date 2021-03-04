@@ -1,3 +1,11 @@
+## [1.8.3](https://github.com/gadicc/node-yahoo-finance2/compare/v1.8.2...v1.8.3) (2021-03-04)
+
+
+### Bug Fixes
+
+* **quote:** add cryptocurrency interface ([53044d3](https://github.com/gadicc/node-yahoo-finance2/commit/53044d31ef89f9c49a0a80860951d9a1bab7efa9))
+* **quoteSummary:** add cryptocurrency types ([0523d6d](https://github.com/gadicc/node-yahoo-finance2/commit/0523d6db9c6da9044a8637b97c6c7f2a003d0355))
+
 ## [1.8.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.8.1...v1.8.2) (2021-02-22)
 
 
