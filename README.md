@@ -64,9 +64,11 @@ majorHoldersBreakdown, netSharePurchaseActivity, price, quoteType,
 recommendationTrend, secFilings, sectorTrend, summaryDetail, summaryProfile,
 symbol, topHoldings, upgradeDowngradeHistory),
 [`search`](./docs/modules/search.md),
-[`recommendationsBySymbol`](./docs/modules/recommendationsBySymbol.md), with more
-[`trendingSymbols`](./docs/modules/trendingSymbols.md),
+[`recommendationsBySymbol`](./docs/modules/recommendationsBySymbol.md),
+[`trendingSymbols`](./docs/modules/trendingSymbols.md), with more
 [coming soon](https://github.com/gadicc/node-yahoo-finance2/issues/8).
+
+Extras: [`quoteCombine`](./docs/other/quoteCombine.md).
 
 See the [Full Documentation](./docs/README.md).
 
@@ -87,7 +89,7 @@ don't have to), with type checking and auto completion:
 Try it yourself on our
 [Live CodeSandbox](https://codesandbox.io/s/yahoo-finance2-312x2?file=/src/index.ts).
 
-## Using in the Browser (tl;dr: possible but unsupported)
+## Using in the Browser (TL;DR; possible but unsupported)
 
 This project is primarily developed to be used server-side in `node`.
 Nevertheless, due to the large number on requests on this issue, we have
