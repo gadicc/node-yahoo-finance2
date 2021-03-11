@@ -12,12 +12,17 @@ import search from "./modules/search";
 import recommendationsBySymbol from "./modules/recommendationsBySymbol";
 import trendingSymbols from "./modules/trendingSymbols";
 
+// other
+import quoteCombine from "./other/quoteCombine";
+
 export default {
+  // internal
   _env: {},
   _fetch: yahooFinanceFetch,
   _moduleExec: moduleExec,
   _opts: options,
 
+  // modules,
   autoc,
   historical,
   quote,
@@ -25,4 +30,7 @@ export default {
   search,
   recommendationsBySymbol,
   trendingSymbols,
+
+  // other
+  quoteCombine,
 };
