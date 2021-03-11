@@ -108,7 +108,18 @@ an array of symbols, and you'll receive an array of results back.
 
 ### Query Options
 
-The `quote` module doesn't have any options.  Find some?  Let us know!
+| Name          | Type      | Default    | Description                       |
+| ------------- | ----------| ---------- | --------------------------------- |
+| `fields`      | string[]  | (all)      | Which fields to return in query
+
+```js
+// Don't return all fields, only return these two + other essentials.
+await quote('TSLA', { fields: [ "symbol", "displayName" ] });
+```
+
+Note: some fields are *always* returned, e.g. `language`, `quoteType`, etc.
+For a list of all fields, see the `Quote` interface in
+[quote.ts](https://github.com/gadicc/node-yahoo-finance2/blob/devel/src/modules/quote.ts).
 
 ### Module Options
 

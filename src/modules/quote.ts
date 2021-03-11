@@ -17,7 +17,7 @@ export interface QuoteBase {
   marketState: "REGULAR" | "CLOSED" | "PRE" | "PREPRE" | "POST" | "POSTPOST";
   tradeable: boolean; // false,
   exchange: string; // "NMS",
-  shortName: string; // "NVIDIA Corporation",
+  shortName?: string; // "NVIDIA Corporation",
   longName?: string; // "NVIDIA Corporation",
   messageBoardId?: string; // "finmb_32307",
   exchangeTimezoneName: string; // "America/New_York",
@@ -95,6 +95,24 @@ export interface QuoteBase {
   newListingDate?: Date; // "2021-02-16",
 }
 
+/*
+ * [TODO] Fields seen in a query but not in this module yet:
+ *
+ *   - extendedMarketChange
+ *   - extendedMarketChangePercent
+ *   - extendedMarketPrice
+ *   - extendedMarketTime
+ *   - dayHigh (separate to regularMarketDayHigh, etc)
+ *   - dayLow (separate to regularMarketDayLow, etc)
+ *   - volume (separaet to regularMarketVolume, etc)
+ *
+ * i.e. on yahoo site, with ?fields=dayHigh,dayLow,etc.
+ */
+
+/*
+ * Guaranteed fields, even we don't ask for them
+ */
+
 export interface QuoteEquity extends QuoteBase {
   quoteType: "EQUITY";
 }
@@ -127,7 +145,11 @@ export type Quote =
 
 export type QuoteResponse = Quote[];
 
-export interface QuoteOptions {}
+export type QuoteField = keyof Quote;
+
+export interface QuoteOptions {
+  fields?: QuoteField[];
+}
 
 const queryOptionsDefaults = {};
 
@@ -169,6 +191,11 @@ export default function quote(
       defaults: queryOptionsDefaults,
       runtime: { symbols },
       overrides: queryOptionsOverrides,
+      transformWith(queryOptions: QuoteOptions) {
+        // Options validation ensures this is a string[]
+        if (queryOptions.fields) queryOptions.fields.join(",");
+        return queryOptions;
+      },
     },
 
     result: {

@@ -64,4 +64,20 @@ describe("quote", () => {
         yf.quote("AAPL", {}, { devel: "weirdJsonResult.fake.json" })
       ).rejects.toThrow(/Unexpected result/);
     });
+
+  it("passes through single ?fields", async () => {
+    const devel = "quote-TSLA-fields-symbol.json";
+    const queryOpts = { fields: ["symbol"] };
+    const result = await yf.quote("TSLA", queryOpts, { devel });
+    expect(result.symbol).toBe("TSLA");
+    expect(result.displayName).not.toBeDefined();
+  });
+
+  it("passes through multiple ?fields", async () => {
+    const devel = "quote-TSLA-fields-symbol-shortName.json";
+    const queryOpts = { fields: ["symbol", "displayName"] };
+    const result = await yf.quote("TSLA", queryOpts, { devel });
+    expect(result.symbol).toBe("TSLA");
+    expect(result.displayName).toBeDefined();
+  });
 });
