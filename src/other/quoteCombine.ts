@@ -1,0 +1,96 @@
+import type {
+  ModuleOptions,
+  ModuleOptionsWithValidateTrue,
+  ModuleOptionsWithValidateFalse,
+  ModuleThis,
+} from "../lib/moduleCommon";
+
+import type { QuoteOptions, Quote } from "../modules/quote";
+import quote from "../modules/quote";
+
+import validateAndCoerceTypes from "../lib/validateAndCoerceTypes";
+
+const DEBOUNCE_TIME = 50;
+
+const slugMap = new Map();
+
+export default function quoteCombine(
+  this: ModuleThis,
+  query: string,
+  queryOptionsOverrides?: QuoteOptions,
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<Quote>;
+
+export default function quoteCombine(
+  this: ModuleThis,
+  query: string,
+  queryOptionsOverrides?: QuoteOptions,
+  moduleOptions?: ModuleOptionsWithValidateFalse
+): Promise<any>;
+
+export default function quoteCombine(
+  this: ModuleThis,
+  query: string,
+  queryOptionsOverrides: QuoteOptions = {},
+  moduleOptions?: ModuleOptions
+): Promise<any> {
+  const symbol = query;
+
+  if (typeof symbol !== "string")
+    throw new Error(
+      "quoteCombine expects a string query parameter, received: " +
+        JSON.stringify(symbol, null, 2)
+    );
+
+  validateAndCoerceTypes({
+    source: "quoteCombine",
+    type: "options",
+    object: queryOptionsOverrides,
+    schemaKey: "#/definitions/QuoteOptions",
+    options: this._opts.validation,
+  });
+
+  // Make sure we only combine requests with same options
+  const slug = JSON.stringify(queryOptionsOverrides);
+
+  let entry = slugMap.get(slug);
+  if (!entry) {
+    entry = {
+      timeout: null,
+      queryOptionsOverrides,
+      symbols: new Map(),
+    };
+    slugMap.set(slug, entry);
+  }
+
+  if (entry.timeout) clearTimeout(entry.timeout);
+
+  const thisQuote = quote.bind(this);
+
+  return new Promise((resolve, reject) => {
+    let symbolPromiseCallbacks = entry.symbols.get(symbol);
+    if (!symbolPromiseCallbacks) {
+      symbolPromiseCallbacks = [];
+      entry.symbols.set(symbol, symbolPromiseCallbacks);
+    }
+
+    symbolPromiseCallbacks.push({ resolve, reject });
+
+    entry.timeout = setTimeout(() => {
+      slugMap.delete(slug);
+
+      const symbols: string[] = Array.from(entry.symbols.keys());
+      // @ts-ignore
+      thisQuote(symbols, queryOptionsOverrides, moduleOptions)
+        .then((results) => {
+          for (let result of results) {
+            const symbol = result.symbol;
+            entry.symbols.get(symbol).forEach((p: any) => p.resolve(result));
+          }
+        })
+        .catch((error) => {
+          for (let promise of entry.symbols.values()) promise.reject(error);
+        });
+    }, DEBOUNCE_TIME);
+  });
+}
