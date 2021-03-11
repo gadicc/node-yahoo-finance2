@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.8.3...v1.9.0) (2021-03-11)
+
+
+### Bug Fixes
+
+* **index:** add quoteCombine :) ([aeeef49](https://github.com/gadicc/node-yahoo-finance2/commit/aeeef49196d1c09c26ccac5539cba89040a52a51))
+
+
+### Features
+
+* **quote:** allow ?fields= argument, see docs. ([b597954](https://github.com/gadicc/node-yahoo-finance2/commit/b5979545df918070f265834137b92e99a192907c))
+* **quoteCombine:** debounce and combine multiple quote calls ([95bf404](https://github.com/gadicc/node-yahoo-finance2/commit/95bf404e7bc857980816f65d318c04bdbdec5de2))
+
 ## [1.8.3](https://github.com/gadicc/node-yahoo-finance2/compare/v1.8.2...v1.8.3) (2021-03-04)
 
 
