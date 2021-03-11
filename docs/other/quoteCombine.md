@@ -15,6 +15,10 @@ databaseResults.forEach(async (row) => {
   const result = await yahooFinance.quoteCombine(row.symbol);
   // do something
 });
+
+// Consider asking only for what you need to save on bandwidth and latency
+const fields = [ "regularMarketPrice", "regularMarketTime" ];
+const reult = await yahooFinance.quoteCombine("TSLA", { fields });
 ```
 
 Notes:
@@ -22,8 +26,8 @@ Notes:
 * Each `quoteCombine()` call receives the result for only the symbol it
  asked for.
 
-* Query options and the shape of the return result is identical to that of
-  [quote()](../modules/quote.md).
+* Query options (i.e. `fields`, above) and the shape of the return result is
+identical to that of [quote()](../modules/quote.md).
 
 * If you call `quoteCombine()` multiple times with different `queryOptions`,
   `quote()` will be called separately for each unique set of `queryOptions`
