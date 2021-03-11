@@ -69,6 +69,7 @@ export default function quoteCombine(
 
   return new Promise((resolve, reject) => {
     let symbolPromiseCallbacks = entry.symbols.get(symbol);
+    /* istanbul ignore else */
     if (!symbolPromiseCallbacks) {
       symbolPromiseCallbacks = [];
       entry.symbols.set(symbol, symbolPromiseCallbacks);
@@ -83,13 +84,13 @@ export default function quoteCombine(
       // @ts-ignore
       thisQuote(symbols, queryOptionsOverrides, moduleOptions)
         .then((results) => {
-          for (let result of results) {
-            const symbol = result.symbol;
-            entry.symbols.get(symbol).forEach((p: any) => p.resolve(result));
-          }
+          for (let result of results)
+            for (let promise of entry.symbols.get(result.symbol))
+              promise.resolve(result);
         })
         .catch((error) => {
-          for (let promise of entry.symbols.values()) promise.reject(error);
+          for (let symbolPromiseCallbacks of entry.symbols.values())
+            for (let promise of symbolPromiseCallbacks) promise.reject(error);
         });
     }, DEBOUNCE_TIME);
   });

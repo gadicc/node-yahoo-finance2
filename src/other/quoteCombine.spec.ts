@@ -33,4 +33,15 @@ describe("quoteCombine", () => {
 
     jest.runAllTimers();
   });
+
+  it("throws if symbol arg is not a single string", () => {
+    expect(() => yf.quoteCombine([])).toThrow(/string/);
+  });
+
+  it("throws on quote() error", () => {
+    const opts = { devel: "weirdJsonResult.fake.json" };
+    const promise = yf.quoteCombine("fake", undefined, opts);
+    jest.runAllTimers();
+    return expect(promise).rejects.toThrow(/Unexpected/);
+  });
 });
