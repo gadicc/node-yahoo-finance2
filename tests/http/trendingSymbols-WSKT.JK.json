@@ -1,0 +1,148 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/WSKT.JK?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "7ue86d5g5clkc"
+      ],
+      "x-yahoo-request-id": [
+        "7ue86d5g5clkc"
+      ],
+      "x-request-id": [
+        "4719cf15-604d-4e8e-8d33-b13a98f530b6"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "903"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sat, 20 Mar 2021 20:09:48 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "WSKT.JK",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": false,
+              "currency": "IDR",
+              "regularMarketChange": -30,
+              "regularMarketChangePercent": -2.0618556,
+              "regularMarketTime": 1616141659,
+              "regularMarketPrice": 1425,
+              "regularMarketDayHigh": 1460,
+              "regularMarketDayRange": "1415.0 - 1460.0",
+              "regularMarketDayLow": 1415,
+              "regularMarketVolume": 47298900,
+              "regularMarketPreviousClose": 1455,
+              "bid": 1425,
+              "ask": 1430,
+              "bidSize": 0,
+              "askSize": 0,
+              "fullExchangeName": "Jakarta",
+              "financialCurrency": "IDR",
+              "regularMarketOpen": 1460,
+              "averageDailyVolume3Month": 238626727,
+              "averageDailyVolume10Day": 65286128,
+              "fiftyTwoWeekLowChange": 1031,
+              "fiftyTwoWeekLowChangePercent": 2.6167512,
+              "fiftyTwoWeekRange": "394.0 - 2080.0",
+              "fiftyTwoWeekHighChange": -655,
+              "fiftyTwoWeekHighChangePercent": -0.31490386,
+              "fiftyTwoWeekLow": 394,
+              "fiftyTwoWeekHigh": 2080,
+              "epsTrailingTwelveMonths": -209.899,
+              "epsForward": 234.26,
+              "twoHundredDayAverageChangePercent": 0.26367655,
+              "sharesOutstanding": 13573900288,
+              "bookValue": 983.154,
+              "fiftyDayAverage": 1470.4412,
+              "fiftyDayAverageChange": -45.441162,
+              "fiftyDayAverageChangePercent": -0.03090308,
+              "twoHundredDayAverage": 1127.662,
+              "twoHundredDayAverageChange": 297.338,
+              "marketCap": 19342808842240,
+              "forwardPE": 6.082985,
+              "priceToBook": 1.4494169,
+              "sourceInterval": 10,
+              "exchangeDataDelayedBy": 0,
+              "tradeable": false,
+              "firstTradeDateMilliseconds": 1355882400000,
+              "priceHint": 2,
+              "exchange": "JKT",
+              "shortName": "Waskita Karya (Persero) Tbk.",
+              "longName": "PT Waskita Karya (Persero) Tbk",
+              "messageBoardId": "finmb_32989878",
+              "exchangeTimezoneName": "Asia/Jakarta",
+              "exchangeTimezoneShortName": "WIB",
+              "gmtOffSetMilliseconds": 25200000,
+              "market": "id_market",
+              "esgPopulated": false,
+              "marketState": "CLOSED",
+              "symbol": "WSKT.JK"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

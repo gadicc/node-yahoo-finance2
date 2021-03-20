@@ -390,6 +390,72 @@
       ],
       "type": "object"
     },
+    "CallOrPut": {
+      "additionalProperties": false,
+      "properties": {
+        "ask": {
+          "yahooFinanceType": "number"
+        },
+        "bid": {
+          "yahooFinanceType": "number"
+        },
+        "change": {
+          "yahooFinanceType": "number"
+        },
+        "contractSize": {
+          "const": "REGULAR",
+          "type": "string"
+        },
+        "contractSymbol": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "expiration": {
+          "yahooFinanceType": "number"
+        },
+        "impliedVolatility": {
+          "yahooFinanceType": "number"
+        },
+        "inTheMoney": {
+          "type": "boolean"
+        },
+        "lastPrice": {
+          "yahooFinanceType": "number"
+        },
+        "lastTradeDate": {
+          "yahooFinanceType": "number"
+        },
+        "openInterest": {
+          "yahooFinanceType": "number"
+        },
+        "percentChange": {
+          "yahooFinanceType": "number"
+        },
+        "strike": {
+          "yahooFinanceType": "number"
+        },
+        "volume": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "contractSymbol",
+        "strike",
+        "currency",
+        "lastPrice",
+        "change",
+        "percentChange",
+        "ask",
+        "contractSize",
+        "expiration",
+        "lastTradeDate",
+        "impliedVolatility",
+        "inTheMoney"
+      ],
+      "type": "object"
+    },
     "CashflowStatement": {
       "additionalProperties": false,
       "properties": {
@@ -2139,7 +2205,7 @@
           "properties": {
             "arguments": {},
             "caller": {
-              "$ref": "#/definitions/interface-2073358172-9814-11278-2073358172-0-212312"
+              "$ref": "#/definitions/interface-731470504-9814-11278-731470504-0-210955"
             },
             "length": {
               "yahooFinanceType": "number"
@@ -2228,6 +2294,92 @@
       "required": [
         "message",
         "name"
+      ],
+      "type": "object"
+    },
+    "Option": {
+      "additionalProperties": false,
+      "properties": {
+        "calls": {
+          "items": {
+            "$ref": "#/definitions/CallOrPut"
+          },
+          "type": "array"
+        },
+        "expirationDate": {
+          "yahooFinanceType": "number"
+        },
+        "hasMiniOptions": {
+          "type": "boolean"
+        },
+        "puts": {
+          "items": {
+            "$ref": "#/definitions/CallOrPut"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "expirationDate",
+        "hasMiniOptions",
+        "calls",
+        "puts"
+      ],
+      "type": "object"
+    },
+    "OptionsOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "formatted": {
+          "type": "boolean"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "OptionsResult": {
+      "additionalProperties": false,
+      "properties": {
+        "expirationDates": {
+          "items": {
+            "yahooFinanceType": "number"
+          },
+          "type": "array"
+        },
+        "hasMiniOptions": {
+          "type": "boolean"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/definitions/Option"
+          },
+          "type": "array"
+        },
+        "quote": {
+          "$ref": "#/definitions/Quote"
+        },
+        "strikes": {
+          "items": {
+            "yahooFinanceType": "number"
+          },
+          "type": "array"
+        },
+        "underlyingSymbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "underlyingSymbol",
+        "expirationDates",
+        "strikes",
+        "hasMiniOptions",
+        "quote",
+        "options"
       ],
       "type": "object"
     },
@@ -5845,12 +5997,12 @@
       ],
       "type": "object"
     },
-    "interface-2073358172-9814-11278-2073358172-0-212312": {
+    "interface-731470504-9814-11278-731470504-0-210955": {
       "additionalProperties": false,
       "properties": {
         "arguments": {},
         "caller": {
-          "$ref": "#/definitions/interface-2073358172-9814-11278-2073358172-0-212312"
+          "$ref": "#/definitions/interface-731470504-9814-11278-731470504-0-210955"
         },
         "length": {
           "yahooFinanceType": "number"
