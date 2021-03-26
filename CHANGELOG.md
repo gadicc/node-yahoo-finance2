@@ -1,3 +1,11 @@
+## [1.9.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.9.0...v1.9.1) (2021-03-26)
+
+
+### Bug Fixes
+
+* **quote:** allow CURRENCY type ([92bd2e8](https://github.com/gadicc/node-yahoo-finance2/commit/92bd2e89b636c3311bb45373d13266e706740079))
+* **quoteCombine:** error handling + full coverage ([c6f0c2b](https://github.com/gadicc/node-yahoo-finance2/commit/c6f0c2b3c4bc87d14f4ae268099d5646674f3b62))
+
 # [1.9.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.8.3...v1.9.0) (2021-03-11)
 
 
