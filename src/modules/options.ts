@@ -8,7 +8,7 @@ import { Quote } from "./quote";
 
 export interface OptionsResult {
   underlyingSymbol: string;
-  expirationDates: number[];
+  expirationDates: Date[];
   strikes: number[];
   hasMiniOptions: boolean;
   quote: Quote;
@@ -16,7 +16,7 @@ export interface OptionsResult {
 }
 
 export interface Option {
-  expirationDate: number;
+  expirationDate: Date;
   hasMiniOptions: boolean;
   calls: CallOrPut[];
   puts: CallOrPut[];
@@ -34,8 +34,8 @@ export interface CallOrPut {
   bid?: number;
   ask: number;
   contractSize: "REGULAR";
-  expiration: number;
-  lastTradeDate: number;
+  expiration: Date;
+  lastTradeDate: Date;
   impliedVolatility: number;
   inTheMoney: boolean;
 }
