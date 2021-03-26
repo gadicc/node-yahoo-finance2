@@ -73,7 +73,7 @@ export default function options(
   moduleOptions?: ModuleOptions
 ): Promise<any> {
   return this._moduleExec({
-    moduleName: "historical",
+    moduleName: "options",
 
     query: {
       url: "https://query1.finance.yahoo.com/v7/finance/options/" + symbol,
