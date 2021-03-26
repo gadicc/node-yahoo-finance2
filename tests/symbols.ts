@@ -22,4 +22,5 @@ export const testSymbols = [
   "CRON", // NMS
   "EPAC", // NYSE
   "BTC-USD", // CryptoCurrency, CoinMarketCap
+  "EURUSD=X", // Currency
 ];

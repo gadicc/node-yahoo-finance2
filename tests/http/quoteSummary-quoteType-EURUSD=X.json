@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EURUSD=X?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "9fk4ostg5rbrn"
+      ],
+      "x-yahoo-request-id": [
+        "9fk4ostg5rbrn"
+      ],
+      "x-request-id": [
+        "c236660b-7503-4fcf-8080-d6d7dd0d5a09"
+      ],
+      "content-length": [
+        "397"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Fri, 26 Mar 2021 09:55:02 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "CCY",
+              "quoteType": "CURRENCY",
+              "symbol": "EURUSD=X",
+              "underlyingSymbol": "EURUSD=X",
+              "shortName": "EUR/USD",
+              "longName": null,
+              "firstTradeDateEpochUtc": 1070236800,
+              "timeZoneFullName": "Europe/London",
+              "timeZoneShortName": "GMT",
+              "uuid": "1c974a98-f49a-3294-a47a-52edc95109aa",
+              "messageBoardId": "finmb_EUR_X",
+              "gmtOffSetMilliseconds": 0,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
