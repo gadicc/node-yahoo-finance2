@@ -28,7 +28,7 @@
   "scripts": {
     "coverage": "jest --coverage",
     "lint": "eslint . --ext .js,.ts",
-    "schema": "ts-json-schema-generator -p 'src/**/*.ts' -t '*' | node bin/schema-tweak.js > schema.json",
+    "schema": "ts-json-schema-generator -p 'src/modules/**/*.ts' -t '*' | node bin/schema-tweak.js > schema.json",
     "generateSchema": "yarn schema",
     "prepublishOnly": "tsc && yarn generateSchema",
     "test": "jest",

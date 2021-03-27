@@ -12,16 +12,6 @@
       ],
       "type": "string"
     },
-    "AnySchemaObject": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/SchemaObject"
-        },
-        {
-          "$ref": "#/definitions/AsyncSchema"
-        }
-      ]
-    },
     "AssetProfile": {
       "additionalProperties": false,
       "properties": {
@@ -113,24 +103,6 @@
       ],
       "type": "object"
     },
-    "AsyncSchema": {
-      "properties": {
-        "$async": {
-          "const": true,
-          "type": "boolean"
-        },
-        "$id": {
-          "type": "string"
-        },
-        "$schema": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "$async"
-      ],
-      "type": "object"
-    },
     "AutocOptions": {
       "additionalProperties": false,
       "properties": {
@@ -191,25 +163,6 @@
       "required": [
         "Query",
         "Result"
-      ],
-      "type": "object"
-    },
-    "BadRequestError": {
-      "additionalProperties": false,
-      "properties": {
-        "message": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "stack": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message",
-        "name"
       ],
       "type": "object"
     },
@@ -962,41 +915,6 @@
       ],
       "type": "object"
     },
-    "ErrorObject": {
-      "additionalProperties": false,
-      "properties": {
-        "data": {},
-        "dataPath": {
-          "type": "string"
-        },
-        "keyword": {
-          "type": "string"
-        },
-        "message": {
-          "type": "string"
-        },
-        "params": {
-          "type": "object"
-        },
-        "parentSchema": {
-          "$ref": "#/definitions/AnySchemaObject"
-        },
-        "propertyName": {
-          "type": "string"
-        },
-        "schema": {},
-        "schemaPath": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "keyword",
-        "dataPath",
-        "schemaPath",
-        "params"
-      ],
-      "type": "object"
-    },
     "Estimate": {
       "additionalProperties": false,
       "properties": {
@@ -1009,40 +927,6 @@
       },
       "required": [
         "period"
-      ],
-      "type": "object"
-    },
-    "FailedYahooValidationError": {
-      "additionalProperties": false,
-      "properties": {
-        "errors": {
-          "anyOf": [
-            {
-              "type": "null"
-            },
-            {
-              "items": {
-                "$ref": "#/definitions/ErrorObject"
-              },
-              "type": "array"
-            }
-          ]
-        },
-        "message": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "result": {},
-        "stack": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message",
-        "name",
-        "result"
       ],
       "type": "object"
     },
@@ -1678,25 +1562,6 @@
       ],
       "type": "string"
     },
-    "HTTPError": {
-      "additionalProperties": false,
-      "properties": {
-        "message": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "stack": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message",
-        "name"
-      ],
-      "type": "object"
-    },
     "HistoricalOptions": {
       "additionalProperties": false,
       "properties": {
@@ -2030,25 +1895,6 @@
       ],
       "type": "object"
     },
-    "InvalidOptionsError": {
-      "additionalProperties": false,
-      "properties": {
-        "message": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "stack": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message",
-        "name"
-      ],
-      "type": "object"
-    },
     "MajorHoldersBreakdown": {
       "additionalProperties": false,
       "properties": {
@@ -2070,93 +1916,6 @@
       },
       "required": [
         "maxAge"
-      ],
-      "type": "object"
-    },
-    "ModuleOptions": {
-      "additionalProperties": false,
-      "properties": {
-        "devel": {
-          "type": [
-            "boolean",
-            "string"
-          ]
-        },
-        "fetchOptions": {
-          "type": "object"
-        },
-        "validateResult": {
-          "type": "boolean"
-        }
-      },
-      "type": "object"
-    },
-    "ModuleOptionsWithValidateFalse": {
-      "additionalProperties": false,
-      "properties": {
-        "devel": {
-          "type": [
-            "boolean",
-            "string"
-          ]
-        },
-        "fetchOptions": {
-          "type": "object"
-        },
-        "validateResult": {
-          "const": false,
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "validateResult"
-      ],
-      "type": "object"
-    },
-    "ModuleOptionsWithValidateTrue": {
-      "additionalProperties": false,
-      "properties": {
-        "devel": {
-          "type": [
-            "boolean",
-            "string"
-          ]
-        },
-        "fetchOptions": {
-          "type": "object"
-        },
-        "validateResult": {
-          "const": true,
-          "type": "boolean"
-        }
-      },
-      "type": "object"
-    },
-    "ModuleThis": {
-      "properties": {
-        "_moduleExec": {
-          "additionalProperties": false,
-          "properties": {
-            "arguments": {},
-            "caller": {
-              "$ref": "#/definitions/interface-2073358172-9814-11278-2073358172-0-212312"
-            },
-            "length": {
-              "yahooFinanceType": "number"
-            },
-            "prototype": {}
-          },
-          "required": [
-            "prototype",
-            "length",
-            "arguments",
-            "caller"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "_moduleExec"
       ],
       "type": "object"
     },
@@ -2209,25 +1968,6 @@
         "netInfoCount",
         "netInfoShares",
         "totalInsiderShares"
-      ],
-      "type": "object"
-    },
-    "NoEnvironmentError": {
-      "additionalProperties": false,
-      "properties": {
-        "message": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "stack": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message",
-        "name"
       ],
       "type": "object"
     },
@@ -4767,21 +4507,6 @@
       ],
       "type": "object"
     },
-    "SchemaObject": {
-      "properties": {
-        "$async": {
-          "const": false,
-          "type": "boolean"
-        },
-        "$id": {
-          "type": "string"
-        },
-        "$schema": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "SearchNews": {
       "additionalProperties": false,
       "properties": {
@@ -6066,51 +5791,6 @@
       ],
       "type": "object"
     },
-    "ValidateParams": {
-      "additionalProperties": false,
-      "properties": {
-        "object": {
-          "type": "object"
-        },
-        "options": {
-          "additionalProperties": false,
-          "properties": {
-            "logErrors": {
-              "type": "boolean"
-            },
-            "logOptionsErrors": {
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "logErrors",
-            "logOptionsErrors"
-          ],
-          "type": "object"
-        },
-        "schemaKey": {
-          "type": "string"
-        },
-        "source": {
-          "type": "string"
-        },
-        "type": {
-          "enum": [
-            "options",
-            "result"
-          ],
-          "type": "string"
-        }
-      },
-      "required": [
-        "source",
-        "type",
-        "object",
-        "schemaKey",
-        "options"
-      ],
-      "type": "object"
-    },
     "Yearly": {
       "additionalProperties": false,
       "properties": {
@@ -6128,26 +5808,6 @@
         "date",
         "revenue",
         "earnings"
-      ],
-      "type": "object"
-    },
-    "interface-2073358172-9814-11278-2073358172-0-212312": {
-      "additionalProperties": false,
-      "properties": {
-        "arguments": {},
-        "caller": {
-          "$ref": "#/definitions/interface-2073358172-9814-11278-2073358172-0-212312"
-        },
-        "length": {
-          "yahooFinanceType": "number"
-        },
-        "prototype": {}
-      },
-      "required": [
-        "prototype",
-        "length",
-        "arguments",
-        "caller"
       ],
       "type": "object"
     }
