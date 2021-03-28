@@ -65,7 +65,8 @@ recommendationTrend, secFilings, sectorTrend, summaryDetail, summaryProfile,
 symbol, topHoldings, upgradeDowngradeHistory),
 [`search`](./docs/modules/search.md),
 [`recommendationsBySymbol`](./docs/modules/recommendationsBySymbol.md),
-[`trendingSymbols`](./docs/modules/trendingSymbols.md), with more
+[`trendingSymbols`](./docs/modules/trendingSymbols.md),
+[`options`](./docs/modules/options.md), with more
 [coming soon](https://github.com/gadicc/node-yahoo-finance2/issues/8).
 
 Extras: [`quoteCombine`](./docs/other/quoteCombine.md).

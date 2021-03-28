@@ -35,6 +35,7 @@ const result = await yahooFinance.module(query, queryOpts, moduleOpts);
 1. [search](./modules/search.md) - symbol lookup, news and articles.
 1. [recommendationsBySymbol](./modules/recommendationsBySymbol.md) - similar symbols.
 1. [trendingSymbols](./modules/trendingSymbols.md) - symbols trending in a country.
+1. [options](./modules/options.md) - options trading (call/put).
 
 <a name="other"></a>
 ## Other Methods

@@ -11,6 +11,7 @@ import quoteSummary from "./modules/quoteSummary";
 import search from "./modules/search";
 import recommendationsBySymbol from "./modules/recommendationsBySymbol";
 import trendingSymbols from "./modules/trendingSymbols";
+import optionsModule from "./modules/options";
 
 // other
 import quoteCombine from "./other/quoteCombine";
@@ -30,6 +31,7 @@ export default {
   search,
   recommendationsBySymbol,
   trendingSymbols,
+  options: optionsModule,
 
   // other
   quoteCombine,

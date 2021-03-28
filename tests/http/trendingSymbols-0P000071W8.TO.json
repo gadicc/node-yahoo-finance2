@@ -1,0 +1,132 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/0P000071W8.TO?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "btcqnfpg5clke"
+      ],
+      "x-yahoo-request-id": [
+        "btcqnfpg5clke"
+      ],
+      "x-request-id": [
+        "cb461a51-6331-4c21-a414-fa9cf18ccf53"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "735"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sat, 20 Mar 2021 20:09:50 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "0P000071W8.TO",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "MUTUALFUND",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": true,
+              "currency": "CAD",
+              "firstTradeDateMilliseconds": 1514903400000,
+              "priceHint": 2,
+              "ytdReturn": 1.51,
+              "trailingThreeMonthReturns": 3.43,
+              "fiftyDayAverage": 87.607185,
+              "fiftyDayAverageChange": -0.627182,
+              "fiftyDayAverageChangePercent": -0.007159025,
+              "twoHundredDayAverage": 84.014145,
+              "twoHundredDayAverageChange": 2.9658585,
+              "twoHundredDayAverageChangePercent": 0.035301894,
+              "tradeable": false,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 15,
+              "exchange": "TOR",
+              "shortName": "TD Indiciel américain - e (C$)",
+              "longName": "TD U.S. Index Fund - e",
+              "exchangeTimezoneName": "America/Toronto",
+              "exchangeTimezoneShortName": "EDT",
+              "gmtOffSetMilliseconds": -14400000,
+              "market": "ca_market",
+              "esgPopulated": false,
+              "marketState": "CLOSED",
+              "regularMarketChange": -0.6800003,
+              "regularMarketChangePercent": -0.7757247,
+              "regularMarketTime": 1616097600,
+              "regularMarketPrice": 86.98,
+              "regularMarketPreviousClose": 87.66,
+              "fullExchangeName": "Toronto",
+              "averageDailyVolume3Month": 0,
+              "averageDailyVolume10Day": 0,
+              "fiftyTwoWeekLowChange": 29.800003,
+              "fiftyTwoWeekLowChangePercent": 0.5211613,
+              "fiftyTwoWeekRange": "57.18 - 89.59",
+              "fiftyTwoWeekHighChange": -2.609993,
+              "fiftyTwoWeekHighChangePercent": -0.029132638,
+              "fiftyTwoWeekLow": 57.18,
+              "fiftyTwoWeekHigh": 89.59,
+              "symbol": "0P000071W8.TO"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/ADH?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "be7iue9g5clkb"
+      ],
+      "x-yahoo-request-id": [
+        "be7iue9g5clkb"
+      ],
+      "x-request-id": [
+        "71e692cc-34f7-459f-8785-4382b2f380b4"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "514"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sat, 20 Mar 2021 20:09:46 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "ADH",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "MUTUALFUND",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": false,
+              "marketState": "CLOSED",
+              "fiftyDayAverage": 6.813143,
+              "twoHundredDayAverage": 6.401397,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "tradeable": false,
+              "firstTradeDateMilliseconds": 1152538200000,
+              "priceHint": 2,
+              "regularMarketTime": 1561759658,
+              "fullExchangeName": "YHD",
+              "averageDailyVolume3Month": 206434,
+              "averageDailyVolume10Day": 86780,
+              "fiftyTwoWeekRange": "5.6 - 9.19",
+              "fiftyTwoWeekLow": 5.6,
+              "fiftyTwoWeekHigh": 9.19,
+              "exchange": "YHD",
+              "shortName": "54688",
+              "exchangeTimezoneName": "America/New_York",
+              "exchangeTimezoneShortName": "EDT",
+              "gmtOffSetMilliseconds": -14400000,
+              "market": "us_market",
+              "esgPopulated": false,
+              "symbol": "ADH"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

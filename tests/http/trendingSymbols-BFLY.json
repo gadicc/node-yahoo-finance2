@@ -1,0 +1,476 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/BFLY?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "2coiu5pg5clkc"
+      ],
+      "x-yahoo-request-id": [
+        "2coiu5pg5clkc"
+      ],
+      "x-request-id": [
+        "8c910cab-9bfb-48c2-8488-cb36ed3646e5"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1972"
+      ],
+      "x-envoy-upstream-service-time": [
+        "11"
+      ],
+      "date": [
+        "Sat, 20 Mar 2021 20:09:48 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "BFLY",
+            "expirationDates": [
+              1618531200,
+              1626393600,
+              1634256000
+            ],
+            "strikes": [
+              10,
+              12.5,
+              15,
+              17.5,
+              20,
+              22.5,
+              25,
+              30,
+              35
+            ],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "triggerable": true,
+              "currency": "USD",
+              "fiftyTwoWeekLowChange": 8.780001,
+              "fiftyTwoWeekLowChangePercent": 0.9400429,
+              "fiftyTwoWeekRange": "9.34 - 29.13",
+              "fiftyTwoWeekHighChange": -11.009998,
+              "fiftyTwoWeekHighChangePercent": -0.37796083,
+              "fiftyTwoWeekLow": 9.34,
+              "fiftyTwoWeekHigh": 29.13,
+              "sharesOutstanding": 164862000,
+              "fiftyDayAverage": 20.165428,
+              "fiftyDayAverageChange": -2.0454273,
+              "fiftyDayAverageChangePercent": -0.101432376,
+              "twoHundredDayAverage": 15.111297,
+              "twoHundredDayAverageChange": 3.0087042,
+              "twoHundredDayAverageChangePercent": 0.19910298,
+              "marketCap": 3466156800,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "tradeable": false,
+              "firstTradeDateMilliseconds": 1594647000000,
+              "priceHint": 2,
+              "postMarketChangePercent": 0.165556,
+              "postMarketTime": 1616198395,
+              "postMarketPrice": 18.15,
+              "postMarketChange": 0.0299988,
+              "regularMarketChange": 0.20000076,
+              "regularMarketChangePercent": 1.1160756,
+              "regularMarketTime": 1616184003,
+              "regularMarketPrice": 18.12,
+              "regularMarketDayHigh": 18.89,
+              "regularMarketDayRange": "17.4 - 18.89",
+              "regularMarketDayLow": 17.4,
+              "regularMarketVolume": 4151131,
+              "regularMarketPreviousClose": 17.92,
+              "bid": 18.15,
+              "ask": 18.3,
+              "bidSize": 12,
+              "askSize": 10,
+              "fullExchangeName": "NYSE",
+              "financialCurrency": "USD",
+              "regularMarketOpen": 17.88,
+              "averageDailyVolume3Month": 3347834,
+              "averageDailyVolume10Day": 3744937,
+              "marketState": "CLOSED",
+              "exchange": "NYQ",
+              "shortName": "Butterfly Network, Inc.",
+              "longName": "Butterfly Network, Inc.",
+              "messageBoardId": "finmb_275830634",
+              "exchangeTimezoneName": "America/New_York",
+              "exchangeTimezoneShortName": "EDT",
+              "gmtOffSetMilliseconds": -14400000,
+              "market": "us_market",
+              "esgPopulated": false,
+              "symbol": "BFLY"
+            },
+            "options": [
+              {
+                "expirationDate": 1618531200,
+                "hasMiniOptions": false,
+                "calls": [
+                  {
+                    "contractSymbol": "BFLY210416C00010000",
+                    "strike": 10,
+                    "currency": "USD",
+                    "lastPrice": 8.7,
+                    "change": 0.8999996,
+                    "percentChange": 11.538456,
+                    "volume": 1,
+                    "openInterest": 72,
+                    "bid": 7.4,
+                    "ask": 8.6,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616166167,
+                    "impliedVolatility": 1.9414065429687501,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BFLY210416C00012500",
+                    "strike": 12.5,
+                    "currency": "USD",
+                    "lastPrice": 6,
+                    "change": 0.42000008,
+                    "percentChange": 7.5268836,
+                    "volume": 408,
+                    "openInterest": 188,
+                    "bid": 5.5,
+                    "ask": 5.9,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616182322,
+                    "impliedVolatility": 0.8359391406249999,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BFLY210416C00015000",
+                    "strike": 15,
+                    "currency": "USD",
+                    "lastPrice": 3.94,
+                    "change": 0.24000001,
+                    "percentChange": 6.4864864,
+                    "volume": 135,
+                    "openInterest": 694,
+                    "bid": 3.3,
+                    "ask": 3.8,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616178774,
+                    "impliedVolatility": 0.8242205078124999,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BFLY210416C00017500",
+                    "strike": 17.5,
+                    "currency": "USD",
+                    "lastPrice": 2.1,
+                    "change": -0.06000018,
+                    "percentChange": -2.777786,
+                    "volume": 392,
+                    "openInterest": 2316,
+                    "bid": 1.95,
+                    "ask": 2.15,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616182940,
+                    "impliedVolatility": 0.87695435546875,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BFLY210416C00020000",
+                    "strike": 20,
+                    "currency": "USD",
+                    "lastPrice": 1.05,
+                    "change": -0.1500001,
+                    "percentChange": -12.500008,
+                    "volume": 1320,
+                    "openInterest": 8385,
+                    "bid": 1,
+                    "ask": 1.15,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616183950,
+                    "impliedVolatility": 0.8886729882812499,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BFLY210416C00022500",
+                    "strike": 22.5,
+                    "currency": "USD",
+                    "lastPrice": 0.5,
+                    "change": -0.14999998,
+                    "percentChange": -23.07692,
+                    "volume": 946,
+                    "openInterest": 4002,
+                    "bid": 0.45,
+                    "ask": 0.5,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616183960,
+                    "impliedVolatility": 0.86132951171875,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BFLY210416C00025000",
+                    "strike": 25,
+                    "currency": "USD",
+                    "lastPrice": 0.26,
+                    "change": -0.08000001,
+                    "percentChange": -23.529415,
+                    "volume": 221,
+                    "openInterest": 3734,
+                    "bid": 0.2,
+                    "ask": 0.3,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616183562,
+                    "impliedVolatility": 0.90429783203125,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BFLY210416C00030000",
+                    "strike": 30,
+                    "currency": "USD",
+                    "lastPrice": 0.11,
+                    "change": -0.08,
+                    "percentChange": -42.105263,
+                    "volume": 232,
+                    "openInterest": 3521,
+                    "bid": 0.05,
+                    "ask": 0.1,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616178895,
+                    "impliedVolatility": 0.9765627343750001,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BFLY210416C00035000",
+                    "strike": 35,
+                    "currency": "USD",
+                    "lastPrice": 0.1,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 5,
+                    "openInterest": 3391,
+                    "bid": 0.05,
+                    "ask": 0.15,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616172155,
+                    "impliedVolatility": 1.26172244140625,
+                    "inTheMoney": false
+                  }
+                ],
+                "puts": [
+                  {
+                    "contractSymbol": "BFLY210416P00010000",
+                    "strike": 10,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": -0.07,
+                    "percentChange": -87.5,
+                    "volume": 3,
+                    "openInterest": 411,
+                    "bid": 0,
+                    "ask": 0.05,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616183927,
+                    "impliedVolatility": 1.0312548437500002,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BFLY210416P00012500",
+                    "strike": 12.5,
+                    "currency": "USD",
+                    "lastPrice": 0.15,
+                    "change": -0.06999999,
+                    "percentChange": -31.818178,
+                    "volume": 284,
+                    "openInterest": 594,
+                    "bid": 0.1,
+                    "ask": 0.15,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616183927,
+                    "impliedVolatility": 0.92187578125,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BFLY210416P00015000",
+                    "strike": 15,
+                    "currency": "USD",
+                    "lastPrice": 0.55,
+                    "change": -0.25,
+                    "percentChange": -31.25,
+                    "volume": 107,
+                    "openInterest": 1312,
+                    "bid": 0.5,
+                    "ask": 0.55,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616183635,
+                    "impliedVolatility": 0.8964854101562498,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BFLY210416P00017500",
+                    "strike": 17.5,
+                    "currency": "USD",
+                    "lastPrice": 1.5,
+                    "change": -0.39999998,
+                    "percentChange": -21.05263,
+                    "volume": 178,
+                    "openInterest": 2105,
+                    "bid": 1.4,
+                    "ask": 1.65,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616183914,
+                    "impliedVolatility": 0.9267585449218749,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BFLY210416P00020000",
+                    "strike": 20,
+                    "currency": "USD",
+                    "lastPrice": 2.95,
+                    "change": -0.45000005,
+                    "percentChange": -13.235294,
+                    "volume": 726,
+                    "openInterest": 1040,
+                    "bid": 2.9,
+                    "ask": 3.1,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616182873,
+                    "impliedVolatility": 0.91211025390625,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BFLY210416P00022500",
+                    "strike": 22.5,
+                    "currency": "USD",
+                    "lastPrice": 4.6,
+                    "change": -0.5500002,
+                    "percentChange": -10.679615,
+                    "volume": 26,
+                    "openInterest": 455,
+                    "bid": 4.7,
+                    "ask": 5.2,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616179322,
+                    "impliedVolatility": 0.9238288867187501,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BFLY210416P00025000",
+                    "strike": 25,
+                    "currency": "USD",
+                    "lastPrice": 7.02,
+                    "change": -0.5300002,
+                    "percentChange": -7.01987,
+                    "volume": 35,
+                    "openInterest": 358,
+                    "bid": 7,
+                    "ask": 7.4,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616182092,
+                    "impliedVolatility": 0.9707034179687499,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BFLY210416P00030000",
+                    "strike": 30,
+                    "currency": "USD",
+                    "lastPrice": 12.1,
+                    "change": -0.22999954,
+                    "percentChange": -1.8653654,
+                    "volume": 97,
+                    "openInterest": 194,
+                    "bid": 11.7,
+                    "ask": 12.4,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1615910217,
+                    "impliedVolatility": 1.138676181640625,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BFLY210416P00035000",
+                    "strike": 35,
+                    "currency": "USD",
+                    "lastPrice": 17,
+                    "change": -1.2000008,
+                    "percentChange": -6.5934105,
+                    "volume": 180,
+                    "openInterest": 424,
+                    "bid": 16.8,
+                    "ask": 17.9,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616162158,
+                    "impliedVolatility": 1.7402356738281248,
+                    "inTheMoney": true
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
