@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.9.1...v1.10.0) (2021-03-28)
+
+
+### Features
+
+* **optionsModule:** Add `options` module ([#97](https://github.com/gadicc/node-yahoo-finance2/issues/97)) ([7ba6294](https://github.com/gadicc/node-yahoo-finance2/commit/7ba6294fe708507d28e3cca29162ce3c1992d009))
+
 ## [1.9.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.9.0...v1.9.1) (2021-03-26)
 
 
