@@ -12,16 +12,6 @@
       ],
       "type": "string"
     },
-    "AnySchemaObject": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/SchemaObject"
-        },
-        {
-          "$ref": "#/definitions/AsyncSchema"
-        }
-      ]
-    },
     "AssetProfile": {
       "additionalProperties": false,
       "properties": {
@@ -113,24 +103,6 @@
       ],
       "type": "object"
     },
-    "AsyncSchema": {
-      "properties": {
-        "$async": {
-          "const": true,
-          "type": "boolean"
-        },
-        "$id": {
-          "type": "string"
-        },
-        "$schema": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "$async"
-      ],
-      "type": "object"
-    },
     "AutocOptions": {
       "additionalProperties": false,
       "properties": {
@@ -191,25 +163,6 @@
       "required": [
         "Query",
         "Result"
-      ],
-      "type": "object"
-    },
-    "BadRequestError": {
-      "additionalProperties": false,
-      "properties": {
-        "message": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "stack": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message",
-        "name"
       ],
       "type": "object"
     },
@@ -1028,41 +981,6 @@
       ],
       "type": "object"
     },
-    "ErrorObject": {
-      "additionalProperties": false,
-      "properties": {
-        "data": {},
-        "dataPath": {
-          "type": "string"
-        },
-        "keyword": {
-          "type": "string"
-        },
-        "message": {
-          "type": "string"
-        },
-        "params": {
-          "type": "object"
-        },
-        "parentSchema": {
-          "$ref": "#/definitions/AnySchemaObject"
-        },
-        "propertyName": {
-          "type": "string"
-        },
-        "schema": {},
-        "schemaPath": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "keyword",
-        "dataPath",
-        "schemaPath",
-        "params"
-      ],
-      "type": "object"
-    },
     "Estimate": {
       "additionalProperties": false,
       "properties": {
@@ -1075,40 +993,6 @@
       },
       "required": [
         "period"
-      ],
-      "type": "object"
-    },
-    "FailedYahooValidationError": {
-      "additionalProperties": false,
-      "properties": {
-        "errors": {
-          "anyOf": [
-            {
-              "type": "null"
-            },
-            {
-              "items": {
-                "$ref": "#/definitions/ErrorObject"
-              },
-              "type": "array"
-            }
-          ]
-        },
-        "message": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "result": {},
-        "stack": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message",
-        "name",
-        "result"
       ],
       "type": "object"
     },
@@ -1744,25 +1628,6 @@
       ],
       "type": "string"
     },
-    "HTTPError": {
-      "additionalProperties": false,
-      "properties": {
-        "message": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "stack": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message",
-        "name"
-      ],
-      "type": "object"
-    },
     "HistoricalOptions": {
       "additionalProperties": false,
       "properties": {
@@ -2096,25 +1961,6 @@
       ],
       "type": "object"
     },
-    "InvalidOptionsError": {
-      "additionalProperties": false,
-      "properties": {
-        "message": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "stack": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message",
-        "name"
-      ],
-      "type": "object"
-    },
     "MajorHoldersBreakdown": {
       "additionalProperties": false,
       "properties": {
@@ -2136,93 +1982,6 @@
       },
       "required": [
         "maxAge"
-      ],
-      "type": "object"
-    },
-    "ModuleOptions": {
-      "additionalProperties": false,
-      "properties": {
-        "devel": {
-          "type": [
-            "boolean",
-            "string"
-          ]
-        },
-        "fetchOptions": {
-          "type": "object"
-        },
-        "validateResult": {
-          "type": "boolean"
-        }
-      },
-      "type": "object"
-    },
-    "ModuleOptionsWithValidateFalse": {
-      "additionalProperties": false,
-      "properties": {
-        "devel": {
-          "type": [
-            "boolean",
-            "string"
-          ]
-        },
-        "fetchOptions": {
-          "type": "object"
-        },
-        "validateResult": {
-          "const": false,
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "validateResult"
-      ],
-      "type": "object"
-    },
-    "ModuleOptionsWithValidateTrue": {
-      "additionalProperties": false,
-      "properties": {
-        "devel": {
-          "type": [
-            "boolean",
-            "string"
-          ]
-        },
-        "fetchOptions": {
-          "type": "object"
-        },
-        "validateResult": {
-          "const": true,
-          "type": "boolean"
-        }
-      },
-      "type": "object"
-    },
-    "ModuleThis": {
-      "properties": {
-        "_moduleExec": {
-          "additionalProperties": false,
-          "properties": {
-            "arguments": {},
-            "caller": {
-              "$ref": "#/definitions/interface-2073358172-9814-11278-2073358172-0-212312"
-            },
-            "length": {
-              "yahooFinanceType": "number"
-            },
-            "prototype": {}
-          },
-          "required": [
-            "prototype",
-            "length",
-            "arguments",
-            "caller"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "_moduleExec"
       ],
       "type": "object"
     },
@@ -2275,25 +2034,6 @@
         "netInfoCount",
         "netInfoShares",
         "totalInsiderShares"
-      ],
-      "type": "object"
-    },
-    "NoEnvironmentError": {
-      "additionalProperties": false,
-      "properties": {
-        "message": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "stack": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message",
-        "name"
       ],
       "type": "object"
     },
@@ -2637,16 +2377,19 @@
     "Quote": {
       "anyOf": [
         {
-          "$ref": "#/definitions/QuoteEquity"
+          "$ref": "#/definitions/QuoteCryptoCurrency"
+        },
+        {
+          "$ref": "#/definitions/QuoteCurrency"
         },
         {
           "$ref": "#/definitions/QuoteEtf"
         },
         {
-          "$ref": "#/definitions/QuoteMutualfund"
+          "$ref": "#/definitions/QuoteEquity"
         },
         {
-          "$ref": "#/definitions/QuoteCryptoCurrency"
+          "$ref": "#/definitions/QuoteMutualfund"
         }
       ]
     },
@@ -3247,6 +2990,289 @@
       ],
       "type": "object"
     },
+    "QuoteCurrency": {
+      "additionalProperties": false,
+      "properties": {
+        "ask": {
+          "yahooFinanceType": "number"
+        },
+        "askSize": {
+          "yahooFinanceType": "number"
+        },
+        "averageDailyVolume10Day": {
+          "yahooFinanceType": "number"
+        },
+        "averageDailyVolume3Month": {
+          "yahooFinanceType": "number"
+        },
+        "bid": {
+          "yahooFinanceType": "number"
+        },
+        "bidSize": {
+          "yahooFinanceType": "number"
+        },
+        "bookValue": {
+          "yahooFinanceType": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "dividendDate": {
+          "yahooFinanceType": "date"
+        },
+        "earningsTimestamp": {
+          "yahooFinanceType": "date"
+        },
+        "earningsTimestampEnd": {
+          "yahooFinanceType": "date"
+        },
+        "earningsTimestampStart": {
+          "yahooFinanceType": "date"
+        },
+        "epsCurrentYear": {
+          "yahooFinanceType": "number"
+        },
+        "epsForward": {
+          "yahooFinanceType": "number"
+        },
+        "epsTrailingTwelveMonths": {
+          "yahooFinanceType": "number"
+        },
+        "esgPopulated": {
+          "type": "boolean"
+        },
+        "exchange": {
+          "type": "string"
+        },
+        "exchangeDataDelayedBy": {
+          "yahooFinanceType": "number"
+        },
+        "exchangeTimezoneName": {
+          "type": "string"
+        },
+        "exchangeTimezoneShortName": {
+          "type": "string"
+        },
+        "fiftyDayAverage": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyDayAverageChange": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyDayAverageChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekHigh": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekHighChange": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekHighChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekLow": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekLowChange": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekLowChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekRange": {
+          "yahooFinanceType": "TwoNumberRange"
+        },
+        "financialCurrency": {
+          "type": "string"
+        },
+        "firstTradeDateMilliseconds": {
+          "yahooFinanceType": "DateInMs"
+        },
+        "forwardPE": {
+          "yahooFinanceType": "number"
+        },
+        "fullExchangeName": {
+          "type": "string"
+        },
+        "gmtOffSetMilliseconds": {
+          "yahooFinanceType": "number"
+        },
+        "ipoExpectedDate": {
+          "yahooFinanceType": "date"
+        },
+        "language": {
+          "type": "string"
+        },
+        "longName": {
+          "type": "string"
+        },
+        "market": {
+          "type": "string"
+        },
+        "marketCap": {
+          "yahooFinanceType": "number"
+        },
+        "marketState": {
+          "enum": [
+            "REGULAR",
+            "CLOSED",
+            "PRE",
+            "PREPRE",
+            "POST",
+            "POSTPOST"
+          ],
+          "type": "string"
+        },
+        "messageBoardId": {
+          "type": "string"
+        },
+        "newListingDate": {
+          "yahooFinanceType": "date"
+        },
+        "postMarketChange": {
+          "yahooFinanceType": "number"
+        },
+        "postMarketChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "postMarketPrice": {
+          "yahooFinanceType": "number"
+        },
+        "postMarketTime": {
+          "yahooFinanceType": "date"
+        },
+        "preMarketChange": {
+          "yahooFinanceType": "number"
+        },
+        "preMarketChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "preMarketPrice": {
+          "yahooFinanceType": "number"
+        },
+        "preMarketTime": {
+          "yahooFinanceType": "number"
+        },
+        "priceEpsCurrentYear": {
+          "yahooFinanceType": "number"
+        },
+        "priceHint": {
+          "yahooFinanceType": "number"
+        },
+        "priceToBook": {
+          "yahooFinanceType": "number"
+        },
+        "quoteSourceName": {
+          "type": "string"
+        },
+        "quoteType": {
+          "const": "CURRENCY",
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "regularMarketChange": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketDayHigh": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketDayLow": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketDayRange": {
+          "yahooFinanceType": "TwoNumberRange"
+        },
+        "regularMarketOpen": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketPreviousClose": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketPrice": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketTime": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketVolume": {
+          "yahooFinanceType": "number"
+        },
+        "sharesOutstanding": {
+          "yahooFinanceType": "number"
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "sourceInterval": {
+          "yahooFinanceType": "number"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "tradeable": {
+          "type": "boolean"
+        },
+        "trailingAnnualDividendRate": {
+          "yahooFinanceType": "number"
+        },
+        "trailingAnnualDividendYield": {
+          "yahooFinanceType": "number"
+        },
+        "trailingPE": {
+          "yahooFinanceType": "number"
+        },
+        "trailingThreeMonthNavReturns": {
+          "yahooFinanceType": "number"
+        },
+        "trailingThreeMonthReturns": {
+          "yahooFinanceType": "number"
+        },
+        "triggerable": {
+          "type": "boolean"
+        },
+        "twoHundredDayAverage": {
+          "yahooFinanceType": "number"
+        },
+        "twoHundredDayAverageChange": {
+          "yahooFinanceType": "number"
+        },
+        "twoHundredDayAverageChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "ytdReturn": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "esgPopulated",
+        "exchange",
+        "exchangeDataDelayedBy",
+        "exchangeTimezoneName",
+        "exchangeTimezoneShortName",
+        "fullExchangeName",
+        "gmtOffSetMilliseconds",
+        "language",
+        "market",
+        "marketState",
+        "priceHint",
+        "quoteType",
+        "region",
+        "sourceInterval",
+        "symbol",
+        "tradeable",
+        "triggerable"
+      ],
+      "type": "object"
+    },
     "QuoteEquity": {
       "additionalProperties": false,
       "properties": {
@@ -3816,6 +3842,14 @@
     "QuoteField": {
       "enum": [
         "quoteType",
+        "circulatingSupply",
+        "fromCurrency",
+        "toCurrency",
+        "lastMarket",
+        "coinImageUrl",
+        "volume24Hr",
+        "volumeAllCurrencies",
+        "startDate",
         "language",
         "region",
         "quoteSourceName",
@@ -3897,15 +3931,7 @@
         "trailingThreeMonthReturns",
         "trailingThreeMonthNavReturns",
         "ipoExpectedDate",
-        "newListingDate",
-        "circulatingSupply",
-        "fromCurrency",
-        "toCurrency",
-        "lastMarket",
-        "coinImageUrl",
-        "volume24Hr",
-        "volumeAllCurrencies",
-        "startDate"
+        "newListingDate"
       ],
       "type": "string"
     },
@@ -4631,21 +4657,6 @@
         "filings",
         "maxAge"
       ],
-      "type": "object"
-    },
-    "SchemaObject": {
-      "properties": {
-        "$async": {
-          "const": false,
-          "type": "boolean"
-        },
-        "$id": {
-          "type": "string"
-        },
-        "$schema": {
-          "type": "string"
-        }
-      },
       "type": "object"
     },
     "SearchNews": {
@@ -5932,51 +5943,6 @@
       ],
       "type": "object"
     },
-    "ValidateParams": {
-      "additionalProperties": false,
-      "properties": {
-        "object": {
-          "type": "object"
-        },
-        "options": {
-          "additionalProperties": false,
-          "properties": {
-            "logErrors": {
-              "type": "boolean"
-            },
-            "logOptionsErrors": {
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "logErrors",
-            "logOptionsErrors"
-          ],
-          "type": "object"
-        },
-        "schemaKey": {
-          "type": "string"
-        },
-        "source": {
-          "type": "string"
-        },
-        "type": {
-          "enum": [
-            "options",
-            "result"
-          ],
-          "type": "string"
-        }
-      },
-      "required": [
-        "source",
-        "type",
-        "object",
-        "schemaKey",
-        "options"
-      ],
-      "type": "object"
-    },
     "Yearly": {
       "additionalProperties": false,
       "properties": {
@@ -5994,26 +5960,6 @@
         "date",
         "revenue",
         "earnings"
-      ],
-      "type": "object"
-    },
-    "interface-2073358172-9814-11278-2073358172-0-212312": {
-      "additionalProperties": false,
-      "properties": {
-        "arguments": {},
-        "caller": {
-          "$ref": "#/definitions/interface-2073358172-9814-11278-2073358172-0-212312"
-        },
-        "length": {
-          "yahooFinanceType": "number"
-        },
-        "prototype": {}
-      },
-      "required": [
-        "prototype",
-        "length",
-        "arguments",
-        "caller"
       ],
       "type": "object"
     }

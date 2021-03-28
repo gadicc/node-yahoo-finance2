@@ -1,0 +1,135 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=EURUSD%3DX"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "8tvnhshg5rbod"
+      ],
+      "x-yahoo-request-id": [
+        "8tvnhshg5rbod"
+      ],
+      "x-request-id": [
+        "fe0fc260-a678-4205-9328-d22cc216e672"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "698"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Fri, 26 Mar 2021 09:53:17 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "8"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "warning": [
+        "110 Response is stale"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "CURRENCY",
+            "quoteSourceName": "Delayed Quote",
+            "triggerable": true,
+            "currency": "USD",
+            "regularMarketChange": 0.0029171705,
+            "regularMarketChangePercent": 0.24781576,
+            "regularMarketPrice": 1.1800802,
+            "regularMarketDayHigh": 1.1802195,
+            "regularMarketDayLow": 1.177163,
+            "regularMarketPreviousClose": 1.177163,
+            "bid": 1.1800802,
+            "ask": 1.1793844,
+            "regularMarketOpen": 1.1773016,
+            "fiftyTwoWeekLow": 1.0727657,
+            "fiftyTwoWeekHigh": 1.2350253,
+            "fiftyDayAverage": 1.2020999,
+            "twoHundredDayAverage": 1.1969675,
+            "shortName": "EUR/USD",
+            "regularMarketTime": 1616752381,
+            "regularMarketDayRange": "1.177163 - 1.1802195",
+            "regularMarketVolume": 0,
+            "bidSize": 0,
+            "askSize": 0,
+            "fullExchangeName": "CCY",
+            "averageDailyVolume3Month": 0,
+            "averageDailyVolume10Day": 0,
+            "fiftyTwoWeekLowChange": 0.037699997,
+            "fiftyTwoWeekLowChangePercent": 0.035142805,
+            "fiftyTwoWeekRange": "1.0727657 - 1.2350253",
+            "fiftyTwoWeekHighChange": -0.084769964,
+            "fiftyTwoWeekHighChangePercent": -0.06863824,
+            "fiftyDayAverageChange": 0.01552242,
+            "fiftyDayAverageChangePercent": 0.012912754,
+            "twoHundredDayAverageChange": 0.01195544,
+            "twoHundredDayAverageChangePercent": 0.009988108,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1070236800000,
+            "priceHint": 4,
+            "tradeable": false,
+            "exchange": "CCY",
+            "messageBoardId": "finmb_EUR_X",
+            "exchangeTimezoneName": "Europe/London",
+            "exchangeTimezoneShortName": "GMT",
+            "gmtOffSetMilliseconds": 0,
+            "market": "ccy_market",
+            "esgPopulated": false,
+            "marketState": "REGULAR",
+            "symbol": "EURUSD=X"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

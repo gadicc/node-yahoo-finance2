@@ -125,6 +125,10 @@ export interface QuoteMutualfund extends QuoteBase {
   quoteType: "MUTUALFUND";
 }
 
+export interface QuoteCurrency extends QuoteBase {
+  quoteType: "CURRENCY";
+}
+
 export interface QuoteCryptoCurrency extends QuoteBase {
   quoteType: "CRYPTOCURRENCY";
   circulatingSupply: number;
@@ -138,10 +142,11 @@ export interface QuoteCryptoCurrency extends QuoteBase {
 }
 
 export type Quote =
-  | QuoteEquity
+  | QuoteCryptoCurrency
+  | QuoteCurrency
   | QuoteEtf
-  | QuoteMutualfund
-  | QuoteCryptoCurrency;
+  | QuoteEquity
+  | QuoteMutualfund;
 
 export type QuoteResponse = Quote[];
 
