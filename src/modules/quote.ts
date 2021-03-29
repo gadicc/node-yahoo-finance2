@@ -60,12 +60,12 @@ export interface QuoteBase {
   firstTradeDateMilliseconds?: DateInMs; // 917015400000 -> Date
   priceHint: number; // 2,
   postMarketChangePercent?: number; // 0.093813874,
-  postMarketTime?: Date; // 1612573179,
+  postMarketTime?: Date; // 1612573179 -> new Date()
   postMarketPrice?: number; // 544.15,
   postMarketChange?: number; // 0.51000977,
   regularMarketChange?: number; // -2.9299927,
   regularMarketChangePercent?: number; // -0.53606904,
-  regularMarketTime?: number; // 1612558802,
+  regularMarketTime?: Date; // 1612558802 -> new Date()
   regularMarketPrice?: number; // 543.64,
   regularMarketDayHigh?: number; // 549.19,
   regularMarketDayRange?: TwoNumberRange; // "541.867 - 549.19" -> { low, high }
@@ -74,7 +74,7 @@ export interface QuoteBase {
   regularMarketPreviousClose?: number; // 546.57,
   preMarketChange?: number; // -2.9299927,
   preMarketChangePercent?: number; // -0.53606904,
-  preMarketTime?: number; // 1612558802,
+  preMarketTime?: Date; // 1612558802 -> new Date()
   preMarketPrice?: number; // 543.64,
   bid?: number; // 543.84,
   ask?: number; // 544.15,

@@ -53,7 +53,7 @@ const result = await yahooFinance.quote('AAPL');
   postMarketChange: -0.0800018,
   regularMarketChange: -0.42500305,
   regularMarketChangePercent: -0.30980286,
-  regularMarketTime: 1612558802,
+  regularMarketTime: new Date("2021-02-05T21:00:02.000Z"),
   regularMarketPrice: 136.76,
   regularMarketDayHigh: 137.41,
   regularMarketDayRange: { low: 135.86, high: 137.41 },
