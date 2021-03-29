@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.10.0...v1.10.1) (2021-03-29)
+
+
+### Bug Fixes
+
+* **quote:** {regular,pre}MarketTime is Date (like postMT) ([524fed3](https://github.com/gadicc/node-yahoo-finance2/commit/524fed35755f72a05e3430d6d665f1730648fd31))
+
 # [1.10.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.9.1...v1.10.0) (2021-03-28)
 
 
