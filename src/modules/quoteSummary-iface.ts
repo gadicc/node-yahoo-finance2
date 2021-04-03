@@ -568,6 +568,7 @@ export interface Holder {
   positionDirectDate?: number;
   positionIndirect?: number;
   positionIndirectDate?: number;
+  positionSummaryDate?: Date;
 }
 
 export enum Relation {

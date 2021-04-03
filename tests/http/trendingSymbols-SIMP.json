@@ -1,0 +1,145 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/SIMP?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "2o44p45g6fngn"
+      ],
+      "x-yahoo-request-id": [
+        "2o44p45g6fngn"
+      ],
+      "x-request-id": [
+        "10cab0a3-1bfc-4761-98bf-1fff9024efc2"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "846"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sat, 03 Apr 2021 03:16:39 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "SIMP",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": false,
+              "currency": "USD",
+              "tradeable": false,
+              "earningsTimestamp": 1607943540,
+              "earningsTimestampStart": 1607943540,
+              "earningsTimestampEnd": 1607943540,
+              "sharesOutstanding": 11009000,
+              "fiftyDayAverage": 3.808794,
+              "fiftyDayAverageChange": 0.691206,
+              "fiftyDayAverageChangePercent": 0.18147634,
+              "twoHundredDayAverage": 3.8239837,
+              "twoHundredDayAverageChange": 0.67601633,
+              "twoHundredDayAverageChangePercent": 0.17678326,
+              "marketCap": 49540500,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "prevName": "Cool Holdings, Inc.",
+              "nameChangeDate": "2021-04-02",
+              "firstTradeDateMilliseconds": 1609857000000,
+              "priceHint": 4,
+              "regularMarketChange": 0,
+              "regularMarketChangePercent": 0,
+              "regularMarketTime": 1617304655,
+              "regularMarketPrice": 4.5,
+              "regularMarketDayHigh": 4.525,
+              "regularMarketDayRange": "4.21 - 4.525",
+              "regularMarketDayLow": 4.21,
+              "regularMarketVolume": 32110,
+              "regularMarketPreviousClose": 4.5,
+              "fullExchangeName": "Other OTC",
+              "financialCurrency": "USD",
+              "regularMarketOpen": 4.49,
+              "averageDailyVolume3Month": 52706,
+              "averageDailyVolume10Day": 31200,
+              "fiftyTwoWeekLowChange": 2.505,
+              "fiftyTwoWeekLowChangePercent": 1.2556392,
+              "fiftyTwoWeekRange": "1.995 - 5.25",
+              "fiftyTwoWeekHighChange": -0.75,
+              "fiftyTwoWeekHighChangePercent": -0.14285715,
+              "fiftyTwoWeekLow": 1.995,
+              "fiftyTwoWeekHigh": 5.25,
+              "dividendDate": 1602633600,
+              "exchange": "PNK",
+              "shortName": "SIMPLY INC",
+              "longName": "Simply, Inc.",
+              "messageBoardId": "finmb_412251849",
+              "exchangeTimezoneName": "America/New_York",
+              "exchangeTimezoneShortName": "EDT",
+              "gmtOffSetMilliseconds": -14400000,
+              "market": "us_market",
+              "esgPopulated": false,
+              "marketState": "CLOSED",
+              "symbol": "SIMP"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

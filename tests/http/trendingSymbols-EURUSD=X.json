@@ -1,0 +1,139 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/EURUSD=X?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "f7mbc4lg6fngn"
+      ],
+      "x-yahoo-request-id": [
+        "f7mbc4lg6fngn"
+      ],
+      "x-request-id": [
+        "a92a0b12-2748-45ed-8472-f5f5efd1c5b5"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "752"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Sat, 03 Apr 2021 03:16:39 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "EURUSD=X",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "CURRENCY",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": true,
+              "currency": "USD",
+              "fiftyDayAverage": 1.1975126,
+              "twoHundredDayAverage": 1.1967574,
+              "shortName": "EUR/USD",
+              "regularMarketChange": -0.001109004,
+              "regularMarketChangePercent": -0.09414546,
+              "regularMarketPrice": 1.176886,
+              "regularMarketDayHigh": 1.1791062,
+              "regularMarketDayLow": 1.1755025,
+              "regularMarketPreviousClose": 1.177995,
+              "bid": 1.176886,
+              "ask": 1.1761938,
+              "regularMarketOpen": 1.1784115,
+              "fiftyTwoWeekLow": 1.0727657,
+              "fiftyTwoWeekHigh": 1.2350253,
+              "fiftyDayAverageChange": 0.014635682,
+              "fiftyDayAverageChangePercent": 0.012221735,
+              "twoHundredDayAverageChange": 0.014108717,
+              "twoHundredDayAverageChangePercent": 0.011789121,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "priceHint": 4,
+              "exchange": "CCY",
+              "messageBoardId": "finmb_EUR_X",
+              "exchangeTimezoneName": "Europe/London",
+              "exchangeTimezoneShortName": "BST",
+              "gmtOffSetMilliseconds": 3600000,
+              "market": "ccy_market",
+              "esgPopulated": false,
+              "firstTradeDateMilliseconds": 1070236800000,
+              "regularMarketTime": 1617398979,
+              "regularMarketDayRange": "1.1755025 - 1.1791062",
+              "regularMarketVolume": 0,
+              "bidSize": 0,
+              "askSize": 0,
+              "fullExchangeName": "CCY",
+              "averageDailyVolume3Month": 0,
+              "averageDailyVolume10Day": 0,
+              "fiftyTwoWeekLowChange": 0.03999996,
+              "fiftyTwoWeekLowChangePercent": 0.037286766,
+              "fiftyTwoWeekRange": "1.0727657 - 1.2350253",
+              "fiftyTwoWeekHighChange": -0.08247,
+              "fiftyTwoWeekHighChangePercent": -0.06677596,
+              "marketState": "CLOSED",
+              "tradeable": false,
+              "symbol": "EURUSD=X"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
