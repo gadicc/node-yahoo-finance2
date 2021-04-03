@@ -8,7 +8,7 @@ const yf = testYf({ historical });
 describe("historical", () => {
   // See also common module tests in moduleExec.spec.js
 
-  const symbolsToSkip = ["BEKE", "BFLY"];
+  const symbolsToSkip = ["BEKE", "BFLY", "SIMP"];
   const symbols = testSymbols.filter((s) => symbolsToSkip.indexOf(s) === -1);
   it.each(symbols)("passes validation for symbol '%s'", async (symbol) => {
     await yf.historical(

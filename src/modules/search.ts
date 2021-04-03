@@ -14,6 +14,8 @@ export interface SearchQuoteYahoo {
   index: "quotes"; // "quotes"
   score: number; // 1111958.0
   newListingDate?: Date; // "2021-02-16"
+  prevName?: string;
+  nameChangeDate?: Date;
 }
 export interface SearchQuoteYahooEquity extends SearchQuoteYahoo {
   quoteType: "EQUITY";

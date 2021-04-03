@@ -1,0 +1,105 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SIMP?formatted=false&modules=fundOwnership"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "2e9aagtg6fngq"
+      ],
+      "x-yahoo-request-id": [
+        "2e9aagtg6fngq"
+      ],
+      "x-request-id": [
+        "386d09f7-0c9f-9934-ae6b-cd2b251b0f5d"
+      ],
+      "content-length": [
+        "363"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Sat, 03 Apr 2021 03:16:41 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "USAA Mutual Fd Tr-Extended Market Index Fd",
+                  "pctHeld": {
+                    "raw": 0.0002,
+                    "fmt": "0.02%"
+                  },
+                  "position": {
+                    "raw": 1162,
+                    "fmt": "1.16k",
+                    "longFmt": "1,162"
+                  },
+                  "value": {
+                    "raw": 3195,
+                    "fmt": "3.19k",
+                    "longFmt": "3,195"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

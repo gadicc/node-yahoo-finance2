@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SIMP?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "8im096dg6fngs"
+      ],
+      "x-yahoo-request-id": [
+        "8im096dg6fngs"
+      ],
+      "x-request-id": [
+        "5f0dbc3b-445a-4069-8d80-df25cca9b317"
+      ],
+      "content-length": [
+        "415"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sat, 03 Apr 2021 03:16:44 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "PNK",
+              "quoteType": "EQUITY",
+              "symbol": "SIMP",
+              "underlyingSymbol": "SIMP",
+              "shortName": "SIMPLY INC",
+              "longName": "Simply, Inc.",
+              "firstTradeDateEpochUtc": 1609857000,
+              "timeZoneFullName": "America/New_York",
+              "timeZoneShortName": "EDT",
+              "uuid": "4404de97-a070-3748-8d59-6126b82d3899",
+              "messageBoardId": "finmb_412251849",
+              "gmtOffSetMilliseconds": -14400000,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

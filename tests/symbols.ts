@@ -23,4 +23,5 @@ export const testSymbols = [
   "EPAC", // NYSE
   "BTC-USD", // CryptoCurrency, CoinMarketCap
   "EURUSD=X", // Currency
+  "SIMP", // see #107
 ];

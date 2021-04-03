@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/download/SIMP?interval=1d&events=history&includeAdjustedClose=true&period1=1577836800&period2=1578009600"
+  },
+  "response": {
+    "ok": false,
+    "status": 400,
+    "statusText": "Bad Request",
+    "headers": {
+      "content-type": [
+        "text/csv"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "y-rid": [
+        "68civb1g6fngn"
+      ],
+      "x-yahoo-request-id": [
+        "68civb1g6fngn"
+      ],
+      "x-request-id": [
+        "74c3b6c5-1487-4140-8fdf-eda71c9e3508"
+      ],
+      "content-length": [
+        "84"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Sat, 03 Apr 2021 03:16:39 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-chart-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "cache-control": [
+        "max-age=0, private"
+      ],
+      "expires": [
+        "-1"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "400 Bad Request: Data doesn't exist for startDate = 1577836800, endDate = 1578009600"
+  }
+}
