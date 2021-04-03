@@ -116,7 +116,7 @@ export default function quoteSummary(
     query: {
       assertSymbol: symbol,
       url:
-        "https://query2.finance.yahoo.com/v10/finance/quoteSummary/" + symbol,
+        "https://${YF_QUERY_HOST}/v10/finance/quoteSummary/" + symbol,
       schemaKey: "#/definitions/QuoteSummaryOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
