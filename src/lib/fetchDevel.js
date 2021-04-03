@@ -22,12 +22,6 @@ class FakeResponse {
 }
 
 function urlHash(url) {
-  // Use query2 for all our tests / fixtures / cache
-  url = url.replace(
-    /^https:\/\/query1.finance.yahoo.com/,
-    "https://query2.finance.yahoo.com"
-  );
-
   var hash = crypto.createHash("sha1");
   hash.update(url);
   return hash.digest("hex");
@@ -38,6 +32,12 @@ const cache = {};
 async function fetchDevel(url, fetchOptions) {
   if (process.env.FETCH_DEVEL === "nocache")
     return await nodeFetch(url, fetchOptions);
+
+  // Use query2 for all our tests / fixtures / cache
+  url = url.replace(
+    /^https:\/\/query1.finance.yahoo.com/,
+    "https://query2.finance.yahoo.com"
+  );
 
   // If devel===true, hash the url, otherwise use the value of devel
   // This allows us to specify our own static filename vs url hash.
