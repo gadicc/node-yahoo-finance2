@@ -44,7 +44,7 @@ describe("yahooFinanceFetch", () => {
     it("throws HTTPError if !res.ok and no error in json result", () => {
       return expect(
         yahooFinanceFetch(
-          "https://query1.finance.yahoo.com/nonExistingURL-CACHED",
+          "https://query2.finance.yahoo.com/nonExistingURL-CACHED",
           {},
           { devel: "pageWith404andJson.fake.json" }
         )
@@ -54,7 +54,7 @@ describe("yahooFinanceFetch", () => {
   it("throws Error if we receive unknown error from json result", () => {
     return expect(
       yahooFinanceFetch(
-        "https://query1.finance.yahoo.com/nonExistingURL-CACHED",
+        "https://query2.finance.yahoo.com/nonExistingURL-CACHED",
         {},
         { devel: "pageWithUnknownError.json" }
       )
