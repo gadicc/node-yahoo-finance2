@@ -1,3 +1,11 @@
+## [1.10.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.10.1...v1.10.2) (2021-04-03)
+
+
+### Bug Fixes
+
+* **validation:** add properties to quote module response ([4c6ef24](https://github.com/gadicc/node-yahoo-finance2/commit/4c6ef24b6c0504f2996b4ab12338061209fc7487))
+* **validation:** add tests for SIMP and fix validation for them ([96891fd](https://github.com/gadicc/node-yahoo-finance2/commit/96891fd7f15bf3340c6840e6fc0be3cb8db9e2d3))
+
 ## [1.10.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.10.0...v1.10.1) (2021-03-29)
 
 
