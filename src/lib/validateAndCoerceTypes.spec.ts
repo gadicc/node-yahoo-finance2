@@ -240,7 +240,7 @@ describe("validateAndCoerceTypes", () => {
         if (!error0.params) return;
         expect(error0.params.schema).toBe("date");
         expect(error0.params.data).toBe(object.date);
-        expect(error0.dataPath).toBe("/date");
+        expect(error0.instancePath).toBe("/date");
         expect(error0.schemaPath).toBe("#/properties/date/yahooFinanceType");
       });
 
@@ -348,11 +348,11 @@ describe("validateAndCoerceTypes", () => {
           data: "str",
           schema: "number",
         });
-        expect(e.dataPath).toBe("/number");
+        expect(e.instancePath).toBe("/number");
         expect(e.data).toBe("str");
 
         e = error.errors[1];
-        expect(e.dataPath).toBe("/noAdditional");
+        expect(e.instancePath).toBe("/noAdditional");
         expect(e.params).toMatchObject({
           additionalProperty: "additional",
         });

@@ -153,8 +153,8 @@ const logObj =
     ? (obj: any) => console.dir(obj, { depth: 4, colors: true })
     : (obj: any) => console.log(JSON.stringify(obj, null, 2));
 
-export function resolvePath(obj: any, dataPath: string) {
-  const path = dataPath.split("/");
+export function resolvePath(obj: any, instancePath: string) {
+  const path = instancePath.split("/");
   let ref = obj;
   for (let i = 1; i < path.length; i++) ref = ref[path[i]];
   return ref;
@@ -192,9 +192,9 @@ function validate({
       validator.errors.forEach((error) => {
         // For now let's ignore the base object which could be huge.
         /* istanbul ignore else */
-        if (error.dataPath !== "")
+        if (error.instancePath !== "")
           // Note, not the regular ajv data value from verbose:true
-          error.data = resolvePath(object, error.dataPath);
+          error.data = resolvePath(object, error.instancePath);
       });
 
     if (options.logErrors) {
