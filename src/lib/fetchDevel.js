@@ -22,6 +22,12 @@ class FakeResponse {
 }
 
 function urlHash(url) {
+  // Use query2 for all our tests / fixtures / cache
+  url = url.replace(
+    /^https:\/\/query1.finance.yahoo.com/,
+    "https://query2.finance.yahoo.com"
+  );
+
   var hash = crypto.createHash("sha1");
   hash.update(url);
   return hash.digest("hex");
