@@ -82,7 +82,7 @@ export default function options(
 
     query: {
       assertSymbol: symbol,
-      url: "https://query1.finance.yahoo.com/v7/finance/options/" + symbol,
+      url: "https://query2.finance.yahoo.com/v7/finance/options/" + symbol,
       schemaKey: "#/definitions/OptionsOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
