@@ -34,7 +34,7 @@ export default function autoc(
   query: string,
   queryOptionsOverrides?: AutocOptions,
   moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<AutocResult>;
+): Promise<AutocResultSet>;
 
 export default function autoc(
   this: ModuleThis,
