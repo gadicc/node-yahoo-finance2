@@ -93,6 +93,8 @@ export interface QuoteBase {
   trailingThreeMonthNavReturns?: number; // 17.08
   ipoExpectedDate?: Date; // "2020-08-13",
   newListingDate?: Date; // "2021-02-16",
+  nameChangeDate?: Date;
+  prevName?: string;
 }
 
 /*
