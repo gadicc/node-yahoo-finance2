@@ -1,3 +1,10 @@
+## [1.10.3](https://github.com/gadicc/node-yahoo-finance2/compare/v1.10.2...v1.10.3) (2021-04-03)
+
+
+### Bug Fixes
+
+* **autoc:** return typescript type AutocResultSet not AutocResult ([#110](https://github.com/gadicc/node-yahoo-finance2/issues/110)) ([b863864](https://github.com/gadicc/node-yahoo-finance2/commit/b8638643ea0f73271167286f0fbfd4deb92580ba))
+
 ## [1.10.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.10.1...v1.10.2) (2021-04-03)
 
 
