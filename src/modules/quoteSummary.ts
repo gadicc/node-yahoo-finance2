@@ -114,8 +114,7 @@ export default function quoteSummary(
     moduleName: "search",
 
     query: {
-      url:
-        "https://query2.finance.yahoo.com/v10/finance/quoteSummary/" + symbol,
+      url: "https://${YF_QUERY_HOST}/v10/finance/quoteSummary/" + symbol,
       schemaKey: "#/definitions/QuoteSummaryOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,

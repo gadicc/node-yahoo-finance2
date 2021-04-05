@@ -4,6 +4,31 @@ const errors = require("./errors");
 const _env = require("../env-node").default;
 const _opts = require("./options").default;
 
+describe("substituteVariables", () => {
+  const substituteVariables = _yahooFinanceFetch.substituteVariables;
+
+  it("substitutes YF_QUERY_HOST", () => {
+    const origUrl = "https://${YF_QUERY_HOST}/something";
+    const origRandom = Math.random;
+
+    Math.random = Math.random = () => 0.4;
+    expect(substituteVariables(origUrl)).toBe(
+      "https://query1.finance.yahoo.com/something"
+    );
+
+    Math.random = Math.random = () => 0.6;
+    expect(substituteVariables(origUrl)).toBe(
+      "https://query2.finance.yahoo.com/something"
+    );
+
+    Math.random = origRandom;
+  });
+
+  it("does not substitute non-amtching vars", () => {
+    expect(substituteVariables("hello, ${name}.")).toBe("hello, ${name}.");
+  });
+});
+
 describe("yahooFinanceFetch", () => {
   const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env, _opts });
 

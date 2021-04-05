@@ -3,6 +3,18 @@ const pkg = require("../../package.json");
 
 const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
 
+function substituteVariables(urlBase) {
+  return urlBase.replace(/\$\{([^\}]+)\}/g, function (match, varName) {
+    if (varName === "YF_QUERY_HOST") {
+      const hosts = ["query1.finance.yahoo.com", "query2.finance.yahoo.com"];
+      return hosts[Math.floor(Math.random() * hosts.length)];
+    } else {
+      // i.e. return unsubstituted original variable expression ${VAR}
+      return match;
+    }
+  });
+}
+
 async function yahooFinanceFetch(
   urlBase,
   params = {},
@@ -17,7 +29,7 @@ async function yahooFinanceFetch(
   const { URLSearchParams, fetch, fetchDevel } = this._env;
 
   const urlSearchParams = new URLSearchParams(params);
-  const url = urlBase + "?" + urlSearchParams.toString();
+  const url = substituteVariables(urlBase) + "?" + urlSearchParams.toString();
 
   /* istanbul ignore next */
   // no need to force coverage on real network request.
@@ -69,4 +81,5 @@ async function yahooFinanceFetch(
   return result;
 }
 
+yahooFinanceFetch.substituteVariables = substituteVariables;
 module.exports = yahooFinanceFetch;
