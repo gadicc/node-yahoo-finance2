@@ -1,0 +1,99 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BEKE?formatted=false&modules=financialData"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "6u7373pg2qdt5"
+      ],
+      "x-yahoo-request-id": [
+        "6u7373pg2qdt5"
+      ],
+      "x-request-id": [
+        "39a17e0d-36b1-41f9-ad98-5df06b20c6fe"
+      ],
+      "content-length": [
+        "511"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 15:35:00 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "financialData": {
+              "maxAge": 86400,
+              "currentPrice": 65.79,
+              "targetHighPrice": 90.48,
+              "targetLowPrice": 20.99,
+              "targetMeanPrice": 67.22,
+              "targetMedianPrice": 67.57,
+              "recommendationMean": 2.5,
+              "recommendationKey": "buy",
+              "numberOfAnalystOpinions": 10,
+              "quickRatio": 2.013,
+              "currentRatio": 2.386,
+              "debtToEquity": 26.427,
+              "grossProfits": 11268044000,
+              "revenueGrowth": 0.709,
+              "grossMargins": 0.22805999,
+              "ebitdaMargins": -0.00654,
+              "operatingMargins": 0,
+              "profitMargins": -0.02313,
+              "financialCurrency": "CNY"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

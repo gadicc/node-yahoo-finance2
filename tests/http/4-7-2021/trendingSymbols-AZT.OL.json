@@ -1,0 +1,147 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/AZT.OL?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "adt8cqpg5clkb"
+      ],
+      "x-yahoo-request-id": [
+        "adt8cqpg5clkb"
+      ],
+      "x-request-id": [
+        "fec7f236-f95c-483e-a22b-4e9723a91fec"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "883"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Sat, 20 Mar 2021 20:09:47 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "4"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "AZT.OL",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "triggerable": false,
+              "currency": "NOK",
+              "firstTradeDateMilliseconds": 1131091200000,
+              "priceHint": 2,
+              "regularMarketChange": 3,
+              "regularMarketChangePercent": 4.109589,
+              "regularMarketTime": 1616167665,
+              "regularMarketPrice": 76,
+              "regularMarketDayHigh": 76.2,
+              "regularMarketDayRange": "72.0 - 76.2",
+              "regularMarketDayLow": 72,
+              "regularMarketVolume": 1043866,
+              "regularMarketPreviousClose": 73,
+              "bid": 75.2,
+              "ask": 76,
+              "fullExchangeName": "Oslo",
+              "financialCurrency": "NOK",
+              "regularMarketOpen": 73.2,
+              "averageDailyVolume3Month": 299518,
+              "averageDailyVolume10Day": 245869,
+              "fiftyTwoWeekLowChange": 69.54,
+              "fiftyTwoWeekLowChangePercent": 10.764706,
+              "fiftyTwoWeekRange": "6.46 - 87.6",
+              "fiftyTwoWeekHighChange": -11.599998,
+              "fiftyTwoWeekHighChangePercent": -0.13242008,
+              "tradeable": false,
+              "marketState": "CLOSED",
+              "exchangeTimezoneName": "Europe/Oslo",
+              "exchangeTimezoneShortName": "CET",
+              "gmtOffSetMilliseconds": 3600000,
+              "market": "no_market",
+              "esgPopulated": false,
+              "fiftyTwoWeekLow": 6.46,
+              "fiftyTwoWeekHigh": 87.6,
+              "earningsTimestamp": 1611801000,
+              "earningsTimestampStart": 1611801000,
+              "earningsTimestampEnd": 1611801000,
+              "trailingPE": 44.186047,
+              "epsTrailingTwelveMonths": 1.72,
+              "sharesOutstanding": 48334700,
+              "bookValue": 4.018,
+              "fiftyDayAverage": 71.13333,
+              "fiftyDayAverageChange": 4.8666687,
+              "fiftyDayAverageChangePercent": 0.06841615,
+              "twoHundredDayAverage": 67.375,
+              "twoHundredDayAverageChange": 8.625,
+              "twoHundredDayAverageChangePercent": 0.12801485,
+              "marketCap": 3673437184,
+              "priceToBook": 18.914883,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "exchange": "OSL",
+              "shortName": "ARCTICZYMES TECH",
+              "longName": "ArcticZymes Technologies ASA",
+              "messageBoardId": "finmb_13529463",
+              "symbol": "AZT.OL"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

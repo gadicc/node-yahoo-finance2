@@ -1,0 +1,92 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AMZN?formatted=false&modules=netSharePurchaseActivity"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "9r49is9g2nrre"
+      ],
+      "x-yahoo-request-id": [
+        "9r49is9g2nrre"
+      ],
+      "x-request-id": [
+        "baed74ef-d76f-46d0-91a7-53d3f0c2ae8b"
+      ],
+      "content-length": [
+        "359"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:37 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "netSharePurchaseActivity": {
+              "maxAge": 1,
+              "period": "6m",
+              "buyInfoCount": 32,
+              "buyInfoShares": 300580,
+              "buyPercentInsiderShares": 0.004,
+              "sellInfoCount": 29,
+              "sellInfoShares": 1025226,
+              "sellPercentInsiderShares": 0.0139999995,
+              "netInfoCount": 61,
+              "netInfoShares": -724646,
+              "netPercentInsiderShares": -0.01,
+              "totalInsiderShares": 73298880
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

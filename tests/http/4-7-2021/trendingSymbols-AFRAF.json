@@ -1,0 +1,147 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/AFRAF?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "2j5mo7tg5clkb"
+      ],
+      "x-yahoo-request-id": [
+        "2j5mo7tg5clkb"
+      ],
+      "x-request-id": [
+        "b27140d1-a3ce-43f0-aca6-dd8fdada89dc"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "878"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sat, 20 Mar 2021 20:09:47 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "AFRAF",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": false,
+              "currency": "USD",
+              "fiftyTwoWeekLowChange": 2.9,
+              "fiftyTwoWeekLowChangePercent": 0.8868502,
+              "fiftyTwoWeekRange": "3.27 - 7.25",
+              "fiftyTwoWeekHighChange": -1.0799999,
+              "fiftyTwoWeekHighChangePercent": -0.14896551,
+              "fiftyTwoWeekLow": 3.27,
+              "fiftyTwoWeekHigh": 7.25,
+              "dividendDate": 1216252800,
+              "epsTrailingTwelveMonths": -1.903,
+              "sharesOutstanding": 427432000,
+              "bookValue": 8.847,
+              "fiftyDayAverage": 6.220857,
+              "fiftyDayAverageChange": -0.050857067,
+              "fiftyDayAverageChangePercent": -0.008175251,
+              "twoHundredDayAverage": 5.2404346,
+              "twoHundredDayAverageChange": 0.9295654,
+              "twoHundredDayAverageChangePercent": 0.17738327,
+              "marketCap": 2603042816,
+              "priceToBook": 0.69741154,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "tradeable": false,
+              "firstTradeDateMilliseconds": 1331731800000,
+              "priceHint": 2,
+              "regularMarketChange": -0.21000004,
+              "regularMarketChangePercent": -3.2915366,
+              "regularMarketTime": 1616161186,
+              "regularMarketPrice": 6.17,
+              "regularMarketDayHigh": 6.17,
+              "regularMarketDayRange": "6.0 - 6.17",
+              "regularMarketDayLow": 6,
+              "regularMarketVolume": 945,
+              "regularMarketPreviousClose": 6.38,
+              "bid": 0,
+              "ask": 0,
+              "bidSize": 0,
+              "askSize": 0,
+              "fullExchangeName": "Other OTC",
+              "financialCurrency": "EUR",
+              "regularMarketOpen": 6.07,
+              "averageDailyVolume3Month": 1995,
+              "averageDailyVolume10Day": 1125,
+              "marketState": "CLOSED",
+              "exchange": "PNK",
+              "shortName": "AIR FRANCE-KLM",
+              "longName": "Air France-KLM SA",
+              "messageBoardId": "finmb_4463198",
+              "exchangeTimezoneName": "America/New_York",
+              "exchangeTimezoneShortName": "EDT",
+              "gmtOffSetMilliseconds": -14400000,
+              "market": "us_market",
+              "esgPopulated": false,
+              "symbol": "AFRAF"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

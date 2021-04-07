@@ -1,0 +1,137 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/UNIR.MI?formatted=false&modules=earnings"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "9i1anjtg2lbsh"
+      ],
+      "x-yahoo-request-id": [
+        "9i1anjtg2lbsh"
+      ],
+      "x-request-id": [
+        "e1b113aa-da68-4b3e-b908-10149412e171"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "292"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Mon, 15 Feb 2021 17:29:52 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earnings": {
+              "maxAge": 86400,
+              "earningsChart": {
+                "quarterly": [],
+                "earningsDate": [
+                  1620259200
+                ]
+              },
+              "financialsChart": {
+                "yearly": [
+                  {
+                    "date": 2017,
+                    "revenue": 1662730000,
+                    "earnings": 11587000
+                  },
+                  {
+                    "date": 2018,
+                    "revenue": 1873792000,
+                    "earnings": 10958000
+                  },
+                  {
+                    "date": 2019,
+                    "revenue": 2104519000,
+                    "earnings": 28895000
+                  },
+                  {
+                    "date": 2020,
+                    "revenue": 2444897000,
+                    "earnings": 25596000
+                  }
+                ],
+                "quarterly": [
+                  {
+                    "date": "1Q2020",
+                    "revenue": 685438000,
+                    "earnings": 16939000
+                  },
+                  {
+                    "date": "2Q2020",
+                    "revenue": 428912000,
+                    "earnings": -14419000
+                  },
+                  {
+                    "date": "3Q2020",
+                    "revenue": 650106000,
+                    "earnings": 21941000
+                  },
+                  {
+                    "date": "4Q2020",
+                    "revenue": 810782000,
+                    "earnings": 32878000
+                  }
+                ]
+              },
+              "financialCurrency": "EUR"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

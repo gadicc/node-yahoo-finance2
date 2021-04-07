@@ -1,0 +1,144 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/BTC-USD?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "9tvkfctg5clkg"
+      ],
+      "x-yahoo-request-id": [
+        "9tvkfctg5clkg"
+      ],
+      "x-request-id": [
+        "847730b2-2803-435a-a355-f3639e1bb585"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "911"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Sat, 20 Mar 2021 20:09:52 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "BTC-USD",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "CRYPTOCURRENCY",
+              "quoteSourceName": "CoinMarketCap",
+              "triggerable": true,
+              "currency": "USD",
+              "coinImageUrl": "https://s.yimg.com/uc/fin/img/reports-thumbnails/1.png",
+              "fiftyTwoWeekLowChange": 53567.113,
+              "fiftyTwoWeekLowChangePercent": 9.259649,
+              "fiftyTwoWeekRange": "5785.0044 - 61683.863",
+              "fiftyTwoWeekHighChange": -2331.746,
+              "fiftyTwoWeekHighChangePercent": -0.037801556,
+              "fiftyTwoWeekLow": 5785.0044,
+              "fiftyTwoWeekHigh": 61683.863,
+              "fiftyDayAverage": 48619.94,
+              "fiftyDayAverageChange": 10732.176,
+              "fiftyDayAverageChangePercent": 0.22073609,
+              "twoHundredDayAverage": 26600.441,
+              "twoHundredDayAverageChange": 32751.676,
+              "twoHundredDayAverageChangePercent": 1.2312455,
+              "marketCap": 1107473465344,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "tradeable": false,
+              "firstTradeDateMilliseconds": 1410908400000,
+              "priceHint": 2,
+              "circulatingSupply": 18659376,
+              "lastMarket": "CoinMarketCap",
+              "volume24Hr": 48464924672,
+              "volumeAllCurrencies": 48464924672,
+              "fromCurrency": "BTC",
+              "toCurrency": "USD=X",
+              "regularMarketChange": 396.6836,
+              "regularMarketChangePercent": 0.67285806,
+              "regularMarketTime": 1616270882,
+              "regularMarketPrice": 59352.117,
+              "regularMarketDayHigh": 59986.67,
+              "regularMarketDayRange": "58249.42 - 59986.67",
+              "regularMarketDayLow": 58249.42,
+              "regularMarketVolume": 48464924672,
+              "regularMarketPreviousClose": 58611.613,
+              "fullExchangeName": "CCC",
+              "regularMarketOpen": 58611.613,
+              "averageDailyVolume3Month": 66562096224,
+              "averageDailyVolume10Day": 56556631775,
+              "startDate": 1367103600,
+              "marketState": "REGULAR",
+              "exchange": "CCC",
+              "shortName": "Bitcoin USD",
+              "messageBoardId": "finmb_BTC_CCC",
+              "exchangeTimezoneName": "Europe/London",
+              "exchangeTimezoneShortName": "GMT",
+              "gmtOffSetMilliseconds": 0,
+              "market": "ccc_market",
+              "esgPopulated": false,
+              "symbol": "BTC-USD"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

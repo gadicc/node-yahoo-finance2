@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/OCDO.L?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "et0cg31g1kj2j"
+      ],
+      "x-yahoo-request-id": [
+        "et0cg31g1kj2j"
+      ],
+      "x-request-id": [
+        "10b3300e-9d39-4639-b51a-fc7ce5ba337c"
+      ],
+      "content-length": [
+        "423"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 03 Feb 2021 07:10:11 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "LSE",
+              "quoteType": "EQUITY",
+              "symbol": "OCDO.L",
+              "underlyingSymbol": "OCDO.L",
+              "shortName": "OCADO GROUP PLC ORD 2P",
+              "longName": "Ocado Group plc",
+              "firstTradeDateEpochUtc": 1279695600,
+              "timeZoneFullName": "Europe/London",
+              "timeZoneShortName": "GMT",
+              "uuid": "97e7eb74-8820-3c18-89f9-c1fdf4a819fb",
+              "messageBoardId": "finmb_109303666",
+              "gmtOffSetMilliseconds": 0,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

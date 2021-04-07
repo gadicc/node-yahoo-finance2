@@ -7,53 +7,41 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json"
+      "x-yahoo-request-id": [
+        "6ru62opg6s997"
       ],
       "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
-      ],
-      "vary": [
-        "Origin,Accept-Encoding"
-      ],
-      "y-rid": [
-        "68bmrd1g2vseq"
-      ],
-      "x-yahoo-request-id": [
-        "68bmrd1g2vseq"
-      ],
-      "x-request-id": [
-        "fdae2ec6-0024-46f4-a5ad-8d66ed5609c0"
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
       ],
       "content-encoding": [
         "gzip"
       ],
-      "content-length": [
-        "473"
+      "content-type": [
+        "application/json;charset=utf-8"
       ],
-      "x-envoy-upstream-service-time": [
-        "3"
+      "vary": [
+        "Origin"
+      ],
+      "content-length": [
+        "469"
       ],
       "date": [
-        "Fri, 19 Feb 2021 17:14:02 GMT"
-      ],
-      "server": [
-        "ATS"
-      ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "Wed, 07 Apr 2021 21:33:27 GMT"
       ],
       "age": [
         "0"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "server": [
+        "ATS"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -74,26 +62,31 @@
           {
             "price": {
               "maxAge": 1,
-              "preMarketChangePercent": 0.0051194085,
-              "preMarketChange": 0.059999466,
-              "preMarketTime": 1613744995,
-              "preMarketPrice": 11.78,
+              "preMarketChangePercent": 0,
+              "preMarketChange": 0,
+              "preMarketTime": 1617802194,
+              "preMarketPrice": 9.13,
               "preMarketSource": "DELAYED",
-              "regularMarketChangePercent": 0.037124537,
-              "regularMarketChange": 0.4350996,
-              "regularMarketTime": 1613754832,
+              "postMarketChangePercent": 0,
+              "postMarketChange": 0,
+              "postMarketTime": 1617831153,
+              "postMarketPrice": 8.71,
+              "postMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": -0.046002198,
+              "regularMarketChange": -0.42000008,
+              "regularMarketTime": 1617825603,
               "priceHint": 2,
-              "regularMarketPrice": 12.1551,
-              "regularMarketDayHigh": 12.38,
-              "regularMarketDayLow": 11.77,
-              "regularMarketVolume": 2580169,
-              "regularMarketPreviousClose": 11.72,
+              "regularMarketPrice": 8.71,
+              "regularMarketDayHigh": 9.12,
+              "regularMarketDayLow": 8.71,
+              "regularMarketVolume": 3009280,
+              "regularMarketPreviousClose": 9.13,
               "regularMarketSource": "FREE_REALTIME",
-              "regularMarketOpen": 11.79,
+              "regularMarketOpen": 9.12,
               "exchange": "NMS",
               "exchangeName": "NasdaqGS",
               "exchangeDataDelayedBy": 0,
-              "marketState": "REGULAR",
+              "marketState": "POST",
               "quoteType": "EQUITY",
               "symbol": "CRON",
               "underlyingSymbol": null,
@@ -103,9 +96,8 @@
               "quoteSourceName": "Nasdaq Real Time Price",
               "currencySymbol": "$",
               "fromCurrency": null,
-              "toCurrency": null,
               "lastMarket": null,
-              "marketCap": 4318755840
+              "marketCap": 3148299008
             }
           }
         ],

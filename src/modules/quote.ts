@@ -95,6 +95,7 @@ export interface QuoteBase {
   newListingDate?: Date; // "2021-02-16",
   nameChangeDate?: Date;
   prevName?: string;
+  averageAnalystRating?: string;
 }
 
 /*

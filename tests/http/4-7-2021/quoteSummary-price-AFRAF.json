@@ -1,0 +1,111 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AFRAF?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "fr5et09g2nrre"
+      ],
+      "x-yahoo-request-id": [
+        "fr5et09g2nrre"
+      ],
+      "x-request-id": [
+        "f991df8e-49fc-45fb-bfd3-09b23ab0d499"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "397"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:38 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": -0.01666665,
+              "regularMarketChange": -0.099999905,
+              "regularMarketTime": 1613486803,
+              "priceHint": 2,
+              "regularMarketPrice": 5.9,
+              "regularMarketDayHigh": 5.9,
+              "regularMarketDayLow": 5.9,
+              "regularMarketVolume": 1050,
+              "regularMarketPreviousClose": 6,
+              "regularMarketSource": "DELAYED",
+              "regularMarketOpen": 5.9,
+              "exchange": "PNK",
+              "exchangeName": "Other OTC",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "EQUITY",
+              "symbol": "AFRAF",
+              "underlyingSymbol": null,
+              "shortName": "AIR FRANCE-KLM",
+              "longName": "Air France-KLM SA",
+              "currency": "USD",
+              "quoteSourceName": "Delayed Quote",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 2474265344
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=EURUSD%3DX"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "c6019k9g5rbok"
+      ],
+      "x-yahoo-request-id": [
+        "c6019k9g5rbok"
+      ],
+      "x-request-id": [
+        "2414a452-947e-478f-8267-f98585944575"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "820"
+      ],
+      "x-envoy-upstream-service-time": [
+        "32"
+      ],
+      "date": [
+        "Fri, 26 Mar 2021 09:53:24 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 5,
+      "quotes": [
+        {
+          "exchange": "CCY",
+          "shortname": "EUR/USD",
+          "quoteType": "CURRENCY",
+          "symbol": "EURUSD=X",
+          "index": "quotes",
+          "score": 7827200,
+          "typeDisp": "Currency",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [
+        {
+          "uuid": "6dc50754-564e-3ea2-90a0-7a04f0480056",
+          "title": "The Week Ahead – Brexit, Capitol Hill, and COVID-19 Remain in Focus",
+          "publisher": "FX Empire",
+          "link": "https://finance.yahoo.com/news/week-ahead-brexit-capitol-hill-014148104.html",
+          "providerPublishTime": 1609033308,
+          "type": "STORY"
+        },
+        {
+          "uuid": "8a22ff2b-ec4b-30c2-aee8-881a4f902f59",
+          "title": "A Light Economic Calendar Leaves COVID-19 and Capitol Hill in Focus",
+          "publisher": "FX Empire",
+          "link": "https://finance.yahoo.com/news/light-economic-calendar-leaves-covid-014947095.html",
+          "providerPublishTime": 1609120187,
+          "type": "STORY"
+        },
+        {
+          "uuid": "7a93b9dd-54da-3e6b-a3e7-bb4722c6dae5",
+          "title": "EUR/USD Daily Forecast – Another Attempt To Settle Above 1.2220",
+          "publisher": "FX Empire",
+          "link": "https://finance.yahoo.com/news/eur-usd-daily-forecast-another-073958317.html",
+          "providerPublishTime": 1609141198,
+          "type": "STORY"
+        },
+        {
+          "uuid": "791bd080-82c2-3eb0-8dc9-26259afd5bee",
+          "title": "U.S. Dollar Index (DX) Futures Technical Analysis – Look for Downside Bias on Sustained Move Under 90.395",
+          "publisher": "FX Empire",
+          "link": "https://finance.yahoo.com/news/u-dollar-index-dx-futures-092728250.html",
+          "providerPublishTime": 1609147648,
+          "type": "STORY"
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "totalTime": 31,
+      "timeTakenForQuotes": 413,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0
+    }
+  }
+}

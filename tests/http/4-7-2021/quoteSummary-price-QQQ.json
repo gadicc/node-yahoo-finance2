@@ -1,0 +1,121 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/QQQ?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "baftgn1g1s796"
+      ],
+      "x-yahoo-request-id": [
+        "baftgn1g1s796"
+      ],
+      "x-request-id": [
+        "98bb7521-d6f2-4c81-accf-906b686ac127"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "499"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sat, 06 Feb 2021 04:37:57 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "preMarketChangePercent": 0.00311894,
+              "preMarketChange": 1.03,
+              "preMarketTime": 1612535397,
+              "preMarketPrice": 331.27,
+              "preMarketSource": "FREE_REALTIME",
+              "postMarketChangePercent": 0.00060361,
+              "postMarketChange": 0.2000122,
+              "postMarketTime": 1612573184,
+              "postMarketPrice": 331.56,
+              "postMarketSource": "DELAYED",
+              "regularMarketChangePercent": 0.0033914582,
+              "regularMarketChange": 1.1199951,
+              "regularMarketTime": 1612558801,
+              "priceHint": 2,
+              "regularMarketPrice": 331.36,
+              "regularMarketDayHigh": 332.4025,
+              "regularMarketDayLow": 329.53,
+              "regularMarketVolume": 22731960,
+              "regularMarketPreviousClose": 330.24,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 331.22,
+              "exchange": "NMS",
+              "exchangeName": "NasdaqGS",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "POSTPOST",
+              "quoteType": "ETF",
+              "symbol": "QQQ",
+              "underlyingSymbol": null,
+              "shortName": "Invesco QQQ Trust, Series 1",
+              "longName": "Invesco QQQ Trust",
+              "currency": "USD",
+              "quoteSourceName": "Delayed Quote",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 130257608704
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

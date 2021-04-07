@@ -1,0 +1,306 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SPOT?formatted=false&modules=fundOwnership"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "25sbj99g2l2jm"
+      ],
+      "x-yahoo-request-id": [
+        "25sbj99g2l2jm"
+      ],
+      "x-request-id": [
+        "b40fa49f-54fd-40f2-9422-51b6441c98bd"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "832"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Mon, 15 Feb 2021 14:51:34 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1606694400,
+                    "fmt": "2020-11-30"
+                  },
+                  "organization": "Vanguard International Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.027,
+                    "fmt": "2.70%"
+                  },
+                  "position": {
+                    "raw": 4839569,
+                    "fmt": "4.84M",
+                    "longFmt": "4,839,569"
+                  },
+                  "value": {
+                    "raw": 1410105219,
+                    "fmt": "1.41B",
+                    "longFmt": "1,410,105,219"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Morgan Stanley Inst Fd Inc-Growth Port",
+                  "pctHeld": {
+                    "raw": 0.014099999,
+                    "fmt": "1.41%"
+                  },
+                  "position": {
+                    "raw": 2522451,
+                    "fmt": "2.52M",
+                    "longFmt": "2,522,451"
+                  },
+                  "value": {
+                    "raw": 611870939,
+                    "fmt": "611.87M",
+                    "longFmt": "611,870,939"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Price (T.Rowe) Blue Chip Growth Fund Inc.",
+                  "pctHeld": {
+                    "raw": 0.0104,
+                    "fmt": "1.04%"
+                  },
+                  "position": {
+                    "raw": 1862036,
+                    "fmt": "1.86M",
+                    "longFmt": "1,862,036"
+                  },
+                  "value": {
+                    "raw": 585908247,
+                    "fmt": "585.91M",
+                    "longFmt": "585,908,247"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Price (T.Rowe) Growth Stock Fund Inc.",
+                  "pctHeld": {
+                    "raw": 0.0093,
+                    "fmt": "0.93%"
+                  },
+                  "position": {
+                    "raw": 1672106,
+                    "fmt": "1.67M",
+                    "longFmt": "1,672,106"
+                  },
+                  "value": {
+                    "raw": 526144873,
+                    "fmt": "526.14M",
+                    "longFmt": "526,144,873"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "ARK ETF Tr-ARK Innovation ETF",
+                  "pctHeld": {
+                    "raw": 0.0086,
+                    "fmt": "0.86%"
+                  },
+                  "position": {
+                    "raw": 1547620,
+                    "fmt": "1.55M",
+                    "longFmt": "1,547,620"
+                  },
+                  "value": {
+                    "raw": 486974109,
+                    "fmt": "486.97M",
+                    "longFmt": "486,974,109"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1604102400,
+                    "fmt": "2020-10-31"
+                  },
+                  "organization": "Harbor Capital Appreciation Fund",
+                  "pctHeld": {
+                    "raw": 0.0082,
+                    "fmt": "0.82%"
+                  },
+                  "position": {
+                    "raw": 1468988,
+                    "fmt": "1.47M",
+                    "longFmt": "1,468,988"
+                  },
+                  "value": {
+                    "raw": 352395531,
+                    "fmt": "352.4M",
+                    "longFmt": "352,395,531"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "JP Morgan Large Cap Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.0069,
+                    "fmt": "0.69%"
+                  },
+                  "position": {
+                    "raw": 1241300,
+                    "fmt": "1.24M",
+                    "longFmt": "1,241,300"
+                  },
+                  "value": {
+                    "raw": 390587458,
+                    "fmt": "390.59M",
+                    "longFmt": "390,587,458"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1606694400,
+                    "fmt": "2020-11-30"
+                  },
+                  "organization": "Morgan Stanley Insight Fund",
+                  "pctHeld": {
+                    "raw": 0.0063,
+                    "fmt": "0.63%"
+                  },
+                  "position": {
+                    "raw": 1132840,
+                    "fmt": "1.13M",
+                    "longFmt": "1,132,840"
+                  },
+                  "value": {
+                    "raw": 330075590,
+                    "fmt": "330.08M",
+                    "longFmt": "330,075,590"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Price (T.Rowe) Institutional Large Cap Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.006,
+                    "fmt": "0.60%"
+                  },
+                  "position": {
+                    "raw": 1067729,
+                    "fmt": "1.07M",
+                    "longFmt": "1,067,729"
+                  },
+                  "value": {
+                    "raw": 335971607,
+                    "fmt": "335.97M",
+                    "longFmt": "335,971,607"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Price (T.Rowe) Mid Cap Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.0056,
+                    "fmt": "0.56%"
+                  },
+                  "position": {
+                    "raw": 1000000,
+                    "fmt": "1M",
+                    "longFmt": "1,000,000"
+                  },
+                  "value": {
+                    "raw": 314660000,
+                    "fmt": "314.66M",
+                    "longFmt": "314,660,000"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

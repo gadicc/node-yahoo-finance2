@@ -1,0 +1,149 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=QQQ"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "bhta46dg21fjt"
+      ],
+      "x-yahoo-request-id": [
+        "bhta46dg21fjt"
+      ],
+      "x-request-id": [
+        "4fbb659c-a25b-4cc3-ab1b-94da44ff009d"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "931"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Mon, 08 Feb 2021 04:30:53 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "ETF",
+            "quoteSourceName": "Delayed Quote",
+            "triggerable": true,
+            "currency": "USD",
+            "exchange": "NMS",
+            "shortName": "Invesco QQQ Trust, Series 1",
+            "longName": "Invesco QQQ Trust",
+            "messageBoardId": "finmb_8108558",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "sharesOutstanding": 393100000,
+            "bookValue": 188.775,
+            "fiftyDayAverage": 317.6297,
+            "fiftyDayAverageChange": 13.730286,
+            "fiftyDayAverageChangePercent": 0.043227337,
+            "twoHundredDayAverage": 291.22202,
+            "twoHundredDayAverageChange": 40.13797,
+            "twoHundredDayAverageChangePercent": 0.13782601,
+            "marketCap": 130257608704,
+            "priceToBook": 1.7553172,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "firstTradeDateMilliseconds": 921076200000,
+            "priceHint": 2,
+            "marketState": "CLOSED",
+            "postMarketChangePercent": 0.060361,
+            "postMarketTime": 1612573184,
+            "postMarketPrice": 331.56,
+            "postMarketChange": 0.2000122,
+            "regularMarketChange": 1.1199951,
+            "regularMarketChangePercent": 0.3391458,
+            "regularMarketTime": 1612558801,
+            "regularMarketPrice": 331.36,
+            "regularMarketDayHigh": 332.4025,
+            "regularMarketDayRange": "329.53 - 332.4025",
+            "regularMarketDayLow": 329.53,
+            "regularMarketVolume": 22731960,
+            "regularMarketPreviousClose": 330.24,
+            "bid": 331.56,
+            "ask": 331.8,
+            "bidSize": 11,
+            "askSize": 9,
+            "fullExchangeName": "NasdaqGS",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 331.22,
+            "averageDailyVolume3Month": 30559437,
+            "averageDailyVolume10Day": 33936885,
+            "fiftyTwoWeekLowChange": 166.43,
+            "fiftyTwoWeekLowChangePercent": 1.0090947,
+            "fiftyTwoWeekRange": "164.93 - 332.4025",
+            "fiftyTwoWeekHighChange": -1.042511,
+            "fiftyTwoWeekHighChangePercent": -0.0031362912,
+            "fiftyTwoWeekLow": 164.93,
+            "fiftyTwoWeekHigh": 332.4025,
+            "trailingAnnualDividendRate": 1.54,
+            "trailingPE": 85.073166,
+            "trailingAnnualDividendYield": 0.004663275,
+            "ytdReturn": 0.31,
+            "trailingThreeMonthReturns": 16.98,
+            "trailingThreeMonthNavReturns": 17.08,
+            "epsTrailingTwelveMonths": 3.895,
+            "symbol": "QQQ"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/WSKT.JK?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "bn48o9pg2nuhd"
+      ],
+      "x-yahoo-request-id": [
+        "bn48o9pg2nuhd"
+      ],
+      "x-request-id": [
+        "6e0193f9-fdc1-40f3-9e8d-bf48e7b6aa42"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "423"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 17:00:29 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": -0.0031055901,
+              "regularMarketChange": -5,
+              "regularMarketTime": 1613463295,
+              "priceHint": 2,
+              "regularMarketPrice": 1605,
+              "regularMarketDayHigh": 1660,
+              "regularMarketDayLow": 1590,
+              "regularMarketVolume": 228998200,
+              "regularMarketPreviousClose": 1610,
+              "regularMarketSource": "DELAYED",
+              "regularMarketOpen": 1625,
+              "exchange": "JKT",
+              "exchangeName": "Jakarta",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "PREPRE",
+              "quoteType": "EQUITY",
+              "symbol": "WSKT.JK",
+              "underlyingSymbol": null,
+              "shortName": "Waskita Karya (Persero) Tbk.",
+              "longName": "PT Waskita Karya (Persero) Tbk",
+              "currency": "IDR",
+              "quoteSourceName": "Delayed Quote",
+              "currencySymbol": "Rp",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 21786110459904
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

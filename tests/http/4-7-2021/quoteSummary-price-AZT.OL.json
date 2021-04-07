@@ -1,0 +1,110 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AZT.OL?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "0lj72tdg2nrre"
+      ],
+      "x-yahoo-request-id": [
+        "0lj72tdg2nrre"
+      ],
+      "x-request-id": [
+        "e9ea3a1a-8ed2-4ac4-8d38-6f4f90481f35"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "404"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:38 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": 0.011527311,
+              "regularMarketChange": 0.7999954,
+              "regularMarketTime": 1613489360,
+              "priceHint": 2,
+              "regularMarketPrice": 70.2,
+              "regularMarketDayHigh": 70.8,
+              "regularMarketDayLow": 68.4,
+              "regularMarketVolume": 286580,
+              "regularMarketPreviousClose": 69.4,
+              "regularMarketSource": "DELAYED",
+              "regularMarketOpen": 68.6,
+              "exchange": "OSL",
+              "exchangeName": "Oslo",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "POSTPOST",
+              "quoteType": "EQUITY",
+              "symbol": "AZT.OL",
+              "underlyingSymbol": null,
+              "shortName": "ARCTICZYMES TECH",
+              "longName": "ArcticZymes Technologies ASA",
+              "currency": "NOK",
+              "currencySymbol": "kr",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 3393095680
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

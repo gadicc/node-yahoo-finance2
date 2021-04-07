@@ -1,0 +1,213 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=EUR"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "e22j9c9g2srpq"
+      ],
+      "x-yahoo-request-id": [
+        "e22j9c9g2srpq"
+      ],
+      "x-request-id": [
+        "21128504-1679-490d-81eb-5989adec0d27"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1402"
+      ],
+      "x-envoy-upstream-service-time": [
+        "43"
+      ],
+      "date": [
+        "Thu, 18 Feb 2021 13:44:25 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "240"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "warning": [
+        "110 Response is stale"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 14,
+      "quotes": [
+        {
+          "exchange": "CCY",
+          "shortname": "EUR/USD",
+          "quoteType": "CURRENCY",
+          "symbol": "EURUSD=X",
+          "index": "quotes",
+          "score": 68290,
+          "typeDisp": "Currency",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "CCC",
+          "shortname": "Ethereum EUR",
+          "quoteType": "CRYPTOCURRENCY",
+          "symbol": "ETH-EUR",
+          "index": "quotes",
+          "score": 36608,
+          "typeDisp": "Cryptocurrency",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "CCY",
+          "shortname": "USD/EUR",
+          "quoteType": "CURRENCY",
+          "symbol": "EUR=X",
+          "index": "quotes",
+          "score": 33355,
+          "typeDisp": "Currency",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "CCY",
+          "shortname": "EUR/GBP",
+          "quoteType": "CURRENCY",
+          "symbol": "EURGBP=X",
+          "index": "quotes",
+          "score": 31541,
+          "typeDisp": "Currency",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "CCC",
+          "shortname": "Bitcoin EUR",
+          "quoteType": "CRYPTOCURRENCY",
+          "symbol": "BTC-EUR",
+          "index": "quotes",
+          "score": 31220,
+          "typeDisp": "Cryptocurrency",
+          "isYahooFinance": true
+        },
+        {
+          "index": "eee223d08c2e3195820cf9864460c548",
+          "name": "European Bank for Reconstruction and Development",
+          "permalink": "european-bank-for-reconstruction-and-development-ebrd",
+          "isYahooFinance": false
+        },
+        {
+          "index": "2ec8f6c0aa664336a86f0aae7b0472c2",
+          "name": "European Commission",
+          "permalink": "european-commission",
+          "isYahooFinance": false
+        }
+      ],
+      "news": [
+        {
+          "uuid": "e0ab8ca0-435b-309a-adfa-cf70179793f1",
+          "title": "EUR/USD Daily Forecast – Test Of Support At 1.2040",
+          "publisher": "FX Empire",
+          "link": "https://finance.yahoo.com/news/eur-usd-daily-forecast-test-080848466.html",
+          "providerPublishTime": 1613635728,
+          "type": "STORY"
+        },
+        {
+          "uuid": "8b39ec86-7d7d-3b2b-bc31-4255ff2186df",
+          "title": "ROBIT PLC FINANCIAL STATEMENTS RELEASE 1 JANUARY–31 DECEMBER 2020: NET SALES, PROFITABILITY AND CASH FLOW IMPROVED DESPITE EXCEPTIONAL TIMES",
+          "publisher": "GlobeNewswire",
+          "link": "https://finance.yahoo.com/news/robit-plc-financial-statements-release-090000080.html",
+          "providerPublishTime": 1613638800,
+          "type": "STORY"
+        },
+        {
+          "uuid": "17b3ddb0-f227-37ef-97e4-194cb73df142",
+          "title": "Taaleri Plc Financial Statements Bulletin 2020: Strong second half of year – operating profit increased by 46 per cent to EUR 14.8 million",
+          "publisher": "GlobeNewswire",
+          "link": "https://finance.yahoo.com/news/taaleri-plc-financial-statements-bulletin-061500606.html",
+          "providerPublishTime": 1613628900,
+          "type": "STORY"
+        },
+        {
+          "uuid": "787ad0bb-c6cb-364e-acf6-a47face2738b",
+          "title": "Proposed Capital Raising by way of a Placing of New Ordinary Shares and Update on Early Positive Market Reception to US Launch of BARHEMSYS®",
+          "publisher": "GlobeNewswire",
+          "link": "https://finance.yahoo.com/news/proposed-capital-raising-way-placing-121500244.html",
+          "providerPublishTime": 1613650500,
+          "type": "STORY"
+        }
+      ],
+      "nav": [],
+      "lists": [
+        {
+          "index": "3dfde79b-6160-4da3-a042-d1a86fd5eff9",
+          "id": "3dfde79b-6160-4da3-a042-d1a86fd5eff9",
+          "title": "Day Losers Europe",
+          "canonicalName": "DAY_LOSERS_EUROPE",
+          "score": 1,
+          "type": "PREDEFINED_SCREENER"
+        },
+        {
+          "index": "43463575-8b42-4762-9d7e-705588a25dcd",
+          "id": "43463575-8b42-4762-9d7e-705588a25dcd",
+          "title": "Day Gainers Europe",
+          "canonicalName": "DAY_GAINERS_EUROPE",
+          "score": 1,
+          "type": "PREDEFINED_SCREENER"
+        },
+        {
+          "index": "c46c7edd-c97f-4929-9ade-77ec21b86c18",
+          "id": "c46c7edd-c97f-4929-9ade-77ec21b86c18",
+          "title": "Most Actives Europe",
+          "canonicalName": "MOST_ACTIVES_EUROPE",
+          "score": 1,
+          "type": "PREDEFINED_SCREENER"
+        }
+      ],
+      "researchReports": [],
+      "totalTime": 42,
+      "timeTakenForQuotes": 421,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0
+    }
+  }
+}

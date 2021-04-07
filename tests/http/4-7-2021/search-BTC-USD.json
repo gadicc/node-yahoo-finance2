@@ -1,0 +1,183 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=BTC-USD"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "dr19b4pg3h9vg"
+      ],
+      "x-yahoo-request-id": [
+        "dr19b4pg3h9vg"
+      ],
+      "x-request-id": [
+        "3f3e7b0c-835e-4a5f-b308-0614597c60d9"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "879"
+      ],
+      "x-envoy-upstream-service-time": [
+        "22"
+      ],
+      "date": [
+        "Fri, 26 Feb 2021 07:49:04 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 10,
+      "quotes": [
+        {
+          "exchange": "CCC",
+          "shortname": "Bitcoin USD",
+          "quoteType": "CRYPTOCURRENCY",
+          "symbol": "BTC-USD",
+          "index": "quotes",
+          "score": 111223200,
+          "typeDisp": "Cryptocurrency",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NYB",
+          "shortname": "Bakkt BTC (USD) Monthly Future ",
+          "quoteType": "FUTURE",
+          "symbol": "BTM=F",
+          "index": "quotes",
+          "score": 30330,
+          "typeDisp": "Future",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NYB",
+          "shortname": "Bakkt BTC (USD) Monthly Future ",
+          "quoteType": "FUTURE",
+          "symbol": "BTMM21.NYB",
+          "index": "quotes",
+          "score": 20007,
+          "typeDisp": "Future",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NYB",
+          "shortname": "Bakkt BTC (USD) Monthly Future ",
+          "quoteType": "FUTURE",
+          "symbol": "BTMX21.NYB",
+          "index": "quotes",
+          "score": 20002,
+          "typeDisp": "Future",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NYB",
+          "shortname": "Bakkt BTC (USD) Monthly Future ",
+          "quoteType": "FUTURE",
+          "symbol": "BTMN21.NYB",
+          "index": "quotes",
+          "score": 20002,
+          "typeDisp": "Future",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NYB",
+          "shortname": "Bakkt BTC (USD) Monthly Future ",
+          "quoteType": "FUTURE",
+          "symbol": "BTMQ21.NYB",
+          "index": "quotes",
+          "score": 20001,
+          "typeDisp": "Future",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [
+        {
+          "uuid": "08e91b71-a00f-3faa-8f3f-8eba1d96b9ca",
+          "title": "BTC/USD Holds above 26,385 in Downward Triangle, ETH/USD Consolidates above 700",
+          "publisher": "FX Empire",
+          "link": "https://finance.yahoo.com/news/btc-usd-holds-above-26-084945536.html",
+          "providerPublishTime": 1609318185,
+          "type": "STORY"
+        },
+        {
+          "uuid": "1f3a2fc5-6d66-3a94-8093-b05146c6ecbc",
+          "title": "18th February: BTC/USD Declines below 52,000, ETH/USD Comes Closer to 2,000",
+          "publisher": "FX Empire",
+          "link": "https://finance.yahoo.com/news/18th-february-btc-usd-declines-095453977.html",
+          "providerPublishTime": 1613728493,
+          "type": "STORY"
+        },
+        {
+          "uuid": "a7fa115f-e675-399d-8de5-ce9628dc8dd3",
+          "title": "BTC/USD Analysis: Yet Another Symmetrical Triangle",
+          "publisher": "FX Empire",
+          "link": "https://finance.yahoo.com/news/btc-usd-analysis-yet-another-121354441.html",
+          "providerPublishTime": 1612959234,
+          "type": "STORY"
+        },
+        {
+          "uuid": "7566604f-92e7-3366-bd65-8e7d7149fbf0",
+          "title": "Bitcoin Is Going to Crash. The Big Question Is When",
+          "publisher": "InvestorPlace",
+          "link": "https://finance.yahoo.com/news/bitcoin-going-crash-big-173013673.html",
+          "providerPublishTime": 1613410213,
+          "type": "STORY"
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "totalTime": 21,
+      "timeTakenForQuotes": 415,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0
+    }
+  }
+}

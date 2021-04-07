@@ -1,0 +1,116 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SIX?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "5joafp1g2nuhd"
+      ],
+      "x-yahoo-request-id": [
+        "5joafp1g2nuhd"
+      ],
+      "x-request-id": [
+        "948f8767-7034-420b-95fe-1fdb32c2ce07"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "473"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 17:00:29 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "preMarketChangePercent": 0.00050205,
+              "preMarketChange": 0.0199966,
+              "preMarketTime": 1613485603,
+              "preMarketPrice": 39.85,
+              "preMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": 0.0052723843,
+              "regularMarketChange": 0.20999908,
+              "regularMarketTime": 1613494813,
+              "priceHint": 2,
+              "regularMarketPrice": 40.04,
+              "regularMarketDayHigh": 40.775,
+              "regularMarketDayLow": 39.92,
+              "regularMarketVolume": 405501,
+              "regularMarketPreviousClose": 39.83,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 39.89,
+              "exchange": "NYQ",
+              "exchangeName": "NYSE",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "EQUITY",
+              "symbol": "SIX",
+              "underlyingSymbol": null,
+              "shortName": "Six Flags Entertainment Corpora",
+              "longName": "Six Flags Entertainment Corporation",
+              "currency": "USD",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 3402483200
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

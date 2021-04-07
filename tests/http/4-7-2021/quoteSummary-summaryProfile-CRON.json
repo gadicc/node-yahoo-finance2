@@ -1,0 +1,97 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CRON?formatted=false&modules=summaryProfile"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "fmj6ghhg2vsf0"
+      ],
+      "x-yahoo-request-id": [
+        "fmj6ghhg2vsf0"
+      ],
+      "x-request-id": [
+        "df615b22-13e3-4453-9490-037cb74c59cf"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "646"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:14:08 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "720 King Street West",
+              "address2": "Suite 320",
+              "city": "Toronto",
+              "state": "ON",
+              "zip": "M5V 2T3",
+              "country": "Canada",
+              "phone": "416-504-0004",
+              "website": "http://www.thecronosgroup.com",
+              "industry": "Drug Manufacturers—Specialty & Generic",
+              "sector": "Healthcare",
+              "longBusinessSummary": "Cronos Group Inc. operates as a cannabinoid company in the United States and internationally. It manufactures, markets, and distributes hemp-derived supplements and cosmetic products through ecommerce, retail, and hospitality partner channels. The company is also involved in the cultivation, manufacture, and marketing of cannabis and cannabis-derived products for the medical and adult-use markets. Its brand portfolio includes PEACE NATURALS, a global wellness platform; adult-use brands comprise COVE and Spinach; and hemp-derived CBD brands consists of Lord Jones and PEACE+. Cronos Group Inc. is based in Toronto, Canada.",
+              "fullTimeEmployees": 631,
+              "companyOfficers": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

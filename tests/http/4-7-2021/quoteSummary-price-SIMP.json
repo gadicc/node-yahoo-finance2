@@ -1,0 +1,111 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SIMP?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "6r5sjktg6fngs"
+      ],
+      "x-yahoo-request-id": [
+        "6r5sjktg6fngs"
+      ],
+      "x-request-id": [
+        "672cc83d-4bd5-4f9e-b2aa-8b7732ca7177"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "380"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sat, 03 Apr 2021 03:16:44 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": 0,
+              "regularMarketChange": 0,
+              "regularMarketTime": 1617304655,
+              "priceHint": 4,
+              "regularMarketPrice": 4.5,
+              "regularMarketDayHigh": 4.525,
+              "regularMarketDayLow": 4.21,
+              "regularMarketVolume": 32110,
+              "regularMarketPreviousClose": 4.5,
+              "regularMarketSource": "DELAYED",
+              "regularMarketOpen": 4.49,
+              "exchange": "PNK",
+              "exchangeName": "Other OTC",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "CLOSED",
+              "quoteType": "EQUITY",
+              "symbol": "SIMP",
+              "underlyingSymbol": null,
+              "shortName": "SIMPLY INC",
+              "longName": "Simply, Inc.",
+              "currency": "USD",
+              "quoteSourceName": "Delayed Quote",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 49540500
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

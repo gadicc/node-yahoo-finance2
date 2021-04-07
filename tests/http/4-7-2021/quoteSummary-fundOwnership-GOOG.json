@@ -1,0 +1,306 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/GOOG?formatted=false&modules=fundOwnership"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "95r4vahg2l3vc"
+      ],
+      "x-yahoo-request-id": [
+        "95r4vahg2l3vc"
+      ],
+      "x-request-id": [
+        "bcb1535c-3b07-4487-954f-394b5a807ab0"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "829"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Mon, 15 Feb 2021 15:14:51 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Vanguard Total Stock Market Index Fund",
+                  "pctHeld": {
+                    "raw": 0.024300002,
+                    "fmt": "2.43%"
+                  },
+                  "position": {
+                    "raw": 7952284,
+                    "fmt": "7.95M",
+                    "longFmt": "7,952,284"
+                  },
+                  "value": {
+                    "raw": 11686676566,
+                    "fmt": "11.69B",
+                    "longFmt": "11,686,676,566"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Vanguard 500 Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0184,
+                    "fmt": "1.84%"
+                  },
+                  "position": {
+                    "raw": 6023009,
+                    "fmt": "6.02M",
+                    "longFmt": "6,023,009"
+                  },
+                  "value": {
+                    "raw": 8851414026,
+                    "fmt": "8.85B",
+                    "longFmt": "8,851,414,026"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "SPDR S&P 500 ETF Trust",
+                  "pctHeld": {
+                    "raw": 0.0093,
+                    "fmt": "0.93%"
+                  },
+                  "position": {
+                    "raw": 3047646,
+                    "fmt": "3.05M",
+                    "longFmt": "3,047,646"
+                  },
+                  "value": {
+                    "raw": 5339110074,
+                    "fmt": "5.34B",
+                    "longFmt": "5,339,110,074"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Growth Fund Of America Inc",
+                  "pctHeld": {
+                    "raw": 0.0093,
+                    "fmt": "0.93%"
+                  },
+                  "position": {
+                    "raw": 3033508,
+                    "fmt": "3.03M",
+                    "longFmt": "3,033,508"
+                  },
+                  "value": {
+                    "raw": 5314341995,
+                    "fmt": "5.31B",
+                    "longFmt": "5,314,341,995"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Price (T.Rowe) Blue Chip Growth Fund Inc.",
+                  "pctHeld": {
+                    "raw": 0.0087,
+                    "fmt": "0.87%"
+                  },
+                  "position": {
+                    "raw": 2847943,
+                    "fmt": "2.85M",
+                    "longFmt": "2,847,943"
+                  },
+                  "value": {
+                    "raw": 4989254382,
+                    "fmt": "4.99B",
+                    "longFmt": "4,989,254,382"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Invesco ETF Tr-Invesco QQQ Tr, Series 1 ETF",
+                  "pctHeld": {
+                    "raw": 0.0083,
+                    "fmt": "0.83%"
+                  },
+                  "position": {
+                    "raw": 2723821,
+                    "fmt": "2.72M",
+                    "longFmt": "2,723,821"
+                  },
+                  "value": {
+                    "raw": 4771807533,
+                    "fmt": "4.77B",
+                    "longFmt": "4,771,807,533"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Fidelity 500 Index Fund",
+                  "pctHeld": {
+                    "raw": 0.008,
+                    "fmt": "0.80%"
+                  },
+                  "position": {
+                    "raw": 2627383,
+                    "fmt": "2.63M",
+                    "longFmt": "2,627,383"
+                  },
+                  "value": {
+                    "raw": 4602859730,
+                    "fmt": "4.6B",
+                    "longFmt": "4,602,859,730"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Vanguard Institutional Index Fund-Institutional Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0077,
+                    "fmt": "0.77%"
+                  },
+                  "position": {
+                    "raw": 2519700,
+                    "fmt": "2.52M",
+                    "longFmt": "2,519,700"
+                  },
+                  "value": {
+                    "raw": 3702951120,
+                    "fmt": "3.7B",
+                    "longFmt": "3,702,951,120"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Vanguard Growth Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0069,
+                    "fmt": "0.69%"
+                  },
+                  "position": {
+                    "raw": 2246670,
+                    "fmt": "2.25M",
+                    "longFmt": "2,246,670"
+                  },
+                  "value": {
+                    "raw": 3301706232,
+                    "fmt": "3.3B",
+                    "longFmt": "3,301,706,232"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "iShares Core S&P 500 ETF",
+                  "pctHeld": {
+                    "raw": 0.0067000003,
+                    "fmt": "0.67%"
+                  },
+                  "position": {
+                    "raw": 2184922,
+                    "fmt": "2.18M",
+                    "longFmt": "2,184,922"
+                  },
+                  "value": {
+                    "raw": 3827721153,
+                    "fmt": "3.83B",
+                    "longFmt": "3,827,721,153"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

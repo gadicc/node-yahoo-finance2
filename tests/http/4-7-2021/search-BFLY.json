@@ -1,0 +1,179 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=BFLY"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "f885pe9g2qdt1"
+      ],
+      "x-yahoo-request-id": [
+        "f885pe9g2qdt1"
+      ],
+      "x-request-id": [
+        "fef6eb6a-3353-4574-99f9-e36caba80bba"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "956"
+      ],
+      "x-envoy-upstream-service-time": [
+        "24"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 15:34:57 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "4"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 10,
+      "quotes": [
+        {
+          "exchange": "NYQ",
+          "quoteType": "EQUITY",
+          "symbol": "BFLY",
+          "index": "quotes",
+          "score": 6615100,
+          "typeDisp": "Equity",
+          "longname": "Butterfly Network, Inc.",
+          "isYahooFinance": true,
+          "newListingDate": "2021-02-16"
+        },
+        {
+          "exchange": "OPR",
+          "quoteType": "OPTION",
+          "symbol": "BFLY210319P00025000",
+          "index": "quotes",
+          "score": 20890,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NYQ",
+          "quoteType": "EQUITY",
+          "symbol": "BFLY-WT",
+          "index": "quotes",
+          "score": 20866,
+          "typeDisp": "Equity",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "quoteType": "OPTION",
+          "symbol": "BFLY210319P00015000",
+          "index": "quotes",
+          "score": 20243,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "quoteType": "OPTION",
+          "symbol": "BFLY210716P00035000",
+          "index": "quotes",
+          "score": 20039,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "quoteType": "OPTION",
+          "symbol": "BFLY210219P00012500",
+          "index": "quotes",
+          "score": 20023,
+          "typeDisp": "Option",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [
+        {
+          "uuid": "72c5cf01-8a4d-3a4c-b14b-2de4c12217c6",
+          "title": "Butterfly Network Goes Public, Taking Portable Ultrasound Device Global",
+          "publisher": "IPO-Edge.com",
+          "link": "https://finance.yahoo.com/news/butterfly-network-goes-public-taking-110022864.html",
+          "providerPublishTime": 1613473222,
+          "type": "STORY"
+        },
+        {
+          "uuid": "6d1a2e8d-dc02-3e4c-abe4-b4816c8a7ea9",
+          "title": "Butterfly Network, a Global Leader in Democratizing Medical Imaging, Closes Business Combination and Will Begin Trading on the New York Stock Exchange",
+          "publisher": "PR Newswire",
+          "link": "https://finance.yahoo.com/news/butterfly-network-global-leader-democratizing-110000819.html",
+          "providerPublishTime": 1613473200,
+          "type": "STORY"
+        },
+        {
+          "uuid": "aee165c1-9b33-3afe-bf7c-ec0226f7ec4b",
+          "title": "Butterfly Network, a global leader in democratizing medical imaging, to be listed on NYSE through a merger with Longview Acquisition Corp.",
+          "publisher": "PR Newswire",
+          "link": "https://finance.yahoo.com/news/butterfly-network-global-leader-democratizing-120000797.html",
+          "providerPublishTime": 1605873600,
+          "type": "STORY"
+        },
+        {
+          "uuid": "d1980323-e654-3b3b-b9ff-280876c0f2d5",
+          "title": "SHAREHOLDER ALERT: WeissLaw LLP Investigates Longview Acquisition Corp.",
+          "publisher": "PR Newswire",
+          "link": "https://finance.yahoo.com/news/shareholder-alert-weisslaw-llp-investigates-011300059.html",
+          "providerPublishTime": 1605921180,
+          "type": "STORY"
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "totalTime": 23,
+      "timeTakenForQuotes": 418,
+      "timeTakenForNews": 600,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0
+    }
+  }
+}

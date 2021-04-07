@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/download/EURUSD=X?interval=1d&events=history&includeAdjustedClose=true&period1=1577836800&period2=1578009600"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-disposition": [
+        "attachment; filename=EURUSD=X.csv"
+      ],
+      "content-type": [
+        "text/csv"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "cache-control": [
+        "private, max-age=10, stale-while-revalidate=20"
+      ],
+      "y-rid": [
+        "cce0rbtg5rbok"
+      ],
+      "x-yahoo-request-id": [
+        "cce0rbtg5rbok"
+      ],
+      "x-request-id": [
+        "4cf52ca9-d0a1-44fd-b7fc-d675badc3fba"
+      ],
+      "content-length": [
+        "215"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 26 Mar 2021 09:53:24 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-chart-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "Date,Open,High,Low,Close,Adj Close,Volume\n2020-01-01,1.122083,1.122838,1.115947,1.122083,1.122083,0\n2020-01-02,1.121894,1.122712,1.116682,1.122083,1.122083,0\n2020-01-03,1.117081,1.118068,1.112570,1.117144,1.117144,0"
+  }
+}

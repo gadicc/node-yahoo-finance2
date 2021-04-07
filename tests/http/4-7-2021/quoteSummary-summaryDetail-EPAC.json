@@ -1,0 +1,120 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EPAC?formatted=false&modules=summaryDetail"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "b9hskclg2vsev"
+      ],
+      "x-yahoo-request-id": [
+        "b9hskclg2vsev"
+      ],
+      "x-request-id": [
+        "4bb9afb3-ac94-41f4-9ddc-63d087d885b0"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "465"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:14:07 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 22.66,
+              "open": 22.79,
+              "dayLow": 22.77,
+              "dayHigh": 23.3,
+              "regularMarketPreviousClose": 22.66,
+              "regularMarketOpen": 22.79,
+              "regularMarketDayLow": 22.77,
+              "regularMarketDayHigh": 23.3,
+              "dividendRate": 0.04,
+              "dividendYield": 0.0018000001,
+              "exDividendDate": 1601510400,
+              "payoutRatio": 0.6667,
+              "fiveYearAvgDividendYield": 0.17,
+              "beta": 1.450373,
+              "volume": 62262,
+              "regularMarketVolume": 62262,
+              "averageVolume": 299491,
+              "averageVolume10days": 263085,
+              "averageDailyVolume10Day": 263085,
+              "bid": 23.21,
+              "ask": 23.24,
+              "bidSize": 800,
+              "askSize": 800,
+              "marketCap": 1394996608,
+              "fiftyTwoWeekLow": 13.28,
+              "fiftyTwoWeekHigh": 25.6,
+              "priceToSalesTrailing12Months": 2.9932466,
+              "fiftyDayAverage": 22.127274,
+              "twoHundredDayAverage": 21.097826,
+              "currency": "USD",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "algorithm": null,
+              "tradeable": false
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

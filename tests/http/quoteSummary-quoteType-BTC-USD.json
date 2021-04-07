@@ -7,50 +7,41 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json"
+      "x-yahoo-request-id": [
+        "2bks9otg6s99c"
       ],
       "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-type": [
+        "application/json;charset=utf-8"
       ],
       "vary": [
-        "Origin,Accept-Encoding"
-      ],
-      "y-rid": [
-        "6i4taq5g3ha00"
-      ],
-      "x-yahoo-request-id": [
-        "6i4taq5g3ha00"
-      ],
-      "x-request-id": [
-        "0a3fd23c-66ba-435a-a43c-896d254419ef"
+        "Origin"
       ],
       "content-length": [
-        "407"
-      ],
-      "x-envoy-upstream-service-time": [
-        "1"
+        "284"
       ],
       "date": [
-        "Fri, 26 Feb 2021 07:49:20 GMT"
-      ],
-      "server": [
-        "ATS"
-      ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+        "Wed, 07 Apr 2021 21:33:32 GMT"
       ],
       "age": [
         "0"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "server": [
+        "ATS"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -78,10 +69,9 @@
               "longName": null,
               "firstTradeDateEpochUtc": 1410908400,
               "timeZoneFullName": "Europe/London",
-              "timeZoneShortName": "GMT",
+              "timeZoneShortName": "BST",
               "uuid": "74397779-1589-3270-8c45-b7f1a7345b3a",
-              "messageBoardId": "finmb_BTC_CCC",
-              "gmtOffSetMilliseconds": 0,
+              "gmtOffSetMilliseconds": 3600000,
               "maxAge": 1
             }
           }

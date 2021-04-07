@@ -1,0 +1,135 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=BFLY"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "a8h552lg2pvia"
+      ],
+      "x-yahoo-request-id": [
+        "a8h552lg2pvia"
+      ],
+      "x-request-id": [
+        "8a4b7cd1-eaec-4683-b4db-3fdbd861e257"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "692"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 17 Feb 2021 11:30:18 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-sg3.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {"language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "regularMarketChange": -0.549999,
+            "regularMarketChangePercent": -2.38611,
+            "regularMarketTime": 1613509202,
+            "regularMarketPrice": 22.5,
+            "regularMarketDayHigh": 24.8,
+            "regularMarketDayRange": "21.9501 - 24.8",
+            "regularMarketDayLow": 21.9501,
+            "regularMarketVolume": 2393331,
+            "regularMarketPreviousClose": 23.05,
+            "bid": 23.3,
+            "ask": 0.0,
+            "bidSize": 8,
+            "askSize": 8,
+            "fullExchangeName": "NYSE",
+            "regularMarketOpen": 24.8,
+            "averageDailyVolume3Month": 2347300,
+            "averageDailyVolume10Day": 2347300,
+            "fiftyTwoWeekLowChange": 0.54999924,
+            "fiftyTwoWeekLowChangePercent": 0.025056912,
+            "fiftyTwoWeekRange": "21.95 - 24.8",
+            "fiftyTwoWeekHighChange": -2.2999992,
+            "fiftyTwoWeekHighChangePercent": -0.09274191,
+            "fiftyTwoWeekLow": 21.95,
+            "fiftyTwoWeekHigh": 24.8,
+            "fiftyDayAverage": 22.5,
+            "fiftyDayAverageChange": 0.0,
+            "fiftyDayAverageChangePercent": 0.0,
+            "twoHundredDayAverage": 22.5,
+            "twoHundredDayAverageChange": 0.0,
+            "twoHundredDayAverageChangePercent": 0.0,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "newListingDate": "2021-02-16",
+            "firstTradeDateMilliseconds": 1594647000000,
+            "priceHint": 2,
+            "preMarketChange": 0.6499996,
+            "preMarketChangePercent": 2.8888872,
+            "preMarketTime": 1613561311,
+            "preMarketPrice": 23.15,
+            "marketState": "PRE",
+            "exchange": "NYQ",
+            "shortName": "59637",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "tradeable": false,
+            "symbol": "BFLY"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

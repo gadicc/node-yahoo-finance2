@@ -1,0 +1,94 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SPOT?formatted=false&modules=summaryProfile"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "1ddrcftg2l2jo"
+      ],
+      "x-yahoo-request-id": [
+        "1ddrcftg2l2jo"
+      ],
+      "x-request-id": [
+        "ca6739f0-39c7-4efd-93e2-6f69a85788b7"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "650"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Mon, 15 Feb 2021 14:51:35 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "42-44, avenue de la Gare",
+              "city": "Luxembourg",
+              "zip": "1610",
+              "country": "Luxembourg",
+              "website": "http://www.spotify.com",
+              "industry": "Internet Content & Information",
+              "sector": "Communication Services",
+              "longBusinessSummary": "Spotify Technology S.A., together with its subsidiaries, provides audio streaming services worldwide. It operates in two segments, Premium and Ad-Supported. The Premium segment offers unlimited online and offline streaming access to its catalog of music and podcasts without commercial breaks to its subscribers. The Ad-Supported segment provides on-demand online access to its catalog of music and unlimited online access to the catalog of podcasts to its subscribers with no subscription fees. The company also offers sales, marketing, contract research and development, and customer support services. As of December 31, 2020, its platform included 345 million monthly active users and 155 million premium subscribers in 93 countries and territories. The company was founded in 2006 and is based in Luxembourg, Luxembourg.",
+              "fullTimeEmployees": 5584,
+              "companyOfficers": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

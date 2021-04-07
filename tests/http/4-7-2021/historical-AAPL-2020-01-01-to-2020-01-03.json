@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/download/AAPL?interval=1d&events=history&includeAdjustedClose=true&period1=1577836800&period2=1578009600"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-disposition": [
+        "attachment; filename=AAPL.csv"
+      ],
+      "content-type": [
+        "text/csv"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "cache-control": [
+        "private, max-age=10, stale-while-revalidate=20"
+      ],
+      "y-rid": [
+        "abu99fhg1n8ss"
+      ],
+      "x-yahoo-request-id": [
+        "abu99fhg1n8ss"
+      ],
+      "x-request-id": [
+        "64042c50-4c6c-4bf0-9358-db52dac654b0"
+      ],
+      "content-length": [
+        "112"
+      ],
+      "x-envoy-upstream-service-time": [
+        "39"
+      ],
+      "date": [
+        "Thu, 04 Feb 2021 07:34:52 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-chart-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "Date,Open,High,Low,Close,Adj Close,Volume\n2020-01-02,74.059998,75.150002,73.797501,75.087502,74.444603,135480400"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=WSKT.JK"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "fk2fpb1g2nuh6"
+      ],
+      "x-yahoo-request-id": [
+        "fk2fpb1g2nuh6"
+      ],
+      "x-request-id": [
+        "1244ba9f-7920-4a31-86d8-1ba10e39020e"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "307"
+      ],
+      "x-envoy-upstream-service-time": [
+        "30"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 17:00:22 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 1,
+      "quotes": [
+        {
+          "exchange": "JKT",
+          "shortname": "Waskita Karya (Persero) Tbk.",
+          "quoteType": "EQUITY",
+          "symbol": "WSKT.JK",
+          "index": "quotes",
+          "score": 2110000,
+          "typeDisp": "Equity",
+          "longname": "PT Waskita Karya (Persero) Tbk",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "totalTime": 28,
+      "timeTakenForQuotes": 419,
+      "timeTakenForNews": 600,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0
+    }
+  }
+}

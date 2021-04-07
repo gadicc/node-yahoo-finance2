@@ -1,0 +1,96 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SIX?formatted=false&modules=summaryProfile"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "3v5kdb5g2nuhe"
+      ],
+      "x-yahoo-request-id": [
+        "3v5kdb5g2nuhe"
+      ],
+      "x-request-id": [
+        "1d41d369-8409-47c8-baed-10f85b8c5e80"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "537"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 17:00:30 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "924 Avenue J East",
+              "city": "Grand Prairie",
+              "state": "TX",
+              "zip": "75050",
+              "country": "United States",
+              "phone": "972-595-5000",
+              "website": "http://www.sixflags.com",
+              "industry": "Leisure",
+              "sector": "Consumer Cyclical",
+              "longBusinessSummary": "Six Flags Entertainment Corporation owns and operates regional theme and waterparks under the Six Flags name. The company's parks offer various thrill rides, water attractions, themed areas, concerts and shows, restaurants, game venues, and retail outlets. It owns and operates 26 parks in the United States, Mexico, and Canada. The company was formerly known as Six Flags, Inc. and changed its name to Six Flags Entertainment Corporation in April 2010. Six Flags Entertainment Corporation was founded in 1961 and is based in Grand Prairie, Texas.",
+              "fullTimeEmployees": 2450,
+              "companyOfficers": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

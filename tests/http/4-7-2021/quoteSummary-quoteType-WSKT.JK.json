@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/WSKT.JK?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "c726g6lg2nuhd"
+      ],
+      "x-yahoo-request-id": [
+        "c726g6lg2nuhd"
+      ],
+      "x-request-id": [
+        "ec713ca5-98a1-4dc8-a7ff-cb86c14f7453"
+      ],
+      "content-length": [
+        "451"
+      ],
+      "x-envoy-upstream-service-time": [
+        "6"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 17:00:29 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "JKT",
+              "quoteType": "EQUITY",
+              "symbol": "WSKT.JK",
+              "underlyingSymbol": "WSKT.JK",
+              "shortName": "Waskita Karya (Persero) Tbk.",
+              "longName": "PT Waskita Karya (Persero) Tbk",
+              "firstTradeDateEpochUtc": 1355882400,
+              "timeZoneFullName": "Asia/Jakarta",
+              "timeZoneShortName": "WIB",
+              "uuid": "e93eb405-3e83-3735-8abd-6a04213faba8",
+              "messageBoardId": "finmb_32989878",
+              "gmtOffSetMilliseconds": 25200000,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

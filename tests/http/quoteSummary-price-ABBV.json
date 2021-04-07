@@ -7,53 +7,41 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json"
+      "x-yahoo-request-id": [
+        "6p5k1gpg6s996"
       ],
       "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
-      ],
-      "vary": [
-        "Origin,Accept-Encoding"
-      ],
-      "y-rid": [
-        "45pjen5g2vseq"
-      ],
-      "x-yahoo-request-id": [
-        "45pjen5g2vseq"
-      ],
-      "x-request-id": [
-        "4c654625-604c-4367-a32a-ee4c2383ed0f"
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
       ],
       "content-encoding": [
         "gzip"
       ],
-      "content-length": [
-        "455"
+      "content-type": [
+        "application/json;charset=utf-8"
       ],
-      "x-envoy-upstream-service-time": [
-        "3"
+      "vary": [
+        "Origin"
+      ],
+      "content-length": [
+        "498"
       ],
       "date": [
-        "Fri, 19 Feb 2021 17:14:01 GMT"
+        "Wed, 07 Apr 2021 21:33:26 GMT"
+      ],
+      "age": [
+        "0"
       ],
       "server": [
         "ATS"
       ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
-      ],
-      "age": [
-        "1"
-      ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -74,26 +62,31 @@
           {
             "price": {
               "maxAge": 1,
-              "preMarketChangePercent": 0.00226292,
-              "preMarketChange": 0.240005,
-              "preMarketTime": 1613744999,
-              "preMarketPrice": 106.3,
+              "preMarketChangePercent": 0.00066426,
+              "preMarketChange": 0.0699997,
+              "preMarketTime": 1617802199,
+              "preMarketPrice": 105.45,
               "preMarketSource": "FREE_REALTIME",
-              "regularMarketChangePercent": -0.0046200063,
-              "regularMarketChange": -0.48999786,
-              "regularMarketTime": 1613754838,
+              "postMarketChangePercent": 0.0003327028,
+              "postMarketChange": 0.035003662,
+              "postMarketTime": 1617831172,
+              "postMarketPrice": 105.245,
+              "postMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": -0.0016131919,
+              "regularMarketChange": -0.16999817,
+              "regularMarketTime": 1617825735,
               "priceHint": 2,
-              "regularMarketPrice": 105.57,
-              "regularMarketDayHigh": 106.35,
-              "regularMarketDayLow": 104.91,
-              "regularMarketVolume": 2383590,
-              "regularMarketPreviousClose": 106.06,
-              "regularMarketSource": "FREE_REALTIME",
-              "regularMarketOpen": 106.23,
+              "regularMarketPrice": 105.21,
+              "regularMarketDayHigh": 106.13,
+              "regularMarketDayLow": 104.17,
+              "regularMarketVolume": 3190690816,
+              "regularMarketPreviousClose": 105.38,
+              "regularMarketSource": "DELAYED",
+              "regularMarketOpen": 105.53,
               "exchange": "NYQ",
               "exchangeName": "NYSE",
               "exchangeDataDelayedBy": 0,
-              "marketState": "REGULAR",
+              "marketState": "POST",
               "quoteType": "EQUITY",
               "symbol": "ABBV",
               "underlyingSymbol": null,
@@ -103,9 +96,8 @@
               "quoteSourceName": "Nasdaq Real Time Price",
               "currencySymbol": "$",
               "fromCurrency": null,
-              "toCurrency": null,
               "lastMarket": null,
-              "marketCap": 186380664832
+              "marketCap": 185677758464
             }
           }
         ],

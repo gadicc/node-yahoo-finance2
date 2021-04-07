@@ -1,0 +1,117 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AAPL?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "8n3liptg1cri4"
+      ],
+      "x-yahoo-request-id": [
+        "8n3liptg1cri4"
+      ],
+      "x-request-id": [
+        "3677d3da-d43f-4afb-a855-eae21950dfdd"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "461"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sun, 31 Jan 2021 08:45:56 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "preMarketSource": "FREE_REALTIME",
+              "postMarketChangePercent": -0.0013641099,
+              "postMarketChange": -0.180008,
+              "postMarketTime": 1611968399,
+              "postMarketPrice": 131.78,
+              "postMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": -0.037420597,
+              "regularMarketChange": -5.1299896,
+              "regularMarketTime": 1611954002,
+              "priceHint": 2,
+              "regularMarketPrice": 131.96,
+              "regularMarketDayHigh": 136.74,
+              "regularMarketDayLow": 130.21,
+              "regularMarketVolume": 177523812,
+              "regularMarketPreviousClose": 137.09,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 135.83,
+              "exchange": "NMS",
+              "exchangeName": "NasdaqGS",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "CLOSED",
+              "quoteType": "EQUITY",
+              "symbol": "AAPL",
+              "underlyingSymbol": null,
+              "shortName": "Apple Inc.",
+              "longName": "Apple Inc.",
+              "currency": "USD",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 2215357710336
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

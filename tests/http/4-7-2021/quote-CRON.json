@@ -1,0 +1,141 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=CRON"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "1c8b3ghg2vse0"
+      ],
+      "x-yahoo-request-id": [
+        "1c8b3ghg2vse0"
+      ],
+      "x-request-id": [
+        "b29deed4-f123-4177-9128-a81019c53c14"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "850"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:36 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "esgPopulated": false,
+            "regularMarketChange": 0.42999935,
+            "regularMarketChangePercent": 3.6689363,
+            "regularMarketTime": 1613754814,
+            "regularMarketPrice": 12.15,
+            "regularMarketDayHigh": 12.38,
+            "regularMarketDayRange": "11.77 - 12.38",
+            "regularMarketDayLow": 11.77,
+            "regularMarketVolume": 2577742,
+            "regularMarketPreviousClose": 11.72,
+            "bid": 12.17,
+            "ask": 12.18,
+            "bidSize": 11,
+            "askSize": 14,
+            "fullExchangeName": "NasdaqGS",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 11.79,
+            "averageDailyVolume3Month": 6821504,
+            "averageDailyVolume10Day": 16615528,
+            "fiftyTwoWeekLowChange": 8.15,
+            "fiftyTwoWeekLowChangePercent": 2.0375,
+            "fiftyTwoWeekRange": "4.0 - 15.83",
+            "fiftyTwoWeekHighChange": -3.6800003,
+            "fiftyTwoWeekHighChangePercent": -0.23247002,
+            "fiftyTwoWeekLow": 4,
+            "fiftyTwoWeekHigh": 15.83,
+            "trailingPE": 42.33449,
+            "epsTrailingTwelveMonths": 0.287,
+            "twoHundredDayAverageChangePercent": 0.6397643,
+            "firstTradeDateMilliseconds": 1519741800000,
+            "priceHint": 2,
+            "sharesOutstanding": 356187008,
+            "bookValue": 4.967,
+            "fiftyDayAverage": 10.839394,
+            "fiftyDayAverageChange": 1.310606,
+            "fiftyDayAverageChangePercent": 0.120911375,
+            "twoHundredDayAverage": 7.409601,
+            "twoHundredDayAverageChange": 4.7403984,
+            "marketCap": 4316943360,
+            "priceToBook": 2.4461446,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "exchange": "NMS",
+            "shortName": "Cronos Group Inc. Common Share",
+            "longName": "Cronos Group Inc.",
+            "messageBoardId": "finmb_253038643",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "marketState": "REGULAR",
+            "displayName": "Cronos",
+            "symbol": "CRON"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

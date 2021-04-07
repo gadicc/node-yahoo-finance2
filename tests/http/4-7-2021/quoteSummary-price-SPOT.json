@@ -1,0 +1,117 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SPOT?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "05o7d5dg2l2jn"
+      ],
+      "x-yahoo-request-id": [
+        "05o7d5dg2l2jn"
+      ],
+      "x-request-id": [
+        "ec4edd0b-acba-4ebf-a66f-669dd85f710e"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "466"
+      ],
+      "x-envoy-upstream-service-time": [
+        "6"
+      ],
+      "date": [
+        "Mon, 15 Feb 2021 14:51:35 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "preMarketSource": "FREE_REALTIME",
+              "postMarketChangePercent": -0.000883186,
+              "postMarketChange": -0.3000183,
+              "postMarketTime": 1613177967,
+              "postMarketPrice": 339.4,
+              "postMarketSource": "DELAYED",
+              "regularMarketChangePercent": 0.0235011,
+              "regularMarketChange": 7.80002,
+              "regularMarketTime": 1613163602,
+              "priceHint": 2,
+              "regularMarketPrice": 339.7,
+              "regularMarketDayHigh": 340.43,
+              "regularMarketDayLow": 329.395,
+              "regularMarketVolume": 1119505,
+              "regularMarketPreviousClose": 331.9,
+              "regularMarketSource": "DELAYED",
+              "regularMarketOpen": 333.94,
+              "exchange": "NYQ",
+              "exchangeName": "NYSE",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "CLOSED",
+              "quoteType": "EQUITY",
+              "symbol": "SPOT",
+              "underlyingSymbol": null,
+              "shortName": "Spotify Technology S.A.",
+              "longName": "Spotify Technology S.A.",
+              "currency": "USD",
+              "quoteSourceName": "Delayed Quote",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 64615354368
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

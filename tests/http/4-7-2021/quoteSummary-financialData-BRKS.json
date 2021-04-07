@@ -1,0 +1,113 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BRKS?formatted=false&modules=financialData"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "78ls8olg2vsec"
+      ],
+      "x-yahoo-request-id": [
+        "78ls8olg2vsec"
+      ],
+      "x-request-id": [
+        "84af6cd1-e519-4d6a-b91c-d88247052d2b"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "445"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:48 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "financialData": {
+              "maxAge": 86400,
+              "currentPrice": 87.38,
+              "targetHighPrice": 111,
+              "targetLowPrice": 70,
+              "targetMeanPrice": 95.17,
+              "targetMedianPrice": 97.5,
+              "recommendationMean": 2,
+              "recommendationKey": "buy",
+              "numberOfAnalystOpinions": 6,
+              "totalCash": 308572000,
+              "totalCashPerShare": 4.218,
+              "ebitda": 167963008,
+              "totalDebt": 93333000,
+              "quickRatio": 2.295,
+              "currentRatio": 2.99,
+              "totalRevenue": 936275968,
+              "debtToEquity": 7.454,
+              "revenuePerShare": 12.683,
+              "returnOnAssets": 0.04064,
+              "returnOnEquity": 0.06543,
+              "grossProfits": 380325000,
+              "freeCashflow": -7406125,
+              "operatingCashflow": 55853000,
+              "earningsGrowth": 0.944,
+              "revenueGrowth": 0.185,
+              "grossMargins": 0.43627,
+              "ebitdaMargins": 0.17939,
+              "operatingMargins": 0.11022,
+              "profitMargins": 0.08312,
+              "financialCurrency": "USD"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
