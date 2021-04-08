@@ -1,3 +1,10 @@
+## [1.10.4](https://github.com/gadicc/node-yahoo-finance2/compare/v1.10.3...v1.10.4) (2021-04-08)
+
+
+### Bug Fixes
+
+* **validation:** add a few new properties and mark a few properties optional ([65d4486](https://github.com/gadicc/node-yahoo-finance2/commit/65d448639bf8d0f4ec17596d73dc496985791950))
+
 ## [1.10.3](https://github.com/gadicc/node-yahoo-finance2/compare/v1.10.2...v1.10.3) (2021-04-03)
 
 
