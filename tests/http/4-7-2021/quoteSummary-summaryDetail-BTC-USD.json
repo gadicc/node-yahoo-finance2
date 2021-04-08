@@ -1,0 +1,113 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BTC-USD?formatted=false&modules=summaryDetail"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "1dir329g3ha01"
+      ],
+      "x-yahoo-request-id": [
+        "1dir329g3ha01"
+      ],
+      "x-request-id": [
+        "5f3f631b-1d05-4dd0-92cd-9ede4f88fd1e"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "435"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Fri, 26 Feb 2021 07:49:21 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 46756.99,
+              "open": 46756.99,
+              "dayLow": 44555.176,
+              "dayHigh": 47677.535,
+              "regularMarketPreviousClose": 46756.99,
+              "regularMarketOpen": 46756.99,
+              "regularMarketDayLow": 44555.176,
+              "regularMarketDayHigh": 47677.535,
+              "volume": 62650314752,
+              "regularMarketVolume": 62650314752,
+              "averageVolume": 58705874184,
+              "averageVolume10days": 72812647616,
+              "averageDailyVolume10Day": 72812647616,
+              "marketCap": 830460854272,
+              "fiftyTwoWeekLow": 4106.981,
+              "fiftyTwoWeekHigh": 58330.57,
+              "fiftyDayAverage": 40623.53,
+              "twoHundredDayAverage": 21837.865,
+              "currency": "USD",
+              "fromCurrency": "BTC",
+              "toCurrency": "USD=X",
+              "lastMarket": "CoinMarketCap",
+              "volume24Hr": 62650314752,
+              "volumeAllCurrencies": 62650314752,
+              "circulatingSupply": 18638932,
+              "algorithm": null,
+              "startDate": 1367107200,
+              "tradeable": false
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

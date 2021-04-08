@@ -1,0 +1,96 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SIMP?formatted=false&modules=summaryProfile"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "fi3nvb9g6fngt"
+      ],
+      "x-yahoo-request-id": [
+        "fi3nvb9g6fngt"
+      ],
+      "x-request-id": [
+        "83d6623f-4881-4023-a9cd-39c216787482"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "729"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sat, 03 Apr 2021 03:16:45 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "2001 NW 84th Avenue",
+              "city": "Miami",
+              "state": "FL",
+              "zip": "33122",
+              "country": "United States",
+              "phone": "786 254 6709",
+              "website": "http://www.simplyinc.com",
+              "industry": "Specialty Retail",
+              "sector": "Consumer Cyclical",
+              "longBusinessSummary": "Simply, Inc. markets and distributes various mobility, computing, audio/video, and other technology products. The company operates in two segments, Simply Mac Retail Stores and Cooltech Distribution Business. As of December 31, 2019, the company had 58 retail stores in operation comprised of Simply Mac, a chain of 42 stores in 17 states in the United States, and OneClick, a chain of 16 stores with 7 located in the Dominican Republic, 6 in Argentina, and 3 in Florida. The company offers laptops, tablets, cell phones, drones, smart watches, gaming consoles, accessories, and audio devices. It distributes various consumer electronics to resellers, retailers, and small and medium-sized businesses in Latin America and the United States. The company was formerly known as Cool Holdings, Inc. and changed its name to Simply, Inc. in October 2020. Simply, Inc. is headquartered in Miami, Florida.",
+              "fullTimeEmployees": 528,
+              "companyOfficers": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

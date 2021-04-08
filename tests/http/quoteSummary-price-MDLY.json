@@ -7,53 +7,41 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json"
+      "x-yahoo-request-id": [
+        "c9ptp6hg6s996"
       ],
       "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
-      ],
-      "vary": [
-        "Origin,Accept-Encoding"
-      ],
-      "y-rid": [
-        "dj1oovdg2vsep"
-      ],
-      "x-yahoo-request-id": [
-        "dj1oovdg2vsep"
-      ],
-      "x-request-id": [
-        "0059b5a8-e58d-44f3-9dc3-376475146b3e"
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
       ],
       "content-encoding": [
         "gzip"
       ],
-      "content-length": [
-        "447"
+      "content-type": [
+        "application/json;charset=utf-8"
       ],
-      "x-envoy-upstream-service-time": [
-        "3"
+      "vary": [
+        "Origin"
+      ],
+      "content-length": [
+        "458"
       ],
       "date": [
-        "Fri, 19 Feb 2021 17:14:01 GMT"
+        "Wed, 07 Apr 2021 21:33:26 GMT"
+      ],
+      "age": [
+        "0"
       ],
       "server": [
         "ATS"
       ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
-      ],
-      "age": [
-        "3"
-      ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -74,38 +62,42 @@
           {
             "price": {
               "maxAge": 1,
-              "preMarketChangePercent": 0.0375866,
-              "preMarketChange": 0.38,
-              "preMarketTime": 1613744144,
-              "preMarketPrice": 10.49,
+              "preMarketChangePercent": -0.0329671,
+              "preMarketChange": -0.3,
+              "preMarketTime": 1617802095,
+              "preMarketPrice": 8.8,
               "preMarketSource": "FREE_REALTIME",
-              "regularMarketChangePercent": 0.029871421,
-              "regularMarketChange": 0.30200005,
-              "regularMarketTime": 1613753447,
+              "postMarketChangePercent": 0,
+              "postMarketChange": 0,
+              "postMarketTime": 1617830283,
+              "postMarketPrice": 8.75,
+              "postMarketSource": "DELAYED",
+              "regularMarketChangePercent": -0.0384616,
+              "regularMarketChange": -0.35,
+              "regularMarketTime": 1617825601,
               "priceHint": 2,
-              "regularMarketPrice": 10.412,
-              "regularMarketDayHigh": 10.42,
-              "regularMarketDayLow": 10.14,
-              "regularMarketVolume": 19267,
-              "regularMarketPreviousClose": 10.11,
+              "regularMarketPrice": 8.75,
+              "regularMarketDayHigh": 9.5,
+              "regularMarketDayLow": 8.56,
+              "regularMarketVolume": 265145,
+              "regularMarketPreviousClose": 9.1,
               "regularMarketSource": "FREE_REALTIME",
-              "regularMarketOpen": 10.22,
+              "regularMarketOpen": 9.13,
               "exchange": "NYQ",
               "exchangeName": "NYSE",
               "exchangeDataDelayedBy": 0,
-              "marketState": "REGULAR",
+              "marketState": "POST",
               "quoteType": "EQUITY",
               "symbol": "MDLY",
               "underlyingSymbol": null,
               "shortName": "Medley Management Inc.",
               "longName": "Medley Management Inc.",
               "currency": "USD",
-              "quoteSourceName": "Nasdaq Real Time Price",
+              "quoteSourceName": "Delayed Quote",
               "currencySymbol": "$",
               "fromCurrency": null,
-              "toCurrency": null,
               "lastMarket": null,
-              "marketCap": 59543104
+              "marketCap": 27228862
             }
           }
         ],

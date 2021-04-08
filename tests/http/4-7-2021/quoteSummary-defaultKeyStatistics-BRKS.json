@@ -1,0 +1,120 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BRKS?formatted=false&modules=defaultKeyStatistics"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "59o3audg2vse7"
+      ],
+      "x-yahoo-request-id": [
+        "59o3audg2vse7"
+      ],
+      "x-request-id": [
+        "c2536844-371f-4c57-ac8b-bba0ab67b934"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "575"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:43 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "defaultKeyStatistics": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "enterpriseValue": 5856073216,
+              "forwardPE": 38.493393,
+              "profitMargins": 0.08312,
+              "floatShares": 71729128,
+              "sharesOutstanding": 74220096,
+              "sharesShort": 2188456,
+              "sharesShortPriorMonth": 2341236,
+              "sharesShortPreviousMonthDate": 1609372800,
+              "dateShortInterest": 1611878400,
+              "sharesPercentSharesOut": 0.0295,
+              "heldPercentInsiders": 0.01582,
+              "heldPercentInstitutions": 1.00236,
+              "shortRatio": 1.55,
+              "shortPercentOfFloat": 0.0399,
+              "beta": 1.930096,
+              "category": null,
+              "bookValue": 17.118,
+              "priceToBook": 5.104568,
+              "fundFamily": null,
+              "legalType": null,
+              "lastFiscalYearEnd": 1601424000,
+              "nextFiscalYearEnd": 1664496000,
+              "mostRecentQuarter": 1609372800,
+              "earningsQuarterlyGrowth": 0.993,
+              "netIncomeToCommon": 78868000,
+              "trailingEps": 1.046,
+              "forwardEps": 2.27,
+              "pegRatio": 2.92,
+              "lastSplitFactor": null,
+              "enterpriseToRevenue": 6.255,
+              "enterpriseToEbitda": 34.865,
+              "52WeekChange": 1.1730819,
+              "SandP52WeekChange": 0.17263722,
+              "lastDividendValue": 0.1,
+              "lastDividendDate": 1606953600
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

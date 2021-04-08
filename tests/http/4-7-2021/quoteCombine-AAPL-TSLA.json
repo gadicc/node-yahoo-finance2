@@ -1,0 +1,224 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=AAPL%2CTSLA"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "fsqt0n5g4jn0p"
+      ],
+      "x-yahoo-request-id": [
+        "fsqt0n5g4jn0p"
+      ],
+      "x-request-id": [
+        "39c33beb-c29b-4580-872f-0ad3307b046c"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1354"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Thu, 11 Mar 2021 09:00:08 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "exchange": "NMS",
+            "shortName": "Apple Inc.",
+            "longName": "Apple Inc.",
+            "messageBoardId": "finmb_24937",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "earningsTimestamp": 1611765000,
+            "earningsTimestampStart": 1619607540,
+            "earningsTimestampEnd": 1620043200,
+            "trailingAnnualDividendRate": 0.807,
+            "trailingPE": 32.541363,
+            "trailingAnnualDividendYield": 0.0066647395,
+            "epsTrailingTwelveMonths": 3.687,
+            "epsForward": 4.68,
+            "epsCurrentYear": 4.45,
+            "priceEpsCurrentYear": 26.9618,
+            "sharesOutstanding": 16788100096,
+            "bookValue": 3.936,
+            "fiftyDayAverage": 131.1244,
+            "fiftyDayAverageChange": -11.144402,
+            "fiftyDayAverageChangePercent": -0.08499105,
+            "twoHundredDayAverage": 123.17987,
+            "twoHundredDayAverageChange": -3.1998672,
+            "twoHundredDayAverageChangePercent": -0.025977192,
+            "marketCap": 2014236246016,
+            "forwardPE": 25.636753,
+            "priceToBook": 30.482723,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "firstTradeDateMilliseconds": 345479400000,
+            "priceHint": 2,
+            "regularMarketChange": -1.1049957,
+            "regularMarketChangePercent": -0.9125786,
+            "regularMarketTime": 1615410002,
+            "regularMarketPrice": 119.98,
+            "regularMarketDayHigh": 122.17,
+            "regularMarketDayRange": "119.45 - 122.17",
+            "regularMarketDayLow": 119.45,
+            "regularMarketVolume": 109755847,
+            "regularMarketPreviousClose": 121.085,
+            "bid": 0,
+            "ask": 0,
+            "bidSize": 8,
+            "askSize": 10,
+            "fullExchangeName": "NasdaqGS",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 121.69,
+            "averageDailyVolume3Month": 111887196,
+            "averageDailyVolume10Day": 134912557,
+            "fiftyTwoWeekLowChange": 66.8275,
+            "fiftyTwoWeekLowChangePercent": 1.2572786,
+            "fiftyTwoWeekRange": "53.1525 - 145.09",
+            "fiftyTwoWeekHighChange": -25.109993,
+            "fiftyTwoWeekHighChangePercent": -0.17306495,
+            "fiftyTwoWeekLow": 53.1525,
+            "fiftyTwoWeekHigh": 145.09,
+            "dividendDate": 1613001600,
+            "marketState": "PRE",
+            "displayName": "Apple",
+            "symbol": "AAPL"
+          },
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "exchange": "NMS",
+            "shortName": "Tesla, Inc.",
+            "longName": "Tesla, Inc.",
+            "messageBoardId": "finmb_27444752",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "earningsTimestamp": 1611781200,
+            "earningsTimestampStart": 1619521140,
+            "earningsTimestampEnd": 1620043200,
+            "trailingPE": 1043.8438,
+            "epsTrailingTwelveMonths": 0.64,
+            "epsForward": 5.5,
+            "epsCurrentYear": 4.11,
+            "priceEpsCurrentYear": 162.54501,
+            "sharesOutstanding": 959854016,
+            "bookValue": 23.151,
+            "fiftyDayAverage": 776.5956,
+            "fiftyDayAverageChange": -108.53558,
+            "fiftyDayAverageChangePercent": -0.13975818,
+            "twoHundredDayAverage": 584.02264,
+            "twoHundredDayAverageChange": 84.03735,
+            "twoHundredDayAverageChangePercent": 0.143894,
+            "marketCap": 641240072192,
+            "forwardPE": 121.465454,
+            "priceToBook": 28.856638,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "firstTradeDateMilliseconds": 1277818200000,
+            "priceHint": 2,
+            "preMarketChange": 21.140015,
+            "preMarketChangePercent": 3.1643887,
+            "preMarketTime": 1615453207,
+            "preMarketPrice": 689.2,
+            "regularMarketChange": -5.5200195,
+            "regularMarketChangePercent": -0.8195046,
+            "regularMarketTime": 1615410002,
+            "regularMarketPrice": 668.06,
+            "regularMarketDayHigh": 717.85,
+            "regularMarketDayRange": "655.06 - 717.85",
+            "regularMarketDayLow": 655.06,
+            "regularMarketVolume": 60101449,
+            "regularMarketPreviousClose": 673.58,
+            "bid": 0,
+            "ask": 0,
+            "bidSize": 14,
+            "askSize": 8,
+            "fullExchangeName": "NasdaqGS",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 700.3,
+            "averageDailyVolume3Month": 40003874,
+            "averageDailyVolume10Day": 50551185,
+            "fiftyTwoWeekLowChange": 597.958,
+            "fiftyTwoWeekLowChangePercent": 8.529828,
+            "fiftyTwoWeekRange": "70.102 - 900.4",
+            "fiftyTwoWeekHighChange": -232.34003,
+            "fiftyTwoWeekHighChangePercent": -0.2580409,
+            "fiftyTwoWeekLow": 70.102,
+            "fiftyTwoWeekHigh": 900.4,
+            "marketState": "PRE",
+            "displayName": "Tesla",
+            "symbol": "TSLA"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -7,53 +7,41 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json"
+      "x-yahoo-request-id": [
+        "188ufktg6s995"
       ],
       "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
-      ],
-      "vary": [
-        "Origin,Accept-Encoding"
-      ],
-      "y-rid": [
-        "1604e91g1kjte"
-      ],
-      "x-yahoo-request-id": [
-        "1604e91g1kjte"
-      ],
-      "x-request-id": [
-        "13a8cf3a-eeac-42b8-aade-4c4abd638c42"
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
       ],
       "content-encoding": [
         "gzip"
       ],
-      "content-length": [
-        "475"
+      "content-type": [
+        "application/json;charset=utf-8"
       ],
-      "x-envoy-upstream-service-time": [
-        "2"
+      "vary": [
+        "Origin"
+      ],
+      "content-length": [
+        "502"
       ],
       "date": [
-        "Wed, 03 Feb 2021 07:24:29 GMT"
+        "Wed, 07 Apr 2021 21:33:25 GMT"
+      ],
+      "age": [
+        "0"
       ],
       "server": [
         "ATS"
       ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
-      ],
-      "age": [
-        "1"
-      ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -74,39 +62,42 @@
           {
             "price": {
               "maxAge": 1,
+              "preMarketChangePercent": -0.019386701,
+              "preMarketChange": -4.47,
+              "preMarketTime": 1617802199,
+              "preMarketPrice": 226.1,
               "preMarketSource": "FREE_REALTIME",
-              "postMarketChangePercent": 0.007111975,
-              "postMarketChange": 1.8099976,
-              "postMarketTime": 1612313997,
-              "postMarketPrice": 256.31,
-              "postMarketSource": "DELAYED",
-              "regularMarketChangePercent": -0.038497873,
-              "regularMarketChange": -10.190002,
-              "regularMarketTime": 1612299602,
+              "postMarketChangePercent": 0.00026615898,
+              "postMarketChange": 0.05999756,
+              "postMarketTime": 1617831192,
+              "postMarketPrice": 225.48,
+              "postMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": -0.022335999,
+              "regularMarketChange": -5.15001,
+              "regularMarketTime": 1617825626,
               "priceHint": 2,
-              "regularMarketPrice": 254.5,
-              "regularMarketDayHigh": 265,
-              "regularMarketDayLow": 254.04,
-              "regularMarketVolume": 28896619,
-              "regularMarketPreviousClose": 264.69,
-              "regularMarketSource": "DELAYED",
-              "regularMarketOpen": 264.57,
+              "regularMarketPrice": 225.42,
+              "regularMarketDayHigh": 228.19,
+              "regularMarketDayLow": 224.8,
+              "regularMarketVolume": 17140121,
+              "regularMarketPreviousClose": 230.57,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 226.11,
               "exchange": "NYQ",
               "exchangeName": "NYSE",
               "exchangeDataDelayedBy": 0,
-              "marketState": "PREPRE",
+              "marketState": "POST",
               "quoteType": "EQUITY",
               "symbol": "BABA",
               "underlyingSymbol": null,
               "shortName": "Alibaba Group Holding Limited",
               "longName": "Alibaba Group Holding Limited",
               "currency": "USD",
-              "quoteSourceName": "Delayed Quote",
+              "quoteSourceName": "Nasdaq Real Time Price",
               "currencySymbol": "$",
               "fromCurrency": null,
-              "toCurrency": null,
               "lastMarket": null,
-              "marketCap": 674279915520
+              "marketCap": 615507099648
             }
           }
         ],

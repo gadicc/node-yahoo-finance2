@@ -7,53 +7,41 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json"
-      ],
-      "vary": [
-        "Origin,Accept-Encoding"
+      "x-yahoo-request-id": [
+        "435pf3lg6s9ak"
       ],
       "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
-      ],
-      "y-rid": [
-        "3ecvnl1g2l2jo"
-      ],
-      "x-yahoo-request-id": [
-        "3ecvnl1g2l2jo"
-      ],
-      "x-request-id": [
-        "477fdd33-ffe4-49c0-923f-930bb80b972f"
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
       ],
       "content-encoding": [
         "gzip"
       ],
-      "x-envoy-upstream-service-time": [
-        "12"
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "content-length": [
+        "13602"
       ],
       "date": [
-        "Mon, 15 Feb 2021 14:51:36 GMT"
-      ],
-      "server": [
-        "ATS"
-      ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+        "Wed, 07 Apr 2021 21:34:12 GMT"
       ],
       "age": [
         "0"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
-      ],
-      "referrer-policy": [
-        "no-referrer-when-downgrade"
+      "server": [
+        "ATS"
       ],
       "x-frame-options": [
         "SAMEORIGIN"
       ],
-      "transfer-encoding": [
-        "chunked"
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -86,9 +74,9 @@
                 {
                   "maxAge": 1,
                   "name": "Mr. Daniel G. Ek",
-                  "age": 36,
+                  "age": 37,
                   "title": "Founder, CEO & Chairman",
-                  "yearBorn": 1984,
+                  "yearBorn": 1983,
                   "fiscalYear": 2020,
                   "totalPay": {
                     "raw": 490334,
@@ -108,7 +96,7 @@
                 },
                 {
                   "maxAge": 1,
-                  "name": "Mr. Martin  Lorentzon Sven",
+                  "name": "Mr. Sven Martin Lorentzon",
                   "age": 51,
                   "title": "Co-Founder & Director",
                   "yearBorn": 1969,
@@ -280,12 +268,12 @@
                   }
                 }
               ],
-              "auditRisk": 1,
+              "auditRisk": 5,
               "boardRisk": 6,
               "compensationRisk": 6,
-              "shareHolderRightsRisk": 7,
-              "overallRisk": 6,
-              "governanceEpochDate": 1606867200,
+              "shareHolderRightsRisk": 9,
+              "overallRisk": 7,
+              "governanceEpochDate": 1617235200,
               "compensationAsOfEpochDate": 1609372800,
               "maxAge": 86400
             },
@@ -302,10 +290,10 @@
                 {
                   "period": "-1m",
                   "strongBuy": 4,
-                  "buy": 10,
+                  "buy": 8,
                   "hold": 11,
                   "sell": 4,
-                  "strongSell": 1
+                  "strongSell": 2
                 },
                 {
                   "period": "-2m",
@@ -717,28 +705,28 @@
             "indexTrend": {
               "maxAge": 1,
               "symbol": "SP5",
-              "peRatio": 6.30205,
-              "pegRatio": 0.593389,
+              "peRatio": 16.4146,
+              "pegRatio": 0.647525,
               "estimates": [
                 {
                   "period": "0q",
-                  "growth": 0.259
+                  "growth": 0.458
                 },
                 {
                   "period": "+1q",
-                  "growth": 0.97300005
+                  "growth": 0.682
                 },
                 {
                   "period": "0y",
-                  "growth": 0.144
+                  "growth": 0.25100002
                 },
                 {
                   "period": "+1y",
-                  "growth": 0.158
+                  "growth": 0.133
                 },
                 {
                   "period": "+5y",
-                  "growth": 0.0811848
+                  "growth": 0.095763795
                 },
                 {
                   "period": "-5y"
@@ -748,35 +736,36 @@
             "defaultKeyStatistics": {
               "maxAge": 1,
               "priceHint": 2,
-              "enterpriseValue": 64615305216,
-              "forwardPE": -395,
+              "enterpriseValue": 52437229568,
+              "forwardPE": -277.37622,
               "profitMargins": -0.07373,
-              "floatShares": 135172858,
-              "sharesOutstanding": 189586000,
-              "sharesShort": 3384495,
-              "sharesShortPriorMonth": 3627508,
-              "sharesShortPreviousMonthDate": 1609372800,
-              "dateShortInterest": 1611878400,
-              "sharesPercentSharesOut": 0.0178,
-              "heldPercentInsiders": 0.2926,
-              "heldPercentInstitutions": 0.59847,
-              "shortRatio": 2.76,
-              "shortPercentOfFloat": 0.0293,
-              "beta": 1.641937,
+              "floatShares": 136346471,
+              "sharesOutstanding": 190795008,
+              "sharesShort": 4646633,
+              "sharesShortPriorMonth": 3721578,
+              "sharesShortPreviousMonthDate": 1613088000,
+              "dateShortInterest": 1615766400,
+              "sharesPercentSharesOut": 0.024400001,
+              "heldPercentInsiders": 0.28304002,
+              "heldPercentInstitutions": 0.60576,
+              "shortRatio": 2.3,
+              "shortPercentOfFloat": 0.04,
+              "beta": 1.570007,
               "category": null,
-              "bookValue": 10.251,
-              "priceToBook": 33.13823,
+              "bookValue": 17.355,
+              "priceToBook": 16.142323,
               "fundFamily": null,
               "legalType": null,
               "lastFiscalYearEnd": 1609372800,
               "nextFiscalYearEnd": 1672444800,
               "mostRecentQuarter": 1609372800,
-              "trailingEps": -7.629,
-              "forwardEps": -0.86,
-              "pegRatio": -0.98,
+              "netIncomeToCommon": -683749824,
+              "trailingEps": -3.648,
+              "forwardEps": -1.01,
+              "pegRatio": -0.84,
               "lastSplitFactor": null,
-              "52WeekChange": 1.348752,
-              "SandP52WeekChange": 0.1675049
+              "enterpriseToRevenue": 5.654,
+              "enterpriseToEbitda": -198.032
             },
             "industryTrend": {
               "maxAge": 1,
@@ -792,10 +781,9 @@
               "longName": "Spotify Technology S.A.",
               "firstTradeDateEpochUtc": 1522762200,
               "timeZoneFullName": "America/New_York",
-              "timeZoneShortName": "EST",
+              "timeZoneShortName": "EDT",
               "uuid": "5bac85a0-c611-3def-a4ab-0dfb383056f4",
-              "messageBoardId": "finmb_225595077",
-              "gmtOffSetMilliseconds": -18000000,
+              "gmtOffSetMilliseconds": -14400000,
               "maxAge": 1
             },
             "incomeStatementHistory": {
@@ -1160,7 +1148,6 @@
               "maxAge": 86400
             },
             "fundOwnership": {
-              "maxAge": 1,
               "ownershipList": [
                 {
                   "maxAge": 1,
@@ -1187,23 +1174,45 @@
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1601424000,
-                    "fmt": "2020-09-30"
+                    "raw": 1614470400,
+                    "fmt": "2021-02-28"
+                  },
+                  "organization": "ARK ETF Tr-ARK Innovation ETF",
+                  "pctHeld": {
+                    "raw": 0.0155,
+                    "fmt": "1.55%"
+                  },
+                  "position": {
+                    "raw": 2773383,
+                    "fmt": "2.77M",
+                    "longFmt": "2,773,383"
+                  },
+                  "value": {
+                    "raw": 852482466,
+                    "fmt": "852.48M",
+                    "longFmt": "852,482,466"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
                   },
                   "organization": "Morgan Stanley Inst Fd Inc-Growth Port",
                   "pctHeld": {
-                    "raw": 0.014099999,
-                    "fmt": "1.41%"
+                    "raw": 0.0145000005,
+                    "fmt": "1.45%"
                   },
                   "position": {
-                    "raw": 2522451,
-                    "fmt": "2.52M",
-                    "longFmt": "2,522,451"
+                    "raw": 2606380,
+                    "fmt": "2.61M",
+                    "longFmt": "2,606,380"
                   },
                   "value": {
-                    "raw": 611870939,
-                    "fmt": "611.87M",
-                    "longFmt": "611,870,939"
+                    "raw": 820123530,
+                    "fmt": "820.12M",
+                    "longFmt": "820,123,530"
                   }
                 },
                 {
@@ -1231,6 +1240,28 @@
                 {
                   "maxAge": 1,
                   "reportDate": {
+                    "raw": 1612051200,
+                    "fmt": "2021-01-31"
+                  },
+                  "organization": "Harbor Capital Appreciation Fund",
+                  "pctHeld": {
+                    "raw": 0.0095999995,
+                    "fmt": "0.96%"
+                  },
+                  "position": {
+                    "raw": 1719816,
+                    "fmt": "1.72M",
+                    "longFmt": "1,719,816"
+                  },
+                  "value": {
+                    "raw": 541742040,
+                    "fmt": "541.74M",
+                    "longFmt": "541,742,040"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
                     "raw": 1609372800,
                     "fmt": "2020-12-31"
                   },
@@ -1253,52 +1284,8 @@
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
-                  },
-                  "organization": "ARK ETF Tr-ARK Innovation ETF",
-                  "pctHeld": {
-                    "raw": 0.0086,
-                    "fmt": "0.86%"
-                  },
-                  "position": {
-                    "raw": 1547620,
-                    "fmt": "1.55M",
-                    "longFmt": "1,547,620"
-                  },
-                  "value": {
-                    "raw": 486974109,
-                    "fmt": "486.97M",
-                    "longFmt": "486,974,109"
-                  }
-                },
-                {
-                  "maxAge": 1,
-                  "reportDate": {
-                    "raw": 1604102400,
-                    "fmt": "2020-10-31"
-                  },
-                  "organization": "Harbor Capital Appreciation Fund",
-                  "pctHeld": {
-                    "raw": 0.0082,
-                    "fmt": "0.82%"
-                  },
-                  "position": {
-                    "raw": 1468988,
-                    "fmt": "1.47M",
-                    "longFmt": "1,468,988"
-                  },
-                  "value": {
-                    "raw": 352395531,
-                    "fmt": "352.4M",
-                    "longFmt": "352,395,531"
-                  }
-                },
-                {
-                  "maxAge": 1,
-                  "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1612051200,
+                    "fmt": "2021-01-31"
                   },
                   "organization": "JP Morgan Large Cap Growth Fund",
                   "pctHeld": {
@@ -1311,31 +1298,31 @@
                     "longFmt": "1,241,300"
                   },
                   "value": {
-                    "raw": 390587458,
-                    "fmt": "390.59M",
-                    "longFmt": "390,587,458"
+                    "raw": 391009500,
+                    "fmt": "391.01M",
+                    "longFmt": "391,009,500"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1606694400,
-                    "fmt": "2020-11-30"
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
                   },
                   "organization": "Morgan Stanley Insight Fund",
                   "pctHeld": {
-                    "raw": 0.0063,
-                    "fmt": "0.63%"
+                    "raw": 0.0062,
+                    "fmt": "0.62%"
                   },
                   "position": {
-                    "raw": 1132840,
-                    "fmt": "1.13M",
-                    "longFmt": "1,132,840"
+                    "raw": 1116008,
+                    "fmt": "1.12M",
+                    "longFmt": "1,116,008"
                   },
                   "value": {
-                    "raw": 330075590,
-                    "fmt": "330.08M",
-                    "longFmt": "330,075,590"
+                    "raw": 351163077,
+                    "fmt": "351.16M",
+                    "longFmt": "351,163,077"
                   }
                 },
                 {
@@ -1382,39 +1369,40 @@
                     "longFmt": "314,660,000"
                   }
                 }
-              ]
+              ],
+              "maxAge": 1
             },
             "summaryDetail": {
               "maxAge": 1,
               "priceHint": 2,
-              "previousClose": 331.9,
-              "open": 333.94,
-              "dayLow": 329.395,
-              "dayHigh": 340.43,
-              "regularMarketPreviousClose": 331.9,
-              "regularMarketOpen": 333.94,
-              "regularMarketDayLow": 329.395,
-              "regularMarketDayHigh": 340.43,
+              "previousClose": 282.34,
+              "open": 281.46,
+              "dayLow": 276.555,
+              "dayHigh": 282.88,
+              "regularMarketPreviousClose": 282.34,
+              "regularMarketOpen": 281.46,
+              "regularMarketDayLow": 276.555,
+              "regularMarketDayHigh": 282.88,
               "payoutRatio": 0,
-              "beta": 1.641937,
-              "forwardPE": -395,
-              "volume": 1119505,
-              "regularMarketVolume": 1119505,
-              "averageVolume": 1528480,
-              "averageVolume10days": 1505766,
-              "averageDailyVolume10Day": 1505766,
-              "bid": 339.06,
-              "ask": 339.4,
-              "bidSize": 1300,
-              "askSize": 1100,
-              "marketCap": 64615354368,
-              "fiftyTwoWeekLow": 109.18,
-              "fiftyTwoWeekHigh": 370.95,
-              "fiftyDayAverage": 329.04788,
-              "twoHundredDayAverage": 283.17914,
+              "beta": 1.570007,
+              "forwardPE": -277.37622,
+              "volume": 650997,
+              "regularMarketVolume": 650997,
+              "averageVolume": 1659916,
+              "averageVolume10days": 1238250,
+              "averageDailyVolume10Day": 1238250,
+              "bid": 280.15,
+              "ask": 280.99,
+              "bidSize": 1000,
+              "askSize": 1000,
+              "marketCap": 53451218944,
+              "fiftyTwoWeekLow": 123.552,
+              "fiftyTwoWeekHigh": 387.44,
+              "priceToSalesTrailing12Months": 5.7638183,
+              "fiftyDayAverage": 293.9091,
+              "twoHundredDayAverage": 292.4931,
               "currency": "USD",
               "fromCurrency": null,
-              "toCurrency": null,
               "lastMarket": null,
               "algorithm": null,
               "tradeable": false
@@ -1427,665 +1415,699 @@
               "maxAge": 1,
               "earnings": {
                 "earningsDate": [
-                  1619481600,
-                  1620000000
+                  1619568000
                 ],
-                "earningsAverage": -0.46,
-                "earningsLow": -1.18,
-                "earningsHigh": 0.15,
-                "revenueAverage": 2614010000,
-                "revenueLow": 2512620000,
-                "revenueHigh": 2794640000
+                "earningsAverage": -0.48,
+                "earningsLow": -1.15,
+                "earningsHigh": 0.14,
+                "revenueAverage": 2544660000,
+                "revenueLow": 2454020000,
+                "revenueHigh": 2676530000
               }
             },
             "upgradeDowngradeHistory": {
               "history": [
                 {
-                  "epochGradeDate": 1612964104,
+                  "epochGradeDate": 1617580800,
+                  "firm": "Citigroup",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Sell",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1617235200,
+                  "firm": "Wolfe Research",
+                  "toGrade": "Peer Perform",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1614038400,
+                  "firm": "JP Morgan",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1614038400,
+                  "firm": "Canaccord Genuity",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1614038400,
+                  "firm": "Rosenblatt",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1612915200,
                   "firm": "Pivotal Research",
                   "toGrade": "Hold",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1611746009,
+                  "epochGradeDate": 1611705600,
                   "firm": "Nordea",
                   "toGrade": "Hold",
                   "fromGrade": "Buy",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1611230505,
+                  "epochGradeDate": 1611187200,
                   "firm": "Rosenblatt",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1610716370,
+                  "epochGradeDate": 1610668800,
                   "firm": "Citigroup",
                   "toGrade": "Sell",
                   "fromGrade": "Neutral",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1608123939,
+                  "epochGradeDate": 1608076800,
                   "firm": "Credit Suisse",
                   "toGrade": "Neutral",
                   "fromGrade": "Outperform",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1606297045,
-                  "firm": "Deutsche Bank",
-                  "toGrade": "Hold",
-                  "fromGrade": "",
-                  "action": "main"
-                },
-                {
-                  "epochGradeDate": 1606297045,
+                  "epochGradeDate": 1603756800,
                   "firm": "Morgan Stanley",
                   "toGrade": "Overweight",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1602694462,
+                  "epochGradeDate": 1603756800,
+                  "firm": "Deutsche Bank",
+                  "toGrade": "Hold",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1602633600,
                   "firm": "Barclays",
                   "toGrade": "Overweight",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1601291195,
+                  "epochGradeDate": 1601251200,
                   "firm": "Guggenheim",
                   "toGrade": "Neutral",
                   "fromGrade": "Sell",
                   "action": "up"
                 },
                 {
-                  "epochGradeDate": 1600160344,
+                  "epochGradeDate": 1600128000,
                   "firm": "KeyBanc",
                   "toGrade": "Sector Weight",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1599730914,
+                  "epochGradeDate": 1599696000,
                   "firm": "Credit Suisse",
                   "toGrade": "Outperform",
                   "fromGrade": "Neutral",
                   "action": "up"
                 },
                 {
-                  "epochGradeDate": 1596117422,
+                  "epochGradeDate": 1596067200,
                   "firm": "Deutsche Bank",
                   "toGrade": "Hold",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1596109694,
+                  "epochGradeDate": 1596067200,
                   "firm": "Rosenblatt",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1594723556,
+                  "epochGradeDate": 1594684800,
                   "firm": "UBS",
                   "toGrade": "Sell",
                   "fromGrade": "Buy",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1594033406,
+                  "epochGradeDate": 1593993600,
                   "firm": "Bernstein",
                   "toGrade": "Underperform",
                   "fromGrade": "Market Perform",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1593614452,
+                  "epochGradeDate": 1593561600,
                   "firm": "Wells Fargo",
                   "toGrade": "Underweight",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1593516373,
+                  "epochGradeDate": 1593475200,
                   "firm": "Citigroup",
                   "toGrade": "Neutral",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1593431683,
+                  "epochGradeDate": 1593388800,
                   "firm": "Guggenheim",
                   "toGrade": "Sell",
                   "fromGrade": "Neutral",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1593431154,
+                  "epochGradeDate": 1593388800,
                   "firm": "Morgan Stanley",
                   "toGrade": "Overweight",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1592564285,
+                  "epochGradeDate": 1592524800,
                   "firm": "Rosenblatt",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1590662011,
+                  "epochGradeDate": 1590624000,
                   "firm": "Redburn",
                   "toGrade": "Neutral",
                   "fromGrade": "Buy",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1588263006,
+                  "epochGradeDate": 1588204800,
                   "firm": "Canaccord Genuity",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1588259864,
+                  "epochGradeDate": 1588204800,
                   "firm": "Guggenheim",
                   "toGrade": "Neutral",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1588254579,
+                  "epochGradeDate": 1588204800,
                   "firm": "UBS",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1588252301,
+                  "epochGradeDate": 1588204800,
                   "firm": "Credit Suisse",
                   "toGrade": "Neutral",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1588251336,
+                  "epochGradeDate": 1588204800,
                   "firm": "Morgan Stanley",
                   "toGrade": "Overweight",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1588246468,
+                  "epochGradeDate": 1588204800,
                   "firm": "Rosenblatt",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1587746143,
+                  "epochGradeDate": 1587686400,
                   "firm": "SunTrust Robinson Humphrey",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1586171812,
+                  "epochGradeDate": 1586131200,
                   "firm": "Raymond James",
                   "toGrade": "Market Perform",
                   "fromGrade": "Strong Buy",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1584549713,
+                  "epochGradeDate": 1584489600,
                   "firm": "JP Morgan",
                   "toGrade": "Overweight",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1581009625,
+                  "epochGradeDate": 1580947200,
                   "firm": "Barclays",
                   "toGrade": "Overweight",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1580996528,
-                  "firm": "JP Morgan",
-                  "toGrade": "Overweight",
-                  "fromGrade": "",
-                  "action": "main"
-                },
-                {
-                  "epochGradeDate": 1580993958,
+                  "epochGradeDate": 1580947200,
                   "firm": "Wells Fargo",
                   "toGrade": "Underweight",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1580927358,
+                  "epochGradeDate": 1580947200,
+                  "firm": "JP Morgan",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1580860800,
                   "firm": "Evercore ISI Group",
                   "toGrade": "Underperform",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1579267095,
+                  "epochGradeDate": 1579219200,
                   "firm": "UBS",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1578915314,
+                  "epochGradeDate": 1578873600,
                   "firm": "Evercore ISI Group",
                   "toGrade": "Underperform",
                   "fromGrade": "In-Line",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1578580649,
+                  "epochGradeDate": 1578528000,
                   "firm": "Bernstein",
                   "toGrade": "Underperform",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1572364227,
+                  "epochGradeDate": 1572307200,
                   "firm": "UBS",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1572363211,
+                  "epochGradeDate": 1572307200,
                   "firm": "Canaccord Genuity",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1572358766,
+                  "epochGradeDate": 1572307200,
                   "firm": "Deutsche Bank",
                   "toGrade": "Hold",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1572357884,
+                  "epochGradeDate": 1572307200,
                   "firm": "Wells Fargo",
                   "toGrade": "Underperform",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1572353241,
+                  "epochGradeDate": 1572307200,
                   "firm": "Credit Suisse",
                   "toGrade": "Neutral",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1570011723,
+                  "epochGradeDate": 1569974400,
                   "firm": "Credit Suisse",
                   "toGrade": "Neutral",
                   "fromGrade": "Underperform",
                   "action": "up"
                 },
                 {
-                  "epochGradeDate": 1569925666,
+                  "epochGradeDate": 1569888000,
                   "firm": "Evercore ISI Group",
                   "toGrade": "In-Line",
                   "fromGrade": "Underperform",
                   "action": "up"
                 },
                 {
-                  "epochGradeDate": 1569325370,
+                  "epochGradeDate": 1569283200,
                   "firm": "Wells Fargo",
                   "toGrade": "Underperform",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1566299997,
+                  "epochGradeDate": 1566259200,
                   "firm": "Consumer Edge",
                   "toGrade": "Equal-Weight",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1564670629,
+                  "epochGradeDate": 1564617600,
                   "firm": "Morgan Stanley",
                   "toGrade": "Overweight",
                   "fromGrade": "",
                   "action": "reit"
                 },
                 {
-                  "epochGradeDate": 1564663794,
+                  "epochGradeDate": 1564617600,
                   "firm": "Stifel Nicolaus",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1564656312,
+                  "epochGradeDate": 1564617600,
                   "firm": "Loop Capital",
                   "toGrade": "Hold",
                   "fromGrade": "Sell",
                   "action": "up"
                 },
                 {
-                  "epochGradeDate": 1564593764,
+                  "epochGradeDate": 1564531200,
                   "firm": "Pivotal Research",
                   "toGrade": "Hold",
                   "fromGrade": "Buy",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1564054659,
+                  "epochGradeDate": 1564012800,
                   "firm": "Raymond James",
                   "toGrade": "Strong Buy",
                   "fromGrade": "",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1561371976,
+                  "epochGradeDate": 1561334400,
                   "firm": "Evercore ISI Group",
                   "toGrade": "Underperform",
                   "fromGrade": "In-Line",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1556630845,
+                  "epochGradeDate": 1556582400,
                   "firm": "Nomura",
                   "toGrade": "Buy",
                   "fromGrade": "Buy",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1556626710,
+                  "epochGradeDate": 1556582400,
                   "firm": "UBS",
                   "toGrade": "Buy",
                   "fromGrade": "Buy",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1556288030,
+                  "epochGradeDate": 1556236800,
                   "firm": "Raymond James",
                   "toGrade": "Strong Buy",
                   "fromGrade": "Strong Buy",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1555942383,
+                  "epochGradeDate": 1555891200,
                   "firm": "Buckingham",
                   "toGrade": "Buy",
                   "fromGrade": "Buy",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1555418387,
+                  "epochGradeDate": 1555372800,
                   "firm": "UBS",
                   "toGrade": "Buy",
                   "fromGrade": "Buy",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1553859420,
+                  "epochGradeDate": 1553817600,
                   "firm": "Credit Suisse",
                   "toGrade": "Underperform",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1547213702,
+                  "epochGradeDate": 1547164800,
                   "firm": "Morgan Stanley",
                   "toGrade": "Overweight",
                   "fromGrade": "Overweight",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1546871703,
+                  "epochGradeDate": 1546819200,
                   "firm": "Deutsche Bank",
                   "toGrade": "Hold",
                   "fromGrade": "Hold",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1546870593,
+                  "epochGradeDate": 1546819200,
                   "firm": "Guggenheim",
                   "toGrade": "Neutral",
                   "fromGrade": "Buy",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1541439084,
+                  "epochGradeDate": 1541376000,
                   "firm": "Wells Fargo",
                   "toGrade": "Market Perform",
                   "fromGrade": "Market Perform",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1541178442,
+                  "epochGradeDate": 1541116800,
                   "firm": "JP Morgan",
                   "toGrade": "Overweight",
                   "fromGrade": "Overweight",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1541175967,
+                  "epochGradeDate": 1541116800,
                   "firm": "Barclays",
                   "toGrade": "Overweight",
                   "fromGrade": "Overweight",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1541175354,
+                  "epochGradeDate": 1541116800,
                   "firm": "Nomura",
                   "toGrade": "Buy",
                   "fromGrade": "Buy",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1539610413,
+                  "epochGradeDate": 1539561600,
                   "firm": "Redburn",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "up"
                 },
                 {
-                  "epochGradeDate": 1539260460,
+                  "epochGradeDate": 1539216000,
                   "firm": "Buckingham",
                   "toGrade": "Buy",
                   "fromGrade": "Buy",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1532956868,
+                  "epochGradeDate": 1532908800,
                   "firm": "B. Riley FBR",
                   "toGrade": "Neutral",
                   "fromGrade": "Neutral",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1532706884,
+                  "epochGradeDate": 1532649600,
                   "firm": "Morgan Stanley",
                   "toGrade": "Overweight",
                   "fromGrade": "Overweight",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1532697763,
+                  "epochGradeDate": 1532649600,
                   "firm": "Stifel Nicolaus",
                   "toGrade": "Buy",
                   "fromGrade": "Buy",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1532694509,
+                  "epochGradeDate": 1532649600,
                   "firm": "JP Morgan",
                   "toGrade": "Overweight",
                   "fromGrade": "Overweight",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1532520534,
+                  "epochGradeDate": 1532476800,
                   "firm": "Pivotal Research",
                   "toGrade": "Hold",
                   "fromGrade": "Buy",
                   "action": "down"
                 },
                 {
-                  "epochGradeDate": 1532345708,
+                  "epochGradeDate": 1532304000,
                   "firm": "BTIG Research",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1532087915,
+                  "epochGradeDate": 1532044800,
                   "firm": "Buckingham",
                   "toGrade": "Buy",
                   "fromGrade": "Buy",
                   "action": "main"
                 },
                 {
-                  "epochGradeDate": 1531309773,
+                  "epochGradeDate": 1531267200,
                   "firm": "Nomura",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1531228073,
+                  "epochGradeDate": 1531180800,
                   "firm": "Oppenheimer",
                   "toGrade": "Perform",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1530008350,
+                  "epochGradeDate": 1529971200,
                   "firm": "Barclays",
                   "toGrade": "Overweight",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1528974865,
+                  "epochGradeDate": 1528934400,
                   "firm": "Deutsche Bank",
                   "toGrade": "Hold",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1528373843,
+                  "epochGradeDate": 1528329600,
                   "firm": "Buckingham",
                   "toGrade": "Buy",
                   "fromGrade": "Neutral",
                   "action": "up"
                 },
                 {
-                  "epochGradeDate": 1527606053,
+                  "epochGradeDate": 1527552000,
                   "firm": "Pivotal Research",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1526642998,
+                  "epochGradeDate": 1526601600,
                   "firm": "Raymond James",
                   "toGrade": "Strong Buy",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1526472737,
+                  "epochGradeDate": 1526428800,
                   "firm": "Wells Fargo",
                   "toGrade": "Market Perform",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1526386912,
+                  "epochGradeDate": 1526342400,
                   "firm": "Loop Capital",
                   "toGrade": "Sell",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1525261719,
+                  "epochGradeDate": 1525219200,
                   "firm": "SunTrust Robinson Humphrey",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1525176668,
+                  "epochGradeDate": 1525132800,
                   "firm": "Buckingham",
                   "toGrade": "Neutral",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1525095833,
+                  "epochGradeDate": 1525046400,
                   "firm": "JP Morgan",
                   "toGrade": "Overweight",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1525091697,
+                  "epochGradeDate": 1525046400,
                   "firm": "Goldman Sachs",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1525086915,
+                  "epochGradeDate": 1525046400,
                   "firm": "Morgan Stanley",
                   "toGrade": "Overweight",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1524662138,
+                  "epochGradeDate": 1524614400,
                   "firm": "B. Riley FBR",
                   "toGrade": "Neutral",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1522930011,
+                  "epochGradeDate": 1522886400,
                   "firm": "Canaccord Genuity",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1522942201,
+                  "epochGradeDate": 1522886400,
                   "firm": "Stifel Nicolaus",
                   "toGrade": "Buy",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1522866930,
+                  "epochGradeDate": 1522800000,
                   "firm": "Gabelli & Co.",
                   "toGrade": "Hold",
                   "fromGrade": "",
                   "action": "init"
                 },
                 {
-                  "epochGradeDate": 1522758387,
+                  "epochGradeDate": 1522713600,
                   "firm": "Guggenheim",
                   "toGrade": "Buy",
                   "fromGrade": "",
@@ -2096,41 +2118,44 @@
             },
             "price": {
               "maxAge": 1,
+              "preMarketChangePercent": 0,
+              "preMarketChange": 0,
+              "preMarketTime": 1617802199,
+              "preMarketPrice": 282.34,
               "preMarketSource": "FREE_REALTIME",
-              "postMarketChangePercent": -0.000883186,
-              "postMarketChange": -0.3000183,
-              "postMarketTime": 1613177967,
-              "postMarketPrice": 339.4,
-              "postMarketSource": "DELAYED",
-              "regularMarketChangePercent": 0.0235011,
-              "regularMarketChange": 7.80002,
-              "regularMarketTime": 1613163602,
+              "postMarketChangePercent": 0.0021417318,
+              "postMarketChange": 0.6000061,
+              "postMarketTime": 1617831190,
+              "postMarketPrice": 280.75,
+              "postMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": -0.00775661,
+              "regularMarketChange": -2.19,
+              "regularMarketTime": 1617825602,
               "priceHint": 2,
-              "regularMarketPrice": 339.7,
-              "regularMarketDayHigh": 340.43,
-              "regularMarketDayLow": 329.395,
-              "regularMarketVolume": 1119505,
-              "averageDailyVolume10Day": 1505766,
-              "averageDailyVolume3Month": 1528480,
-              "regularMarketPreviousClose": 331.9,
-              "regularMarketSource": "DELAYED",
-              "regularMarketOpen": 333.94,
+              "regularMarketPrice": 280.15,
+              "regularMarketDayHigh": 282.88,
+              "regularMarketDayLow": 276.555,
+              "regularMarketVolume": 650997,
+              "averageDailyVolume10Day": 1238250,
+              "averageDailyVolume3Month": 1659916,
+              "regularMarketPreviousClose": 282.34,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 281.46,
               "exchange": "NYQ",
               "exchangeName": "NYSE",
               "exchangeDataDelayedBy": 0,
-              "marketState": "CLOSED",
+              "marketState": "POST",
               "quoteType": "EQUITY",
               "symbol": "SPOT",
               "underlyingSymbol": null,
               "shortName": "Spotify Technology S.A.",
               "longName": "Spotify Technology S.A.",
               "currency": "USD",
-              "quoteSourceName": "Delayed Quote",
+              "quoteSourceName": "Nasdaq Real Time Price",
               "currencySymbol": "$",
               "fromCurrency": null,
-              "toCurrency": null,
               "lastMarket": null,
-              "marketCap": 64615354368
+              "marketCap": 53451218944
             },
             "balanceSheetHistory": {
               "balanceSheetStatements": [
@@ -2657,21 +2682,21 @@
                   "period": "0q",
                   "endDate": "2021-03-31",
                   "growth": {
-                    "raw": -1.3,
-                    "fmt": "-130.00%"
+                    "raw": -1.4,
+                    "fmt": "-140.00%"
                   },
                   "earningsEstimate": {
                     "avg": {
-                      "raw": -0.46,
-                      "fmt": "-0.46"
+                      "raw": -0.48,
+                      "fmt": "-0.48"
                     },
                     "low": {
-                      "raw": -1.18,
-                      "fmt": "-1.18"
+                      "raw": -1.15,
+                      "fmt": "-1.15"
                     },
                     "high": {
-                      "raw": 0.15,
-                      "fmt": "0.15"
+                      "raw": 0.14,
+                      "fmt": "0.14"
                     },
                     "yearAgoEps": {
                       "raw": -0.2,
@@ -2683,30 +2708,30 @@
                       "longFmt": "23"
                     },
                     "growth": {
-                      "raw": -1.3,
-                      "fmt": "-130.00%"
+                      "raw": -1.4,
+                      "fmt": "-140.00%"
                     }
                   },
                   "revenueEstimate": {
                     "avg": {
-                      "raw": 2614010000,
-                      "fmt": "2.61B",
-                      "longFmt": "2,614,010,000"
+                      "raw": 2544660000,
+                      "fmt": "2.54B",
+                      "longFmt": "2,544,660,000"
                     },
                     "low": {
-                      "raw": 2512620000,
-                      "fmt": "2.51B",
-                      "longFmt": "2,512,620,000"
+                      "raw": 2454020000,
+                      "fmt": "2.45B",
+                      "longFmt": "2,454,020,000"
                     },
                     "high": {
-                      "raw": 2794640000,
-                      "fmt": "2.79B",
-                      "longFmt": "2,794,640,000"
+                      "raw": 2676530000,
+                      "fmt": "2.68B",
+                      "longFmt": "2,676,530,000"
                     },
                     "numberOfAnalysts": {
-                      "raw": 20,
-                      "fmt": "20",
-                      "longFmt": "20"
+                      "raw": 19,
+                      "fmt": "19",
+                      "longFmt": "19"
                     },
                     "yearAgoRevenue": {
                       "raw": 1848000000,
@@ -2714,30 +2739,30 @@
                       "longFmt": "1,848,000,000"
                     },
                     "growth": {
-                      "raw": 0.415,
-                      "fmt": "41.50%"
+                      "raw": 0.377,
+                      "fmt": "37.70%"
                     }
                   },
                   "epsTrend": {
                     "current": {
+                      "raw": -0.48,
+                      "fmt": "-0.48"
+                    },
+                    "7daysAgo": {
+                      "raw": -0.45,
+                      "fmt": "-0.45"
+                    },
+                    "30daysAgo": {
                       "raw": -0.46,
                       "fmt": "-0.46"
                     },
-                    "7daysAgo": {
+                    "60daysAgo": {
                       "raw": -0.47,
                       "fmt": "-0.47"
                     },
-                    "30daysAgo": {
-                      "raw": -0.31,
-                      "fmt": "-0.31"
-                    },
-                    "60daysAgo": {
+                    "90daysAgo": {
                       "raw": -0.32,
                       "fmt": "-0.32"
-                    },
-                    "90daysAgo": {
-                      "raw": -0.29,
-                      "fmt": "-0.29"
                     }
                   },
                   "epsRevisions": {
@@ -2747,14 +2772,14 @@
                       "longFmt": "1"
                     },
                     "upLast30days": {
-                      "raw": 5,
-                      "fmt": "5",
-                      "longFmt": "5"
-                    },
-                    "downLast30days": {
                       "raw": 1,
                       "fmt": "1",
                       "longFmt": "1"
+                    },
+                    "downLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
                     },
                     "downLast90days": {}
                   }
@@ -2764,17 +2789,17 @@
                   "period": "+1q",
                   "endDate": "2021-06-30",
                   "growth": {
-                    "raw": 0.731,
-                    "fmt": "73.10%"
+                    "raw": 0.726,
+                    "fmt": "72.60%"
                   },
                   "earningsEstimate": {
                     "avg": {
-                      "raw": -0.6,
-                      "fmt": "-0.6"
+                      "raw": -0.61,
+                      "fmt": "-0.61"
                     },
                     "low": {
-                      "raw": -1.51,
-                      "fmt": "-1.51"
+                      "raw": -1.48,
+                      "fmt": "-1.48"
                     },
                     "high": {
                       "raw": -0.08,
@@ -2790,30 +2815,30 @@
                       "longFmt": "22"
                     },
                     "growth": {
-                      "raw": 0.731,
-                      "fmt": "73.10%"
+                      "raw": 0.726,
+                      "fmt": "72.60%"
                     }
                   },
                   "revenueEstimate": {
                     "avg": {
-                      "raw": 2763070000,
-                      "fmt": "2.76B",
-                      "longFmt": "2,763,070,000"
+                      "raw": 2688140000,
+                      "fmt": "2.69B",
+                      "longFmt": "2,688,140,000"
                     },
                     "low": {
-                      "raw": 2648000000,
-                      "fmt": "2.65B",
-                      "longFmt": "2,648,000,000"
+                      "raw": 2621650000,
+                      "fmt": "2.62B",
+                      "longFmt": "2,621,650,000"
                     },
                     "high": {
-                      "raw": 2959460000,
-                      "fmt": "2.96B",
-                      "longFmt": "2,959,460,000"
+                      "raw": 2836060000,
+                      "fmt": "2.84B",
+                      "longFmt": "2,836,060,000"
                     },
                     "numberOfAnalysts": {
-                      "raw": 20,
-                      "fmt": "20",
-                      "longFmt": "20"
+                      "raw": 19,
+                      "fmt": "19",
+                      "longFmt": "19"
                     },
                     "yearAgoRevenue": {
                       "raw": 2206050000,
@@ -2821,30 +2846,30 @@
                       "longFmt": "2,206,050,000"
                     },
                     "growth": {
-                      "raw": 0.252,
-                      "fmt": "25.20%"
+                      "raw": 0.219,
+                      "fmt": "21.90%"
                     }
                   },
                   "epsTrend": {
                     "current": {
-                      "raw": -0.6,
-                      "fmt": "-0.6"
+                      "raw": -0.61,
+                      "fmt": "-0.61"
                     },
                     "7daysAgo": {
                       "raw": -0.58,
                       "fmt": "-0.58"
                     },
                     "30daysAgo": {
-                      "raw": -0.36,
-                      "fmt": "-0.36"
+                      "raw": -0.59,
+                      "fmt": "-0.59"
                     },
                     "60daysAgo": {
-                      "raw": -0.37,
-                      "fmt": "-0.37"
+                      "raw": -0.58,
+                      "fmt": "-0.58"
                     },
                     "90daysAgo": {
-                      "raw": -0.35,
-                      "fmt": "-0.35"
+                      "raw": -0.37,
+                      "fmt": "-0.37"
                     }
                   },
                   "epsRevisions": {
@@ -2854,14 +2879,14 @@
                       "longFmt": "0"
                     },
                     "upLast30days": {
-                      "raw": 2,
-                      "fmt": "2",
-                      "longFmt": "2"
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
                     },
                     "downLast30days": {
-                      "raw": 2,
-                      "fmt": "2",
-                      "longFmt": "2"
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
                     },
                     "downLast90days": {}
                   }
@@ -2871,25 +2896,25 @@
                   "period": "0y",
                   "endDate": "2021-12-31",
                   "growth": {
-                    "raw": 0.495,
-                    "fmt": "49.50%"
+                    "raw": 0.45900002,
+                    "fmt": "45.90%"
                   },
                   "earningsEstimate": {
                     "avg": {
-                      "raw": -1.9,
-                      "fmt": "-1.9"
+                      "raw": -1.98,
+                      "fmt": "-1.98"
                     },
                     "low": {
-                      "raw": -4.46,
-                      "fmt": "-4.46"
+                      "raw": -4.57,
+                      "fmt": "-4.57"
                     },
                     "high": {
-                      "raw": -0.45,
-                      "fmt": "-0.45"
+                      "raw": -0.44,
+                      "fmt": "-0.44"
                     },
                     "yearAgoEps": {
-                      "raw": -3.76,
-                      "fmt": "-3.76"
+                      "raw": -3.66,
+                      "fmt": "-3.66"
                     },
                     "numberOfAnalysts": {
                       "raw": 27,
@@ -2897,25 +2922,25 @@
                       "longFmt": "27"
                     },
                     "growth": {
-                      "raw": 0.495,
-                      "fmt": "49.50%"
+                      "raw": 0.45900002,
+                      "fmt": "45.90%"
                     }
                   },
                   "revenueEstimate": {
                     "avg": {
-                      "raw": 11433500000,
-                      "fmt": "11.43B",
-                      "longFmt": "11,433,500,000"
+                      "raw": 11116500000,
+                      "fmt": "11.12B",
+                      "longFmt": "11,116,500,000"
                     },
                     "low": {
-                      "raw": 11222400000,
-                      "fmt": "11.22B",
-                      "longFmt": "11,222,400,000"
+                      "raw": 10942700000,
+                      "fmt": "10.94B",
+                      "longFmt": "10,942,700,000"
                     },
                     "high": {
-                      "raw": 12138400000,
-                      "fmt": "12.14B",
-                      "longFmt": "12,138,400,000"
+                      "raw": 11694000000,
+                      "fmt": "11.69B",
+                      "longFmt": "11,694,000,000"
                     },
                     "numberOfAnalysts": {
                       "raw": 27,
@@ -2923,52 +2948,52 @@
                       "longFmt": "27"
                     },
                     "yearAgoRevenue": {
-                      "raw": 9549770000,
-                      "fmt": "9.55B",
-                      "longFmt": "9,549,770,000"
+                      "raw": 9311720000,
+                      "fmt": "9.31B",
+                      "longFmt": "9,311,720,000"
                     },
                     "growth": {
-                      "raw": 0.19700001,
-                      "fmt": "19.70%"
+                      "raw": 0.19399999,
+                      "fmt": "19.40%"
                     }
                   },
                   "epsTrend": {
                     "current": {
+                      "raw": -1.98,
+                      "fmt": "-1.98"
+                    },
+                    "7daysAgo": {
+                      "raw": -1.87,
+                      "fmt": "-1.87"
+                    },
+                    "30daysAgo": {
                       "raw": -1.9,
                       "fmt": "-1.9"
                     },
-                    "7daysAgo": {
+                    "60daysAgo": {
                       "raw": -1.82,
                       "fmt": "-1.82"
                     },
-                    "30daysAgo": {
-                      "raw": -1.49,
-                      "fmt": "-1.49"
-                    },
-                    "60daysAgo": {
-                      "raw": -1.51,
-                      "fmt": "-1.51"
-                    },
                     "90daysAgo": {
-                      "raw": -1.42,
-                      "fmt": "-1.42"
+                      "raw": -1.52,
+                      "fmt": "-1.52"
                     }
                   },
                   "epsRevisions": {
                     "upLast7days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "upLast30days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast30days": {
                       "raw": 0,
                       "fmt": null,
                       "longFmt": "0"
-                    },
-                    "upLast30days": {
-                      "raw": 4,
-                      "fmt": "4",
-                      "longFmt": "4"
-                    },
-                    "downLast30days": {
-                      "raw": 5,
-                      "fmt": "5",
-                      "longFmt": "5"
                     },
                     "downLast90days": {}
                   }
@@ -2978,25 +3003,25 @@
                   "period": "+1y",
                   "endDate": "2022-12-31",
                   "growth": {
-                    "raw": 0.547,
-                    "fmt": "54.70%"
+                    "raw": 0.49,
+                    "fmt": "49.00%"
                   },
                   "earningsEstimate": {
                     "avg": {
-                      "raw": -0.86,
-                      "fmt": "-0.86"
+                      "raw": -1.01,
+                      "fmt": "-1.01"
                     },
                     "low": {
-                      "raw": -3.99,
-                      "fmt": "-3.99"
+                      "raw": -3.89,
+                      "fmt": "-3.89"
                     },
                     "high": {
-                      "raw": 0.8,
-                      "fmt": "0.8"
+                      "raw": 0.78,
+                      "fmt": "0.78"
                     },
                     "yearAgoEps": {
-                      "raw": -1.9,
-                      "fmt": "-1.9"
+                      "raw": -1.98,
+                      "fmt": "-1.98"
                     },
                     "numberOfAnalysts": {
                       "raw": 26,
@@ -3004,25 +3029,25 @@
                       "longFmt": "26"
                     },
                     "growth": {
-                      "raw": 0.547,
-                      "fmt": "54.70%"
+                      "raw": 0.49,
+                      "fmt": "49.00%"
                     }
                   },
                   "revenueEstimate": {
                     "avg": {
-                      "raw": 13619700000,
-                      "fmt": "13.62B",
-                      "longFmt": "13,619,700,000"
+                      "raw": 13258700000,
+                      "fmt": "13.26B",
+                      "longFmt": "13,258,700,000"
                     },
                     "low": {
-                      "raw": 13015100000,
-                      "fmt": "13.02B",
-                      "longFmt": "13,015,100,000"
+                      "raw": 12690600000,
+                      "fmt": "12.69B",
+                      "longFmt": "12,690,600,000"
                     },
                     "high": {
-                      "raw": 14518600000,
-                      "fmt": "14.52B",
-                      "longFmt": "14,518,600,000"
+                      "raw": 14033800000,
+                      "fmt": "14.03B",
+                      "longFmt": "14,033,800,000"
                     },
                     "numberOfAnalysts": {
                       "raw": 26,
@@ -3030,52 +3055,52 @@
                       "longFmt": "26"
                     },
                     "yearAgoRevenue": {
-                      "raw": 11433500000,
-                      "fmt": "11.43B",
-                      "longFmt": "11,433,500,000"
+                      "raw": 11116500000,
+                      "fmt": "11.12B",
+                      "longFmt": "11,116,500,000"
                     },
                     "growth": {
-                      "raw": 0.191,
-                      "fmt": "19.10%"
+                      "raw": 0.19299999,
+                      "fmt": "19.30%"
                     }
                   },
                   "epsTrend": {
                     "current": {
-                      "raw": -0.86,
-                      "fmt": "-0.86"
+                      "raw": -1.01,
+                      "fmt": "-1.01"
                     },
                     "7daysAgo": {
-                      "raw": -0.82,
-                      "fmt": "-0.82"
+                      "raw": -0.92,
+                      "fmt": "-0.92"
                     },
                     "30daysAgo": {
-                      "raw": -0.17,
-                      "fmt": "-0.17"
+                      "raw": -0.94,
+                      "fmt": "-0.94"
                     },
                     "60daysAgo": {
-                      "raw": -0.18,
-                      "fmt": "-0.18"
+                      "raw": -0.8,
+                      "fmt": "-0.8"
                     },
                     "90daysAgo": {
-                      "raw": -0.09,
-                      "fmt": "-0.09"
+                      "raw": -0.16,
+                      "fmt": "-0.16"
                     }
                   },
                   "epsRevisions": {
                     "upLast7days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "upLast30days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast30days": {
                       "raw": 0,
                       "fmt": null,
                       "longFmt": "0"
-                    },
-                    "upLast30days": {
-                      "raw": 4,
-                      "fmt": "4",
-                      "longFmt": "4"
-                    },
-                    "downLast30days": {
-                      "raw": 4,
-                      "fmt": "4",
-                      "longFmt": "4"
                     },
                     "downLast90days": {}
                   }
@@ -3085,8 +3110,8 @@
                   "period": "+5y",
                   "endDate": null,
                   "growth": {
-                    "raw": 1.4191,
-                    "fmt": "141.91%"
+                    "raw": 1.378,
+                    "fmt": "137.80%"
                   },
                   "earningsEstimate": {
                     "avg": {},
@@ -3157,7 +3182,6 @@
               "maxAge": 1
             },
             "institutionOwnership": {
-              "maxAge": 1,
               "ownershipList": [
                 {
                   "maxAge": 1,
@@ -3184,45 +3208,45 @@
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1601424000,
-                    "fmt": "2020-09-30"
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
                   },
                   "organization": "Morgan Stanley",
                   "pctHeld": {
-                    "raw": 0.1001,
-                    "fmt": "10.01%"
+                    "raw": 0.0995,
+                    "fmt": "9.95%"
                   },
                   "position": {
-                    "raw": 17940708,
-                    "fmt": "17.94M",
-                    "longFmt": "17,940,708"
+                    "raw": 17835062,
+                    "fmt": "17.84M",
+                    "longFmt": "17,835,062"
                   },
                   "value": {
-                    "raw": 4351877539,
-                    "fmt": "4.35B",
-                    "longFmt": "4,351,877,539"
+                    "raw": 5611980608,
+                    "fmt": "5.61B",
+                    "longFmt": "5,611,980,608"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1601424000,
-                    "fmt": "2020-09-30"
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
                   },
                   "organization": "Price (T.Rowe) Associates Inc",
                   "pctHeld": {
-                    "raw": 0.0747,
-                    "fmt": "7.47%"
+                    "raw": 0.0795,
+                    "fmt": "7.95%"
                   },
                   "position": {
-                    "raw": 13388398,
-                    "fmt": "13.39M",
-                    "longFmt": "13,388,398"
+                    "raw": 14252970,
+                    "fmt": "14.25M",
+                    "longFmt": "14,252,970"
                   },
                   "value": {
-                    "raw": 3247623702,
-                    "fmt": "3.25B",
-                    "longFmt": "3,247,623,702"
+                    "raw": 4484839540,
+                    "fmt": "4.48B",
+                    "longFmt": "4,484,839,540"
                   }
                 },
                 {
@@ -3250,8 +3274,8 @@
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1601424000,
-                    "fmt": "2020-09-30"
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
                   },
                   "organization": "Technology Crossover Management VIII, Ltd.",
                   "pctHeld": {
@@ -3264,9 +3288,9 @@
                     "longFmt": "4,522,840"
                   },
                   "value": {
-                    "raw": 1097105298,
-                    "fmt": "1.1B",
-                    "longFmt": "1,097,105,298"
+                    "raw": 1423156834,
+                    "fmt": "1.42B",
+                    "longFmt": "1,423,156,834"
                   }
                 },
                 {
@@ -3294,8 +3318,30 @@
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1601424000,
-                    "fmt": "2020-09-30"
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "JP Morgan Chase & Company",
+                  "pctHeld": {
+                    "raw": 0.018,
+                    "fmt": "1.80%"
+                  },
+                  "position": {
+                    "raw": 3228803,
+                    "fmt": "3.23M",
+                    "longFmt": "3,228,803"
+                  },
+                  "value": {
+                    "raw": 1015975151,
+                    "fmt": "1.02B",
+                    "longFmt": "1,015,975,151"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
                   },
                   "organization": "Tiger Global Management, LLC",
                   "pctHeld": {
@@ -3303,14 +3349,36 @@
                     "fmt": "1.78%"
                   },
                   "position": {
-                    "raw": 3185589,
-                    "fmt": "3.19M",
-                    "longFmt": "3,185,589"
+                    "raw": 3184013,
+                    "fmt": "3.18M",
+                    "longFmt": "3,184,013"
                   },
                   "value": {
-                    "raw": 772728323,
-                    "fmt": "772.73M",
-                    "longFmt": "772,728,323"
+                    "raw": 1001881530,
+                    "fmt": "1B",
+                    "longFmt": "1,001,881,530"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "ARK Investment Management, LLC",
+                  "pctHeld": {
+                    "raw": 0.013099999,
+                    "fmt": "1.31%"
+                  },
+                  "position": {
+                    "raw": 2356336,
+                    "fmt": "2.36M",
+                    "longFmt": "2,356,336"
+                  },
+                  "value": {
+                    "raw": 741444685,
+                    "fmt": "741.44M",
+                    "longFmt": "741,444,685"
                   }
                 },
                 {
@@ -3334,59 +3402,16 @@
                     "fmt": "719.19M",
                     "longFmt": "719,186,896"
                   }
-                },
-                {
-                  "maxAge": 1,
-                  "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
-                  },
-                  "organization": "AMF Pensionsforsakring AB",
-                  "pctHeld": {
-                    "raw": 0.0112,
-                    "fmt": "1.12%"
-                  },
-                  "position": {
-                    "raw": 2000000,
-                    "fmt": "2M",
-                    "longFmt": "2,000,000"
-                  },
-                  "value": {
-                    "raw": 629320000,
-                    "fmt": "629.32M",
-                    "longFmt": "629,320,000"
-                  }
-                },
-                {
-                  "maxAge": 1,
-                  "reportDate": {
-                    "raw": 1601424000,
-                    "fmt": "2020-09-30"
-                  },
-                  "organization": "JP Morgan Chase & Company",
-                  "pctHeld": {
-                    "raw": 0.011,
-                    "fmt": "1.10%"
-                  },
-                  "position": {
-                    "raw": 1971696,
-                    "fmt": "1.97M",
-                    "longFmt": "1,971,696"
-                  },
-                  "value": {
-                    "raw": 478274298,
-                    "fmt": "478.27M",
-                    "longFmt": "478,274,298"
-                  }
                 }
-              ]
+              ],
+              "maxAge": 1
             },
             "majorHoldersBreakdown": {
               "maxAge": 1,
-              "insidersPercentHeld": 0.2926,
-              "institutionsPercentHeld": 0.59847,
-              "institutionsFloatPercentHeld": 0.84600997,
-              "institutionsCount": 750
+              "insidersPercentHeld": 0.28304002,
+              "institutionsPercentHeld": 0.60576,
+              "institutionsFloatPercentHeld": 0.84489995,
+              "institutionsCount": 808
             },
             "balanceSheetHistoryQuarterly": {
               "balanceSheetStatements": [
@@ -3978,20 +4003,20 @@
                 {
                   "maxAge": 1,
                   "epsActual": {
-                    "raw": -0.8,
-                    "fmt": "-0.8"
+                    "raw": -0.78,
+                    "fmt": "-0.78"
                   },
                   "epsEstimate": {
-                    "raw": -0.67,
-                    "fmt": "-0.67"
+                    "raw": -0.65,
+                    "fmt": "-0.65"
                   },
                   "epsDifference": {
                     "raw": -0.13,
                     "fmt": "-0.13"
                   },
                   "surprisePercent": {
-                    "raw": -0.19399999,
-                    "fmt": "-19.40%"
+                    "raw": -0.2,
+                    "fmt": "-20.00%"
                   },
                   "quarter": {
                     "raw": 1609372800,
@@ -4028,7 +4053,7 @@
               "netInfoCount": 0,
               "netInfoShares": 0,
               "netPercentInsiderShares": 0,
-              "totalInsiderShares": 55656280
+              "totalInsiderShares": 53837848
             },
             "sectorTrend": {
               "maxAge": 1,
@@ -4785,16 +4810,15 @@
                   },
                   {
                     "date": "4Q2020",
-                    "actual": -0.8,
-                    "estimate": -0.67
+                    "actual": -0.78,
+                    "estimate": -0.65
                   }
                 ],
-                "currentQuarterEstimate": -0.46,
+                "currentQuarterEstimate": -0.48,
                 "currentQuarterEstimateDate": "1Q",
                 "currentQuarterEstimateYear": 2021,
                 "earningsDate": [
-                  1619481600,
-                  1620000000
+                  1619568000
                 ]
               },
               "financialsChart": {
@@ -4847,24 +4871,32 @@
             },
             "financialData": {
               "maxAge": 86400,
-              "currentPrice": 339.7,
-              "targetHighPrice": 428.1,
-              "targetLowPrice": 142.03,
-              "targetMeanPrice": 308.84,
-              "targetMedianPrice": 315.08,
+              "currentPrice": 280.15,
+              "targetHighPrice": 430,
+              "targetLowPrice": 200.94,
+              "targetMeanPrice": 322.39,
+              "targetMedianPrice": 341.59,
               "recommendationMean": 2.7,
               "recommendationKey": "hold",
-              "numberOfAnalystOpinions": 23,
+              "numberOfAnalystOpinions": 21,
+              "totalCash": 1982992256,
+              "totalCashPerShare": 10.425,
+              "ebitda": -264791248,
+              "totalDebt": 715524800,
               "quickRatio": 0.742,
               "currentRatio": 0.816,
+              "totalRevenue": 9273578496,
               "debtToEquity": 21.675,
+              "revenuePerShare": 49.437,
               "returnOnAssets": -0.030030001,
               "returnOnEquity": -0.23998,
               "grossProfits": 2015000000,
+              "freeCashflow": 449998016,
+              "operatingCashflow": 304804160,
               "revenueGrowth": 0.169,
               "grossMargins": 0.25571,
               "ebitdaMargins": -0.02855,
-              "operatingMargins": 0,
+              "operatingMargins": -0.0349,
               "profitMargins": -0.07373,
               "financialCurrency": "EUR"
             }

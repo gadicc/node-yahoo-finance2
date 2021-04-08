@@ -1,0 +1,137 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/OCDO.L?formatted=false&modules=earnings"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "68hmfmhg1kj24"
+      ],
+      "x-yahoo-request-id": [
+        "68hmfmhg1kj24"
+      ],
+      "x-request-id": [
+        "d43de662-514a-49c1-86da-8c8e2a982dd1"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "269"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 03 Feb 2021 07:09:55 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earnings": {
+              "maxAge": 86400,
+              "earningsChart": {
+                "quarterly": [],
+                "earningsDate": [
+                  1612828800
+                ]
+              },
+              "financialsChart": {
+                "yearly": [
+                  {
+                    "date": 2016,
+                    "revenue": 1271000000,
+                    "earnings": 12000000
+                  },
+                  {
+                    "date": 2017,
+                    "revenue": 1454500000,
+                    "earnings": -8300000
+                  },
+                  {
+                    "date": 2018,
+                    "revenue": 1598800000,
+                    "earnings": -44900000
+                  },
+                  {
+                    "date": 2019,
+                    "revenue": 1756600000,
+                    "earnings": -213100000
+                  }
+                ],
+                "quarterly": [
+                  {
+                    "date": "3Q2019",
+                    "revenue": 437150000,
+                    "earnings": -35050000
+                  },
+                  {
+                    "date": "4Q2019",
+                    "revenue": 437150000,
+                    "earnings": -35050000
+                  },
+                  {
+                    "date": "1Q2020",
+                    "revenue": 543400000,
+                    "earnings": -28700000
+                  },
+                  {
+                    "date": "2Q2020",
+                    "revenue": 543400000,
+                    "earnings": -28700000
+                  }
+                ]
+              },
+              "financialCurrency": "GBP"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -7,53 +7,41 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json"
+      "x-yahoo-request-id": [
+        "3il9pb9g6s993"
       ],
       "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
-      ],
-      "vary": [
-        "Origin,Accept-Encoding"
-      ],
-      "y-rid": [
-        "8n3liptg1cri4"
-      ],
-      "x-yahoo-request-id": [
-        "8n3liptg1cri4"
-      ],
-      "x-request-id": [
-        "3677d3da-d43f-4afb-a855-eae21950dfdd"
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
       ],
       "content-encoding": [
         "gzip"
       ],
-      "content-length": [
-        "461"
+      "content-type": [
+        "application/json;charset=utf-8"
       ],
-      "x-envoy-upstream-service-time": [
-        "2"
+      "vary": [
+        "Origin"
+      ],
+      "content-length": [
+        "482"
       ],
       "date": [
-        "Sun, 31 Jan 2021 08:45:56 GMT"
-      ],
-      "server": [
-        "ATS"
-      ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+        "Wed, 07 Apr 2021 21:33:23 GMT"
       ],
       "age": [
         "0"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "server": [
+        "ATS"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -74,27 +62,31 @@
           {
             "price": {
               "maxAge": 1,
+              "preMarketChangePercent": -0.00301083,
+              "preMarketChange": -0.379997,
+              "preMarketTime": 1617802199,
+              "preMarketPrice": 125.83,
               "preMarketSource": "FREE_REALTIME",
-              "postMarketChangePercent": -0.0013641099,
-              "postMarketChange": -0.180008,
-              "postMarketTime": 1611968399,
-              "postMarketPrice": 131.78,
+              "postMarketChangePercent": 0.0015246262,
+              "postMarketChange": 0.1949997,
+              "postMarketTime": 1617831199,
+              "postMarketPrice": 128.095,
               "postMarketSource": "FREE_REALTIME",
-              "regularMarketChangePercent": -0.037420597,
-              "regularMarketChange": -5.1299896,
-              "regularMarketTime": 1611954002,
+              "regularMarketChangePercent": 0.0133904,
+              "regularMarketChange": 1.6900024,
+              "regularMarketTime": 1617825602,
               "priceHint": 2,
-              "regularMarketPrice": 131.96,
-              "regularMarketDayHigh": 136.74,
-              "regularMarketDayLow": 130.21,
-              "regularMarketVolume": 177523812,
-              "regularMarketPreviousClose": 137.09,
+              "regularMarketPrice": 127.9,
+              "regularMarketDayHigh": 127.92,
+              "regularMarketDayLow": 125.14,
+              "regularMarketVolume": 80687411,
+              "regularMarketPreviousClose": 126.21,
               "regularMarketSource": "FREE_REALTIME",
-              "regularMarketOpen": 135.83,
+              "regularMarketOpen": 125.83,
               "exchange": "NMS",
               "exchangeName": "NasdaqGS",
               "exchangeDataDelayedBy": 0,
-              "marketState": "CLOSED",
+              "marketState": "POST",
               "quoteType": "EQUITY",
               "symbol": "AAPL",
               "underlyingSymbol": null,
@@ -104,9 +96,8 @@
               "quoteSourceName": "Nasdaq Real Time Price",
               "currencySymbol": "$",
               "fromCurrency": null,
-              "toCurrency": null,
               "lastMarket": null,
-              "marketCap": 2215357710336
+              "marketCap": 2147198042112
             }
           }
         ],

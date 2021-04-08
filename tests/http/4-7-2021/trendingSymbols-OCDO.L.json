@@ -1,0 +1,149 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/OCDO.L?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "bgl699lg5clkd"
+      ],
+      "x-yahoo-request-id": [
+        "bgl699lg5clkd"
+      ],
+      "x-request-id": [
+        "76b64371-4ade-4cb0-bf20-cc56cffe29d1"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "900"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Sat, 20 Mar 2021 20:09:49 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "OCDO.L",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": false,
+              "currency": "GBp",
+              "firstTradeDateMilliseconds": 1279695600000,
+              "priceHint": 2,
+              "regularMarketChange": 42,
+              "regularMarketChangePercent": 2.1212122,
+              "regularMarketTime": 1616171931,
+              "regularMarketPrice": 2022,
+              "regularMarketDayHigh": 2043.735,
+              "regularMarketDayRange": "1955.5 - 2043.735",
+              "regularMarketDayLow": 1955.5,
+              "regularMarketVolume": 3470824,
+              "regularMarketPreviousClose": 1980,
+              "bid": 2022,
+              "ask": 2023,
+              "bidSize": 0,
+              "askSize": 0,
+              "fullExchangeName": "LSE",
+              "financialCurrency": "GBP",
+              "regularMarketOpen": 1970,
+              "averageDailyVolume3Month": 1573467,
+              "averageDailyVolume10Day": 1954151,
+              "fiftyTwoWeekLowChange": 2001.12,
+              "fiftyTwoWeekLowChangePercent": 95.83908,
+              "fiftyTwoWeekRange": "20.88 - 2914.0",
+              "fiftyTwoWeekHighChange": -892,
+              "fiftyTwoWeekHighChangePercent": -0.30610844,
+              "fiftyTwoWeekLow": 20.88,
+              "fiftyTwoWeekHigh": 2914,
+              "earningsTimestamp": 1612836000,
+              "earningsTimestampStart": 1612836000,
+              "earningsTimestampEnd": 1612836000,
+              "epsTrailingTwelveMonths": -17.5,
+              "sharesOutstanding": 748825984,
+              "bookValue": 2.394,
+              "fiftyDayAverage": 2389.361,
+              "fiftyDayAverageChange": -367.36108,
+              "fiftyDayAverageChangePercent": -0.15374866,
+              "twoHundredDayAverage": 2416.0764,
+              "twoHundredDayAverageChange": -394.07642,
+              "twoHundredDayAverageChangePercent": -0.16310593,
+              "marketCap": 15141261312,
+              "priceToBook": 844.6115,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 20,
+              "tradeable": false,
+              "marketState": "CLOSED",
+              "exchange": "LSE",
+              "shortName": "OCADO GROUP PLC ORD 2P",
+              "longName": "Ocado Group plc",
+              "messageBoardId": "finmb_109303666",
+              "exchangeTimezoneName": "Europe/London",
+              "exchangeTimezoneShortName": "GMT",
+              "gmtOffSetMilliseconds": 0,
+              "market": "gb_market",
+              "esgPopulated": false,
+              "symbol": "OCDO.L"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

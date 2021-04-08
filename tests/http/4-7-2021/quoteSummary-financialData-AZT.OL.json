@@ -1,0 +1,107 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AZT.OL?formatted=false&modules=financialData"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "4blhbi9g2nrr8"
+      ],
+      "x-yahoo-request-id": [
+        "4blhbi9g2nrr8"
+      ],
+      "x-request-id": [
+        "7f276e8f-3d55-40e2-a9c0-1d65eb29eb14"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "378"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:32 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "financialData": {
+              "maxAge": 86400,
+              "currentPrice": 70.2,
+              "recommendationKey": "none",
+              "totalCash": 140178000,
+              "totalCashPerShare": 2.9,
+              "ebitda": 43426000,
+              "totalDebt": 9595000,
+              "quickRatio": 11.524,
+              "currentRatio": 11.787,
+              "totalRevenue": 97823000,
+              "debtToEquity": 4.862,
+              "revenuePerShare": 2.02,
+              "returnOnAssets": 0.17869,
+              "returnOnEquity": 0.61842996,
+              "grossProfits": 96692000,
+              "freeCashflow": 20620624,
+              "operatingCashflow": 42233000,
+              "earningsGrowth": 30.218,
+              "revenueGrowth": -0.061,
+              "grossMargins": 0.98844004,
+              "ebitdaMargins": 0.44392,
+              "operatingMargins": 0.43745,
+              "profitMargins": 0.86629,
+              "financialCurrency": "NOK"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -7,50 +7,41 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json"
+      "x-yahoo-request-id": [
+        "23ns3ctg6s993"
       ],
       "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-type": [
+        "application/json;charset=utf-8"
       ],
       "vary": [
-        "Origin,Accept-Encoding"
-      ],
-      "y-rid": [
-        "16pcnn9g2nrre"
-      ],
-      "x-yahoo-request-id": [
-        "16pcnn9g2nrre"
-      ],
-      "x-request-id": [
-        "42c3a35e-9ec1-46cb-833c-662ad8c883e9"
+        "Origin"
       ],
       "content-length": [
-        "420"
-      ],
-      "x-envoy-upstream-service-time": [
-        "8"
+        "265"
       ],
       "date": [
-        "Tue, 16 Feb 2021 16:14:38 GMT"
-      ],
-      "server": [
-        "ATS"
-      ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "Wed, 07 Apr 2021 21:33:23 GMT"
       ],
       "age": [
         "0"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "server": [
+        "ATS"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -77,7 +68,7 @@
               "exchange": "YHD",
               "exchangeName": "YHD",
               "exchangeDataDelayedBy": 0,
-              "marketState": "REGULAR",
+              "marketState": "POST",
               "quoteType": "MUTUALFUND",
               "symbol": "ADH",
               "underlyingSymbol": null,
@@ -85,7 +76,6 @@
               "longName": null,
               "quoteSourceName": "Delayed Quote",
               "fromCurrency": null,
-              "toCurrency": null,
               "lastMarket": null
             }
           }

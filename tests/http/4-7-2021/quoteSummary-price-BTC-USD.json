@@ -1,0 +1,114 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BTC-USD?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "78p6h0hg3h9vv"
+      ],
+      "x-yahoo-request-id": [
+        "78p6h0hg3h9vv"
+      ],
+      "x-request-id": [
+        "ec1dc3ff-f8f7-4fc4-873e-f310b4f5f6cd"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "462"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 26 Feb 2021 07:49:19 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": -0.11930983,
+              "regularMarketChange": -6024.1562,
+              "regularMarketTime": 1614325622,
+              "priceHint": 2,
+              "regularMarketPrice": 44467.547,
+              "regularMarketDayHigh": 47677.535,
+              "regularMarketDayLow": 44467.547,
+              "regularMarketVolume": 62631043072,
+              "regularMarketPreviousClose": 46756.99,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 46756.99,
+              "exchange": "CCC",
+              "exchangeName": "CCC",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "CRYPTOCURRENCY",
+              "symbol": "BTC-USD",
+              "underlyingSymbol": null,
+              "shortName": "Bitcoin USD",
+              "longName": null,
+              "currency": "USD",
+              "quoteSourceName": "CoinMarketCap",
+              "currencySymbol": "$",
+              "fromCurrency": "BTC",
+              "toCurrency": "USD=X",
+              "lastMarket": "CoinMarketCap",
+              "volume24Hr": 62631043072,
+              "volumeAllCurrencies": 62631043072,
+              "circulatingSupply": 18638932,
+              "marketCap": 828827500544
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

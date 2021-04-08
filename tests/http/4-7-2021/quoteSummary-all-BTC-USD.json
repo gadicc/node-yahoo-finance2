@@ -1,0 +1,177 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BTC-USD?formatted=false&modules=assetProfile%2CbalanceSheetHistory%2CbalanceSheetHistoryQuarterly%2CcalendarEvents%2CcashflowStatementHistory%2CcashflowStatementHistoryQuarterly%2CdefaultKeyStatistics%2Cearnings%2CearningsHistory%2CearningsTrend%2CfinancialData%2CfundOwnership%2CfundPerformance%2CfundProfile%2CincomeStatementHistory%2CincomeStatementHistoryQuarterly%2CindexTrend%2CindustryTrend%2CinsiderHolders%2CinsiderTransactions%2CinstitutionOwnership%2CmajorDirectHolders%2CmajorHoldersBreakdown%2CnetSharePurchaseActivity%2Cprice%2CquoteType%2CrecommendationTrend%2CsecFilings%2CsectorTrend%2CsummaryDetail%2CsummaryProfile%2CtopHoldings%2CupgradeDowngradeHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "cf3i0u1g3ha07"
+      ],
+      "x-yahoo-request-id": [
+        "cf3i0u1g3ha07"
+      ],
+      "x-request-id": [
+        "bc099546-a6e9-4511-8dde-b023c5236f5a"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1119"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Fri, 26 Feb 2021 07:49:27 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "assetProfile": {
+              "companyOfficers": [],
+              "name": "Bitcoin",
+              "startDate": "2013-04-28",
+              "description": "Bitcoin (BTC) is a cryptocurrency . Users are able to generate BTC through the process of mining. Bitcoin has a current supply of 18,638,756. The last known price of Bitcoin is 46,795.55278186 USD and is down -7.54 over the last 24 hours. It is currently trading on 9761 active market(s) with $57,364,948,694.66 traded over the last 24 hours. More information can be found at https://bitcoin.org/.",
+              "maxAge": 86400
+            },
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 46756.99,
+              "open": 46756.99,
+              "dayLow": 44555.176,
+              "dayHigh": 47677.535,
+              "regularMarketPreviousClose": 46756.99,
+              "regularMarketOpen": 46756.99,
+              "regularMarketDayLow": 44555.176,
+              "regularMarketDayHigh": 47677.535,
+              "volume": 62650314752,
+              "regularMarketVolume": 62650314752,
+              "averageVolume": 58705874184,
+              "averageVolume10days": 72812647616,
+              "averageDailyVolume10Day": 72812647616,
+              "marketCap": 830460854272,
+              "fiftyTwoWeekLow": 4106.981,
+              "fiftyTwoWeekHigh": 58330.57,
+              "fiftyDayAverage": 40623.53,
+              "twoHundredDayAverage": 21837.865,
+              "currency": "USD",
+              "fromCurrency": "BTC",
+              "toCurrency": "USD=X",
+              "lastMarket": "CoinMarketCap",
+              "volume24Hr": 62650314752,
+              "volumeAllCurrencies": 62650314752,
+              "circulatingSupply": 18638932,
+              "algorithm": null,
+              "startDate": 1367107200,
+              "tradeable": false
+            },
+            "summaryProfile": {
+              "companyOfficers": [],
+              "name": "Bitcoin",
+              "startDate": "2013-04-28",
+              "description": "Bitcoin (BTC) is a cryptocurrency . Users are able to generate BTC through the process of mining. Bitcoin has a current supply of 18,638,756. The last known price of Bitcoin is 46,795.55278186 USD and is down -7.54 over the last 24 hours. It is currently trading on 9761 active market(s) with $57,364,948,694.66 traded over the last 24 hours. More information can be found at https://bitcoin.org/.",
+              "maxAge": 86400
+            },
+            "quoteType": {
+              "exchange": "CCC",
+              "quoteType": "CRYPTOCURRENCY",
+              "symbol": "BTC-USD",
+              "underlyingSymbol": "BTC-USD",
+              "shortName": "Bitcoin USD",
+              "longName": null,
+              "firstTradeDateEpochUtc": 1410908400,
+              "timeZoneFullName": "Europe/London",
+              "timeZoneShortName": "GMT",
+              "uuid": "74397779-1589-3270-8c45-b7f1a7345b3a",
+              "messageBoardId": "finmb_BTC_CCC",
+              "gmtOffSetMilliseconds": 0,
+              "maxAge": 1
+            },
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": -0.11797888,
+              "regularMarketChange": -5959.6875,
+              "regularMarketTime": 1614325682,
+              "priceHint": 2,
+              "regularMarketPrice": 44555.176,
+              "regularMarketDayHigh": 47677.535,
+              "regularMarketDayLow": 44555.176,
+              "regularMarketVolume": 62650314752,
+              "averageDailyVolume10Day": 72812647616,
+              "averageDailyVolume3Month": 58705874184,
+              "regularMarketPreviousClose": 46756.99,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 46756.99,
+              "exchange": "CCC",
+              "exchangeName": "CCC",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "CRYPTOCURRENCY",
+              "symbol": "BTC-USD",
+              "underlyingSymbol": null,
+              "shortName": "Bitcoin USD",
+              "longName": null,
+              "currency": "USD",
+              "quoteSourceName": "CoinMarketCap",
+              "currencySymbol": "$",
+              "fromCurrency": "BTC",
+              "toCurrency": "USD=X",
+              "lastMarket": "CoinMarketCap",
+              "volume24Hr": 62650314752,
+              "volumeAllCurrencies": 62650314752,
+              "circulatingSupply": 18638932,
+              "marketCap": 830460854272
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -467,10 +467,10 @@ export interface FundProfile {
   family: null | string;
   categoryName: null | string;
   legalType: null | string;
-  managementInfo: FundProfileManagementInfo;
+  managementInfo?: FundProfileManagementInfo;
   feesExpensesInvestment?: FundProfileFeesExpensesInvestment;
   feesExpensesInvestmentCat?: FundProfileFeesExpensesInvestmentCat;
-  brokerages: FundProfileBrokerage[];
+  brokerages?: FundProfileBrokerage[];
   initInvestment?: number;
   initIraInvestment?: number;
   initAipInvestment?: number;
@@ -680,7 +680,7 @@ export interface Price {
   currency?: string;
   currencySymbol?: string;
   fromCurrency: string | null;
-  toCurrency: string | null;
+  toCurrency?: string | null;
   volume24Hr?: number;
   volumeAllCurrencies?: number;
   circulatingSupply?: number;
@@ -697,7 +697,7 @@ export interface QuoteType {
   timeZoneFullName: string;
   timeZoneShortName: string;
   uuid: string;
-  messageBoardId: null | string;
+  messageBoardId?: null | string;
   gmtOffSetMilliseconds: number;
   maxAge: number;
 }
@@ -728,6 +728,7 @@ export interface Filing {
   title: string;
   edgarUrl: string;
   maxAge: number;
+  url: string;
 }
 
 export enum Type {
@@ -785,7 +786,7 @@ export interface SummaryDetail {
   // crypto only (optional, or null in other types)
   // TODO: how does Price / SummaryDetail compare? common base?
   fromCurrency: string | null; // 'BTC'
-  toCurrency: string | null; // 'USD-X'
+  toCurrency?: string | null; // 'USD-X'
   lastMarket: string | null; // 'CoinMarketCap'
   volume24Hr?: number; // 62650314752
   volumeAllCurrencies?: number; // 62650314752
@@ -904,6 +905,8 @@ export enum Action {
 export enum Grade {
   Accumulate = "Accumulate",
   Add = "Add",
+  Average = "Average",
+  BelowAverage = "Below Average",
   Buy = "Buy",
   Empty = "",
   EqualWeight = "Equal-Weight",

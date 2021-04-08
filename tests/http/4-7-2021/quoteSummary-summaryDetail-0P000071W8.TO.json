@@ -1,0 +1,100 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/0P000071W8.TO?formatted=false&modules=summaryDetail"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "39tm71hg1qt93"
+      ],
+      "x-yahoo-request-id": [
+        "39tm71hg1qt93"
+      ],
+      "x-request-id": [
+        "4929c6bd-2b25-45e6-b4b4-c0db461f0455"
+      ],
+      "content-length": [
+        "494"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Fri, 05 Feb 2021 16:41:06 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 87.59,
+              "regularMarketPreviousClose": 87.59,
+              "averageVolume": 0,
+              "averageVolume10days": 0,
+              "averageDailyVolume10Day": 0,
+              "yield": 0.0121,
+              "ytdReturn": 0.18120001,
+              "totalAssets": 1844107520,
+              "fiftyTwoWeekLow": 57.18,
+              "fiftyTwoWeekHigh": 87.59,
+              "fiftyDayAverage": 85.913475,
+              "twoHundredDayAverage": 81.95717,
+              "currency": "CAD",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "algorithm": null,
+              "tradeable": false
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

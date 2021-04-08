@@ -1,0 +1,97 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ADH?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "16pcnn9g2nrre"
+      ],
+      "x-yahoo-request-id": [
+        "16pcnn9g2nrre"
+      ],
+      "x-request-id": [
+        "42c3a35e-9ec1-46cb-833c-662ad8c883e9"
+      ],
+      "content-length": [
+        "420"
+      ],
+      "x-envoy-upstream-service-time": [
+        "8"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 16:14:38 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "regularMarketTime": 1561759658,
+              "priceHint": 2,
+              "regularMarketSource": "DELAYED",
+              "exchange": "YHD",
+              "exchangeName": "YHD",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "MUTUALFUND",
+              "symbol": "ADH",
+              "underlyingSymbol": null,
+              "shortName": "54688",
+              "longName": null,
+              "quoteSourceName": "Delayed Quote",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

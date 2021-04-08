@@ -1,0 +1,151 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=BRKS"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "9dvdt9hg2vse0"
+      ],
+      "x-yahoo-request-id": [
+        "9dvdt9hg2vse0"
+      ],
+      "x-request-id": [
+        "e3baece1-c6c5-4747-9e13-1bad717fab55"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "979"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:36 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "exchange": "NMS",
+            "shortName": "Brooks Automation, Inc.",
+            "longName": "Brooks Automation, Inc.",
+            "messageBoardId": "finmb_336648",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "priceEpsCurrentYear": 43.914574,
+            "sharesOutstanding": 74220096,
+            "bookValue": 17.118,
+            "fiftyDayAverage": 78.746666,
+            "fiftyDayAverageChange": 8.643333,
+            "fiftyDayAverageChangePercent": 0.10976126,
+            "twoHundredDayAverage": 62.45348,
+            "twoHundredDayAverageChange": 24.93652,
+            "twoHundredDayAverageChangePercent": 0.3992815,
+            "marketCap": 6486094336,
+            "forwardPE": 38.4978,
+            "priceToBook": 5.1051526,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "firstTradeDateMilliseconds": 791735400000,
+            "regularMarketChange": 4.4000015,
+            "priceHint": 2,
+            "regularMarketChangePercent": 5.3018456,
+            "regularMarketTime": 1613754775,
+            "regularMarketPrice": 87.39,
+            "regularMarketDayHigh": 87.9,
+            "regularMarketDayRange": "84.56 - 87.9",
+            "regularMarketDayLow": 84.56,
+            "regularMarketVolume": 146196,
+            "regularMarketPreviousClose": 82.99,
+            "bid": 87.55,
+            "ask": 87.74,
+            "bidSize": 13,
+            "askSize": 10,
+            "fullExchangeName": "NasdaqGS",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 84.56,
+            "averageDailyVolume3Month": 865460,
+            "averageDailyVolume10Day": 520785,
+            "fiftyTwoWeekLowChange": 66.2,
+            "fiftyTwoWeekLowChangePercent": 3.124115,
+            "fiftyTwoWeekRange": "21.19 - 91.78",
+            "fiftyTwoWeekHighChange": -4.3899994,
+            "fiftyTwoWeekHighChangePercent": -0.047831766,
+            "fiftyTwoWeekLow": 21.19,
+            "fiftyTwoWeekHigh": 91.78,
+            "dividendDate": 1616716800,
+            "earningsTimestamp": 1612281904,
+            "earningsTimestampStart": 1619640000,
+            "earningsTimestampEnd": 1620072000,
+            "trailingAnnualDividendRate": 0.4,
+            "trailingPE": 83.546844,
+            "trailingAnnualDividendYield": 0.004819858,
+            "epsTrailingTwelveMonths": 1.046,
+            "epsForward": 2.27,
+            "epsCurrentYear": 1.99,
+            "marketState": "REGULAR",
+            "displayName": "Brooks Automation",
+            "symbol": "BRKS"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

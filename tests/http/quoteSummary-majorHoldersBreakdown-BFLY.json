@@ -7,50 +7,41 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json"
-      ],
-      "vary": [
-        "Origin,Accept-Encoding"
+      "x-yahoo-request-id": [
+        "coid67hg6s98m"
       ],
       "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
       ],
-      "y-rid": [
-        "652ja0pg2qdt8"
+      "content-encoding": [
+        "gzip"
       ],
-      "x-yahoo-request-id": [
-        "652ja0pg2qdt8"
+      "content-type": [
+        "application/json;charset=utf-8"
       ],
-      "x-request-id": [
-        "6024180c-aa3f-4e7c-9e01-64b3efd7c95b"
+      "vary": [
+        "Origin"
       ],
       "content-length": [
-        "81"
-      ],
-      "x-envoy-upstream-service-time": [
-        "2"
+        "159"
       ],
       "date": [
-        "Wed, 17 Feb 2021 15:35:04 GMT"
-      ],
-      "server": [
-        "ATS"
-      ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "Wed, 07 Apr 2021 21:33:10 GMT"
       ],
       "age": [
         "0"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "server": [
+        "ATS"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -70,7 +61,11 @@
         "result": [
           {
             "majorHoldersBreakdown": {
-              "maxAge": 1
+              "maxAge": 1,
+              "insidersPercentHeld": 0.27815,
+              "institutionsPercentHeld": 0.13989,
+              "institutionsFloatPercentHeld": 0.19379999,
+              "institutionsCount": 100
             }
           }
         ],

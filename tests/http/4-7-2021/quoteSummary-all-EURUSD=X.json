@@ -1,0 +1,158 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EURUSD=X?formatted=false&modules=assetProfile%2CbalanceSheetHistory%2CbalanceSheetHistoryQuarterly%2CcalendarEvents%2CcashflowStatementHistory%2CcashflowStatementHistoryQuarterly%2CdefaultKeyStatistics%2Cearnings%2CearningsHistory%2CearningsTrend%2CfinancialData%2CfundOwnership%2CfundPerformance%2CfundProfile%2CincomeStatementHistory%2CincomeStatementHistoryQuarterly%2CindexTrend%2CindustryTrend%2CinsiderHolders%2CinsiderTransactions%2CinstitutionOwnership%2CmajorDirectHolders%2CmajorHoldersBreakdown%2CnetSharePurchaseActivity%2Cprice%2CquoteType%2CrecommendationTrend%2CsecFilings%2CsectorTrend%2CsummaryDetail%2CsummaryProfile%2CtopHoldings%2CupgradeDowngradeHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "fnj3ib1g5rbsa"
+      ],
+      "x-yahoo-request-id": [
+        "fnj3ib1g5rbsa"
+      ],
+      "x-request-id": [
+        "16f00b6a-9010-497c-86c0-1f04d60739ad"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "718"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Fri, 26 Mar 2021 09:55:21 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 4,
+              "previousClose": 1.177163,
+              "open": 1.1773016,
+              "dayLow": 1.177163,
+              "dayHigh": 1.1802195,
+              "regularMarketPreviousClose": 1.177163,
+              "regularMarketOpen": 1.1773016,
+              "regularMarketDayLow": 1.177163,
+              "regularMarketDayHigh": 1.1802195,
+              "volume": 0,
+              "regularMarketVolume": 0,
+              "averageVolume": 0,
+              "averageVolume10days": 0,
+              "averageDailyVolume10Day": 0,
+              "bid": 1.1798018,
+              "ask": 1.1791062,
+              "bidSize": 0,
+              "askSize": 0,
+              "fiftyTwoWeekLow": 1.0727657,
+              "fiftyTwoWeekHigh": 1.2350253,
+              "fiftyDayAverage": 1.2020999,
+              "twoHundredDayAverage": 1.1969675,
+              "currency": "USD",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "algorithm": null,
+              "tradeable": false
+            },
+            "quoteType": {
+              "exchange": "CCY",
+              "quoteType": "CURRENCY",
+              "symbol": "EURUSD=X",
+              "underlyingSymbol": "EURUSD=X",
+              "shortName": "EUR/USD",
+              "longName": null,
+              "firstTradeDateEpochUtc": 1070236800,
+              "timeZoneFullName": "Europe/London",
+              "timeZoneShortName": "GMT",
+              "uuid": "1c974a98-f49a-3294-a47a-52edc95109aa",
+              "messageBoardId": "finmb_EUR_X",
+              "gmtOffSetMilliseconds": 0,
+              "maxAge": 1
+            },
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": 0.0023598515,
+              "regularMarketChange": 0.002777934,
+              "regularMarketTime": 1616752501,
+              "priceHint": 4,
+              "regularMarketPrice": 1.1799409,
+              "regularMarketDayHigh": 1.1802195,
+              "regularMarketDayLow": 1.177163,
+              "regularMarketVolume": 0,
+              "averageDailyVolume10Day": 0,
+              "averageDailyVolume3Month": 0,
+              "regularMarketPreviousClose": 1.177163,
+              "regularMarketSource": "DELAYED",
+              "regularMarketOpen": 1.1773016,
+              "exchange": "CCY",
+              "exchangeName": "CCY",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "CURRENCY",
+              "symbol": "EURUSD=X",
+              "underlyingSymbol": null,
+              "shortName": "EUR/USD",
+              "longName": null,
+              "currency": "USD",
+              "quoteSourceName": "Delayed Quote",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

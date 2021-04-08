@@ -3,57 +3,45 @@
     "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SIMP?formatted=false&modules=upgradeDowngradeHistory"
   },
   "response": {
-    "ok": false,
-    "status": 404,
-    "statusText": "Not Found",
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
     "headers": {
+      "x-yahoo-request-id": [
+        "88tolbpg6s9af"
+      ],
+      "cache-control": [
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "vary": [
         "Origin"
       ],
-      "y-rid": [
-        "0ov9istg6fngt"
-      ],
-      "x-yahoo-request-id": [
-        "0ov9istg6fngt"
-      ],
-      "x-request-id": [
-        "f0e8ae2a-9e3c-43aa-96ad-bce8198c95cd"
-      ],
       "content-length": [
-        "156"
-      ],
-      "x-envoy-upstream-service-time": [
-        "3"
+        "105"
       ],
       "date": [
-        "Sat, 03 Apr 2021 03:16:45 GMT"
-      ],
-      "server": [
-        "ATS"
-      ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
-      ],
-      "cache-control": [
-        "max-age=0, private"
-      ],
-      "expires": [
-        "-1"
+        "Wed, 07 Apr 2021 21:34:07 GMT"
       ],
       "age": [
         "0"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "server": [
+        "ATS"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -70,11 +58,15 @@
     },
     "bodyJson": {
       "quoteSummary": {
-        "result": null,
-        "error": {
-          "code": "Not Found",
-          "description": "No fundamentals data found for any of the summaryTypes=upgradeDowngradeHistory"
-        }
+        "result": [
+          {
+            "upgradeDowngradeHistory": {
+              "history": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
       }
     }
   }

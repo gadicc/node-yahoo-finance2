@@ -7,50 +7,41 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json"
+      "x-yahoo-request-id": [
+        "fojpd45g6s96s"
       ],
       "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-type": [
+        "application/json;charset=utf-8"
       ],
       "vary": [
-        "Origin,Accept-Encoding"
-      ],
-      "y-rid": [
-        "2e9aagtg6fngq"
-      ],
-      "x-yahoo-request-id": [
-        "2e9aagtg6fngq"
-      ],
-      "x-request-id": [
-        "386d09f7-0c9f-9934-ae6b-cd2b251b0f5d"
+        "Origin"
       ],
       "content-length": [
-        "363"
-      ],
-      "x-envoy-upstream-service-time": [
-        "1"
+        "260"
       ],
       "date": [
-        "Sat, 03 Apr 2021 03:16:41 GMT"
+        "Wed, 07 Apr 2021 21:32:12 GMT"
+      ],
+      "age": [
+        "0"
       ],
       "server": [
         "ATS"
       ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
-      ],
-      "age": [
-        "1"
-      ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -70,7 +61,6 @@
         "result": [
           {
             "fundOwnership": {
-              "maxAge": 1,
               "ownershipList": [
                 {
                   "maxAge": 1,
@@ -94,7 +84,8 @@
                     "longFmt": "3,195"
                   }
                 }
-              ]
+              ],
+              "maxAge": 1
             }
           }
         ],

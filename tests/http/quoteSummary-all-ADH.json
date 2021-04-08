@@ -7,53 +7,41 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json"
+      "x-yahoo-request-id": [
+        "e3pbjudg6s9ag"
       ],
       "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
-      ],
-      "vary": [
-        "Origin,Accept-Encoding"
-      ],
-      "y-rid": [
-        "40ffqo5g2nrri"
-      ],
-      "x-yahoo-request-id": [
-        "40ffqo5g2nrri"
-      ],
-      "x-request-id": [
-        "8ab17996-40b3-4479-9e4a-b810348c5a38"
+        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
       ],
       "content-encoding": [
         "gzip"
       ],
-      "content-length": [
-        "570"
+      "content-type": [
+        "application/json;charset=utf-8"
       ],
-      "x-envoy-upstream-service-time": [
-        "4"
+      "vary": [
+        "Origin"
+      ],
+      "content-length": [
+        "543"
       ],
       "date": [
-        "Tue, 16 Feb 2021 16:14:42 GMT"
-      ],
-      "server": [
-        "ATS"
-      ],
-      "x-envoy-decorator-operation": [
-        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "Wed, 07 Apr 2021 21:34:08 GMT"
       ],
       "age": [
         "0"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "server": [
+        "ATS"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "connection": [
         "close"
@@ -87,8 +75,7 @@
               },
               "feesExpensesInvestmentCat": {
                 "projectionValuesCat": {}
-              },
-              "brokerages": []
+              }
             },
             "quoteType": {
               "exchange": "YHD",
@@ -99,23 +86,22 @@
               "longName": null,
               "firstTradeDateEpochUtc": 1152538200,
               "timeZoneFullName": "America/New_York",
-              "timeZoneShortName": "EST",
+              "timeZoneShortName": "EDT",
               "uuid": "b5097600-41ff-3349-b2d2-500df46ffd88",
-              "messageBoardId": null,
-              "gmtOffSetMilliseconds": -18000000,
+              "gmtOffSetMilliseconds": -14400000,
               "maxAge": 1
             },
             "price": {
               "maxAge": 1,
               "regularMarketTime": 1561759658,
               "priceHint": 2,
-              "averageDailyVolume10Day": 66219,
-              "averageDailyVolume3Month": 212316,
+              "averageDailyVolume10Day": 402638,
+              "averageDailyVolume3Month": 219913,
               "regularMarketSource": "DELAYED",
               "exchange": "YHD",
               "exchangeName": "YHD",
               "exchangeDataDelayedBy": 0,
-              "marketState": "REGULAR",
+              "marketState": "POST",
               "quoteType": "MUTUALFUND",
               "symbol": "ADH",
               "underlyingSymbol": null,
@@ -123,7 +109,6 @@
               "longName": null,
               "quoteSourceName": "Delayed Quote",
               "fromCurrency": null,
-              "toCurrency": null,
               "lastMarket": null
             }
           }

@@ -1,0 +1,306 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BRKS?formatted=false&modules=institutionOwnership"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "8bsmk6hg2vsel"
+      ],
+      "x-yahoo-request-id": [
+        "8bsmk6hg2vsel"
+      ],
+      "x-request-id": [
+        "c56a6c4a-3950-40b5-93c3-c5aa83689e7a"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "879"
+      ],
+      "x-envoy-upstream-service-time": [
+        "98"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:57 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "institutionOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Blackrock Inc.",
+                  "pctHeld": {
+                    "raw": 0.1552,
+                    "fmt": "15.52%"
+                  },
+                  "position": {
+                    "raw": 11519488,
+                    "fmt": "11.52M",
+                    "longFmt": "11,519,488"
+                  },
+                  "value": {
+                    "raw": 781597260,
+                    "fmt": "781.6M",
+                    "longFmt": "781,597,260"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Vanguard Group, Inc. (The)",
+                  "pctHeld": {
+                    "raw": 0.106000006,
+                    "fmt": "10.60%"
+                  },
+                  "position": {
+                    "raw": 7864600,
+                    "fmt": "7.86M",
+                    "longFmt": "7,864,600"
+                  },
+                  "value": {
+                    "raw": 363816396,
+                    "fmt": "363.82M",
+                    "longFmt": "363,816,396"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Kayne Anderson Rudnick Investment Management LLC",
+                  "pctHeld": {
+                    "raw": 0.056500003,
+                    "fmt": "5.65%"
+                  },
+                  "position": {
+                    "raw": 4196259,
+                    "fmt": "4.2M",
+                    "longFmt": "4,196,259"
+                  },
+                  "value": {
+                    "raw": 194118941,
+                    "fmt": "194.12M",
+                    "longFmt": "194,118,941"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "William Blair Investment Management, LLC",
+                  "pctHeld": {
+                    "raw": 0.0517,
+                    "fmt": "5.17%"
+                  },
+                  "position": {
+                    "raw": 3839521,
+                    "fmt": "3.84M",
+                    "longFmt": "3,839,521"
+                  },
+                  "value": {
+                    "raw": 260511499,
+                    "fmt": "260.51M",
+                    "longFmt": "260,511,499"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Silvercrest Asset Management Group LLC",
+                  "pctHeld": {
+                    "raw": 0.0317,
+                    "fmt": "3.17%"
+                  },
+                  "position": {
+                    "raw": 2351652,
+                    "fmt": "2.35M",
+                    "longFmt": "2,351,652"
+                  },
+                  "value": {
+                    "raw": 108787421,
+                    "fmt": "108.79M",
+                    "longFmt": "108,787,421"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "State Street Corporation",
+                  "pctHeld": {
+                    "raw": 0.0296,
+                    "fmt": "2.96%"
+                  },
+                  "position": {
+                    "raw": 2194903,
+                    "fmt": "2.19M",
+                    "longFmt": "2,194,903"
+                  },
+                  "value": {
+                    "raw": 101536212,
+                    "fmt": "101.54M",
+                    "longFmt": "101,536,212"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Dimensional Fund Advisors LP",
+                  "pctHeld": {
+                    "raw": 0.0286,
+                    "fmt": "2.86%"
+                  },
+                  "position": {
+                    "raw": 2125368,
+                    "fmt": "2.13M",
+                    "longFmt": "2,125,368"
+                  },
+                  "value": {
+                    "raw": 98319523,
+                    "fmt": "98.32M",
+                    "longFmt": "98,319,523"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Wells Fargo & Company",
+                  "pctHeld": {
+                    "raw": 0.0248,
+                    "fmt": "2.48%"
+                  },
+                  "position": {
+                    "raw": 1840894,
+                    "fmt": "1.84M",
+                    "longFmt": "1,840,894"
+                  },
+                  "value": {
+                    "raw": 124904657,
+                    "fmt": "124.9M",
+                    "longFmt": "124,904,657"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1609372800,
+                    "fmt": "2020-12-31"
+                  },
+                  "organization": "Mirae Asset Global Investments Co., Ltd.",
+                  "pctHeld": {
+                    "raw": 0.0229,
+                    "fmt": "2.29%"
+                  },
+                  "position": {
+                    "raw": 1696024,
+                    "fmt": "1.7M",
+                    "longFmt": "1,696,024"
+                  },
+                  "value": {
+                    "raw": 115075228,
+                    "fmt": "115.08M",
+                    "longFmt": "115,075,228"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "organization": "Macquarie Group Limited",
+                  "pctHeld": {
+                    "raw": 0.0208,
+                    "fmt": "2.08%"
+                  },
+                  "position": {
+                    "raw": 1543755,
+                    "fmt": "1.54M",
+                    "longFmt": "1,543,755"
+                  },
+                  "value": {
+                    "raw": 71414106,
+                    "fmt": "71.41M",
+                    "longFmt": "71,414,106"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

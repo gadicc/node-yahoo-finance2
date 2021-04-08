@@ -1,0 +1,90 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/0P000071W8.TO?formatted=false&modules=assetProfile"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "c8m8g9tg1qt66"
+      ],
+      "x-yahoo-request-id": [
+        "c8m8g9tg1qt66"
+      ],
+      "x-request-id": [
+        "8e514121-c180-4caa-b6c9-5da0a36a19c9"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "376"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 05 Feb 2021 16:39:34 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "assetProfile": {
+              "address1": "P.O. Box 100",
+              "address2": "66 Wellington Street West",
+              "address3": "TD Bank Tower",
+              "phone": "800-588-8054",
+              "longBusinessSummary": "The fundamental investment objective is to provide long-term growth of capital by primarily purchasing U.S. equity securities to track the performance of the S&P 500 Total Return Index (âS&P 500 Indexâ). The S&P 500 Index is comprised of 500 widely-held U.S. issuers.",
+              "companyOfficers": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

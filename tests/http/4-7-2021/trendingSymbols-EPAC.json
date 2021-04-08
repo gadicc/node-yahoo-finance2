@@ -1,0 +1,185 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/EPAC?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "c4s90o1g5clkg"
+      ],
+      "x-yahoo-request-id": [
+        "c4s90o1g5clkg"
+      ],
+      "x-request-id": [
+        "e686b1c1-c55a-49b0-9a34-7aa9ee9089d6"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1114"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Sat, 20 Mar 2021 20:09:51 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "EPAC",
+            "expirationDates": [
+              1618531200,
+              1621555200,
+              1629417600
+            ],
+            "strikes": [
+              30
+            ],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "triggerable": true,
+              "currency": "USD",
+              "fiftyTwoWeekLowChange": 13.26,
+              "fiftyTwoWeekLowChangePercent": 0.9932584,
+              "fiftyTwoWeekRange": "13.35 - 28.05",
+              "fiftyTwoWeekHighChange": -1.4399986,
+              "fiftyTwoWeekHighChangePercent": -0.05133685,
+              "fiftyTwoWeekLow": 13.35,
+              "fiftyTwoWeekHigh": 28.05,
+              "dividendDate": 1603065600,
+              "earningsTimestamp": 1616589000,
+              "earningsTimestampStart": 1616589000,
+              "earningsTimestampEnd": 1616589000,
+              "epsCurrentYear": 0.53,
+              "priceEpsCurrentYear": 50.20755,
+              "sharesOutstanding": 59871100,
+              "fiftyDayAverage": 23.974571,
+              "fiftyDayAverageChange": 2.6354294,
+              "fiftyDayAverageChangePercent": 0.10992603,
+              "twoHundredDayAverage": 21.835506,
+              "twoHundredDayAverageChange": 4.774494,
+              "twoHundredDayAverageChangePercent": 0.21865736,
+              "marketCap": 1593170048,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "tradeable": false,
+              "firstTradeDateMilliseconds": 964445400000,
+              "priceHint": 2,
+              "postMarketChangePercent": 0,
+              "postMarketTime": 1616186099,
+              "postMarketPrice": 26.61,
+              "postMarketChange": 0,
+              "regularMarketChange": -0.32999992,
+              "regularMarketChangePercent": -1.224944,
+              "regularMarketTime": 1616184002,
+              "regularMarketPrice": 26.61,
+              "regularMarketDayHigh": 27.4,
+              "regularMarketDayRange": "26.57 - 27.4",
+              "regularMarketDayLow": 26.57,
+              "regularMarketVolume": 1158166,
+              "regularMarketPreviousClose": 26.94,
+              "bid": 27.05,
+              "ask": 27.04,
+              "bidSize": 11,
+              "askSize": 11,
+              "fullExchangeName": "NYSE",
+              "financialCurrency": "USD",
+              "regularMarketOpen": 27.1,
+              "averageDailyVolume3Month": 290344,
+              "averageDailyVolume10Day": 364225,
+              "marketState": "CLOSED",
+              "exchange": "NYQ",
+              "shortName": "Enerpac Tool Group Corp.",
+              "longName": "Enerpac Tool Group Corp.",
+              "messageBoardId": "finmb_251258",
+              "exchangeTimezoneName": "America/New_York",
+              "exchangeTimezoneShortName": "EDT",
+              "gmtOffSetMilliseconds": -14400000,
+              "market": "us_market",
+              "esgPopulated": false,
+              "displayName": "Actuant",
+              "symbol": "EPAC"
+            },
+            "options": [
+              {
+                "expirationDate": 1618531200,
+                "hasMiniOptions": false,
+                "calls": [
+                  {
+                    "contractSymbol": "EPAC210416C00030000",
+                    "strike": 30,
+                    "currency": "USD",
+                    "lastPrice": 0.55,
+                    "change": 0.050000012,
+                    "percentChange": 10.000002,
+                    "volume": 1,
+                    "openInterest": 2,
+                    "bid": 0,
+                    "ask": 0.8,
+                    "contractSize": "REGULAR",
+                    "expiration": 1618531200,
+                    "lastTradeDate": 1616179398,
+                    "impliedVolatility": 0.6630893066406252,
+                    "inTheMoney": false
+                  }
+                ],
+                "puts": []
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

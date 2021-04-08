@@ -1,0 +1,107 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CRON?formatted=false&modules=financialData"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "64atoatg2vsec"
+      ],
+      "x-yahoo-request-id": [
+        "64atoatg2vsec"
+      ],
+      "x-request-id": [
+        "5ef02c9e-f2bd-49c0-9be6-87d4c61804c7"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "383"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:13:48 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "financialData": {
+              "maxAge": 86400,
+              "currentPrice": 12.15,
+              "recommendationKey": "none",
+              "totalCash": 1300728960,
+              "totalCashPerShare": 3.656,
+              "ebitda": -176930000,
+              "totalDebt": 9886000,
+              "quickRatio": 9.215,
+              "currentRatio": 9.752,
+              "totalRevenue": 36981000,
+              "debtToEquity": 0.56,
+              "revenuePerShare": 0.106,
+              "returnOnAssets": -0.057150003,
+              "returnOnEquity": 0.05816,
+              "grossProfits": -15964000,
+              "freeCashflow": -456162432,
+              "operatingCashflow": -157898000,
+              "earningsGrowth": -0.886,
+              "revenueGrowth": 0.963,
+              "grossMargins": -0.79527,
+              "ebitdaMargins": 0,
+              "operatingMargins": -4.948,
+              "profitMargins": 2.70682,
+              "financialCurrency": "USD"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

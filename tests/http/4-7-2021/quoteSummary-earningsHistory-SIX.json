@@ -1,0 +1,182 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SIX?formatted=false&modules=earningsHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "5neumi5g2nuh9"
+      ],
+      "x-yahoo-request-id": [
+        "5neumi5g2nuh9"
+      ],
+      "x-request-id": [
+        "542f9f51-25bf-47f3-9379-9acbfb80bb31"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "368"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Tue, 16 Feb 2021 17:00:25 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earningsHistory": {
+              "history": [
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": -0.13,
+                    "fmt": "-0.13"
+                  },
+                  "epsEstimate": {
+                    "raw": 0.14,
+                    "fmt": "0.14"
+                  },
+                  "epsDifference": {
+                    "raw": -0.27,
+                    "fmt": "-0.27"
+                  },
+                  "surprisePercent": {
+                    "raw": -1.9289999,
+                    "fmt": "-192.90%"
+                  },
+                  "quarter": {
+                    "raw": 1577750400,
+                    "fmt": "2019-12-31"
+                  },
+                  "period": "-4q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": -1,
+                    "fmt": "-1"
+                  },
+                  "epsEstimate": {
+                    "raw": -1.06,
+                    "fmt": "-1.06"
+                  },
+                  "epsDifference": {
+                    "raw": 0.06,
+                    "fmt": "0.06"
+                  },
+                  "surprisePercent": {
+                    "raw": 0.056999996,
+                    "fmt": "5.70%"
+                  },
+                  "quarter": {
+                    "raw": 1585612800,
+                    "fmt": "2020-03-31"
+                  },
+                  "period": "-3q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": -1.62,
+                    "fmt": "-1.62"
+                  },
+                  "epsEstimate": {
+                    "raw": -1.01,
+                    "fmt": "-1.01"
+                  },
+                  "epsDifference": {
+                    "raw": -0.61,
+                    "fmt": "-0.61"
+                  },
+                  "surprisePercent": {
+                    "raw": -0.60400003,
+                    "fmt": "-60.40%"
+                  },
+                  "quarter": {
+                    "raw": 1593475200,
+                    "fmt": "2020-06-30"
+                  },
+                  "period": "-2q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": -1.37,
+                    "fmt": "-1.37"
+                  },
+                  "epsEstimate": {
+                    "raw": -1,
+                    "fmt": "-1"
+                  },
+                  "epsDifference": {
+                    "raw": -0.37,
+                    "fmt": "-0.37"
+                  },
+                  "surprisePercent": {
+                    "raw": -0.37,
+                    "fmt": "-37.00%"
+                  },
+                  "quarter": {
+                    "raw": 1601424000,
+                    "fmt": "2020-09-30"
+                  },
+                  "period": "-1q"
+                }
+              ],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

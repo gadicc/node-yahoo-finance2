@@ -1,0 +1,85 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/UNIR.MI?formatted=false&modules=majorHoldersBreakdown"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "3p3meldg2lbsi"
+      ],
+      "x-yahoo-request-id": [
+        "3p3meldg2lbsi"
+      ],
+      "x-request-id": [
+        "7be96e61-886d-4224-a186-64ca574d32e8"
+      ],
+      "content-length": [
+        "210"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Mon, 15 Feb 2021 17:29:54 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "majorHoldersBreakdown": {
+              "maxAge": 1,
+              "insidersPercentHeld": 0.27852,
+              "institutionsPercentHeld": 0.27388,
+              "institutionsFloatPercentHeld": 0.37960997,
+              "institutionsCount": 44
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

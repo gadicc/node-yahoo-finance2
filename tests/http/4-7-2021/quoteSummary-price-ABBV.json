@@ -1,0 +1,116 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ABBV?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "45pjen5g2vseq"
+      ],
+      "x-yahoo-request-id": [
+        "45pjen5g2vseq"
+      ],
+      "x-request-id": [
+        "4c654625-604c-4367-a32a-ee4c2383ed0f"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "455"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Fri, 19 Feb 2021 17:14:01 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "preMarketChangePercent": 0.00226292,
+              "preMarketChange": 0.240005,
+              "preMarketTime": 1613744999,
+              "preMarketPrice": 106.3,
+              "preMarketSource": "FREE_REALTIME",
+              "regularMarketChangePercent": -0.0046200063,
+              "regularMarketChange": -0.48999786,
+              "regularMarketTime": 1613754838,
+              "priceHint": 2,
+              "regularMarketPrice": 105.57,
+              "regularMarketDayHigh": 106.35,
+              "regularMarketDayLow": 104.91,
+              "regularMarketVolume": 2383590,
+              "regularMarketPreviousClose": 106.06,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 106.23,
+              "exchange": "NYQ",
+              "exchangeName": "NYSE",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "EQUITY",
+              "symbol": "ABBV",
+              "underlyingSymbol": null,
+              "shortName": "AbbVie Inc.",
+              "longName": "AbbVie Inc.",
+              "currency": "USD",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 186380664832
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

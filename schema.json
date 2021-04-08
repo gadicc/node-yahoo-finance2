@@ -1016,6 +1016,9 @@
         },
         "type": {
           "$ref": "#/definitions/Type"
+        },
+        "url": {
+          "type": "string"
         }
       },
       "required": [
@@ -1024,7 +1027,8 @@
         "type",
         "title",
         "edgarUrl",
-        "maxAge"
+        "maxAge",
+        "url"
       ],
       "type": "object"
     },
@@ -1505,9 +1509,7 @@
         "maxAge",
         "family",
         "categoryName",
-        "legalType",
-        "managementInfo",
-        "brokerages"
+        "legalType"
       ],
       "type": "object"
     },
@@ -1598,6 +1600,8 @@
       "enum": [
         "Accumulate",
         "Add",
+        "Average",
+        "Below Average",
         "Buy",
         "",
         "Equal-Weight",
@@ -2372,8 +2376,7 @@
         "longName",
         "lastMarket",
         "marketState",
-        "fromCurrency",
-        "toCurrency"
+        "fromCurrency"
       ],
       "type": "object"
     },
@@ -2404,6 +2407,9 @@
         },
         "askSize": {
           "yahooFinanceType": "number"
+        },
+        "averageAnalystRating": {
+          "type": "string"
         },
         "averageDailyVolume10Day": {
           "yahooFinanceType": "number"
@@ -2692,6 +2698,9 @@
         },
         "askSize": {
           "yahooFinanceType": "number"
+        },
+        "averageAnalystRating": {
+          "type": "string"
         },
         "averageDailyVolume10Day": {
           "yahooFinanceType": "number"
@@ -3014,6 +3023,9 @@
         "askSize": {
           "yahooFinanceType": "number"
         },
+        "averageAnalystRating": {
+          "type": "string"
+        },
         "averageDailyVolume10Day": {
           "yahooFinanceType": "number"
         },
@@ -3303,6 +3315,9 @@
         "askSize": {
           "yahooFinanceType": "number"
         },
+        "averageAnalystRating": {
+          "type": "string"
+        },
         "averageDailyVolume10Day": {
           "yahooFinanceType": "number"
         },
@@ -3591,6 +3606,9 @@
         },
         "askSize": {
           "yahooFinanceType": "number"
+        },
+        "averageAnalystRating": {
+          "type": "string"
         },
         "averageDailyVolume10Day": {
           "yahooFinanceType": "number"
@@ -3966,7 +3984,8 @@
         "ipoExpectedDate",
         "newListingDate",
         "nameChangeDate",
-        "prevName"
+        "prevName",
+        "averageAnalystRating"
       ],
       "type": "string"
     },
@@ -3978,6 +3997,9 @@
         },
         "askSize": {
           "yahooFinanceType": "number"
+        },
+        "averageAnalystRating": {
+          "type": "string"
         },
         "averageDailyVolume10Day": {
           "yahooFinanceType": "number"
@@ -4533,7 +4555,6 @@
         "timeZoneFullName",
         "timeZoneShortName",
         "uuid",
-        "messageBoardId",
         "gmtOffSetMilliseconds",
         "maxAge"
       ],
@@ -5556,7 +5577,6 @@
         "algorithm",
         "tradeable",
         "fromCurrency",
-        "toCurrency",
         "lastMarket"
       ],
       "type": "object"
