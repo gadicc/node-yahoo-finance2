@@ -7,6 +7,7 @@
 1. [Other Methods](#other)
 1. [Error Handling](#error-handling)
 1. [Validation](./validation.md)
+1. [Upgrading from v1](./UPGRADING.md)
 
 <a name="common-options"></a>
 ## Common Options
@@ -89,3 +90,7 @@ module.
 See the [Validation docs](./validation.md) for more info, including how to
 continue past validation errors or skip validation entirely, as long as you
 understand the risks.
+
+## Upgrading from v1
+
+See [Upgrading from v1](./UPGRADING.md).
