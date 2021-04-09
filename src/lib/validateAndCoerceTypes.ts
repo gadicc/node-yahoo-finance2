@@ -216,7 +216,7 @@ this previously:
 
 or open a new issue (and mention the symbol):
 
-  ${pkg.repository}/issues/new?title=${title}
+  ${pkg.repository}/issues/new?labels=bug%2C+validation&template=validation.md&title=${title}
 
 For information on how to turn off the above logging or skip these errors,
 see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.
