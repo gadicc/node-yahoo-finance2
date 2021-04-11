@@ -53,8 +53,8 @@ async function yahooFinanceFetch(
       "yahooFinanceFetch called without this._env set"
     );
 
-  const queue = moduleOpts?.queue?._queue || _queue;
-  assertQueueOptions(queue, moduleOpts.queue || this._opts.queue || {});
+  const queue = moduleOpts.queue?._queue || _queue;
+  assertQueueOptions(queue, { ...this._opts.queue, ...moduleOpts.queue });
 
   const { URLSearchParams, fetch, fetchDevel } = this._env;
 

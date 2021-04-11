@@ -109,6 +109,25 @@ describe("yahooFinanceFetch", () => {
       moduleOpts = { queue: { _queue: new Queue() } };
     });
 
+    it("Queue takes options in constructor", () => {
+      const queue = new Queue({ concurrency: 5 });
+      expect(queue.concurrency).toBe(5);
+    });
+
+    it("yahooFinanceFetch branch check for alternate queue", () => {
+      const promises = [
+        yahooFinanceFetch("", {}),
+        yahooFinanceFetch("", {}, {}),
+        yahooFinanceFetch("", {}, { queue: {} }),
+      ];
+
+      env.fetch.fetches[0].resolveWith({ ok: true });
+      env.fetch.fetches[1].resolveWith({ ok: true });
+      env.fetch.fetches[2].resolveWith({ ok: true });
+
+      return Promise.all(promises);
+    });
+
     it("assert defualts to {} for empty queue opts", () => {
       moduleOpts.queue.concurrency = 1;
       const opts = { ..._opts };
