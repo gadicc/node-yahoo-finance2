@@ -1,8 +1,15 @@
+import util from "util";
+
 import _yahooFinanceFetch from "./yahooFinanceFetch";
 import errors from "./errors";
 
 import _env from "../env-node";
 import _opts from "./options";
+
+// https://dev.to/devcrafter91/elegant-way-to-check-if-a-promise-is-pending-577g
+function isPending(promise: any) {
+  return util.inspect(promise).includes("pending");
+}
 
 describe("yahooFinanceFetch", () => {
   const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env, _opts });
@@ -58,11 +65,22 @@ describe("yahooFinanceFetch", () => {
     function makeFetch() {
       function fetch() {
         return new Promise((resolve, reject) => {
-          fetch.fetches.push({ resolve, reject });
+          fetch.fetches.push({
+            resolve,
+            reject,
+            resolveWith(obj: any) {
+              resolve({
+                ok: true,
+                async json() {
+                  return obj;
+                },
+              });
+            },
+          });
         });
       }
       fetch.fetches = [] as any[];
-      fetch.finish = function reset() {
+      fetch.reset = function reset() {
         // TODO check that all are resolved/rejected
         fetch.fetches = [];
       };
@@ -72,11 +90,47 @@ describe("yahooFinanceFetch", () => {
     const env = { ..._env, fetch: makeFetch() };
     const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env: env, _opts });
 
+    function immediate() {
+      return new Promise((resolve) => {
+        setImmediate(resolve);
+      });
+    }
+
     it("single item in queue", () => {
-      const p1 = yahooFinanceFetch("");
-      p1; //?
-      env.fetch.fetches; //?
-      //expect(p1).resolves.toBe("OK");
+      const promise = yahooFinanceFetch("");
+      env.fetch.fetches[0].resolveWith({ ok: true });
+      return expect(promise).resolves.toMatchObject({ ok: true });
+    });
+
+    it("waits if exceeding concurrency max", async () => {
+      env.fetch.reset();
+      const promises = [
+        yahooFinanceFetch(
+          "",
+          {},
+          {
+            queueOptions: {
+              concurrency: 1,
+            },
+          }
+        ),
+        yahooFinanceFetch(""),
+      ];
+
+      // Second func should not be called until 1st reoslves (limit 1)
+      expect(env.fetch.fetches.length).toBe(1);
+
+      /*
+      env.fetch.fetches[0].resolveWith({ ok: true });
+      await promises[0];
+      await immediate();
+
+      expect(isPending(promises[0])).toBe(false);
+      expect(isPending(promises[1])).toBe(true);
+
+      env.fetch.fetches[1].resolveWith({ ok: true });
+      await promises[1];
+      */
     });
   });
 });

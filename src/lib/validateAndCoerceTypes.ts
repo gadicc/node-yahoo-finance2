@@ -160,7 +160,7 @@ export function resolvePath(obj: any, instancePath: string) {
   return ref;
 }
 
-interface ValidationOptions {
+export interface ValidationOptions {
   logErrors: boolean;
   logOptionsErrors: boolean;
 }

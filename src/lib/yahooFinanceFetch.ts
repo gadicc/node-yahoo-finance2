@@ -12,15 +12,36 @@ interface YahooFinanceFetchThisEnv {
   fetchDevel: Function;
 }
 
+interface QueueOptionsOverrides {
+  concurrency?: number;
+  timeout?: number;
+}
+
 interface YahooFinanceFetchThis {
   [key: string]: any;
   _env: YahooFinanceFetchThisEnv;
-  _opts: Object;
+  _opts: YahooFinanceFetchOptions;
 }
 
 interface YahooFinanceFetchModuleOptions {
   devel?: string | boolean;
   fetchOptions?: Object;
+  queueOptions?: QueueOptionsOverrides;
+}
+
+const queue = new PQueue();
+
+function assertQueueOptions(queue: any, opts: any) {
+  //if (!queue) queue = yahooFinanceFetch.queue = ;
+  console.log(opts);
+  if (
+    typeof opts.concurrency === "number" &&
+    queue.concurrency !== opts.concurrency
+  )
+    queue.concurrency = opts.concurrency;
+
+  if (typeof opts.timeout === "number" && queue.timeout !== opts.timeout)
+    queue.timeout = opts.timeout;
 }
 
 async function yahooFinanceFetch(
@@ -35,13 +56,7 @@ async function yahooFinanceFetch(
       "yahooFinanceFetch called without this._env set"
     );
 
-  const qOpts = this._opts.queue;
-  let queue = yahooFinanceFetch.queue;
-
-  if (!queue) queue = yahooFinanceFetch.queue = new PQueue(this._opts.queue);
-  if (queue.concurrency !== qOpts.concurrency)
-    queue.concurrency = qOpts.concurrency;
-  if (queue.timeout !== qOpts.timeout) queue.timeout = qOpts.timeout;
+  assertQueueOptions(queue, moduleOpts?.queue || this._opts.queue || {});
 
   const { URLSearchParams, fetch, fetchDevel } = this._env;
 
@@ -99,6 +114,7 @@ async function yahooFinanceFetch(
   return result;
 }
 
-yahooFinanceFetch.queue = null;
+// For tests and inspection
+yahooFinanceFetch._queue = queue;
 
 export default yahooFinanceFetch;
