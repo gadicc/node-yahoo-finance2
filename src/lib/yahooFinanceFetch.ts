@@ -1,4 +1,4 @@
-import PQueue from "p-queue";
+import Queue from "./queue";
 
 import type { Options } from "./options";
 import errors from "./errors";
@@ -29,7 +29,7 @@ interface YahooFinanceFetchModuleOptions {
   fetchOptions?: Object;
 }
 
-const queue = new PQueue();
+const queue = new Queue();
 
 function assertQueueOptions(queue: any, opts: any) {
   if (
@@ -75,7 +75,7 @@ async function yahooFinanceFetch(
   // used in moduleExec.ts
   if (func === "csv") func = "text";
 
-  const res = await queue.add(() => fetchFunc(url, fetchOptions));
+  const res = (await queue.add(() => fetchFunc(url, fetchOptions))) as any;
   const result = await res[func]();
 
   /*
