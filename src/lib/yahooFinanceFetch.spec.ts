@@ -1,4 +1,4 @@
-import util from "util";
+import * as util from "util";
 
 import _yahooFinanceFetch from "./yahooFinanceFetch";
 import errors from "./errors";
@@ -60,8 +60,16 @@ describe("yahooFinanceFetch", () => {
 
   describe("concurrency", () => {
     process.on("unhandledRejection", (up) => {
+      console.error("Unhandled promise rejection!");
       throw up;
     });
+
+    function immediate() {
+      return new Promise((resolve) => {
+        setImmediate(resolve);
+      });
+    }
+
     function makeFetch() {
       function fetch() {
         return new Promise((resolve, reject) => {
@@ -75,6 +83,7 @@ describe("yahooFinanceFetch", () => {
                   return obj;
                 },
               });
+              return immediate();
             },
           });
         });
@@ -90,12 +99,6 @@ describe("yahooFinanceFetch", () => {
     const env = { ..._env, fetch: makeFetch() };
     const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env: env, _opts });
 
-    function immediate() {
-      return new Promise((resolve) => {
-        setImmediate(resolve);
-      });
-    }
-
     it("single item in queue", () => {
       const promise = yahooFinanceFetch("");
       env.fetch.fetches[0].resolveWith({ ok: true });
@@ -104,33 +107,19 @@ describe("yahooFinanceFetch", () => {
 
     it("waits if exceeding concurrency max", async () => {
       env.fetch.reset();
-      const promises = [
-        yahooFinanceFetch(
-          "",
-          {},
-          {
-            queueOptions: {
-              concurrency: 1,
-            },
-          }
-        ),
-        yahooFinanceFetch(""),
-      ];
+      _opts.queue.concurrency = 1;
+      const promises = [yahooFinanceFetch(""), yahooFinanceFetch("")];
 
       // Second func should not be called until 1st reoslves (limit 1)
       expect(env.fetch.fetches.length).toBe(1);
 
-      /*
-      env.fetch.fetches[0].resolveWith({ ok: true });
-      await promises[0];
-      await immediate();
+      await env.fetch.fetches[0].resolveWith({ ok: true });
+      expect(env.fetch.fetches.length).toBe(2);
 
-      expect(isPending(promises[0])).toBe(false);
-      expect(isPending(promises[1])).toBe(true);
-
-      env.fetch.fetches[1].resolveWith({ ok: true });
-      await promises[1];
-      */
+      await env.fetch.fetches[1].resolveWith({ ok: true });
+      await Promise.all(promises);
     });
+
+    // TODO, timeout test
   });
 });

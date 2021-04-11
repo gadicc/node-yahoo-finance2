@@ -1,5 +1,6 @@
 import PQueue from "p-queue";
 
+import type { Options } from "./options";
 import errors from "./errors";
 import pkg from "../../package.json";
 
@@ -20,20 +21,17 @@ interface QueueOptionsOverrides {
 interface YahooFinanceFetchThis {
   [key: string]: any;
   _env: YahooFinanceFetchThisEnv;
-  _opts: YahooFinanceFetchOptions;
+  _opts: Options;
 }
 
 interface YahooFinanceFetchModuleOptions {
   devel?: string | boolean;
   fetchOptions?: Object;
-  queueOptions?: QueueOptionsOverrides;
 }
 
 const queue = new PQueue();
 
 function assertQueueOptions(queue: any, opts: any) {
-  //if (!queue) queue = yahooFinanceFetch.queue = ;
-  console.log(opts);
   if (
     typeof opts.concurrency === "number" &&
     queue.concurrency !== opts.concurrency
@@ -56,7 +54,7 @@ async function yahooFinanceFetch(
       "yahooFinanceFetch called without this._env set"
     );
 
-  assertQueueOptions(queue, moduleOpts?.queue || this._opts.queue || {});
+  assertQueueOptions(queue, this._opts.queue || {});
 
   const { URLSearchParams, fetch, fetchDevel } = this._env;
 
