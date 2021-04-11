@@ -4,13 +4,21 @@ interface Job {
   reject: Function;
 }
 
+export interface QueueOptions {
+  _queue?: Queue;
+  concurrency?: number;
+  timeout?: number; // TODO
+}
+
 export default class Queue {
   concurrency: number = 1;
 
   _running: number = 0;
   _queue: Array<Job> = [];
 
-  constructor() {}
+  constructor(opts: QueueOptions = {}) {
+    if (opts.concurrency) this.concurrency = opts.concurrency;
+  }
 
   runNext() {
     const job = this._queue.shift();

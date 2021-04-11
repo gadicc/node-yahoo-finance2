@@ -1,6 +1,8 @@
 import Queue from "./queue";
 
 import type { Options } from "./options";
+import type { QueueOptions } from "./queue";
+
 import errors from "./errors";
 import pkg from "../../package.json";
 
@@ -13,11 +15,6 @@ interface YahooFinanceFetchThisEnv {
   fetchDevel: Function;
 }
 
-interface QueueOptionsOverrides {
-  concurrency?: number;
-  timeout?: number;
-}
-
 interface YahooFinanceFetchThis {
   [key: string]: any;
   _env: YahooFinanceFetchThisEnv;
@@ -27,11 +24,13 @@ interface YahooFinanceFetchThis {
 interface YahooFinanceFetchModuleOptions {
   devel?: string | boolean;
   fetchOptions?: Object;
+  queue?: QueueOptions;
 }
 
-const queue = new Queue();
+const _queue = new Queue();
 
 function assertQueueOptions(queue: any, opts: any) {
+  opts; //?
   if (
     typeof opts.concurrency === "number" &&
     queue.concurrency !== opts.concurrency
@@ -54,7 +53,8 @@ async function yahooFinanceFetch(
       "yahooFinanceFetch called without this._env set"
     );
 
-  assertQueueOptions(queue, this._opts.queue || {});
+  const queue = moduleOpts?.queue?._queue || _queue;
+  assertQueueOptions(queue, moduleOpts.queue || this._opts.queue || {});
 
   const { URLSearchParams, fetch, fetchDevel } = this._env;
 
@@ -111,8 +111,5 @@ async function yahooFinanceFetch(
 
   return result;
 }
-
-// For tests and inspection
-yahooFinanceFetch._queue = queue;
 
 export default yahooFinanceFetch;

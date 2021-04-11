@@ -1,5 +1,6 @@
 import * as util from "util";
 
+import Queue from "./queue";
 import _yahooFinanceFetch from "./yahooFinanceFetch";
 import errors from "./errors";
 
@@ -59,10 +60,12 @@ describe("yahooFinanceFetch", () => {
   });
 
   describe("concurrency", () => {
+    /*
     process.on("unhandledRejection", (up) => {
       console.error("Unhandled promise rejection!");
       throw up;
     });
+    */
 
     function immediate() {
       return new Promise((resolve) => {
@@ -96,19 +99,43 @@ describe("yahooFinanceFetch", () => {
       return fetch;
     }
 
-    const env = { ..._env, fetch: makeFetch() };
-    const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env: env, _opts });
+    let env: any;
+    let yahooFinanceFetch: any;
+    let moduleOpts: any;
+
+    beforeEach(() => {
+      env = { ..._env, fetch: makeFetch() };
+      yahooFinanceFetch = _yahooFinanceFetch.bind({ _env: env, _opts });
+      moduleOpts = { queue: { _queue: new Queue() } };
+    });
+
+    it("assert defualts to {} for empty queue opts", () => {
+      moduleOpts.queue.concurrency = 1;
+      const opts = { ..._opts };
+      // @ts-ignore: intentional to test runtime failures
+      delete opts.queue;
+      const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env: env, _opts });
+
+      const promise = yahooFinanceFetch("", {}, moduleOpts);
+      env.fetch.fetches[0].resolveWith({ ok: true });
+      return expect(promise).resolves.toMatchObject({ ok: true });
+    });
 
     it("single item in queue", () => {
-      const promise = yahooFinanceFetch("");
+      moduleOpts.queue.concurrency = 1;
+
+      const promise = yahooFinanceFetch("", {}, moduleOpts);
       env.fetch.fetches[0].resolveWith({ ok: true });
       return expect(promise).resolves.toMatchObject({ ok: true });
     });
 
     it("waits if exceeding concurrency max", async () => {
-      env.fetch.reset();
-      _opts.queue.concurrency = 1;
-      const promises = [yahooFinanceFetch(""), yahooFinanceFetch("")];
+      moduleOpts.queue.concurrency = 1;
+
+      const promises = [
+        yahooFinanceFetch("", {}, moduleOpts),
+        yahooFinanceFetch("", {}, moduleOpts),
+      ];
 
       // Second func should not be called until 1st reoslves (limit 1)
       expect(env.fetch.fetches.length).toBe(1);

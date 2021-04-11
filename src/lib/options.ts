@@ -1,9 +1,6 @@
+// TODO, keep defaults there too?
 import type { ValidationOptions } from "./validateAndCoerceTypes";
-
-interface QueueOptions {
-  concurrency: number;
-  timeout: number;
-}
+import type { QueueOptions } from "./queue";
 
 export interface Options {
   queue: QueueOptions;
