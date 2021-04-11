@@ -27,3 +27,15 @@ export class FailedYahooValidationError extends Error {
     this.errors = errors;
   }
 }
+
+interface ErrorsIndex {
+  [key: string]: any;
+}
+
+export default {
+  BadRequestError,
+  HTTPError,
+  InvalidOptionsError,
+  NoEnvironmentError,
+  FailedYahooValidationError,
+} as ErrorsIndex;

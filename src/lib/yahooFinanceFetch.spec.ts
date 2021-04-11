@@ -1,8 +1,8 @@
-const _yahooFinanceFetch = require("./yahooFinanceFetch");
-const errors = require("./errors");
+import _yahooFinanceFetch from "./yahooFinanceFetch";
+import errors from "./errors";
 
-const _env = require("../env-node").default;
-const _opts = require("./options").default;
+import _env from "../env-node";
+import _opts from "./options";
 
 describe("yahooFinanceFetch", () => {
   const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env, _opts });
@@ -11,6 +11,7 @@ describe("yahooFinanceFetch", () => {
   const fakeConsole = { log: jest.fn(), error: jest.fn(), dir: jest.fn() };
   const origConsole = console;
 
+  // @ts-ignore
   beforeEach(() => (console = fakeConsole));
   afterEach(() => (console = origConsole));
 
@@ -23,6 +24,7 @@ describe("yahooFinanceFetch", () => {
   });
 
   it("throws if no environmennt set", () => {
+    // @ts-ignore: we're explicityly testing for a bad runtime context
     return expect(_yahooFinanceFetch("")).rejects.toBeInstanceOf(
       errors.NoEnvironmentError
     );

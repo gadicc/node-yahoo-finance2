@@ -1,12 +1,31 @@
-const errors = require("./errors");
-const pkg = require("../../package.json");
+import errors from "./errors";
+import pkg from "../../package.json";
 
 const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
 
+interface YahooFinanceFetchThisEnv {
+  [key: string]: any;
+  URLSearchParams: (init?: any) => any;
+  fetch: Function;
+  fetchDevel: Function;
+}
+
+interface YahooFinanceFetchThis {
+  [key: string]: any;
+  _env: YahooFinanceFetchThisEnv;
+  _opts: Object;
+}
+
+interface YahooFinanceFetchModuleOptions {
+  devel?: string | boolean;
+  fetchOptions?: Object;
+}
+
 async function yahooFinanceFetch(
-  urlBase,
+  this: YahooFinanceFetchThis,
+  urlBase: string,
   params = {},
-  moduleOpts = {},
+  moduleOpts: YahooFinanceFetchModuleOptions = {},
   func = "json"
 ) {
   if (!this._env)
@@ -16,6 +35,7 @@ async function yahooFinanceFetch(
 
   const { URLSearchParams, fetch, fetchDevel } = this._env;
 
+  // @ts-ignore TODO copy interface? @types lib?
   const urlSearchParams = new URLSearchParams(params);
   const url = urlBase + "?" + urlSearchParams.toString();
 
@@ -69,4 +89,4 @@ async function yahooFinanceFetch(
   return result;
 }
 
-module.exports = yahooFinanceFetch;
+export default yahooFinanceFetch;
