@@ -99,10 +99,6 @@ async function yahooFinanceFetch(
   return result;
 }
 
-<<<<<<< HEAD:src/lib/yahooFinanceFetch.ts
-export default yahooFinanceFetch;
-=======
 yahooFinanceFetch.queue = null;
 
-module.exports = yahooFinanceFetch;
->>>>>>> de41435 (chore(concurrency): early support):src/lib/yahooFinanceFetch.js
+export default yahooFinanceFetch;

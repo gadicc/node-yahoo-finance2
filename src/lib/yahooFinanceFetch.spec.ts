@@ -50,4 +50,33 @@ describe("yahooFinanceFetch", () => {
       )
     ).rejects.toBeInstanceOf(Error);
   });
+
+  describe("concurrency", () => {
+    process.on("unhandledRejection", (up) => {
+      throw up;
+    });
+    function makeFetch() {
+      function fetch() {
+        return new Promise((resolve, reject) => {
+          fetch.fetches.push({ resolve, reject });
+        });
+      }
+      fetch.fetches = [] as any[];
+      fetch.finish = function reset() {
+        // TODO check that all are resolved/rejected
+        fetch.fetches = [];
+      };
+      return fetch;
+    }
+
+    const env = { ..._env, fetch: makeFetch() };
+    const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env: env, _opts });
+
+    it("single item in queue", () => {
+      const p1 = yahooFinanceFetch("");
+      p1; //?
+      env.fetch.fetches; //?
+      //expect(p1).resolves.toBe("OK");
+    });
+  });
 });
