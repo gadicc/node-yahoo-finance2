@@ -6,9 +6,6 @@ export default function setGlobalConfig(
   this: ModuleThis,
   config: Partial<Options>
 ): void {
-  // TODO: Add validation, but currently not possible, since `Options` interface
-  // not in modules directory (therefore, not in schema), so cannot validate
-  // using `validateAndCoerceTypes`
   validateAndCoerceTypes({
     object: config,
     source: "setGlobalConfig",
