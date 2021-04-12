@@ -70,6 +70,7 @@ symbol, topHoldings, upgradeDowngradeHistory),
 [coming soon](https://github.com/gadicc/node-yahoo-finance2/issues/8).
 
 Extras: [`quoteCombine`](./docs/other/quoteCombine.md).
+Utils: [`setGlobalConfig`](./docs/utils/setGlobalConfig.md).
 
 See the [Full Documentation](./docs/README.md).
 
