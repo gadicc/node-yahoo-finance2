@@ -9,7 +9,6 @@ export interface Options {
 
 const options: Options = {
   queue: {
-    // See https://github.com/sindresorhus/p-queue for all options
     concurrency: 4, // Min: 1, Max: Infinity
     timeout: 60,
   },
