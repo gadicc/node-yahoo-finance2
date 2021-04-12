@@ -1,11 +1,8 @@
 // TODO, keep defaults there too?
-import type { ValidationOptions } from "./validateAndCoerceTypes";
-import type { QueueOptions } from "./queue";
+// import type { ValidationOptions } from "./validateAndCoerceTypes";
+// import type { QueueOptions } from "./queue";
 
-export interface Options {
-  queue: QueueOptions;
-  validation: ValidationOptions;
-}
+import { Options } from "../typings/interfaces";
 
 const options: Options = {
   queue: {

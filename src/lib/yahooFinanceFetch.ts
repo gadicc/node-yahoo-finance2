@@ -1,6 +1,6 @@
 import Queue from "./queue";
 
-import type { Options } from "./options";
+import type { Options } from "../typings/interfaces";
 import type { QueueOptions } from "./queue";
 
 import errors from "./errors";
