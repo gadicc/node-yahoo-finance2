@@ -1,3 +1,8 @@
+import Queue from "./queue";
+
+import type { Options } from "./options";
+import type { QueueOptions } from "./queue";
+
 import errors from "./errors";
 import pkg from "../../package.json";
 
@@ -13,12 +18,27 @@ interface YahooFinanceFetchThisEnv {
 interface YahooFinanceFetchThis {
   [key: string]: any;
   _env: YahooFinanceFetchThisEnv;
-  _opts: Object;
+  _opts: Options;
 }
 
 interface YahooFinanceFetchModuleOptions {
   devel?: string | boolean;
   fetchOptions?: Object;
+  queue?: QueueOptions;
+}
+
+const _queue = new Queue();
+
+function assertQueueOptions(queue: any, opts: any) {
+  opts; //?
+  if (
+    typeof opts.concurrency === "number" &&
+    queue.concurrency !== opts.concurrency
+  )
+    queue.concurrency = opts.concurrency;
+
+  if (typeof opts.timeout === "number" && queue.timeout !== opts.timeout)
+    queue.timeout = opts.timeout;
 }
 
 async function yahooFinanceFetch(
@@ -32,6 +52,9 @@ async function yahooFinanceFetch(
     throw new errors.NoEnvironmentError(
       "yahooFinanceFetch called without this._env set"
     );
+
+  const queue = moduleOpts.queue?._queue || _queue;
+  assertQueueOptions(queue, { ...this._opts.queue, ...moduleOpts.queue });
 
   const { URLSearchParams, fetch, fetchDevel } = this._env;
 
@@ -52,7 +75,7 @@ async function yahooFinanceFetch(
   // used in moduleExec.ts
   if (func === "csv") func = "text";
 
-  const res = await fetchFunc(url, fetchOptions);
+  const res = (await queue.add(() => fetchFunc(url, fetchOptions))) as any;
   const result = await res[func]();
 
   /*
