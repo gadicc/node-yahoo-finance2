@@ -1,5 +1,5 @@
-const { URLSearchParams } = require("url");
-const fetch = require("node-fetch");
+import { URLSearchParams } from "url";
+import fetch from "node-fetch";
 
 function fetchDevel() {
   // This let's us still only require the file if we need it, at runtime.
