@@ -13,6 +13,7 @@ function isPending(promise: any) {
 }
 
 describe("yahooFinanceFetch", () => {
+  // @ts-ignore: partial This for testing
   const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env, _opts });
 
   // Don't log errors during tests
