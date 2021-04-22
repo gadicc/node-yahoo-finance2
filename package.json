@@ -2,9 +2,11 @@
   "name": "yahoo-finance2",
   "version": "0.0.1",
   "description": "JS API for Yahoo Finance",
-  "main": "api/index-node.js",
-  "types": "api/index-node.d.ts",
-  "browser": "api/index-browser.js",
+  "type": "module",
+  "main": "dist/esm/index-node.js",
+  "exports": "dist/esm/index-node.js",
+  "types": "dist/esm/index-node.d.ts",
+  "browser": "dist/esm/index-browser.js",
   "repository": "https://github.com/gadicc/node-yahoo-finance2",
   "author": "Gadi Cohen <dragon@wastelands.net>",
   "license": "MIT",
@@ -22,6 +24,9 @@
     "client",
     "library"
   ],
+  "engines": {
+    "node": ">=12"
+  },
   "bin": {
     "yahoo-finance": "bin/yahoo-finance.js"
   },
@@ -29,13 +34,16 @@
     "coverage": "jest --coverage",
     "lint": "eslint . --ext .js,.ts",
     "schema": "ts-json-schema-generator -f tsconfig.json -p 'src/{modules,typings}/**/*.ts' -t '*' | node bin/schema-tweak.js > schema.json",
+    "build": "yarn run build:esm && yarn run build:cjs",
+    "build:esm": "tsc --module es2015 --outDir dist/esm",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "generateSchema": "yarn schema",
-    "prepublishOnly": "tsc && yarn generateSchema",
+    "prepublishOnly": "yarn build && yarn generateSchema",
     "test": "jest",
     "test:ts": "tsc --noEmit"
   },
   "files": [
-    "api",
+    "dist",
     "schema.json"
   ],
   "dependencies": {
