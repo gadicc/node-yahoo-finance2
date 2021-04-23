@@ -1,6 +1,6 @@
 # setGlobalConfig
 
-This util function sets global config options, merging (1 level deep only) with the defaults. These options are then the defaults used for every request. It is the **recommended** way of setting global config. Setting global config directly is not recommended.
+This util function sets global config options, merging with the defaults. These options are then the defaults used for every request. It is the **recommended** way of setting global config. Setting global config directly is not recommended.
 
 ## Usage:
 
@@ -16,14 +16,16 @@ yahooFinance.setGlobalConfig({
 
 Notes:
 
-- Options are merged only one level deep:
+- Config provided to this function is validated.
+
+- Options are merged infinite levels deep:
 ```js
 import yahooFinance from 'yahoo-finance2';
 
 yahooFinance.setGlobalConfig({
     queue: {
         concurrency: 2,
-        // timeout not set anymore, may/will cause errors
+        // timeout is still set
     }
 });
 ```
