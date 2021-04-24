@@ -5,6 +5,7 @@
 1. [Common Options](#common-options)
 1. [Modules](#modules)
 1. [Other Methods](#other)
+1. [Util Methods](#utils)
 1. [Error Handling](#error-handling)
 1. [Validation](./validation.md)
 1. [Concurrency](./concurrency.md)
@@ -43,6 +44,9 @@ const result = await yahooFinance.module(query, queryOpts, moduleOpts);
 ## Other Methods
 
 1. [quoteCombine](./other/quoteCombine.md) - debounce and combine multiple quote calls.
+
+<a name="utils"></a>
+1. [setGlobalConfig](./utils/setGlobalConfig.md) - set global config options.
 
 <a name="error-handling"></a>
 ## Error Handling
