@@ -46,7 +46,7 @@ const result = await yahooFinance.module(query, queryOpts, moduleOpts);
 1. [quoteCombine](./other/quoteCombine.md) - debounce and combine multiple quote calls.
 
 <a name="utils"></a>
-1. [setGlobalConfig](./utils/setGlobalConfig.md) - set global config options.
+1. [setGlobalConfig](./other/setGlobalConfig.md) - set global config options.
 
 <a name="error-handling"></a>
 ## Error Handling
