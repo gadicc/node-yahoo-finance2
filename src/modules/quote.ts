@@ -155,8 +155,11 @@ export type QuoteResponse = Quote[];
 
 export type QuoteField = keyof Quote;
 
+export type ResultType = "array" | "object" | "map";
+
 export interface QuoteOptions {
   fields?: QuoteField[];
+  returnAs?: ResultType;
 }
 
 const queryOptionsDefaults = {};
@@ -189,6 +192,7 @@ export default function quote(
   moduleOptions?: ModuleOptions
 ): Promise<any> {
   const symbols = typeof query === "string" ? query : query.join(",");
+  const returnAs = queryOptionsOverrides && queryOptionsOverrides.returnAs;
 
   return this._moduleExec({
     moduleName: "quote",
@@ -202,6 +206,7 @@ export default function quote(
       transformWith(queryOptions: QuoteOptions) {
         // Options validation ensures this is a string[]
         if (queryOptions.fields) queryOptions.fields.join(",");
+        delete queryOptions.returnAs;
         return queryOptions;
       },
     },
@@ -217,8 +222,23 @@ export default function quote(
 
     moduleOptions,
   }).then((results: Quote[]) => {
-    return typeof query === "string"
-      ? (results[0] as Quote)
-      : (results as Quote[]);
+    if (returnAs) {
+      switch (returnAs) {
+        case "array":
+          return results as Quote[];
+        case "object":
+          const object = {} as any;
+          for (let result of results) object[result.symbol] = result;
+          return object; // TODO: type
+        case "map":
+          const map = new Map();
+          for (let result of results) map.set(result.symbol, result);
+          return map; // TODO: type
+      }
+    } else {
+      return typeof query === "string"
+        ? (results[0] as Quote)
+        : (results as Quote[]);
+    }
   });
 }

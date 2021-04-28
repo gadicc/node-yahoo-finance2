@@ -4719,6 +4719,9 @@
             "$ref": "#/definitions/QuoteField"
           },
           "type": "array"
+        },
+        "returnAs": {
+          "$ref": "#/definitions/ResultType"
         }
       },
       "type": "object"
@@ -5097,6 +5100,14 @@
         "Independent Non-Executive Director",
         "Officer",
         "President"
+      ],
+      "type": "string"
+    },
+    "ResultType": {
+      "enum": [
+        "array",
+        "object",
+        "map"
       ],
       "type": "string"
     },

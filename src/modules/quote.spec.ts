@@ -80,4 +80,42 @@ describe("quote", () => {
     expect(result.symbol).toBe("TSLA");
     expect(result.displayName).toBeDefined();
   });
+
+  describe("returnAs", () => {
+    it("array", async () => {
+      const devel = "quote-AAPL-BABA.json";
+      const results = await yf.quote(
+        ["AAPL", "BABA"],
+        { returnAs: "array" },
+        { devel }
+      );
+      expect(results.length).toBe(2);
+      expect(results[0].symbol).toBe("AAPL");
+      expect(results[1].symbol).toBe("BABA");
+    });
+
+    it("object", async () => {
+      const devel = "quote-AAPL-BABA.json";
+      const results = await yf.quote(
+        ["AAPL", "BABA"],
+        { returnAs: "object" },
+        { devel }
+      );
+      expect(Object.keys(results).length).toBe(2);
+      expect(results.AAPL.symbol).toBe("AAPL");
+      expect(results.BABA.symbol).toBe("BABA");
+    });
+
+    it("map", async () => {
+      const devel = "quote-AAPL-BABA.json";
+      const results = await yf.quote(
+        ["AAPL", "BABA"],
+        { returnAs: "map" },
+        { devel }
+      );
+      expect(results.size).toBe(2);
+      expect(results.get("AAPL").symbol).toBe("AAPL");
+      expect(results.get("BABA").symbol).toBe("BABA");
+    });
+  });
 });
