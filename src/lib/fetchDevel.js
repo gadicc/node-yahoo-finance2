@@ -1,8 +1,8 @@
 /* istanbul ignore file */
-const nodeFetch = require("node-fetch");
-const fs = require("fs");
-const path = require("path");
-const crypto = require("crypto");
+import nodeFetch from "node-fetch";
+import fs from "fs";
+import path from "path";
+import crypto from "crypto";
 
 const FILE_BASE = path.join(__dirname, "..", "..", "tests", "http");
 
@@ -99,4 +99,4 @@ async function fetchDevel(url, fetchOptions) {
   return res;
 }
 
-module.exports = fetchDevel;
+export default fetchDevel;

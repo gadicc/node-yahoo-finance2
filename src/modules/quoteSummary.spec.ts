@@ -1,8 +1,8 @@
-import quoteSummary, { QuoteSummaryModules } from "./quoteSummary";
-const { InvalidOptionsError } = require("../lib/errors");
+import quoteSummary, { QuoteSummaryModules } from "./quoteSummary.js";
+import { InvalidOptionsError } from "../lib/errors.js";
 
-import { testSymbols } from "../../tests/symbols";
-import testYf from "../../tests/testYf";
+import { testSymbols } from "../../tests/symbols.js";
+import testYf from "../../tests/testYf.js";
 
 const yf = testYf({ quoteSummary });
 

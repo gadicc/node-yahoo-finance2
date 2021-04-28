@@ -1,6 +1,6 @@
-import search from "../modules/search";
-const { InvalidOptionsError } = require("./errors");
-import testYf from "../../tests/testYf";
+import search from "../modules/search.js";
+import { InvalidOptionsError } from "./errors.js";
+import testYf from "../../tests/testYf.js";
 
 const yf = testYf({ search });
 yf._opts.validation.logOptionsErrors = false;

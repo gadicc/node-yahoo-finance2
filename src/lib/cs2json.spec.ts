@@ -1,4 +1,4 @@
-import csv2json from "./csv2json";
+import csv2json from "./csv2json.js";
 
 /*
 const toBeType = require('jest-tobetype').toBeType;

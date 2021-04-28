@@ -1,6 +1,6 @@
-import options from "./options";
-import testYf from "../../tests/testYf";
-import { testSymbols } from "../../tests/symbols";
+import options from "./options.js";
+import testYf from "../../tests/testYf.js";
+import { testSymbols } from "../../tests/symbols.js";
 
 const yf = testYf({ options });
 

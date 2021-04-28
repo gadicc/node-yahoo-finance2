@@ -1,9 +1,10 @@
 import { URLSearchParams } from "url";
 import fetch from "node-fetch";
 
-function fetchDevel() {
-  // This let's us still only require the file if we need it, at runtime.
-  return require("./lib/fetchDevel");
+// This let's us still only require the file if we need it, at runtime.
+async function fetchDevel() {
+  const module = await import("./lib/fetchDevel.js");
+  return module.default;
 }
 
 export default {

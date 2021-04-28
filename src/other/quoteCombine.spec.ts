@@ -1,5 +1,5 @@
-import quoteCombine from "./quoteCombine";
-import testYf from "../../tests/testYf";
+import quoteCombine from "./quoteCombine.js";
+import testYf from "../../tests/testYf.js";
 
 const yf = testYf({ quoteCombine });
 

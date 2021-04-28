@@ -1,7 +1,7 @@
-import historical from "./historical";
-import { testSymbols } from "../../tests/symbols";
+import historical from "./historical.js";
+import { testSymbols } from "../../tests/symbols.js";
 
-import testYf from "../../tests/testYf";
+import testYf from "../../tests/testYf.js";
 
 const yf = testYf({ historical });
 

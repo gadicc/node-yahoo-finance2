@@ -1,6 +1,6 @@
-import quote from "./quote";
-import { testSymbols as testSymbolsOriginal } from "../../tests/symbols";
-import testYf from "../../tests/testYf";
+import quote from "./quote.js";
+import { testSymbols as testSymbolsOriginal } from "../../tests/symbols.js";
+import testYf from "../../tests/testYf.js";
 
 const testSymbols = [
   ...testSymbolsOriginal,
