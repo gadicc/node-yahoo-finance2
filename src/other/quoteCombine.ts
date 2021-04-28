@@ -84,9 +84,22 @@ export default function quoteCombine(
       // @ts-ignore
       thisQuote(symbols, queryOptionsOverrides, moduleOptions)
         .then((results) => {
-          for (let result of results)
-            for (let promise of entry.symbols.get(result.symbol))
+          for (let result of results) {
+            for (let promise of entry.symbols.get(result.symbol)) {
               promise.resolve(result);
+              promise.resolved = true;
+            }
+          }
+
+          // Check for symbols we asked for and didn't get back,
+          // e.g. non-existant symbols (#150)
+          for (let [symbol, promises] of entry.symbols) {
+            for (let promise of promises) {
+              if (!promise.resolved) {
+                promise.resolve(undefined);
+              }
+            }
+          }
         })
         .catch((error) => {
           for (let symbolPromiseCallbacks of entry.symbols.values())
