@@ -34,6 +34,34 @@ describe("quoteCombine", () => {
     jest.runAllTimers();
   });
 
+  it("resolves undefined for single missing symbol", (done) => {
+    const devel = "quoteCombine-NONEXIST.json";
+    yf.quoteCombine("NONEXIST", undefined, { devel })
+      .then((result: any) => {
+        expect(result).toBe(undefined);
+        done();
+      })
+      .catch(done);
+    jest.runAllTimers();
+  });
+
+  it("resolves undefined for missing symbols + resolves found", (done) => {
+    const opts = { devel: "quoteCombine-AAPL-NONEXIST.json" };
+    Promise.all([
+      yf.quoteCombine("AAPL", undefined, opts).then((result: any) => {
+        expect(result.symbol).toBe("AAPL");
+      }),
+
+      yf.quoteCombine("NONEXIST", undefined, opts).then((result: any) => {
+        expect(result).toBe(undefined);
+      }),
+    ])
+      .then(() => done())
+      .catch(done);
+
+    jest.runAllTimers();
+  });
+
   it("throws if symbol arg is not a single string", () => {
     expect(() => yf.quoteCombine([])).toThrow(/string/);
   });

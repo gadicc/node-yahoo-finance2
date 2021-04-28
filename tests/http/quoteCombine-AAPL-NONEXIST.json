@@ -1,0 +1,156 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=AAPL%2CNONEXIST"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "52mqbrhg8iifk"
+      ],
+      "x-yahoo-request-id": [
+        "52mqbrhg8iifk"
+      ],
+      "x-request-id": [
+        "9e5eaa06-5775-42c4-9e26-f6cf68e0363d"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1006"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 28 Apr 2021 11:41:40 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "EQUITY",
+            "quoteSourceName": "Nasdaq Real Time Price",
+            "triggerable": true,
+            "currency": "USD",
+            "marketState": "PRE",
+            "exchange": "NMS",
+            "shortName": "Apple Inc.",
+            "longName": "Apple Inc.",
+            "messageBoardId": "finmb_24937",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EDT",
+            "gmtOffSetMilliseconds": -14400000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "regularMarketDayHigh": 135.4,
+            "regularMarketDayRange": "134.11 - 135.4",
+            "regularMarketDayLow": 134.11,
+            "regularMarketVolume": 66015804,
+            "regularMarketPreviousClose": 134.72,
+            "bid": 0,
+            "ask": 0,
+            "bidSize": 18,
+            "askSize": 8,
+            "fullExchangeName": "NasdaqGS",
+            "firstTradeDateMilliseconds": 345479400000,
+            "priceHint": 2,
+            "preMarketChange": 0,
+            "preMarketChangePercent": 0,
+            "preMarketTime": 1619610098,
+            "preMarketPrice": 134.39,
+            "regularMarketChange": -0.33000183,
+            "regularMarketChangePercent": -0.24495386,
+            "regularMarketTime": 1619553603,
+            "regularMarketPrice": 134.39,
+            "financialCurrency": "USD",
+            "regularMarketOpen": 135.01,
+            "averageDailyVolume3Month": 102504022,
+            "averageDailyVolume10Day": 81305316,
+            "fiftyTwoWeekLowChange": 63.417496,
+            "fiftyTwoWeekLowChangePercent": 0.8935502,
+            "fiftyTwoWeekRange": "70.9725 - 145.09",
+            "fiftyTwoWeekHighChange": -10.699997,
+            "fiftyTwoWeekHighChangePercent": -0.07374731,
+            "fiftyTwoWeekLow": 70.9725,
+            "fiftyTwoWeekHigh": 145.09,
+            "dividendDate": 1613001600,
+            "earningsTimestamp": 1619640000,
+            "earningsTimestampStart": 1619640000,
+            "earningsTimestampEnd": 1619640000,
+            "trailingAnnualDividendRate": 0.807,
+            "trailingPE": 36.449688,
+            "trailingAnnualDividendYield": 0.0059902016,
+            "epsTrailingTwelveMonths": 3.687,
+            "epsForward": 4.71,
+            "epsCurrentYear": 4.46,
+            "priceEpsCurrentYear": 30.132286,
+            "sharesOutstanding": 16788100096,
+            "bookValue": 3.936,
+            "fiftyDayAverage": 126.62706,
+            "fiftyDayAverageChange": 7.7629395,
+            "fiftyDayAverageChangePercent": 0.061305534,
+            "twoHundredDayAverage": 125.603775,
+            "twoHundredDayAverageChange": 8.786224,
+            "twoHundredDayAverageChangePercent": 0.069951914,
+            "marketCap": 2256152821760,
+            "forwardPE": 28.532907,
+            "priceToBook": 34.1438,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "averageAnalystRating": "2.0 - Buy",
+            "tradeable": false,
+            "displayName": "Apple",
+            "symbol": "AAPL"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
