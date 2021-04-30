@@ -1,4 +1,4 @@
-const toBeType = require("jest-tobetype").toBeType;
+import { toBeType } from "jest-tobetype";
 
 expect.extend({
   toBeType,

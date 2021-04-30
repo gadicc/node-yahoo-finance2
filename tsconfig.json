@@ -3,11 +3,14 @@
 
   "compilerOptions": {
     "moduleResolution": "node",
-    "module": "ES2020",
+    "module": "es2020",
+    "target": "es2020",
+    "outDir": "dist/default",
     "allowJs": true,
     "preserveConstEnums": true,
     "declaration": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
 
   "include": ["./src/**/*"],

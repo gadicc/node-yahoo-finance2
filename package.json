@@ -25,7 +25,7 @@
     "library"
   ],
   "//engines//UNCOMMENT_WHEN_WE_DROP_CJS_SUPPORT": {
-    "node": ">=12"
+    "node": ">=12.17.0"
   },
   "bin": {
     "yahoo-finance": "bin/yahoo-finance.js"
@@ -35,11 +35,11 @@
     "lint": "eslint . --ext .js,.ts",
     "schema": "ts-json-schema-generator -f tsconfig.json -p 'src/{modules,typings}/**/*.ts' -t '*' | node bin/schema-tweak.js > schema.json",
     "build": "yarn run build:esm && yarn run build:cjs",
-    "build:esm": "tsc --module ES2020 --outDir dist/esm",
+    "build:esm": "tsc --module es2020 --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "generateSchema": "yarn schema",
     "prepublishOnly": "yarn build && yarn generateSchema",
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "test:ts": "tsc --noEmit"
   },
   "files": [
