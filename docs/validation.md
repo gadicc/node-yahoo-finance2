@@ -128,5 +128,5 @@ To turn off the helpful but verbose error logging on validation fails,
 simply set:
 
 ```js
-yahooFinance._opts.validation.logErrors = false;
+yahooFinance.setGlobalConfig({ validation: { logErrors: false} });
 ```

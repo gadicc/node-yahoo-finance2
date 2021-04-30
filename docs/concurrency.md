@@ -78,7 +78,7 @@ databaseResults.forEach(async (row) => {
 You can change it with:
 
 ```js
-yahooFinance._opts.queue.concurrency = 1; // or 8, Infinity, etc.
+yahooFinance.setGlobalConfig({ queue: { concurrency: 1 } }); // or 8, Infinity, etc.
 ```
 
 Changing the value applies retroactively to previously queued requests.
