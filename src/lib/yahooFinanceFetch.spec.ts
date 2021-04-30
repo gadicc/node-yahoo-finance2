@@ -1,4 +1,5 @@
 import * as util from "util";
+import { jest } from "@jest/globals";
 
 import Queue from "./queue.js";
 import _yahooFinanceFetch from "./yahooFinanceFetch.js";

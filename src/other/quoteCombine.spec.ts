@@ -1,3 +1,5 @@
+import { jest } from "@jest/globals";
+
 import quoteCombine from "./quoteCombine.js";
 import testYf from "../../tests/testYf.js";
 

@@ -1,3 +1,5 @@
+import { jest } from "@jest/globals";
+
 import search from "../modules/search.js";
 import { InvalidOptionsError } from "./errors.js";
 import testYf from "../../tests/testYf.js";

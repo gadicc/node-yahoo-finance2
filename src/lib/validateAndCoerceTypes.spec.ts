@@ -1,3 +1,5 @@
+import { jest } from "@jest/globals";
+
 import validateAndCoerceTypes, { ajv } from "./validateAndCoerceTypes.js";
 import type { ValidateParams } from "./validateAndCoerceTypes.js";
 import { InvalidOptionsError, FailedYahooValidationError } from "./errors.js";

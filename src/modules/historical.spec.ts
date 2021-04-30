@@ -1,3 +1,5 @@
+import { jest } from "@jest/globals";
+
 import historical from "./historical.js";
 import { testSymbols } from "../../tests/symbols.js";
 
