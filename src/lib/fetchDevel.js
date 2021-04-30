@@ -4,7 +4,8 @@ import fs from "fs";
 import path from "path";
 import crypto from "crypto";
 
-const FILE_BASE = path.join(__dirname, "..", "..", "tests", "http");
+//const FILE_BASE = path.join(__dirname, "..", "..", "tests", "http");
+const BASE_URL = new URL("../../tests/http/", import.meta.url);
 
 class FakeResponse {
   constructor(props) {
@@ -34,17 +35,25 @@ async function fetchDevel(url, fetchOptions) {
 
   // If devel===true, hash the url, otherwise use the value of devel
   // This allows us to specify our own static filename vs url hash.
+  /*
   const filename = path.join(
     FILE_BASE,
     fetchOptions.devel === true ? urlHash(url) : fetchOptions.devel
   );
+  */
+  const destUrl = new URL(
+    "./" + (fetchOptions.devel === true ? urlHash(url) : fetchOptions.devel),
+    BASE_URL
+  );
+
+  const filename = destUrl.toString();
 
   if (cache[filename]) return cache[filename];
 
   let contentJson, contentObj;
 
   try {
-    contentJson = await fs.promises.readFile(filename, { encoding: "utf8" });
+    contentJson = await fs.promises.readFile(destUrl, { encoding: "utf8" });
     contentObj = JSON.parse(contentJson);
   } catch (error) {
     if (error.code === "ENOENT") {
@@ -73,7 +82,7 @@ async function fetchDevel(url, fetchOptions) {
       }
 
       contentJson = JSON.stringify(contentObj, null, 2);
-      await fs.promises.writeFile(filename, contentJson, { encoding: "utf8" });
+      await fs.promises.writeFile(destUrl, contentJson, { encoding: "utf8" });
     } else {
       throw error;
     }
