@@ -4,7 +4,8 @@ const config: Config.InitialOptions = {
   preset: "ts-jest",
   setupFilesAfterEnv: ["<rootDir>/tests/setupTests.js"],
   testEnvironment: "node",
-  testPathIgnorePatterns: ["/node_modules/", "/dist/"],
+  testPathIgnorePatterns: ["/node_modules/", "/dist/", "/api/"],
+  extensionsToTreatAsEsm: [".ts"],
   /*
   reporters: [
     '<rootDir>/tests/reporter.js',
