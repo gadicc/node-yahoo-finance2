@@ -11,6 +11,9 @@ const config: Config.InitialOptions = {
       useESM: true,
     },
   },
+  moduleNameMapper: {
+    "(.*)\\.js$": "$1",
+  },
   /*
   reporters: [
     '<rootDir>/tests/reporter.js',
