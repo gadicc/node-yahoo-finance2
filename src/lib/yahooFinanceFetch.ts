@@ -65,7 +65,6 @@ async function yahooFinanceFetch(
   /* istanbul ignore next */
   // no need to force coverage on real network request.
   const fetchFunc = moduleOpts.devel ? await fetchDevel() : fetch;
-  console.log({ fetchFunc });
 
   const fetchOptions = {
     "User-Agent": userAgent,
