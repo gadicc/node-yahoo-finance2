@@ -25,7 +25,9 @@
     "library"
   ],
   "//engines//UNCOMMENT_WHEN_WE_DROP_CJS_SUPPORT": {
-    "node": ">=12.17.0"
+    "node": ">=12.17.0",
+    "//node2": "we need 14.x for dynamic imports -- JUST FOR FETCH_DEVEL()!  think about this.",
+    "node2": ">=14.0.0"
   },
   "bin": {
     "yahoo-finance": "bin/yahoo-finance.js"
