@@ -1,6 +1,6 @@
-#!/usr/bin/env node
+#!/usr/bin/env -S node --experimental-json-modules --experimental-vm-modules
 
-const yahooFinance = require("../api/index-node.js").default;
+import yahooFinance from "../dist/esm/src/index-node.js";
 const moduleNames = Object.keys(yahooFinance).filter((n) => !n.startsWith("_"));
 
 const node = process.argv[0];
