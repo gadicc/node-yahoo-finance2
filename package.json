@@ -42,7 +42,7 @@
     "schema": "ts-json-schema-generator -f tsconfig.json -p 'src/{modules,typings}/**/*.ts' -t '*' | node bin/schema-tweak.js > schema.json",
     "build": "yarn run build:esm && yarn run build:cjs",
     "build:esm": "tsc --module es2020 --outDir dist/esm",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs && sed -i 's/\"type\": \"module\",/\"type:\": \"commonjs\",/' dist/cjs/package.json",
     "generateSchema": "yarn schema",
     "prepublishOnly": "yarn build && yarn generateSchema",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
