@@ -3,8 +3,12 @@
   "version": "0.0.1",
   "description": "JS API for Yahoo Finance",
   "type": "module",
+  "module": "./dist/esm/src/index-node.js",
   "main": "./dist/cjs/src/index-node.js",
-  "exports": "./dist/esm/src/index-node.js",
+  "exports": {
+    "import": "./dist/esm/src/index-node.js",
+    "default": "./dist/cjs/src/index-node.js"
+  },
   "types": "./dist/esm/src/index-node.d.ts",
   "browser": "./dist/esm/src/index-browser.js",
   "repository": "https://github.com/gadicc/node-yahoo-finance2",
