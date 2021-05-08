@@ -71,7 +71,7 @@ export interface InsightsCompanySnapshot {
   company: {
     innovativeness?: number;
     hiring?: number;
-    sustainability: number;
+    sustainability?: number;
     insiderSentiments?: number;
     earningsReports?: number;
     dividends?: number;
