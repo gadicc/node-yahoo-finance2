@@ -73,13 +73,13 @@ export interface InsightsCompanySnapshot {
     hiring?: number;
     sustainability: number;
     insiderSentiments?: number;
-    earningsReports: number;
+    earningsReports?: number;
     dividends?: number;
   };
   sector: {
     innovativeness: number;
     hiring: number;
-    sustainability: number;
+    sustainability?: number;
     insiderSentiments: number;
     earningsReports?: number;
     dividends: number;
