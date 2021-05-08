@@ -1,6 +1,8 @@
-import validateAndCoerceTypes, { ajv } from "./validateAndCoerceTypes";
-import type { ValidateParams } from "./validateAndCoerceTypes";
-import { InvalidOptionsError, FailedYahooValidationError } from "./errors";
+import { jest } from "@jest/globals";
+
+import validateAndCoerceTypes, { ajv } from "./validateAndCoerceTypes.js";
+import type { ValidateParams } from "./validateAndCoerceTypes.js";
+import { InvalidOptionsError, FailedYahooValidationError } from "./errors.js";
 
 ajv.addSchema({
   $id: "testSchema",

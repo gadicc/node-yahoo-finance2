@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require("fs");
-const schemaWalker = require("oas-schema-walker");
+import fs from "fs";
+import schemaWalker from "oas-schema-walker";
 
 const chunks = [];
 process.stdin.on("readable", () => {

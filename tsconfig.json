@@ -2,11 +2,15 @@
   "extends": "@tsconfig/node12/tsconfig.json",
 
   "compilerOptions": {
-    "outDir": "./api",
+    "moduleResolution": "node",
+    "module": "es2020",
+    "target": "es2020",
+    "outDir": "dist/default",
     "allowJs": true,
     "preserveConstEnums": true,
     "declaration": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
 
   "include": ["./src/**/*"],

@@ -1,9 +1,9 @@
-import Queue from "./queue";
+import Queue from "./queue.js";
 
-import type { Options } from "../typings/interfaces";
-import type { QueueOptions } from "./queue";
+import type { Options } from "../typings/interfaces.js";
+import type { QueueOptions } from "./queue.js";
 
-import errors from "./errors";
+import errors from "./errors.js";
 import pkg from "../../package.json";
 
 const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
@@ -48,7 +48,7 @@ async function yahooFinanceFetch(
   moduleOpts: YahooFinanceFetchModuleOptions = {},
   func = "json"
 ) {
-  if (!this._env)
+  if (!(this && this._env))
     throw new errors.NoEnvironmentError(
       "yahooFinanceFetch called without this._env set"
     );
@@ -64,7 +64,7 @@ async function yahooFinanceFetch(
 
   /* istanbul ignore next */
   // no need to force coverage on real network request.
-  const fetchFunc = moduleOpts.devel ? fetchDevel() : fetch;
+  const fetchFunc = moduleOpts.devel ? await fetchDevel() : fetch;
 
   const fetchOptions = {
     "User-Agent": userAgent,

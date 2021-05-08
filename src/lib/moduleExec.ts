@@ -15,8 +15,8 @@
  * Further info below, inline.
  */
 
-import validateAndCoerceTypes from "./validateAndCoerceTypes";
-import csv2json from "./csv2json";
+import validateAndCoerceTypes from "./validateAndCoerceTypes.js";
+import csv2json from "./csv2json.js";
 
 interface TransformFunc {
   // The consuming module itself will have a stricter return type.

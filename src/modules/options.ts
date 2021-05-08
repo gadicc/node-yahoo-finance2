@@ -3,8 +3,9 @@ import type {
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
-} from "../lib/moduleCommon";
-import { Quote } from "./quote";
+} from "../lib/moduleCommon.js";
+
+import { Quote } from "./quote.js";
 
 export interface OptionsResult {
   underlyingSymbol: string;

@@ -43,7 +43,11 @@ $ yahoo-finance search AAPL '{ "someOption": true }'
 **Importing**
 
 ```js
+// import syntax (recommended)
 import yahooFinance from 'yahoo-finance2';
+
+// require syntax (if your code base does not support imports)
+const yahooFinance = require('yahoo-finance2').default; // NOTE the .default
 
 const results = await yahooFinance.search('AAPL');
 const results = await yahooFInance.search('AAPL', { someOption: true, etc });
@@ -79,6 +83,39 @@ See the [Full Documentation](./docs/README.md).
 ```js
 const quote = await yahooFinance.quote('AAPL');
 const { regularMarketPrice as price, currency } = quote;
+```
+
+## NB: CommonJS / ES modules
+
+This package is shipped as **both an ES Module and a CommonJS module**.  Node will
+*automatically* load the ES module if:
+
+* *Your* `package.json` contains a `{ type: module }` entry
+* You're running at least Node 12.
+* You `import` the module (`require` function does not exist in ES modules)
+
+otherwise the traditional CommonJS module will be loaded.  Note, for ES modules,
+and depending on your node version, you may need some extra flags:
+
+```bash
+# As environment variables
+NODE_OPTIONS="--experimental-vm-modules --experimental-json-modules"
+
+# Or as command line options
+node --experimental-vm-modules --experimental-json-modules [...]
+```
+
+ES Modules are "relatively" new.  They got a big boost in April 2021 when
+Node 10, which did not support them, reached end-of-life.  However, support
+varies by build tool and configuration, and there are some edge cases which
+can be tricky.  Please open an issue if you run into any trouble.
+
+**require (CommonJS)**
+
+If you use load the library with `require`, make sure to add `.default`:
+
+```js
+const yahooFinance = require('yahoo-finance2').default; // NOTE the .default
 ```
 
 ## (Optional) TypeScript Love

@@ -1,17 +1,4 @@
-import csv2json from "./csv2json";
-
-/*
-const toBeType = require('jest-tobetype').toBeType;
-
-expect.extend({
-  toBeType,
-});
-*/
-
-/*
-const toBeType = require("jest-tobetype");
-expect.extend(toBeType);
-*/
+import csv2json from "./csv2json.js";
 
 describe("csv2json", () => {
   it("handles historical input", () => {

@@ -3,7 +3,7 @@ import type {
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
-} from "../lib/moduleCommon";
+} from "../lib/moduleCommon.js";
 
 export interface SearchQuoteYahoo {
   symbol: string; // "BABA"

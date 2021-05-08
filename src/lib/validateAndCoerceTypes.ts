@@ -3,9 +3,9 @@ import type { SchemaValidateFunction } from "ajv/dist/types";
 import addFormats from "ajv-formats";
 
 //import schema from '../../schema.json';
-const schema = require("../../schema.json");
-const pkg = require("../../package.json");
-import { InvalidOptionsError, FailedYahooValidationError } from "./errors";
+import schema from "../../schema.json";
+import pkg from "../../package.json";
+import { InvalidOptionsError, FailedYahooValidationError } from "./errors.js";
 
 // https://ajv.js.org/docs/api.html#options
 export const ajv = new Ajv({

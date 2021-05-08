@@ -1,6 +1,6 @@
-import testYf from "../../tests/testYf";
-import options from "./options";
-import setGlobalConfig from "./setGlobalConfig";
+import testYf from "../../tests/testYf.js";
+import options from "./options.js";
+import setGlobalConfig from "./setGlobalConfig.js";
 const yf = testYf({ setGlobalConfig });
 
 describe("setGlobalConfig", () => {

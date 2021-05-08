@@ -1,7 +1,9 @@
-import historical from "./historical";
-import { testSymbols } from "../../tests/symbols";
+import { jest } from "@jest/globals";
 
-import testYf from "../../tests/testYf";
+import historical from "./historical.js";
+import { testSymbols } from "../../tests/symbols.js";
+
+import testYf from "../../tests/testYf.js";
 
 const yf = testYf({ historical });
 
@@ -24,6 +26,7 @@ describe("historical", () => {
   describe("transformWith", () => {
     const yf = { _moduleExec: jest.fn(), historical };
     yf.historical("symbol", { period1: "required-but-not-used" });
+    // @ts-ignore: TODO
     const { transformWith } = yf._moduleExec.mock.calls[0][0].query;
 
     it("uses today's date as default for period2", () => {

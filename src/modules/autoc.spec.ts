@@ -1,7 +1,7 @@
-import autoc from "./autoc";
-import { testSymbols } from "../../tests/symbols";
+import autoc from "./autoc.js";
+import { testSymbols } from "../../tests/symbols.js";
 
-import testYf from "../../tests/testYf";
+import testYf from "../../tests/testYf.js";
 
 const yf = testYf({ autoc });
 

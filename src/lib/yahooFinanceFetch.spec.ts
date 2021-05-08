@@ -1,11 +1,12 @@
 import * as util from "util";
+import { jest } from "@jest/globals";
 
-import Queue from "./queue";
-import _yahooFinanceFetch from "./yahooFinanceFetch";
-import errors from "./errors";
+import Queue from "./queue.js";
+import _yahooFinanceFetch from "./yahooFinanceFetch.js";
+import errors from "./errors.js";
 
-import _env from "../env-node";
-import _opts from "./options";
+import _env from "../env-node.js";
+import _opts from "./options.js";
 
 // https://dev.to/devcrafter91/elegant-way-to-check-if-a-promise-is-pending-577g
 function isPending(promise: any) {
@@ -13,6 +14,7 @@ function isPending(promise: any) {
 }
 
 describe("yahooFinanceFetch", () => {
+  // @ts-ignore: partial This for testing
   const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env, _opts });
 
   // Don't log errors during tests

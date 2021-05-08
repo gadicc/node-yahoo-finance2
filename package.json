@@ -2,9 +2,15 @@
   "name": "yahoo-finance2",
   "version": "0.0.1",
   "description": "JS API for Yahoo Finance",
-  "main": "api/index-node.js",
-  "types": "api/index-node.d.ts",
-  "browser": "api/index-browser.js",
+  "type": "module",
+  "module": "./dist/esm/src/index-node.js",
+  "main": "./dist/cjs/src/index-node.js",
+  "exports": {
+    "import": "./dist/esm/src/index-node.js",
+    "default": "./dist/cjs/src/index-node.js"
+  },
+  "types": "./dist/esm/src/index-node.d.ts",
+  "browser": "./dist/esm/src/index-browser.js",
   "repository": "https://github.com/gadicc/node-yahoo-finance2",
   "author": "Gadi Cohen <dragon@wastelands.net>",
   "license": "MIT",
@@ -22,6 +28,11 @@
     "client",
     "library"
   ],
+  "//engines//UNCOMMENT_WHEN_WE_DROP_CJS_SUPPORT": {
+    "node": ">=12.17.0",
+    "//node2": "we need 14.x for dynamic imports -- JUST FOR FETCH_DEVEL()!  think about this.",
+    "node2": ">=14.0.0"
+  },
   "bin": {
     "yahoo-finance": "bin/yahoo-finance.js"
   },
@@ -29,13 +40,20 @@
     "coverage": "jest --coverage",
     "lint": "eslint . --ext .js,.ts",
     "schema": "ts-json-schema-generator -f tsconfig.json -p 'src/{modules,typings}/**/*.ts' -t '*' | node bin/schema-tweak.js > schema.json",
+    "build": "yarn run build:esm && yarn run build:cjs",
+    "build:esm": "tsc --module es2020 --outDir dist/esm",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs && sed -i 's/\"type\": \"module\",/\"type:\": \"commonjs\",/' dist/cjs/package.json",
     "generateSchema": "yarn schema",
-    "prepublishOnly": "tsc && yarn generateSchema",
-    "test": "jest",
-    "test:ts": "tsc --noEmit"
+    "prepublishOnly": "yarn build && yarn generateSchema",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:ts": "tsc --noEmit",
+    "test:esm": "node --experimental-vm-modules node_modules/.bin/jest -c tests-modules/esm/jest.config.js tests-modules/esm/tests/*",
+    "test:cjs": "node node_modules/.bin/jest -c tests-modules/cjs/jest.config.js tests-modules/cjs/tests/*",
+    "test:modules": "yarn test:esm && yarn test:cjs",
+    "test:build": "yarn test:modules"
   },
   "files": [
-    "api",
+    "dist",
     "schema.json"
   ],
   "dependencies": {
@@ -52,18 +70,20 @@
     "@semantic-release/release-notes-generator": "9.0.2",
     "@tsconfig/node12": "1.0.7",
     "@types/jest": "26.0.23",
+    "@types/node-fetch": "^2.5.10",
     "@typescript-eslint/eslint-plugin": "4.22.1",
     "@typescript-eslint/parser": "4.22.1",
     "eslint": "7.26.0",
     "eslint-config-prettier": "8.3.0",
     "globby": "11.0.3",
-    "jest": "26.6.3",
+    "jest": "v27.0.0-next.8",
     "jest-tobetype": "1.2.3",
     "oas-schema-walker": "1.1.5",
     "prettier": "2.2.1",
     "semantic-release": "17.4.2",
-    "ts-jest": "26.5.6",
+    "ts-jest": "27.0.0-next.11",
     "ts-json-schema-generator": "0.92.0",
+    "ts-node": "^9.1.1",
     "typescript": "4.2.4"
   }
 }

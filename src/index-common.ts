@@ -1,20 +1,20 @@
 // libs
-import yahooFinanceFetch from "./lib/yahooFinanceFetch";
-import moduleExec from "./lib/moduleExec";
-import options from "./lib/options";
+import yahooFinanceFetch from "./lib/yahooFinanceFetch.js";
+import moduleExec from "./lib/moduleExec.js";
+import options from "./lib/options.js";
 
 // modules
-import autoc from "./modules/autoc";
-import historical from "./modules/historical";
-import quote from "./modules/quote";
-import quoteSummary from "./modules/quoteSummary";
-import search from "./modules/search";
-import recommendationsBySymbol from "./modules/recommendationsBySymbol";
-import trendingSymbols from "./modules/trendingSymbols";
-import optionsModule from "./modules/options";
+import autoc from "./modules/autoc.js";
+import historical from "./modules/historical.js";
+import quote from "./modules/quote.js";
+import quoteSummary from "./modules/quoteSummary.js";
+import search from "./modules/search.js";
+import recommendationsBySymbol from "./modules/recommendationsBySymbol.js";
+import trendingSymbols from "./modules/trendingSymbols.js";
+import optionsModule from "./modules/options.js";
 
 // other
-import quoteCombine from "./other/quoteCombine";
+import quoteCombine from "./other/quoteCombine.js";
 
 export default {
   // internal
