@@ -1,7 +1,7 @@
 import { jest } from "@jest/globals";
 
-import quoteCombine from "./quoteCombine.js";
-import testYf from "../../tests/testYf.js";
+import quoteCombine from "./quoteCombine";
+import testYf from "../../tests/testYf";
 
 const yf = testYf({ quoteCombine });
 
