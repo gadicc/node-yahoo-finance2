@@ -49,7 +49,8 @@
     "test:ts": "tsc --noEmit",
     "test:esm": "node --experimental-vm-modules node_modules/.bin/jest tests/modules/esm/tests/*",
     "test:cjs": "node node_modules/.bin/jest -c tests/modules/cjs/jest.config.js tests/modules/cjs/tests/*",
-    "test:modules": "yarn test:esm && yarn test:cjs"
+    "test:modules": "yarn test:esm && yarn test:cjs",
+    "test:build": "yarn test:modules"
   },
   "files": [
     "dist",
