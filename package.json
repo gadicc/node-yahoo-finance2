@@ -46,7 +46,10 @@
     "generateSchema": "yarn schema",
     "prepublishOnly": "yarn build && yarn generateSchema",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
-    "test:ts": "tsc --noEmit"
+    "test:ts": "tsc --noEmit",
+    "test:esm": "node --experimental-vm-modules node_modules/.bin/jest tests/modules/esm/tests/*",
+    "test:cjs": "node node_modules/.bin/jest -c tests/modules/cjs/jest.config.js tests/modules/cjs/tests/*",
+    "test:modules": "yarn test:esm && yarn test:cjs"
   },
   "files": [
     "dist",
