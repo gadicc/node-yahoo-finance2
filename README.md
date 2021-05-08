@@ -81,6 +81,31 @@ const quote = await yahooFinance.quote('AAPL');
 const { regularMarketPrice as price, currency } = quote;
 ```
 
+## NB: CommonJS / ES modules
+
+This package is shipped as **both an ES Module and a CommonJS module**.  Node will
+*automatically* load the ES module if:
+
+* *Your* `package.json` contains a `{ type: module }` entry
+* You're running at least Node 12.
+
+otherwise the traditional CommonJS module will be loaded.  Note, for ES modules,
+and depending on your node version, you may need some extra flags:
+
+```bash
+# As environment variables
+NODE_OPTIONS="--experimental-vm-modules --experimental-json-modules"
+
+# Or as command line options
+node --experimental-vm-modules --experimental-json-modules [...]
+```
+
+ES Modules are "relatively" new.  They got a big boost in April 2021 when
+Node 10, which did not support them, reached end-of-life.  However, support
+varies by build tool and configuration, and there are some edge cases which
+can be tricky.  Please open an issue if you run into any trouble.
+
+
 ## (Optional) TypeScript Love
 
 Working with `yahoo-finance2` is a joy if you're using TypeScript (but you
