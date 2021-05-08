@@ -2,15 +2,15 @@ const config = {
   preset: "ts-jest/presets/default-esm",
   //setupFilesAfterEnv: ["<rootDir>/tests/setupTests.js"],
   testEnvironment: "node",
-  testPathIgnorePatterns: ["/node_modules/", "/dist/", "/api/"],
+  testPathIgnorePatterns: ["/node_modules/", "/dist/", "/api/", "/tests\//"],
   extensionsToTreatAsEsm: [".ts"],
   globals: {
     "ts-jest": {
-      useESM: false, // true in main config, turned off here [modules/cjs]
+      useESM: true,
     },
   },
   moduleNameMapper: {
-    //"(.*)\\.js$": "$1", // turned off here [modules/cjs]
+    "(.*)\\.js$": "$1",
   },
   /*
   reporters: [
@@ -20,4 +20,4 @@ const config = {
   */
 };
 
-module.exports = config;
+export default config;
