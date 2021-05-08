@@ -7,15 +7,15 @@ import type {
 
 export interface InsightsResult {
   symbol: string;
-  instrumentInfo: InsightsInstrumentInfo;
-  companySnapshot: InsightsCompanySnapshot;
-  recommendation: {
+  instrumentInfo?: InsightsInstrumentInfo;
+  companySnapshot?: InsightsCompanySnapshot;
+  recommendation?: {
     targetPrice: number;
     provider: string;
-    rating: "BUY" | "SELL";
+    rating: "BUY" | "SELL" | "HOLD";
   };
-  events: InsightsEvent[];
-  reports: InsightsReport[];
+  events?: InsightsEvent[];
+  reports?: InsightsReport[];
   sigDevs: InsightsSigDev[];
 }
 
@@ -46,39 +46,42 @@ export interface InsightsEvent {
 export interface InsightsInstrumentInfo {
   keyTechnicals: {
     provider: string;
-    support: number;
-    resistance: number;
+    support?: number;
+    resistance?: number;
     stopLoss: number;
   };
   technicalEvents: {
     provider: string;
-    sector: string;
+    sector?: string;
     shortTermOutlook: InsightsOutlook;
     intermediateTermOutlook: InsightsOutlook;
     longTermOutlook: InsightsOutlook;
   };
   valuation: {
-    color: number;
-    description: string;
-    discount: string;
+    color?: number;
+    description?: string;
+    discount?: string;
     provider: string;
+    relativeValue?: string;
   };
 }
 
 export interface InsightsCompanySnapshot {
-  sectorInfo: "Technology";
+  sectorInfo: string;
   company: {
-    innovativeness: number;
-    hiring: number;
-    insiderSentiments: number;
+    innovativeness?: number;
+    hiring?: number;
+    sustainability: number;
+    insiderSentiments?: number;
     earningsReports: number;
+    dividends?: number;
   };
   sector: {
     innovativeness: number;
     hiring: number;
     sustainability: number;
     insiderSentiments: number;
-    earningsReports: number;
+    earningsReports?: number;
     dividends: number;
   };
 }
@@ -90,9 +93,9 @@ export interface InsightsOutlook {
   direction: InsightsDirection;
   score: number;
   scoreDescription: string;
-  sectorDirection: InsightsDirection;
-  sectorScore: number;
-  sectorScoreDescription: string;
+  sectorDirection?: InsightsDirection;
+  sectorScore?: number;
+  sectorScoreDescription?: string;
   indexDirection: InsightsDirection;
   indexScore: number;
   indexScoreDescription: string;

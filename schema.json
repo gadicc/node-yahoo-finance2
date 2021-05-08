@@ -1996,6 +1996,9 @@
         "company": {
           "additionalProperties": false,
           "properties": {
+            "dividends": {
+              "yahooFinanceType": "number"
+            },
             "earningsReports": {
               "yahooFinanceType": "number"
             },
@@ -2007,12 +2010,13 @@
             },
             "insiderSentiments": {
               "yahooFinanceType": "number"
+            },
+            "sustainability": {
+              "yahooFinanceType": "number"
             }
           },
           "required": [
-            "innovativeness",
-            "hiring",
-            "insiderSentiments",
+            "sustainability",
             "earningsReports"
           ],
           "type": "object"
@@ -2044,13 +2048,11 @@
             "hiring",
             "sustainability",
             "insiderSentiments",
-            "earningsReports",
             "dividends"
           ],
           "type": "object"
         },
         "sectorInfo": {
-          "const": "Technology",
           "type": "string"
         }
       },
@@ -2126,8 +2128,6 @@
           },
           "required": [
             "provider",
-            "support",
-            "resistance",
             "stopLoss"
           ],
           "type": "object"
@@ -2153,7 +2153,6 @@
           },
           "required": [
             "provider",
-            "sector",
             "shortTermOutlook",
             "intermediateTermOutlook",
             "longTermOutlook"
@@ -2174,12 +2173,12 @@
             },
             "provider": {
               "type": "string"
+            },
+            "relativeValue": {
+              "type": "string"
             }
           },
           "required": [
-            "color",
-            "description",
-            "discount",
             "provider"
           ],
           "type": "object"
@@ -2246,9 +2245,6 @@
         "direction",
         "score",
         "scoreDescription",
-        "sectorDirection",
-        "sectorScore",
-        "sectorScoreDescription",
         "indexDirection",
         "indexScore",
         "indexScoreDescription"
@@ -2311,7 +2307,8 @@
             "rating": {
               "enum": [
                 "BUY",
-                "SELL"
+                "SELL",
+                "HOLD"
               ],
               "type": "string"
             },
@@ -2344,11 +2341,6 @@
       },
       "required": [
         "symbol",
-        "instrumentInfo",
-        "companySnapshot",
-        "recommendation",
-        "events",
-        "reports",
         "sigDevs"
       ],
       "type": "object"
