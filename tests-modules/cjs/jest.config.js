@@ -2,7 +2,7 @@ const config = {
   preset: "ts-jest/presets/default-esm",
   //setupFilesAfterEnv: ["<rootDir>/tests/setupTests.js"],
   testEnvironment: "node",
-  testPathIgnorePatterns: ["/node_modules/", "/dist/", "/api/", "/tests\//"],
+  testPathIgnorePatterns: ["/node_modules/", "/dist/", "/api/", "/tests//"],
   extensionsToTreatAsEsm: [".ts"],
   globals: {
     "ts-jest": {
