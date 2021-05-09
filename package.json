@@ -45,10 +45,10 @@
     "build:cjs": "tsc --module commonjs --outDir dist/cjs && sed -i 's/\"type\": \"module\",/\"type:\": \"commonjs\",/' dist/cjs/package.json",
     "generateSchema": "yarn schema",
     "prepublishOnly": "yarn build && yarn generateSchema",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
     "test:ts": "tsc --noEmit",
-    "test:esm": "node --experimental-vm-modules node_modules/.bin/jest -c tests-modules/esm/jest.config.js tests-modules/esm/tests/*",
-    "test:cjs": "node node_modules/.bin/jest -c tests-modules/cjs/jest.config.js tests-modules/cjs/tests/*",
+    "test:esm": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js -c tests-modules/esm/jest.config.js tests-modules/esm/tests/*",
+    "test:cjs": "node ./node_modules/jest/bin/jest.js -c tests-modules/cjs/jest.config.js tests-modules/cjs/tests/*",
     "test:modules": "yarn test:esm && yarn test:cjs",
     "test:build": "yarn test:modules"
   },
