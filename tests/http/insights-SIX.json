@@ -1,0 +1,192 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=SIX"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "f17kgjtg9tcb6"
+      ],
+      "x-yahoo-request-id": [
+        "f17kgjtg9tcb6"
+      ],
+      "x-request-id": [
+        "3451f8f6-1327-437c-9681-d47656a82717"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1017"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:37 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "SIX",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Consumer Cyclical",
+              "shortTermOutlook": {
+                "stateDescription": "Bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 4,
+                "scoreDescription": "Very Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 4,
+                "sectorScoreDescription": "Very Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 4,
+                "scoreDescription": "Very Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 2,
+                "scoreDescription": "Bearish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 19.95,
+              "resistance": 45.56,
+              "stopLoss": 36.390413
+            },
+            "valuation": {
+              "color": 0,
+              "description": "Overvalued",
+              "relativeValue": "Premium",
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Consumer Cyclical",
+            "company": {
+              "innovativeness": 0.5011,
+              "sustainability": 0.9316,
+              "insiderSentiments": 0.3785,
+              "earningsReports": 0.24780000000000002,
+              "dividends": 0.8269
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "recommendation": {
+            "targetPrice": 34,
+            "provider": "Argus Research",
+            "rating": "SELL"
+          },
+          "events": [
+            {
+              "eventType": "Fast Stochastic",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "L",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620653400,
+              "endDate": 1620653400
+            }
+          ],
+          "reports": [
+            {
+              "id": "ARGUS_4574_QuantitativeReport_1620777600000",
+              "headHtml": "SIX: Lowering target price to $34.00",
+              "provider": "Argus Research",
+              "reportDate": "2021-05-12T00:00:00Z",
+              "reportTitle": "SIX FLAGS ENTERTAINMENT CORP has an Investment Rating of SELL; a target price of $34.000000; an Industry Subrating of Medium; a Management Subrating of Low; a Safety Subrating of Low; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of Low.",
+              "reportType": "Quantitative Report"
+            },
+            {
+              "id": "ARGUS_4574_QuantitativeReport_1620172800000",
+              "headHtml": "SIX: Lowering target price to $35.00",
+              "provider": "Argus Research",
+              "reportDate": "2021-05-05T00:00:00Z",
+              "reportTitle": "SIX FLAGS ENTERTAINMENT CORP has an Investment Rating of SELL; a target price of $35.000000; an Industry Subrating of Medium; a Management Subrating of Low; a Safety Subrating of Low; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of Low.",
+              "reportType": "Quantitative Report"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Six Flags Announces First Quarter 2021 Performance",
+              "date": "2021-04-28"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=BABA"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "9f24pd9g9tcb7"
+      ],
+      "x-yahoo-request-id": [
+        "9f24pd9g9tcb7"
+      ],
+      "x-request-id": [
+        "697d8b51-cecf-4133-a3e6-2b1914854f6a"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1354"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:39 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "BABA",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Consumer Cyclical",
+              "shortTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 1,
+                "scoreDescription": "Weak Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 4,
+                "sectorScoreDescription": "Very Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 2,
+                "scoreDescription": "Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 176.9382,
+              "resistance": 224.88,
+              "stopLoss": 193.384108
+            },
+            "valuation": {
+              "color": 1,
+              "description": "Undervalued",
+              "discount": "52%",
+              "relativeValue": "Discount",
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Consumer Cyclical",
+            "company": {
+              "innovativeness": 0.9381999999999999,
+              "hiring": 0.1387,
+              "sustainability": 0.7027
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "recommendation": {
+            "targetPrice": 330,
+            "provider": "Argus Research",
+            "rating": "BUY"
+          },
+          "events": [
+            {
+              "eventType": "Gap Down",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "U",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620826200,
+              "endDate": 1620912600
+            }
+          ],
+          "reports": [
+            {
+              "id": "MS_0P00013K81_AnalystReport_1620999270000",
+              "headHtml": "Analyst Report: Alibaba Group Holding Limited",
+              "provider": "Morningstar",
+              "reportDate": "2021-05-14T13:34:30Z",
+              "reportTitle": "Alibaba is the world’s largest online and mobile commerce company, measured by GMV (CNY 6.6 trillion/$1 trillion for the fiscal year ended March 2020). It operates China’s most-visited online marketplaces, including Taobao (consumer-to-consumer) and Tmall (business-to-consumer). Alibaba's China commerce retail division accounted for 69% of revenue in the December 2020 quarter, with Taobao generating revenue through advertising and other merchant data services and Tmall deriving revenue from commission fees. Additional revenue sources include China commerce wholesales (2%), international retail/wholesale marketplaces (5%/2%), cloud computing (7%), digital media and entertainment platforms (4%), Cainiao logistics services (5%), and innovation initiatives/other (2%). ",
+              "reportType": "Analyst Report"
+            },
+            {
+              "id": "MS_0P00013K81_AnalystReport_1619155485000",
+              "headHtml": "Analyst Report: Alibaba Group Holding Limited",
+              "provider": "Morningstar",
+              "reportDate": "2021-04-23T05:24:45Z",
+              "reportTitle": "Alibaba is the world’s largest online and mobile commerce company, measured by GMV (CNY 6.6 trillion/$1 trillion for the fiscal year ended March 2020). It operates China’s most-visited online marketplaces, including Taobao (consumer-to-consumer) and Tmall (business-to-consumer). Alibaba's China commerce retail division accounted for 69% of revenue in the December 2020 quarter, with Taobao generating revenue through advertising and other merchant data services and Tmall deriving revenue from commission fees. Additional revenue sources include China commerce wholesales (2%), international retail/wholesale marketplaces (5%/2%), cloud computing (7%), digital media and entertainment platforms (4%), Cainiao logistics services (5%), and innovation initiatives/other (2%). ",
+              "reportType": "Analyst Report"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Alibaba Group Says Expect To Generate Over RMB930 Bln In Revenue In FY22",
+              "date": "2021-05-13"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

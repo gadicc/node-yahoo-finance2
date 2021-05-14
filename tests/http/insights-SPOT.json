@@ -1,0 +1,183 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=SPOT"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "fgmf449g9tcb6"
+      ],
+      "x-yahoo-request-id": [
+        "fgmf449g9tcb6"
+      ],
+      "x-request-id": [
+        "e0f69d95-af10-4142-b321-a70b75dafa7e"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1085"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:38 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-baseline-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "SPOT",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Communication Services",
+              "shortTermOutlook": {
+                "stateDescription": "Bullish events outweigh bearish events.",
+                "direction": "Bullish",
+                "score": 1,
+                "scoreDescription": "Weak Bullish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 2,
+                "sectorScoreDescription": "Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 2,
+                "scoreDescription": "Bearish Evidence",
+                "sectorDirection": "Neutral",
+                "sectorScore": 0,
+                "sectorScoreDescription": "No Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 146.87,
+              "resistance": 271.71,
+              "stopLoss": 194.681466
+            },
+            "valuation": {
+              "color": 0,
+              "description": "Overvalued",
+              "relativeValue": "Premium",
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Communication Services",
+            "company": {
+              "innovativeness": 0.9225
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "events": [
+            {
+              "eventType": "Commodity Channel Index",
+              "pricePeriod": "W",
+              "tradingHorizon": "S",
+              "tradeType": "S",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620394200,
+              "endDate": 1620394200
+            }
+          ],
+          "reports": [
+            {
+              "id": "MS_0P0001CX12_AnalystReport_1619823044000",
+              "headHtml": "Analyst Report: Spotify Technology S.A.",
+              "provider": "Morningstar",
+              "reportDate": "2021-04-30T22:50:44Z",
+              "reportTitle": "Spotify, headquartered in Stockholm, Sweden, is one of the world’s largest music streaming service providers, with over 150 million total listeners. The firm monetizes its users through both a paid subscription model, referred to as its premium service, and an ad-based model, referred to as its ad-supported service. Revenue from premium and ad-supported services represented 90% and 10% of Spotify’s 2017 total revenue, respectively.",
+              "reportType": "Analyst Report"
+            },
+            {
+              "id": "MS_0P0001CX12_AnalystReport_1619738747000",
+              "headHtml": "Analyst Report: Spotify Technology S.A.",
+              "provider": "Morningstar",
+              "reportDate": "2021-04-29T23:25:47Z",
+              "reportTitle": "Spotify, headquartered in Stockholm, Sweden, is one of the world’s largest music streaming service providers, with over 150 million total listeners. The firm monetizes its users through both a paid subscription model, referred to as its premium service, and an ad-based model, referred to as its ad-supported service. Revenue from premium and ad-supported services represented 90% and 10% of Spotify’s 2017 total revenue, respectively.",
+              "reportType": "Analyst Report"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Spotify Technology Qtrly Loss Per Share EUR 0.25",
+              "date": "2021-04-28"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

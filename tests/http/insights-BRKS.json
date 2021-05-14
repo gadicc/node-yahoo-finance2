@@ -1,0 +1,193 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=BRKS"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "6ik96r1g9tcb8"
+      ],
+      "x-yahoo-request-id": [
+        "6ik96r1g9tcb8"
+      ],
+      "x-request-id": [
+        "f53648f8-51f2-4f05-a281-8bb0436d7c23"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1063"
+      ],
+      "x-envoy-upstream-service-time": [
+        "6"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:40 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "BRKS",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Technology",
+              "shortTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 2,
+                "sectorScoreDescription": "Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 2,
+                "scoreDescription": "Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "All events are bullish.",
+                "direction": "Bullish",
+                "score": 1,
+                "scoreDescription": "Weak Bullish Evidence",
+                "sectorDirection": "Neutral",
+                "sectorScore": 0,
+                "sectorScoreDescription": "No Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 39.725,
+              "resistance": 94.61,
+              "stopLoss": 73.220238
+            },
+            "valuation": {
+              "color": 0,
+              "description": "Overvalued",
+              "discount": "-24%",
+              "relativeValue": "Premium",
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Technology",
+            "company": {
+              "innovativeness": 0.8190999999999999,
+              "hiring": 0.5765,
+              "insiderSentiments": 0.6236999999999999,
+              "earningsReports": 0.9228000000000001,
+              "dividends": 0.1246
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "recommendation": {
+            "targetPrice": 93,
+            "provider": "Argus Research",
+            "rating": "HOLD"
+          },
+          "events": [
+            {
+              "eventType": "Inside Bar (Bullish)",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "L",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620912600,
+              "endDate": 1620912600
+            }
+          ],
+          "reports": [
+            {
+              "id": "ARGUS_3917_QuantitativeReport_1620777600000",
+              "headHtml": "BRKS: Lowering target price to $93.00",
+              "provider": "Argus Research",
+              "reportDate": "2021-05-12T00:00:00Z",
+              "reportTitle": "BROOKS AUTOMATION INC has an Investment Rating of HOLD; a target price of $93.000000; an Industry Subrating of High; a Management Subrating of Medium; a Safety Subrating of Medium; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of Medium.",
+              "reportType": "Quantitative Report"
+            },
+            {
+              "id": "ARGUS_3917_QuantitativeReport_1620172800000",
+              "headHtml": "BRKS: Lowering target price to $99.00",
+              "provider": "Argus Research",
+              "reportDate": "2021-05-05T00:00:00Z",
+              "reportTitle": "BROOKS AUTOMATION INC has an Investment Rating of HOLD; a target price of $99.000000; an Industry Subrating of High; a Management Subrating of Medium; a Safety Subrating of Medium; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of Medium.",
+              "reportType": "Quantitative Report"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Brooks Automation Reports Q2 Earnings Per Share of $0.32 From Continuing Operations",
+              "date": "2021-05-10"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

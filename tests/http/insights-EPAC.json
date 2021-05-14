@@ -1,0 +1,192 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=EPAC"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "fhmlhdlg9tcb8"
+      ],
+      "x-yahoo-request-id": [
+        "fhmlhdlg9tcb8"
+      ],
+      "x-request-id": [
+        "02617a03-29da-4d20-bb0d-f6203a5cf4e5"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1061"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:40 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "EPAC",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Industrials",
+              "shortTermOutlook": {
+                "stateDescription": "Recent bullish events outweigh bearish events.",
+                "direction": "Bullish",
+                "score": 2,
+                "scoreDescription": "Bullish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 2,
+                "sectorScoreDescription": "Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "All events are bullish.",
+                "direction": "Bullish",
+                "score": 2,
+                "scoreDescription": "Bullish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bullish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "Bullish events outweigh bearish events.",
+                "direction": "Bullish",
+                "score": 1,
+                "scoreDescription": "Weak Bullish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 21.875,
+              "resistance": 27.8,
+              "stopLoss": 23.69803
+            },
+            "valuation": {
+              "color": 0,
+              "description": "Overvalued",
+              "discount": "-49%",
+              "relativeValue": "Premium",
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Industrials",
+            "company": {
+              "innovativeness": 0.8090999999999999,
+              "insiderSentiments": 0.7852,
+              "earningsReports": 0.9913,
+              "dividends": 0.012
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "recommendation": {
+            "targetPrice": 22,
+            "provider": "Argus Research",
+            "rating": "SELL"
+          },
+          "events": [
+            {
+              "eventType": "Price Crosses Moving Average",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "L",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620912600,
+              "endDate": 1620912600
+            }
+          ],
+          "reports": [
+            {
+              "id": "ARGUS_3767_QuantitativeReport_1620777600000",
+              "headHtml": "EPAC: What does Argus have to say about EPAC?",
+              "provider": "Argus Research",
+              "reportDate": "2021-05-12T00:00:00Z",
+              "reportTitle": "ENERPAC TOOL GROUP CORP has an Investment Rating of SELL; a target price of $22.000000; an Industry Subrating of High; a Management Subrating of Low; a Safety Subrating of Medium; a Financial Strength Subrating of Medium; a Growth Subrating of Low; and a Value Subrating of Low.",
+              "reportType": "Quantitative Report"
+            },
+            {
+              "id": "ARGUS_3767_QuantitativeReport_1620172800000",
+              "headHtml": "EPAC: Raising target price to $22.00",
+              "provider": "Argus Research",
+              "reportDate": "2021-05-05T00:00:00Z",
+              "reportTitle": "ENERPAC TOOL GROUP CORP has an Investment Rating of SELL; a target price of $22.000000; an Industry Subrating of High; a Management Subrating of Low; a Safety Subrating of Medium; a Financial Strength Subrating of Medium; a Growth Subrating of Low; and a Value Subrating of Low.",
+              "reportType": "Quantitative Report"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Enerpac Tool Group Reports Second Quarter Fiscal 2021 Results",
+              "date": "2021-03-24"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

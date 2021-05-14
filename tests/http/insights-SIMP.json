@@ -1,0 +1,120 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=SIMP"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "0udsj2lg9tcb9"
+      ],
+      "x-yahoo-request-id": [
+        "0udsj2lg9tcb9"
+      ],
+      "x-request-id": [
+        "b43c1f06-8e3a-4a5e-a06b-783b3cba3efc"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1066"
+      ],
+      "x-envoy-upstream-service-time": [
+        "6"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:41 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "SIMP",
+          "companySnapshot": {
+            "sectorInfo": "Consumer Cyclical",
+            "company": {
+              "innovativeness": 0.04190000000000001,
+              "insiderSentiments": 0.7315999999999999,
+              "earningsReports": 0.632
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "reports": [
+            {
+              "id": "MS_0P000005UH_AnalystReport_1620756406000",
+              "headHtml": "Analyst Report: Walmart Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2021-05-11T18:06:46Z",
+              "reportTitle": "America’s largest retailer by sales, Walmart operated over 11,400 stores under 54 banners at the end of fiscal 2021, selling a variety of general merchandise and grocery items. Its home market accounted for 78% of sales in fiscal 2021, with Mexico and Central America (6%) and Canada (4%) its largest external markets. In the United States, around 56% of sales come from grocery, 32% from general merchandise, and 10% from health and wellness items. The company operates several e-commerce properties apart from its eponymous site, including Flipkart and shoes.com (it also owns a roughly 10% stake in Chinese online retailer JD.com). Combined, e-commerce accounted for about 12% of fiscal 2021 sales.",
+              "reportType": "Analyst Report"
+            },
+            {
+              "id": "ARGUS_29810_TechnicalAnalysis_1620285236000",
+              "headHtml": "Technical Assessment: Bullish in the Intermediate-Term",
+              "provider": "Argus Research",
+              "reportDate": "2021-05-06T07:13:56Z",
+              "reportTitle": "While the year-to-date winners in 2021 were the big losers in 2020, the winners in 2020 are hanging in there so far in 2021. There is always some degree of reversion to the mean, be that in the stock market, sports, politics, the economy, consumer confidence, etc. Still, one thing that has remained consistently bullish for the overall stock market going back to 2009 is market breadth.",
+              "reportType": "Technical Analysis"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Carlos Felipe Rezk Reports A Stake Of 8.26% In Cool Holdings As Of Sept 11",
+              "date": "2019-10-09"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

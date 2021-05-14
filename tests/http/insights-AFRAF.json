@@ -1,0 +1,104 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=AFRAF"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "6c1uq55g9tcb4"
+      ],
+      "x-yahoo-request-id": [
+        "6c1uq55g9tcb4"
+      ],
+      "x-request-id": [
+        "f647c243-4e4b-4eba-be2f-14bdaa5fe452"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "794"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:36 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "2"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "AFRAF",
+          "reports": [
+            {
+              "id": "MS_1015646_StockPicks_1608329712000",
+              "headHtml": "Morningstar | A Weekly Summary of Stock Ideas and Developments in the Companies We Cover",
+              "provider": "Morningstar",
+              "reportDate": "2020-12-18T22:15:12Z",
+              "reportTitle": "This edition features new coverage of six European airlines; merger creating cannabis giant; Google antitrust suit; and notes from Lennar, Bed Bath & Beyond, and REA Group.",
+              "reportType": "Stock Picks"
+            },
+            {
+              "id": "MS_0P00008O9A_AnalystReport_1604964481000",
+              "headHtml": "Analyst Report: Delta Air Lines, Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2020-11-09T23:28:01Z",
+              "reportTitle": "Atlanta-based Delta Air Lines is one of the world's largest airlines, with a network of over 300 destinations in more than 50 countries. Delta operates a hub-and-spoke system network, where it gathers and distributes passengers across the globe through key locations in Atlanta, New York, Salt Lake City, Detroit, Seattle, and Minneapolis-St. Paul. Delta’s sale of frequent flyer miles, particularly to American Express, is a major driver of the firm’s profits. ",
+              "reportType": "Analyst Report"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Air France KLM: CFO Gagey to be succeeded by Steven Zaat, current Air France Chief Financial Officer",
+              "date": "2021-05-06"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

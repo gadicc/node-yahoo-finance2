@@ -1,7 +1,7 @@
-import insights from "./insights";
-import { testSymbols } from "../../tests/symbols";
+import insights from "./insights.js";
+import { testSymbols } from "../../tests/symbols.js";
 
-import testYf from "../../tests/testYf";
+import testYf from "../../tests/testYf.js";
 
 const yf = testYf({ insights });
 
