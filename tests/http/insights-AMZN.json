@@ -1,0 +1,192 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=AMZN"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "74e6jvlg9tcb5"
+      ],
+      "x-yahoo-request-id": [
+        "74e6jvlg9tcb5"
+      ],
+      "x-request-id": [
+        "9387d95c-ce01-456f-aada-c84e047bed45"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1624"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:37 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "AMZN",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Consumer Cyclical",
+              "shortTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 4,
+                "sectorScoreDescription": "Very Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "Recent bullish events outweigh bearish events.",
+                "direction": "Bullish",
+                "score": 2,
+                "scoreDescription": "Bullish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 2,
+                "scoreDescription": "Bearish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 3135.7,
+              "resistance": 3182.63,
+              "stopLoss": 3012.689805
+            },
+            "valuation": {
+              "color": 0.5,
+              "description": "Near Fair Value",
+              "discount": "22%",
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Consumer Cyclical",
+            "company": {
+              "innovativeness": 0.9978,
+              "hiring": 0.9745,
+              "sustainability": 0.8632,
+              "insiderSentiments": 0.0424,
+              "earningsReports": 0.9262
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "recommendation": {
+            "targetPrice": 4000,
+            "provider": "Argus Research",
+            "rating": "BUY"
+          },
+          "events": [
+            {
+              "eventType": "Price Crosses Moving Average",
+              "pricePeriod": "D",
+              "tradingHorizon": "L",
+              "tradeType": "S",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620826200,
+              "endDate": 1620826200
+            }
+          ],
+          "reports": [
+            {
+              "id": "ARGUS_2710_AnalystReport_1619792462000",
+              "headHtml": "Analyst Report: Amazon.com Inc.",
+              "provider": "Argus Research",
+              "reportDate": "2021-04-30T14:21:02Z",
+              "reportTitle": "Amazon.com is the leading U.S. e-commerce retailer and among the top e-commerce sites globally. Amazon.com also provides Amazon Web Services (AWS), which is the global leader in cloud-based Infrastructure-as-a-Service (IaaS) platforms. The company's Prime membership platform is a key online retail differentiator, providing customers with free shipping (after an annual fee) along with exclusive media content (music, video, audible books, etc.). The company's Kindle reader and Alexa-based Echo and Dot digital voice assistants are category leaders. Amazon acquired Whole Foods Market in August 2017.",
+              "reportType": "Analyst Report"
+            },
+            {
+              "id": "ARGUS_29773_MarketUpdate_1619791562000",
+              "headHtml": "Market Update: AMZN, AVY, FHI, HOLX, IPG, NOK, RJF, TROW, UTHR",
+              "provider": "Argus Research",
+              "reportDate": "2021-04-30T14:06:02Z",
+              "reportTitle": "Stocks fell on Friday morning following a new round of first-quarter earnings reports from major companies along with March consumer spending data. The Commerce Department said that U.S. consumer spending rose a strong 4.2% last month after a decline of 1.0% in February. The reading came in slightly ahead of the Reuters consensus forecast of 4.1%. The Dow fell 0.6%, the S&P 0.5%, and the Nasdaq 0.2%. Crude oil traded near $64 per barrel, while gold fell slightly to $1769 per ounce.",
+              "reportType": "Market Update"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Amazon Hiring 75,000 Employees Across Fulfillment And Transportation, With Average Starting Pay Of Over $17 Per Hour And Sign-On Bonuses Of Up To $1,000",
+              "date": "2021-05-13"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

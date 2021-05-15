@@ -1990,6 +1990,372 @@
       ],
       "type": "object"
     },
+    "InsightsCompanySnapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "dividends": {
+              "yahooFinanceType": "number"
+            },
+            "earningsReports": {
+              "yahooFinanceType": "number"
+            },
+            "hiring": {
+              "yahooFinanceType": "number"
+            },
+            "innovativeness": {
+              "yahooFinanceType": "number"
+            },
+            "insiderSentiments": {
+              "yahooFinanceType": "number"
+            },
+            "sustainability": {
+              "yahooFinanceType": "number"
+            }
+          },
+          "type": "object"
+        },
+        "sector": {
+          "additionalProperties": false,
+          "properties": {
+            "dividends": {
+              "yahooFinanceType": "number"
+            },
+            "earningsReports": {
+              "yahooFinanceType": "number"
+            },
+            "hiring": {
+              "yahooFinanceType": "number"
+            },
+            "innovativeness": {
+              "yahooFinanceType": "number"
+            },
+            "insiderSentiments": {
+              "yahooFinanceType": "number"
+            },
+            "sustainability": {
+              "yahooFinanceType": "number"
+            }
+          },
+          "required": [
+            "innovativeness",
+            "hiring",
+            "insiderSentiments",
+            "dividends"
+          ],
+          "type": "object"
+        },
+        "sectorInfo": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sectorInfo",
+        "company",
+        "sector"
+      ],
+      "type": "object"
+    },
+    "InsightsDirection": {
+      "enum": [
+        "Bearish",
+        "Bullish",
+        "Neutral"
+      ],
+      "type": "string"
+    },
+    "InsightsEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "endDate": {
+          "yahooFinanceType": "date"
+        },
+        "eventType": {
+          "type": "string"
+        },
+        "imageUrl": {
+          "type": "string"
+        },
+        "pricePeriod": {
+          "type": "string"
+        },
+        "startDate": {
+          "yahooFinanceType": "date"
+        },
+        "tradeType": {
+          "type": "string"
+        },
+        "tradingHorizon": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "eventType",
+        "pricePeriod",
+        "tradingHorizon",
+        "tradeType",
+        "imageUrl",
+        "startDate",
+        "endDate"
+      ],
+      "type": "object"
+    },
+    "InsightsInstrumentInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "keyTechnicals": {
+          "additionalProperties": false,
+          "properties": {
+            "provider": {
+              "type": "string"
+            },
+            "resistance": {
+              "yahooFinanceType": "number"
+            },
+            "stopLoss": {
+              "yahooFinanceType": "number"
+            },
+            "support": {
+              "yahooFinanceType": "number"
+            }
+          },
+          "required": [
+            "provider",
+            "stopLoss"
+          ],
+          "type": "object"
+        },
+        "technicalEvents": {
+          "additionalProperties": false,
+          "properties": {
+            "intermediateTermOutlook": {
+              "$ref": "#/definitions/InsightsOutlook"
+            },
+            "longTermOutlook": {
+              "$ref": "#/definitions/InsightsOutlook"
+            },
+            "provider": {
+              "type": "string"
+            },
+            "sector": {
+              "type": "string"
+            },
+            "shortTermOutlook": {
+              "$ref": "#/definitions/InsightsOutlook"
+            }
+          },
+          "required": [
+            "provider",
+            "shortTermOutlook",
+            "intermediateTermOutlook",
+            "longTermOutlook"
+          ],
+          "type": "object"
+        },
+        "valuation": {
+          "additionalProperties": false,
+          "properties": {
+            "color": {
+              "yahooFinanceType": "number"
+            },
+            "description": {
+              "type": "string"
+            },
+            "discount": {
+              "type": "string"
+            },
+            "provider": {
+              "type": "string"
+            },
+            "relativeValue": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "provider"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "keyTechnicals",
+        "technicalEvents",
+        "valuation"
+      ],
+      "type": "object"
+    },
+    "InsightsOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "lang": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "reportsCount": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "type": "object"
+    },
+    "InsightsOutlook": {
+      "additionalProperties": false,
+      "properties": {
+        "direction": {
+          "$ref": "#/definitions/InsightsDirection"
+        },
+        "indexDirection": {
+          "$ref": "#/definitions/InsightsDirection"
+        },
+        "indexScore": {
+          "yahooFinanceType": "number"
+        },
+        "indexScoreDescription": {
+          "type": "string"
+        },
+        "score": {
+          "yahooFinanceType": "number"
+        },
+        "scoreDescription": {
+          "type": "string"
+        },
+        "sectorDirection": {
+          "$ref": "#/definitions/InsightsDirection"
+        },
+        "sectorScore": {
+          "yahooFinanceType": "number"
+        },
+        "sectorScoreDescription": {
+          "type": "string"
+        },
+        "stateDescription": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "stateDescription",
+        "direction",
+        "score",
+        "scoreDescription",
+        "indexDirection",
+        "indexScore",
+        "indexScoreDescription"
+      ],
+      "type": "object"
+    },
+    "InsightsReport": {
+      "additionalProperties": false,
+      "properties": {
+        "headHtml": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "reportDate": {
+          "type": "string"
+        },
+        "reportTitle": {
+          "type": "string"
+        },
+        "reportType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "headHtml",
+        "provider",
+        "reportDate",
+        "reportTitle",
+        "reportType"
+      ],
+      "type": "object"
+    },
+    "InsightsResult": {
+      "additionalProperties": false,
+      "properties": {
+        "companySnapshot": {
+          "$ref": "#/definitions/InsightsCompanySnapshot"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/definitions/InsightsEvent"
+          },
+          "type": "array"
+        },
+        "instrumentInfo": {
+          "$ref": "#/definitions/InsightsInstrumentInfo"
+        },
+        "recommendation": {
+          "additionalProperties": false,
+          "properties": {
+            "provider": {
+              "type": "string"
+            },
+            "rating": {
+              "enum": [
+                "BUY",
+                "SELL",
+                "HOLD"
+              ],
+              "type": "string"
+            },
+            "targetPrice": {
+              "yahooFinanceType": "number"
+            }
+          },
+          "required": [
+            "targetPrice",
+            "provider",
+            "rating"
+          ],
+          "type": "object"
+        },
+        "reports": {
+          "items": {
+            "$ref": "#/definitions/InsightsReport"
+          },
+          "type": "array"
+        },
+        "sigDevs": {
+          "items": {
+            "$ref": "#/definitions/InsightsSigDev"
+          },
+          "type": "array"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "sigDevs"
+      ],
+      "type": "object"
+    },
+    "InsightsSigDev": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "yahooFinanceType": "date"
+        },
+        "headline": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "headline",
+        "date"
+      ],
+      "type": "object"
+    },
     "MajorHoldersBreakdown": {
       "additionalProperties": false,
       "properties": {

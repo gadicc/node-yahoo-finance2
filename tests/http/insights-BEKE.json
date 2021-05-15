@@ -1,0 +1,168 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=BEKE"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "26lri15g9tcb5"
+      ],
+      "x-yahoo-request-id": [
+        "26lri15g9tcb5"
+      ],
+      "x-request-id": [
+        "5b26f13d-e966-469e-b34e-5418e5e61037"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "873"
+      ],
+      "x-envoy-upstream-service-time": [
+        "12"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:37 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-baseline-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "BEKE",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Real Estate",
+              "shortTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 4,
+                "sectorScoreDescription": "Very Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "There is one bearish event.",
+                "direction": "Bearish",
+                "score": 1,
+                "scoreDescription": "Weak Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 2,
+                "sectorScoreDescription": "Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "There are no events.",
+                "direction": "Neutral",
+                "score": 0,
+                "scoreDescription": "No Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 2,
+                "sectorScoreDescription": "Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "stopLoss": 39.690261
+            },
+            "valuation": {
+              "color": 0,
+              "description": "Overvalued",
+              "discount": "-50%",
+              "relativeValue": "Premium",
+              "provider": "Trading Central"
+            }
+          },
+          "events": [
+            {
+              "eventType": "Commodity Channel Index",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "S",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620912600,
+              "endDate": 1620912600
+            }
+          ],
+          "reports": [
+            {
+              "id": "ARGUS_5956_QuantitativeReport_1614124800000",
+              "headHtml": "CELH: Lowering target price to $57.00",
+              "provider": "Argus Research",
+              "reportDate": "2021-02-24T00:00:00Z",
+              "reportTitle": "CELSIUS HOLDINGS INC has an Investment Rating of HOLD; a target price of $57.000000; an Industry Subrating of Medium; a Management Subrating of Medium; a Safety Subrating of Medium; a Financial Strength Subrating of High; a Growth Subrating of High; and a Value Subrating of Low.",
+              "reportType": "Quantitative Report"
+            },
+            {
+              "id": "ARGUS_5956_QuantitativeReport_1612396800000",
+              "headHtml": "CELH: Lowering target price to $62.00",
+              "provider": "Argus Research",
+              "reportDate": "2021-02-04T00:00:00Z",
+              "reportTitle": "CELSIUS HOLDINGS INC has an Investment Rating of HOLD; a target price of $62.000000; an Industry Subrating of Medium; a Management Subrating of Medium; a Safety Subrating of Medium; a Financial Strength Subrating of High; a Growth Subrating of High; and a Value Subrating of Low.",
+              "reportType": "Quantitative Report"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "KE Holdings Says Q4 Revenue Up 57.6%",
+              "date": "2021-03-15"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

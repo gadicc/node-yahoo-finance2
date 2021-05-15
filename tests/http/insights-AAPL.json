@@ -1,0 +1,194 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=AAPL"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "cga1ksdg9tcb4"
+      ],
+      "x-yahoo-request-id": [
+        "cga1ksdg9tcb4"
+      ],
+      "x-request-id": [
+        "d4981611-a4f4-4187-850b-7116f8515a37"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1349"
+      ],
+      "x-envoy-upstream-service-time": [
+        "21"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:35 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "AAPL",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Technology",
+              "shortTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 2,
+                "scoreDescription": "Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 2,
+                "sectorScoreDescription": "Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 2,
+                "scoreDescription": "Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "There is one bullish event.",
+                "direction": "Bullish",
+                "score": 2,
+                "scoreDescription": "Bullish Evidence",
+                "sectorDirection": "Neutral",
+                "sectorScore": 0,
+                "sectorScoreDescription": "No Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 51.1225,
+              "resistance": 133.46,
+              "stopLoss": 118.193275
+            },
+            "valuation": {
+              "color": 0,
+              "description": "Overvalued",
+              "discount": "-12%",
+              "relativeValue": "Premium",
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Technology",
+            "company": {
+              "innovativeness": 0.9983,
+              "hiring": 0.9537,
+              "sustainability": 0.4472,
+              "insiderSentiments": 0.46009999999999995,
+              "earningsReports": 0.8111,
+              "dividends": 0.2274
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "recommendation": {
+            "targetPrice": 165,
+            "provider": "Argus Research",
+            "rating": "BUY"
+          },
+          "events": [
+            {
+              "eventType": "Price Crosses Moving Average",
+              "pricePeriod": "D",
+              "tradingHorizon": "L",
+              "tradeType": "L",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620912600,
+              "endDate": 1620912600
+            }
+          ],
+          "reports": [
+            {
+              "id": "MS_0P000000GY_AnalystReport_1620756425000",
+              "headHtml": "Analyst Report: Apple Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2021-05-11T18:07:05Z",
+              "reportTitle": "Apple designs a wide variety of consumer electronic devices, including smartphones (iPhone), tablets (iPad), PCs (Mac), smartwatches (Apple Watch), and TV boxes (Apple TV), among others. The iPhone makes up the majority of Apple’s total revenue. In addition, Apple offers its customers a variety of services such as Apple Music, iCloud, Apple Care, Apple TV+, Apple Arcade, Apple Card, and Apple Pay, among others. Apple's products run internally developed software and semiconductors, and the firm is well known for its integration of hardware, software and services. Apple's products are distributed online as well as through company-owned stores and third-party retailers. The company generates roughly 40% of its revenue from the Americas, with the remainder earned internationally.",
+              "reportType": "Analyst Report"
+            },
+            {
+              "id": "MS_0P000000GY_AnalystReport_1620169366000",
+              "headHtml": "Analyst Report: Apple Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2021-05-04T23:02:46Z",
+              "reportTitle": "Apple designs a wide variety of consumer electronic devices, including smartphones (iPhone), tablets (iPad), PCs (Mac), smartwatches (Apple Watch), and TV boxes (Apple TV), among others. The iPhone makes up the majority of Apple’s total revenue. In addition, Apple offers its customers a variety of services such as Apple Music, iCloud, Apple Care, Apple TV+, Apple Arcade, Apple Card, and Apple Pay, among others. Apple's products run internally developed software and semiconductors, and the firm is well known for its integration of hardware, software and services. Apple's products are distributed online as well as through company-owned stores and third-party retailers. The company generates roughly 40% of its revenue from the Americas, with the remainder earned internationally.",
+              "reportType": "Analyst Report"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "ACCC Seeks Leave To Appear In Epic Games Vs Apple Appeal",
+              "date": "2021-05-10"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

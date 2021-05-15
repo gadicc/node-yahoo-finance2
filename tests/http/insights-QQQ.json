@@ -1,0 +1,151 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=QQQ"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "96bim0tg9tcb7"
+      ],
+      "x-yahoo-request-id": [
+        "96bim0tg9tcb7"
+      ],
+      "x-request-id": [
+        "66923f8d-21a5-4103-88cd-774284a316e7"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1425"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:39 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "QQQ",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "shortTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 1,
+                "scoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "There are no events.",
+                "direction": "Neutral",
+                "score": 0,
+                "scoreDescription": "No Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 193.09,
+              "resistance": 336.45,
+              "stopLoss": 302.682223
+            },
+            "valuation": {
+              "provider": "Trading Central"
+            }
+          },
+          "events": [
+            {
+              "eventType": "Commodity Channel Index",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "S",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620653400,
+              "endDate": 1620653400
+            }
+          ],
+          "reports": [
+            {
+              "id": "MS_0P000003IJ_AnalystReport_1620756397000",
+              "headHtml": "Analyst Report: McDonald's Corporation",
+              "provider": "Morningstar",
+              "reportDate": "2021-05-11T18:06:37Z",
+              "reportTitle": "McDonald’s Corporation is the largest restaurant owner-operator in the world, with 2020 systemwide sales of $93 billion across 39,000 stores and 119 countries. McDonald’s revolutionized the restaurant industry with a cheap and fast core menu, building its impressive footprint through partnerships with independent restaurant franchisees. The firm earns 57% of its revenue from franchise royalty fees and lease payments, with the remainder coming from company-operated stores across its three core segments: the United States, internationally operated markets, and international developmental/licensed. McDonald’s owns 55% of the real estate and 80% of the buildings in its franchise system, offering it substantial leverage in maintaining quality standards and consistency across markets.",
+              "reportType": "Analyst Report"
+            },
+            {
+              "id": "MS_0P00000031_AnalystReport_1620169311000",
+              "headHtml": "Analyst Report: AT&T Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2021-05-04T23:01:51Z",
+              "reportTitle": "Wireless is AT&T’s largest business, contributing about 40% of revenue. The firm is the third-largest U.S. wireless carrier, connecting 64 million postpaid and 17 million prepaid phone customers. WarnerMedia contributes a bit less than 20% of revenue with media assets that include HBO, the Turner cable networks, and the Warner Brothers studios. Fixed-line business communications services, provided to a wide range of entities, provide about 15% of revenue. The consumer broadband segment (about 7% of revenue) primarily provides broadband service to 15 million households. The firm recently sold a stake in its traditional television business, which serves 17 million customers and generates about 17% of sales. This business will be removed from AT&T's financials going forward.",
+              "reportType": "Analyst Report"
+            }
+          ],
+          "sigDevs": []
+        },
+        "error": null
+      }
+    }
+  }
+}

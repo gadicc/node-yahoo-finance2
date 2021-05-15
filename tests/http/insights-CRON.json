@@ -1,0 +1,185 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=CRON"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "96ggd95g9tcb8"
+      ],
+      "x-yahoo-request-id": [
+        "96ggd95g9tcb8"
+      ],
+      "x-request-id": [
+        "dd16502c-6323-414e-bdcb-bf5cad67855e"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1079"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:40 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "CRON",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Healthcare",
+              "shortTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 5.56,
+              "resistance": 7.695,
+              "stopLoss": 5.993321
+            },
+            "valuation": {
+              "color": 0,
+              "description": "Overvalued",
+              "relativeValue": "Premium",
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Healthcare",
+            "company": {
+              "innovativeness": 0.15710000000000002,
+              "insiderSentiments": 0.1656,
+              "earningsReports": 0.2621
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "events": [
+            {
+              "eventType": "Short-term KST",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "S",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620826200,
+              "endDate": 1620826200
+            }
+          ],
+          "reports": [
+            {
+              "id": "MS_0P00018572_AnalystReport_1620426294000",
+              "headHtml": "Analyst Report: Cronos Group Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2021-05-07T22:24:54Z",
+              "reportTitle": "Cronos Group, headquartered in Toronto, Canada cultivates and sells medicinal and recreational cannabis through its medicinal brand, Peace Naturals, and its two recreational brands, Cove and Spinach. Although it primarily operates in Canada, Cronos exports medical cannabis to Poland and Germany. In addition, it has entered joint ventures in Israel, Colombia, and Australia to drive further international cultivation and distribution growth and acquired Redwood Holdings to sell CBD in the U.S.",
+              "reportType": "Analyst Report"
+            },
+            {
+              "id": "MS_0P00018572_AnalystReport_1618266884000",
+              "headHtml": "Analyst Report: Cronos Group Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2021-04-12T22:34:44Z",
+              "reportTitle": "Cronos Group, headquartered in Toronto, Canada cultivates and sells medicinal and recreational cannabis through its medicinal brand, Peace Naturals, and its two recreational brands, Cove and Spinach. Although it primarily operates in Canada, Cronos exports medical cannabis to Poland and Germany. In addition, it has entered joint ventures in Israel, Colombia, and Australia to drive further international cultivation and distribution growth and acquired Redwood Holdings to sell CBD in the U.S.",
+              "reportType": "Analyst Report"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Cronos Group Reports 2021 First Quarter Results",
+              "date": "2021-05-07"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

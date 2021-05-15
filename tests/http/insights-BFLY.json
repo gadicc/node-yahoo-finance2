@@ -1,0 +1,179 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=BFLY"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "epdqjc1g9tcb5"
+      ],
+      "x-yahoo-request-id": [
+        "epdqjc1g9tcb5"
+      ],
+      "x-request-id": [
+        "7f18c596-38dc-4c7f-a8de-b5763997df5a"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1245"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:37 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "BFLY",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Healthcare",
+              "shortTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 2,
+                "scoreDescription": "Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "There is one bearish event.",
+                "direction": "Bearish",
+                "score": 2,
+                "scoreDescription": "Bearish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "stopLoss": 7.069115
+            },
+            "valuation": {
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Healthcare",
+            "company": {
+              "insiderSentiments": 0.8144,
+              "earningsReports": 0.7182999999999999
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "events": [
+            {
+              "eventType": "MACD",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "S",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620307800,
+              "endDate": 1620307800
+            }
+          ],
+          "reports": [
+            {
+              "id": "ARGUS_3853_QuantitativeReport_1620777600000",
+              "headHtml": "WWE: Lowering target price to $56.00",
+              "provider": "Argus Research",
+              "reportDate": "2021-05-12T00:00:00Z",
+              "reportTitle": "WORLD WRESTLING ENTERTAIN-A has an Investment Rating of HOLD; a target price of $56.000000; an Industry Subrating of High; a Management Subrating of Medium; a Safety Subrating of Medium; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of Medium.",
+              "reportType": "Quantitative Report"
+            },
+            {
+              "id": "MS_0P0001KOSE_AnalystReport_1620758488000",
+              "headHtml": "Analyst Report: Palantir Technologies Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2021-05-11T18:41:28Z",
+              "reportTitle": "Palantir Technologies provides organizations with solutions to manage large disparate data sets in an attempt to gain insight and drive operational outcomes. Founded in 2003, Palantir released its Gotham software platform in 2008, which focuses on the government intelligence and defense sectors. Palantir expanded into various commercial markets with its Foundry software platform in 2016 with the intent of becoming the data operating system for companies and industries. The Denver, Colorado company had 125 customers as of its IPO and roughly splits its revenue between commercial and government customers.",
+              "reportType": "Analyst Report"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Butterfly Network Reports Q1 2021 Financial Results",
+              "date": "2021-05-13"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

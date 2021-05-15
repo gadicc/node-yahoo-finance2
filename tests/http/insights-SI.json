@@ -1,0 +1,183 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=SI"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "3oa2ul5g9tcb7"
+      ],
+      "x-yahoo-request-id": [
+        "3oa2ul5g9tcb7"
+      ],
+      "x-request-id": [
+        "7aa122f8-9d5b-47f1-ba7c-f135c7730931"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1121"
+      ],
+      "x-envoy-upstream-service-time": [
+        "6"
+      ],
+      "date": [
+        "Fri, 14 May 2021 17:20:39 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "3"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "SI",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Financial Services",
+              "shortTermOutlook": {
+                "stateDescription": "Bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 4,
+                "indexScoreDescription": "Very Strong Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 4,
+                "scoreDescription": "Very Strong Bearish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bullish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "There are no events.",
+                "direction": "Neutral",
+                "score": 0,
+                "scoreDescription": "No Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 2,
+                "sectorScoreDescription": "Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bullish Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "stopLoss": 45.097755
+            },
+            "valuation": {
+              "color": 0.5,
+              "description": "Near Fair Value",
+              "discount": "24%",
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Financial Services",
+            "company": {
+              "innovativeness": 0.3667,
+              "insiderSentiments": 0.064,
+              "earningsReports": 0.9464
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "events": [
+            {
+              "eventType": "Commodity Channel Index",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "U",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1620912600,
+              "endDate": 1620912600
+            }
+          ],
+          "reports": [
+            {
+              "id": "MS_0P00000016_AnalystReport_1620664161000",
+              "headHtml": "Analyst Report: ABB Ltd",
+              "provider": "Morningstar",
+              "reportDate": "2021-05-10T16:29:21Z",
+              "reportTitle": "ABB is a global supplier of electrical equipment and automation products. Founded in the late 19th century, the company was created out of the merger of two old industrial companies--ASEA and BBC--and is now called Asea Brown Boveri Group, or ABB. The company is the number-one or number-two supplier in all of its core markets and the number-two robotic arm supplier globally. In automation, it offers a full suite of products for both discrete and process automation as well as industrial robotics.",
+              "reportType": "Analyst Report"
+            },
+            {
+              "id": "MS_0P00000016_AnalystReport_1619527788000",
+              "headHtml": "Analyst Report: ABB Ltd",
+              "provider": "Morningstar",
+              "reportDate": "2021-04-27T12:49:48Z",
+              "reportTitle": "ABB is a global supplier of electrical equipment and automation products. Founded in the late 19th century, the company was created out of the merger of two old industrial companies--ASEA and BBC--and is now called Asea Brown Boveri Group, or ABB. The company is the number-one or number-two supplier in all of its core markets and the number-two robotic arm supplier globally. In automation, it offers a full suite of products for both discrete and process automation as well as robotics.",
+              "reportType": "Analyst Report"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Silvergate Capital Corp Announces First Quarter 2021 Results",
+              "date": "2021-04-20"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}
