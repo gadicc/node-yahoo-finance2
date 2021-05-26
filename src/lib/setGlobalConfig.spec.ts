@@ -1,3 +1,4 @@
+import { consoleSilent, consoleRestore } from "../../tests/console.js";
 import testYf from "../../tests/testYf.js";
 import options from "./options.js";
 import setGlobalConfig from "./setGlobalConfig.js";
@@ -14,6 +15,7 @@ describe("setGlobalConfig", () => {
     yf.setGlobalConfig(configOverrides);
     expect(yf._opts).toEqual({ ...optionsBackup, ...configOverrides });
   });
+
   it("sets config options multiple levels deep", () => {
     const configOverrides = { queue: { concurrency: 10 } };
     yf.setGlobalConfig(configOverrides);
@@ -22,9 +24,14 @@ describe("setGlobalConfig", () => {
       timeout: optionsBackup.queue.timeout,
     });
   });
+
   it("should throw on invalid config", () => {
+    consoleSilent();
+
     expect(() => yf.setGlobalConfig({ queue: { abc: "" } })).toThrow(
       /yahooFinance.setGlobalConfig called with invalid options\./
     );
+
+    consoleRestore();
   });
 });
