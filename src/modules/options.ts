@@ -45,6 +45,7 @@ export interface OptionsOptions {
   formatted?: boolean;
   lang?: string;
   region?: string;
+  date?: number;
 }
 
 const queryOptionsDefaults: OptionsOptions = {
