@@ -13,7 +13,8 @@ export interface RecommendationsBySymbolResponse {
   symbol: string;
 }
 
-export type RecommendationsBySymbolResponseArray = RecommendationsBySymbolResponse[];
+export type RecommendationsBySymbolResponseArray =
+  RecommendationsBySymbolResponse[];
 
 export interface RecommendationsBySymbolOptions {}
 

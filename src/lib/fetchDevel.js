@@ -72,9 +72,8 @@ async function fetchDevel(url, fetchOptions) {
         },
       };
 
-      const contentType = contentObj.response.headers["content-type"][0].split(
-        ";"
-      );
+      const contentType =
+        contentObj.response.headers["content-type"][0].split(";");
       if (contentType[0] === "application/json") {
         contentObj.response.bodyJson = await res.json();
       } else {
