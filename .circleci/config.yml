@@ -43,7 +43,7 @@ jobs:
       # Check that schema is up-to-date
       - run: bin/schema-check.sh
 
-      - run: yarn prettier --check .
+      - run: yarn prettier --check src tests tests-modules
 
       # run tests!
       - run: yarn test --collectCoverage=true
