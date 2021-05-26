@@ -45,7 +45,7 @@
     "build:cjs": "tsc --module commonjs --outDir dist/cjs && sed -i 's/\"type\": \"module\",/\"type:\": \"commonjs\",/' dist/cjs/package.json",
     "build:post": "bin/json-transform.sh",
     "generateSchema": "yarn schema",
-    "prepublishOnly": "yarn build && yarn generateSchema",
+    "prepublishOnly": "yarn build && yarn generateSchema && yarn build:post",
     "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
     "test:ts": "tsc --noEmit",
     "test:esm": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js -c tests-modules/esm/jest.config.js tests-modules/esm/tests/*",
