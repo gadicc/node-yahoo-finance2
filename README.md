@@ -92,19 +92,12 @@ This package is shipped as **both an ES Module and a CommonJS module**.  Node wi
 *automatically* load the ES module if:
 
 * *Your* `package.json` contains a `{ type: module }` entry
-* You're running at least Node 12.
+* You're running at least Node 12 (maybe with `--experimental-module` flag).
 * You `import` the module (`require` function does not exist in ES modules)
 
-otherwise the traditional CommonJS module will be loaded.  Note, for ES modules,
-and depending on your node version, you may need some extra flags:
-
-```bash
-# As environment variables
-NODE_OPTIONS="--experimental-vm-modules --experimental-json-modules"
-
-# Or as command line options
-node --experimental-vm-modules --experimental-json-modules [...]
-```
+otherwise the traditional CommonJS module will be loaded.  No flags are
+necessary for Node 12.7.0+ and Node 13.2.0+, but for older versions, you need
+to add the `--experimental-module` flag).
 
 ES Modules are "relatively" new.  They got a big boost in April 2021 when
 Node 10, which did not support them, reached end-of-life.  However, support
