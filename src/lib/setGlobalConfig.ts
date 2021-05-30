@@ -1,17 +1,17 @@
-import type { Options } from "./options";
-import type { ModuleThis } from "./moduleCommon";
-import validateAndCoerceTypes from "./validateAndCoerceTypes";
+import type { YahooFinanceOptions } from "./options.js";
+import type { ModuleThis } from "./moduleCommon.js";
+import validateAndCoerceTypes from "./validateAndCoerceTypes.js";
 
 export default function setGlobalConfig(
   this: ModuleThis,
-  config: Partial<Options>
+  config: YahooFinanceOptions
 ): void {
   validateAndCoerceTypes({
     object: config,
     source: "setGlobalConfig",
     type: "options",
     options: this._opts.validation,
-    schemaKey: "#/definitions/PartialOptions",
+    schemaKey: "#/definitions/YahooFinanceOptions",
   });
   mergeObjects(this._opts, config as Obj);
 }

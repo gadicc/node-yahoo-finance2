@@ -1,6 +1,6 @@
 import Queue from "./queue.js";
 
-import type { Options } from "./options.js";
+import type { YahooFinanceOptions } from "./options.js";
 import type { QueueOptions } from "./queue.js";
 
 import errors from "./errors.js";
@@ -18,7 +18,7 @@ interface YahooFinanceFetchThisEnv {
 interface YahooFinanceFetchThis {
   [key: string]: any;
   _env: YahooFinanceFetchThisEnv;
-  _opts: Options;
+  _opts: YahooFinanceOptions;
 }
 
 interface YahooFinanceFetchModuleOptions {
@@ -53,7 +53,9 @@ async function yahooFinanceFetch(
       "yahooFinanceFetch called without this._env set"
     );
 
-  const queue = moduleOpts.queue?._queue || _queue;
+  // TODO: adds func type to json schema which is not supported
+  //const queue = moduleOpts.queue?._queue || _queue;
+  const queue = _queue;
   assertQueueOptions(queue, { ...this._opts.queue, ...moduleOpts.queue });
 
   const { URLSearchParams, fetch, fetchDevel } = this._env;

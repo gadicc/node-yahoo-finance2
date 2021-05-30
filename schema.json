@@ -2817,6 +2817,18 @@
       ],
       "type": "object"
     },
+    "QueueOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "concurrency": {
+          "yahooFinanceType": "number"
+        },
+        "timeout": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "type": "object"
+    },
     "Quote": {
       "anyOf": [
         {
@@ -6493,6 +6505,34 @@
         "toGrade",
         "action"
       ],
+      "type": "object"
+    },
+    "ValidationOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "logErrors": {
+          "type": "boolean"
+        },
+        "logOptionsErrors": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "logErrors",
+        "logOptionsErrors"
+      ],
+      "type": "object"
+    },
+    "YahooFinanceOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "queue": {
+          "$ref": "#/definitions/QueueOptions"
+        },
+        "validation": {
+          "$ref": "#/definitions/ValidationOptions"
+        }
+      },
       "type": "object"
     },
     "Yearly": {
