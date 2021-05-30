@@ -25,6 +25,7 @@ describe("historical", () => {
 
   describe("transformWith", () => {
     const yf = { _moduleExec: jest.fn(), historical };
+    // @ts-ignore: TODO
     yf.historical("symbol", { period1: "required-but-not-used" });
     // @ts-ignore: TODO
     const { transformWith } = yf._moduleExec.mock.calls[0][0].query;

@@ -1,7 +1,7 @@
 interface Job {
-  func: Function;
-  resolve: Function;
-  reject: Function;
+  func: () => Promise<void>;
+  resolve: (arg: any) => void;
+  reject: (arg: any) => void;
 }
 
 export interface QueueOptions {
@@ -39,7 +39,7 @@ export default class Queue {
     if (this._running < this.concurrency) this.runNext();
   }
 
-  add(func: Function) {
+  add(func: () => Promise<void>) {
     return new Promise((resolve, reject) => {
       this._queue.push({ func, resolve, reject });
       this.checkQueue();

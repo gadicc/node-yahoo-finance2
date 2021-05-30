@@ -1,3 +1,5 @@
+//import ModuleExec from "./moduleExec.js";
+
 export interface ModuleOptions {
   validateResult?: boolean;
   devel?: boolean | string;
@@ -12,4 +14,7 @@ export interface ModuleOptionsWithValidateTrue extends ModuleOptions {
   validateResult?: true;
 }
 
-export type ModuleThis = { [key: string]: any; _moduleExec: Function };
+export interface ModuleThis {
+  [key: string]: any;
+  _moduleExec: Function;
+}

@@ -1,6 +1,6 @@
 import Queue from "./queue.js";
 
-import type { Options } from "../typings/interfaces.js";
+import type { Options } from "./options.js";
 import type { QueueOptions } from "./queue.js";
 
 import errors from "./errors.js";

@@ -1,5 +1,5 @@
-import { Options } from "../typings/interfaces";
-import { ModuleThis } from "./moduleCommon";
+import type { Options } from "./options";
+import type { ModuleThis } from "./moduleCommon";
 import validateAndCoerceTypes from "./validateAndCoerceTypes";
 
 export default function setGlobalConfig(

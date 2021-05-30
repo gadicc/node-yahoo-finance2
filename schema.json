@@ -2508,18 +2508,6 @@
       ],
       "type": "object"
     },
-    "Options": {
-      "additionalProperties": false,
-      "properties": {
-        "queue": {
-          "$ref": "#/definitions/QueueOptions"
-        },
-        "validation": {
-          "$ref": "#/definitions/ValidationOptions"
-        }
-      },
-      "type": "object"
-    },
     "OptionsOptions": {
       "additionalProperties": false,
       "properties": {
@@ -2635,18 +2623,6 @@
         "position",
         "value"
       ],
-      "type": "object"
-    },
-    "PartialOptions": {
-      "additionalProperties": false,
-      "properties": {
-        "queue": {
-          "$ref": "#/definitions/QueueOptions"
-        },
-        "validation": {
-          "$ref": "#/definitions/ValidationOptions"
-        }
-      },
       "type": "object"
     },
     "PeriodRange": {
@@ -2839,112 +2815,6 @@
         "marketState",
         "fromCurrency"
       ],
-      "type": "object"
-    },
-    "Queue": {
-      "additionalProperties": false,
-      "properties": {
-        "_queue": {
-          "items": {
-            "additionalProperties": false,
-            "properties": {
-              "func": {
-                "additionalProperties": false,
-                "properties": {
-                  "arguments": {},
-                  "caller": {
-                    "$ref": "#/definitions/interface-731470504-9821-11285-731470504-0-212357"
-                  },
-                  "length": {
-                    "yahooFinanceType": "number"
-                  },
-                  "prototype": {}
-                },
-                "required": [
-                  "prototype",
-                  "length",
-                  "arguments",
-                  "caller"
-                ],
-                "type": "object"
-              },
-              "reject": {
-                "additionalProperties": false,
-                "properties": {
-                  "arguments": {},
-                  "caller": {
-                    "$ref": "#/definitions/interface-731470504-9821-11285-731470504-0-212357"
-                  },
-                  "length": {
-                    "yahooFinanceType": "number"
-                  },
-                  "prototype": {}
-                },
-                "required": [
-                  "prototype",
-                  "length",
-                  "arguments",
-                  "caller"
-                ],
-                "type": "object"
-              },
-              "resolve": {
-                "additionalProperties": false,
-                "properties": {
-                  "arguments": {},
-                  "caller": {
-                    "$ref": "#/definitions/interface-731470504-9821-11285-731470504-0-212357"
-                  },
-                  "length": {
-                    "yahooFinanceType": "number"
-                  },
-                  "prototype": {}
-                },
-                "required": [
-                  "prototype",
-                  "length",
-                  "arguments",
-                  "caller"
-                ],
-                "type": "object"
-              }
-            },
-            "required": [
-              "func",
-              "resolve",
-              "reject"
-            ],
-            "type": "object"
-          },
-          "type": "array"
-        },
-        "_running": {
-          "yahooFinanceType": "number"
-        },
-        "concurrency": {
-          "yahooFinanceType": "number"
-        }
-      },
-      "required": [
-        "concurrency",
-        "_running",
-        "_queue"
-      ],
-      "type": "object"
-    },
-    "QueueOptions": {
-      "additionalProperties": false,
-      "properties": {
-        "_queue": {
-          "$ref": "#/definitions/Queue"
-        },
-        "concurrency": {
-          "yahooFinanceType": "number"
-        },
-        "timeout": {
-          "yahooFinanceType": "number"
-        }
-      },
       "type": "object"
     },
     "Quote": {
@@ -6622,22 +6492,6 @@
         "firm",
         "toGrade",
         "action"
-      ],
-      "type": "object"
-    },
-    "ValidationOptions": {
-      "additionalProperties": false,
-      "properties": {
-        "logErrors": {
-          "type": "boolean"
-        },
-        "logOptionsErrors": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "logErrors",
-        "logOptionsErrors"
       ],
       "type": "object"
     },

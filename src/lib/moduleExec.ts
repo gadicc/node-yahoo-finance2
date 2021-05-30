@@ -18,10 +18,13 @@
 import validateAndCoerceTypes from "./validateAndCoerceTypes.js";
 import csv2json from "./csv2json.js";
 
+// The consuming module itself will have a stricter return type.
+type TransformFunc = (arg: any) => any;
+/*
 interface TransformFunc {
-  // The consuming module itself will have a stricter return type.
   (result: { [key: string]: any }): { [key: string]: any };
 }
+*/
 
 interface ModuleExecOptions {
   /**
@@ -92,12 +95,9 @@ interface ModuleExecOptions {
   };
 }
 
-type ThisWithFetch = { [key: string]: any; _moduleExec: Function };
+type ThisWithModExec = { [key: string]: any; _moduleExec: typeof moduleExec };
 
-export default async function moduleExec(
-  this: ThisWithFetch,
-  opts: ModuleExecOptions
-) {
+async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
   const queryOpts = opts.query;
   const moduleOpts = opts.moduleOptions;
   const moduleName = opts.moduleName;
@@ -182,5 +182,7 @@ export default async function moduleExec(
     if (validateResult) throw error;
   }
 
-  return result;
+  return result as any;
 }
+
+export default moduleExec;
