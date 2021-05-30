@@ -16,5 +16,7 @@ export interface ModuleOptionsWithValidateTrue extends ModuleOptions {
 
 export interface ModuleThis {
   [key: string]: any;
-  _moduleExec: Function;
+  // TODO: should be ModuleExec function but requiring functions breaks
+  // schema generation because json-schema does not support functions.
+  _moduleExec: any;
 }
