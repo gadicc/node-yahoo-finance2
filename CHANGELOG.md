@@ -1,3 +1,22 @@
+# [1.11.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.10.4...v1.11.0) (2021-06-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ajv to ^8.1.0 ([1769641](https://github.com/gadicc/node-yahoo-finance2/commit/1769641f3a70579586235cb9713fda4fcf9d0322))
+* **quoteCombine:** resolve `undefined` for missing symbols ([#150](https://github.com/gadicc/node-yahoo-finance2/issues/150)) ([f8c25e3](https://github.com/gadicc/node-yahoo-finance2/commit/f8c25e39fbd84b19e0b5465c30b32406cab1bc39))
+* **testing:** specify jest.js path, not bin ([#170](https://github.com/gadicc/node-yahoo-finance2/issues/170)) ([6772c8e](https://github.com/gadicc/node-yahoo-finance2/commit/6772c8e1873b37aa98c3b347902db97ddaf50889))
+
+
+### Features
+
+* **options:** accept `date` option ([#186](https://github.com/gadicc/node-yahoo-finance2/issues/186)) ([11b8a72](https://github.com/gadicc/node-yahoo-finance2/commit/11b8a72aad53852ca98352bef46f623b7afcf9da))
+* add (friendly) warning when used in the browser ([3c4c5a0](https://github.com/gadicc/node-yahoo-finance2/commit/3c4c5a019fcf7a995da071a713167b1be55ea1ab)), closes [#153](https://github.com/gadicc/node-yahoo-finance2/issues/153)
+* add insights module ([#169](https://github.com/gadicc/node-yahoo-finance2/issues/169)) ([4603232](https://github.com/gadicc/node-yahoo-finance2/commit/4603232698e168c8893a275828b860fece748f1f))
+* **concurrency:** ability to limit max simultaneous requests ([#76](https://github.com/gadicc/node-yahoo-finance2/issues/76)) ([3424d44](https://github.com/gadicc/node-yahoo-finance2/commit/3424d44655b065df8b91ee9d0bf61c910ab94251))
+* **modules:** build (true) esm, (interop) cjs modules; tests/readme ([#144](https://github.com/gadicc/node-yahoo-finance2/issues/144)) ([2182f6c](https://github.com/gadicc/node-yahoo-finance2/commit/2182f6cd162547648b468ba9e3bd4a9e242276f5))
+* **setGlobalConfig:** add setGlobalConfig function ([#133](https://github.com/gadicc/node-yahoo-finance2/issues/133)) ([43ebaa4](https://github.com/gadicc/node-yahoo-finance2/commit/43ebaa4fae22813159cd0063d638e24d5f55d9d3))
+
 ## [1.10.4](https://github.com/gadicc/node-yahoo-finance2/compare/v1.10.3...v1.10.4) (2021-04-08)
 
 
