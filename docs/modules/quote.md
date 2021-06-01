@@ -89,9 +89,14 @@ const result = await yahooFinance.quote('AAPL');
   symbol: 'AAPL'
 }
 
-// Multiple symbols
-const results = await yahooFinance.quote(['AAPL','GOOGL']);
-const result = { AAPL: result[0], GOOGL: result[1] };
+// Multiple symbols, with default { return: "array" }.  Missing symbols skipped.
+const results = await yahooFinance.quote(['AAPL', 'NO_SUCH_SYMBOL', 'GOOGL']);
+const result = { AAPL: result[0], GOOGL: result[1] /* not result[2]! */ };
+
+// Other return types, where it's easier to deal with missing symbols, e.g.
+// here map.get("NO_SUCH_SYMBOL") === object.NO_SUCH_SYMBOL === undefined.
+const map = await yahooFinance.quote([...], { return: "map" });
+const object = await yahooFinance.quote([...], { return: "object" });
 ```
 
 ## API
@@ -111,6 +116,7 @@ an array of symbols, and you'll receive an array of results back.
 | Name          | Type      | Default    | Description                       |
 | ------------- | ----------| ---------- | --------------------------------- |
 | `fields`      | string[]  | (all)      | Which fields to return in query
+| `return`      | string    | "array"    | Return as "array" | "map" | "object"
 
 ```js
 // Don't return all fields, only return these two + other essentials.
