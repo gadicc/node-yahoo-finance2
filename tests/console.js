@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 let _console;
 
 const fakeConsole = {
