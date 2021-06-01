@@ -81,12 +81,12 @@ describe("quote", () => {
     expect(result.displayName).toBeDefined();
   });
 
-  describe("returnAs", () => {
+  describe("return type", () => {
     it("array", async () => {
       const devel = "quote-AAPL-BABA.json";
       const results = await yf.quote(
         ["AAPL", "BABA"],
-        { returnAs: "array" },
+        { return: "array" },
         { devel }
       );
       expect(results.length).toBe(2);
@@ -98,7 +98,7 @@ describe("quote", () => {
       const devel = "quote-AAPL-BABA.json";
       const results = await yf.quote(
         ["AAPL", "BABA"],
-        { returnAs: "object" },
+        { return: "object" },
         { devel }
       );
       expect(Object.keys(results).length).toBe(2);
@@ -110,7 +110,7 @@ describe("quote", () => {
       const devel = "quote-AAPL-BABA.json";
       const results = await yf.quote(
         ["AAPL", "BABA"],
-        { returnAs: "map" },
+        { return: "map" },
         { devel }
       );
       expect(results.size).toBe(2);

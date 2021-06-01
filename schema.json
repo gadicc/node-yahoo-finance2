@@ -4720,17 +4720,89 @@
           },
           "type": "array"
         },
-        "returnAs": {
+        "return": {
           "$ref": "#/definitions/ResultType"
         }
       },
       "type": "object"
     },
-    "QuoteResponse": {
+    "QuoteOptionsReturnArray": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "items": {
+            "$ref": "#/definitions/QuoteField"
+          },
+          "type": "array"
+        },
+        "return": {
+          "const": "array",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "QuoteOptionsReturnMap": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "items": {
+            "$ref": "#/definitions/QuoteField"
+          },
+          "type": "array"
+        },
+        "return": {
+          "const": "map",
+          "type": "string"
+        }
+      },
+      "required": [
+        "return"
+      ],
+      "type": "object"
+    },
+    "QuoteOptionsReturnObject": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "items": {
+            "$ref": "#/definitions/QuoteField"
+          },
+          "type": "array"
+        },
+        "return": {
+          "const": "object",
+          "type": "string"
+        }
+      },
+      "required": [
+        "return"
+      ],
+      "type": "object"
+    },
+    "QuoteResponseArray": {
       "items": {
         "$ref": "#/definitions/Quote"
       },
       "type": "array"
+    },
+    "QuoteResponseMap": {
+      "additionalProperties": false,
+      "properties": {
+        "size": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "size"
+      ],
+      "type": "object"
+    },
+    "QuoteResponseObject": {
+      "additionalProperties": {
+        "$ref": "#/definitions/Quote"
+      },
+      "type": "object"
     },
     "QuoteSummaryEarnings": {
       "additionalProperties": false,
