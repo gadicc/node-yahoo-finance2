@@ -164,13 +164,13 @@ export interface QuoteOptions {
   return?: ResultType;
 }
 
-export interface QuoteOptionsReturnArray extends QuoteOptions {
+export interface QuoteOptionsWithReturnArray extends QuoteOptions {
   return?: "array";
 }
-export interface QuoteOptionsReturnMap extends QuoteOptions {
+export interface QuoteOptionsWithReturnMap extends QuoteOptions {
   return: "map";
 }
-export interface QuoteOptionsReturnObject extends QuoteOptions {
+export interface QuoteOptionsWithReturnObject extends QuoteOptions {
   return: "object";
 }
 
@@ -181,21 +181,21 @@ const queryOptionsDefaults = {};
 export default function quote(
   this: ModuleThis,
   query: string[],
-  queryOptionsOverrides?: QuoteOptionsReturnArray,
+  queryOptionsOverrides?: QuoteOptionsWithReturnArray,
   moduleOptions?: ModuleOptionsWithValidateTrue
 ): Promise<QuoteResponseArray>;
 
 export default function quote(
   this: ModuleThis,
   query: string[],
-  queryOptionsOverrides?: QuoteOptionsReturnMap,
+  queryOptionsOverrides?: QuoteOptionsWithReturnMap,
   moduleOptions?: ModuleOptionsWithValidateTrue
 ): Promise<QuoteResponseMap>;
 
 export default function quote(
   this: ModuleThis,
   query: string[],
-  queryOptionsOverrides?: QuoteOptionsReturnObject,
+  queryOptionsOverrides?: QuoteOptionsWithReturnObject,
   moduleOptions?: ModuleOptionsWithValidateTrue
 ): Promise<QuoteResponseObject>;
 
