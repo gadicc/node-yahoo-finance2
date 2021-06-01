@@ -37,7 +37,7 @@
     "yahoo-finance": "bin/yahoo-finance.js"
   },
   "scripts": {
-    "coverage": "jest --coverage",
+    "coverage": "yarn test --coverage",
     "lint": "eslint . --ext .js,.ts",
     "schema": "ts-json-schema-generator -f tsconfig.json -p 'src/{modules/**/*.ts,lib/options.ts}' -t '*' | node bin/schema-tweak.js > schema.json",
     "build": "yarn run build:esm && yarn run build:cjs && yarn run build:post",
