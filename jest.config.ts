@@ -5,10 +5,9 @@ const config: Config.InitialOptions = {
   setupFilesAfterEnv: ["<rootDir>/tests/setupTests.js"],
   testEnvironment: "node",
   testPathIgnorePatterns: [
-    "/node_modules/",
-    "/dist/",
-    "/api/",
-    "/tests-modules/",
+    "<rootDir>/node_modules/",
+    "<rootDir>/dist/",
+    "<rootDir>/tests-modules/",
   ],
   extensionsToTreatAsEsm: [".ts"],
   globals: {
