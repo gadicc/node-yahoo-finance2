@@ -151,22 +151,55 @@ export type Quote =
   | QuoteEquity
   | QuoteMutualfund;
 
-export type QuoteResponse = Quote[];
-
 export type QuoteField = keyof Quote;
+
+export type ResultType = "array" | "object" | "map";
+
+export type QuoteResponseArray = Quote[];
+export type QuoteResponseMap = Map<string, Quote>;
+export type QuoteResponseObject = { [key: string]: Quote };
 
 export interface QuoteOptions {
   fields?: QuoteField[];
+  return?: ResultType;
+}
+
+export interface QuoteOptionsWithReturnArray extends QuoteOptions {
+  return?: "array";
+}
+export interface QuoteOptionsWithReturnMap extends QuoteOptions {
+  return: "map";
+}
+export interface QuoteOptionsWithReturnObject extends QuoteOptions {
+  return: "object";
 }
 
 const queryOptionsDefaults = {};
 
+/* --- array input, typed output, honor "return" param --- */
+
 export default function quote(
   this: ModuleThis,
   query: string[],
-  queryOptionsOverrides?: QuoteOptions,
+  queryOptionsOverrides?: QuoteOptionsWithReturnArray,
   moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<QuoteResponse>;
+): Promise<QuoteResponseArray>;
+
+export default function quote(
+  this: ModuleThis,
+  query: string[],
+  queryOptionsOverrides?: QuoteOptionsWithReturnMap,
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<QuoteResponseMap>;
+
+export default function quote(
+  this: ModuleThis,
+  query: string[],
+  queryOptionsOverrides?: QuoteOptionsWithReturnObject,
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<QuoteResponseObject>;
+
+/* --- everything else --- */
 
 export default function quote(
   this: ModuleThis,
@@ -182,15 +215,16 @@ export default function quote(
   moduleOptions?: ModuleOptionsWithValidateFalse
 ): Promise<any>;
 
-export default function quote(
+export default async function quote(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: QuoteOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
   const symbols = typeof query === "string" ? query : query.join(",");
+  const returnAs = queryOptionsOverrides && queryOptionsOverrides.return;
 
-  return this._moduleExec({
+  const results: Quote[] = await this._moduleExec({
     moduleName: "quote",
 
     query: {
@@ -202,12 +236,16 @@ export default function quote(
       transformWith(queryOptions: QuoteOptions) {
         // Options validation ensures this is a string[]
         if (queryOptions.fields) queryOptions.fields.join(",");
+
+        // Don't pass this on to Yahoo
+        delete queryOptions.return;
+
         return queryOptions;
       },
     },
 
     result: {
-      schemaKey: "#/definitions/QuoteResponse",
+      schemaKey: "#/definitions/QuoteResponseArray",
       transformWith(result: any) {
         if (!result.quoteResponse)
           throw new Error("Unexpected result: " + JSON.stringify(result));
@@ -216,9 +254,25 @@ export default function quote(
     },
 
     moduleOptions,
-  }).then((results: Quote[]) => {
+  });
+
+  if (returnAs) {
+    switch (returnAs) {
+      case "array":
+        return results as Quote[];
+      case "object":
+        const object = {} as any;
+        for (let result of results) object[result.symbol] = result;
+        return object; // TODO: type
+      case "map":
+        const map = new Map();
+        for (let result of results) map.set(result.symbol, result);
+        return map; // TODO: type
+    }
+  } else {
+    // By default, match the query input shape (string or string[]).
     return typeof query === "string"
       ? (results[0] as Quote)
       : (results as Quote[]);
-  });
+  }
 }

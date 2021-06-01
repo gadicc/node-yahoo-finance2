@@ -4719,15 +4719,90 @@
             "$ref": "#/definitions/QuoteField"
           },
           "type": "array"
+        },
+        "return": {
+          "$ref": "#/definitions/ResultType"
         }
       },
       "type": "object"
     },
-    "QuoteResponse": {
+    "QuoteOptionsWithReturnArray": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "items": {
+            "$ref": "#/definitions/QuoteField"
+          },
+          "type": "array"
+        },
+        "return": {
+          "const": "array",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "QuoteOptionsWithReturnMap": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "items": {
+            "$ref": "#/definitions/QuoteField"
+          },
+          "type": "array"
+        },
+        "return": {
+          "const": "map",
+          "type": "string"
+        }
+      },
+      "required": [
+        "return"
+      ],
+      "type": "object"
+    },
+    "QuoteOptionsWithReturnObject": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "items": {
+            "$ref": "#/definitions/QuoteField"
+          },
+          "type": "array"
+        },
+        "return": {
+          "const": "object",
+          "type": "string"
+        }
+      },
+      "required": [
+        "return"
+      ],
+      "type": "object"
+    },
+    "QuoteResponseArray": {
       "items": {
         "$ref": "#/definitions/Quote"
       },
       "type": "array"
+    },
+    "QuoteResponseMap": {
+      "additionalProperties": false,
+      "properties": {
+        "size": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "size"
+      ],
+      "type": "object"
+    },
+    "QuoteResponseObject": {
+      "additionalProperties": {
+        "$ref": "#/definitions/Quote"
+      },
+      "type": "object"
     },
     "QuoteSummaryEarnings": {
       "additionalProperties": false,
@@ -5097,6 +5172,14 @@
         "Independent Non-Executive Director",
         "Officer",
         "President"
+      ],
+      "type": "string"
+    },
+    "ResultType": {
+      "enum": [
+        "array",
+        "object",
+        "map"
       ],
       "type": "string"
     },
