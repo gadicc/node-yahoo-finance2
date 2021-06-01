@@ -215,7 +215,7 @@ export default function quote(
   moduleOptions?: ModuleOptionsWithValidateFalse
 ): Promise<any>;
 
-export default function quote(
+export default async function quote(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: QuoteOptions,
@@ -224,7 +224,7 @@ export default function quote(
   const symbols = typeof query === "string" ? query : query.join(",");
   const returnAs = queryOptionsOverrides && queryOptionsOverrides.return;
 
-  return this._moduleExec({
+  const results: Quote[] = await this._moduleExec({
     moduleName: "quote",
 
     query: {
@@ -254,25 +254,25 @@ export default function quote(
     },
 
     moduleOptions,
-  }).then((results: Quote[]) => {
-    if (returnAs) {
-      switch (returnAs) {
-        case "array":
-          return results as Quote[];
-        case "object":
-          const object = {} as any;
-          for (let result of results) object[result.symbol] = result;
-          return object; // TODO: type
-        case "map":
-          const map = new Map();
-          for (let result of results) map.set(result.symbol, result);
-          return map; // TODO: type
-      }
-    } else {
-      // By default, match the query input shape (string or string[]).
-      return typeof query === "string"
-        ? (results[0] as Quote)
-        : (results as Quote[]);
-    }
   });
+
+  if (returnAs) {
+    switch (returnAs) {
+      case "array":
+        return results as Quote[];
+      case "object":
+        const object = {} as any;
+        for (let result of results) object[result.symbol] = result;
+        return object; // TODO: type
+      case "map":
+        const map = new Map();
+        for (let result of results) map.set(result.symbol, result);
+        return map; // TODO: type
+    }
+  } else {
+    // By default, match the query input shape (string or string[]).
+    return typeof query === "string"
+      ? (results[0] as Quote)
+      : (results as Quote[]);
+  }
 }
