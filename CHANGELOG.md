@@ -1,3 +1,15 @@
+# [1.12.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.11.0...v1.12.0) (2021-06-02)
+
+
+### Bug Fixes
+
+* **quoteSummary:** allow price=null in price,quoteType (fixes [#197](https://github.com/gadicc/node-yahoo-finance2/issues/197)) ([990dd4a](https://github.com/gadicc/node-yahoo-finance2/commit/990dd4a5b93c4e0c4c8ffe49e13e0be920f6828a))
+
+
+### Features
+
+* **quote:** support { "return": "array"* | "map" | "object" } param ([#151](https://github.com/gadicc/node-yahoo-finance2/issues/151)) ([a2d8796](https://github.com/gadicc/node-yahoo-finance2/commit/a2d87964eed10cd9e043ef22ab5ac0ca85013d4c))
+
 # [1.11.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.10.4...v1.11.0) (2021-06-01)
 
 
