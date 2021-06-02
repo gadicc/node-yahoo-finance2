@@ -1,0 +1,82 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ORSTED.CO?formatted=false&modules=fundOwnership"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "8p9lrmdgbeb96"
+      ],
+      "x-yahoo-request-id": [
+        "8p9lrmdgbeb96"
+      ],
+      "x-request-id": [
+        "bed0d474-4e55-4d0f-92e9-b635c8007b56"
+      ],
+      "content-length": [
+        "92"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 02 Jun 2021 07:03:01 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": []
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

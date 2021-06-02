@@ -1,0 +1,98 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v6/finance/recommendationsbysymbol/ORSTED.CO?"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "x-yahoo-request-id": [
+        "cb3vhg1gbeb8t"
+      ],
+      "cache-control": [
+        "max-age=60, stale-while-revalidate=15, stale-if-error=3600"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "content-length": [
+        "169"
+      ],
+      "x-envoy-upstream-service-time": [
+        "82"
+      ],
+      "date": [
+        "Wed, 02 Jun 2021 07:02:53 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-yql--mtls-default-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": [
+          {
+            "symbol": "ORSTED.CO",
+            "recommendedSymbols": [
+              {
+                "symbol": "VWS.CO",
+                "score": 0.150063
+              },
+              {
+                "symbol": "DSV.CO",
+                "score": 0.101934
+              },
+              {
+                "symbol": "DANSKE.CO",
+                "score": 0.093333
+              },
+              {
+                "symbol": "GMAB.CO",
+                "score": 0.091273
+              },
+              {
+                "symbol": "AMBU-B.CO",
+                "score": 0.08408
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

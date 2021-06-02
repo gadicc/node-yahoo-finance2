@@ -23,5 +23,6 @@ export const testSymbols = [
   "EPAC", // NYSE
   "BTC-USD", // CryptoCurrency, CoinMarketCap
   "EURUSD=X", // Currency
-  "SIMP", // see #107
+  "SIMP", // see #107,
+  "ORSTED.CO", // quoteSummary.price.shortName = null (#197)
 ];

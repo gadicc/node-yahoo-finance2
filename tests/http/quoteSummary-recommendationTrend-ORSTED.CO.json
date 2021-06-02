@@ -1,0 +1,115 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ORSTED.CO?formatted=false&modules=recommendationTrend"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "2rnduntgbeb9f"
+      ],
+      "x-yahoo-request-id": [
+        "2rnduntgbeb9f"
+      ],
+      "x-request-id": [
+        "aa9c389e-13d1-40b1-aec8-3271cb5326c1"
+      ],
+      "content-length": [
+        "380"
+      ],
+      "x-envoy-upstream-service-time": [
+        "6"
+      ],
+      "date": [
+        "Wed, 02 Jun 2021 07:03:11 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "recommendationTrend": {
+              "trend": [
+                {
+                  "period": "0m",
+                  "strongBuy": 0,
+                  "buy": 0,
+                  "hold": 0,
+                  "sell": 0,
+                  "strongSell": 0
+                },
+                {
+                  "period": "-1m",
+                  "strongBuy": 2,
+                  "buy": 5,
+                  "hold": 5,
+                  "sell": 5,
+                  "strongSell": 1
+                },
+                {
+                  "period": "-2m",
+                  "strongBuy": 2,
+                  "buy": 4,
+                  "hold": 5,
+                  "sell": 4,
+                  "strongSell": 1
+                },
+                {
+                  "period": "-3m",
+                  "strongBuy": 1,
+                  "buy": 4,
+                  "hold": 5,
+                  "sell": 4,
+                  "strongSell": 1
+                }
+              ],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

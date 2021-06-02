@@ -1,0 +1,81 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ORSTED.CO?formatted=false&modules=secFilings"
+  },
+  "response": {
+    "ok": false,
+    "status": 404,
+    "statusText": "Not Found",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "y-rid": [
+        "4mrbalpgbeb9g"
+      ],
+      "x-yahoo-request-id": [
+        "4mrbalpgbeb9g"
+      ],
+      "x-request-id": [
+        "5cdee370-2115-4333-95ac-5567a4637d7e"
+      ],
+      "content-length": [
+        "143"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 02 Jun 2021 07:03:12 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "cache-control": [
+        "max-age=0, private"
+      ],
+      "expires": [
+        "-1"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": null,
+        "error": {
+          "code": "Not Found",
+          "description": "No fundamentals data found for any of the summaryTypes=secFilings"
+        }
+      }
+    }
+  }
+}

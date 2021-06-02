@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ORSTED.CO?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "7pf96mlgbeb9f"
+      ],
+      "x-yahoo-request-id": [
+        "7pf96mlgbeb9f"
+      ],
+      "x-request-id": [
+        "a0fb963e-8861-43b6-be96-a33648b41333"
+      ],
+      "content-length": [
+        "414"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 02 Jun 2021 07:03:10 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "CPH",
+              "quoteType": "EQUITY",
+              "symbol": "ORSTED.CO",
+              "underlyingSymbol": "ORSTED.CO",
+              "shortName": null,
+              "longName": "Ørsted A/S",
+              "firstTradeDateEpochUtc": 1465455600,
+              "timeZoneFullName": "Europe/Copenhagen",
+              "timeZoneShortName": "CEST",
+              "uuid": "67f0c8f0-bb94-337f-8584-7a872b07d495",
+              "messageBoardId": "finmb_6492833",
+              "gmtOffSetMilliseconds": 7200000,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=ORSTED.CO"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "bfhuj2pgbeb8t"
+      ],
+      "x-yahoo-request-id": [
+        "bfhuj2pgbeb8t"
+      ],
+      "x-request-id": [
+        "7c645616-0e63-485e-88c9-ed103f32434a"
+      ],
+      "content-length": [
+        "175"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Wed, 02 Jun 2021 07:02:52 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "ORSTED.CO",
+          "sigDevs": [
+            {
+              "headline": "Ørsted And Hofor Enter Agreement On Green Power For Hydrogen Project",
+              "date": "2021-05-31"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

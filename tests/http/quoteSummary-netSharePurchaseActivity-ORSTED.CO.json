@@ -1,0 +1,89 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ORSTED.CO?formatted=false&modules=netSharePurchaseActivity"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "cmfcvk1gbeb9e"
+      ],
+      "x-yahoo-request-id": [
+        "cmfcvk1gbeb9e"
+      ],
+      "x-request-id": [
+        "04b0bc41-864e-46a8-a78c-813a1ef0303a"
+      ],
+      "content-length": [
+        "247"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 02 Jun 2021 07:03:09 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "netSharePurchaseActivity": {
+              "maxAge": 1,
+              "period": "6m",
+              "buyInfoCount": 0,
+              "buyInfoShares": 0,
+              "sellInfoCount": 0,
+              "netInfoCount": 0,
+              "netInfoShares": 0,
+              "netPercentInsiderShares": 0,
+              "totalInsiderShares": 231457472
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -669,7 +669,7 @@ export interface Price {
 
   symbol: string;
   underlyingSymbol: null;
-  shortName: string;
+  shortName: null | string;
   longName: null | string;
 
   lastMarket: null | string;
@@ -691,7 +691,7 @@ export interface QuoteType {
   quoteType: string;
   symbol: string;
   underlyingSymbol: string;
-  shortName: string;
+  shortName: null | string;
   longName: null | string;
   firstTradeDateEpochUtc: null | Date;
   timeZoneFullName: string;

@@ -1,0 +1,108 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ORSTED.CO?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "cg2c76tgbeb9e"
+      ],
+      "x-yahoo-request-id": [
+        "cg2c76tgbeb9e"
+      ],
+      "x-request-id": [
+        "e4dbcb69-a48a-4a6b-a23b-f982a2d6569f"
+      ],
+      "content-length": [
+        "756"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 02 Jun 2021 07:03:10 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": 0.00907326,
+              "regularMarketChange": 8.400024,
+              "regularMarketTime": 1622617383,
+              "priceHint": 2,
+              "regularMarketPrice": 934.2,
+              "regularMarketDayHigh": 936.4,
+              "regularMarketDayLow": 924.8,
+              "regularMarketVolume": 18090,
+              "regularMarketPreviousClose": 925.8,
+              "regularMarketSource": "FREE_REALTIME",
+              "regularMarketOpen": 925.8,
+              "exchange": "CPH",
+              "exchangeName": "Copenhagen",
+              "exchangeDataDelayedBy": 0,
+              "marketState": "REGULAR",
+              "quoteType": "EQUITY",
+              "symbol": "ORSTED.CO",
+              "underlyingSymbol": null,
+              "shortName": null,
+              "longName": "Ørsted A/S",
+              "currency": "DKK",
+              "quoteSourceName": "Free Realtime Quote",
+              "currencySymbol": "kr.",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 392427536384
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

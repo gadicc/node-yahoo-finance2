@@ -1,0 +1,120 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ORSTED.CO?formatted=false&modules=summaryDetail"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "3fu64elgbeb9h"
+      ],
+      "x-yahoo-request-id": [
+        "3fu64elgbeb9h"
+      ],
+      "x-request-id": [
+        "741f0167-7c42-433a-9c5f-633a828ed892"
+      ],
+      "content-length": [
+        "961"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 02 Jun 2021 07:03:13 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "2"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 925.8,
+              "open": 925.8,
+              "dayLow": 924.8,
+              "dayHigh": 936.4,
+              "regularMarketPreviousClose": 925.8,
+              "regularMarketOpen": 925.8,
+              "regularMarketDayLow": 924.8,
+              "regularMarketDayHigh": 936.4,
+              "dividendRate": 11.5,
+              "dividendYield": 0.0123000005,
+              "exDividendDate": 1614643200,
+              "payoutRatio": 0.444,
+              "beta": 0.45251,
+              "trailingPE": 35.99029,
+              "forwardPE": 58.314606,
+              "volume": 18106,
+              "regularMarketVolume": 18106,
+              "averageVolume": 703158,
+              "averageVolume10days": 492580,
+              "averageDailyVolume10Day": 492580,
+              "bid": 934.2,
+              "ask": 935.8,
+              "bidSize": 0,
+              "askSize": 0,
+              "marketCap": 392427536384,
+              "fiftyTwoWeekLow": 727.2,
+              "fiftyTwoWeekHigh": 1400.5,
+              "priceToSalesTrailing12Months": 7.715383,
+              "fiftyDayAverage": 920.8914,
+              "twoHundredDayAverage": 1050.5908,
+              "trailingAnnualDividendRate": 11.5,
+              "trailingAnnualDividendYield": 0.01242169,
+              "currency": "DKK",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "algorithm": null,
+              "tradeable": false
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
