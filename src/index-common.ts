@@ -11,6 +11,7 @@ import search from "./modules/search.js";
 import recommendationsBySymbol from "./modules/recommendationsBySymbol.js";
 import trendingSymbols from "./modules/trendingSymbols.js";
 import optionsModule from "./modules/options.js";
+import historical from "./modules/historical.js";
 
 // other
 import quoteCombine from "./other/quoteCombine.js";
@@ -32,6 +33,7 @@ export default {
   trendingSymbols,
   options: optionsModule,
   insights,
+  historical,
 
   // other
   quoteCombine,
