@@ -5,16 +5,17 @@ import options from "./lib/options.js";
 
 // modules
 import autoc from "./modules/autoc.js";
+import historical from "./modules/historical.js";
+import insights from "./modules/insights.js";
+import optionsModule from "./modules/options.js";
 import quote from "./modules/quote.js";
 import quoteSummary from "./modules/quoteSummary.js";
-import search from "./modules/search.js";
 import recommendationsBySymbol from "./modules/recommendationsBySymbol.js";
+import search from "./modules/search.js";
 import trendingSymbols from "./modules/trendingSymbols.js";
-import optionsModule from "./modules/options.js";
 
 // other
 import quoteCombine from "./other/quoteCombine.js";
-import insights from "./modules/insights.js";
 
 export default {
   // internal
@@ -25,13 +26,14 @@ export default {
 
   // modules,
   autoc,
+  historical,
+  insights,
+  options: optionsModule,
   quote,
   quoteSummary,
-  search,
   recommendationsBySymbol,
+  search,
   trendingSymbols,
-  options: optionsModule,
-  insights,
 
   // other
   quoteCombine,
