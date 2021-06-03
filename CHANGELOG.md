@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.12.0...v1.12.1) (2021-06-03)
+
+
+### Bug Fixes
+
+* **index:** add erroneously removed historical; alphabeticalize ([#200](https://github.com/gadicc/node-yahoo-finance2/issues/200)) ([f750402](https://github.com/gadicc/node-yahoo-finance2/commit/f75040206bf23ce4446f87066633423424348efc))
+
 # [1.12.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.11.0...v1.12.0) (2021-06-02)
 
 
