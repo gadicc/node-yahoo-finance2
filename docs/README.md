@@ -62,6 +62,7 @@ try {
   result = await yahooFinance.quote(symbol);
 } catch (error) {
   // Inspect error and decide what to do; often, you may want to just abort:
+  console.warn(`Skipping yf.quote("${symbol}"): [${error.name}] ${error.message})`);
   return;
 }
 
@@ -80,11 +81,49 @@ the result you receive will be in an expected format and structure, that
 is safe to use, put in your database, perform calculations with, etc
 (but please do let us know if you come across any edge cases).
 
-There is a list of specific errors at [lib/errors.ts](../src/lib/errors.ts)
-but generally we'll prevent you from making bad requests with invalid option,
-etc.
+There is a list of specific errors at [lib/errors.ts](../src/lib/errors.ts),
+accessible via `yahooFinance.errors`, but many of these will require further
+inspection at runtime.  For example:
 
-See also: [Validation](./validation.md)
+* `FailedYahooValidationError` - see the [Validation](./validation.md) section
+on how to handle these correctly.
+
+* `HTTPError` - the `message` property will be the HTTP Response statusText.
+
+* `Error` - thrown after a "successful" HTTP request that returns JSON with an
+  `{ error: { name: "ErrorName", description: "string" } }` shape, and where
+  we don't have an "ErrorName" class.  The `message` property will be the
+  `description`.
+
+Example:
+
+```js
+import yahooFinance from 'yahoo-finance2';
+
+let result;
+try {
+  result = await yahooFinance.quote(symbol);
+} catch (error) {
+  if (error instanceof yahooFinance.errors.FailedYahooValidationError) {
+    // See the validation docs for examples of how to handle this
+    // error.result will be a partially validated / coerced result.
+  } else if (error instanceof yahooFinance.errors.HTTPError) {
+    // Probably you just want to log and skip these
+    console.warn(`Skipping yf.quote("${symbol}"): [${error.name}] ${error.message})`);
+    return;
+  } else {
+    // Same here
+    console.warn(`Skipping yf.quote("${symbol}"): [${error.name}] ${error.message})`);
+    return;
+  }
+}
+
+doSomethingWith(result); // safe to use in the way you expect
+```
+
+
+If you run into any problems with error handling, feel free to open an issue
+so we can make these docs clearer.
 
 ## Validation
 

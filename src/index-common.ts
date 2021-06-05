@@ -2,6 +2,7 @@
 import yahooFinanceFetch from "./lib/yahooFinanceFetch.js";
 import moduleExec from "./lib/moduleExec.js";
 import options from "./lib/options.js";
+import errors from "./lib/errors.js";
 
 // modules
 import autoc from "./modules/autoc.js";
@@ -23,6 +24,9 @@ export default {
   _fetch: yahooFinanceFetch,
   _moduleExec: moduleExec,
   _opts: options,
+
+  // errors
+  errors,
 
   // modules,
   autoc,
