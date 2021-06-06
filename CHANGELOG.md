@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.12.1...v1.13.0) (2021-06-06)
+
+
+### Features
+
+* **errors:** expose in yf.errors; improve docs ([#202](https://github.com/gadicc/node-yahoo-finance2/issues/202)) ([a3a7da6](https://github.com/gadicc/node-yahoo-finance2/commit/a3a7da60b2775063450dc4a2fea5d607df7a4cea))
+
 ## [1.12.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.12.0...v1.12.1) (2021-06-03)
 
 
