@@ -29,4 +29,9 @@ describe("csv2json", () => {
     const csv = "one line file";
     expect(() => csv2json(csv)).toThrow(/No newlines/);
   });
+
+  it("handles nulls", () => {
+    const obj = csv2json("val\nnull")[0];
+    expect(obj.val).toBe(null);
+  });
 });

@@ -15,6 +15,7 @@ function camelize(str: string): string {
 function convert(input: any) {
   if (input.match(/\d{4,4}-\d{2,2}-\d{2,2}/)) return new Date(input);
   if (input.match(/^[0-9\.]+$/)) return parseFloat(input);
+  if (input === "null") return null;
   return input;
 }
 

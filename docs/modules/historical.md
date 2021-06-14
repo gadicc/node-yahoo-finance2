@@ -59,3 +59,21 @@ Dates* can be:
 ### Module Options
 
 See [Common Options](../README.md#common-options).
+
+## Quirks
+
+### Null rows
+
+Yahoo occasionally provides data like this:
+
+```csv
+Date,Open,High,Low,Close,Adj Close,Volume
+2019-10-08,0.892830,0.899880,0.892200,0.892800,0.892800,0
+2019-10-09,null,null,null,null,null,null
+```
+
+`node-yahoo-finance2` will silently skip these null rows, so as usual, you
+can rely on received input to be well validated.  Note: this only happens
+when *all* fields are `null`.  If you come across a case where only some
+fields are null, an error will be thrown - in that case, please let us know
+what symbol and date it happened on.
