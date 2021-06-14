@@ -1,3 +1,11 @@
+## [1.13.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.13.0...v1.13.1) (2021-06-14)
+
+
+### Bug Fixes
+
+* **csv2json:** recognize "null" -> null ([d077680](https://github.com/gadicc/node-yahoo-finance2/commit/d077680711ae22fd073e1684930b4605d15bd518))
+* **historical:** skip null rows ([e98e51e](https://github.com/gadicc/node-yahoo-finance2/commit/e98e51e47b39e80d5e404849f7193e068e0a49fc))
+
 # [1.13.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.12.1...v1.13.0) (2021-06-06)
 
 
