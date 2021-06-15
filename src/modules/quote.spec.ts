@@ -5,6 +5,7 @@ import testYf from "../../tests/testYf.js";
 const testSymbols = [
   ...testSymbolsOriginal,
   "AZT.OL", // Far less properties than other symbols (#42)
+  "AAPL220121C00025000", // Option
 ];
 
 const marketStates = [
