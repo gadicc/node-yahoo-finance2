@@ -162,10 +162,10 @@ an array of symbols, and you'll receive an array of results back.
 
 ### Query Options
 
-| Name      | Type    | Default  | Description             |
+| Name          | Type      | Default    | Description                       |
 | ------------- | ----------| ---------- | --------------------------------- |
-| `fields`    | string[]  | (all)    | Which fields to return in query
-| `return`    | string  | "array"  | Return as "array" | "map" | "object"
+| `fields`      | string[]  | (all)      | Which fields to return in query
+| `return`      | string    | "array"    | Return as "array" | "map" | "object"
 
 ```js
 // Don't return all fields, only return these two + other essentials.
