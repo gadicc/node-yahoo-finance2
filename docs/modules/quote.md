@@ -89,6 +89,55 @@ const result = await yahooFinance.quote('AAPL');
   symbol: 'AAPL'
 }
 
+const optionResult = await yahooFinance.quote("AAPL220121C00025000")
+
+{
+   language: "en-US",
+   region: "US",
+   quoteType: "OPTION",
+   triggerable: false,
+   currency: "USD",
+   fiftyTwoWeekLowChange: 0.5,
+   fiftyTwoWeekLowChangePercent: 0.005,
+   fiftyTwoWeekRange: "100.0 - 100.5",
+   fiftyTwoWeekHighChange: 0,
+   fiftyTwoWeekHighChangePercent: 0,
+   fiftyTwoWeekLow: 100,
+   fiftyTwoWeekHigh: 100.5,
+   strike: 25,
+   openInterest: 8,
+   expireDate: 1642723200,
+   expireIsoDate: "2022-01-21T00:00:00Z",
+   sourceInterval: 15,
+   exchangeDataDelayedBy: 20,
+   tradeable: false,
+   regularMarketChange: 0,
+   regularMarketChangePercent: 0,
+   regularMarketTime: 1623093194,
+   regularMarketPrice: 100.5,
+   regularMarketDayHigh: 100.5,
+   regularMarketDayRange: "100.0 - 100.5",
+   firstTradeDateMilliseconds: 1622088000000,
+   priceHint: 2,
+   regularMarketDayLow: 100,
+   regularMarketVolume: 3,
+   regularMarketPreviousClose: 100.5,
+   bid: 105.15,
+   ask: 105.8,
+   fullExchangeName: "OPR",
+   regularMarketOpen: 100.37,
+   underlyingSymbol: "AAPL",
+   exchange: "OPR",
+   shortName: "AAPL Jan 2022 25.000 call",
+   exchangeTimezoneName: "America/New_York",
+   exchangeTimezoneShortName: "EDT",
+   gmtOffSetMilliseconds: -14400000,
+   market: "us24_market",
+   esgPopulated: false,
+   marketState: "REGULAR",
+   symbol: "AAPL220121C00025000"
+}
+
 // Multiple symbols, with default { return: "array" }.  Missing symbols skipped.
 const results = await yahooFinance.quote(['AAPL', 'NO_SUCH_SYMBOL', 'GOOGL']);
 const result = { AAPL: result[0], GOOGL: result[1] /* not result[2]! */ };
@@ -113,10 +162,10 @@ an array of symbols, and you'll receive an array of results back.
 
 ### Query Options
 
-| Name          | Type      | Default    | Description                       |
+| Name      | Type    | Default  | Description             |
 | ------------- | ----------| ---------- | --------------------------------- |
-| `fields`      | string[]  | (all)      | Which fields to return in query
-| `return`      | string    | "array"    | Return as "array" | "map" | "object"
+| `fields`    | string[]  | (all)    | Which fields to return in query
+| `return`    | string  | "array"  | Return as "array" | "map" | "object"
 
 ```js
 // Don't return all fields, only return these two + other essentials.
