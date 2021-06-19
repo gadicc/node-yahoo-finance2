@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.13.1...v1.14.0) (2021-06-19)
+
+
+### Features
+
+* **quote:** allow quote of specific options ([#213](https://github.com/gadicc/node-yahoo-finance2/issues/213)) ([1348515](https://github.com/gadicc/node-yahoo-finance2/commit/134851538a704cddd1cb938163efb039bb9b4630))
+
 ## [1.13.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.13.0...v1.13.1) (2021-06-14)
 
 
