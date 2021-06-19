@@ -132,6 +132,14 @@ export interface QuoteCurrency extends QuoteBase {
   quoteType: "CURRENCY";
 }
 
+export interface QuoteOption extends QuoteBase {
+  strike: number;
+  openInterest: number;
+  expireDate: number;
+  expireIsoDate: number;
+  underlyingSymbol: string;
+}
+
 export interface QuoteCryptoCurrency extends QuoteBase {
   quoteType: "CRYPTOCURRENCY";
   circulatingSupply: number;
@@ -149,7 +157,8 @@ export type Quote =
   | QuoteCurrency
   | QuoteEtf
   | QuoteEquity
-  | QuoteMutualfund;
+  | QuoteMutualfund
+  | QuoteOption;
 
 export type QuoteField = keyof Quote;
 
