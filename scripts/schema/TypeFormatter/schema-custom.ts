@@ -1,4 +1,6 @@
 import {
+  ArrayType,
+  ArrayTypeFormatter,
   BaseType,
   Definition,
   NumberType,
@@ -38,5 +40,14 @@ export class yfReferenceFormatter extends DefinitionTypeFormatter {
         yahooFinanceType: ref,
       };
     else return super.getDefinition(type);
+  }
+}
+
+export class yfArrayTypeFormatter extends ArrayTypeFormatter {
+  public getDefinition(type: ArrayType): Definition {
+    const item = type.getItem();
+    // @ts-ignore
+    console.error(555, item, item?.type?.properites);
+    return super.getDefinition(type);
   }
 }

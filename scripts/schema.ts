@@ -8,7 +8,11 @@ import {
   Config,
 } from "ts-json-schema-generator";
 
-import { yfReferenceFormatter, yfNumberFormatter } from "./schema-custom.js";
+import {
+  yfArrayTypeFormatter,
+  yfNumberFormatter,
+  yfReferenceFormatter,
+} from "./schema/TypeFormatter/schema-custom.js";
 
 //const OUTPUT_PATH = "schema.json";
 const OUTPUT_PATH = process.stdout;
@@ -29,7 +33,10 @@ const formatter = createFormatter(
           config.encodeRefs ?? true
         )
       )
-      .addTypeFormatter(new yfNumberFormatter());
+      .addTypeFormatter(new yfNumberFormatter())
+      .addTypeFormatter(
+        new yfArrayTypeFormatter(circularReferenceTypeFormatter)
+      );
   }
 );
 
