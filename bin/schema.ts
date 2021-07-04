@@ -5,21 +5,33 @@ import {
   createParser,
   SchemaGenerator,
   createFormatter,
+  Config,
 } from "ts-json-schema-generator";
-import { yfNumberFormatter } from "./schema-custom.js";
+
+import { yfReferenceFormatter, yfNumberFormatter } from "./schema-custom.js";
 
 //const OUTPUT_PATH = "schema.json";
 const OUTPUT_PATH = process.stdout;
 
-const config = {
+const config: Config = {
   path: "src/{modules/**/*.ts,lib/options.ts}",
   tsconfig: "tsconfig.json",
   type: "*",
 };
 
-const formatter = createFormatter(config, (fmt) => {
-  fmt.addTypeFormatter(new yfNumberFormatter());
-});
+const formatter = createFormatter(
+  config,
+  (chainTypeFormatter, circularReferenceTypeFormatter) => {
+    chainTypeFormatter
+      .addTypeFormatter(
+        new yfReferenceFormatter(
+          circularReferenceTypeFormatter,
+          config.encodeRefs ?? true
+        )
+      )
+      .addTypeFormatter(new yfNumberFormatter());
+  }
+);
 
 const program = createProgram(config);
 const parser = createParser(program, config);
