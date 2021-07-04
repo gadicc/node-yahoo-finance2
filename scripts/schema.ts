@@ -8,11 +8,13 @@ import {
   Config,
 } from "ts-json-schema-generator";
 
-import {
-  yfArrayTypeFormatter,
-  yfNumberFormatter,
-  yfReferenceFormatter,
-} from "./schema/TypeFormatter/schema-custom.js";
+// @ts-ignore
+import schemaWalker from "oas-schema-walker";
+import walkerCallback from "./schema/postWalker.js";
+
+import yfArrayTypeFormatter from "./schema/TypeFormatter/yfArrayTypeFormatter.js";
+import yfNumberTypeFormatter from "./schema/TypeFormatter/yfNumberTypeFormatter.js";
+import yfReferenceTypeFormatter from "./schema/TypeFormatter/yfReferenceTypeFormatter.js";
 
 //const OUTPUT_PATH = "schema.json";
 const OUTPUT_PATH = process.stdout;
@@ -28,12 +30,12 @@ const formatter = createFormatter(
   (chainTypeFormatter, circularReferenceTypeFormatter) => {
     chainTypeFormatter
       .addTypeFormatter(
-        new yfReferenceFormatter(
+        new yfReferenceTypeFormatter(
           circularReferenceTypeFormatter,
           config.encodeRefs ?? true
         )
       )
-      .addTypeFormatter(new yfNumberFormatter())
+      .addTypeFormatter(new yfNumberTypeFormatter())
       .addTypeFormatter(
         new yfArrayTypeFormatter(circularReferenceTypeFormatter)
       );
@@ -53,6 +55,12 @@ const schema = {
     "`yarn schema`.",
   ..._schema,
 };
+
+// @ts-ignore
+for (let key of Object.keys(schema.definitions)) {
+  // @ts-ignore
+  schemaWalker.walkSchema(schema.definitions[key], {}, {}, walkerCallback);
+}
 
 const schemaString = JSON.stringify(schema, null, 2);
 
