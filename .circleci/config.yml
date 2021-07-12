@@ -41,7 +41,7 @@ jobs:
       - run: yarn test:ts
 
       # Check that schema is up-to-date
-      - run: bin/schema-check.sh
+      - run: scripts/schema-check.sh
 
       - run: yarn prettier --check src tests tests-modules
 
