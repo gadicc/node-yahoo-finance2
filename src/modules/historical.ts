@@ -85,7 +85,7 @@ export default function historical(
         const fieldCount = Object.keys(result[0]).length;
 
         // Count number of null values in object (1-level deep)
-        function nullFieldCount(object: Object) {
+        function nullFieldCount(object: Record<string, unknown>) {
           let nullCount = 0;
           for (const val of Object.values(object))
             if (val === null) nullCount++;
