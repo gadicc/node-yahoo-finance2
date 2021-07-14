@@ -18,7 +18,7 @@ databaseResults.forEach(async (row) => {
 
 // Consider asking only for what you need to save on bandwidth and latency
 const fields = [ "regularMarketPrice", "regularMarketTime" ];
-const reult = await yahooFinance.quoteCombine("TSLA", { fields });
+const result = await yahooFinance.quoteCombine("TSLA", { fields: fields });
 ```
 
 Notes:
