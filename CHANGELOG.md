@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.0...v1.14.1) (2021-07-21)
+
+
+### Bug Fixes
+
+* **pkg:** output cjs with target es2015 for older nodes ([f61fa46](https://github.com/gadicc/node-yahoo-finance2/commit/f61fa46391aa31ee401de7ed2c9a14e1d0f7ab60))
+
 # [1.14.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.13.1...v1.14.0) (2021-06-19)
 
 
