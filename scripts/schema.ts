@@ -12,7 +12,6 @@ import {
 import schemaWalker from "oas-schema-walker";
 import walkerCallback from "./schema/postWalker.js";
 
-import yfArrayTypeFormatter from "./schema/TypeFormatter/yfArrayTypeFormatter.js";
 import yfNumberTypeFormatter from "./schema/TypeFormatter/yfNumberTypeFormatter.js";
 import yfReferenceTypeFormatter from "./schema/TypeFormatter/yfReferenceTypeFormatter.js";
 
@@ -35,10 +34,7 @@ const formatter = createFormatter(
           config.encodeRefs ?? true
         )
       )
-      .addTypeFormatter(new yfNumberTypeFormatter())
-      .addTypeFormatter(
-        new yfArrayTypeFormatter(circularReferenceTypeFormatter)
-      );
+      .addTypeFormatter(new yfNumberTypeFormatter());
   }
 );
 
