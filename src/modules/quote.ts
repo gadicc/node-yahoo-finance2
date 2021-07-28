@@ -116,30 +116,6 @@ export interface QuoteBase {
  * Guaranteed fields, even we don't ask for them
  */
 
-export interface QuoteEquity extends QuoteBase {
-  quoteType: "EQUITY";
-}
-
-export interface QuoteEtf extends QuoteBase {
-  quoteType: "ETF";
-}
-
-export interface QuoteMutualfund extends QuoteBase {
-  quoteType: "MUTUALFUND";
-}
-
-export interface QuoteCurrency extends QuoteBase {
-  quoteType: "CURRENCY";
-}
-
-export interface QuoteOption extends QuoteBase {
-  strike: number;
-  openInterest: number;
-  expireDate: number;
-  expireIsoDate: number;
-  underlyingSymbol: string;
-}
-
 export interface QuoteCryptoCurrency extends QuoteBase {
   quoteType: "CRYPTOCURRENCY";
   circulatingSupply: number;
@@ -150,6 +126,30 @@ export interface QuoteCryptoCurrency extends QuoteBase {
   volume24Hr: number; // 62631043072
   volumeAllCurrencies: number; // 62631043072
   startDate: Date; // new Date(1367103600 * 1000)
+}
+
+export interface QuoteCurrency extends QuoteBase {
+  quoteType: "CURRENCY";
+}
+
+export interface QuoteEtf extends QuoteBase {
+  quoteType: "ETF";
+}
+
+export interface QuoteEquity extends QuoteBase {
+  quoteType: "EQUITY";
+}
+
+export interface QuoteOption extends QuoteBase {
+  strike: number;
+  openInterest: number;
+  expireDate: number;
+  expireIsoDate: number;
+  underlyingSymbol: string;
+}
+
+export interface QuoteMutualfund extends QuoteBase {
+  quoteType: "MUTUALFUND";
 }
 
 export type Quote =
