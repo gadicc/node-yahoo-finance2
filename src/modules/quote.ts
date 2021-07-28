@@ -141,6 +141,7 @@ export interface QuoteEquity extends QuoteBase {
 }
 
 export interface QuoteOption extends QuoteBase {
+  quoteType: "OPTION";
   strike: number;
   openInterest: number;
   expireDate: number;
