@@ -1,3 +1,11 @@
+## [1.14.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.1...v1.14.2) (2021-07-28)
+
+
+### Bug Fixes
+
+* **quote:** add { quoteType: "INDEX" } QuoteIndex iface (fixes [#248](https://github.com/gadicc/node-yahoo-finance2/issues/248)) ([6aa0630](https://github.com/gadicc/node-yahoo-finance2/commit/6aa063098384998234d2131433271e96d758974e))
+* **quote:** add missing { quoteType: "OPTION" } to QuoteOption iface ([95e64b1](https://github.com/gadicc/node-yahoo-finance2/commit/95e64b1f1c5020478cb954e4419c0bf8c1a4fb75))
+
 ## [1.14.1](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.0...v1.14.1) (2021-07-21)
 
 
