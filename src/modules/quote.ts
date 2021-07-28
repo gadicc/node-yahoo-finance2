@@ -140,6 +140,10 @@ export interface QuoteEquity extends QuoteBase {
   quoteType: "EQUITY";
 }
 
+export interface QuoteIndex extends QuoteBase {
+  quoteType: "INDEX";
+}
+
 export interface QuoteOption extends QuoteBase {
   quoteType: "OPTION";
   strike: number;
@@ -158,6 +162,7 @@ export type Quote =
   | QuoteCurrency
   | QuoteEtf
   | QuoteEquity
+  | QuoteIndex
   | QuoteMutualfund
   | QuoteOption;
 
