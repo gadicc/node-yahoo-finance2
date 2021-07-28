@@ -1,0 +1,98 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v6/finance/recommendationsbysymbol/^VXAPL?"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "x-yahoo-request-id": [
+        "e95q279gg1s5j"
+      ],
+      "cache-control": [
+        "public, max-age=60, stale-while-revalidate=15, stale-if-error=3600"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "content-length": [
+        "157"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 28 Jul 2021 05:52:51 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-yql--mtls-default-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": [
+          {
+            "symbol": "^VXAPL",
+            "recommendedSymbols": [
+              {
+                "symbol": "^VXAZN",
+                "score": 0.032758
+              },
+              {
+                "symbol": "^GVZ",
+                "score": 0.024122
+              },
+              {
+                "symbol": "^RVX",
+                "score": 0.022736
+              },
+              {
+                "symbol": "^OVX",
+                "score": 0.019446
+              },
+              {
+                "symbol": "^VXGOG",
+                "score": 0.019221
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

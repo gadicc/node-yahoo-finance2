@@ -24,5 +24,6 @@ export const testSymbols = [
   "BTC-USD", // CryptoCurrency, CoinMarketCap
   "EURUSD=X", // Currency
   "SIMP", // see #107,
-  "ORSTED.CO", // quoteSummary.price.shortName = null (#197)
+  "ORSTED.CO", // quoteSummary.price.shortName = null (#197),
+  "^VXAPL", // Index (#248)
 ];

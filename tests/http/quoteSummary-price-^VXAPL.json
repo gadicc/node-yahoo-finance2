@@ -1,0 +1,106 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/^VXAPL?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "9rml5qhgg1s62"
+      ],
+      "x-yahoo-request-id": [
+        "9rml5qhgg1s62"
+      ],
+      "x-request-id": [
+        "dd87131e-fb1e-4d49-8d85-aad377b1bdc3"
+      ],
+      "content-length": [
+        "689"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 28 Jul 2021 05:53:06 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": 0.018068306,
+              "regularMarketChange": 0.54999924,
+              "regularMarketTime": 1627415991,
+              "priceHint": 2,
+              "regularMarketPrice": 30.99,
+              "regularMarketDayHigh": 0,
+              "regularMarketDayLow": 0,
+              "regularMarketVolume": 0,
+              "regularMarketPreviousClose": 30.44,
+              "regularMarketSource": "DELAYED",
+              "regularMarketOpen": 0,
+              "exchange": "WCB",
+              "exchangeName": "Chicago Options",
+              "exchangeDataDelayedBy": 20,
+              "marketState": "PREPRE",
+              "quoteType": "INDEX",
+              "symbol": "^VXAPL",
+              "underlyingSymbol": null,
+              "shortName": "CBOE EQUITY VIXON APPLE",
+              "longName": null,
+              "currency": "USD",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

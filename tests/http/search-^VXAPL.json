@@ -1,0 +1,97 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=%5EVXAPL"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "2l3b0b9gg1s5j"
+      ],
+      "x-yahoo-request-id": [
+        "2l3b0b9gg1s5j"
+      ],
+      "x-request-id": [
+        "a109d77b-c9f1-4663-8017-132e4105d0a8"
+      ],
+      "content-length": [
+        "473"
+      ],
+      "x-envoy-upstream-service-time": [
+        "33"
+      ],
+      "date": [
+        "Wed, 28 Jul 2021 05:52:51 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-canary-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 1,
+      "quotes": [
+        {
+          "exchange": "WCB",
+          "shortname": "CBOE EQUITY VIXON APPLE",
+          "quoteType": "INDEX",
+          "symbol": "^VXAPL",
+          "index": "quotes",
+          "score": 2002100,
+          "typeDisp": "Index",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "totalTime": 31,
+      "timeTakenForQuotes": 415,
+      "timeTakenForNews": 600,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0
+    }
+  }
+}

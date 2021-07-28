@@ -1,0 +1,147 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/^VXAPL?formatted=false&modules=assetProfile%2CbalanceSheetHistory%2CbalanceSheetHistoryQuarterly%2CcalendarEvents%2CcashflowStatementHistory%2CcashflowStatementHistoryQuarterly%2CdefaultKeyStatistics%2Cearnings%2CearningsHistory%2CearningsTrend%2CfinancialData%2CfundOwnership%2CfundPerformance%2CfundProfile%2CincomeStatementHistory%2CincomeStatementHistoryQuarterly%2CindexTrend%2CindustryTrend%2CinsiderHolders%2CinsiderTransactions%2CinstitutionOwnership%2CmajorDirectHolders%2CmajorHoldersBreakdown%2CnetSharePurchaseActivity%2Cprice%2CquoteType%2CrecommendationTrend%2CsecFilings%2CsectorTrend%2CsummaryDetail%2CsummaryProfile%2CtopHoldings%2CupgradeDowngradeHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "362s26tgg1s67"
+      ],
+      "x-yahoo-request-id": [
+        "362s26tgg1s67"
+      ],
+      "x-request-id": [
+        "a74f56a0-0043-4c93-901d-22a2c5f72c6c"
+      ],
+      "content-length": [
+        "1508"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 28 Jul 2021 05:53:11 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 30.44,
+              "open": 0,
+              "dayLow": 0,
+              "dayHigh": 0,
+              "regularMarketPreviousClose": 30.44,
+              "regularMarketOpen": 0,
+              "regularMarketDayLow": 0,
+              "regularMarketDayHigh": 0,
+              "volume": 0,
+              "regularMarketVolume": 0,
+              "bid": 0,
+              "ask": 0,
+              "bidSize": 0,
+              "askSize": 0,
+              "fiftyTwoWeekLow": 0,
+              "fiftyTwoWeekHigh": 0,
+              "currency": "USD",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "algorithm": null,
+              "tradeable": false
+            },
+            "quoteType": {
+              "exchange": "WCB",
+              "quoteType": "INDEX",
+              "symbol": "^VXAPL",
+              "underlyingSymbol": "^VXAPL",
+              "shortName": "CBOE EQUITY VIXON APPLE",
+              "longName": null,
+              "firstTradeDateEpochUtc": null,
+              "timeZoneFullName": "America/New_York",
+              "timeZoneShortName": "EDT",
+              "uuid": "7c2e25cc-68b6-3f1f-80e4-c3112a870a21",
+              "messageBoardId": "finmb_INDEXVXAPL",
+              "gmtOffSetMilliseconds": -14400000,
+              "maxAge": 1
+            },
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": 0.018068306,
+              "regularMarketChange": 0.54999924,
+              "regularMarketTime": 1627415991,
+              "priceHint": 2,
+              "regularMarketPrice": 30.99,
+              "regularMarketDayHigh": 0,
+              "regularMarketDayLow": 0,
+              "regularMarketVolume": 0,
+              "regularMarketPreviousClose": 30.44,
+              "regularMarketSource": "DELAYED",
+              "regularMarketOpen": 0,
+              "exchange": "WCB",
+              "exchangeName": "Chicago Options",
+              "exchangeDataDelayedBy": 20,
+              "marketState": "PREPRE",
+              "quoteType": "INDEX",
+              "symbol": "^VXAPL",
+              "underlyingSymbol": null,
+              "shortName": "CBOE EQUITY VIXON APPLE",
+              "longName": null,
+              "currency": "USD",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
