@@ -1,3 +1,10 @@
+## [1.14.3](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.2...v1.14.3) (2021-08-08)
+
+
+### Bug Fixes
+
+* **insights:** support optional "upsell" field (fixes [#253](https://github.com/gadicc/node-yahoo-finance2/issues/253)) ([5b7eadb](https://github.com/gadicc/node-yahoo-finance2/commit/5b7eadb198256bc96c4fd5331351ba3734988eda))
+
 ## [1.14.2](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.1...v1.14.2) (2021-07-28)
 
 
