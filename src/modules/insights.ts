@@ -17,6 +17,7 @@ export interface InsightsResult {
   events?: InsightsEvent[];
   reports?: InsightsReport[];
   sigDevs: InsightsSigDev[];
+  upsell?: InsightsUpsell;
 }
 
 export interface InsightsSigDev {
@@ -105,6 +106,11 @@ export interface InsightsOptions {
   lang?: string;
   region?: string;
   reportsCount?: number;
+}
+
+export interface InsightsUpsell {
+  companyName: string;
+  upsellReportType: string;
 }
 
 const queryOptionsDefaults = {

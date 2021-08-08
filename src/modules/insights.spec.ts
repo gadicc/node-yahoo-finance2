@@ -1,9 +1,13 @@
 import insights from "./insights.js";
-import { testSymbols } from "../../tests/symbols.js";
+import { testSymbols as commonTestSymbols } from "../../tests/symbols.js";
 
 import testYf from "../../tests/testYf.js";
 
 const yf = testYf({ insights });
+const testSymbols = [
+  ...commonTestSymbols,
+  "ABBOTINDIA.NS", // field "upsell" with { "companyName", "upsellReportType" }
+];
 
 describe("insights", () => {
   it.each(testSymbols)("passes validation for symbol '%s'", async (symbol) => {

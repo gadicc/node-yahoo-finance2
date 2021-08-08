@@ -1,0 +1,87 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=ABBOTINDIA.NS"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "y-rid": [
+        "e3a8jt9ggv3dt"
+      ],
+      "x-yahoo-request-id": [
+        "e3a8jt9ggv3dt"
+      ],
+      "x-request-id": [
+        "f575c446-e152-422f-a02b-aa1b37f1148d"
+      ],
+      "content-length": [
+        "233"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Sun, 08 Aug 2021 07:54:37 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "ABBOTINDIA.NS",
+          "upsell": {
+            "companyName": "ABBOTT INDIA LTD",
+            "upsellReportType": "MORNINGSTAR_ANALYST"
+          },
+          "sigDevs": [
+            {
+              "headline": "Abbott India June-Quarter Profit Rises",
+              "date": "2021-08-06"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}
