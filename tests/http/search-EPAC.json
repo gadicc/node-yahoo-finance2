@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "vary": [
         "Origin,Origin,Accept-Encoding"
@@ -17,25 +17,25 @@
         "public, max-age=120, stale-while-revalidate=180"
       ],
       "y-rid": [
-        "bjgap0dg6s90t"
+        "7r4sl9pgh7rd3"
       ],
       "x-yahoo-request-id": [
-        "bjgap0dg6s90t"
+        "7r4sl9pgh7rd3"
       ],
       "x-request-id": [
-        "8fc7b27a-cb07-4c72-b24d-a291595969c4"
+        "4e788609-9519-4b56-a813-ef094e89d5ac"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "1177"
+        "1075"
       ],
       "x-envoy-upstream-service-time": [
-        "51"
+        "48"
       ],
       "date": [
-        "Wed, 07 Apr 2021 21:29:01 GMT"
+        "Wed, 11 Aug 2021 15:32:50 GMT"
       ],
       "server": [
         "ATS"
@@ -44,7 +44,7 @@
         "finance-search--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
-        "0"
+        "1"
       ],
       "strict-transport-security": [
         "max-age=15552000"
@@ -78,9 +78,29 @@
           "quoteType": "EQUITY",
           "symbol": "EPAC",
           "index": "quotes",
-          "score": 2025900,
+          "score": 2020000,
           "typeDisp": "Equity",
           "longname": "Enerpac Tool Group Corp.",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "SNP",
+          "shortname": "S&P EPAC Ex-Korea BMI (USD) TR",
+          "quoteType": "INDEX",
+          "symbol": "^SPCBMIRECUSD-TR",
+          "index": "quotes",
+          "score": 20003,
+          "typeDisp": "Index",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "EPAC Aug 2021 17.500 call",
+          "quoteType": "OPTION",
+          "symbol": "EPAC210820C00017500",
+          "index": "quotes",
+          "score": 20003,
+          "typeDisp": "Option",
           "isYahooFinance": true
         },
         {
@@ -89,7 +109,7 @@
           "quoteType": "EQUITY",
           "symbol": "EPAC.JK",
           "index": "quotes",
-          "score": 20040,
+          "score": 20001,
           "typeDisp": "Equity",
           "longname": "PT Megalestari Epack Sentosaraya Tbk",
           "isYahooFinance": true
@@ -99,26 +119,6 @@
           "shortname": "iShares Dow Jones EPAC Select D",
           "quoteType": "INDEX",
           "symbol": "^IDV-EU",
-          "index": "quotes",
-          "score": 20006,
-          "typeDisp": "Index",
-          "isYahooFinance": true
-        },
-        {
-          "exchange": "ASE",
-          "shortname": "iShares Dow Jones EPAC Select D",
-          "quoteType": "INDEX",
-          "symbol": "^IDV-IV",
-          "index": "quotes",
-          "score": 20002,
-          "typeDisp": "Index",
-          "isYahooFinance": true
-        },
-        {
-          "exchange": "SNP",
-          "shortname": "S&P EPAC Ex-Korea Low Volatilit",
-          "quoteType": "INDEX",
-          "symbol": "^SPEXLCHT",
           "index": "quotes",
           "score": 20001,
           "typeDisp": "Index",
@@ -131,57 +131,59 @@
           "isYahooFinance": false
         },
         {
-          "index": "a4804474d7f147ce9bc25a388753a7b6",
-          "name": "Epact",
-          "permalink": "epact",
+          "index": "6ffc0e3fdd991a875f2b73407f7a5cd2",
+          "name": "epaCUBE",
+          "permalink": "epacube",
           "isYahooFinance": false
         }
       ],
       "news": [
         {
-          "uuid": "ba45f0be-87cb-3441-88d1-52d582a1ba72",
-          "title": "3 Manufacturing Tool Stocks With Healthy Prospects Amid Pandemic",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/news/3-manufacturing-tool-stocks-healthy-121012200.html",
-          "providerPublishTime": 1611317412,
+          "uuid": "6488fcf9-b58d-3e65-a513-b017ab7e172d",
+          "title": "Enerpac Tool Group (EPAC) Q3 2021 Earnings Call Transcript",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/m/6488fcf9-b58d-3e65-a513-b017ab7e172d/enerpac-tool-group-%28epac%29-q3.html",
+          "providerPublishTime": 1624996845,
           "type": "STORY"
         },
         {
-          "uuid": "76254d51-a7db-3166-a5bd-a17ce262efc9",
-          "title": "Worldwide Agricultural Packaging Industry to 2026 - Plastic Packaging to Hold a Significant Market Share - ResearchAndMarkets.com",
-          "publisher": "Business Wire",
-          "link": "https://finance.yahoo.com/news/worldwide-agricultural-packaging-industry-2026-170600025.html",
-          "providerPublishTime": 1616432760,
-          "type": "STORY"
-        },
-        {
-          "uuid": "ab40c2ca-3b8a-38c7-a094-176db23d63d1",
-          "title": "Laser Technology Market to Reach USD 15.99 Billion by 2027; Growing Adoption of Aesthetic Procedures to Incite Business Development, states Fortune Business Insights™",
+          "uuid": "3774ad9e-fef7-38da-92d0-61080bb9f340",
+          "title": "ePac Flexible Packaging Launches Sustainable Child Resistant Pouch Line",
           "publisher": "GlobeNewswire",
-          "link": "https://finance.yahoo.com/news/laser-technology-market-reach-usd-112800817.html",
-          "providerPublishTime": 1610623680,
+          "link": "https://finance.yahoo.com/news/epac-flexible-packaging-launches-sustainable-090000032.html",
+          "providerPublishTime": 1621242000,
           "type": "STORY"
         },
         {
-          "uuid": "31cbf40a-2a3a-340f-a428-31ba9669aa36",
-          "title": "Global Agricultural Packaging Market (2021 to 2026) - Growth, Trends, COVID-19 Impact, and Forecasts",
+          "uuid": "e2f192ad-e8b8-3ff1-83ab-93e0f598740c",
+          "title": "ePac Flexible Packaging Inks Global Agreement With Scantrust",
           "publisher": "GlobeNewswire",
-          "link": "https://finance.yahoo.com/news/global-agricultural-packaging-market-2021-121300843.html",
-          "providerPublishTime": 1616587980,
+          "link": "https://finance.yahoo.com/news/epac-flexible-packaging-inks-global-060000904.html",
+          "providerPublishTime": 1625551200,
+          "type": "STORY"
+        },
+        {
+          "uuid": "cf4a06ca-8200-3d7d-9f6f-ffd310a3707c",
+          "title": "ePac Flexible Packaging Celebrates 5 Years of Accelerated Growth",
+          "publisher": "GlobeNewswire",
+          "link": "https://finance.yahoo.com/news/epac-flexible-packaging-celebrates-5-070000486.html",
+          "providerPublishTime": 1623308400,
           "type": "STORY"
         }
       ],
       "nav": [],
       "lists": [],
       "researchReports": [],
-      "totalTime": 49,
-      "timeTakenForQuotes": 435,
+      "screenerFieldResults": [],
+      "totalTime": 43,
+      "timeTakenForQuotes": 430,
       "timeTakenForNews": 600,
       "timeTakenForAlgowatchlist": 400,
       "timeTakenForPredefinedScreener": 400,
       "timeTakenForCrunchbase": 400,
       "timeTakenForNav": 400,
-      "timeTakenForResearchReports": 0
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0
     }
   }
 }

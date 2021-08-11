@@ -86,6 +86,11 @@ export interface SearchResult {
   lists: Array<any>;
   researchReports: Array<any>;
   totalTime: number;
+  // ALWAYS present, but TEMPORARILY marked optional ("?") since its
+  // sudden appearance, let's make sure it doesn't get suddenly removed.
+  // Array<any> until we can find some examples of what it actually looks
+  // like (#255).
+  screenerFieldResults?: Array<any>;
   timeTakenForQuotes: number; // 26
   timeTakenForNews: number; // 419
   timeTakenForAlgowatchlist: number; // 700
@@ -93,6 +98,9 @@ export interface SearchResult {
   timeTakenForCrunchbase: number; // 400
   timeTakenForNav: number; // 400
   timeTakenForResearchReports: number; // 0
+  // ALWAYS present, but TEMPORARILY marked optional ("?") since its
+  // sudden appearance, let's make sure it doesn't get suddenly removed.
+  timeTakenForScreenerField?: number;
 }
 
 export interface SearchOptions {

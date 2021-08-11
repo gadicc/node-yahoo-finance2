@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "vary": [
         "Origin,Origin,Accept-Encoding"
@@ -17,25 +17,25 @@
         "public, max-age=120, stale-while-revalidate=180"
       ],
       "y-rid": [
-        "41samkdg6s90p"
+        "b47c3c9gh7rct"
       ],
       "x-yahoo-request-id": [
-        "41samkdg6s90p"
+        "b47c3c9gh7rct"
       ],
       "x-request-id": [
-        "d0f463dd-d093-4e36-ba29-877d562a3097"
+        "59500675-a4c6-4b12-a73c-823b36481ead"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "968"
+        "1007"
       ],
       "x-envoy-upstream-service-time": [
-        "32"
+        "34"
       ],
       "date": [
-        "Wed, 07 Apr 2021 21:28:56 GMT"
+        "Wed, 11 Aug 2021 15:32:45 GMT"
       ],
       "server": [
         "ATS"
@@ -44,7 +44,7 @@
         "finance-search--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
-        "1"
+        "0"
       ],
       "strict-transport-security": [
         "max-age=15552000"
@@ -78,7 +78,7 @@
           "quoteType": "EQUITY",
           "symbol": "BEKE",
           "index": "quotes",
-          "score": 2406900,
+          "score": 5601300,
           "typeDisp": "Equity",
           "longname": "KE Holdings Inc.",
           "isYahooFinance": true
@@ -89,9 +89,19 @@
           "quoteType": "EQUITY",
           "symbol": "TERB.BR",
           "index": "quotes",
-          "score": 20040,
+          "score": 20020,
           "typeDisp": "Equity",
           "longname": "Ter Beke NV",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BEKE Aug 2021 20.000 put",
+          "quoteType": "OPTION",
+          "symbol": "BEKE210820P00020000",
+          "index": "quotes",
+          "score": 20010,
+          "typeDisp": "Option",
           "isYahooFinance": true
         },
         {
@@ -100,9 +110,19 @@
           "quoteType": "EQUITY",
           "symbol": "603068.SS",
           "index": "quotes",
-          "score": 20017,
+          "score": 20008,
           "typeDisp": "Equity",
           "longname": "Beken Corporation",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BEKE Jan 2022 50.000 call",
+          "quoteType": "OPTION",
+          "symbol": "BEKE220121C00050000",
+          "index": "quotes",
+          "score": 20006,
+          "typeDisp": "Option",
           "isYahooFinance": true
         },
         {
@@ -111,77 +131,59 @@
           "quoteType": "EQUITY",
           "symbol": "BKMM",
           "index": "quotes",
-          "score": 20014,
+          "score": 20004,
           "typeDisp": "Equity",
           "longname": "Bekem Metals, Inc.",
-          "isYahooFinance": true
-        },
-        {
-          "exchange": "OPR",
-          "shortname": "BEKE Apr 2021 115.000 call",
-          "quoteType": "OPTION",
-          "symbol": "BEKE210416C00115000",
-          "index": "quotes",
-          "score": 20003,
-          "typeDisp": "Option",
-          "isYahooFinance": true
-        },
-        {
-          "exchange": "OPR",
-          "shortname": "BEKE Apr 2021 45.000 put",
-          "quoteType": "OPTION",
-          "symbol": "BEKE210416P00045000",
-          "index": "quotes",
-          "score": 20003,
-          "typeDisp": "Option",
           "isYahooFinance": true
         }
       ],
       "news": [
         {
-          "uuid": "fb7d7bed-79af-322f-9568-42ce52ab6ea5",
-          "title": "Masayoshi Son Just Pushed SoftBank Shares Past Dot-Com Peak",
-          "publisher": "Bloomberg",
-          "link": "https://finance.yahoo.com/news/softbank-surges-surpass-long-standing-061244282.html",
-          "providerPublishTime": 1613467524,
+          "uuid": "94475790-b3a3-30c0-8c8b-61d7b93e2d13",
+          "title": "SoftBank CEO to Take Stake in Vision Fund 2",
+          "publisher": "Barrons.com",
+          "link": "https://finance.yahoo.com/m/94475790-b3a3-30c0-8c8b-61d7b93e2d13/softbank-ceo-to-take-stake-in.html",
+          "providerPublishTime": 1628640660,
           "type": "STORY"
         },
         {
-          "uuid": "89d81ea9-4229-3d35-817a-d3c104ea414d",
-          "title": "SPAC Boom and SoftBank’s Mega-Rally Boost Masayoshi Son’s Billions",
-          "publisher": "Bloomberg",
-          "link": "https://finance.yahoo.com/news/spac-boom-softbank-mega-rally-022026431.html",
-          "providerPublishTime": 1614824426,
+          "uuid": "5b64322f-bf96-377e-a7a9-86e2fcc97598",
+          "title": "Chinese tech firms 'self-correct' to get ahead of potential regulatory fury",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/chinese-tech-firms-self-correct-033435272.html",
+          "providerPublishTime": 1628652875,
           "type": "STORY"
         },
         {
-          "uuid": "4dbb58f5-e5f9-3022-ab72-742969f64da2",
-          "title": "Is Square (SQ) Stock A Buy Or Sell?",
+          "uuid": "3788368c-328f-37b5-8b9a-fca70f9a786e",
+          "title": "Were Hedge Funds Right About Becton, Dickinson and Company (BDX)?",
           "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/news/square-sq-stock-buy-sell-142617354.html",
-          "providerPublishTime": 1615904777,
+          "link": "https://finance.yahoo.com/news/were-hedge-funds-becton-dickinson-144934172.html",
+          "providerPublishTime": 1628520574,
           "type": "STORY"
         },
         {
-          "uuid": "dc2f0821-98da-38f1-ba0c-a82e14dbd856",
-          "title": "Is Colgate-Palmolive (CL) Stock A Buy or Sell?",
+          "uuid": "4eb52c2c-ee04-3303-96b5-61e2dd27816d",
+          "title": "Were Hedge Funds Right About Activision Blizzard, Inc. (ATVI)?",
           "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/news/colgate-palmolive-cl-stock-buy-233123494.html",
-          "providerPublishTime": 1616455883,
+          "link": "https://finance.yahoo.com/news/were-hedge-funds-activision-blizzard-135229964.html",
+          "providerPublishTime": 1628517149,
           "type": "STORY"
         }
       ],
       "nav": [],
       "lists": [],
       "researchReports": [],
-      "totalTime": 30,
-      "timeTakenForQuotes": 417,
+      "screenerFieldResults": [],
+      "totalTime": 32,
+      "timeTakenForQuotes": 420,
       "timeTakenForNews": 600,
       "timeTakenForAlgowatchlist": 400,
       "timeTakenForPredefinedScreener": 400,
       "timeTakenForCrunchbase": 400,
       "timeTakenForNav": 400,
-      "timeTakenForResearchReports": 0
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0
     }
   }
 }
