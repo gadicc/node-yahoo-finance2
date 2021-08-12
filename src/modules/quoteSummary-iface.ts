@@ -513,7 +513,7 @@ export interface IncomeStatementHistoryElement {
   costOfRevenue: number;
   grossProfit: number;
   researchDevelopment: number | null;
-  sellingGeneralAdministrative: number;
+  sellingGeneralAdministrative: number | null;
   nonRecurring: number | null;
   otherOperatingExpenses: number | null;
   totalOperatingExpenses: number;
