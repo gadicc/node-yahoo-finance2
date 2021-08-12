@@ -1,0 +1,108 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CMCOM.AS?formatted=false&modules=summaryDetail"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "4ml3eb5gha75j"
+      ],
+      "x-yahoo-request-id": [
+        "4ml3eb5gha75j"
+      ],
+      "x-request-id": [
+        "deaec79f-0b18-4f30-9f49-add65a85252f"
+      ],
+      "content-length": [
+        "691"
+      ],
+      "x-envoy-upstream-service-time": [
+        "6"
+      ],
+      "date": [
+        "Thu, 12 Aug 2021 13:05:55 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 41.6,
+              "open": 41.7,
+              "dayLow": 41.35,
+              "dayHigh": 42.85,
+              "regularMarketPreviousClose": 41.6,
+              "regularMarketOpen": 41.7,
+              "regularMarketDayLow": 41.35,
+              "regularMarketDayHigh": 42.85,
+              "payoutRatio": 0,
+              "volume": 29655,
+              "regularMarketVolume": 29655,
+              "averageVolume": 46624,
+              "averageVolume10days": 121187,
+              "averageDailyVolume10Day": 121187,
+              "marketCap": 1189794688,
+              "fiftyTwoWeekLow": 15,
+              "fiftyTwoWeekHigh": 47.45,
+              "priceToSalesTrailing12Months": 6.074596,
+              "fiftyDayAverage": 35.47222,
+              "twoHundredDayAverage": 29.393705,
+              "currency": "EUR",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "algorithm": null,
+              "tradeable": false
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

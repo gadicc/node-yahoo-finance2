@@ -1,0 +1,109 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CMCOM.AS?formatted=false&modules=indexTrend"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "6kouunpgha75b"
+      ],
+      "x-yahoo-request-id": [
+        "6kouunpgha75b"
+      ],
+      "x-request-id": [
+        "9f015082-16bf-4c1a-a146-a937367bce88"
+      ],
+      "content-length": [
+        "319"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Thu, 12 Aug 2021 13:05:46 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "indexTrend": {
+              "maxAge": 1,
+              "symbol": "SP5",
+              "peRatio": 18.0569,
+              "pegRatio": 1.78265,
+              "estimates": [
+                {
+                  "period": "0q",
+                  "growth": 0.52900004
+                },
+                {
+                  "period": "+1q",
+                  "growth": 0.401
+                },
+                {
+                  "period": "0y",
+                  "growth": 0.384
+                },
+                {
+                  "period": "+1y",
+                  "growth": 0.092
+                },
+                {
+                  "period": "+5y",
+                  "growth": 0.150876
+                },
+                {
+                  "period": "-5y"
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

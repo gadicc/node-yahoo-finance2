@@ -1,0 +1,92 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CMCOM.AS?formatted=false&modules=summaryProfile"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "cp8fo7dgha75k"
+      ],
+      "x-yahoo-request-id": [
+        "cp8fo7dgha75k"
+      ],
+      "x-request-id": [
+        "76464355-20b3-4907-9578-9f9267d4287b"
+      ],
+      "content-length": [
+        "909"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Thu, 12 Aug 2021 13:05:56 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "Konijnenberg 30",
+              "city": "Breda",
+              "zip": "4825 BD",
+              "country": "Netherlands",
+              "phone": "31 76 572 7000",
+              "website": "http://cm.com",
+              "industry": "Software—Application",
+              "sector": "Technology",
+              "longBusinessSummary": "CM.com N.V. provides conversational commerce services worldwide. It operates through Communications Platform as a Service (CPaaS), Payments, Platform, and Other segments. The CPaaS segment offers omnichannel messaging and voice services. The Payments segment provides payment solutions. The Platform segment offers ticketing, data, email, digital signing, identification, and verification services. The company is also involved in the provision of payments processing and access services. CM.com N.V. was founded in 1999 and is headquartered in Breda, the Netherlands.",
+              "fullTimeEmployees": 700,
+              "companyOfficers": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CMCOM.AS?formatted=false&modules=defaultKeyStatistics"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "4nnf8phgha755"
+      ],
+      "x-yahoo-request-id": [
+        "4nnf8phgha755"
+      ],
+      "x-request-id": [
+        "d21d8994-d621-4ed4-9d6c-bfcabc157a8a"
+      ],
+      "content-length": [
+        "631"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Thu, 12 Aug 2021 13:05:41 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "defaultKeyStatistics": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "enterpriseValue": 1185119232,
+              "profitMargins": -0.0631,
+              "floatShares": 11641246,
+              "sharesOutstanding": 28739000,
+              "heldPercentInsiders": 0.63,
+              "heldPercentInstitutions": 0.1745,
+              "category": null,
+              "bookValue": 3.329,
+              "priceToBook": 12.436168,
+              "fundFamily": null,
+              "legalType": null,
+              "lastFiscalYearEnd": 1609372800,
+              "nextFiscalYearEnd": 1672444800,
+              "mostRecentQuarter": 1625011200,
+              "netIncomeToCommon": -12359000,
+              "trailingEps": -0.404,
+              "lastSplitFactor": null,
+              "enterpriseToRevenue": 6.051,
+              "enterpriseToEbitda": -484.91,
+              "52WeekChange": 1.683871,
+              "SandP52WeekChange": 0.31688225
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
