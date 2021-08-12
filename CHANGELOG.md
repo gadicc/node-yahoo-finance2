@@ -1,3 +1,11 @@
+## [1.14.4](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.3...v1.14.4) (2021-08-12)
+
+
+### Bug Fixes
+
+* **quoteSummary:** sellingGeneralAdministrative (fixes [#258](https://github.com/gadicc/node-yahoo-finance2/issues/258)) ([c01fe74](https://github.com/gadicc/node-yahoo-finance2/commit/c01fe74bcbab289ccf693ffe4887303a529bd584))
+* **search:** add support for screener fields ([#255](https://github.com/gadicc/node-yahoo-finance2/issues/255)) ([2b23ccb](https://github.com/gadicc/node-yahoo-finance2/commit/2b23ccb05b373ff20c20376a024185a0d2fe8af2))
+
 ## [1.14.3](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.2...v1.14.3) (2021-08-08)
 
 
