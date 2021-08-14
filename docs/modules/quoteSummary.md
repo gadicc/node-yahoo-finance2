@@ -961,10 +961,10 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "majorHoldersBreakdown" ] }
 {
   "majorHoldersBreakdown": {
     "maxAge": 1,
-    "insidersPercentHeld": 0.00638,
-    "institutionsPercentHeld": 0.6853,
-    "institutionsFloatPercentHeld": 0.6897,
-    "institutionsCount": 3155
+    "insidersPercentHeld": 0.12776,
+    "institutionsPercentHeld": 0.25067,
+    "institutionsFloatPercentHeld": 0.28738,
+    "institutionsCount": 879
   }
 }
 
