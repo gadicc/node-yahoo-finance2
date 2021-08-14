@@ -719,8 +719,23 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "incomeStatementHistoryQuar
 ### indexTrend
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "indexTrend" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "indexTrend" ] });
 
+{
+  "indexTrend": {
+    "maxAge": 1,
+    "symbol": "SP5",
+    "peRatio": 18.0569,
+    "pegRatio": 1.78265,
+    "estimates": [
+      {
+        "period": "0q",
+        "growth": 0.52900004
+      },
+      /* ... */
+    ]
+  }
+}
 
 ```
 
