@@ -386,34 +386,43 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "cashflowStatementHistoryQu
 ### defaultKeyStatistics
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "defaultKeyStatistics" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "defaultKeyStatistics" ] });
 
 {
-  cashflowStatementHistoryQuarterly: {
-    cashflowStatements: [
-      {
-        maxAge: 1,
-        endDate: 2020-09-27T00:00:00.000Z,
-        netIncome: 2194000000,
-        depreciation: 1258000000,
-        changeToNetincome: -511000000,
-        changeToLiabilities: 0,
-        changeToOperatingActivities: -851000000,
-        totalCashFromOperatingActivities: 2090000000,
-        capitalExpenditures: -525000000,
-        investments: 838000000,
-        otherCashflowsFromInvestingActivities: 173000000,
-        totalCashflowsFromInvestingActivities: 481000000,
-        netBorrowings: -618000000,
-        otherCashflowsFromFinancingActivities: -2251000000,
-        totalCashFromFinancingActivities: -2821000000,
-        effectOfExchangeRate: 31000000,
-        changeInCash: -218000000,
-        issuanceOfStock: 48000000
-      },
-      /* ... */
-    ],
-    maxAge: 86400
+  "defaultKeyStatistics": {
+    "maxAge": 1,
+    "priceHint": 2,
+    "enterpriseValue": 46541389824,
+    "forwardPE": 124.5,
+    "profitMargins": -0.95135003,
+    "floatShares": 1513962964,
+    "sharesOutstanding": 1805229952,
+    "sharesShort": 58395451,
+    "sharesShortPriorMonth": 68132010,
+    "sharesShortPreviousMonthDate": 1625011200,
+    "dateShortInterest": 1627603200,
+    "sharesPercentSharesOut": 0.0311,
+    "heldPercentInsiders": 0.12776,
+    "heldPercentInstitutions": 0.25067,
+    "shortRatio": 2.11,
+    "shortPercentOfFloat": 0.0359,
+    "impliedSharesOutstanding": 1880080000,
+    "category": null,
+    "bookValue": 1.068,
+    "priceToBook": 23.314608,
+    "fundFamily": null,
+    "legalType": null,
+    "lastFiscalYearEnd": 1609372800,
+    "nextFiscalYearEnd": 1672444800,
+    "mostRecentQuarter": 1625011200,
+    "netIncomeToCommon": -1263715968,
+    "trailingEps": -0.79,
+    "pegRatio": 3.58,
+    "lastSplitFactor": null,
+    "enterpriseToRevenue": 35.037,
+    "enterpriseToEbitda": -37.24,
+    "52WeekChange": 1.6210527,
+    "SandP52WeekChange": 0.32111573
   }
 }
 
