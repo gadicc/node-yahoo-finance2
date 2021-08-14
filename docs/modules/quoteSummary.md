@@ -350,8 +350,35 @@ await yahooFinance.quoteSummary('KO', { modules: [ "cashflowStatementHistory" ] 
 ### cashflowStatementHistoryQuarterly
 
 ```js
-await yahooFinance.quoteSummary('PFE', { modules: [ "cashflowStatementHistoryQuarterly" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "cashflowStatementHistoryQuarterly" ] });
 
+{
+  "cashflowStatementHistoryQuarterly": {
+    "cashflowStatements": [
+      {
+        "maxAge": 1,
+        "endDate": "2021-06-30T00:00:00.000Z",
+        "netIncome": -138580000,
+        "depreciation": 4762000,
+        "changeToNetincome": 240489000,
+        "changeToAccountReceivables": -88363000,
+        "changeToLiabilities": 22811000,
+        "changeToOperatingActivities": -18369000,
+        "totalCashFromOperatingActivities": 22750000,
+        "capitalExpenditures": -697000,
+        "totalCashflowsFromInvestingActivities": -697000,
+        "netBorrowings": -200000000,
+        "otherCashflowsFromFinancingActivities": 762000,
+        "totalCashFromFinancingActivities": -31410000,
+        "effectOfExchangeRate": 701000,
+        "changeInCash": -8656000,
+        "issuanceOfStock": 167828000
+      },
+      /* ... */
+    ],
+    "maxAge": 86400
+  }
+}
 
 ```
 
