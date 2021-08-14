@@ -857,8 +857,17 @@ await yahooFinance.quoteSummary('KO', { modules: [ "majorDirectHolders" ] });
 ### majorHoldersBreakdown
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "majorHoldersBreakdown" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "majorHoldersBreakdown" ] });
 
+{
+  "majorHoldersBreakdown": {
+    "maxAge": 1,
+    "insidersPercentHeld": 0.00638,
+    "institutionsPercentHeld": 0.6853,
+    "institutionsFloatPercentHeld": 0.6897,
+    "institutionsCount": 3155
+  }
+}
 
 ```
 
