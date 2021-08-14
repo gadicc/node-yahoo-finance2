@@ -1030,8 +1030,15 @@ await yahooFinance.quoteSummary('', { modules: [ "secFilings" ] });
 ### sectorTrend
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "sectorTrend" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "sectorTrend" ] });
 
+{
+  "sectorTrend": {
+    "maxAge": 1,
+    "symbol": null,
+    "estimates": []
+  }
+}
 
 ```
 
