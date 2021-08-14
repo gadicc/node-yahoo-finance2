@@ -625,7 +625,26 @@ await yahooFinance.quoteSummary('', { modules: [ "industryTrend" ] });
 ### insiderHolders
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "insiderHolders" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "insiderHolders" ] });
+
+{
+  "insiderHolders": {
+    "holders": [
+      {
+        "maxAge": 1,
+        "name": "KARP ALEXANDER C.",
+        "relation": "Chief Executive Officer",
+        "url": "",
+        "transactionDescription": "Sale",
+        "latestTransDate": "2021-07-23T00:00:00.000Z",
+        "positionDirect": 6432260,
+        "positionDirectDate": 1626998400
+      },
+      /* ... */
+    ],
+    "maxAge": 1
+  }
+}
 
 
 ```
