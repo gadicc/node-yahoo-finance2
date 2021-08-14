@@ -710,8 +710,24 @@ await yahooFinance.quoteSummary('', { modules: [ "majorHoldersBreakdown" ] });
 ### netSharePurchaseActivity
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "netSharePurchaseActivity" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "netSharePurchaseActivity" ] });
 
+{
+  "netSharePurchaseActivity": {
+    "maxAge": 1,
+    "period": "6m",
+    "buyInfoCount": 63,
+    "buyInfoShares": 271439668,
+    "buyPercentInsiderShares": 2.907,
+    "sellInfoCount": 77,
+    "sellInfoShares": 106877256,
+    "sellPercentInsiderShares": 1.145,
+    "netInfoCount": 140,
+    "netInfoShares": 164562413,
+    "netPercentInsiderShares": 1.763,
+    "totalInsiderShares": 257929376
+  }
+}
 
 ```
 
