@@ -634,7 +634,28 @@ await yahooFinance.quoteSummary('', { modules: [ "insiderHolders" ] });
 ### insiderTransactions
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "insiderTransactions" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "insiderTransactions" ] });
+
+{
+  "insiderTransactions": {
+    "transactions": [
+      {
+        "maxAge": 1,
+        "shares": 1915887,
+        "value": 42390086,
+        "filerUrl": "",
+        "transactionText": "Sale at price 21.82 - 22.48 per share.",
+        "filerName": "KARP ALEXANDER C.",
+        "filerRelation": "Chief Executive Officer",
+        "moneyText": "",
+        "startDate": "2021-07-23T00:00:00.000Z",
+        "ownership": "D"
+      },
+      /* ... */
+    ],
+    "maxAge": 1
+  }
+}
 
 
 ```
