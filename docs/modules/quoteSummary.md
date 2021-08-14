@@ -614,8 +614,83 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "fundOwnership" ] });
 ### fundPerformance
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "fundPerformance" ] });
+await yahooFinance.quoteSummary('URTH', { modules: [ "fundPerformance" ] });
 
+{
+  "fundPerformance": {
+    "maxAge": 1,
+    "performanceOverview": {
+      "asOfDate": "2021-08-13T00:00:00.000Z",
+      "ytdReturnPct": 0.1744,
+      "oneYearTotalReturn": 0.32860002,
+      "threeYearTotalReturn": 0.1592
+    },
+    "performanceOverviewCat": {},
+    "trailingReturns": {
+      "asOfDate": "2021-06-30T00:00:00.000Z",
+      "ytd": 0.1349,
+      "oneMonth": 0.015700001,
+      "threeMonth": 0.0766,
+      "oneYear": 0.39450002,
+      "threeYear": 0.153,
+      "fiveYear": 0.1505,
+      "tenYear": 0,
+      "lastBullMkt": 0,
+      "lastBearMkt": 0
+    },
+    "trailingReturnsNav": {
+      "ytd": 0.1322,
+      "oneMonth": 0.0138,
+      "threeMonth": 0.078200005,
+      "oneYear": 0.39240003,
+      "threeYear": 0.1529,
+      "fiveYear": 0.15100001,
+      "tenYear": 0
+    },
+    "trailingReturnsCat": {
+      "ytd": 0,
+      "oneMonth": 0,
+      "threeMonth": 0,
+      "oneYear": 0,
+      "threeYear": 0,
+      "fiveYear": 0,
+      "tenYear": 0,
+      "lastBullMkt": 0,
+      "lastBearMkt": 0
+    },
+    "annualTotalReturns": {
+      "returns": [
+        {
+          "year": 2020,
+          "annualValue": 0.1608675
+        },
+        /* ... */
+      ],
+      "returnsCat": []
+    },
+    "pastQuarterlyReturns": {
+      "returns": []
+    },
+    "riskOverviewStatistics": {
+      "riskStatistics": [
+        {
+          "year": "5y",
+          "alpha": 0.34,
+          "beta": 1.01,
+          "meanAnnualReturn": 1.27,
+          "rSquared": 99.35,
+          "stdDev": 14.69,
+          "sharpeRatio": 0.96,
+          "treynorRatio": 13.84
+        },
+        /* ... */
+      ]
+    },
+    "riskOverviewStatisticsCat": {
+      "riskStatisticsCat": []
+    }
+  }
+}
 
 ```
 
