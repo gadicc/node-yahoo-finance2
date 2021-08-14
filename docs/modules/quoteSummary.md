@@ -632,7 +632,42 @@ await yahooFinance.quoteSummary('', { modules: [ "fundProfile" ] });
 ### incomeStatementHistory
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "incomeStatementHistory" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "incomeStatementHistory" ] });
+
+{
+  "incomeStatementHistory": {
+    "incomeStatementHistory": [
+      {
+        "maxAge": 1,
+        "endDate": "2020-12-31T00:00:00.000Z",
+        "totalRevenue": 1092673000,
+        "costOfRevenue": 352547000,
+        "grossProfit": 740126000,
+        "researchDevelopment": 560660000,
+        "sellingGeneralAdministrative": 1352471000,
+        "nonRecurring": null,
+        "otherOperatingExpenses": null,
+        "totalOperatingExpenses": 2265678000,
+        "operatingIncome": -1173005000,
+        "totalOtherIncomeExpenseNet": -6022000,
+        "ebit": -1173005000,
+        "interestExpense": -14139000,
+        "incomeBeforeTax": -1179027000,
+        "incomeTaxExpense": -12636000,
+        "minorityInterest": null,
+        "netIncomeFromContinuingOps": -1166391000,
+        "discontinuedOperations": null,
+        "extraordinaryItems": null,
+        "effectOfAccountingCharges": null,
+        "otherItems": null,
+        "netIncome": -1166391000,
+        "netIncomeApplicableToCommonShares": -1166391000
+      },
+      /* ... */
+    ],
+    "maxAge": 86400
+  }
+}
 
 
 ```
