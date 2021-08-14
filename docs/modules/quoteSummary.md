@@ -676,8 +676,42 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "incomeStatementHistory" ] 
 ### incomeStatementHistoryQuarterly
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "incomeStatementHistoryQuarterly" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "incomeStatementHistoryQuarterly" ] });
 
+{
+  "incomeStatementHistoryQuarterly": {
+    "incomeStatementHistory": [
+      {
+        "maxAge": 1,
+        "endDate": "2021-06-30T00:00:00.000Z",
+        "totalRevenue": 375642000,
+        "costOfRevenue": 90926000,
+        "grossProfit": 284716000,
+        "researchDevelopment": 110524000,
+        "sellingGeneralAdministrative": 320340000,
+        "nonRecurring": null,
+        "otherOperatingExpenses": null,
+        "totalOperatingExpenses": 521790000,
+        "operatingIncome": -146148000,
+        "totalOtherIncomeExpenseNet": 1907000,
+        "ebit": -146148000,
+        "interestExpense": -590000,
+        "incomeBeforeTax": -144241000,
+        "incomeTaxExpense": -5661000,
+        "minorityInterest": null,
+        "netIncomeFromContinuingOps": -138580000,
+        "discontinuedOperations": null,
+        "extraordinaryItems": null,
+        "effectOfAccountingCharges": null,
+        "otherItems": null,
+        "netIncome": -138580000,
+        "netIncomeApplicableToCommonShares": -138580000
+      },
+      /* ... */
+    ],
+    "maxAge": 86400
+  }
+}
 
 ```
 
