@@ -842,8 +842,14 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "institutionOwnership" ] })
 ### majorDirectHolders
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "majorDirectHolders" ] });
+await yahooFinance.quoteSummary('KO', { modules: [ "majorDirectHolders" ] });
 
+{
+  "majorDirectHolders": {
+    "holders": [],
+    "maxAge": 1
+  }
+}
 
 ```
 
