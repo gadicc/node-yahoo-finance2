@@ -683,8 +683,24 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "insiderTransactions" ] });
 ### institutionOwnership
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "institutionOwnership" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "institutionOwnership" ] });
 
+{
+  "institutionOwnership": {
+    "maxAge": 1,
+    "ownershipList": [
+      {
+        "maxAge": 1,
+        "reportDate": "2021-06-30T00:00:00.000Z",
+        "organization": "Blackrock Inc.",
+        "pctHeld": 0.0274,
+        "position": 49399569,
+        "value": 1302172638
+      },
+      /* ... */
+    ]
+  }
+}
 
 ```
 
