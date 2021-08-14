@@ -743,8 +743,15 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "indexTrend" ] });
 ### industryTrend
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "industryTrend" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "industryTrend" ] });
 
+{
+  "industryTrend": {
+    "maxAge": 1,
+    "symbol": null,
+    "estimates": []
+  }
+}
 
 ```
 
