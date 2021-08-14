@@ -698,7 +698,7 @@ await yahooFinance.quoteSummary('URTH', { modules: [ "fundPerformance" ] });
 ### fundProfile
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "fundProfile" ] });
+await yahooFinance.quoteSummary('URTH', { modules: [ "fundProfile" ] });
 
 {
   "fundProfile": {
@@ -999,7 +999,7 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "netSharePurchaseActivity" 
 ### price
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "price" ] });
+await yahooFinance.quoteSummary('TSLA', { modules: [ "price" ] });
 
 {
   price: {
@@ -1072,7 +1072,7 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "quoteType" ] });
 ### recommendationTrend
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "recommendationTrend" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "recommendationTrend" ] });
 
 {
   "recommendationTrend": {
@@ -1192,7 +1192,7 @@ await yahooFinance.quoteSummary('AMZN', { modules: [ "summaryDetail" ] });
 ### summaryProfile
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "summaryProfile" ] });
+await yahooFinance.quoteSummary('AMZN', { modules: [ "summaryProfile" ] });
 
 {
   summaryProfile: {
