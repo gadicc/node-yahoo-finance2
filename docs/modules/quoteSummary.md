@@ -975,6 +975,45 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "quoteType" ] });
 ```js
 await yahooFinance.quoteSummary('', { modules: [ "recommendationTrend" ] });
 
+{
+  "recommendationTrend": {
+    "trend": [
+      {
+        "period": "0m",
+        "strongBuy": 0,
+        "buy": 0,
+        "hold": 0,
+        "sell": 0,
+        "strongSell": 2
+      },
+      {
+        "period": "-1m",
+        "strongBuy": 1,
+        "buy": 1,
+        "hold": 4,
+        "sell": 1,
+        "strongSell": 2
+      },
+      {
+        "period": "-2m",
+        "strongBuy": 1,
+        "buy": 1,
+        "hold": 2,
+        "sell": 1,
+        "strongSell": 2
+      },
+      {
+        "period": "-3m",
+        "strongBuy": 1,
+        "buy": 0,
+        "hold": 5,
+        "sell": 0,
+        "strongSell": 0
+      }
+    ],
+    "maxAge": 86400
+  }
+}
 
 ```
 
