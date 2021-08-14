@@ -589,8 +589,24 @@ await yahooFinance.quoteSummary('TSLA', { modules: [ "financialData" ] });
 ### fundOwnership
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "fundOwnership" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "fundOwnership" ] });
 
+{
+  "fundOwnership": {
+    "maxAge": 1,
+    "ownershipList": [
+      {
+        "maxAge": 1,
+        "reportDate": "2021-06-30T00:00:00.000Z",
+        "organization": "ARK ETF Tr-ARK Innovation ETF",
+        "pctHeld": 0.0127,
+        "position": 22905465,
+        "value": 603788057
+      },
+      /* ... */
+    ]
+  }
+}
 
 ```
 
