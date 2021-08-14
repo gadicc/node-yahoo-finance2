@@ -700,6 +700,30 @@ await yahooFinance.quoteSummary('URTH', { modules: [ "fundPerformance" ] });
 ```js
 await yahooFinance.quoteSummary('', { modules: [ "fundProfile" ] });
 
+{
+  "fundProfile": {
+    "maxAge": 1,
+    "styleBoxUrl": "https://s.yimg.com/lq/i/fi/3_0stylelargeeq2.gif",
+    "family": "iShares",
+    "categoryName": null,
+    "legalType": "Exchange Traded Fund",
+    "managementInfo": {
+      "managerName": null,
+      "managerBio": null
+    },
+    "feesExpensesInvestment": {
+      "annualReportExpenseRatio": 0.0023999999,
+      "annualHoldingsTurnover": 0.07,
+      "totalNetAssets": 114910.49,
+      "projectionValues": {}
+    },
+    "feesExpensesInvestmentCat": {
+      "totalNetAssets": 114910.49,
+      "projectionValuesCat": {}
+    },
+    "brokerages": []
+  }
+}
 
 ```
 
