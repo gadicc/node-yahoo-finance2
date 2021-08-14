@@ -947,8 +947,25 @@ await yahooFinance.quoteSummary('', { modules: [ "price" ] });
 ### quoteType
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "quoteType" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "quoteType" ] });
 
+{
+  "quoteType": {
+    "exchange": "NYQ",
+    "quoteType": "EQUITY",
+    "symbol": "PLTR",
+    "underlyingSymbol": "PLTR",
+    "shortName": "Palantir Technologies Inc.",
+    "longName": "Palantir Technologies Inc.",
+    "firstTradeDateEpochUtc": "2020-09-30T13:30:00.000Z",
+    "timeZoneFullName": "America/New_York",
+    "timeZoneShortName": "EDT",
+    "uuid": "0ea79370-ee21-3603-b0a1-16f5e7b345f1",
+    "messageBoardId": "finmb_43580005",
+    "gmtOffSetMilliseconds": -14400000,
+    "maxAge": 1
+  }
+}
 
 ```
 
