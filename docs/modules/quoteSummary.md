@@ -350,8 +350,35 @@ await yahooFinance.quoteSummary('KO', { modules: [ "cashflowStatementHistory" ] 
 ### cashflowStatementHistoryQuarterly
 
 ```js
-await yahooFinance.quoteSummary('PFE', { modules: [ "cashflowStatementHistoryQuarterly" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "cashflowStatementHistoryQuarterly" ] });
 
+{
+  "cashflowStatementHistoryQuarterly": {
+    "cashflowStatements": [
+      {
+        "maxAge": 1,
+        "endDate": new Date("2021-06-30T00:00:00.000Z"),
+        "netIncome": -138580000,
+        "depreciation": 4762000,
+        "changeToNetincome": 240489000,
+        "changeToAccountReceivables": -88363000,
+        "changeToLiabilities": 22811000,
+        "changeToOperatingActivities": -18369000,
+        "totalCashFromOperatingActivities": 22750000,
+        "capitalExpenditures": -697000,
+        "totalCashflowsFromInvestingActivities": -697000,
+        "netBorrowings": -200000000,
+        "otherCashflowsFromFinancingActivities": 762000,
+        "totalCashFromFinancingActivities": -31410000,
+        "effectOfExchangeRate": 701000,
+        "changeInCash": -8656000,
+        "issuanceOfStock": 167828000
+      },
+      /* ... */
+    ],
+    "maxAge": 86400
+  }
+}
 
 ```
 
@@ -359,34 +386,43 @@ await yahooFinance.quoteSummary('PFE', { modules: [ "cashflowStatementHistoryQua
 ### defaultKeyStatistics
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "defaultKeyStatistics" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "defaultKeyStatistics" ] });
 
 {
-  cashflowStatementHistoryQuarterly: {
-    cashflowStatements: [
-      {
-        maxAge: 1,
-        endDate: 2020-09-27T00:00:00.000Z,
-        netIncome: 2194000000,
-        depreciation: 1258000000,
-        changeToNetincome: -511000000,
-        changeToLiabilities: 0,
-        changeToOperatingActivities: -851000000,
-        totalCashFromOperatingActivities: 2090000000,
-        capitalExpenditures: -525000000,
-        investments: 838000000,
-        otherCashflowsFromInvestingActivities: 173000000,
-        totalCashflowsFromInvestingActivities: 481000000,
-        netBorrowings: -618000000,
-        otherCashflowsFromFinancingActivities: -2251000000,
-        totalCashFromFinancingActivities: -2821000000,
-        effectOfExchangeRate: 31000000,
-        changeInCash: -218000000,
-        issuanceOfStock: 48000000
-      },
-      /* ... */
-    ],
-    maxAge: 86400
+  "defaultKeyStatistics": {
+    "maxAge": 1,
+    "priceHint": 2,
+    "enterpriseValue": 46541389824,
+    "forwardPE": 124.5,
+    "profitMargins": -0.95135003,
+    "floatShares": 1513962964,
+    "sharesOutstanding": 1805229952,
+    "sharesShort": 58395451,
+    "sharesShortPriorMonth": 68132010,
+    "sharesShortPreviousMonthDate": 1625011200,
+    "dateShortInterest": 1627603200,
+    "sharesPercentSharesOut": 0.0311,
+    "heldPercentInsiders": 0.12776,
+    "heldPercentInstitutions": 0.25067,
+    "shortRatio": 2.11,
+    "shortPercentOfFloat": 0.0359,
+    "impliedSharesOutstanding": 1880080000,
+    "category": null,
+    "bookValue": 1.068,
+    "priceToBook": 23.314608,
+    "fundFamily": null,
+    "legalType": null,
+    "lastFiscalYearEnd": 1609372800,
+    "nextFiscalYearEnd": 1672444800,
+    "mostRecentQuarter": 1625011200,
+    "netIncomeToCommon": -1263715968,
+    "trailingEps": -0.79,
+    "pegRatio": 3.58,
+    "lastSplitFactor": null,
+    "enterpriseToRevenue": 35.037,
+    "enterpriseToEbitda": -37.24,
+    "52WeekChange": 1.6210527,
+    "SandP52WeekChange": 0.32111573
   }
 }
 
@@ -562,8 +598,24 @@ await yahooFinance.quoteSummary('TSLA', { modules: [ "financialData" ] });
 ### fundOwnership
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "fundOwnership" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "fundOwnership" ] });
 
+{
+  "fundOwnership": {
+    "maxAge": 1,
+    "ownershipList": [
+      {
+        "maxAge": 1,
+        "reportDate": new Date("2021-06-30T00:00:00.000Z"),
+        "organization": "ARK ETF Tr-ARK Innovation ETF",
+        "pctHeld": 0.0127,
+        "position": 22905465,
+        "value": 603788057
+      },
+      /* ... */
+    ]
+  }
+}
 
 ```
 
@@ -571,8 +623,83 @@ await yahooFinance.quoteSummary('', { modules: [ "fundOwnership" ] });
 ### fundPerformance
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "fundPerformance" ] });
+await yahooFinance.quoteSummary('URTH', { modules: [ "fundPerformance" ] });
 
+{
+  "fundPerformance": {
+    "maxAge": 1,
+    "performanceOverview": {
+      "asOfDate": new Date("2021-08-13T00:00:00.000Z"),
+      "ytdReturnPct": 0.1744,
+      "oneYearTotalReturn": 0.32860002,
+      "threeYearTotalReturn": 0.1592
+    },
+    "performanceOverviewCat": {},
+    "trailingReturns": {
+      "asOfDate": new Date("2021-06-30T00:00:00.000Z"),
+      "ytd": 0.1349,
+      "oneMonth": 0.015700001,
+      "threeMonth": 0.0766,
+      "oneYear": 0.39450002,
+      "threeYear": 0.153,
+      "fiveYear": 0.1505,
+      "tenYear": 0,
+      "lastBullMkt": 0,
+      "lastBearMkt": 0
+    },
+    "trailingReturnsNav": {
+      "ytd": 0.1322,
+      "oneMonth": 0.0138,
+      "threeMonth": 0.078200005,
+      "oneYear": 0.39240003,
+      "threeYear": 0.1529,
+      "fiveYear": 0.15100001,
+      "tenYear": 0
+    },
+    "trailingReturnsCat": {
+      "ytd": 0,
+      "oneMonth": 0,
+      "threeMonth": 0,
+      "oneYear": 0,
+      "threeYear": 0,
+      "fiveYear": 0,
+      "tenYear": 0,
+      "lastBullMkt": 0,
+      "lastBearMkt": 0
+    },
+    "annualTotalReturns": {
+      "returns": [
+        {
+          "year": 2020,
+          "annualValue": 0.1608675
+        },
+        /* ... */
+      ],
+      "returnsCat": []
+    },
+    "pastQuarterlyReturns": {
+      "returns": []
+    },
+    "riskOverviewStatistics": {
+      "riskStatistics": [
+        {
+          "year": "5y",
+          "alpha": 0.34,
+          "beta": 1.01,
+          "meanAnnualReturn": 1.27,
+          "rSquared": 99.35,
+          "stdDev": 14.69,
+          "sharpeRatio": 0.96,
+          "treynorRatio": 13.84
+        },
+        /* ... */
+      ]
+    },
+    "riskOverviewStatisticsCat": {
+      "riskStatisticsCat": []
+    }
+  }
+}
 
 ```
 
@@ -580,8 +707,32 @@ await yahooFinance.quoteSummary('', { modules: [ "fundPerformance" ] });
 ### fundProfile
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "fundProfile" ] });
+await yahooFinance.quoteSummary('URTH', { modules: [ "fundProfile" ] });
 
+{
+  "fundProfile": {
+    "maxAge": 1,
+    "styleBoxUrl": "https://s.yimg.com/lq/i/fi/3_0stylelargeeq2.gif",
+    "family": "iShares",
+    "categoryName": null,
+    "legalType": "Exchange Traded Fund",
+    "managementInfo": {
+      "managerName": null,
+      "managerBio": null
+    },
+    "feesExpensesInvestment": {
+      "annualReportExpenseRatio": 0.0023999999,
+      "annualHoldingsTurnover": 0.07,
+      "totalNetAssets": 114910.49,
+      "projectionValues": {}
+    },
+    "feesExpensesInvestmentCat": {
+      "totalNetAssets": 114910.49,
+      "projectionValuesCat": {}
+    },
+    "brokerages": []
+  }
+}
 
 ```
 
@@ -589,7 +740,42 @@ await yahooFinance.quoteSummary('', { modules: [ "fundProfile" ] });
 ### incomeStatementHistory
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "incomeStatementHistory" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "incomeStatementHistory" ] });
+
+{
+  "incomeStatementHistory": {
+    "incomeStatementHistory": [
+      {
+        "maxAge": 1,
+        "endDate": new Date("2020-12-31T00:00:00.000Z"),
+        "totalRevenue": 1092673000,
+        "costOfRevenue": 352547000,
+        "grossProfit": 740126000,
+        "researchDevelopment": 560660000,
+        "sellingGeneralAdministrative": 1352471000,
+        "nonRecurring": null,
+        "otherOperatingExpenses": null,
+        "totalOperatingExpenses": 2265678000,
+        "operatingIncome": -1173005000,
+        "totalOtherIncomeExpenseNet": -6022000,
+        "ebit": -1173005000,
+        "interestExpense": -14139000,
+        "incomeBeforeTax": -1179027000,
+        "incomeTaxExpense": -12636000,
+        "minorityInterest": null,
+        "netIncomeFromContinuingOps": -1166391000,
+        "discontinuedOperations": null,
+        "extraordinaryItems": null,
+        "effectOfAccountingCharges": null,
+        "otherItems": null,
+        "netIncome": -1166391000,
+        "netIncomeApplicableToCommonShares": -1166391000
+      },
+      /* ... */
+    ],
+    "maxAge": 86400
+  }
+}
 
 
 ```
@@ -598,8 +784,42 @@ await yahooFinance.quoteSummary('', { modules: [ "incomeStatementHistory" ] });
 ### incomeStatementHistoryQuarterly
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "incomeStatementHistoryQuarterly" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "incomeStatementHistoryQuarterly" ] });
 
+{
+  "incomeStatementHistoryQuarterly": {
+    "incomeStatementHistory": [
+      {
+        "maxAge": 1,
+        "endDate": new Date("2021-06-30T00:00:00.000Z"),
+        "totalRevenue": 375642000,
+        "costOfRevenue": 90926000,
+        "grossProfit": 284716000,
+        "researchDevelopment": 110524000,
+        "sellingGeneralAdministrative": 320340000,
+        "nonRecurring": null,
+        "otherOperatingExpenses": null,
+        "totalOperatingExpenses": 521790000,
+        "operatingIncome": -146148000,
+        "totalOtherIncomeExpenseNet": 1907000,
+        "ebit": -146148000,
+        "interestExpense": -590000,
+        "incomeBeforeTax": -144241000,
+        "incomeTaxExpense": -5661000,
+        "minorityInterest": null,
+        "netIncomeFromContinuingOps": -138580000,
+        "discontinuedOperations": null,
+        "extraordinaryItems": null,
+        "effectOfAccountingCharges": null,
+        "otherItems": null,
+        "netIncome": -138580000,
+        "netIncomeApplicableToCommonShares": -138580000
+      },
+      /* ... */
+    ],
+    "maxAge": 86400
+  }
+}
 
 ```
 
@@ -607,8 +827,23 @@ await yahooFinance.quoteSummary('', { modules: [ "incomeStatementHistoryQuarterl
 ### indexTrend
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "indexTrend" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "indexTrend" ] });
 
+{
+  "indexTrend": {
+    "maxAge": 1,
+    "symbol": "SP5",
+    "peRatio": 18.0569,
+    "pegRatio": 1.78265,
+    "estimates": [
+      {
+        "period": "0q",
+        "growth": 0.52900004
+      },
+      /* ... */
+    ]
+  }
+}
 
 ```
 
@@ -616,8 +851,15 @@ await yahooFinance.quoteSummary('', { modules: [ "indexTrend" ] });
 ### industryTrend
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "industryTrend" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "industryTrend" ] });
 
+{
+  "industryTrend": {
+    "maxAge": 1,
+    "symbol": null,
+    "estimates": []
+  }
+}
 
 ```
 
@@ -625,7 +867,26 @@ await yahooFinance.quoteSummary('', { modules: [ "industryTrend" ] });
 ### insiderHolders
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "insiderHolders" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "insiderHolders" ] });
+
+{
+  "insiderHolders": {
+    "holders": [
+      {
+        "maxAge": 1,
+        "name": "KARP ALEXANDER C.",
+        "relation": "Chief Executive Officer",
+        "url": "",
+        "transactionDescription": "Sale",
+        "latestTransDate": new Date("2021-07-23T00:00:00.000Z"),
+        "positionDirect": 6432260,
+        "positionDirectDate": 1626998400
+      },
+      /* ... */
+    ],
+    "maxAge": 1
+  }
+}
 
 
 ```
@@ -634,7 +895,28 @@ await yahooFinance.quoteSummary('', { modules: [ "insiderHolders" ] });
 ### insiderTransactions
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "insiderTransactions" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "insiderTransactions" ] });
+
+{
+  "insiderTransactions": {
+    "transactions": [
+      {
+        "maxAge": 1,
+        "shares": 1915887,
+        "value": 42390086,
+        "filerUrl": "",
+        "transactionText": "Sale at price 21.82 - 22.48 per share.",
+        "filerName": "KARP ALEXANDER C.",
+        "filerRelation": "Chief Executive Officer",
+        "moneyText": "",
+        "startDate": new Date("2021-07-23T00:00:00.000Z"),
+        "ownership": "D"
+      },
+      /* ... */
+    ],
+    "maxAge": 1
+  }
+}
 
 
 ```
@@ -643,8 +925,24 @@ await yahooFinance.quoteSummary('', { modules: [ "insiderTransactions" ] });
 ### institutionOwnership
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "institutionOwnership" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "institutionOwnership" ] });
 
+{
+  "institutionOwnership": {
+    "maxAge": 1,
+    "ownershipList": [
+      {
+        "maxAge": 1,
+        "reportDate": new Date("2021-06-30T00:00:00.000Z"),
+        "organization": "Blackrock Inc.",
+        "pctHeld": 0.0274,
+        "position": 49399569,
+        "value": 1302172638
+      },
+      /* ... */
+    ]
+  }
+}
 
 ```
 
@@ -652,8 +950,14 @@ await yahooFinance.quoteSummary('', { modules: [ "institutionOwnership" ] });
 ### majorDirectHolders
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "majorDirectHolders" ] });
+await yahooFinance.quoteSummary('KO', { modules: [ "majorDirectHolders" ] });
 
+{
+  "majorDirectHolders": {
+    "holders": [],
+    "maxAge": 1
+  }
+}
 
 ```
 
@@ -661,8 +965,17 @@ await yahooFinance.quoteSummary('', { modules: [ "majorDirectHolders" ] });
 ### majorHoldersBreakdown
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "majorHoldersBreakdown" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "majorHoldersBreakdown" ] });
 
+{
+  "majorHoldersBreakdown": {
+    "maxAge": 1,
+    "insidersPercentHeld": 0.12776,
+    "institutionsPercentHeld": 0.25067,
+    "institutionsFloatPercentHeld": 0.28738,
+    "institutionsCount": 879
+  }
+}
 
 ```
 
@@ -670,8 +983,24 @@ await yahooFinance.quoteSummary('', { modules: [ "majorHoldersBreakdown" ] });
 ### netSharePurchaseActivity
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "netSharePurchaseActivity" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "netSharePurchaseActivity" ] });
 
+{
+  "netSharePurchaseActivity": {
+    "maxAge": 1,
+    "period": "6m",
+    "buyInfoCount": 63,
+    "buyInfoShares": 271439668,
+    "buyPercentInsiderShares": 2.907,
+    "sellInfoCount": 77,
+    "sellInfoShares": 106877256,
+    "sellPercentInsiderShares": 1.145,
+    "netInfoCount": 140,
+    "netInfoShares": 164562413,
+    "netPercentInsiderShares": 1.763,
+    "totalInsiderShares": 257929376
+  }
+}
 
 ```
 
@@ -679,7 +1008,7 @@ await yahooFinance.quoteSummary('', { modules: [ "netSharePurchaseActivity" ] })
 ### price
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "price" ] });
+await yahooFinance.quoteSummary('TSLA', { modules: [ "price" ] });
 
 {
   price: {
@@ -726,8 +1055,25 @@ await yahooFinance.quoteSummary('', { modules: [ "price" ] });
 ### quoteType
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "quoteType" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "quoteType" ] });
 
+{
+  "quoteType": {
+    "exchange": "NYQ",
+    "quoteType": "EQUITY",
+    "symbol": "PLTR",
+    "underlyingSymbol": "PLTR",
+    "shortName": "Palantir Technologies Inc.",
+    "longName": "Palantir Technologies Inc.",
+    "firstTradeDateEpochUtc": new Date("2020-09-30T13:30:00.000Z"),
+    "timeZoneFullName": "America/New_York",
+    "timeZoneShortName": "EDT",
+    "uuid": "0ea79370-ee21-3603-b0a1-16f5e7b345f1",
+    "messageBoardId": "finmb_43580005",
+    "gmtOffSetMilliseconds": -14400000,
+    "maxAge": 1
+  }
+}
 
 ```
 
@@ -735,8 +1081,47 @@ await yahooFinance.quoteSummary('', { modules: [ "quoteType" ] });
 ### recommendationTrend
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "recommendationTrend" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "recommendationTrend" ] });
 
+{
+  "recommendationTrend": {
+    "trend": [
+      {
+        "period": "0m",
+        "strongBuy": 0,
+        "buy": 0,
+        "hold": 0,
+        "sell": 0,
+        "strongSell": 2
+      },
+      {
+        "period": "-1m",
+        "strongBuy": 1,
+        "buy": 1,
+        "hold": 4,
+        "sell": 1,
+        "strongSell": 2
+      },
+      {
+        "period": "-2m",
+        "strongBuy": 1,
+        "buy": 1,
+        "hold": 2,
+        "sell": 1,
+        "strongSell": 2
+      },
+      {
+        "period": "-3m",
+        "strongBuy": 1,
+        "buy": 0,
+        "hold": 5,
+        "sell": 0,
+        "strongSell": 0
+      }
+    ],
+    "maxAge": 86400
+  }
+}
 
 ```
 
@@ -753,8 +1138,15 @@ await yahooFinance.quoteSummary('', { modules: [ "secFilings" ] });
 ### sectorTrend
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "sectorTrend" ] });
+await yahooFinance.quoteSummary('PLTR', { modules: [ "sectorTrend" ] });
 
+{
+  "sectorTrend": {
+    "maxAge": 1,
+    "symbol": null,
+    "estimates": []
+  }
+}
 
 ```
 
@@ -809,7 +1201,7 @@ await yahooFinance.quoteSummary('AMZN', { modules: [ "summaryDetail" ] });
 ### summaryProfile
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "summaryProfile" ] });
+await yahooFinance.quoteSummary('AMZN', { modules: [ "summaryProfile" ] });
 
 {
   summaryProfile: {
