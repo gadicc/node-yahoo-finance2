@@ -398,9 +398,9 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "defaultKeyStatistics" ] })
     "floatShares": 1513962964,
     "sharesOutstanding": 1805229952,
     "sharesShort": 58395451,
-    "sharesShortPriorMonth": 68132010,
-    "sharesShortPreviousMonthDate": 1625011200,
-    "dateShortInterest": 1627603200,
+    "sharesShortPriorMonth": new Date("1972-02-28T13:33:30.000Z"),
+    "sharesShortPreviousMonthDate": new Date("2021-06-30T00:00:00.000Z"),
+    "dateShortInterest": new Date("2021-07-30T00:00:00.000Z"),
     "sharesPercentSharesOut": 0.0311,
     "heldPercentInsiders": 0.12776,
     "heldPercentInstitutions": 0.25067,
@@ -412,9 +412,9 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "defaultKeyStatistics" ] })
     "priceToBook": 23.314608,
     "fundFamily": null,
     "legalType": null,
-    "lastFiscalYearEnd": 1609372800,
-    "nextFiscalYearEnd": 1672444800,
-    "mostRecentQuarter": 1625011200,
+    "lastFiscalYearEnd": new Date("2020-12-31T00:00:00.000Z"),
+    "nextFiscalYearEnd": new Date("2022-12-31T00:00:00.000Z"),
+    "mostRecentQuarter": new Date("2021-06-30T00:00:00.000Z"),
     "netIncomeToCommon": -1263715968,
     "trailingEps": -0.79,
     "pegRatio": 3.58,
@@ -485,13 +485,13 @@ await yahooFinance.quoteSummary('MSFT', { modules: [ "earningsHistory" ] });
   earningsHistory: {
     history: [
       {
-        maxAge: 1,
-        epsActual: 1.4,
-        epsEstimate: 1.26,
-        epsDifference: 0.14,
-        surprisePercent: 0.111,
-        quarter: 1585612800,
-        period: '-4q' // "-3q", "-2q", "-1q"
+        "maxAge": 1,
+        "epsActual": 10.3,
+        "epsEstimate": 1.46,
+        "epsDifference": 8.84,
+        "surprisePercent": 6.055,
+        "quarter": new Date("2020-06-30T00:00:00.000Z"),
+        "period": "-4q" // "-3q", "-2q", "-1q"
       },
       /* ... */
     ],
@@ -880,7 +880,7 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "insiderHolders" ] });
         "transactionDescription": "Sale",
         "latestTransDate": new Date("2021-07-23T00:00:00.000Z"),
         "positionDirect": 6432260,
-        "positionDirectDate": 1626998400
+        "positionDirectDate": new Date("2021-07-23T00:00:00.000Z")
       },
       /* ... */
     ],
