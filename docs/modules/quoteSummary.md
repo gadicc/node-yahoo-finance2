@@ -357,7 +357,7 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "cashflowStatementHistoryQu
     "cashflowStatements": [
       {
         "maxAge": 1,
-        "endDate": "2021-06-30T00:00:00.000Z",
+        "endDate": new Date("2021-06-30T00:00:00.000Z"),
         "netIncome": -138580000,
         "depreciation": 4762000,
         "changeToNetincome": 240489000,
@@ -606,7 +606,7 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "fundOwnership" ] });
     "ownershipList": [
       {
         "maxAge": 1,
-        "reportDate": "2021-06-30T00:00:00.000Z",
+        "reportDate": new Date("2021-06-30T00:00:00.000Z"),
         "organization": "ARK ETF Tr-ARK Innovation ETF",
         "pctHeld": 0.0127,
         "position": 22905465,
@@ -629,14 +629,14 @@ await yahooFinance.quoteSummary('URTH', { modules: [ "fundPerformance" ] });
   "fundPerformance": {
     "maxAge": 1,
     "performanceOverview": {
-      "asOfDate": "2021-08-13T00:00:00.000Z",
+      "asOfDate": new Date("2021-08-13T00:00:00.000Z"),
       "ytdReturnPct": 0.1744,
       "oneYearTotalReturn": 0.32860002,
       "threeYearTotalReturn": 0.1592
     },
     "performanceOverviewCat": {},
     "trailingReturns": {
-      "asOfDate": "2021-06-30T00:00:00.000Z",
+      "asOfDate": new Date("2021-06-30T00:00:00.000Z"),
       "ytd": 0.1349,
       "oneMonth": 0.015700001,
       "threeMonth": 0.0766,
@@ -747,7 +747,7 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "incomeStatementHistory" ] 
     "incomeStatementHistory": [
       {
         "maxAge": 1,
-        "endDate": "2020-12-31T00:00:00.000Z",
+        "endDate": new Date("2020-12-31T00:00:00.000Z"),
         "totalRevenue": 1092673000,
         "costOfRevenue": 352547000,
         "grossProfit": 740126000,
@@ -791,7 +791,7 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "incomeStatementHistoryQuar
     "incomeStatementHistory": [
       {
         "maxAge": 1,
-        "endDate": "2021-06-30T00:00:00.000Z",
+        "endDate": new Date("2021-06-30T00:00:00.000Z"),
         "totalRevenue": 375642000,
         "costOfRevenue": 90926000,
         "grossProfit": 284716000,
@@ -878,7 +878,7 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "insiderHolders" ] });
         "relation": "Chief Executive Officer",
         "url": "",
         "transactionDescription": "Sale",
-        "latestTransDate": "2021-07-23T00:00:00.000Z",
+        "latestTransDate": new Date("2021-07-23T00:00:00.000Z"),
         "positionDirect": 6432260,
         "positionDirectDate": 1626998400
       },
@@ -909,7 +909,7 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "insiderTransactions" ] });
         "filerName": "KARP ALEXANDER C.",
         "filerRelation": "Chief Executive Officer",
         "moneyText": "",
-        "startDate": "2021-07-23T00:00:00.000Z",
+        "startDate": new Date("2021-07-23T00:00:00.000Z"),
         "ownership": "D"
       },
       /* ... */
@@ -933,7 +933,7 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "institutionOwnership" ] })
     "ownershipList": [
       {
         "maxAge": 1,
-        "reportDate": "2021-06-30T00:00:00.000Z",
+        "reportDate": new Date("2021-06-30T00:00:00.000Z"),
         "organization": "Blackrock Inc.",
         "pctHeld": 0.0274,
         "position": 49399569,
@@ -1065,7 +1065,7 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "quoteType" ] });
     "underlyingSymbol": "PLTR",
     "shortName": "Palantir Technologies Inc.",
     "longName": "Palantir Technologies Inc.",
-    "firstTradeDateEpochUtc": "2020-09-30T13:30:00.000Z",
+    "firstTradeDateEpochUtc": new Date("2020-09-30T13:30:00.000Z"),
     "timeZoneFullName": "America/New_York",
     "timeZoneShortName": "EDT",
     "uuid": "0ea79370-ee21-3603-b0a1-16f5e7b345f1",
