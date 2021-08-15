@@ -183,9 +183,9 @@ export interface DefaultKeyStatistics {
   floatShares?: number;
   sharesOutstanding?: number;
   sharesShort?: number;
-  sharesShortPriorMonth?: number;
-  sharesShortPreviousMonthDate?: number;
-  dateShortInterest?: number;
+  sharesShortPriorMonth?: Date;
+  sharesShortPreviousMonthDate?: Date;
+  dateShortInterest?: Date;
   sharesPercentSharesOut?: number;
   heldPercentInsiders?: number;
   heldPercentInstitutions?: number;
@@ -198,9 +198,9 @@ export interface DefaultKeyStatistics {
   priceToBook?: number;
   fundFamily: null | string;
   legalType: null | string;
-  lastFiscalYearEnd?: number;
-  nextFiscalYearEnd?: number;
-  mostRecentQuarter?: number;
+  lastFiscalYearEnd?: Date;
+  nextFiscalYearEnd?: Date;
+  mostRecentQuarter?: Date;
   earningsQuarterlyGrowth?: number;
   netIncomeToCommon?: number;
   trailingEps?: number;
@@ -213,7 +213,7 @@ export interface DefaultKeyStatistics {
   "52WeekChange"?: number;
   SandP52WeekChange?: number;
   lastDividendValue?: number;
-  lastDividendDate?: number;
+  lastDividendDate?: Date;
   ytdReturn?: number;
   beta3Year?: number;
   totalAssets?: number;
@@ -277,7 +277,7 @@ export interface EarningsHistoryHistory {
   epsEstimate: number | null;
   epsDifference: number | null;
   surprisePercent: number | null;
-  quarter: number | null;
+  quarter: Date | null;
   period: string;
 }
 
@@ -565,9 +565,9 @@ export interface Holder {
   transactionDescription: string;
   latestTransDate: Date;
   positionDirect?: number;
-  positionDirectDate?: number;
+  positionDirectDate?: Date;
   positionIndirect?: number;
-  positionIndirectDate?: number;
+  positionIndirectDate?: Date;
   positionSummaryDate?: Date;
 }
 
