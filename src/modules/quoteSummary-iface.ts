@@ -60,6 +60,7 @@ export interface AssetProfile {
   fax?: string;
   website?: string;
   industry?: string;
+  industrySymbol?: string;
   sector?: string;
   longBusinessSummary?: string;
   fullTimeEmployees?: number;
@@ -728,7 +729,7 @@ export interface Filing {
   title: string;
   edgarUrl: string;
   maxAge: number;
-  url: string;
+  url?: string;
 }
 
 export enum Type {
@@ -917,6 +918,7 @@ export enum Grade {
   LongTermBuy = "Long-Term Buy",
   MarketOutperform = "Market Outperform",
   MarketPerform = "Market Perform",
+  Mixed = "Mixed",
   Negative = "Negative",
   Neutral = "Neutral",
   InLine = "In-Line",
@@ -931,6 +933,7 @@ export enum Grade {
   SectorWeight = "Sector Weight",
   Sell = "Sell",
   StrongBuy = "Strong Buy",
+  TopPick = "Top Pick",
   Underperform = "Underperform",
   Underperformer = "Underperformer",
   Underweight = "Underweight",
