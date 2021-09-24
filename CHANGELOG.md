@@ -1,3 +1,10 @@
+## [1.14.5](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.4...v1.14.5) (2021-09-24)
+
+
+### Bug Fixes
+
+* **quoteSummary:** misc interface fixes (fixes [#295](https://github.com/gadicc/node-yahoo-finance2/issues/295)) ([5657df7](https://github.com/gadicc/node-yahoo-finance2/commit/5657df72005380a4b728d973a45796d5b9fa0781))
+
 ## [1.14.4](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.3...v1.14.4) (2021-08-12)
 
 
