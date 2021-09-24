@@ -1,0 +1,306 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CRM?formatted=false&modules=institutionOwnership"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "078e049gks10g"
+      ],
+      "x-yahoo-request-id": [
+        "078e049gks10g"
+      ],
+      "x-request-id": [
+        "85584b97-42e0-416c-b96f-f6862a8606f7"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "846"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 24 Sep 2021 17:00:00 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "institutionOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1625011200,
+                    "fmt": "2021-06-30"
+                  },
+                  "organization": "Vanguard Group, Inc. (The)",
+                  "pctHeld": {
+                    "raw": 0.0727,
+                    "fmt": "7.27%"
+                  },
+                  "position": {
+                    "raw": 71205534,
+                    "fmt": "71.21M",
+                    "longFmt": "71,205,534"
+                  },
+                  "value": {
+                    "raw": 17393375790,
+                    "fmt": "17.39B",
+                    "longFmt": "17,393,375,790"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1625011200,
+                    "fmt": "2021-06-30"
+                  },
+                  "organization": "FMR, LLC",
+                  "pctHeld": {
+                    "raw": 0.069699995,
+                    "fmt": "6.97%"
+                  },
+                  "position": {
+                    "raw": 68208440,
+                    "fmt": "68.21M",
+                    "longFmt": "68,208,440"
+                  },
+                  "value": {
+                    "raw": 16661275638,
+                    "fmt": "16.66B",
+                    "longFmt": "16,661,275,638"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1625011200,
+                    "fmt": "2021-06-30"
+                  },
+                  "organization": "Blackrock Inc.",
+                  "pctHeld": {
+                    "raw": 0.0623,
+                    "fmt": "6.23%"
+                  },
+                  "position": {
+                    "raw": 60984878,
+                    "fmt": "60.98M",
+                    "longFmt": "60,984,878"
+                  },
+                  "value": {
+                    "raw": 14896776149,
+                    "fmt": "14.9B",
+                    "longFmt": "14,896,776,149"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1625011200,
+                    "fmt": "2021-06-30"
+                  },
+                  "organization": "Price (T.Rowe) Associates Inc",
+                  "pctHeld": {
+                    "raw": 0.0428,
+                    "fmt": "4.28%"
+                  },
+                  "position": {
+                    "raw": 41905407,
+                    "fmt": "41.91M",
+                    "longFmt": "41,905,407"
+                  },
+                  "value": {
+                    "raw": 10236233767,
+                    "fmt": "10.24B",
+                    "longFmt": "10,236,233,767"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1625011200,
+                    "fmt": "2021-06-30"
+                  },
+                  "organization": "State Street Corporation",
+                  "pctHeld": {
+                    "raw": 0.0423,
+                    "fmt": "4.23%"
+                  },
+                  "position": {
+                    "raw": 41409350,
+                    "fmt": "41.41M",
+                    "longFmt": "41,409,350"
+                  },
+                  "value": {
+                    "raw": 10115061924,
+                    "fmt": "10.12B",
+                    "longFmt": "10,115,061,924"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1625011200,
+                    "fmt": "2021-06-30"
+                  },
+                  "organization": "Morgan Stanley",
+                  "pctHeld": {
+                    "raw": 0.016900001,
+                    "fmt": "1.69%"
+                  },
+                  "position": {
+                    "raw": 16563897,
+                    "fmt": "16.56M",
+                    "longFmt": "16,563,897"
+                  },
+                  "value": {
+                    "raw": 4046063120,
+                    "fmt": "4.05B",
+                    "longFmt": "4,046,063,120"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1625011200,
+                    "fmt": "2021-06-30"
+                  },
+                  "organization": "Wellington Management Group, LLP",
+                  "pctHeld": {
+                    "raw": 0.0154,
+                    "fmt": "1.54%"
+                  },
+                  "position": {
+                    "raw": 15084189,
+                    "fmt": "15.08M",
+                    "longFmt": "15,084,189"
+                  },
+                  "value": {
+                    "raw": 3684614847,
+                    "fmt": "3.68B",
+                    "longFmt": "3,684,614,847"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1625011200,
+                    "fmt": "2021-06-30"
+                  },
+                  "organization": "Geode Capital Management, LLC",
+                  "pctHeld": {
+                    "raw": 0.014099999,
+                    "fmt": "1.41%"
+                  },
+                  "position": {
+                    "raw": 13774687,
+                    "fmt": "13.77M",
+                    "longFmt": "13,774,687"
+                  },
+                  "value": {
+                    "raw": 3364742793,
+                    "fmt": "3.36B",
+                    "longFmt": "3,364,742,793"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1625011200,
+                    "fmt": "2021-06-30"
+                  },
+                  "organization": "Fisher Asset Management, LLC",
+                  "pctHeld": {
+                    "raw": 0.0137,
+                    "fmt": "1.37%"
+                  },
+                  "position": {
+                    "raw": 13420800,
+                    "fmt": "13.42M",
+                    "longFmt": "13,420,800"
+                  },
+                  "value": {
+                    "raw": 3278298816,
+                    "fmt": "3.28B",
+                    "longFmt": "3,278,298,816"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1625011200,
+                    "fmt": "2021-06-30"
+                  },
+                  "organization": "Northern Trust Corporation",
+                  "pctHeld": {
+                    "raw": 0.0127,
+                    "fmt": "1.27%"
+                  },
+                  "position": {
+                    "raw": 12436008,
+                    "fmt": "12.44M",
+                    "longFmt": "12,436,008"
+                  },
+                  "value": {
+                    "raw": 3037743674,
+                    "fmt": "3.04B",
+                    "longFmt": "3,037,743,674"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
