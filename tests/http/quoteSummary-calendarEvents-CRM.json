@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CRM?formatted=false&modules=calendarEvents"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "2gds4tlgks10f"
+      ],
+      "x-yahoo-request-id": [
+        "2gds4tlgks10f"
+      ],
+      "x-request-id": [
+        "49d4215f-bb2f-4def-a462-ec9946d52822"
+      ],
+      "content-length": [
+        "265"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Fri, 24 Sep 2021 16:59:59 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "calendarEvents": {
+              "maxAge": 1,
+              "earnings": {
+                "earningsDate": [
+                  1638183540,
+                  1638532800
+                ],
+                "earningsAverage": 0.92,
+                "earningsLow": 0.87,
+                "earningsHigh": 0.97,
+                "revenueAverage": 6799310000,
+                "revenueLow": 6780620000,
+                "revenueHigh": 6923200000
+              }
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -9,6 +9,7 @@ const testSymbols = [
   // incomeStatementHistory/sellingGeneralAdministrative is null (#258)
   // "Got {}->null for 'number', did you want 'number | null' ?"
   "CMCOM.AS",
+  "CRM",
 ];
 
 const yf = testYf({ quoteSummary });
