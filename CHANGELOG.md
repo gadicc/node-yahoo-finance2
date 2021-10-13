@@ -1,3 +1,10 @@
+## [1.14.6](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.5...v1.14.6) (2021-10-13)
+
+
+### Bug Fixes
+
+* **pkg/esm:** target es2020->es2019: workaround old toolchains ([#279](https://github.com/gadicc/node-yahoo-finance2/issues/279)) ([ab63b27](https://github.com/gadicc/node-yahoo-finance2/commit/ab63b2773d622a08cde845abb52ac1e4f521e27c))
+
 ## [1.14.5](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.4...v1.14.5) (2021-09-24)
 
 
