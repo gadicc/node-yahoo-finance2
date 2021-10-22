@@ -66,6 +66,8 @@ function throwErr(err?: Error | null): void {
 
 if (OUTPUT_PATH === process.stdout) {
   process.stdout.write(schemaString, throwErr);
+} else if (typeof OUTPUT_PATH === "string") {
+  writeFile(OUTPUT_PATH, schemaString, throwErr);
 } else {
-  writeFile(OUTPUT_PATH as string, schemaString, throwErr);
+  throw new Error("Unsupported output path");
 }
