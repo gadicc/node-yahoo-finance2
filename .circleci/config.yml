@@ -4,14 +4,14 @@
 #
 version: 2.1
 orbs:
-  codecov: codecov/codecov@1.2.5
+  codecov: codecov/codecov@3.2.0
 jobs:
   build:
     docker:
       # https://circleci.com/developer/images/image/cimg/node
       #- image: cimg/node:12.22.1
       #- currently we need this for dynamic import in module tests, ONLY.
-      - image: cimg/node:14.18.0
+      - image: cimg/node:14.18.1
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images

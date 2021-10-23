@@ -33,7 +33,12 @@ function itValidates(
     try {
       await yf.quoteSummary(symbol, { modules }, { devel });
     } catch (error) {
-      if (error.message.match(/^No fundamentals data found/)) return;
+      if (
+        // TypeScript 4.4.4 assumes errors are `unknown`, need to type guard.
+        error instanceof Error &&
+        error.message.match(/^No fundamentals data found/)
+      )
+        return;
       throw error;
     }
   });
