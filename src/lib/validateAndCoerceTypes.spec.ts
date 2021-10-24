@@ -9,6 +9,7 @@ ajv.addSchema({
   $schema: "http://json-schema.org/draft-07/schema#",
   properties: {
     date: { yahooFinanceType: "date" },
+    dateNull: { yahooFinanceType: "date|null" },
     dateInMs: { yahooFinanceType: "DateInMs" },
     twoNumberRange: { yahooFinanceType: "TwoNumberRange" },
     number: { yahooFinanceType: "number" },
@@ -165,6 +166,46 @@ describe("validateAndCoerceTypes", () => {
         const object = { date };
         validateAndCoerceTypes({ ...defLogParams, object });
         expect(object.date).toBe(date);
+      });
+
+      it("passes if data is null and type IS date|null", () => {
+        const object = { dateNull: null };
+        expect(() =>
+          validateAndCoerceTypes({ ...defLogParams, object })
+        ).not.toThrow();
+      });
+
+      it("fails if data is null and type IS NOT date|null", () => {
+        const object = { date: null };
+        let error: FailedYahooValidationError | any;
+        try {
+          validateAndCoerceTypes({ ...defNoLogParams, object });
+        } catch (e) {
+          error = e;
+        }
+        // @ts-ignore
+        expect(error).toBeDefined();
+        expect(error.errors[0].message).toMatch(/Expecting date/);
+      });
+
+      it("passes and coerces {} to null if type IS Date|null", () => {
+        const object = { dateNull: {} };
+        expect(() =>
+          validateAndCoerceTypes({ ...defLogParams, object })
+        ).not.toThrow();
+        expect(object.dateNull).toBe(null);
+      });
+
+      it("fails when receiving {} if type IS NOT date|null", () => {
+        const object = { date: {} };
+        let error: FailedYahooValidationError | any;
+        try {
+          validateAndCoerceTypes({ ...defNoLogParams, object });
+        } catch (e) {
+          error = e;
+        }
+        expect(error).toBeDefined();
+        expect(error.errors[0].message).toMatch(/date \| null/);
       });
     });
 

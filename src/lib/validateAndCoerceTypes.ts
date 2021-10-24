@@ -91,7 +91,19 @@ ajv.addKeyword({
 
         if (typeof data === "number") return set(new Date(data * 1000));
 
-        if (data === null) return set(null);
+        if (data === null) {
+          if (schema === "date|null") {
+            return true;
+          } else {
+            validate.errors = validate.errors || [];
+            validate.errors.push({
+              keyword: "yahooFinanceType",
+              message: "Expecting date'ish but got null",
+              params: { schema, data },
+            });
+            return false;
+          }
+        }
 
         if (typeof data === "object") {
           if (Object.keys(data).length === 0) {
