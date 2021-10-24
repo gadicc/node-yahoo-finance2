@@ -3973,13 +3973,13 @@
           "yahooFinanceType": "number"
         },
         "sharesShortPriorMonth": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "date"
         },
         "sharesShortPreviousMonthDate": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "date"
         },
         "dateShortInterest": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "date"
         },
         "sharesPercentSharesOut": {
           "yahooFinanceType": "number"
@@ -4027,13 +4027,13 @@
           ]
         },
         "lastFiscalYearEnd": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "date"
         },
         "nextFiscalYearEnd": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "date"
         },
         "mostRecentQuarter": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "date"
         },
         "earningsQuarterlyGrowth": {
           "yahooFinanceType": "number"
@@ -4075,7 +4075,7 @@
           "yahooFinanceType": "number"
         },
         "lastDividendDate": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "date"
         },
         "ytdReturn": {
           "yahooFinanceType": "number"
@@ -4298,7 +4298,14 @@
           "yahooFinanceType": "number|null"
         },
         "quarter": {
-          "yahooFinanceType": "number|null"
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "period": {
           "type": "string"
@@ -5341,13 +5348,13 @@
           "yahooFinanceType": "number"
         },
         "positionDirectDate": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "date"
         },
         "positionIndirect": {
           "yahooFinanceType": "number"
         },
         "positionIndirectDate": {
-          "yahooFinanceType": "number"
+          "yahooFinanceType": "date"
         },
         "positionSummaryDate": {
           "yahooFinanceType": "date"
