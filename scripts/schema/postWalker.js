@@ -1,3 +1,6 @@
+const isDate = (schema) =>
+  schema.type === "string" && schema.format === "date-time";
+
 const funcs = [
   /*
 
@@ -45,7 +48,19 @@ const funcs = [
   },
 
   function Date(schema, parent, state) {
-    if (schema.type === "string" && schema.format === "date-time") {
+    const anyOf = schema.anyOf;
+    if (
+      anyOf &&
+      anyOf.length === 2 &&
+      ((isDate(anyOf[0]) && anyOf[1].type === "null") ||
+        (isDate(anyOf[1]) && anyOf[0].type === "null"))
+    ) {
+      delete schema.anyOf;
+      schema.yahooFinanceType = "date|null";
+      return true;
+    }
+
+    if (isDate(schema)) {
       delete schema.format;
       delete schema.type;
       schema.yahooFinanceType = "date";

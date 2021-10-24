@@ -80,7 +80,7 @@ ajv.addKeyword({
           }
           if (typeof data.raw === "number") return set(data.raw);
         }
-      } else if (schema === "date") {
+      } else if (schema === "date" || schema === "date|null") {
         if (data instanceof Date) {
           // Validate existing date objects.
           // Generally we receive JSON but in the case of "historical", the
@@ -93,8 +93,26 @@ ajv.addKeyword({
 
         if (data === null) return set(null);
 
-        if (typeof data === "object" && typeof data.raw === "number")
-          return set(new Date(data.raw * 1000));
+        if (typeof data === "object") {
+          if (Object.keys(data).length === 0) {
+            // Value of {} becomes null
+            // Note, TypeScript types should be "data | null"
+            if (schema === "date|null") {
+              return set(null);
+            } else {
+              validate.errors = validate.errors || [];
+              validate.errors.push({
+                keyword: "yahooFinanceType",
+                message:
+                  "Got {}->null for 'date', did you want 'date | null' ?",
+                params: { schema, data },
+              });
+              return false;
+            }
+          }
+          if (typeof data.raw === "number")
+            return set(new Date(data.raw * 1000));
+        }
 
         if (typeof data === "string") {
           if (
