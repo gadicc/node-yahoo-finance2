@@ -1129,8 +1129,32 @@ await yahooFinance.quoteSummary('PLTR', { modules: [ "recommendationTrend" ] });
 ### secFilings
 
 ```js
-await yahooFinance.quoteSummary('', { modules: [ "secFilings" ] });
+await yahooFinance.quoteSummary('AAPL', { modules: [ "secFilings" ] });
 
+{
+  secFilings: {
+    filings: [
+      {
+        date: new Date("2021-08-05"),
+        epochDate: new Date("2021-08-05T21:32:55.000Z"),
+        type: "8-K",
+        title: "Other Events, Financial Statements and Exhibits",
+        edgarUrl: "https://yahoo.brand.edgar-online.com/DisplayFiling.aspx?TabIndex=2&dcn=0001193125-21-237787&nav=1&src=Yahoo",
+        maxAge: 1
+      },
+      {
+        date: new Date("2021-07-28"),
+        epochDate: new Date("2021-07-28T11:02:48.000Z"),
+        type: "10-Q",
+        title: "Quarterly Report",
+        edgarUrl: "https://yahoo.brand.edgar-online.com/DisplayFiling.aspx?TabIndex=2&dcn=0000320193-21-000065&nav=1&src=Yahoo",
+        maxAge: 1
+      },
+      ...
+    ],
+    maxAge: 86400
+  }
+}
 
 ```
 
