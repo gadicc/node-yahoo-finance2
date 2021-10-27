@@ -43,7 +43,7 @@
     "schema": "node --loader ts-node/esm scripts/schema.js > schema.json",
     "build": "yarn run build:esm && yarn run build:cjs && yarn run build:post",
     "build:esm": "tsc --module es2020 --target es2019 --outDir dist/esm",
-    "build:cjs": "tsc --module commonjs --target es2015 --outDir dist/cjs && sed -i '' 's/\"type\": \"module\",/\"type:\": \"commonjs\",/' dist/cjs/package.json",
+    "build:cjs": "tsc --module commonjs --target es2015 --outDir dist/cjs && sed 's/\"type\": \"module\",/\"type:\": \"commonjs\",/' dist/cjs/package.json > dist/cjs/package-changed.json && mv dist/cjs/package-changed.json dist/cjs/package.json",
     "build:post": "scripts/json-transform.sh",
     "generateSchema": "yarn schema",
     "prepublishOnly": "yarn build && yarn generateSchema && yarn build:post",
