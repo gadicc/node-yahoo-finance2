@@ -9,6 +9,7 @@ export interface SearchQuoteYahoo {
   symbol: string; // "BABA"
   isYahooFinance: true; // true
   exchange: string; // "NYQ"
+  exchDisp?: string; // "London" e.g. with BJ0CDD2
   shortname?: string; // "Alibaba Group Holding Limited"
   longname?: string; // "Alibaba Group Holding Limited"
   index: "quotes"; // "quotes"
