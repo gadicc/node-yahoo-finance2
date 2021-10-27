@@ -1,3 +1,48 @@
+# [2.0.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.6...v2.0.0) (2021-10-27)
+
+
+### Bug Fixes
+
+* **search:** allow exchDisp? type ([80236e5](https://github.com/gadicc/node-yahoo-finance2/commit/80236e54d3d67518a5aa67d62867358b8bacbd15))
+* **validation:** correctly handle null dates + coverage ([#264](https://github.com/gadicc/node-yahoo-finance2/issues/264)) ([68378d5](https://github.com/gadicc/node-yahoo-finance2/commit/68378d5dc4dba2e773fa41c72eee60d07455a891))
+
+
+### Features
+
+* **validation:** add support for "date|null" type ([#264](https://github.com/gadicc/node-yahoo-finance2/issues/264)) ([52ea8e4](https://github.com/gadicc/node-yahoo-finance2/commit/52ea8e4bdcc4261d012de95b88c659deff5fe1b0))
+
+
+* feat(quoteSummary)!: unify date format (#264) ([4cf1f62](https://github.com/gadicc/node-yahoo-finance2/commit/4cf1f624d55d92f80db4b36b3afe9414f5eb5a3c)), closes [#264](https://github.com/gadicc/node-yahoo-finance2/issues/264) [#263](https://github.com/gadicc/node-yahoo-finance2/issues/263) [#263](https://github.com/gadicc/node-yahoo-finance2/issues/263)
+
+
+### BREAKING CHANGES
+
+* use `date` instead of `number` for various fields.
+The original use of `number` was unintentional.  This commit fixes that.
+Unfortunately the type change is a breaking change.
+
+* docs: add insiderTransaction example
+* docs: add insiderHolders example
+* docs: add netSharePurchaseActivity example
+* docs: add institutionOwnership example
+* docs: add cashflowStatementHistoryQuarterly example
+* docs: add fundOwnership example
+* docs: add incomeStatementHistory example
+* docs: add incomeStatementHistoryQuarterly example
+* docs: add indexTrend example
+* docs: add industryTrend example
+* docs: add majorDirectHolders example
+* docs: add majorHoldersBreakdown example
+* docs: add quoteType example
+* docs: add recommendationTrend example
+* docs: add sectorTrend example
+* docs: add fundPerformance example
+* docs: add fundProfile example
+* docs: add missing symbols in example request
+* docs: correct example response
+* docs: correct defaultKeyStatistics example
+* docs: align date format
+
 ## [1.14.6](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.5...v1.14.6) (2021-10-13)
 
 
