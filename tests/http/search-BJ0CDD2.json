@@ -1,0 +1,101 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=BJ0CDD2"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "62u44b9gnibv8"
+      ],
+      "x-yahoo-request-id": [
+        "62u44b9gnibv8"
+      ],
+      "x-request-id": [
+        "36c04ba5-9e8a-445d-b609-cb0716fda6f3"
+      ],
+      "content-length": [
+        "600"
+      ],
+      "x-envoy-upstream-service-time": [
+        "27"
+      ],
+      "date": [
+        "Wed, 27 Oct 2021 10:54:32 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 1,
+      "quotes": [
+        {
+          "exchange": "LSE",
+          "shortname": "THE SCHIEHALLION FUND LIMITED O",
+          "quoteType": "EQUITY",
+          "symbol": "MNTN.L",
+          "index": "quotes",
+          "score": 20027,
+          "typeDisp": "Equity",
+          "longname": "The Schiehallion Fund Limited",
+          "exchDisp": "London",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 25,
+      "timeTakenForQuotes": 417,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0
+    }
+  }
+}
