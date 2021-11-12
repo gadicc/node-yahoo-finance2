@@ -244,6 +244,275 @@
       ],
       "additionalProperties": false
     },
+    "Historical2Result": {
+      "type": "object",
+      "properties": {
+        "quote": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "yahooFinanceType": "date"
+              },
+              "open": {
+                "yahooFinanceType": "number"
+              },
+              "high": {
+                "yahooFinanceType": "number"
+              },
+              "low": {
+                "yahooFinanceType": "number"
+              },
+              "close": {
+                "yahooFinanceType": "number"
+              },
+              "adjClose": {
+                "yahooFinanceType": "number"
+              },
+              "volume": {
+                "yahooFinanceType": "number"
+              }
+            },
+            "required": [
+              "date",
+              "open",
+              "high",
+              "low",
+              "close",
+              "volume"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "dividends": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "yahooFinanceType": "date"
+              },
+              "amount": {
+                "yahooFinanceType": "number"
+              }
+            },
+            "required": [
+              "date",
+              "amount"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "splits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "yahooFinanceType": "date"
+              },
+              "numerator": {
+                "yahooFinanceType": "number"
+              },
+              "denominator": {
+                "yahooFinanceType": "number"
+              },
+              "splitRatio": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "date",
+              "numerator",
+              "denominator",
+              "splitRatio"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "currency": {
+              "type": "string"
+            },
+            "symbol": {
+              "type": "string"
+            },
+            "exchangeName": {
+              "type": "string"
+            },
+            "instrumentType": {
+              "type": "string"
+            },
+            "firstTradeDate": {
+              "yahooFinanceType": "date"
+            },
+            "regularMarketTime": {
+              "yahooFinanceType": "date"
+            },
+            "gmtoffset": {
+              "yahooFinanceType": "number"
+            },
+            "timezone": {
+              "type": "string"
+            },
+            "exchangeTimezoneName": {
+              "type": "string"
+            },
+            "regularMarketPrice": {
+              "yahooFinanceType": "number"
+            },
+            "chartPreviousClose": {
+              "yahooFinanceType": "number"
+            },
+            "priceHint": {
+              "yahooFinanceType": "number"
+            },
+            "currentTradingPeriod": {
+              "type": "object",
+              "properties": {
+                "pre": {
+                  "$ref": "#/definitions/Historical2TradingPeriod"
+                },
+                "regular": {
+                  "$ref": "#/definitions/Historical2TradingPeriod"
+                },
+                "post": {
+                  "$ref": "#/definitions/Historical2TradingPeriod"
+                }
+              },
+              "required": [
+                "pre",
+                "regular",
+                "post"
+              ],
+              "additionalProperties": false
+            },
+            "dataGranularity": {
+              "type": "string",
+              "enum": [
+                "1d",
+                "1wk",
+                "1mo"
+              ]
+            },
+            "range": {
+              "type": "string"
+            },
+            "validRanges": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "symbol",
+            "exchangeName",
+            "instrumentType",
+            "firstTradeDate",
+            "regularMarketTime",
+            "gmtoffset",
+            "timezone",
+            "exchangeTimezoneName",
+            "regularMarketPrice",
+            "chartPreviousClose",
+            "priceHint",
+            "currentTradingPeriod",
+            "dataGranularity",
+            "range",
+            "validRanges"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "quote",
+        "meta"
+      ],
+      "additionalProperties": false
+    },
+    "Historical2TradingPeriod": {
+      "type": "object",
+      "properties": {
+        "timezone": {
+          "type": "string"
+        },
+        "start": {
+          "yahooFinanceType": "date"
+        },
+        "end": {
+          "yahooFinanceType": "date"
+        },
+        "gmtoffset": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "timezone",
+        "start",
+        "end",
+        "gmtoffset"
+      ],
+      "additionalProperties": false
+    },
+    "Historical2Options": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "interval": {
+          "type": "string",
+          "enum": [
+            "1d",
+            "1wk",
+            "1mo"
+          ]
+        },
+        "events": {
+          "type": "string",
+          "enum": [
+            "div",
+            "split",
+            "div|split"
+          ]
+        },
+        "includeAdjustedClose": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "period1",
+        "period2"
+      ],
+      "additionalProperties": false
+    },
     "InsightsResult": {
       "type": "object",
       "properties": {
