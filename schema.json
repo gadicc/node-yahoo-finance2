@@ -42,209 +42,7 @@
       ],
       "additionalProperties": false
     },
-    "AutocResultSet": {
-      "type": "object",
-      "properties": {
-        "Query": {
-          "type": "string"
-        },
-        "Result": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/AutocResult"
-          }
-        }
-      },
-      "required": [
-        "Query",
-        "Result"
-      ],
-      "additionalProperties": false
-    },
-    "AutocResult": {
-      "type": "object",
-      "properties": {
-        "symbol": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "exch": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
-        },
-        "exchDisp": {
-          "type": "string"
-        },
-        "typeDisp": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "symbol",
-        "name",
-        "exch",
-        "type",
-        "exchDisp",
-        "typeDisp"
-      ],
-      "additionalProperties": false
-    },
-    "AutocOptions": {
-      "type": "object",
-      "properties": {
-        "region": {
-          "yahooFinanceType": "number"
-        },
-        "lang": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": false
-    },
-    "*": {
-      "type": "object",
-      "properties": {
-        "this": {
-          "$ref": "#/definitions/ModuleThis"
-        },
-        "query": {
-          "type": "string"
-        },
-        "queryOptionsOverrides": {
-          "$ref": "#/definitions/AutocOptions"
-        },
-        "moduleOptions": {
-          "$ref": "#/definitions/ModuleOptions"
-        }
-      },
-      "required": [
-        "this",
-        "query"
-      ],
-      "additionalProperties": false
-    },
-    "ModuleThis": {
-      "type": "object",
-      "properties": {
-        "_moduleExec": {}
-      },
-      "required": [
-        "_moduleExec"
-      ]
-    },
-    "ModuleOptions": {
-      "type": "object",
-      "properties": {
-        "validateResult": {
-          "type": "boolean"
-        },
-        "devel": {
-          "type": [
-            "boolean",
-            "string"
-          ]
-        },
-        "fetchOptions": {
-          "type": "object"
-        }
-      },
-      "additionalProperties": false
-    },
-    "HistoricalResult": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/HistoricalRow"
-      }
-    },
-    "HistoricalRow": {
-      "type": "object",
-      "properties": {
-        "date": {
-          "yahooFinanceType": "date"
-        },
-        "open": {
-          "yahooFinanceType": "number"
-        },
-        "high": {
-          "yahooFinanceType": "number"
-        },
-        "low": {
-          "yahooFinanceType": "number"
-        },
-        "close": {
-          "yahooFinanceType": "number"
-        },
-        "adjClose": {
-          "yahooFinanceType": "number"
-        },
-        "volume": {
-          "yahooFinanceType": "number"
-        }
-      },
-      "required": [
-        "date",
-        "open",
-        "high",
-        "low",
-        "close",
-        "volume"
-      ],
-      "additionalProperties": false
-    },
-    "HistoricalOptions": {
-      "type": "object",
-      "properties": {
-        "period1": {
-          "anyOf": [
-            {
-              "yahooFinanceType": "date"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "yahooFinanceType": "number"
-            }
-          ]
-        },
-        "period2": {
-          "anyOf": [
-            {
-              "yahooFinanceType": "date"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "yahooFinanceType": "number"
-            }
-          ]
-        },
-        "interval": {
-          "type": "string",
-          "enum": [
-            "1d",
-            "1wk",
-            "1mo"
-          ]
-        },
-        "events": {
-          "type": "string"
-        },
-        "includeAdjustedClose": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "period1"
-      ],
-      "additionalProperties": false
-    },
-    "Historical2Result": {
+    "HistoricalV8Result": {
       "type": "object",
       "properties": {
         "quote": {
@@ -374,13 +172,13 @@
               "type": "object",
               "properties": {
                 "pre": {
-                  "$ref": "#/definitions/Historical2TradingPeriod"
+                  "$ref": "#/definitions/HistoricalV8TradingPeriod"
                 },
                 "regular": {
-                  "$ref": "#/definitions/Historical2TradingPeriod"
+                  "$ref": "#/definitions/HistoricalV8TradingPeriod"
                 },
                 "post": {
-                  "$ref": "#/definitions/Historical2TradingPeriod"
+                  "$ref": "#/definitions/HistoricalV8TradingPeriod"
                 }
               },
               "required": [
@@ -434,7 +232,7 @@
       ],
       "additionalProperties": false
     },
-    "Historical2TradingPeriod": {
+    "HistoricalV8TradingPeriod": {
       "type": "object",
       "properties": {
         "timezone": {
@@ -458,7 +256,7 @@
       ],
       "additionalProperties": false
     },
-    "Historical2Options": {
+    "HistoricalV8Options": {
       "type": "object",
       "properties": {
         "period1": {
@@ -510,6 +308,209 @@
       "required": [
         "period1",
         "period2"
+      ],
+      "additionalProperties": false
+    },
+    "*": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/HistoricalV8Options"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "symbol",
+        "queryOptionsOverrides"
+      ],
+      "additionalProperties": false
+    },
+    "ModuleThis": {
+      "type": "object",
+      "properties": {
+        "_moduleExec": {}
+      },
+      "required": [
+        "_moduleExec"
+      ]
+    },
+    "ModuleOptions": {
+      "type": "object",
+      "properties": {
+        "validateResult": {
+          "type": "boolean"
+        },
+        "devel": {
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "fetchOptions": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AutocResultSet": {
+      "type": "object",
+      "properties": {
+        "Query": {
+          "type": "string"
+        },
+        "Result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AutocResult"
+          }
+        }
+      },
+      "required": [
+        "Query",
+        "Result"
+      ],
+      "additionalProperties": false
+    },
+    "AutocResult": {
+      "type": "object",
+      "properties": {
+        "symbol": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "exch": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "exchDisp": {
+          "type": "string"
+        },
+        "typeDisp": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "name",
+        "exch",
+        "type",
+        "exchDisp",
+        "typeDisp"
+      ],
+      "additionalProperties": false
+    },
+    "AutocOptions": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "yahooFinanceType": "number"
+        },
+        "lang": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "HistoricalResult": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/HistoricalRow"
+      }
+    },
+    "HistoricalRow": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "yahooFinanceType": "date"
+        },
+        "open": {
+          "yahooFinanceType": "number"
+        },
+        "high": {
+          "yahooFinanceType": "number"
+        },
+        "low": {
+          "yahooFinanceType": "number"
+        },
+        "close": {
+          "yahooFinanceType": "number"
+        },
+        "adjClose": {
+          "yahooFinanceType": "number"
+        },
+        "volume": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "additionalProperties": false
+    },
+    "HistoricalOptions": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "interval": {
+          "type": "string",
+          "enum": [
+            "1d",
+            "1wk",
+            "1mo"
+          ]
+        },
+        "events": {
+          "type": "string"
+        },
+        "includeAdjustedClose": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "period1"
       ],
       "additionalProperties": false
     },

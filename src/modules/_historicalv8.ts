@@ -5,7 +5,7 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.js";
 
-export interface Historical2Result {
+export interface HistoricalV8Result {
   quote: {
     date: Date;
     open: number;
@@ -36,9 +36,9 @@ export interface Historical2Result {
     chartPreviousClose: number;
     priceHint: number;
     currentTradingPeriod: {
-      pre: Historical2TradingPeriod;
-      regular: Historical2TradingPeriod;
-      post: Historical2TradingPeriod;
+      pre: HistoricalV8TradingPeriod;
+      regular: HistoricalV8TradingPeriod;
+      post: HistoricalV8TradingPeriod;
     };
     dataGranularity: "1d" | "1wk" | "1mo";
     range: string;
@@ -46,14 +46,14 @@ export interface Historical2Result {
   };
 }
 
-export interface Historical2TradingPeriod {
+export interface HistoricalV8TradingPeriod {
   timezone: string;
   start: Date;
   end: Date;
   gmtoffset: number;
 }
 
-export interface Historical2Options {
+export interface HistoricalV8Options {
   period1: Date | string | number;
   period2: Date | string | number;
   interval?: "1d" | "1wk" | "1mo";
@@ -62,7 +62,7 @@ export interface Historical2Options {
 }
 
 const queryOptionsDefaults: Omit<
-  Omit<Historical2Options, "period1">,
+  Omit<HistoricalV8Options, "period1">,
   "period2"
 > & {
   formatted: true;
@@ -72,35 +72,35 @@ const queryOptionsDefaults: Omit<
   formatted: true,
 };
 
-export default function historical2(
+export default function HistoricalV8(
   this: ModuleThis,
   symbol: string,
-  queryOptionsOverrides: Historical2Options,
+  queryOptionsOverrides: HistoricalV8Options,
   moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<Historical2Result>;
+): Promise<HistoricalV8Result>;
 
-export default function historical2(
+export default function HistoricalV8(
   this: ModuleThis,
   symbol: string,
-  queryOptionsOverrides: Historical2Options,
+  queryOptionsOverrides: HistoricalV8Options,
   moduleOptions?: ModuleOptionsWithValidateFalse
 ): Promise<any>;
 
-export default function historical2(
+export default function HistoricalV8(
   this: ModuleThis,
   symbol: string,
-  queryOptionsOverrides: Historical2Options,
+  queryOptionsOverrides: HistoricalV8Options,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
   return this._moduleExec({
-    moduleName: "historical2",
+    moduleName: "HistoricalV8",
 
     query: {
       url: "https://query1.finance.yahoo.com/v8/finance/chart/" + symbol,
-      schemaKey: "#/definitions/Historical2Options",
+      schemaKey: "#/definitions/HistoricalV8Options",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
-      transformWith(queryOptions: Historical2Options) {
+      transformWith(queryOptions: HistoricalV8Options) {
         if (!queryOptions.period2) queryOptions.period2 = new Date();
 
         const dates = ["period1", "period2"] as const;
@@ -119,7 +119,7 @@ export default function historical2(
     },
 
     result: {
-      schemaKey: "#/definitions/Historical2Result",
+      schemaKey: "#/definitions/HistoricalV8Result",
       transformWith(result: any) {
         if (!result?.chart?.result[0]) {
           throw new Error("Unexpected result: " + JSON.stringify(result));
