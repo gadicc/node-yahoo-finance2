@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.0.0...v2.0.1) (2021-11-13)
+
+
+### Bug Fixes
+
+* **quote:** allow optional pageViewGrowthWeekly (fixes [#326](https://github.com/gadicc/node-yahoo-finance2/issues/326)) ([e425cd5](https://github.com/gadicc/node-yahoo-finance2/commit/e425cd588a9172e982dfc0d862a2cebd17fac62d))
+
 # [2.0.0](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.6...v2.0.0) (2021-10-27)
 
 
