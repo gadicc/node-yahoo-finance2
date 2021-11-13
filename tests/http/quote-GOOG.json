@@ -8,40 +8,37 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
-      ],
-      "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
+        "application/json;charset=utf-8"
       ],
       "vary": [
         "Origin,Accept-Encoding"
       ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
       "y-rid": [
-        "9697445g6s90k"
+        "fq0v6q5gov1uk"
       ],
       "x-yahoo-request-id": [
-        "9697445g6s90k"
+        "fq0v6q5gov1uk"
       ],
       "x-request-id": [
-        "7081c9d5-eabe-4bcd-b529-1e478c990e05"
-      ],
-      "content-encoding": [
-        "gzip"
+        "e7f1cc56-8196-41d1-b1b1-8d477a875014"
       ],
       "content-length": [
-        "958"
+        "2024"
       ],
       "x-envoy-upstream-service-time": [
         "2"
       ],
       "date": [
-        "Wed, 07 Apr 2021 21:28:52 GMT"
+        "Sat, 13 Nov 2021 09:39:32 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-quote-api--mtls-canary-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
         "0"
@@ -75,70 +72,71 @@
             "language": "en-US",
             "region": "US",
             "quoteType": "EQUITY",
-            "quoteSourceName": "Nasdaq Real Time Price",
+            "quoteSourceName": "Delayed Quote",
             "triggerable": true,
             "currency": "USD",
+            "regularMarketDayLow": 2929.08,
+            "regularMarketVolume": 852383,
+            "regularMarketPreviousClose": 2934.96,
+            "bid": 2990.02,
+            "ask": 2994.99,
+            "bidSize": 9,
+            "askSize": 10,
+            "fullExchangeName": "NasdaqGS",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 2956.63,
+            "averageDailyVolume3Month": 1110523,
+            "averageDailyVolume10Day": 952971,
+            "fiftyTwoWeekLowChange": 1293.9099,
+            "fiftyTwoWeekLowChangePercent": 0.76157147,
+            "fiftyTwoWeekRange": "1699.0 - 3020.69",
+            "fiftyTwoWeekHighChange": -27.78003,
+            "fiftyTwoWeekHighChangePercent": -0.009196584,
+            "fiftyTwoWeekLow": 1699,
+            "fiftyTwoWeekHigh": 3020.69,
+            "trailingPE": 28.83204,
+            "epsTrailingTwelveMonths": 103.805,
+            "epsForward": 112.15,
+            "epsCurrentYear": 108.89,
+            "priceEpsCurrentYear": 27.485626,
+            "sharesOutstanding": 317737984,
+            "bookValue": 367.946,
+            "fiftyDayAverage": 2836.4868,
+            "fiftyDayAverageChange": 156.4231,
+            "fiftyDayAverageChangePercent": 0.055146772,
+            "twoHundredDayAverageChangePercent": 0.1215449,
+            "marketCap": 1979660238848,
             "exchange": "NMS",
-            "shortName": "Alphabet Inc.",
             "longName": "Alphabet Inc.",
             "messageBoardId": "finmb_29096",
             "exchangeTimezoneName": "America/New_York",
-            "exchangeTimezoneShortName": "EDT",
-            "gmtOffSetMilliseconds": -14400000,
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "marketState": "POST",
-            "epsCurrentYear": 69.6,
-            "priceEpsCurrentYear": 32.322987,
-            "sharesOutstanding": 329867008,
-            "bookValue": 329.586,
-            "fiftyDayAverage": 2078.0618,
-            "fiftyDayAverageChange": 171.61816,
-            "fiftyDayAverageChangePercent": 0.08258569,
-            "twoHundredDayAverage": 1817.6353,
-            "twoHundredDayAverageChange": 432.04468,
-            "twoHundredDayAverageChangePercent": 0.23769602,
-            "marketCap": 1511164084224,
-            "forwardPE": 27.766972,
-            "priceToBook": 6.825775,
+            "tradeable": false,
+            "shortName": "Alphabet Inc.",
+            "marketState": "CLOSED",
+            "firstTradeDateMilliseconds": 1092922200000,
+            "priceHint": 2,
+            "postMarketChangePercent": -0.0968924,
+            "postMarketTime": 1636765161,
+            "postMarketPrice": 2990.01,
+            "postMarketChange": -2.8999023,
+            "regularMarketChange": 57.94995,
+            "regularMarketChangePercent": 1.9744717,
+            "regularMarketTime": 1636750803,
+            "regularMarketPrice": 2992.91,
+            "regularMarketDayHigh": 2997,
+            "regularMarketDayRange": "2929.08 - 2997.0",
+            "twoHundredDayAverage": 2668.56,
+            "twoHundredDayAverageChange": 324.34985,
+            "forwardPE": 26.686668,
+            "priceToBook": 8.134101,
             "sourceInterval": 15,
             "exchangeDataDelayedBy": 0,
-            "averageAnalystRating": "1.5 - Strong Buy",
-            "tradeable": false,
-            "priceHint": 2,
-            "postMarketChangePercent": 0.14757958,
-            "postMarketTime": 1617830875,
-            "postMarketPrice": 2253,
-            "postMarketChange": 3.3200684,
-            "regularMarketChange": 24.929932,
-            "regularMarketChangePercent": 1.1205722,
-            "regularMarketTime": 1617825603,
-            "regularMarketPrice": 2249.68,
-            "regularMarketDayHigh": 2255,
-            "regularMarketDayRange": "2226.455 - 2255.0",
-            "regularMarketDayLow": 2226.455,
-            "regularMarketVolume": 1099009,
-            "regularMarketPreviousClose": 2224.75,
-            "bid": 2250.23,
-            "ask": 2253.96,
-            "bidSize": 8,
-            "askSize": 8,
-            "fullExchangeName": "NasdaqGS",
-            "financialCurrency": "USD",
-            "regularMarketOpen": 2226.13,
-            "averageDailyVolume3Month": 1587457,
-            "averageDailyVolume10Day": 1486450,
-            "fiftyTwoWeekLowChange": 1062.0819,
-            "fiftyTwoWeekLowChangePercent": 0.89431095,
-            "fiftyTwoWeekRange": "1187.598 - 2255.0",
-            "fiftyTwoWeekHighChange": -5.3200684,
-            "fiftyTwoWeekHighChangePercent": -0.0023592322,
-            "fiftyTwoWeekLow": 1187.598,
-            "fiftyTwoWeekHigh": 2255,
-            "trailingPE": 38.381927,
-            "epsTrailingTwelveMonths": 58.613,
-            "epsForward": 81.02,
-            "firstTradeDateMilliseconds": 1092922200000,
+            "pageViewGrowthWeekly": 0.010953328,
+            "averageAnalystRating": "1.6 - Buy",
             "displayName": "Alphabet",
             "symbol": "GOOG"
           }
