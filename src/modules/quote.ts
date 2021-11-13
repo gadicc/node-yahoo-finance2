@@ -96,6 +96,7 @@ export interface QuoteBase {
   nameChangeDate?: Date;
   prevName?: string;
   averageAnalystRating?: string;
+  pageViewGrowthWeekly?: number; // Since 2021-11-11 (#326)
 }
 
 /*
