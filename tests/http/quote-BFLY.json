@@ -8,43 +8,43 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
-      ],
-      "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
+        "application/json;charset=utf-8"
       ],
       "vary": [
         "Origin,Accept-Encoding"
       ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
       "y-rid": [
-        "a9tsl45g6s90j"
+        "1kdn6gtgov1uk"
       ],
       "x-yahoo-request-id": [
-        "a9tsl45g6s90j"
+        "1kdn6gtgov1uk"
       ],
       "x-request-id": [
-        "7451071b-0d1f-46d7-8007-206377af266f"
+        "e9949b1c-3203-4b71-a7d3-45c5a112db11"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "814"
+        "944"
       ],
       "x-envoy-upstream-service-time": [
-        "9"
+        "3"
       ],
       "date": [
-        "Wed, 07 Apr 2021 21:28:51 GMT"
+        "Sat, 13 Nov 2021 09:39:31 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
-        "0"
+        "1"
       ],
       "strict-transport-security": [
         "max-age=15552000"
@@ -75,61 +75,73 @@
             "language": "en-US",
             "region": "US",
             "quoteType": "EQUITY",
-            "quoteSourceName": "Nasdaq Real Time Price",
             "triggerable": true,
-            "currency": "USD",
-            "sourceInterval": 15,
-            "exchangeDataDelayedBy": 0,
-            "postMarketChange": 0.049999237,
-            "regularMarketChange": 0.120001,
-            "regularMarketChangePercent": 0.702581,
-            "regularMarketTime": 1617825602,
-            "regularMarketPrice": 17.2,
-            "regularMarketDayHigh": 17.6299,
-            "regularMarketDayRange": "16.77 - 17.6299",
-            "regularMarketDayLow": 16.77,
-            "regularMarketVolume": 2656939,
-            "regularMarketPreviousClose": 17.08,
-            "bid": 17.19,
-            "ask": 17.25,
-            "bidSize": 11,
+            "priceHint": 2,
+            "postMarketChangePercent": 3.139529,
+            "postMarketTime": 1636765194,
+            "postMarketPrice": 8.87,
+            "postMarketChange": 0.2699995,
+            "regularMarketChange": -0.5099993,
+            "regularMarketChangePercent": -5.598236,
+            "regularMarketTime": 1636750802,
+            "regularMarketPrice": 8.6,
+            "regularMarketDayHigh": 9.18,
+            "regularMarketDayRange": "8.59 - 9.18",
+            "regularMarketDayLow": 8.59,
+            "regularMarketVolume": 5125082,
+            "regularMarketPreviousClose": 9.11,
+            "bid": 8.76,
+            "ask": 8.87,
+            "bidSize": 30,
             "askSize": 9,
             "fullExchangeName": "NYSE",
             "financialCurrency": "USD",
-            "regularMarketOpen": 17,
-            "averageDailyVolume3Month": 3288886,
-            "averageDailyVolume10Day": 3489583,
-            "fiftyTwoWeekLowChange": 7.8600006,
-            "fiftyTwoWeekLowChangePercent": 0.8415418,
-            "fiftyTwoWeekRange": "9.34 - 29.13",
-            "fiftyTwoWeekHighChange": -11.929998,
-            "fiftyTwoWeekHighChangePercent": -0.4095434,
-            "fiftyTwoWeekLow": 9.34,
-            "fiftyTwoWeekHigh": 29.13,
-            "sharesOutstanding": 164862000,
-            "fiftyDayAverage": 19.071142,
-            "fiftyDayAverageChange": -1.8711414,
-            "fiftyDayAverageChangePercent": -0.09811376,
-            "twoHundredDayAverage": 15.824294,
-            "twoHundredDayAverageChange": 1.3757067,
-            "twoHundredDayAverageChangePercent": 0.08693637,
-            "marketCap": 3290170880,
+            "regularMarketOpen": 9.16,
+            "averageDailyVolume3Month": 2164501,
+            "averageDailyVolume10Day": 1749114,
+            "currency": "USD",
             "tradeable": false,
+            "fiftyTwoWeekLowChange": 0.010000229,
+            "fiftyTwoWeekLowChangePercent": 0.001164171,
+            "fiftyTwoWeekRange": "8.59 - 29.13",
+            "fiftyTwoWeekHighChange": -20.529999,
+            "fiftyTwoWeekHighChangePercent": -0.7047717,
+            "fiftyTwoWeekLow": 8.59,
+            "fiftyTwoWeekHigh": 29.13,
+            "earningsTimestamp": 1636983000,
+            "earningsTimestampStart": 1636983000,
+            "earningsTimestampEnd": 1636983000,
+            "epsTrailingTwelveMonths": -0.819,
+            "epsForward": -0.8,
+            "epsCurrentYear": -0.61,
+            "priceEpsCurrentYear": -14.098361,
+            "sharesOutstanding": 167526000,
+            "bookValue": 2.302,
+            "fiftyDayAverage": 10.511429,
+            "fiftyDayAverageChange": -1.9114285,
+            "fiftyDayAverageChangePercent": -0.18184288,
+            "twoHundredDayAverage": 11.709214,
+            "twoHundredDayAverageChange": -3.1092138,
+            "twoHundredDayAverageChangePercent": -0.26553565,
+            "marketCap": 1766913152,
+            "forwardPE": -10.75,
+            "priceToBook": 3.735882,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "pageViewGrowthWeekly": 0.30063692,
+            "averageAnalystRating": "2.0 - Buy",
             "exchange": "NYQ",
-            "shortName": "Butterfly Network, Inc.",
             "longName": "Butterfly Network, Inc.",
             "messageBoardId": "finmb_275830634",
             "exchangeTimezoneName": "America/New_York",
-            "exchangeTimezoneShortName": "EDT",
-            "gmtOffSetMilliseconds": -14400000,
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "postMarketChangePercent": 0.29069322,
-            "postMarketTime": 1617830550,
-            "postMarketPrice": 17.25,
-            "marketState": "POST",
+            "shortName": "Butterfly Network, Inc.",
             "firstTradeDateMilliseconds": 1594647000000,
-            "priceHint": 2,
+            "marketState": "CLOSED",
+            "displayName": "Butterfly Network",
             "symbol": "BFLY"
           }
         ],

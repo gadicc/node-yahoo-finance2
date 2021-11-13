@@ -8,43 +8,43 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
-      ],
-      "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
+        "application/json;charset=utf-8"
       ],
       "vary": [
         "Origin,Accept-Encoding"
       ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
       "y-rid": [
-        "5e6nshpg6s90l"
+        "0heomp1gov1ul"
       ],
       "x-yahoo-request-id": [
-        "5e6nshpg6s90l"
+        "0heomp1gov1ul"
       ],
       "x-request-id": [
-        "cddfb35a-8f86-44da-955e-d842a583ef4a"
+        "b037be78-fb31-4570-95b1-c1b27e59a76d"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "1018"
+        "1039"
       ],
       "x-envoy-upstream-service-time": [
         "2"
       ],
       "date": [
-        "Wed, 07 Apr 2021 21:28:53 GMT"
+        "Sat, 13 Nov 2021 09:39:32 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-quote-api--mtls-baseline-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
-        "0"
+        "1"
       ],
       "strict-transport-security": [
         "max-age=15552000"
@@ -75,76 +75,77 @@
             "language": "en-US",
             "region": "US",
             "quoteType": "EQUITY",
-            "quoteSourceName": "Nasdaq Real Time Price",
+            "quoteSourceName": "Delayed Quote",
             "triggerable": true,
             "currency": "USD",
+            "postMarketPrice": 116.5,
+            "postMarketChange": -0.47000122,
+            "regularMarketChange": 0.34000397,
+            "regularMarketChangePercent": 0.2915236,
+            "regularMarketTime": 1636750937,
+            "regularMarketPrice": 116.97,
+            "regularMarketDayHigh": 117.4,
+            "regularMarketDayRange": "116.43 - 117.4",
+            "regularMarketDayLow": 116.43,
+            "regularMarketVolume": 2733644,
+            "regularMarketPreviousClose": 116.63,
+            "bid": 116.81,
+            "ask": 117.25,
+            "bidSize": 10,
+            "askSize": 10,
+            "fullExchangeName": "NYSE",
+            "financialCurrency": "USD",
+            "regularMarketOpen": 117.4,
+            "averageDailyVolume3Month": 7293107,
+            "averageDailyVolume10Day": 4856728,
+            "fiftyTwoWeekLowChange": 18.64,
+            "fiftyTwoWeekLowChangePercent": 0.18956573,
+            "fiftyTwoWeekRange": "98.33 - 121.53",
+            "fiftyTwoWeekHighChange": -4.5599976,
+            "fiftyTwoWeekHighChangePercent": -0.03752158,
+            "fiftyTwoWeekLow": 98.33,
+            "fiftyTwoWeekHigh": 121.53,
+            "dividendDate": 1644883200,
+            "earningsTimestamp": 1635493205,
+            "earningsTimestampStart": 1643722200,
+            "earningsTimestampEnd": 1644240600,
+            "trailingAnnualDividendRate": 5.2,
+            "trailingPE": 27.876549,
+            "trailingAnnualDividendYield": 0.04458544,
+            "epsTrailingTwelveMonths": 4.196,
+            "epsForward": 13.9,
+            "epsCurrentYear": 12.68,
+            "priceEpsCurrentYear": 9.224763,
+            "sharesOutstanding": 1767879936,
+            "bookValue": 7.665,
+            "fiftyDayAverage": 110.95257,
+            "fiftyDayAverageChange": 6.017433,
+            "fiftyDayAverageChangePercent": 0.054234285,
+            "twoHundredDayAverage": 113.681854,
+            "tradeable": false,
+            "postMarketChangePercent": -0.40181348,
+            "postMarketTime": 1636765171,
+            "twoHundredDayAverageChange": 3.288147,
+            "twoHundredDayAverageChangePercent": 0.028924115,
+            "marketCap": 206788919296,
+            "forwardPE": 8.415109,
+            "priceToBook": 15.260274,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "pageViewGrowthWeekly": -0.029259156,
+            "averageAnalystRating": "1.9 - Buy",
+            "firstTradeDateMilliseconds": 1357137000000,
+            "priceHint": 2,
             "exchange": "NYQ",
-            "shortName": "AbbVie Inc.",
-            "marketState": "POST",
-            "earningsTimestamp": 1619785800,
-            "earningsTimestampStart": 1619785800,
-            "earningsTimestampEnd": 1619785800,
-            "trailingAnnualDividendRate": 4.84,
-            "trailingPE": 38.680145,
-            "trailingAnnualDividendYield": 0.045929022,
-            "epsTrailingTwelveMonths": 2.72,
-            "epsForward": 13.8,
-            "epsCurrentYear": 12.44,
-            "priceEpsCurrentYear": 8.457396,
-            "sharesOutstanding": 1764829952,
-            "bookValue": 7.408,
-            "fiftyDayAverage": 106.56371,
-            "fiftyDayAverageChange": -1.353714,
-            "fiftyDayAverageChangePercent": -0.012703329,
-            "twoHundredDayAverage": 100.68919,
-            "twoHundredDayAverageChange": 4.5208054,
             "longName": "AbbVie Inc.",
             "messageBoardId": "finmb_141885706",
             "exchangeTimezoneName": "America/New_York",
-            "exchangeTimezoneShortName": "EDT",
-            "gmtOffSetMilliseconds": -14400000,
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "firstTradeDateMilliseconds": 1357137000000,
-            "priceHint": 2,
-            "postMarketChangePercent": 0.00950683,
-            "postMarketTime": 1617830497,
-            "postMarketPrice": 105.22,
-            "postMarketChange": 0.010002136,
-            "regularMarketChange": -0.16999817,
-            "regularMarketChangePercent": -0.1613192,
-            "regularMarketTime": 1617825735,
-            "regularMarketPrice": 105.21,
-            "regularMarketDayHigh": 106.13,
-            "regularMarketDayRange": "104.17 - 106.13",
-            "regularMarketDayLow": 104.17,
-            "regularMarketVolume": 7859535,
-            "regularMarketPreviousClose": 105.38,
-            "bid": 105.14,
-            "ask": 105.28,
-            "bidSize": 10,
-            "askSize": 8,
-            "fullExchangeName": "NYSE",
-            "financialCurrency": "USD",
-            "regularMarketOpen": 105.53,
-            "averageDailyVolume3Month": 7455996,
-            "averageDailyVolume10Day": 7298900,
-            "fiftyTwoWeekLowChange": 30.43,
-            "fiftyTwoWeekLowChangePercent": 0.406927,
-            "fiftyTwoWeekRange": "74.78 - 113.41",
-            "fiftyTwoWeekHighChange": -8.200005,
-            "fiftyTwoWeekHighChangePercent": -0.07230407,
-            "fiftyTwoWeekLow": 74.78,
-            "fiftyTwoWeekHigh": 113.41,
-            "dividendDate": 1620950400,
-            "twoHundredDayAverageChangePercent": 0.044898614,
-            "marketCap": 185677758464,
-            "forwardPE": 7.623913,
-            "priceToBook": 14.202213,
-            "sourceInterval": 15,
-            "exchangeDataDelayedBy": 0,
-            "averageAnalystRating": "2.0 - Buy",
-            "tradeable": false,
+            "marketState": "CLOSED",
+            "shortName": "AbbVie Inc.",
             "displayName": "AbbVie",
             "symbol": "ABBV"
           }

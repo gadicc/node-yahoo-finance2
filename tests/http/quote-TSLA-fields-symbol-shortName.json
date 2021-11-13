@@ -8,40 +8,37 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
-      ],
-      "cache-control": [
-        "public, max-age=1, stale-while-revalidate=9"
+        "application/json;charset=utf-8"
       ],
       "vary": [
         "Origin,Accept-Encoding"
       ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
       "y-rid": [
-        "d26770dg6s90o"
+        "b0rs6tlgov1um"
       ],
       "x-yahoo-request-id": [
-        "d26770dg6s90o"
+        "b0rs6tlgov1um"
       ],
       "x-request-id": [
-        "91a97b3b-dada-47d4-bc63-b2bafa7b86ae"
-      ],
-      "content-encoding": [
-        "gzip"
+        "3e2cbb04-5e56-4205-8134-797a4d3254ac"
       ],
       "content-length": [
-        "344"
+        "533"
       ],
       "x-envoy-upstream-service-time": [
         "1"
       ],
       "date": [
-        "Wed, 07 Apr 2021 21:28:55 GMT"
+        "Sat, 13 Nov 2021 09:39:33 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-quote-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
         "1"
@@ -77,19 +74,19 @@
             "quoteType": "EQUITY",
             "quoteSourceName": "Delayed Quote",
             "triggerable": true,
-            "firstTradeDateMilliseconds": 1277818200000,
             "priceHint": 2,
-            "marketState": "POST",
             "fullExchangeName": "NasdaqGS",
-            "exchange": "NMS",
-            "exchangeTimezoneName": "America/New_York",
-            "exchangeTimezoneShortName": "EDT",
-            "gmtOffSetMilliseconds": -14400000,
-            "market": "us_market",
-            "esgPopulated": false,
+            "tradeable": false,
             "sourceInterval": 15,
             "exchangeDataDelayedBy": 0,
-            "tradeable": false,
+            "exchange": "NMS",
+            "exchangeTimezoneName": "America/New_York",
+            "exchangeTimezoneShortName": "EST",
+            "gmtOffSetMilliseconds": -18000000,
+            "market": "us_market",
+            "esgPopulated": false,
+            "firstTradeDateMilliseconds": 1277818200000,
+            "marketState": "CLOSED",
             "displayName": "Tesla",
             "symbol": "TSLA"
           }
