@@ -1,3 +1,11 @@
+## [1.14.7](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.6...v1.14.7) (2021-11-13)
+
+
+### Bug Fixes
+
+* **package:** have semantic-release recognize version branches ([38b6618](https://github.com/gadicc/node-yahoo-finance2/commit/38b6618539d38839ab1ebbd60b19e872d3aa1b31))
+* **quote:** allow optional pageViewGrowthWeekly (fixes [#326](https://github.com/gadicc/node-yahoo-finance2/issues/326)) ([7d70ea1](https://github.com/gadicc/node-yahoo-finance2/commit/7d70ea10d392f04432cfaf03e62f45ed7c2476f6))
+
 ## [1.14.6](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.5...v1.14.6) (2021-10-13)
 
 
