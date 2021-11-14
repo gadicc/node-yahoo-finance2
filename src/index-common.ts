@@ -7,7 +7,7 @@ import errors from "./lib/errors.js";
 // modules
 import autoc from "./modules/autoc.js";
 import historical from "./modules/historical.js";
-import historicalv8 from "./modules/_historicalv8.js";
+import _historicalv8 from "./modules/_historicalv8.js";
 import insights from "./modules/insights.js";
 import optionsModule from "./modules/options.js";
 import quote from "./modules/quote.js";
@@ -32,6 +32,7 @@ export default {
   // modules,
   autoc,
   historical,
+  _historicalv8,
   insights,
   options: optionsModule,
   quote,
@@ -39,7 +40,6 @@ export default {
   recommendationsBySymbol,
   search,
   trendingSymbols,
-  historicalv8,
 
   // other
   quoteCombine,

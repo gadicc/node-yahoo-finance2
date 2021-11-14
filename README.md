@@ -56,7 +56,7 @@ const results = await yahooFInance.search('AAPL', { someOption: true, etc });
 Available modules:
 [`autoc`](./docs/modules/autoc.md),
 [`historical`](./docs/modules/historical.md),
-[historicalv8(./docs/modules/historicalv8.md),
+[_historicalv8(./docs/modules/_historicalv8.md),
 [`quote`](./docs/modules/quote.md),
 [`quoteSummary`](./docs/modules/quoteSummary.md) (submodules:
 assetProfile, balanceSheetHistory, balanceSheetHistoryQuarterly,

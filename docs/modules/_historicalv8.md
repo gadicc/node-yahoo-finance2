@@ -1,4 +1,4 @@
-# historicalv8
+# _historicalv8
 
 **IMPORTANT** This module is not production ready and may change at any time.
 It uses a newer Yahoo Finance API to fetch historical prices, splits, and
@@ -16,7 +16,7 @@ const queryOptions = {
   period2: '2021-01-04',
   events: 'div|split' // 'div', 'split', or 'div|split'
 }
-const result = await yahooFinance.historicalv8(query, queryOptions);
+const result = await yahooFinance._historicalv8(query, queryOptions);
 
 // NOTE the output format is different from that of the historical module
 {
@@ -86,7 +86,7 @@ const result = await yahooFinance.historicalv8(query, queryOptions);
 ## API
 
 ```js
-await yahooFinance.historicalv8(query, queryOptions, moduleOptions);
+await yahooFinance._historicalv8(query, queryOptions, moduleOptions);
 ```
 
 ### Query term

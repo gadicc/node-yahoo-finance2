@@ -1,14 +1,14 @@
 import { jest } from "@jest/globals";
 
-import historicalv8 from "./_historicalv8.js";
+import _historicalv8 from "./_historicalv8.js";
 import { testSymbols } from "../../tests/symbols.js";
 
 import testYf from "../../tests/testYf.js";
 import { consoleSilent, consoleRestore } from "../../tests/console.js";
 
-const yf = testYf({ historicalv8 });
+const yf = testYf({ _historicalv8 });
 
-describe("historicalv8", () => {
+describe("_historicalv8", () => {
   // See also common module tests in moduleExec.spec.js
 
   const symbolsToSkip = ["BEKE", "BFLY", "SIMP", "^VXAPL" /* Not Found */];
@@ -17,7 +17,7 @@ describe("historicalv8", () => {
     const period1 = "2020-01-01";
     const period2 = "2021-01-04";
 
-    await yf.historicalv8(
+    await yf._historicalv8(
       symbol,
       {
         period1: period1,
@@ -32,9 +32,9 @@ describe("historicalv8", () => {
   });
 
   describe("transformWith", () => {
-    const yf = { _moduleExec: jest.fn(), historicalv8 };
+    const yf = { _moduleExec: jest.fn(), _historicalv8 };
     // @ts-ignore: TODO
-    yf.historicalv8("symbol", { period1: "required-but-not-used" });
+    yf._historicalv8("symbol", { period1: "required-but-not-used" });
     // @ts-ignore: TODO
     const { transformWith } = yf._moduleExec.mock.calls[0][0].query;
 
