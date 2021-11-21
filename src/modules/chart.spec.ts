@@ -31,11 +31,18 @@ describe("chart", () => {
     );
   });
 
-  /*
+  it("throws on malformed result", async () => {
+    await yf.chart(
+      "AAPL",
+      { period1: "2020-01-01" },
+      { devel: `weirdJsonResult.fake.json` }
+    );
+  });
+
   describe("transformWith", () => {
-    const yf = { _moduleExec: jest.fn(), historical };
+    const yf = { _moduleExec: jest.fn(), chart };
     // @ts-ignore: TODO
-    yf.historical("symbol", { period1: "required-but-not-used" });
+    yf.chart("symbol", { period1: "required-but-not-used" });
     // @ts-ignore: TODO
     const { transformWith } = yf._moduleExec.mock.calls[0][0].query;
 
@@ -46,43 +53,4 @@ describe("chart", () => {
       expect(options.period2).toBe(Math.floor(now.getTime() / 1000));
     });
   });
-
-  // #208
-  describe("null values", () => {
-    it("strips all-null rows", async () => {
-      const createHistoricalPromise = () =>
-        yf.historical(
-          "EURGBP=X",
-          {
-            period1: 1567728000,
-            period2: 1570665600,
-          },
-          { devel: "historical-EURGBP-nulls.json" }
-        );
-
-      await expect(createHistoricalPromise()).resolves.toBeDefined();
-
-      const result = await createHistoricalPromise();
-
-      // Without stripping, it's about 25 rows.
-      expect(result.length).toBe(5);
-
-      // No need to really check there are no nulls in the data, as
-      // validation handles that for us automatically.
-    });
-
-    it("throws on a row with some nulls", () => {
-      consoleSilent();
-      return expect(
-        yf
-          .historical(
-            "EURGBP=X",
-            { period1: 1567728000, period2: 1570665600 },
-            { devel: "historical-EURGBP-nulls.fake.json" }
-          )
-          .finally(consoleRestore)
-      ).rejects.toThrow("SOME (but not all) null values");
-    });
-  });
-  */
 });
