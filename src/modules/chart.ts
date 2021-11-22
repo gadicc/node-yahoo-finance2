@@ -1,3 +1,5 @@
+// Co-authored by @gadicc, @PythonCreator27 and @huned.
+
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
