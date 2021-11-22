@@ -57,6 +57,50 @@ const result = await yahooFinance._chart(query, queryOptions);
       'ytd', 'max'
     ]
   },
+  quotes: [
+    {
+      date: new Date("2020-05-08T13:30:00.000Z"),
+      high: 77.5875015258789,
+      volume: 133838400,
+      open: 76.41000366210938,
+      low: 76.07250213623047,
+      close: 77.53250122070312,
+      adjclose: 76.78629302978516 // if requested
+    },
+    // ...
+  ]
+  events: {
+    dividends: [
+      { amount: 0.205, date: new Date("2020-05-08T13:30:00.000Z") },
+      // ...
+    ],
+    splits: [
+      {
+        date: new Date("2020-08-31T13:30:00.000Z"),
+        numerator: 4,
+        denominator: 1,
+        splitRatio: '4:1'
+      },
+      // ...
+    ]
+  }
+}
+```
+
+The above includes a number of transforms from the original object format
+received from Yahoo, which makes the data a bit easier to work with.  It uses
+the query default of `{ return: "array" }`.  However, certain charting
+libraries might actually prefer the original format, which you can get with
+`{ return: "object" }`, as follows:
+
+```js
+
+const query = 'AAPL';
+const queryOptions = { period1: '2021-05-08', return: "object", /* ... */ };
+const result = await yahooFinance._chart(query, queryOptions);
+
+{
+  meta: { /* same format as previous example */ },
   timestamp: [
     // These are the object keys used below.
     1598880600,
@@ -120,7 +164,8 @@ Yahoo Symbol, e.g. "AAPL", "TSLA", etc.
 | `interval`    | string    | "1d"       | Interval period (see below)
 | `includePrePost` | boolean | true      |
 | `events`      | string    | "div\|split\|earn" | Event types to return, "\|"-separated
-| `lang`        | string    | "en-US"
+| `lang`        | string    | "en-US"    |
+| **`return`**  | string    | "array"    | "array" or "object", see examples above.  Not sent to Yahoo.
 
 
 Dates* can be:

@@ -7,11 +7,27 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.js";
 
-export interface ChartResult {
+export interface ChartResultObject {
   meta: ChartMeta;
   timestamp: Array<number>;
-  events?: ChartEvents;
-  indicators: ChartIndicators;
+  events?: ChartEventsObject;
+  indicators: ChartIndicatorsObject;
+}
+
+export interface ChartResultArray {
+  meta: ChartMeta;
+  events?: ChartEventsArray;
+  quotes: Array<ChartResultArrayQuote>;
+}
+
+export interface ChartResultArrayQuote {
+  date: Date;
+  high: number;
+  low: number;
+  open: number;
+  close: number;
+  volume: number;
+  adjclose?: number;
 }
 
 export interface ChartMeta {
@@ -44,9 +60,14 @@ export interface ChartMetaTradingPeriod {
   gmtoffset: number; // -18000
 }
 
-export interface ChartEvents {
-  dividends: ChartEventDividends;
-  splits: ChartEventSplits;
+export interface ChartEventsObject {
+  dividends?: ChartEventDividends;
+  splits?: ChartEventSplits;
+}
+
+export interface ChartEventsArray {
+  dividends?: Array<ChartEventDividend>;
+  splits?: Array<ChartEventSplit>;
 }
 
 export interface ChartEventDividends {
@@ -69,7 +90,7 @@ export interface ChartEventSplit {
   splitRatio: string; // "4:1"
 }
 
-export interface ChartIndicators {
+export interface ChartIndicatorsObject {
   quote: Array<ChartIndicatorQuote>;
   adjclose: Array<ChartIndicatorAdjclose>;
 }
@@ -94,6 +115,7 @@ export interface ChartOptions {
   includePrePost?: boolean; // true
   events?: string; // 'history',
   lang?: string; // "en-US"
+  return?: "array" | "object";
 }
 
 const queryOptionsDefaults: Omit<ChartOptions, "period1"> = {
@@ -102,14 +124,31 @@ const queryOptionsDefaults: Omit<ChartOptions, "period1"> = {
   includePrePost: true,
   events: "div|split|earn",
   lang: "en-US",
+  return: "array",
 };
+
+export interface ChartOptionsWithReturnArray extends ChartOptions {
+  return?: "array";
+}
+export interface ChartOptionsWithReturnObject extends ChartOptions {
+  return: "object";
+}
+
+/* --- array input, typed output, honor "return" param --- */
 
 export default function _chart(
   this: ModuleThis,
   symbol: string,
-  queryOptionsOverrides: ChartOptions,
+  queryOptionsOverrides: ChartOptionsWithReturnObject,
   moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<ChartResult>;
+): Promise<ChartResultObject>;
+
+export default function _chart(
+  this: ModuleThis,
+  symbol: string,
+  queryOptionsOverrides: ChartOptionsWithReturnArray,
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<ChartResultArray>;
 
 export default function _chart(
   this: ModuleThis,
@@ -118,13 +157,15 @@ export default function _chart(
   moduleOptions?: ModuleOptionsWithValidateFalse
 ): Promise<any>;
 
-export default function _chart(
+export default async function _chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-  return this._moduleExec({
+  const returnAs = queryOptionsOverrides?.return || "array";
+
+  const result = (await this._moduleExec({
     moduleName: "_chart",
 
     query: {
@@ -146,12 +187,15 @@ export default function _chart(
           );
         }
 
+        // Don't pass this on to Yahoo
+        delete queryOptions.return;
+
         return queryOptions;
       },
     },
 
     result: {
-      schemaKey: "#/definitions/ChartResult",
+      schemaKey: "#/definitions/ChartResultObject",
       transformWith(result: any) {
         if (!result.chart)
           throw new Error("Unexpected result: " + JSON.stringify(result));
@@ -160,5 +204,73 @@ export default function _chart(
     },
 
     moduleOptions,
-  });
+  })) as ChartResultObject;
+
+  if (returnAs === "object") {
+    return result;
+  } else if (returnAs === "array") {
+    let timestamp = result.timestamp;
+
+    /*
+    seems as though yahoo inserts extra quotes at the event times, so no need.
+    if (result.events) {
+      for (let event of ["dividends", "splits"]) {
+        // @ts-ignore
+        if (result.events[event])
+          // @ts-ignore
+          timestamp = timestamp.filter((ts) => !result.events[event][ts]);
+      }
+    }
+    */
+
+    // istanbul ignore next
+    if (
+      result?.indicators?.quote &&
+      result.indicators.quote[0].high.length !== timestamp.length
+    ) {
+      console.log({
+        origTimestampSize: result.timestamp.length,
+        filteredSize: timestamp.length,
+        quoteSize: result.indicators.quote[0].high.length,
+      });
+      throw new Error(
+        "Timestamp count mismatch, please report this with the query you used"
+      );
+    }
+
+    const result2 = {
+      meta: result.meta,
+      quotes: new Array(timestamp.length),
+    } as ChartResultArray;
+
+    const adjclose = result?.indicators?.adjclose?.[0].adjclose;
+
+    for (let i = 0; i < timestamp.length; i++) {
+      result2.quotes[i] = {
+        date: new Date(timestamp[i] * 1000),
+        high: result.indicators.quote[0].high[i],
+        volume: result.indicators.quote[0].volume[i],
+        open: result.indicators.quote[0].open[i],
+        low: result.indicators.quote[0].low[i],
+        close: result.indicators.quote[0].close[i],
+      };
+      if (adjclose) result2.quotes[i].adjclose = adjclose[i];
+    }
+
+    if (result.events) {
+      result2.events = {};
+
+      for (let event of ["dividends", "splits"]) {
+        // @ts-ignore
+        if (result.events[event])
+          // @ts-ignore: TODO?
+          result2.events[event] = Object.values(result.events[event]);
+      }
+    }
+
+    return result2;
+  }
+
+  // TypeScript runtime validation ensures no other values for
+  // "returnAs" are possible.
 }

@@ -154,7 +154,7 @@
       },
       "additionalProperties": false
     },
-    "ChartResult": {
+    "ChartResultObject": {
       "type": "object",
       "properties": {
         "meta": {
@@ -167,10 +167,10 @@
           }
         },
         "events": {
-          "$ref": "#/definitions/ChartEvents"
+          "$ref": "#/definitions/ChartEventsObject"
         },
         "indicators": {
-          "$ref": "#/definitions/ChartIndicators"
+          "$ref": "#/definitions/ChartIndicatorsObject"
         }
       },
       "required": [
@@ -296,7 +296,7 @@
       ],
       "additionalProperties": false
     },
-    "ChartEvents": {
+    "ChartEventsObject": {
       "type": "object",
       "properties": {
         "dividends": {
@@ -306,10 +306,6 @@
           "$ref": "#/definitions/ChartEventSplits"
         }
       },
-      "required": [
-        "dividends",
-        "splits"
-      ],
       "additionalProperties": false
     },
     "ChartEventDividends": {
@@ -364,7 +360,7 @@
       ],
       "additionalProperties": false
     },
-    "ChartIndicators": {
+    "ChartIndicatorsObject": {
       "type": "object",
       "properties": {
         "quote": {
@@ -444,6 +440,81 @@
       ],
       "additionalProperties": false
     },
+    "ChartResultArray": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/ChartMeta"
+        },
+        "events": {
+          "$ref": "#/definitions/ChartEventsArray"
+        },
+        "quotes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChartResultArrayQuote"
+          }
+        }
+      },
+      "required": [
+        "meta",
+        "quotes"
+      ],
+      "additionalProperties": false
+    },
+    "ChartEventsArray": {
+      "type": "object",
+      "properties": {
+        "dividends": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChartEventDividend"
+          }
+        },
+        "splits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChartEventSplit"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ChartResultArrayQuote": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "yahooFinanceType": "date"
+        },
+        "high": {
+          "yahooFinanceType": "number"
+        },
+        "low": {
+          "yahooFinanceType": "number"
+        },
+        "open": {
+          "yahooFinanceType": "number"
+        },
+        "close": {
+          "yahooFinanceType": "number"
+        },
+        "volume": {
+          "yahooFinanceType": "number"
+        },
+        "adjclose": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "date",
+        "high",
+        "low",
+        "open",
+        "close",
+        "volume"
+      ],
+      "additionalProperties": false
+    },
     "ChartOptions": {
       "type": "object",
       "properties": {
@@ -492,10 +563,136 @@
         },
         "lang": {
           "type": "string"
+        },
+        "return": {
+          "type": "string",
+          "enum": [
+            "array",
+            "object"
+          ]
         }
       },
       "required": [
         "period1"
+      ],
+      "additionalProperties": false
+    },
+    "ChartOptionsWithReturnArray": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "useYfid": {
+          "type": "boolean"
+        },
+        "interval": {
+          "type": "string",
+          "enum": [
+            "1d",
+            "1wk",
+            "1mo"
+          ]
+        },
+        "includePrePost": {
+          "type": "boolean"
+        },
+        "events": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "return": {
+          "type": "string",
+          "const": "array"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "period1"
+      ]
+    },
+    "ChartOptionsWithReturnObject": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "useYfid": {
+          "type": "boolean"
+        },
+        "interval": {
+          "type": "string",
+          "enum": [
+            "1d",
+            "1wk",
+            "1mo"
+          ]
+        },
+        "includePrePost": {
+          "type": "boolean"
+        },
+        "events": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "return": {
+          "type": "string",
+          "const": "object"
+        }
+      },
+      "required": [
+        "period1",
+        "return"
       ],
       "additionalProperties": false
     },
