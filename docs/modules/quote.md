@@ -157,7 +157,7 @@ await yahooFinance.quote(symbol, queryOptions, moduleOptions);
 ### Symbol
 
 Symbol name as used by Yahoo (often the stock ticker).  You can find it
-using [autoc](./auto.md) or [search](./search.md).  You can also provide
+using [search](./search.md).  You can also provide
 an array of symbols, and you'll receive an array of results back.
 
 ### Query Options
