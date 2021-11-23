@@ -175,7 +175,6 @@
       },
       "required": [
         "meta",
-        "timestamp",
         "indicators"
       ],
       "additionalProperties": false
@@ -216,6 +215,12 @@
         "chartPreviousClose": {
           "yahooFinanceType": "number"
         },
+        "previousClose": {
+          "yahooFinanceType": "number"
+        },
+        "scale": {
+          "yahooFinanceType": "number"
+        },
         "priceHint": {
           "yahooFinanceType": "number"
         },
@@ -238,6 +243,9 @@
             "post"
           ],
           "additionalProperties": false
+        },
+        "tradingPeriods": {
+          "$ref": "#/definitions/ChartMetaTradingPeriods"
         },
         "dataGranularity": {
           "type": "string"
@@ -294,6 +302,39 @@
         "end",
         "gmtoffset"
       ],
+      "additionalProperties": false
+    },
+    "ChartMetaTradingPeriods": {
+      "type": "object",
+      "properties": {
+        "pre": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ChartMetaTradingPeriod"
+            }
+          }
+        },
+        "post": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ChartMetaTradingPeriod"
+            }
+          }
+        },
+        "regular": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ChartMetaTradingPeriod"
+            }
+          }
+        }
+      },
       "additionalProperties": false
     },
     "ChartEventsObject": {
@@ -377,8 +418,7 @@
         }
       },
       "required": [
-        "quote",
-        "adjclose"
+        "quote"
       ],
       "additionalProperties": false
     },
@@ -550,9 +590,19 @@
         "interval": {
           "type": "string",
           "enum": [
+            "1m",
+            "2m",
+            "5m",
+            "15m",
+            "30m",
+            "60m",
+            "90m",
+            "1h",
             "1d",
+            "5d",
             "1wk",
-            "1mo"
+            "1mo",
+            "3mo"
           ]
         },
         "includePrePost": {
@@ -612,9 +662,19 @@
         "interval": {
           "type": "string",
           "enum": [
+            "1m",
+            "2m",
+            "5m",
+            "15m",
+            "30m",
+            "60m",
+            "90m",
+            "1h",
             "1d",
+            "5d",
             "1wk",
-            "1mo"
+            "1mo",
+            "3mo"
           ]
         },
         "includePrePost": {
@@ -671,9 +731,19 @@
         "interval": {
           "type": "string",
           "enum": [
+            "1m",
+            "2m",
+            "5m",
+            "15m",
+            "30m",
+            "60m",
+            "90m",
+            "1h",
             "1d",
+            "5d",
             "1wk",
-            "1mo"
+            "1mo",
+            "3mo"
           ]
         },
         "includePrePost": {

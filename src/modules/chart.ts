@@ -9,7 +9,7 @@ import type {
 
 export interface ChartResultObject {
   meta: ChartMeta;
-  timestamp: Array<number>;
+  timestamp?: Array<number>;
   events?: ChartEventsObject;
   indicators: ChartIndicatorsObject;
 }
@@ -42,12 +42,15 @@ export interface ChartMeta {
   exchangeTimezoneName: string; // "America/New_York",
   regularMarketPrice: number; // 160.55,
   chartPreviousClose: number; // 79.75,
+  previousClose?: number; // 1137.06
+  scale?: number; // 3,
   priceHint: number; // 2,
   currentTradingPeriod: {
     pre: ChartMetaTradingPeriod;
     regular: ChartMetaTradingPeriod;
     post: ChartMetaTradingPeriod;
   };
+  tradingPeriods?: ChartMetaTradingPeriods;
   dataGranularity: string; // "1d",
   range: string; // "",
   validRanges: Array<string>; // ["1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"]
@@ -58,6 +61,12 @@ export interface ChartMetaTradingPeriod {
   start: Date; // new Date(1637355600 * 1000),
   end: Date; // new Date(1637370000 * 10000),
   gmtoffset: number; // -18000
+}
+
+export interface ChartMetaTradingPeriods {
+  pre?: Array<Array<ChartMetaTradingPeriod>>;
+  post?: Array<Array<ChartMetaTradingPeriod>>;
+  regular?: Array<Array<ChartMetaTradingPeriod>>;
 }
 
 export interface ChartEventsObject {
@@ -92,7 +101,7 @@ export interface ChartEventSplit {
 
 export interface ChartIndicatorsObject {
   quote: Array<ChartIndicatorQuote>;
-  adjclose: Array<ChartIndicatorAdjclose>;
+  adjclose?: Array<ChartIndicatorAdjclose>;
 }
 
 export interface ChartIndicatorQuote {
@@ -111,7 +120,20 @@ export interface ChartOptions {
   period1: Date | string | number;
   period2?: Date | string | number;
   useYfid?: boolean; // true
-  interval?: "1d" | "1wk" | "1mo"; // '1d',  TODO: all | types
+  interval?:
+    | "1m"
+    | "2m"
+    | "5m"
+    | "15m"
+    | "30m"
+    | "60m"
+    | "90m"
+    | "1h"
+    | "1d"
+    | "5d"
+    | "1wk"
+    | "1mo"
+    | "3mo";
   includePrePost?: boolean; // true
   events?: string; // 'history',
   lang?: string; // "en-US"
@@ -199,7 +221,27 @@ export default async function _chart(
       transformWith(result: any) {
         if (!result.chart)
           throw new Error("Unexpected result: " + JSON.stringify(result));
-        return result.chart.result[0];
+
+        const chart = result.chart.result[0];
+
+        // If there are no quotes, chart.timestamp will be empty, but Yahoo also
+        // gives us chart.indicators.quotes = [{}].  Let's clean that up and
+        // deliver an empty array rather than an invalid ChartIndicatorQuote/
+        if (!chart.timestamp) {
+          if (chart.indicators.quote.length !== 1)
+            throw new Error(
+              "No timestamp with quotes.length !== 1, please report with your query"
+            );
+          if (Object.keys(chart.indicators.quote[0]).length !== 0)
+            // i.e. {}
+            throw new Error(
+              "No timestamp with unexpected quote, please report with your query" +
+                JSON.stringify(chart.indicators.quote[0])
+            );
+          chart.indicators.quote.pop();
+        }
+
+        return chart;
       },
     },
 
@@ -225,11 +267,12 @@ export default async function _chart(
 
     // istanbul ignore next
     if (
+      timestamp &&
       result?.indicators?.quote &&
       result.indicators.quote[0].high.length !== timestamp.length
     ) {
       console.log({
-        origTimestampSize: result.timestamp.length,
+        origTimestampSize: result.timestamp && result.timestamp.length,
         filteredSize: timestamp.length,
         quoteSize: result.indicators.quote[0].high.length,
       });
@@ -240,22 +283,24 @@ export default async function _chart(
 
     const result2 = {
       meta: result.meta,
-      quotes: new Array(timestamp.length),
+      quotes: timestamp ? new Array(timestamp.length) : new Array(),
     } as ChartResultArray;
 
     const adjclose = result?.indicators?.adjclose?.[0].adjclose;
 
-    for (let i = 0; i < timestamp.length; i++) {
-      result2.quotes[i] = {
-        date: new Date(timestamp[i] * 1000),
-        high: result.indicators.quote[0].high[i],
-        volume: result.indicators.quote[0].volume[i],
-        open: result.indicators.quote[0].open[i],
-        low: result.indicators.quote[0].low[i],
-        close: result.indicators.quote[0].close[i],
-      };
-      if (adjclose) result2.quotes[i].adjclose = adjclose[i];
-    }
+    if (timestamp)
+      for (let i = 0; i < timestamp.length; i++) {
+        result2.quotes[i] = {
+          date: new Date(timestamp[i] * 1000),
+          high: result.indicators.quote[0].high[i],
+          volume: result.indicators.quote[0].volume[i],
+          open: result.indicators.quote[0].open[i],
+          low: result.indicators.quote[0].low[i],
+          close: result.indicators.quote[0].close[i],
+        };
+        // @ts-ignore: adjClose guarantees the chain.
+        if (adjclose) result2.quotes[i].adjclose = adjclose[i];
+      }
 
     if (result.events) {
       result2.events = {};
