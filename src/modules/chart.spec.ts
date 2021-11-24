@@ -60,6 +60,32 @@ describe("chart", () => {
     });
   });
 
+  describe("pre-emptive checks", () => {
+    it("!timestamp, quotes.length !== 1", () => {
+      return expect(() =>
+        yf.chart(
+          "FAKE",
+          { period1: "2021-11-23" },
+          { devel: "chart-notimestamp-quotes-length.fake.json" }
+        )
+      ).rejects.toMatchObject({
+        message: /No timestamp with quotes.length !== 1/,
+      });
+    });
+
+    it("!timestamp, quote != {}", () => {
+      return expect(() =>
+        yf.chart(
+          "FAKE",
+          { period1: "2021-11-23" },
+          { devel: "chart-notimestamp-weird-quote.fake.json" }
+        )
+      ).rejects.toMatchObject({
+        message: /No timestamp with unexpected quote/,
+      });
+    });
+  });
+
   it("throws on malformed result", () => {
     return expect(() => {
       consoleSilent();
