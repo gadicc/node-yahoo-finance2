@@ -16,7 +16,7 @@ export const testSymbols = [
   "QQQ", // ETF
   "0P000071W8.TO", // Mutual Fund
   "SI", // NYSE
-  "MDLY", // NYSE
+  // "MDLY", // Delisted by NYSE on 2021-07-07
   "ABBV", // NYSE
   "BRKS", // NMS
   "CRON", // NMS

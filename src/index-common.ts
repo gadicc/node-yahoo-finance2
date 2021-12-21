@@ -6,6 +6,7 @@ import errors from "./lib/errors.js";
 
 // modules
 import autoc from "./modules/autoc.js";
+import _chart from "./modules/chart.js";
 import historical from "./modules/historical.js";
 import insights from "./modules/insights.js";
 import optionsModule from "./modules/options.js";
@@ -30,6 +31,7 @@ export default {
 
   // modules,
   autoc,
+  _chart,
   historical,
   insights,
   options: optionsModule,

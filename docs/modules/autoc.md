@@ -1,4 +1,9 @@
-# autoc (auto complete)
+# ~~autoc (auto complete)~~
+
+NB: Yahoo decomissioned their autoc server sometime before 20 Nov 2021
+(issue [#337](https://github.com/gadicc/node-yahoo-finance2/issues/337])).
+Use [search](./search.md) instead (just like they do).
+
 
 ## Usage:
 

@@ -87,6 +87,7 @@ export interface QuoteBase {
   averageDailyVolume10Day?: number; // 5546385,
   displayName?: string; // "NVIDIA",
   symbol: string; // "NVDA"
+  underlyingSymbol?: string; // "LD.MI" (for LDO.MI, #363)
   // only on ETF?  not on EQUITY?
   ytdReturn?: number; // 0.31
   trailingThreeMonthReturns?: number; // 16.98

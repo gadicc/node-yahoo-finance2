@@ -1,5 +1,15 @@
 # historical
 
+API for e.g. https://finance.yahoo.com/quote/AAPL/history?p=AAPL.
+
+Note: the historical API is a little limited; in
+particular:
+
+1. `events` (prices, dividends, and stock splits) must be queried in separate network requests.
+1. `interval` can be only "1d", "1wk", "1m".
+
+For this reason, many of us are instead using the [chart API](./chart.md) which addresses both these points.
+
 ## Usage:
 
 ```js

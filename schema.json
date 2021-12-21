@@ -154,6 +154,618 @@
       },
       "additionalProperties": false
     },
+    "ChartResultObject": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/ChartMeta"
+        },
+        "timestamp": {
+          "type": "array",
+          "items": {
+            "yahooFinanceType": "number"
+          }
+        },
+        "events": {
+          "$ref": "#/definitions/ChartEventsObject"
+        },
+        "indicators": {
+          "$ref": "#/definitions/ChartIndicatorsObject"
+        }
+      },
+      "required": [
+        "meta",
+        "indicators"
+      ],
+      "additionalProperties": false
+    },
+    "ChartMeta": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "exchangeName": {
+          "type": "string"
+        },
+        "instrumentType": {
+          "type": "string"
+        },
+        "firstTradeDate": {
+          "yahooFinanceType": "date"
+        },
+        "regularMarketTime": {
+          "yahooFinanceType": "date"
+        },
+        "gmtoffset": {
+          "yahooFinanceType": "number"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "exchangeTimezoneName": {
+          "type": "string"
+        },
+        "regularMarketPrice": {
+          "yahooFinanceType": "number"
+        },
+        "chartPreviousClose": {
+          "yahooFinanceType": "number"
+        },
+        "previousClose": {
+          "yahooFinanceType": "number"
+        },
+        "scale": {
+          "yahooFinanceType": "number"
+        },
+        "priceHint": {
+          "yahooFinanceType": "number"
+        },
+        "currentTradingPeriod": {
+          "type": "object",
+          "properties": {
+            "pre": {
+              "$ref": "#/definitions/ChartMetaTradingPeriod"
+            },
+            "regular": {
+              "$ref": "#/definitions/ChartMetaTradingPeriod"
+            },
+            "post": {
+              "$ref": "#/definitions/ChartMetaTradingPeriod"
+            }
+          },
+          "required": [
+            "pre",
+            "regular",
+            "post"
+          ],
+          "additionalProperties": false
+        },
+        "tradingPeriods": {
+          "$ref": "#/definitions/ChartMetaTradingPeriods"
+        },
+        "dataGranularity": {
+          "type": "string"
+        },
+        "range": {
+          "type": "string"
+        },
+        "validRanges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "currency",
+        "symbol",
+        "exchangeName",
+        "instrumentType",
+        "firstTradeDate",
+        "regularMarketTime",
+        "gmtoffset",
+        "timezone",
+        "exchangeTimezoneName",
+        "regularMarketPrice",
+        "chartPreviousClose",
+        "priceHint",
+        "currentTradingPeriod",
+        "dataGranularity",
+        "range",
+        "validRanges"
+      ],
+      "additionalProperties": false
+    },
+    "ChartMetaTradingPeriod": {
+      "type": "object",
+      "properties": {
+        "timezone": {
+          "type": "string"
+        },
+        "start": {
+          "yahooFinanceType": "date"
+        },
+        "end": {
+          "yahooFinanceType": "date"
+        },
+        "gmtoffset": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "timezone",
+        "start",
+        "end",
+        "gmtoffset"
+      ],
+      "additionalProperties": false
+    },
+    "ChartMetaTradingPeriods": {
+      "type": "object",
+      "properties": {
+        "pre": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ChartMetaTradingPeriod"
+            }
+          }
+        },
+        "post": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ChartMetaTradingPeriod"
+            }
+          }
+        },
+        "regular": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ChartMetaTradingPeriod"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ChartEventsObject": {
+      "type": "object",
+      "properties": {
+        "dividends": {
+          "$ref": "#/definitions/ChartEventDividends"
+        },
+        "splits": {
+          "$ref": "#/definitions/ChartEventSplits"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ChartEventDividends": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/ChartEventDividend"
+      }
+    },
+    "ChartEventDividend": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "yahooFinanceType": "number"
+        },
+        "date": {
+          "yahooFinanceType": "date"
+        }
+      },
+      "required": [
+        "amount",
+        "date"
+      ],
+      "additionalProperties": false
+    },
+    "ChartEventSplits": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/ChartEventSplit"
+      }
+    },
+    "ChartEventSplit": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "yahooFinanceType": "date"
+        },
+        "numerator": {
+          "yahooFinanceType": "number"
+        },
+        "denominator": {
+          "yahooFinanceType": "number"
+        },
+        "splitRatio": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "numerator",
+        "denominator",
+        "splitRatio"
+      ],
+      "additionalProperties": false
+    },
+    "ChartIndicatorsObject": {
+      "type": "object",
+      "properties": {
+        "quote": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChartIndicatorQuote"
+          }
+        },
+        "adjclose": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChartIndicatorAdjclose"
+          }
+        }
+      },
+      "required": [
+        "quote"
+      ],
+      "additionalProperties": false
+    },
+    "ChartIndicatorQuote": {
+      "type": "object",
+      "properties": {
+        "high": {
+          "type": "array",
+          "items": {
+            "yahooFinanceType": "number"
+          }
+        },
+        "low": {
+          "type": "array",
+          "items": {
+            "yahooFinanceType": "number"
+          }
+        },
+        "open": {
+          "type": "array",
+          "items": {
+            "yahooFinanceType": "number"
+          }
+        },
+        "close": {
+          "type": "array",
+          "items": {
+            "yahooFinanceType": "number"
+          }
+        },
+        "volume": {
+          "type": "array",
+          "items": {
+            "yahooFinanceType": "number"
+          }
+        }
+      },
+      "required": [
+        "high",
+        "low",
+        "open",
+        "close",
+        "volume"
+      ],
+      "additionalProperties": false
+    },
+    "ChartIndicatorAdjclose": {
+      "type": "object",
+      "properties": {
+        "adjclose": {
+          "type": "array",
+          "items": {
+            "yahooFinanceType": "number"
+          }
+        }
+      },
+      "required": [
+        "adjclose"
+      ],
+      "additionalProperties": false
+    },
+    "ChartResultArray": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/ChartMeta"
+        },
+        "events": {
+          "$ref": "#/definitions/ChartEventsArray"
+        },
+        "quotes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChartResultArrayQuote"
+          }
+        }
+      },
+      "required": [
+        "meta",
+        "quotes"
+      ],
+      "additionalProperties": false
+    },
+    "ChartEventsArray": {
+      "type": "object",
+      "properties": {
+        "dividends": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChartEventDividend"
+          }
+        },
+        "splits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChartEventSplit"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ChartResultArrayQuote": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "yahooFinanceType": "date"
+        },
+        "high": {
+          "yahooFinanceType": "number"
+        },
+        "low": {
+          "yahooFinanceType": "number"
+        },
+        "open": {
+          "yahooFinanceType": "number"
+        },
+        "close": {
+          "yahooFinanceType": "number"
+        },
+        "volume": {
+          "yahooFinanceType": "number"
+        },
+        "adjclose": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "date",
+        "high",
+        "low",
+        "open",
+        "close",
+        "volume"
+      ],
+      "additionalProperties": false
+    },
+    "ChartOptions": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "useYfid": {
+          "type": "boolean"
+        },
+        "interval": {
+          "type": "string",
+          "enum": [
+            "1m",
+            "2m",
+            "5m",
+            "15m",
+            "30m",
+            "60m",
+            "90m",
+            "1h",
+            "1d",
+            "5d",
+            "1wk",
+            "1mo",
+            "3mo"
+          ]
+        },
+        "includePrePost": {
+          "type": "boolean"
+        },
+        "events": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "return": {
+          "type": "string",
+          "enum": [
+            "array",
+            "object"
+          ]
+        }
+      },
+      "required": [
+        "period1"
+      ],
+      "additionalProperties": false
+    },
+    "ChartOptionsWithReturnArray": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "useYfid": {
+          "type": "boolean"
+        },
+        "interval": {
+          "type": "string",
+          "enum": [
+            "1m",
+            "2m",
+            "5m",
+            "15m",
+            "30m",
+            "60m",
+            "90m",
+            "1h",
+            "1d",
+            "5d",
+            "1wk",
+            "1mo",
+            "3mo"
+          ]
+        },
+        "includePrePost": {
+          "type": "boolean"
+        },
+        "events": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "return": {
+          "type": "string",
+          "const": "array"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "period1"
+      ]
+    },
+    "ChartOptionsWithReturnObject": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "useYfid": {
+          "type": "boolean"
+        },
+        "interval": {
+          "type": "string",
+          "enum": [
+            "1m",
+            "2m",
+            "5m",
+            "15m",
+            "30m",
+            "60m",
+            "90m",
+            "1h",
+            "1d",
+            "5d",
+            "1wk",
+            "1mo",
+            "3mo"
+          ]
+        },
+        "includePrePost": {
+          "type": "boolean"
+        },
+        "events": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "return": {
+          "type": "string",
+          "const": "object"
+        }
+      },
+      "required": [
+        "period1",
+        "return"
+      ],
+      "additionalProperties": false
+    },
     "HistoricalResult": {
       "type": "array",
       "items": {
@@ -889,6 +1501,9 @@
         "symbol": {
           "type": "string"
         },
+        "underlyingSymbol": {
+          "type": "string"
+        },
         "ytdReturn": {
           "yahooFinanceType": "number"
         },
@@ -1201,6 +1816,9 @@
           "type": "string"
         },
         "symbol": {
+          "type": "string"
+        },
+        "underlyingSymbol": {
           "type": "string"
         },
         "ytdReturn": {
@@ -1530,6 +2148,9 @@
         "symbol": {
           "type": "string"
         },
+        "underlyingSymbol": {
+          "type": "string"
+        },
         "ytdReturn": {
           "yahooFinanceType": "number"
         },
@@ -1823,6 +2444,9 @@
           "type": "string"
         },
         "symbol": {
+          "type": "string"
+        },
+        "underlyingSymbol": {
           "type": "string"
         },
         "ytdReturn": {
@@ -2120,6 +2744,9 @@
         "symbol": {
           "type": "string"
         },
+        "underlyingSymbol": {
+          "type": "string"
+        },
         "ytdReturn": {
           "yahooFinanceType": "number"
         },
@@ -2413,6 +3040,9 @@
           "type": "string"
         },
         "symbol": {
+          "type": "string"
+        },
+        "underlyingSymbol": {
           "type": "string"
         },
         "ytdReturn": {
@@ -2710,6 +3340,9 @@
         "symbol": {
           "type": "string"
         },
+        "underlyingSymbol": {
+          "type": "string"
+        },
         "ytdReturn": {
           "yahooFinanceType": "number"
         },
@@ -2748,9 +3381,6 @@
         },
         "expireIsoDate": {
           "yahooFinanceType": "number"
-        },
-        "underlyingSymbol": {
-          "type": "string"
         }
       },
       "required": [
@@ -3025,6 +3655,9 @@
         "symbol": {
           "type": "string"
         },
+        "underlyingSymbol": {
+          "type": "string"
+        },
         "ytdReturn": {
           "yahooFinanceType": "number"
         },
@@ -3188,6 +3821,7 @@
         "averageDailyVolume10Day",
         "displayName",
         "symbol",
+        "underlyingSymbol",
         "ytdReturn",
         "trailingThreeMonthReturns",
         "trailingThreeMonthNavReturns",
@@ -3200,8 +3834,7 @@
         "strike",
         "openInterest",
         "expireDate",
-        "expireIsoDate",
-        "underlyingSymbol"
+        "expireIsoDate"
       ]
     },
     "ResultType": {

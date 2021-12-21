@@ -1,0 +1,158 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/WSKT.JK?useYfid=true&interval=1d&includePrePost=true&events=div%7Csplit%7Cearn&lang=en-US&period1=1577836800&period2=1578009600"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=10, stale-while-revalidate=20"
+      ],
+      "y-rid": [
+        "a0ms6fpgpkj57"
+      ],
+      "x-yahoo-request-id": [
+        "a0ms6fpgpkj57"
+      ],
+      "x-request-id": [
+        "aaff4a37-83cc-46be-9703-ae9256d9c478"
+      ],
+      "content-length": [
+        "890"
+      ],
+      "x-envoy-upstream-service-time": [
+        "11"
+      ],
+      "date": [
+        "Sun, 21 Nov 2021 13:41:59 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-chart-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "chart": {
+        "result": [
+          {
+            "meta": {
+              "currency": "IDR",
+              "symbol": "WSKT.JK",
+              "exchangeName": "JKT",
+              "instrumentType": "EQUITY",
+              "firstTradeDate": 1355882400,
+              "regularMarketTime": 1637309615,
+              "gmtoffset": 25200,
+              "timezone": "WIB",
+              "exchangeTimezoneName": "Asia/Jakarta",
+              "regularMarketPrice": 815,
+              "chartPreviousClose": 1485,
+              "priceHint": 2,
+              "currentTradingPeriod": {
+                "pre": {
+                  "timezone": "WIB",
+                  "start": 1637286300,
+                  "end": 1637287200,
+                  "gmtoffset": 25200
+                },
+                "regular": {
+                  "timezone": "WIB",
+                  "start": 1637287200,
+                  "end": 1637312400,
+                  "gmtoffset": 25200
+                },
+                "post": {
+                  "timezone": "WIB",
+                  "start": 1637312400,
+                  "end": 1637313300,
+                  "gmtoffset": 25200
+                }
+              },
+              "dataGranularity": "1d",
+              "range": "",
+              "validRanges": [
+                "1d",
+                "5d",
+                "1mo",
+                "3mo",
+                "6mo",
+                "1y",
+                "2y",
+                "5y",
+                "10y",
+                "ytd",
+                "max"
+              ]
+            },
+            "timestamp": [
+              1577930400
+            ],
+            "indicators": {
+              "quote": [
+                {
+                  "high": [
+                    1515
+                  ],
+                  "volume": [
+                    23547100
+                  ],
+                  "open": [
+                    1485
+                  ],
+                  "low": [
+                    1480
+                  ],
+                  "close": [
+                    1505
+                  ]
+                }
+              ],
+              "adjclose": [
+                {
+                  "adjclose": [
+                    1497.776611328125
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -54,7 +54,8 @@ const results = await yahooFInance.search('AAPL', { someOption: true, etc });
 ```
 
 Available modules:
-[`autoc`](./docs/modules/autoc.md),
+~[`autoc`](./docs/modules/autoc.md)~,
+[`chart`](./docs/modules/chart.md),
 [`historical`](./docs/modules/historical.md),
 [`quote`](./docs/modules/quote.md),
 [`quoteSummary`](./docs/modules/quoteSummary.md) (submodules:
