@@ -1,3 +1,18 @@
+# [2.1.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.0.1...v2.1.0) (2021-12-21)
+
+
+### Bug Fixes
+
+* **chart:** more query tests, intervals, edge cases ([#336](https://github.com/gadicc/node-yahoo-finance2/issues/336)) ([6b95d7e](https://github.com/gadicc/node-yahoo-finance2/commit/6b95d7e99e775ef6f304642730f4cec7a7e707fa))
+* **package:** have semantic-release recognize version branches ([a89d895](https://github.com/gadicc/node-yahoo-finance2/commit/a89d8951278061657ff63d552c1a1fb4e318977e))
+* **quote:** equity: allow underlyingSymbol.  LDN.MI test ([#363](https://github.com/gadicc/node-yahoo-finance2/issues/363)) ([817410b](https://github.com/gadicc/node-yahoo-finance2/commit/817410be01dfff72df91aeb697ed6822e4cd169b))
+
+
+### Features
+
+* **chart:** { return: "array" } (default) + test fix ([#336](https://github.com/gadicc/node-yahoo-finance2/issues/336)) ([1ac66c3](https://github.com/gadicc/node-yahoo-finance2/commit/1ac66c3e335982b198dbf56bc4e311b1192026bd))
+* **chart:** initial release as "_chart" ([#239](https://github.com/gadicc/node-yahoo-finance2/issues/239), [#328](https://github.com/gadicc/node-yahoo-finance2/issues/328), [#334](https://github.com/gadicc/node-yahoo-finance2/issues/334)) ([92b90b1](https://github.com/gadicc/node-yahoo-finance2/commit/92b90b1dee5350ae7144b0b642710baaa88ea694))
+
 ## [2.0.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.0.0...v2.0.1) (2021-11-13)
 
 
