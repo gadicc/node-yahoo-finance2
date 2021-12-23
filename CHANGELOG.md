@@ -1,3 +1,10 @@
+## [1.14.8](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.7...v1.14.8) (2021-12-23)
+
+
+### Bug Fixes
+
+* **pkg:** warn to upgrade to [@latest](https://github.com/latest) 2.x. ([43e5c5d](https://github.com/gadicc/node-yahoo-finance2/commit/43e5c5d6ea48243d3844460c1d96b5837fa67fe6))
+
 ## [1.14.7](https://github.com/gadicc/node-yahoo-finance2/compare/v1.14.6...v1.14.7) (2021-11-13)
 
 
