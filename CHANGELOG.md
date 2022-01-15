@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.0...v2.1.1) (2022-01-15)
+
+
+### Bug Fixes
+
+* **setGlobalConfig:** add to index; minor improvements ([#376](https://github.com/gadicc/node-yahoo-finance2/issues/376)) ([464f26f](https://github.com/gadicc/node-yahoo-finance2/commit/464f26f786f92f7299e22fb358e49cb5754f12b3))
+
 # [2.1.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.0.1...v2.1.0) (2021-12-21)
 
 
