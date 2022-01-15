@@ -29,16 +29,16 @@ yahooFinanceV2.historical(symbol, { period1 });
 ]
 ```
 
-** Query **
+**Query**
 
-| Attribute     | V1                       | V2                               |
+| Attribute     | v1                       | v2+                              |
 | ------------- | ------------------------ | -------------------------------- |
 | `symbol`      | As a `{ symbol }` option | First argument to historical()   |
 | `fields`      | `{ from, to }`           | `{ period1, period2 }`.  Period2 defaults to now().
 | dates         | "YYYY-MM-dd"             | JS Date object, or any format `new Date()` understands , so "YYYY-MM-dd" still works fine too.
 
-** Results **
+**Results**
 
-| Attribute     | V1                       | V2                               |
+| Attribute     | v1                       | v2+                              |
 | ------------- | ------------------------ | -------------------------------- |
 | `symbol`      | Was included in each result | Not included in each result   |

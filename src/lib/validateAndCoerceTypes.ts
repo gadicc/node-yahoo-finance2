@@ -191,8 +191,8 @@ export function resolvePath(obj: any, instancePath: string) {
 }
 
 export interface ValidationOptions {
-  logErrors: boolean;
-  logOptionsErrors: boolean;
+  logErrors?: boolean;
+  logOptionsErrors?: boolean;
 }
 
 export interface ValidateParams {
@@ -227,7 +227,7 @@ function validate({
           error.data = resolvePath(object, error.instancePath);
       });
 
-    if (options.logErrors) {
+    if (options.logErrors === true) {
       const title = encodeURIComponent("Failed validation: " + schemaKey);
       console.log(
         "The following result did not validate with schema: " + schemaKey
@@ -258,7 +258,7 @@ see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.
       errors: validator.errors,
     });
   } /* if (type === 'options') */ else {
-    if (options.logOptionsErrors) {
+    if (options.logOptionsErrors === true) {
       console.error(
         `[yahooFinance.${source}] Invalid options ("${schemaKey}")`
       );
