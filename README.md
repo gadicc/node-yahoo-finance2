@@ -8,10 +8,10 @@ Copyright (c) 2021 by Gadi Cohen and Pilwon Huh.  [MIT licensed](./LICENSE).
 
 Supports Node 12.0.0 and up (tests are run against 12.0.0).
 
-**Beta release**.  Please let us know of any issues or edge cases.
-If you're looking for something stable and battle-tested, use the
-current
-[node-yahoo-finance](https://www.npmjs.com/package/yahoo-finance).
+**Stable release** - supersedes the ubiquitous
+[node-yahoo-finance](https://www.npmjs.com/package/yahoo-finance)
+v1. NB: The API has changed, see [UPGRADING](./docs/UPGRADING.md)
+for more information.
 
 [Live Demo on CodeSandbox](https://codesandbox.io/s/yahoo-finance2-312x2?file=/src/index.ts)
 
