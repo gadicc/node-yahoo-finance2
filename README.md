@@ -80,6 +80,13 @@ Utils: [`setGlobalConfig`](./docs/other/setGlobalConfig.md).
 
 See the [Full Documentation](./docs/README.md).
 
+Particularly, make sure to read the notes there on
+[ERROR HANDLING](./docs/README.md#error-handling).
+Be aware that if a stock gets delisted, Yahoo removes all related
+data, including historical (and chart) data from periods *before* the
+delisting occurred (i.e. queries that worked before will start failing,
+and there is no way to retrieve this data again).
+
 ## Even Quicker Start - Stock Price
 
 ```js

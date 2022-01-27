@@ -41,6 +41,9 @@ const result = await yahooFinance.historical(query, queryOptions);
 ]
 ```
 
+Make sure to also look out for [historical() errors](#errors)
+and [general errors](../README.md#error-handling).
+
 ## API
 
 ```js
@@ -87,3 +90,13 @@ can rely on received input to be well validated.  Note: this only happens
 when *all* fields are `null`.  If you come across a case where only some
 fields are null, an error will be thrown - in that case, please let us know
 what symbol and date it happened on.
+
+### Errors
+
+* `HTTPError: Not Found`
+
+  You'll get this error if you try query that a symbol that doesn't exist.
+  **If a stock gets delisted, a previously valid symbol will stop working!**
+  *This includes periods for when the stock WAS listed*.  ALL DATA will no
+  longer be available.  This is how Yahoo treats delisted stocks and there is
+  nothing we can do about it.

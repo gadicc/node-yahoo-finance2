@@ -76,6 +76,11 @@ So what can go wrong?
 * HTTP errors: internal errors, etc.
 * Missing resources, e.g. asking for fund data for a stock.
 * Validation errors.
+* **Delisted stocks.**  If a stock gets delisted, a query that worked
+  previously (for a particular symbol) will begin to throw an error.
+  This includes historical (and chart) data from *before* the delisting
+  occured.  This is how Yahoo treats delisted stocks and there is
+  nothing we can do about it.
 
 The library goes to great lengths to ensure that if there are no errors,
 the result you receive will be in an expected format and structure, that

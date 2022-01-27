@@ -87,6 +87,9 @@ const result = await yahooFinance._chart(query, queryOptions);
 }
 ```
 
+Make sure to also look out for [chart() errors](#errors)
+and [general errors](../README.md#error-handling).
+
 The above includes a number of transforms from the original object format
 received from Yahoo, which makes the data a bit easier to work with.  It uses
 the query default of `{ return: "array" }`.  However, certain charting
@@ -179,3 +182,14 @@ Interval period can be one of 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, **1d**, 5d, **
 ### Module Options
 
 See [Common Options](../README.md#common-options).
+
+<a name="errors"></a>
+## Errors
+
+* `Error: No data found, symbol may be delisted`
+
+  You'll get this error if you try query that a symbol that doesn't exist.
+  **If a stock gets delisted, a previously valid symbol will stop working!**
+  *This includes periods for when the stock WAS listed*.  ALL DATA will no
+  longer be available.  This is how Yahoo treats delisted stocks and there is
+  nothing we can do about it.
