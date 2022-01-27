@@ -9,6 +9,7 @@ const config: Config.InitialOptions = {
     "<rootDir>/dist/",
     "<rootDir>/tests-modules/",
   ],
+  modulePathIgnorePatterns: ["<rootDir>/tests-modules"],
   extensionsToTreatAsEsm: [".ts"],
   globals: {
     "ts-jest": {
