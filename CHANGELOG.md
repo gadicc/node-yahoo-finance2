@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.1...v2.1.2) (2022-01-29)
+
+
+### Bug Fixes
+
+* **pkg:** bump ajv and ajv-formats ([3dac116](https://github.com/gadicc/node-yahoo-finance2/commit/3dac116bd49f28c8880929d38777982eb8c28ca4))
+
 ## [2.1.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.0...v2.1.1) (2022-01-15)
 
 
