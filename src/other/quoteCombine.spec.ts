@@ -5,9 +5,10 @@ import testYf from "../../tests/testYf.js";
 
 const yf = testYf({ quoteCombine });
 
-jest.useFakeTimers();
-
 describe("quoteCombine", () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => jest.useRealTimers());
+
   it("works with a single result", (done) => {
     const devel = "quoteCombine-AAPL.json";
     yf.quoteCombine("AAPL", undefined, { devel })
