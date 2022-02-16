@@ -6,6 +6,7 @@ const fakeConsole = {
   warn() {},
   log() {},
   error() {},
+  dir() {},
 };
 
 function consoleSilent() {
