@@ -1,0 +1,192 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/AAPL?formatted=false&lang=en-US&region=US&date=1646092800"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "68gknk1h0pepj"
+      ],
+      "x-yahoo-request-id": [
+        "68gknk1h0pepj"
+      ],
+      "x-request-id": [
+        "f3d1aeeb-795c-463b-afe5-97cfd5a68655"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1221"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 16 Feb 2022 08:52:03 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "AAPL",
+            "expirationDates": [
+              1645142400,
+              1645747200,
+              1646352000,
+              1646956800,
+              1647561600,
+              1648166400,
+              1648771200,
+              1649894400,
+              1653004800,
+              1655424000,
+              1657843200,
+              1660867200,
+              1663286400,
+              1666310400,
+              1668729600,
+              1674172800,
+              1679011200,
+              1686873600,
+              1694736000,
+              1705622400
+            ],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": true,
+              "currency": "USD",
+              "postMarketChangePercent": -0.51507574,
+              "postMarketTime": 1644973196,
+              "postMarketPrice": 171.9,
+              "postMarketChange": -0.8899994,
+              "regularMarketChange": 3.9099884,
+              "regularMarketChangePercent": 2.3152466,
+              "regularMarketTime": 1644958803,
+              "regularMarketPrice": 172.79,
+              "regularMarketDayHigh": 172.95,
+              "regularMarketDayRange": "170.25 - 172.95",
+              "regularMarketDayLow": 170.25,
+              "regularMarketVolume": 64286320,
+              "regularMarketPreviousClose": 168.88,
+              "bid": 0,
+              "ask": 0,
+              "bidSize": 11,
+              "askSize": 11,
+              "fullExchangeName": "NasdaqGS",
+              "financialCurrency": "USD",
+              "regularMarketOpen": 170.97,
+              "averageDailyVolume3Month": 104284078,
+              "averageDailyVolume10Day": 84192050,
+              "fiftyTwoWeekLowChange": 56.579994,
+              "fiftyTwoWeekLowChangePercent": 0.48687717,
+              "fiftyTwoWeekRange": "116.21 - 182.94",
+              "fiftyTwoWeekHighChange": -10.150009,
+              "fiftyTwoWeekHighChangePercent": -0.055482723,
+              "fiftyTwoWeekLow": 116.21,
+              "fiftyTwoWeekHigh": 182.94,
+              "dividendDate": 1644451200,
+              "earningsTimestamp": 1643301000,
+              "earningsTimestampStart": 1651003200,
+              "earningsTimestampEnd": 1651521600,
+              "trailingAnnualDividendRate": 0.865,
+              "trailingPE": 28.726517,
+              "trailingAnnualDividendYield": 0.00512198,
+              "epsTrailingTwelveMonths": 6.015,
+              "epsForward": 6.56,
+              "epsCurrentYear": 6.16,
+              "firstTradeDateMilliseconds": 345479400000,
+              "priceHint": 2,
+              "priceEpsCurrentYear": 28.050323,
+              "sharesOutstanding": 16319399936,
+              "bookValue": 4.402,
+              "fiftyDayAverage": 172.3002,
+              "fiftyDayAverageChange": 0.48979187,
+              "fiftyDayAverageChangePercent": 0.0028426656,
+              "twoHundredDayAverage": 150.28395,
+              "twoHundredDayAverageChange": 22.506042,
+              "twoHundredDayAverageChangePercent": 0.14975679,
+              "marketCap": 2819829006336,
+              "forwardPE": 26.33994,
+              "priceToBook": 39.252613,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "pageViewGrowthWeekly": -0.186018,
+              "averageAnalystRating": "1.8 - Buy",
+              "tradeable": false,
+              "exchange": "NMS",
+              "shortName": "Apple Inc.",
+              "longName": "Apple Inc.",
+              "messageBoardId": "finmb_24937",
+              "exchangeTimezoneName": "America/New_York",
+              "exchangeTimezoneShortName": "EST",
+              "gmtOffSetMilliseconds": -18000000,
+              "market": "us_market",
+              "esgPopulated": false,
+              "marketState": "PREPRE",
+              "displayName": "Apple",
+              "symbol": "AAPL"
+            },
+            "options": [
+              {
+                "expirationDate": 1646092800,
+                "hasMiniOptions": false,
+                "calls": [],
+                "puts": []
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
