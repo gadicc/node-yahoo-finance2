@@ -6,7 +6,7 @@ import testYf from "../../tests/testYf.js";
 const yf = testYf({ quoteCombine });
 
 describe("quoteCombine", () => {
-  beforeEach(() => jest.useFakeTimers("legacy"));
+  beforeEach(() => jest.useFakeTimers());
   afterEach(() => jest.useRealTimers());
 
   it("works with a single result", (done) => {
