@@ -179,7 +179,9 @@ ajv.addSchema(schema);
 
 /* istanbul ignore next */
 const logObj =
-  typeof process !== "undefined" && process?.stdout?.isTTY
+  typeof process !== "undefined" &&
+  process?.stdout?.isTTY &&
+  process?.env?.NODE_ENV !== "test"
     ? (obj: any) => console.dir(obj, { depth: 4, colors: true })
     : (obj: any) => console.log(JSON.stringify(obj, null, 2));
 
