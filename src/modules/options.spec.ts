@@ -49,5 +49,11 @@ describe("options", () => {
         yf.options("AAPL", { date: "2022-03-01T00:00:00.000Z" }, devel)
       ).resolves.not.toThrow();
     });
+
+    it("throws on invalid", () => {
+      return expect(
+        yf.options("AAPL", { date: "something yfDate can't parse" })
+      ).rejects.toThrow(/^Unsupported date type/);
+    });
   });
 });

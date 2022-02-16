@@ -85,12 +85,14 @@ export default function options(
       transformWith(queryOptions: OptionsOptions) {
         const date = queryOptions.date;
         if (date) {
-          if (date instanceof Date)
+          // yfDate will convert valid number/string to Date.
+          if (date instanceof Date) {
+            // now we convert back to unix epoch in seconds for query
             queryOptions.date = Math.floor(date.getTime() / 1000);
-          else if (typeof date === "string")
-            queryOptions.date = Math.floor(
-              new Date(date as string).getTime() / 1000
-            );
+          } else {
+            // yfDate didn't recognize it as a date.
+            throw new Error("Unsupported date type: " + date);
+          }
         }
         return queryOptions;
       },
