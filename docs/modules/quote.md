@@ -4,6 +4,8 @@ Note: in the original `node-yahoo-finance`, we had a module called "`quote`"
 that actually called the [quoteSummary](./quoteSummary.md) API.  See that
 module for further details.
 
+**Make sure to read the [quirks](#quirks) section at the bottom of this file.**
+
 ## Usage:
 
 ```js
@@ -179,3 +181,17 @@ For a list of all fields, see the `Quote` interface in
 ### Module Options
 
 See [Common Options](../README.md#common-options).
+
+<a name="quirks"></a>
+## Quirks
+
+### Inaccurate Earnings Dates
+
+As reported by @glintik in
+[issue #386](https://github.com/gadicc/node-yahoo-finance2/issues/386),
+the values of
+`earningsTimestamp`, `earningsTimestampStart`, `earningsTimestampEnd`
+can be very misleading, and you are advised to find a better source for
+accurate timing.  However, to get a *rough indication* of when the earnings
+call might be (+/- 2 days), this might be sufficient.  Please review the
+issue for further details and comments.
