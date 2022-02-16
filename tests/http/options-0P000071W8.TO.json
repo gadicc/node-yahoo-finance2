@@ -1,0 +1,129 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/0P000071W8.TO?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "5386nsph0pg7a"
+      ],
+      "x-yahoo-request-id": [
+        "5386nsph0pg7a"
+      ],
+      "x-request-id": [
+        "f17430b3-b293-4742-9b0a-011dfea49cad"
+      ],
+      "content-length": [
+        "1475"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 16 Feb 2022 09:16:26 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "0P000071W8.TO",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "MUTUALFUND",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": true,
+              "currency": "CAD",
+              "firstTradeDateMilliseconds": 1514903400000,
+              "priceHint": 2,
+              "ytdReturn": -8.04762,
+              "trailingThreeMonthReturns": -7.11752,
+              "fiftyDayAverage": 102.8888,
+              "fiftyDayAverageChange": -4.538803,
+              "fiftyDayAverageChangePercent": -0.044113673,
+              "twoHundredDayAverage": 99.179,
+              "twoHundredDayAverageChange": -0.8290024,
+              "twoHundredDayAverageChangePercent": -0.008358648,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 15,
+              "tradeable": false,
+              "regularMarketChange": -0.44000244,
+              "regularMarketChangePercent": -0.44539168,
+              "regularMarketTime": 1644868800,
+              "regularMarketPrice": 98.35,
+              "regularMarketPreviousClose": 98.79,
+              "fullExchangeName": "Toronto",
+              "averageDailyVolume3Month": 0,
+              "averageDailyVolume10Day": 0,
+              "fiftyTwoWeekLowChange": 41.17,
+              "fiftyTwoWeekLowChangePercent": 0.72000694,
+              "fiftyTwoWeekRange": "57.18 - 89.59",
+              "fiftyTwoWeekHighChange": 8.760002,
+              "fiftyTwoWeekHighChangePercent": 0.0977788,
+              "fiftyTwoWeekLow": 57.18,
+              "fiftyTwoWeekHigh": 89.59,
+              "exchange": "TOR",
+              "shortName": "TD Indiciel américain - e (C$)",
+              "longName": "TD U.S. Index Fund - e",
+              "exchangeTimezoneName": "America/Toronto",
+              "exchangeTimezoneShortName": "EST",
+              "gmtOffSetMilliseconds": -18000000,
+              "market": "ca_market",
+              "esgPopulated": false,
+              "marketState": "PREPRE",
+              "symbol": "0P000071W8.TO"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

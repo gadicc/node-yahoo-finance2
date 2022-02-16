@@ -1,0 +1,141 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/BTC-USD?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "dgf3d3hh0pg7d"
+      ],
+      "x-yahoo-request-id": [
+        "dgf3d3hh0pg7d"
+      ],
+      "x-request-id": [
+        "8af7f822-51b9-40b1-ac28-51b4e3136338"
+      ],
+      "content-length": [
+        "1862"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 16 Feb 2022 09:16:29 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "BTC-USD",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "CRYPTOCURRENCY",
+              "quoteSourceName": "CoinMarketCap",
+              "triggerable": true,
+              "currency": "USD",
+              "exchange": "CCC",
+              "shortName": "Bitcoin USD",
+              "messageBoardId": "finmb_BTC_CCC",
+              "exchangeTimezoneName": "UTC",
+              "exchangeTimezoneShortName": "UTC",
+              "gmtOffSetMilliseconds": 0,
+              "market": "ccc_market",
+              "esgPopulated": false,
+              "fiftyDayAverage": 41924.21,
+              "fiftyDayAverageChange": 2211.211,
+              "fiftyDayAverageChangePercent": 0.052743055,
+              "twoHundredDayAverage": 49390.81,
+              "twoHundredDayAverageChange": -5255.3867,
+              "twoHundredDayAverageChangePercent": -0.10640414,
+              "marketCap": 836797923328,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "tradeable": false,
+              "marketState": "REGULAR",
+              "regularMarketPreviousClose": 44503.094,
+              "fullExchangeName": "CCC",
+              "regularMarketOpen": 44503.094,
+              "averageDailyVolume3Month": 29900897420,
+              "averageDailyVolume10Day": 23358082229,
+              "startDate": 1367107200,
+              "coinImageUrl": "https://s.yimg.com/uc/fin/img/reports-thumbnails/1.png",
+              "fiftyTwoWeekLowChange": 15241.801,
+              "fiftyTwoWeekLowChangePercent": 0.5275144,
+              "fiftyTwoWeekRange": "28893.621 - 68789.625",
+              "fiftyTwoWeekHighChange": -24654.203,
+              "fiftyTwoWeekHighChangePercent": -0.35840002,
+              "fiftyTwoWeekLow": 28893.621,
+              "fiftyTwoWeekHigh": 68789.625,
+              "firstTradeDateMilliseconds": 1410912000000,
+              "priceHint": 2,
+              "circulatingSupply": 18959780,
+              "lastMarket": "CoinMarketCap",
+              "volume24Hr": 21246066688,
+              "volumeAllCurrencies": 21246066688,
+              "fromCurrency": "BTC",
+              "toCurrency": "USD=X",
+              "regularMarketChange": 206.65234,
+              "regularMarketChangePercent": 0.4704247,
+              "regularMarketTime": 1645002840,
+              "regularMarketPrice": 44135.42,
+              "regularMarketDayHigh": 44503.094,
+              "regularMarketDayRange": "43762.27 - 44503.094",
+              "regularMarketDayLow": 43762.27,
+              "regularMarketVolume": 21246066688,
+              "symbol": "BTC-USD"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

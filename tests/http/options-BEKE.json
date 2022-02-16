@@ -1,0 +1,567 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/BEKE?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "ee52khdh0pg74"
+      ],
+      "x-yahoo-request-id": [
+        "ee52khdh0pg74"
+      ],
+      "x-request-id": [
+        "656e54cf-01b4-4526-94a9-d742e9a47a8d"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "x-envoy-upstream-service-time": [
+        "11"
+      ],
+      "date": [
+        "Wed, 16 Feb 2022 09:16:20 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "transfer-encoding": [
+        "chunked"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "BEKE",
+            "expirationDates": [
+              1645142400,
+              1647561600,
+              1649894400,
+              1655424000,
+              1657843200,
+              1674172800,
+              1705622400
+            ],
+            "strikes": [
+              2.5,
+              5,
+              7.5,
+              10,
+              12.5,
+              15,
+              17.5,
+              20,
+              22.5,
+              25,
+              30,
+              35
+            ],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "triggerable": true,
+              "currency": "USD",
+              "market": "us_market",
+              "exchange": "NYQ",
+              "shortName": "KE Holdings Inc",
+              "longName": "KE Holdings Inc.",
+              "messageBoardId": "finmb_665898843",
+              "exchangeTimezoneName": "America/New_York",
+              "exchangeTimezoneShortName": "EST",
+              "gmtOffSetMilliseconds": -18000000,
+              "esgPopulated": false,
+              "firstTradeDateMilliseconds": 1597325400000,
+              "priceHint": 2,
+              "preMarketChange": 0.32999992,
+              "preMarketChangePercent": 1.6280212,
+              "preMarketTime": 1645002950,
+              "preMarketPrice": 20.6,
+              "regularMarketChange": 0.38000107,
+              "regularMarketChangePercent": 1.9105133,
+              "regularMarketTime": 1644958802,
+              "regularMarketPrice": 20.27,
+              "regularMarketDayHigh": 20.36,
+              "regularMarketDayRange": "19.67 - 20.36",
+              "regularMarketDayLow": 19.67,
+              "regularMarketVolume": 10951844,
+              "regularMarketPreviousClose": 19.89,
+              "bid": 0,
+              "ask": 0,
+              "bidSize": 14,
+              "askSize": 8,
+              "fullExchangeName": "NYSE",
+              "financialCurrency": "CNY",
+              "regularMarketOpen": 20.01,
+              "averageDailyVolume3Month": 10334044,
+              "averageDailyVolume10Day": 7455020,
+              "fiftyTwoWeekLowChange": 5.120001,
+              "fiftyTwoWeekLowChangePercent": 0.33795387,
+              "fiftyTwoWeekRange": "15.15 - 76.92",
+              "fiftyTwoWeekHighChange": -56.649998,
+              "fiftyTwoWeekHighChangePercent": -0.73647946,
+              "fiftyTwoWeekLow": 15.15,
+              "fiftyTwoWeekHigh": 76.92,
+              "earningsTimestamp": 1636392600,
+              "earningsTimestampStart": 1647288000,
+              "earningsTimestampEnd": 1647633600,
+              "trailingAnnualDividendRate": 0,
+              "trailingPE": 129.9359,
+              "trailingAnnualDividendYield": 0,
+              "epsTrailingTwelveMonths": 0.156,
+              "epsForward": 0.6,
+              "epsCurrentYear": 0.24,
+              "priceEpsCurrentYear": 84.458336,
+              "sharesOutstanding": 1190899968,
+              "bookValue": 57.186,
+              "fiftyDayAverage": 20.1714,
+              "fiftyDayAverageChange": 0.09860039,
+              "fiftyDayAverageChangePercent": 0.004888128,
+              "twoHundredDayAverage": 27.806,
+              "twoHundredDayAverageChange": -7.5359993,
+              "twoHundredDayAverageChangePercent": -0.27102062,
+              "marketCap": 24139542528,
+              "forwardPE": 33.783333,
+              "priceToBook": 0.35445738,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "pageViewGrowthWeekly": -0.09859794,
+              "ipoExpectedDate": "2020-08-13",
+              "averageAnalystRating": "2.2 - Buy",
+              "tradeable": false,
+              "marketState": "PRE",
+              "displayName": "KE",
+              "symbol": "BEKE"
+            },
+            "options": [
+              {
+                "expirationDate": 1645142400,
+                "hasMiniOptions": false,
+                "calls": [
+                  {
+                    "contractSymbol": "BEKE220218C00002500",
+                    "strike": 2.5,
+                    "currency": "USD",
+                    "lastPrice": 17.5,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 1,
+                    "bid": 17.3,
+                    "ask": 18.4,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1641570949,
+                    "impliedVolatility": 12.250002343750001,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BEKE220218C00007500",
+                    "strike": 7.5,
+                    "currency": "USD",
+                    "lastPrice": 10.7,
+                    "change": 0,
+                    "percentChange": 0,
+                    "openInterest": 32,
+                    "bid": 12.3,
+                    "ask": 12.7,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1641487254,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BEKE220218C00010000",
+                    "strike": 10,
+                    "currency": "USD",
+                    "lastPrice": 8.86,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1643309556,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BEKE220218C00012500",
+                    "strike": 12.5,
+                    "currency": "USD",
+                    "lastPrice": 7.3,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 37,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1643224463,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BEKE220218C00015000",
+                    "strike": 15,
+                    "currency": "USD",
+                    "lastPrice": 4.88,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644936652,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BEKE220218C00017500",
+                    "strike": 17.5,
+                    "currency": "USD",
+                    "lastPrice": 2.53,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644936791,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BEKE220218C00020000",
+                    "strike": 20,
+                    "currency": "USD",
+                    "lastPrice": 0.88,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 428,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644958543,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BEKE220218C00022500",
+                    "strike": 22.5,
+                    "currency": "USD",
+                    "lastPrice": 0.15,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 44,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644958514,
+                    "impliedVolatility": 0.2500075,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BEKE220218C00025000",
+                    "strike": 25,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 47,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644958514,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BEKE220218C00030000",
+                    "strike": 30,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 4,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644855934,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BEKE220218C00035000",
+                    "strike": 35,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 2,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1643916224,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  }
+                ],
+                "puts": [
+                  {
+                    "contractSymbol": "BEKE220218P00005000",
+                    "strike": 5,
+                    "currency": "USD",
+                    "lastPrice": 0.02,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 5,
+                    "openInterest": 6,
+                    "bid": 0,
+                    "ask": 0.05,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1641827753,
+                    "impliedVolatility": 6.87500140625,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BEKE220218P00007500",
+                    "strike": 7.5,
+                    "currency": "USD",
+                    "lastPrice": 0.05,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 10,
+                    "openInterest": 12,
+                    "bid": 0,
+                    "ask": 0.05,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1641826484,
+                    "impliedVolatility": 4.937503828124999,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BEKE220218P00010000",
+                    "strike": 10,
+                    "currency": "USD",
+                    "lastPrice": 0.05,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 2,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644331452,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BEKE220218P00012500",
+                    "strike": 12.5,
+                    "currency": "USD",
+                    "lastPrice": 0.04,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 57,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644349445,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BEKE220218P00015000",
+                    "strike": 15,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 12,
+                    "openInterest": 0,
+                    "bid": 0.02,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644935639,
+                    "impliedVolatility": 1.46875265625,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BEKE220218P00017500",
+                    "strike": 17.5,
+                    "currency": "USD",
+                    "lastPrice": 0.07,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 114,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644958514,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BEKE220218P00020000",
+                    "strike": 20,
+                    "currency": "USD",
+                    "lastPrice": 0.55,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 122,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644958600,
+                    "impliedVolatility": 0.062509375,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "BEKE220218P00022500",
+                    "strike": 22.5,
+                    "currency": "USD",
+                    "lastPrice": 2.7,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644872398,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BEKE220218P00025000",
+                    "strike": 25,
+                    "currency": "USD",
+                    "lastPrice": 2.5,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 6,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644508055,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BEKE220218P00030000",
+                    "strike": 30,
+                    "currency": "USD",
+                    "lastPrice": 7.85,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644590841,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "BEKE220218P00035000",
+                    "strike": 35,
+                    "currency": "USD",
+                    "lastPrice": 15.62,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 2,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1643297153,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

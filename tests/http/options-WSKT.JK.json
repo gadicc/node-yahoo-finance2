@@ -1,0 +1,150 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/WSKT.JK?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "agmtlilh0pg75"
+      ],
+      "x-yahoo-request-id": [
+        "agmtlilh0pg75"
+      ],
+      "x-request-id": [
+        "91a8d4e7-1b22-4580-9aa0-07d4a5d300dc"
+      ],
+      "content-length": [
+        "2009"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 16 Feb 2022 09:16:21 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "WSKT.JK",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": false,
+              "currency": "IDR",
+              "epsCurrentYear": -57.55,
+              "priceEpsCurrentYear": -11.120765,
+              "sharesOutstanding": 28806799360,
+              "bookValue": 581.284,
+              "fiftyDayAverage": 664.4,
+              "fiftyDayAverageChange": -24.400024,
+              "fiftyDayAverageChangePercent": -0.0367249,
+              "twoHundredDayAverage": 852.35,
+              "twoHundredDayAverageChange": -212.34998,
+              "twoHundredDayAverageChangePercent": -0.24913472,
+              "marketCap": 18436352638976,
+              "forwardPE": -14.162426,
+              "priceToBook": 1.1010109,
+              "sourceInterval": 10,
+              "exchangeDataDelayedBy": 0,
+              "averageAnalystRating": "2.0 - Buy",
+              "tradeable": false,
+              "exchange": "JKT",
+              "shortName": "Waskita Karya (Persero) Tbk.",
+              "firstTradeDateMilliseconds": 1355882400000,
+              "priceHint": 2,
+              "marketState": "POSTPOST",
+              "regularMarketChange": 30,
+              "regularMarketChangePercent": 4.9180326,
+              "regularMarketTime": 1644999290,
+              "regularMarketPrice": 640,
+              "regularMarketDayHigh": 645,
+              "regularMarketDayRange": "615.0 - 645.0",
+              "regularMarketDayLow": 615,
+              "regularMarketVolume": 109015900,
+              "regularMarketPreviousClose": 610,
+              "bid": 635,
+              "ask": 640,
+              "bidSize": 0,
+              "askSize": 0,
+              "fullExchangeName": "Jakarta",
+              "financialCurrency": "IDR",
+              "regularMarketOpen": 615,
+              "averageDailyVolume3Month": 61803495,
+              "averageDailyVolume10Day": 113265230,
+              "fiftyTwoWeekLowChange": 90,
+              "fiftyTwoWeekLowChangePercent": 0.16363636,
+              "fiftyTwoWeekRange": "550.0 - 1625.0",
+              "fiftyTwoWeekHighChange": -985,
+              "fiftyTwoWeekHighChangePercent": -0.60615385,
+              "fiftyTwoWeekLow": 550,
+              "fiftyTwoWeekHigh": 1625,
+              "trailingAnnualDividendRate": 0,
+              "trailingAnnualDividendYield": 0,
+              "epsTrailingTwelveMonths": -330.697,
+              "epsForward": -45.19,
+              "longName": "PT Waskita Karya (Persero) Tbk",
+              "messageBoardId": "finmb_32989878",
+              "exchangeTimezoneName": "Asia/Jakarta",
+              "exchangeTimezoneShortName": "WIB",
+              "gmtOffSetMilliseconds": 25200000,
+              "market": "id_market",
+              "esgPopulated": false,
+              "symbol": "WSKT.JK"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/UNIR.MI?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "2rjrjblh0pg78"
+      ],
+      "x-yahoo-request-id": [
+        "2rjrjblh0pg78"
+      ],
+      "x-request-id": [
+        "6f1354c4-9b12-4785-ab87-0c6e0d133062"
+      ],
+      "content-length": [
+        "1951"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Wed, 16 Feb 2022 09:16:23 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "UNIR.MI",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "triggerable": false,
+              "currency": "EUR",
+              "firstTradeDateMilliseconds": 1491289200000,
+              "priceHint": 2,
+              "earningsTimestamp": 1642071540,
+              "earningsTimestampStart": 1642071540,
+              "earningsTimestampEnd": 1642071540,
+              "trailingAnnualDividendRate": 2.6,
+              "trailingPE": 8.565002,
+              "trailingAnnualDividendYield": 0.13866666,
+              "epsTrailingTwelveMonths": 2.223,
+              "sharesOutstanding": 20098600,
+              "bookValue": 6.651,
+              "fiftyDayAverage": 19.7332,
+              "fiftyDayAverageChange": -0.69319916,
+              "fiftyDayAverageChangePercent": -0.03512857,
+              "twoHundredDayAverage": 21.9459,
+              "twoHundredDayAverageChange": -2.905899,
+              "twoHundredDayAverageChangePercent": -0.13241193,
+              "marketCap": 382677376,
+              "priceToBook": 2.8627276,
+              "sourceInterval": 20,
+              "exchangeDataDelayedBy": 0,
+              "averageAnalystRating": "2.0 - Buy",
+              "tradeable": false,
+              "regularMarketChange": 0.29000092,
+              "regularMarketChangePercent": 1.5466715,
+              "regularMarketTime": 1645001987,
+              "regularMarketPrice": 19.04,
+              "regularMarketDayHigh": 19.25,
+              "regularMarketDayRange": "18.84 - 19.25",
+              "regularMarketDayLow": 18.84,
+              "regularMarketVolume": 36910,
+              "regularMarketPreviousClose": 18.75,
+              "bid": 19.03,
+              "ask": 19.07,
+              "bidSize": 0,
+              "askSize": 0,
+              "fullExchangeName": "Milan",
+              "financialCurrency": "EUR",
+              "regularMarketOpen": 18.88,
+              "averageDailyVolume3Month": 173498,
+              "averageDailyVolume10Day": 127870,
+              "fiftyTwoWeekLowChange": 4.5200005,
+              "fiftyTwoWeekLowChangePercent": 0.3112948,
+              "fiftyTwoWeekRange": "14.52 - 31.36",
+              "fiftyTwoWeekHighChange": -12.32,
+              "fiftyTwoWeekHighChangePercent": -0.39285713,
+              "fiftyTwoWeekLow": 14.52,
+              "fiftyTwoWeekHigh": 31.36,
+              "exchange": "MIL",
+              "shortName": "UNIEURO",
+              "longName": "Unieuro S.p.A.",
+              "messageBoardId": "finmb_931146",
+              "exchangeTimezoneName": "Europe/Rome",
+              "exchangeTimezoneShortName": "CET",
+              "gmtOffSetMilliseconds": 3600000,
+              "market": "it_market",
+              "esgPopulated": false,
+              "marketState": "REGULAR",
+              "symbol": "UNIR.MI"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

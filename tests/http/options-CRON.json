@@ -1,0 +1,599 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/CRON?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "59bglith0pg7c"
+      ],
+      "x-yahoo-request-id": [
+        "59bglith0pg7c"
+      ],
+      "x-request-id": [
+        "c5e1b306-fcae-401b-9d4a-526ee612c854"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "x-envoy-upstream-service-time": [
+        "16"
+      ],
+      "date": [
+        "Wed, 16 Feb 2022 09:16:28 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "transfer-encoding": [
+        "chunked"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "CRON",
+            "expirationDates": [
+              1645142400,
+              1645747200,
+              1646352000,
+              1646956800,
+              1647561600,
+              1648166400,
+              1648771200,
+              1649894400,
+              1657843200,
+              1674172800,
+              1705622400
+            ],
+            "strikes": [
+              1,
+              1.5,
+              2,
+              2.5,
+              3,
+              3.5,
+              4,
+              4.5,
+              5,
+              5.5,
+              6,
+              6.5,
+              7,
+              8
+            ],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "quoteSourceName": "Nasdaq Real Time Price",
+              "triggerable": true,
+              "currency": "USD",
+              "firstTradeDateMilliseconds": 1519741800000,
+              "priceHint": 4,
+              "earningsTimestamp": 1628247540,
+              "earningsTimestampStart": 1645709400,
+              "earningsTimestampEnd": 1646055000,
+              "trailingAnnualDividendRate": 0,
+              "trailingAnnualDividendYield": 0,
+              "epsTrailingTwelveMonths": -0.406,
+              "epsForward": -0.39,
+              "epsCurrentYear": -0.49,
+              "priceEpsCurrentYear": -8.061224,
+              "sharesOutstanding": 371806016,
+              "bookValue": 4.391,
+              "fiftyDayAverage": 3.9258,
+              "fiftyDayAverageChange": 0.024199963,
+              "fiftyDayAverageChangePercent": 0.006164339,
+              "twoHundredDayAverage": 6.0558,
+              "twoHundredDayAverageChange": -2.1058,
+              "twoHundredDayAverageChangePercent": -0.34773275,
+              "marketCap": 1474677248,
+              "forwardPE": -10.128205,
+              "priceToBook": 0.89956737,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "pageViewGrowthWeekly": -0.012976304,
+              "averageAnalystRating": "3.6 - Underperform",
+              "tradeable": false,
+              "regularMarketChange": 0.1400001,
+              "regularMarketChangePercent": 3.6745436,
+              "regularMarketTime": 1644958803,
+              "regularMarketPrice": 3.95,
+              "regularMarketDayHigh": 3.9899,
+              "regularMarketDayRange": "3.87 - 3.9899",
+              "regularMarketDayLow": 3.87,
+              "regularMarketVolume": 1551759,
+              "regularMarketPreviousClose": 3.81,
+              "bid": 0,
+              "ask": 0,
+              "bidSize": 215,
+              "askSize": 22,
+              "fullExchangeName": "NasdaqGM",
+              "financialCurrency": "USD",
+              "regularMarketOpen": 3.91,
+              "averageDailyVolume3Month": 2656414,
+              "averageDailyVolume10Day": 2123100,
+              "fiftyTwoWeekLowChange": 0.83000016,
+              "fiftyTwoWeekLowChangePercent": 0.2660257,
+              "fiftyTwoWeekRange": "3.12 - 12.97",
+              "fiftyTwoWeekHighChange": -9.02,
+              "fiftyTwoWeekHighChangePercent": -0.6954511,
+              "fiftyTwoWeekLow": 3.12,
+              "fiftyTwoWeekHigh": 12.97,
+              "exchange": "NGM",
+              "shortName": "Cronos Group Inc. Common Share",
+              "longName": "Cronos Group Inc.",
+              "messageBoardId": "finmb_253038643",
+              "exchangeTimezoneName": "America/New_York",
+              "exchangeTimezoneShortName": "EST",
+              "gmtOffSetMilliseconds": -18000000,
+              "market": "us_market",
+              "esgPopulated": false,
+              "marketState": "PRE",
+              "displayName": "Cronos",
+              "symbol": "CRON"
+            },
+            "options": [
+              {
+                "expirationDate": 1645142400,
+                "hasMiniOptions": false,
+                "calls": [
+                  {
+                    "contractSymbol": "CRON220218C00001000",
+                    "strike": 1,
+                    "currency": "USD",
+                    "lastPrice": 2.91,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644526039,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00002000",
+                    "strike": 2,
+                    "currency": "USD",
+                    "lastPrice": 1.76,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 2,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1643728962,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00002500",
+                    "strike": 2.5,
+                    "currency": "USD",
+                    "lastPrice": 1.45,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644951653,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00003000",
+                    "strike": 3,
+                    "currency": "USD",
+                    "lastPrice": 0.96,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 2,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644849001,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00003500",
+                    "strike": 3.5,
+                    "currency": "USD",
+                    "lastPrice": 0.45,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 10,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644958341,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00004000",
+                    "strike": 4,
+                    "currency": "USD",
+                    "lastPrice": 0.09,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 275,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644956419,
+                    "impliedVolatility": 0.062509375,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00004500",
+                    "strike": 4.5,
+                    "currency": "USD",
+                    "lastPrice": 0.02,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 261,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644956918,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00005000",
+                    "strike": 5,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 121,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644944990,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00005500",
+                    "strike": 5.5,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644870125,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00006000",
+                    "strike": 6,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 20,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644852589,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00006500",
+                    "strike": 6.5,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 208,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644523875,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00007000",
+                    "strike": 7,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644870278,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218C00008000",
+                    "strike": 8,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 4,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644596266,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  }
+                ],
+                "puts": [
+                  {
+                    "contractSymbol": "CRON220218P00001500",
+                    "strike": 1.5,
+                    "currency": "USD",
+                    "lastPrice": 0.02,
+                    "change": 0,
+                    "percentChange": 0,
+                    "openInterest": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644815591,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218P00002000",
+                    "strike": 2,
+                    "currency": "USD",
+                    "lastPrice": 0.02,
+                    "change": 0,
+                    "percentChange": 0,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1643832193,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218P00002500",
+                    "strike": 2.5,
+                    "currency": "USD",
+                    "lastPrice": 0.02,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644591409,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218P00003000",
+                    "strike": 3,
+                    "currency": "USD",
+                    "lastPrice": 0.01,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 2,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644870365,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218P00003500",
+                    "strike": 3.5,
+                    "currency": "USD",
+                    "lastPrice": 0.02,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 14,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644947399,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "CRON220218P00004000",
+                    "strike": 4,
+                    "currency": "USD",
+                    "lastPrice": 0.17,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 82,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644957631,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "CRON220218P00004500",
+                    "strike": 4.5,
+                    "currency": "USD",
+                    "lastPrice": 0.67,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 4,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644863945,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "CRON220218P00005000",
+                    "strike": 5,
+                    "currency": "USD",
+                    "lastPrice": 1.1,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644936679,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "CRON220218P00006000",
+                    "strike": 6,
+                    "currency": "USD",
+                    "lastPrice": 2.06,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644943932,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "CRON220218P00007000",
+                    "strike": 7,
+                    "currency": "USD",
+                    "lastPrice": 3.35,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1643661251,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "CRON220218P00008000",
+                    "strike": 8,
+                    "currency": "USD",
+                    "lastPrice": 4.3,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 3,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1643662615,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

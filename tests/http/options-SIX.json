@@ -1,0 +1,478 @@
+{
+  "request": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/options/SIX?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "d45rqrdh0pg76"
+      ],
+      "x-yahoo-request-id": [
+        "d45rqrdh0pg76"
+      ],
+      "x-request-id": [
+        "97ec0fd1-8683-45c7-abb6-8d91218cc659"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1654"
+      ],
+      "x-envoy-upstream-service-time": [
+        "11"
+      ],
+      "date": [
+        "Wed, 16 Feb 2022 09:16:22 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "SIX",
+            "expirationDates": [
+              1645142400,
+              1647561600,
+              1649894400,
+              1655424000,
+              1663286400,
+              1671148800,
+              1674172800,
+              1686873600,
+              1705622400
+            ],
+            "strikes": [
+              27.5,
+              30,
+              32.5,
+              35,
+              37.5,
+              40,
+              42.5,
+              45,
+              47.5,
+              50,
+              55
+            ],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": true,
+              "currency": "USD",
+              "firstTradeDateMilliseconds": 1273584600000,
+              "priceHint": 2,
+              "earningsTimestamp": 1645709400,
+              "earningsTimestampStart": 1645709400,
+              "earningsTimestampEnd": 1645709400,
+              "trailingAnnualDividendRate": 0,
+              "trailingPE": 87.81368,
+              "trailingAnnualDividendYield": 0,
+              "epsTrailingTwelveMonths": 0.526,
+              "epsForward": 2.28,
+              "epsCurrentYear": 1.44,
+              "priceEpsCurrentYear": 32.076385,
+              "sharesOutstanding": 85983104,
+              "bookValue": -11.573,
+              "fiftyDayAverage": 40.9646,
+              "fiftyDayAverageChange": 5.225399,
+              "fiftyDayAverageChangePercent": 0.12755889,
+              "twoHundredDayAverage": 42.05485,
+              "twoHundredDayAverageChange": 4.135147,
+              "twoHundredDayAverageChangePercent": 0.098327465,
+              "marketCap": 3971559424,
+              "forwardPE": 20.258772,
+              "priceToBook": -3.9911864,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "pageViewGrowthWeekly": 0.14926182,
+              "averageAnalystRating": "1.8 - Buy",
+              "tradeable": false,
+              "regularMarketChange": 1.9099998,
+              "regularMarketChangePercent": 4.3134594,
+              "regularMarketTime": 1644958802,
+              "regularMarketPrice": 46.19,
+              "regularMarketDayHigh": 46.34,
+              "regularMarketDayRange": "45.31 - 46.34",
+              "regularMarketDayLow": 45.31,
+              "regularMarketVolume": 1212690,
+              "regularMarketPreviousClose": 44.28,
+              "bid": 0,
+              "ask": 46.17,
+              "bidSize": 11,
+              "askSize": 8,
+              "fullExchangeName": "NYSE",
+              "financialCurrency": "USD",
+              "regularMarketOpen": 45.39,
+              "averageDailyVolume3Month": 1496354,
+              "averageDailyVolume10Day": 1454710,
+              "fiftyTwoWeekLowChange": 10.439999,
+              "fiftyTwoWeekLowChangePercent": 0.29202792,
+              "fiftyTwoWeekRange": "35.75 - 51.75",
+              "fiftyTwoWeekHighChange": -5.5600014,
+              "fiftyTwoWeekHighChangePercent": -0.10743964,
+              "fiftyTwoWeekLow": 35.75,
+              "fiftyTwoWeekHigh": 51.75,
+              "dividendDate": 1583884800,
+              "exchange": "NYQ",
+              "shortName": "Six Flags Entertainment Corpora",
+              "longName": "Six Flags Entertainment Corporation",
+              "messageBoardId": "finmb_435998",
+              "exchangeTimezoneName": "America/New_York",
+              "exchangeTimezoneShortName": "EST",
+              "gmtOffSetMilliseconds": -18000000,
+              "market": "us_market",
+              "esgPopulated": false,
+              "marketState": "PRE",
+              "displayName": "Six Flags Entertainment",
+              "symbol": "SIX"
+            },
+            "options": [
+              {
+                "expirationDate": 1645142400,
+                "hasMiniOptions": false,
+                "calls": [
+                  {
+                    "contractSymbol": "SIX220218C00035000",
+                    "strike": 35,
+                    "currency": "USD",
+                    "lastPrice": 7.24,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 3,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1642704955,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "SIX220218C00037500",
+                    "strike": 37.5,
+                    "currency": "USD",
+                    "lastPrice": 3.23,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 2,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1643215939,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "SIX220218C00040000",
+                    "strike": 40,
+                    "currency": "USD",
+                    "lastPrice": 5.7,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 2,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644945493,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "SIX220218C00042500",
+                    "strike": 42.5,
+                    "currency": "USD",
+                    "lastPrice": 3.7,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 157,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644958788,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "SIX220218C00045000",
+                    "strike": 45,
+                    "currency": "USD",
+                    "lastPrice": 1.6,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 149,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644958210,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  },
+                  {
+                    "contractSymbol": "SIX220218C00047500",
+                    "strike": 47.5,
+                    "currency": "USD",
+                    "lastPrice": 0.35,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 84,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644958336,
+                    "impliedVolatility": 0.062509375,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "SIX220218C00050000",
+                    "strike": 50,
+                    "currency": "USD",
+                    "lastPrice": 0.1,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 60,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644953373,
+                    "impliedVolatility": 0.2500075,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "SIX220218C00055000",
+                    "strike": 55,
+                    "currency": "USD",
+                    "lastPrice": 0.05,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 2,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644855984,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  }
+                ],
+                "puts": [
+                  {
+                    "contractSymbol": "SIX220218P00027500",
+                    "strike": 27.5,
+                    "currency": "USD",
+                    "lastPrice": 0.15,
+                    "change": 0,
+                    "percentChange": 0,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1643140376,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "SIX220218P00030000",
+                    "strike": 30,
+                    "currency": "USD",
+                    "lastPrice": 0.06,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644850431,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "SIX220218P00032500",
+                    "strike": 32.5,
+                    "currency": "USD",
+                    "lastPrice": 0.1,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 1,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1643143457,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "SIX220218P00035000",
+                    "strike": 35,
+                    "currency": "USD",
+                    "lastPrice": 0.05,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 2,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644852248,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "SIX220218P00037500",
+                    "strike": 37.5,
+                    "currency": "USD",
+                    "lastPrice": 0.05,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 4,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644862637,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "SIX220218P00040000",
+                    "strike": 40,
+                    "currency": "USD",
+                    "lastPrice": 0.16,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 3,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644604793,
+                    "impliedVolatility": 0.500005,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "SIX220218P00042500",
+                    "strike": 42.5,
+                    "currency": "USD",
+                    "lastPrice": 0.25,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 2,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644935403,
+                    "impliedVolatility": 0.2500075,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "SIX220218P00045000",
+                    "strike": 45,
+                    "currency": "USD",
+                    "lastPrice": 0.37,
+                    "change": 0,
+                    "percentChange": 0,
+                    "volume": 47,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644958704,
+                    "impliedVolatility": 0.062509375,
+                    "inTheMoney": false
+                  },
+                  {
+                    "contractSymbol": "SIX220218P00047500",
+                    "strike": 47.5,
+                    "currency": "USD",
+                    "lastPrice": 2.05,
+                    "change": 0,
+                    "percentChange": 0,
+                    "openInterest": 0,
+                    "bid": 0,
+                    "ask": 0,
+                    "contractSize": "REGULAR",
+                    "expiration": 1645142400,
+                    "lastTradeDate": 1644815302,
+                    "impliedVolatility": 0.000010000000000000003,
+                    "inTheMoney": true
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -1,13 +1,21 @@
 import options from "./options.js";
 import testYf from "../../tests/testYf.js";
-import { testSymbols } from "../../tests/symbols.js";
+import { testSymbols as commonTestSymbols } from "../../tests/symbols.js";
+
+const symbolsToSkip = [
+  // Missing OptionType for {contract: BRKS220414C00097500 }, {tickerSymbol: BRKS },
+  //   {strike: 97.5 }, {expirationDate: 1649894400 }
+  "BRKS",
+];
+
+const testSymbols = commonTestSymbols.filter((s) => !symbolsToSkip.includes(s));
 
 const yf = testYf({ options });
 
 describe("options", () => {
   it.each(testSymbols)("passes validation for symbol '%s'", async (symbol) => {
     await yf.options(symbol, undefined, {
-      devel: `trendingSymbols-${symbol}.json`,
+      devel: `options-${symbol}.json`,
     });
   });
 
