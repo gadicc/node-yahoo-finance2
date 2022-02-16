@@ -1,3 +1,17 @@
+## [2.1.3](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.2...v2.1.3) (2022-02-16)
+
+
+### Bug Fixes
+
+* **historical:** fix transform code for String date ([1e4c788](https://github.com/gadicc/node-yahoo-finance2/commit/1e4c78844f7ef4c0266789c6d278a0bc27608bd8))
+* **options:** queryOpt `date` now accepts Date/string too (fixes [#287](https://github.com/gadicc/node-yahoo-finance2/issues/287)) ([203b6b8](https://github.com/gadicc/node-yahoo-finance2/commit/203b6b83eb7e3a4704e42796b3b5f2431bf75f18))
+
+
+### Reverts
+
+* Revert "chore(tests): don't use console.dir in tests" ([0480083](https://github.com/gadicc/node-yahoo-finance2/commit/0480083fb3814ec12595544fdb1275cf0e763a86))
+* Revert "chore(tests): more debugging to figure out why tests stuck on CI" ([ba2ed67](https://github.com/gadicc/node-yahoo-finance2/commit/ba2ed67bcb7f70df1eab1d24c1a673824738150c))
+
 ## [2.1.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.1...v2.1.2) (2022-01-29)
 
 
