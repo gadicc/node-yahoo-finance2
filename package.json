@@ -47,7 +47,7 @@
     "build:post": "scripts/json-transform.sh",
     "generateSchema": "yarn schema",
     "prepublishOnly": "yarn build && yarn generateSchema && yarn build:post",
-    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --detectOpenHandles",
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
     "test:ts": "tsc --noEmit",
     "test:esm": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js -c tests-modules/esm/jest.config.js tests-modules/esm/tests/*",
     "test:cjs": "node ./node_modules/jest/bin/jest.js -c tests-modules/cjs/jest.config.js tests-modules/cjs/tests/*",
