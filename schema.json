@@ -4084,7 +4084,17 @@
           "type": "string"
         },
         "date": {
-          "yahooFinanceType": "number"
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "yahooFinanceType": "number"
+            },
+            {
+              "type": "string"
+            }
+          ]
         }
       },
       "additionalProperties": false

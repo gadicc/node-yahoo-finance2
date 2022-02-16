@@ -45,7 +45,7 @@ export interface OptionsOptions {
   formatted?: boolean;
   lang?: string;
   region?: string;
-  date?: number;
+  date?: Date | number | string;
 }
 
 const queryOptionsDefaults: OptionsOptions = {
@@ -82,6 +82,18 @@ export default function options(
       schemaKey: "#/definitions/OptionsOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
+      transformWith(queryOptions: OptionsOptions) {
+        const date = queryOptions.date;
+        if (date) {
+          if (date instanceof Date)
+            queryOptions.date = Math.floor(date.getTime() / 1000);
+          else if (typeof date === "string")
+            queryOptions.date = Math.floor(
+              new Date(date as string).getTime() / 1000
+            );
+        }
+        return queryOptions;
+      },
     },
 
     result: {
