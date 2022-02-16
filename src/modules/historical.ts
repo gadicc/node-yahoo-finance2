@@ -68,10 +68,10 @@ export default function historical(
           const value = queryOptions[fieldName];
           if (value instanceof Date)
             queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
-          else typeof value === "string";
-          queryOptions[fieldName] = Math.floor(
-            new Date(value as string).getTime() / 1000
-          );
+          else if (typeof value === "string")
+            queryOptions[fieldName] = Math.floor(
+              new Date(value as string).getTime() / 1000
+            );
         }
 
         return queryOptions;
