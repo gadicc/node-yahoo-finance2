@@ -150,11 +150,6 @@ Example Result (Arrays are shortened so the docs aren't long):
 
 ```js
 await yahooFinance.options(query, queryOptions, moduleOptions);
-
-// To specify an expiration date
-const expiration_date = new Date('2023-01-20T00:00:00.000Z');
-queryOptions.date = Number(expiration_date)/1000;
-await yahooFinance.options(query, queryOptions, moduleOptions);
 ```
 
 ### Symbol
@@ -167,10 +162,16 @@ an array of symbols, and you'll receive an array of results back.
 
 | Name        | Type   | Default | Description                                                       |
 | ----------- | ------ | ------- | ----------------------------------------------------------------- |
-| `formatted` | number | 5       | The max amount of symbols that can be returned.                   |
-| `lang`      | string | "en-US" |                                                                   |
-| `region`    | string | "US"    |                                                                   |
-| `date`      | number | null    | The expiration date of the options chain to be fetched.           |
+| `formatted` | number | `5`       | The max amount of symbols that can be returned.                   |
+| `lang`      | string | `"en-US"` |                                                                   |
+| `region`    | string | `"US"`    |                                                                   |
+| `date`      | Date*  | `undefined` | The expiration date of the options chain to be fetched.           |
+
+Date* can be:
+
+* A **Date** instance, e.g. `new Date(something)`
+* A **string** that can be parsed by `Date()`, e.g. `"2020-01-01"`.
+* A **number** representing unix timestamp WITHOUT milliseconds (as Yahoo expects)
 
 ### Module Options
 
