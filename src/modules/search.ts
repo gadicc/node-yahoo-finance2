@@ -92,6 +92,11 @@ export interface SearchResult {
   // Array<any> until we can find some examples of what it actually looks
   // like (#255).
   screenerFieldResults?: Array<any>;
+  // ALWAYS present, but TEMPORARILY marked optional ("?") since its
+  // sudden appearance, let's make sure it doesn't get suddenly removed.
+  // Array<any> until we can find some examples of what it actually looks
+  // like (#399).
+  culturalAssets?: Array<any>;
   timeTakenForQuotes: number; // 26
   timeTakenForNews: number; // 419
   timeTakenForAlgowatchlist: number; // 700
@@ -102,6 +107,9 @@ export interface SearchResult {
   // ALWAYS present, but TEMPORARILY marked optional ("?") since its
   // sudden appearance, let's make sure it doesn't get suddenly removed.
   timeTakenForScreenerField?: number;
+  // ALWAYS present, but TEMPORARILY marked optional ("?") since its
+  // sudden appearance, let's make sure it doesn't get suddenly removed.
+  timeTakenForCulturalAssets?: number;
 }
 
 export interface SearchOptions {
