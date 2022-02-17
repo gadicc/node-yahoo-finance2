@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.3...v2.1.4) (2022-02-17)
+
+
+### Bug Fixes
+
+* update SearchResult to include new properties ([f64de37](https://github.com/gadicc/node-yahoo-finance2/commit/f64de372feb78780dc951e26df12858c8de01019))
+
 ## [2.1.3](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.2...v2.1.3) (2022-02-16)
 
 
