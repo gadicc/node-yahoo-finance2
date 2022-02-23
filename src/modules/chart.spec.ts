@@ -41,8 +41,6 @@ describe("chart", () => {
   });
 
   describe("specific cases", () => {
-    /*
-    This test is now irrelevant since we no longer allow period1===period2
     it("optional fields, empty arrays", async () => {
       /*
        * Same day period with 1h interval, this result has these aspects:
@@ -50,14 +48,17 @@ describe("chart", () => {
        *   - Missing fields: timestamp (because no quotes)
        *   - New fields: previousClose, scale, tradingPeriods
        *   - Pecularity: indicators.quote is [{}], indicators.adjclose missing
-       */ /*
+       */
       await yf.chart(
         "TSLA",
-        { period1: "2021-11-23", period2: "2021-11-23", interval: "1h" },
-        { devel: "chart-TSLA-2021-11-23-to-2021-11-23-interval-1h.json" }
+        // This is a .fake.json test not because we've modified the result,
+        // but because chart() no longer allows period1===period2 (because
+        // it leads to these kind of results).  Nevertheless, let's be prepared.
+        // So the .fake.json result is from query period1=period2="2021-11-23".
+        { period1: "2021-11-23", period2: "2021-11-24", interval: "1h" },
+        { devel: "chart-TSLA-2021-11-23-to-2021-11-23-interval-1h.fake.json" }
       );
     });
-    */
 
     it("handles queries with tradingPeriod.regular", async () => {
       // Had tradingPeriod.regular, probably a timezone thing
