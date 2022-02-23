@@ -1,3 +1,13 @@
+## [2.1.5](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.4...v2.1.5) (2022-02-23)
+
+
+### Bug Fixes
+
+* **autoc:** throw error on use (fixes [#337](https://github.com/gadicc/node-yahoo-finance2/issues/337)) ([99846ed](https://github.com/gadicc/node-yahoo-finance2/commit/99846ed5a6709c94a9cd1a8a4abd9c1d8c58f78f))
+* **deps:** bump ajv 8.9.0 -> 8.10.0, reconstruct yarn.lock ([#391](https://github.com/gadicc/node-yahoo-finance2/issues/391)) ([4370b44](https://github.com/gadicc/node-yahoo-finance2/commit/4370b44a580b2e8765d511060f9adbd38dc1c911))
+* **historical,chart:** throw if period1===period2 (closes [#407](https://github.com/gadicc/node-yahoo-finance2/issues/407)) ([e120e55](https://github.com/gadicc/node-yahoo-finance2/commit/e120e5524dbcbf0913dde79799158489b6feafc8))
+* **moduleExec:** support assertSymbol field (closes [#406](https://github.com/gadicc/node-yahoo-finance2/issues/406)) ([1a05f59](https://github.com/gadicc/node-yahoo-finance2/commit/1a05f598fd47ae281c1d5ce632573ea2bcc0f73f))
+
 ## [2.1.4](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.3...v2.1.4) (2022-02-17)
 
 
