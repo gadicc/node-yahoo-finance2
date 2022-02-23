@@ -122,32 +122,33 @@ const queryOptionsDefaults = {
 
 export default function trendingSymbols(
   this: ModuleThis,
-  query: string,
+  symbol: string,
   queryOptionsOverrides?: InsightsOptions,
   moduleOptions?: ModuleOptionsWithValidateTrue
 ): Promise<InsightsResult>;
 
 export default function trendingSymbols(
   this: ModuleThis,
-  query: string,
+  symbol: string,
   queryOptionsOverrides?: InsightsOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse
 ): Promise<any>;
 
 export default function trendingSymbols(
   this: ModuleThis,
-  query: string,
+  symbol: string,
   queryOptionsOverrides?: InsightsOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "insights",
     query: {
+      assertSymbol: symbol,
       url: "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights",
       schemaKey: "#/definitions/InsightsOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
-      runtime: { symbol: query },
+      runtime: { symbol },
     },
     result: {
       schemaKey: "#/definitions/InsightsResult",

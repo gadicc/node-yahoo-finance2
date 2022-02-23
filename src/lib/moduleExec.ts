@@ -35,6 +35,11 @@ interface ModuleExecOptions {
 
   query: {
     /**
+     * If given, a runtime assertion is performed to check that the given
+     * argument is a string.  If not, a helpful error is thrown.
+     */
+    assertSymbol?: string;
+    /**
      * URL of the API to query, WITHOUT query params.
      */
     url: string;
@@ -102,6 +107,15 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
   const moduleOpts = opts.moduleOptions;
   const moduleName = opts.moduleName;
   const resultOpts = opts.result;
+
+  if (queryOpts.assertSymbol) {
+    const symbol = queryOpts.assertSymbol;
+    if (typeof symbol !== "string")
+      throw new Error(
+        `yahooFinance.${moduleName}() expects a single string symbol as its ` +
+          `query, not a(n) ${typeof symbol}: ${JSON.stringify(symbol)}`
+      );
+  }
 
   // Check that query options passed by the user are valid for this module
   validateAndCoerceTypes({

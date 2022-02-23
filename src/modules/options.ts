@@ -78,6 +78,7 @@ export default function options(
     moduleName: "options",
 
     query: {
+      assertSymbol: symbol,
       url: "https://query1.finance.yahoo.com/v7/finance/options/" + symbol,
       schemaKey: "#/definitions/OptionsOptions",
       defaults: queryOptionsDefaults,

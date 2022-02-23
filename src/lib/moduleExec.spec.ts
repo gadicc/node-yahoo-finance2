@@ -1,13 +1,32 @@
 import { jest } from "@jest/globals";
 
 import search from "../modules/search.js";
+import chart from "../modules/chart.js";
 import { InvalidOptionsError } from "./errors.js";
 import testYf from "../../tests/testYf.js";
 
-const yf = testYf({ search });
+const yf = testYf({ search, chart });
 yf._opts.validation.logOptionsErrors = false;
 
 describe("moduleExec", () => {
+  describe("assertSymbol", () => {
+    const periodOpts = {
+      period1: new Date("2022-02-22"),
+      period2: new Date("2022-02-23"),
+    };
+
+    it("accepts a string", async () => {
+      await expect(
+        yf.chart("AAPL", periodOpts, { devel: "chart-AAPL.json" })
+      ).resolves.toBeDefined();
+    });
+
+    it("throws otherwise", async () => {
+      const yfc = (symbol: any) => yf.chart(symbol, periodOpts);
+      await expect(yfc(["AAPL"])).rejects.toThrow(/string symbol/);
+    });
+  });
+
   describe("options validation", () => {
     it("throws InvalidOptions on invalid options", async () => {
       const rwo = (options: any) => yf.search("symbol", options);

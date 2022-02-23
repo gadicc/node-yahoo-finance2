@@ -114,6 +114,7 @@ export default function quoteSummary(
     moduleName: "search",
 
     query: {
+      assertSymbol: symbol,
       url:
         "https://query2.finance.yahoo.com/v10/finance/quoteSummary/" + symbol,
       schemaKey: "#/definitions/QuoteSummaryOptions",

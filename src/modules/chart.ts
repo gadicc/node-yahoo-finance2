@@ -191,6 +191,7 @@ export default async function _chart(
     moduleName: "_chart",
 
     query: {
+      assertSymbol: symbol,
       url: "https://query1.finance.yahoo.com/v8/finance/chart/" + symbol,
       schemaKey: "#/definitions/ChartOptions",
       defaults: queryOptionsDefaults,

@@ -55,6 +55,7 @@ export default function historical(
     moduleName: "historical",
 
     query: {
+      assertSymbol: symbol,
       url: "https://query1.finance.yahoo.com/v7/finance/download/" + symbol,
       schemaKey: "#/definitions/HistoricalOptions",
       defaults: queryOptionsDefaults,
