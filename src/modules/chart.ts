@@ -210,6 +210,13 @@ export default async function _chart(
           );
         }
 
+        if (queryOptions.period1 === queryOptions.period2) {
+          throw new Error(
+            "yahooFinance.chart() options `period1` and `period2` " +
+              "cannot share the same value."
+          );
+        }
+
         // Don't pass this on to Yahoo
         delete queryOptions.return;
 

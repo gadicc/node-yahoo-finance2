@@ -24,6 +24,12 @@ describe("historical", () => {
     );
   });
 
+  it("throws if period1,period2 are the same", async () => {
+    await expect(
+      yf.historical("TSLA", { period1: "2022-02-22", period2: "2022-02-22" })
+    ).rejects.toThrow(/cannot share the same value/);
+  });
+
   describe("transformWith", () => {
     const yf = { _moduleExec: jest.fn(), historical };
     // @ts-ignore: TODO

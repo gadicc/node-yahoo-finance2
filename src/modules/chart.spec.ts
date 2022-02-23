@@ -34,7 +34,15 @@ describe("chart", () => {
     );
   });
 
+  it("throws if period1,period2 are the same", async () => {
+    await expect(
+      yf.chart("TSLA", { period1: "2022-02-22", period2: "2022-02-22" })
+    ).rejects.toThrow(/cannot share the same value/);
+  });
+
   describe("specific cases", () => {
+    /*
+    This test is now irrelevant since we no longer allow period1===period2
     it("optional fields, empty arrays", async () => {
       /*
        * Same day period with 1h interval, this result has these aspects:
@@ -42,15 +50,16 @@ describe("chart", () => {
        *   - Missing fields: timestamp (because no quotes)
        *   - New fields: previousClose, scale, tradingPeriods
        *   - Pecularity: indicators.quote is [{}], indicators.adjclose missing
-       */
+       */ /*
       await yf.chart(
         "TSLA",
         { period1: "2021-11-23", period2: "2021-11-23", interval: "1h" },
         { devel: "chart-TSLA-2021-11-23-to-2021-11-23-interval-1h.json" }
       );
     });
+    */
 
-    it("", async () => {
+    it("handles queries with tradingPeriod.regular", async () => {
       // Had tradingPeriod.regular, probably a timezone thing
       await yf.chart(
         "TSLA",

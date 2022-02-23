@@ -75,6 +75,13 @@ export default function historical(
             );
         }
 
+        if (queryOptions.period1 === queryOptions.period2) {
+          throw new Error(
+            "yahooFinance.historical() options `period1` and `period2` " +
+              "cannot share the same value."
+          );
+        }
+
         return queryOptions;
       },
     },
