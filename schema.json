@@ -38,116 +38,8 @@
       },
       "additionalProperties": false
     },
-    "AutocResultSet": {
-      "type": "object",
-      "properties": {
-        "Query": {
-          "type": "string"
-        },
-        "Result": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/AutocResult"
-          }
-        }
-      },
-      "required": [
-        "Query",
-        "Result"
-      ],
-      "additionalProperties": false
-    },
-    "AutocResult": {
-      "type": "object",
-      "properties": {
-        "symbol": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "exch": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
-        },
-        "exchDisp": {
-          "type": "string"
-        },
-        "typeDisp": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "symbol",
-        "name",
-        "exch",
-        "type",
-        "exchDisp",
-        "typeDisp"
-      ],
-      "additionalProperties": false
-    },
-    "AutocOptions": {
-      "type": "object",
-      "properties": {
-        "region": {
-          "yahooFinanceType": "number"
-        },
-        "lang": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": false
-    },
     "*": {
       "type": "object",
-      "properties": {
-        "this": {
-          "$ref": "#/definitions/ModuleThis"
-        },
-        "query": {
-          "type": "string"
-        },
-        "queryOptionsOverrides": {
-          "$ref": "#/definitions/AutocOptions"
-        },
-        "moduleOptions": {
-          "$ref": "#/definitions/ModuleOptions"
-        }
-      },
-      "required": [
-        "this",
-        "query"
-      ],
-      "additionalProperties": false
-    },
-    "ModuleThis": {
-      "type": "object",
-      "properties": {
-        "_moduleExec": {}
-      },
-      "required": [
-        "_moduleExec"
-      ]
-    },
-    "ModuleOptions": {
-      "type": "object",
-      "properties": {
-        "validateResult": {
-          "type": "boolean"
-        },
-        "devel": {
-          "type": [
-            "boolean",
-            "string"
-          ]
-        },
-        "fetchOptions": {
-          "type": "object"
-        }
-      },
       "additionalProperties": false
     },
     "ChartResultObject": {
@@ -760,6 +652,33 @@
         "period1",
         "return"
       ],
+      "additionalProperties": false
+    },
+    "ModuleThis": {
+      "type": "object",
+      "properties": {
+        "_moduleExec": {}
+      },
+      "required": [
+        "_moduleExec"
+      ]
+    },
+    "ModuleOptions": {
+      "type": "object",
+      "properties": {
+        "validateResult": {
+          "type": "boolean"
+        },
+        "devel": {
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "fetchOptions": {
+          "type": "object"
+        }
+      },
       "additionalProperties": false
     },
     "HistoricalResult": {
