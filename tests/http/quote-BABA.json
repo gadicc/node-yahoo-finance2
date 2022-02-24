@@ -10,41 +10,41 @@
       "content-type": [
         "application/json;charset=utf-8"
       ],
-      "vary": [
-        "Origin,Accept-Encoding"
-      ],
       "cache-control": [
         "public, max-age=1, stale-while-revalidate=9"
       ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
       "y-rid": [
-        "fd1tcj5gov1uk"
+        "5954dith1ei3u"
       ],
       "x-yahoo-request-id": [
-        "fd1tcj5gov1uk"
+        "5954dith1ei3u"
       ],
       "x-request-id": [
-        "90a032d7-43bc-4f6e-84eb-cabf701b5051"
+        "3d277a0e-1eba-4765-8189-57b0aebb9f1b"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "1014"
+        "1059"
       ],
       "x-envoy-upstream-service-time": [
         "2"
       ],
       "date": [
-        "Sat, 13 Nov 2021 09:39:32 GMT"
+        "Thu, 24 Feb 2022 08:57:33 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-quote-api--mtls-baseline-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
-        "0"
+        "1"
       ],
       "strict-transport-security": [
         "max-age=15552000"
@@ -75,74 +75,77 @@
             "language": "en-US",
             "region": "US",
             "quoteType": "EQUITY",
-            "quoteSourceName": "Delayed Quote",
+            "quoteSourceName": "Nasdaq Real Time Price",
             "triggerable": true,
+            "customPriceAlertConfidence": "HIGH",
             "currency": "USD",
-            "postMarketPrice": 167.05,
-            "postMarketChange": 0.2400055,
-            "regularMarketChange": -1.0400085,
-            "regularMarketChangePercent": -0.6196059,
-            "regularMarketTime": 1636750856,
-            "regularMarketPrice": 166.81,
-            "regularMarketDayHigh": 167.8,
-            "regularMarketDayRange": "163.4 - 167.8",
-            "regularMarketDayLow": 163.4,
-            "regularMarketVolume": 13720010,
-            "regularMarketPreviousClose": 167.85,
-            "bid": 167.06,
-            "ask": 167.27,
-            "bidSize": 12,
-            "askSize": 14,
-            "fullExchangeName": "NYSE",
-            "financialCurrency": "CNY",
-            "regularMarketOpen": 165.1735,
-            "averageDailyVolume3Month": 25554768,
-            "averageDailyVolume10Day": 16642857,
-            "fiftyTwoWeekLowChange": 28.380005,
-            "fiftyTwoWeekLowChangePercent": 0.20501341,
-            "fiftyTwoWeekRange": "138.43 - 280.61",
-            "fiftyTwoWeekHighChange": -113.79999,
-            "fiftyTwoWeekHighChangePercent": -0.40554503,
-            "fiftyTwoWeekLow": 138.43,
-            "fiftyTwoWeekHigh": 280.61,
-            "earningsTimestamp": 1637242200,
-            "earningsTimestampStart": 1637242200,
-            "earningsTimestampEnd": 1637242200,
-            "trailingPE": 19.839437,
-            "epsTrailingTwelveMonths": 8.408,
-            "epsForward": 10.78,
-            "epsCurrentYear": 9.29,
-            "priceEpsCurrentYear": 17.955866,
-            "shortName": "Alibaba Group Holding Limited",
-            "marketState": "CLOSED",
-            "sharesOutstanding": 2710909952,
-            "bookValue": 358.74,
-            "fiftyDayAverage": 161.83543,
-            "fiftyDayAverageChange": 4.9745636,
-            "fiftyDayAverageChangePercent": 0.030738408,
-            "twoHundredDayAverage": 190.09657,
-            "twoHundredDayAverageChange": -23.286575,
-            "twoHundredDayAverageChangePercent": -0.12249866,
-            "marketCap": 452206886912,
-            "forwardPE": 15.474026,
-            "priceToBook": 0.4649886,
-            "sourceInterval": 15,
-            "exchangeDataDelayedBy": 0,
-            "pageViewGrowthWeekly": -0.18271498,
-            "averageAnalystRating": "1.8 - Buy",
-            "tradeable": false,
-            "firstTradeDateMilliseconds": 1411133400000,
-            "priceHint": 2,
-            "postMarketChangePercent": 0.14387956,
-            "postMarketTime": 1636765195,
+            "market": "us_market",
+            "esgPopulated": false,
             "exchange": "NYQ",
+            "shortName": "Alibaba Group Holding Limited",
             "longName": "Alibaba Group Holding Limited",
             "messageBoardId": "finmb_42083601",
             "exchangeTimezoneName": "America/New_York",
             "exchangeTimezoneShortName": "EST",
             "gmtOffSetMilliseconds": -18000000,
-            "market": "us_market",
-            "esgPopulated": false,
+            "marketState": "PREPRE",
+            "epsCurrentYear": 8.3,
+            "priceEpsCurrentYear": 13.219277,
+            "sharesOutstanding": 2710909952,
+            "bookValue": 357.23,
+            "fiftyDayAverage": 122.5678,
+            "fiftyDayAverageChange": -12.847801,
+            "fiftyDayAverageChangePercent": -0.104821995,
+            "twoHundredDayAverage": 166.34094,
+            "twoHundredDayAverageChange": -56.62094,
+            "twoHundredDayAverageChangePercent": -0.3403909,
+            "marketCap": 312435376128,
+            "forwardPE": 11.926087,
+            "priceToBook": 0.30714107,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "pageViewGrowthWeekly": 0.04567928,
+            "averageAnalystRating": "2.0 - Buy",
+            "tradeable": false,
+            "firstTradeDateMilliseconds": 1411133400000,
+            "priceHint": 2,
+            "postMarketChangePercent": -0.364566,
+            "postMarketTime": 1645664397,
+            "postMarketPrice": 109.32,
+            "postMarketChange": -0.400002,
+            "regularMarketChange": -3.209999,
+            "regularMarketChangePercent": -2.842468,
+            "regularMarketTime": 1645650115,
+            "regularMarketPrice": 109.72,
+            "regularMarketDayHigh": 115.4,
+            "regularMarketDayRange": "109.6 - 115.4",
+            "regularMarketDayLow": 109.6,
+            "regularMarketVolume": 23865469,
+            "regularMarketPreviousClose": 112.93,
+            "bid": 0,
+            "ask": 0,
+            "bidSize": 12,
+            "askSize": 32,
+            "fullExchangeName": "NYSE",
+            "financialCurrency": "CNY",
+            "regularMarketOpen": 115.1,
+            "averageDailyVolume3Month": 23444795,
+            "averageDailyVolume10Day": 17519780,
+            "fiftyTwoWeekLowChange": 1.0200043,
+            "fiftyTwoWeekLowChangePercent": 0.0093836645,
+            "fiftyTwoWeekRange": "108.7 - 250.34",
+            "fiftyTwoWeekHighChange": -140.62,
+            "fiftyTwoWeekHighChangePercent": -0.5617161,
+            "fiftyTwoWeekLow": 108.7,
+            "fiftyTwoWeekHigh": 250.34,
+            "earningsTimestamp": 1645709400,
+            "earningsTimestampStart": 1645709400,
+            "earningsTimestampEnd": 1645709400,
+            "trailingAnnualDividendRate": 0,
+            "trailingPE": 15.343308,
+            "trailingAnnualDividendYield": 0,
+            "epsTrailingTwelveMonths": 7.151,
+            "epsForward": 9.2,
             "displayName": "Alibaba Group Holding",
             "symbol": "BABA"
           }

@@ -10,29 +10,29 @@
       "content-type": [
         "application/json;charset=utf-8"
       ],
-      "vary": [
-        "Origin,Accept-Encoding"
-      ],
       "cache-control": [
         "public, max-age=1, stale-while-revalidate=9"
       ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
       "y-rid": [
-        "b0rs6tlgov1um"
+        "cqh45kth1ei47"
       ],
       "x-yahoo-request-id": [
-        "b0rs6tlgov1um"
+        "cqh45kth1ei47"
       ],
       "x-request-id": [
-        "3e2cbb04-5e56-4205-8134-797a4d3254ac"
+        "6daecd45-2c39-427f-bc64-c4712407b7af"
       ],
       "content-length": [
-        "533"
+        "569"
       ],
       "x-envoy-upstream-service-time": [
         "1"
       ],
       "date": [
-        "Sat, 13 Nov 2021 09:39:33 GMT"
+        "Thu, 24 Feb 2022 08:57:43 GMT"
       ],
       "server": [
         "ATS"
@@ -41,7 +41,7 @@
         "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
-        "1"
+        "0"
       ],
       "strict-transport-security": [
         "max-age=15552000"
@@ -74,19 +74,20 @@
             "quoteType": "EQUITY",
             "quoteSourceName": "Delayed Quote",
             "triggerable": true,
-            "priceHint": 2,
-            "fullExchangeName": "NasdaqGS",
-            "tradeable": false,
+            "customPriceAlertConfidence": "HIGH",
             "sourceInterval": 15,
             "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "firstTradeDateMilliseconds": 1277818200000,
+            "priceHint": 2,
+            "fullExchangeName": "NasdaqGS",
+            "marketState": "PREPRE",
             "exchange": "NMS",
             "exchangeTimezoneName": "America/New_York",
             "exchangeTimezoneShortName": "EST",
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "firstTradeDateMilliseconds": 1277818200000,
-            "marketState": "CLOSED",
             "displayName": "Tesla",
             "symbol": "TSLA"
           }
