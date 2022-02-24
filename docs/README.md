@@ -63,7 +63,7 @@ try {
   result = await yahooFinance.quote(symbol);
 } catch (error) {
   // Inspect error and decide what to do; often, you may want to just abort:
-  console.warn(`Skipping yf.quote("${symbol}"): [${error.name}] ${error.message})`);
+  console.warn(`Skipping yf.quote("${symbol}"): [${error.name}] ${error.message}`);
   return;
 }
 
@@ -115,11 +115,11 @@ try {
     // error.result will be a partially validated / coerced result.
   } else if (error instanceof yahooFinance.errors.HTTPError) {
     // Probably you just want to log and skip these
-    console.warn(`Skipping yf.quote("${symbol}"): [${error.name}] ${error.message})`);
+    console.warn(`Skipping yf.quote("${symbol}"): [${error.name}] ${error.message}`);
     return;
   } else {
     // Same here
-    console.warn(`Skipping yf.quote("${symbol}"): [${error.name}] ${error.message})`);
+    console.warn(`Skipping yf.quote("${symbol}"): [${error.name}] ${error.message}`);
     return;
   }
 }
