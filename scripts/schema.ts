@@ -19,7 +19,7 @@ import yfReferenceTypeFormatter from "./schema/TypeFormatter/yfReferenceTypeForm
 const OUTPUT_PATH = process.stdout;
 
 const config: Config = {
-  path: "src/{modules/**/*.ts,lib/options.ts}",
+  path: "src/{modules/**/!(*spec.ts),lib/options.ts}",
   tsconfig: "tsconfig.json",
   type: "*",
 };

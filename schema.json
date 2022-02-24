@@ -38,7 +38,7 @@
       },
       "additionalProperties": false
     },
-    "*": {
+    "NamedParameters<typeof autoc>": {
       "type": "object",
       "additionalProperties": false
     },
@@ -654,6 +654,29 @@
       ],
       "additionalProperties": false
     },
+    "NamedParameters<typeof _chart>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/ChartOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "symbol",
+        "queryOptionsOverrides"
+      ],
+      "additionalProperties": false
+    },
     "ModuleThis": {
       "type": "object",
       "properties": {
@@ -768,6 +791,29 @@
       },
       "required": [
         "period1"
+      ],
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof historical>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/HistoricalOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "symbol",
+        "queryOptionsOverrides"
       ],
       "additionalProperties": false
     },
@@ -1154,6 +1200,28 @@
           "yahooFinanceType": "number"
         }
       },
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof trendingSymbols>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "query": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/TrendingSymbolsOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "query"
+      ],
       "additionalProperties": false
     },
     "TrendingSymbolsOptions": {
@@ -3934,6 +4002,38 @@
       ],
       "additionalProperties": false
     },
+    "NamedParameters<typeof quote>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "query": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/QuoteOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "query"
+      ],
+      "additionalProperties": false
+    },
     "OptionsResult": {
       "type": "object",
       "properties": {
@@ -4097,6 +4197,29 @@
           ]
         }
       },
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof options>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/OptionsOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "symbol",
+        "queryOptionsOverrides"
+      ],
       "additionalProperties": false
     },
     "QuoteSummaryResult": {
@@ -7145,6 +7268,28 @@
       },
       "additionalProperties": false
     },
+    "NamedParameters<typeof quoteSummary>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/QuoteSummaryOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "symbol"
+      ],
+      "additionalProperties": false
+    },
     "RecommendationsBySymbolResponse": {
       "type": "object",
       "properties": {
@@ -7185,6 +7330,38 @@
     },
     "RecommendationsBySymbolOptions": {
       "type": "object",
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof recommendationsBySymbol>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "query": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/RecommendationsBySymbolOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "query"
+      ],
       "additionalProperties": false
     },
     "SearchQuoteYahoo": {
@@ -7913,6 +8090,28 @@
           "type": "boolean"
         }
       },
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof search>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "query": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/SearchOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "query"
+      ],
       "additionalProperties": false
     },
     "TrendingSymbol": {
