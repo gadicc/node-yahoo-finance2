@@ -1,3 +1,11 @@
+## [2.1.6](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.5...v2.1.6) (2022-02-24)
+
+
+### Bug Fixes
+
+* **quote:** allow a customPriceAlertConfidence property (fixes [#412](https://github.com/gadicc/node-yahoo-finance2/issues/412)) ([84b7cf7](https://github.com/gadicc/node-yahoo-finance2/commit/84b7cf7ef509e4ab2bbcbeba388dbf5bcf0f31b1))
+* **quote:** return undefined for quoteType "NONE" (fixes [#381](https://github.com/gadicc/node-yahoo-finance2/issues/381)) ([e067a81](https://github.com/gadicc/node-yahoo-finance2/commit/e067a81d151194cebc8ccaa27eb9015f653e72d9))
+
 ## [2.1.5](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.4...v2.1.5) (2022-02-23)
 
 
