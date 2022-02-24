@@ -3352,6 +3352,51 @@
       ],
       "additionalProperties": false
     },
+    "QuoteNone": {
+      "type": "object",
+      "properties": {
+        "quoteType": {
+          "type": "string",
+          "const": "NONE"
+        },
+        "language": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "triggerable": {
+          "type": "boolean"
+        },
+        "customPriceAlertConfidence": {
+          "type": "string"
+        },
+        "tradeable": {
+          "type": "boolean"
+        },
+        "messageBoardId": {
+          "type": "string"
+        },
+        "esgPopulated": {
+          "type": "boolean"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "quoteType",
+        "language",
+        "region",
+        "triggerable",
+        "customPriceAlertConfidence",
+        "tradeable",
+        "messageBoardId",
+        "esgPopulated",
+        "symbol"
+      ],
+      "additionalProperties": false
+    },
     "QuoteMutualfund": {
       "type": "object",
       "properties": {
@@ -3673,6 +3718,9 @@
         },
         {
           "$ref": "#/definitions/QuoteMutualfund"
+        },
+        {
+          "$ref": "#/definitions/QuoteNone"
         },
         {
           "$ref": "#/definitions/QuoteOption"

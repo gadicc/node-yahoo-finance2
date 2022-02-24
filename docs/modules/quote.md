@@ -195,3 +195,13 @@ can be very misleading, and you are advised to find a better source for
 accurate timing.  However, to get a *rough indication* of when the earnings
 call might be (+/- 2 days), this might be sufficient.  Please review the
 issue for further details and comments.
+
+### Delisted symbols `{ quoteType: "NONE" }`
+
+Delisted symbols arrive with `{ quoteType: "NONE" }` however we decided to
+instead drop these results (returning `undefined`) to make the behaviour
+consistent with requests for non-existent symbols.  See
+[issue #381](https://github.com/gadicc/node-yahoo-finance2/issues/381).
+
+If you find a use-case where this behaviour is undesirable, please open a
+new issue and we'll consider adding a queryOption to disable it.

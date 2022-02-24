@@ -120,4 +120,11 @@ describe("quote", () => {
       expect(results.get("BABA").symbol).toBe("BABA");
     });
   });
+
+  describe('{ quoteType: "NONE" }', () => {
+    it("returns undefined on single result", async () => {
+      const result = await yf.quote("BRKS", {}, { devel: "quote-BRKS.json" });
+      expect(result).toBe(undefined);
+    });
+  });
 });

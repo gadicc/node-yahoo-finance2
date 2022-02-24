@@ -156,6 +156,18 @@ export interface QuoteOption extends QuoteBase {
   underlyingSymbol: string;
 }
 
+export interface QuoteNone {
+  quoteType: "NONE";
+  language: string;
+  region: string;
+  triggerable: boolean;
+  customPriceAlertConfidence: string;
+  tradeable: boolean;
+  messageBoardId: string;
+  esgPopulated: boolean;
+  symbol: string;
+}
+
 export interface QuoteMutualfund extends QuoteBase {
   quoteType: "MUTUALFUND";
 }
@@ -167,6 +179,7 @@ export type Quote =
   | QuoteEquity
   | QuoteIndex
   | QuoteMutualfund
+  | QuoteNone
   | QuoteOption;
 
 export type QuoteField = keyof Quote;
@@ -242,37 +255,45 @@ export default async function quote(
   const symbols = typeof query === "string" ? query : query.join(",");
   const returnAs = queryOptionsOverrides && queryOptionsOverrides.return;
 
-  const results: Quote[] = await this._moduleExec({
-    moduleName: "quote",
+  const results: Quote[] = (
+    await this._moduleExec({
+      moduleName: "quote",
 
-    query: {
-      url: "https://query2.finance.yahoo.com/v7/finance/quote",
-      schemaKey: "#/definitions/QuoteOptions",
-      defaults: queryOptionsDefaults,
-      runtime: { symbols },
-      overrides: queryOptionsOverrides,
-      transformWith(queryOptions: QuoteOptions) {
-        // Options validation ensures this is a string[]
-        if (queryOptions.fields) queryOptions.fields.join(",");
+      query: {
+        url: "https://query2.finance.yahoo.com/v7/finance/quote",
+        schemaKey: "#/definitions/QuoteOptions",
+        defaults: queryOptionsDefaults,
+        runtime: { symbols },
+        overrides: queryOptionsOverrides,
+        transformWith(queryOptions: QuoteOptions) {
+          // Options validation ensures this is a string[]
+          if (queryOptions.fields) queryOptions.fields.join(",");
 
-        // Don't pass this on to Yahoo
-        delete queryOptions.return;
+          // Don't pass this on to Yahoo
+          delete queryOptions.return;
 
-        return queryOptions;
+          return queryOptions;
+        },
       },
-    },
 
-    result: {
-      schemaKey: "#/definitions/QuoteResponseArray",
-      transformWith(result: any) {
-        if (!result.quoteResponse)
-          throw new Error("Unexpected result: " + JSON.stringify(result));
-        return result.quoteResponse.result;
+      result: {
+        schemaKey: "#/definitions/QuoteResponseArray",
+        transformWith(rawResult: any) {
+          const results = rawResult?.quoteResponse?.result;
+
+          if (!results)
+            throw new Error("Unexpected result: " + JSON.stringify(rawResult));
+
+          return results;
+        },
       },
-    },
 
-    moduleOptions,
-  });
+      moduleOptions,
+    })
+  )
+    // Filter out quoteType==='NONE'
+    // So that delisted stocks will be undefined just like symbol-not-found
+    .filter((quote: Quote) => quote.quoteType !== "NONE");
 
   if (returnAs) {
     switch (returnAs) {
