@@ -125,10 +125,10 @@ export interface QuoteCryptoCurrency extends QuoteBase {
   fromCurrency: string; // 'BTC'
   toCurrency: string; // 'USD=X'
   lastMarket: string; // 'CoinMarketCap'
-  coinImageUrl: string; // 'https://s.yimg.com/uc/fin/img/reports-thumbnails/1.png'
-  volume24Hr: number; // 62631043072
-  volumeAllCurrencies: number; // 62631043072
-  startDate: Date; // new Date(1367103600 * 1000)
+  coinImageUrl?: string; // 'https://s.yimg.com/uc/fin/img/reports-thumbnails/1.png'
+  volume24Hr?: number; // 62631043072
+  volumeAllCurrencies?: number; // 62631043072
+  startDate?: Date; // new Date(1367103600 * 1000)
 }
 
 export interface QuoteCurrency extends QuoteBase {

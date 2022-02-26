@@ -7,6 +7,7 @@ const testSymbols = [
   "AZT.OL", // Far less properties than other symbols (#42)
   "AAPL220121C00025000", // Option
   "LDO.MI", // additionalProperty: underlyingSymbol (#363)
+  "ZRC-USD", // Low cap crypto (#403)
 ];
 
 const marketStates = [
