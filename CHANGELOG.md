@@ -1,3 +1,10 @@
+## [2.1.8](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.7...v2.1.8) (2022-02-26)
+
+
+### Bug Fixes
+
+* **quote:** don't pulle Quote with QuoteNone (fixes [#417](https://github.com/gadicc/node-yahoo-finance2/issues/417)) ([5178c78](https://github.com/gadicc/node-yahoo-finance2/commit/5178c78fc0454851e885ac4442ea63feedcbb1f4))
+
 ## [2.1.7](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.6...v2.1.7) (2022-02-26)
 
 
