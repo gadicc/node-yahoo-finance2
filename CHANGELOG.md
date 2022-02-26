@@ -1,3 +1,10 @@
+## [2.1.7](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.6...v2.1.7) (2022-02-26)
+
+
+### Bug Fixes
+
+* **quote/cryptocurrency:** more optionals; ZRC-USD test (fixes [#403](https://github.com/gadicc/node-yahoo-finance2/issues/403)) ([cffe7a6](https://github.com/gadicc/node-yahoo-finance2/commit/cffe7a6eb90f7c0e3e1715e6d33157217db9e3c2))
+
 ## [2.1.6](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.5...v2.1.6) (2022-02-24)
 
 
