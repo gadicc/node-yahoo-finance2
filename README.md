@@ -50,7 +50,7 @@ import yahooFinance from 'yahoo-finance2';
 const yahooFinance = require('yahoo-finance2').default; // NOTE the .default
 
 const results = await yahooFinance.search('AAPL');
-const results = await yahooFInance.search('AAPL', { someOption: true, etc });
+const results = await yahooFinance.search('AAPL', { someOption: true, etc });
 ```
 
 Available modules:
