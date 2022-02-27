@@ -1,3 +1,10 @@
+## [2.1.9](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.8...v2.1.9) (2022-02-27)
+
+
+### Bug Fixes
+
+* **quoteSummary:** add twitter? to {asset,summary}Profile (fixes [#418](https://github.com/gadicc/node-yahoo-finance2/issues/418)) ([1c7c1cb](https://github.com/gadicc/node-yahoo-finance2/commit/1c7c1cba16a8560577ba70783bd63b1c8b7665b5))
+
 ## [2.1.8](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.7...v2.1.8) (2022-02-26)
 
 
