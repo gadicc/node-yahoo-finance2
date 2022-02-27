@@ -1,0 +1,81 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ADA-USD?formatted=false&modules=recommendationTrend"
+  },
+  "response": {
+    "ok": false,
+    "status": 404,
+    "statusText": "Not Found",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "y-rid": [
+        "1g8ahc1h1m80n"
+      ],
+      "x-yahoo-request-id": [
+        "1g8ahc1h1m80n"
+      ],
+      "x-request-id": [
+        "7b434408-7699-4c6c-ae00-b47a0514707e"
+      ],
+      "content-length": [
+        "152"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Sun, 27 Feb 2022 06:54:15 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-canary-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "cache-control": [
+        "max-age=0, private"
+      ],
+      "expires": [
+        "-1"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": null,
+        "error": {
+          "code": "Not Found",
+          "description": "No fundamentals data found for any of the summaryTypes=recommendationTrend"
+        }
+      }
+    }
+  }
+}

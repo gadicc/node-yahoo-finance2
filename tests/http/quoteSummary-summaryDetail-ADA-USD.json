@@ -1,0 +1,110 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ADA-USD?formatted=false&modules=summaryDetail"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "c8i5e09h1m80p"
+      ],
+      "x-yahoo-request-id": [
+        "c8i5e09h1m80p"
+      ],
+      "x-request-id": [
+        "39cb79d9-53dc-445d-be45-9aabd3034773"
+      ],
+      "content-length": [
+        "826"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sun, 27 Feb 2022 06:54:16 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 6,
+              "previousClose": 0.88557297,
+              "open": 0.88557297,
+              "dayLow": 0.8567304,
+              "dayHigh": 0.8877995,
+              "regularMarketPreviousClose": 0.88557297,
+              "regularMarketOpen": 0.88557297,
+              "regularMarketDayLow": 0.8567304,
+              "regularMarketDayHigh": 0.8877995,
+              "volume": 962185024,
+              "regularMarketVolume": 962185024,
+              "averageVolume": 1758491441,
+              "averageVolume10days": 1718202781,
+              "averageDailyVolume10Day": 1718202781,
+              "marketCap": 29587828736,
+              "fiftyTwoWeekLow": 0.75281,
+              "fiftyTwoWeekHigh": 3.099186,
+              "fiftyDayAverage": 1.1174043,
+              "twoHundredDayAverage": 1.776637,
+              "currency": "USD",
+              "fromCurrency": "ADA",
+              "toCurrency": "USD=X",
+              "lastMarket": "CoinMarketCap",
+              "volume24Hr": 962185024,
+              "volumeAllCurrencies": 962185024,
+              "circulatingSupply": 33648140288,
+              "algorithm": null,
+              "startDate": 1506816000,
+              "tradeable": false
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -75,6 +75,7 @@ export interface AssetProfile {
   name?: string; // 'Bitcoin';
   startDate?: Date; // new Date('2013-04-28')
   description?: string; // 'Bitcoin (BTC) is a cryptocurrency...'
+  twitter?: string; // in e.g. "ADA-USD" (#418)
 }
 
 export interface CompanyOfficer {
@@ -812,6 +813,7 @@ export interface SummaryProfile {
   fullTimeEmployees?: number;
   companyOfficers: any[];
   maxAge: number;
+  twitter?: string; // in e.g. "ADA-USD" (#418)
 
   // seems like for cryptocurency only
   // TODO: how does this relate to Quote type.  Common base?

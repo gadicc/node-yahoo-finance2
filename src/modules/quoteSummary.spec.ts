@@ -10,6 +10,7 @@ const testSymbols = [
   // "Got {}->null for 'number', did you want 'number | null' ?"
   "CMCOM.AS",
   "CRM",
+  "ADA-USD", // has summaryProfile.twitter (#418)
 ];
 
 const yf = testYf({ quoteSummary });
