@@ -6,10 +6,12 @@ import type {
 } from "../lib/moduleCommon.js";
 
 export interface TrendingSymbol {
+  [key: string]: any;
   symbol: string;
 }
 
 export interface TrendingSymbolsResult {
+  [key: string]: any;
   count: number;
   quotes: TrendingSymbol[];
   jobTimestamp: number;
