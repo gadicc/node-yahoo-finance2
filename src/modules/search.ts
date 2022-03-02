@@ -6,6 +6,7 @@ import type {
 } from "../lib/moduleCommon.js";
 
 export interface SearchQuoteYahoo {
+  [key: string]: any;
   symbol: string; // "BABA"
   isYahooFinance: true; // true
   exchange: string; // "NYQ"
@@ -53,6 +54,7 @@ export interface SearchQuoteYahooFuture extends SearchQuoteYahoo {
 }
 
 export interface SearchQuoteNonYahoo {
+  [key: string]: any;
   index: string; // '78ddc07626ff4bbcae663e88514c23a0'
   name: string; // 'AAPlasma'
   permalink: string; // 'aaplasma',
@@ -60,6 +62,7 @@ export interface SearchQuoteNonYahoo {
 }
 
 export interface SearchNews {
+  [key: string]: any;
   uuid: string; // "9aff624a-e84c-35f3-9c23-db39852006dc"
   title: string; // "Analyst Report: Alibaba Group Holding Limited"
   publisher: string; // "Morningstar Research"
@@ -69,6 +72,7 @@ export interface SearchNews {
 }
 
 export interface SearchResult {
+  [key: string]: any;
   explains: Array<any>;
   count: number;
   quotes: Array<
