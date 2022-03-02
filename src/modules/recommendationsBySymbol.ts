@@ -6,7 +6,9 @@ import type {
 } from "../lib/moduleCommon.js";
 
 export interface RecommendationsBySymbolResponse {
+  [key: string]: any;
   recommendedSymbols: Array<{
+    [key: string]: any;
     score: number; // 0.1927
     symbol: string; // "BMW.DE"
   }>;
