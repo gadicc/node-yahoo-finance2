@@ -8,6 +8,7 @@ import type {
 import type { DateInMs, TwoNumberRange } from "../lib/commonTypes.js";
 
 export interface QuoteBase {
+  [key: string]: any;
   language: string; // "en-US",
   region: string; // "US",
   quoteType: string; // "EQUITY" | "ETF" | "MUTUALFUND";
