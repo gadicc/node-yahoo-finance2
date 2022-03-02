@@ -6,6 +6,7 @@ import type {
 } from "../lib/moduleCommon.js";
 
 export interface InsightsResult {
+  [key: string]: any;
   symbol: string;
   instrumentInfo?: InsightsInstrumentInfo;
   companySnapshot?: InsightsCompanySnapshot;
@@ -21,11 +22,13 @@ export interface InsightsResult {
 }
 
 export interface InsightsSigDev {
+  [key: string]: any;
   headline: string;
   date: Date;
 }
 
 export interface InsightsReport {
+  [key: string]: any;
   id: string;
   headHtml: string;
   provider: string;
@@ -35,6 +38,7 @@ export interface InsightsReport {
 }
 
 export interface InsightsEvent {
+  [key: string]: any;
   eventType: string;
   pricePeriod: string;
   tradingHorizon: string;
@@ -45,13 +49,16 @@ export interface InsightsEvent {
 }
 
 export interface InsightsInstrumentInfo {
+  [key: string]: any;
   keyTechnicals: {
+    [key: string]: any;
     provider: string;
     support?: number;
     resistance?: number;
     stopLoss: number;
   };
   technicalEvents: {
+    [key: string]: any;
     provider: string;
     sector?: string;
     shortTermOutlook: InsightsOutlook;
@@ -59,6 +66,7 @@ export interface InsightsInstrumentInfo {
     longTermOutlook: InsightsOutlook;
   };
   valuation: {
+    [key: string]: any;
     color?: number;
     description?: string;
     discount?: string;
@@ -68,8 +76,10 @@ export interface InsightsInstrumentInfo {
 }
 
 export interface InsightsCompanySnapshot {
+  [key: string]: any;
   sectorInfo: string;
   company: {
+    [key: string]: any;
     innovativeness?: number;
     hiring?: number;
     sustainability?: number;
@@ -78,6 +88,7 @@ export interface InsightsCompanySnapshot {
     dividends?: number;
   };
   sector: {
+    [key: string]: any;
     innovativeness: number;
     hiring: number;
     sustainability?: number;
@@ -90,6 +101,7 @@ export interface InsightsCompanySnapshot {
 export type InsightsDirection = "Bearish" | "Bullish" | "Neutral";
 
 export interface InsightsOutlook {
+  [key: string]: any;
   stateDescription: string;
   direction: InsightsDirection;
   score: number;
@@ -102,15 +114,16 @@ export interface InsightsOutlook {
   indexScoreDescription: string;
 }
 
+export interface InsightsUpsell {
+  [key: string]: any;
+  companyName: string;
+  upsellReportType: string;
+}
+
 export interface InsightsOptions {
   lang?: string;
   region?: string;
   reportsCount?: number;
-}
-
-export interface InsightsUpsell {
-  companyName: string;
-  upsellReportType: string;
 }
 
 const queryOptionsDefaults = {
