@@ -12,6 +12,7 @@
  */
 
 export interface QuoteSummaryResult {
+  [key: string]: any;
   assetProfile?: AssetProfile;
   balanceSheetHistory?: BalanceSheetHistory;
   balanceSheetHistoryQuarterly?: BalanceSheetHistory;
@@ -48,6 +49,7 @@ export interface QuoteSummaryResult {
 }
 
 export interface AssetProfile {
+  [key: string]: any;
   maxAge: number;
   address1?: string;
   address2?: string;
@@ -79,6 +81,7 @@ export interface AssetProfile {
 }
 
 export interface CompanyOfficer {
+  [key: string]: any;
   maxAge: number;
   name: string;
   age?: number;
@@ -91,11 +94,13 @@ export interface CompanyOfficer {
 }
 
 export interface BalanceSheetHistory {
+  [key: string]: any;
   balanceSheetStatements: BalanceSheetStatement[];
   maxAge: number;
 }
 
 export interface BalanceSheetStatement {
+  [key: string]: any;
   maxAge: number;
   endDate: Date;
   cash?: number;
@@ -130,6 +135,7 @@ export interface BalanceSheetStatement {
 }
 
 export interface CalendarEvents {
+  [key: string]: any;
   maxAge: number;
   earnings: CalendarEventsEarnings;
   exDividendDate?: Date;
@@ -137,6 +143,7 @@ export interface CalendarEvents {
 }
 
 export interface CalendarEventsEarnings {
+  [key: string]: any;
   earningsDate: Date[];
   earningsAverage?: number;
   earningsLow?: number;
@@ -147,11 +154,13 @@ export interface CalendarEventsEarnings {
 }
 
 export interface CashflowStatementHistory {
+  [key: string]: any;
   cashflowStatements: CashflowStatement[];
   maxAge: number;
 }
 
 export interface CashflowStatement {
+  [key: string]: any;
   maxAge: number;
   endDate: Date;
   netIncome: number;
@@ -177,6 +186,7 @@ export interface CashflowStatement {
 }
 
 export interface DefaultKeyStatistics {
+  [key: string]: any;
   maxAge: number;
   priceHint: number;
   enterpriseValue?: number;
@@ -231,6 +241,7 @@ export interface DefaultKeyStatistics {
 }
 
 export interface QuoteSummaryEarnings {
+  [key: string]: any;
   maxAge: number;
   earningsChart: EarningsChart;
   financialsChart: FinancialsChart;
@@ -238,6 +249,7 @@ export interface QuoteSummaryEarnings {
 }
 
 export interface EarningsChart {
+  [key: string]: any;
   quarterly: EarningsChartQuarterly[];
   currentQuarterEstimate?: number;
   currentQuarterEstimateDate?: string;
@@ -246,34 +258,40 @@ export interface EarningsChart {
 }
 
 export interface EarningsChartQuarterly {
+  [key: string]: any;
   date: string;
   actual: number;
   estimate: number;
 }
 
 export interface FinancialsChart {
+  [key: string]: any;
   yearly: Yearly[];
   quarterly: FinancialsChartQuarterly[];
 }
 
 export interface FinancialsChartQuarterly {
+  [key: string]: any;
   date: string;
   revenue: number;
   earnings: number;
 }
 
 export interface Yearly {
+  [key: string]: any;
   date: number;
   revenue: number;
   earnings: number;
 }
 
 export interface EarningsHistory {
+  [key: string]: any;
   history: EarningsHistoryHistory[];
   maxAge: number;
 }
 
 export interface EarningsHistoryHistory {
+  [key: string]: any;
   maxAge: number;
   epsActual: number | null;
   epsEstimate: number | null;
@@ -284,11 +302,13 @@ export interface EarningsHistoryHistory {
 }
 
 export interface EarningsTrend {
+  [key: string]: any;
   trend: EarningsTrendTrend[];
   maxAge: number;
 }
 
 export interface EarningsTrendTrend {
+  [key: string]: any;
   maxAge: number;
   period: string;
   endDate: Date | null;
@@ -300,6 +320,7 @@ export interface EarningsTrendTrend {
 }
 
 export interface EarningsEstimate {
+  [key: string]: any;
   avg: number | null;
   low: number | null;
   high: number | null;
@@ -309,6 +330,7 @@ export interface EarningsEstimate {
 }
 
 export interface EpsRevisions {
+  [key: string]: any;
   upLast7days: number | null;
   upLast30days: number | null;
   downLast30days: number | null;
@@ -316,6 +338,7 @@ export interface EpsRevisions {
 }
 
 export interface EpsTrend {
+  [key: string]: any;
   current: number | null;
   "7daysAgo": number | null;
   "30daysAgo": number | null;
@@ -324,6 +347,7 @@ export interface EpsTrend {
 }
 
 export interface RevenueEstimate {
+  [key: string]: any;
   avg: number | null;
   low: number | null;
   high: number | null;
@@ -333,6 +357,7 @@ export interface RevenueEstimate {
 }
 
 export interface FinancialData {
+  [key: string]: any;
   maxAge: number;
   currentPrice: number;
   targetHighPrice?: number;
@@ -366,11 +391,13 @@ export interface FinancialData {
 }
 
 export interface Ownership {
+  [key: string]: any;
   maxAge: number;
   ownershipList: OwnershipList[];
 }
 
 export interface OwnershipList {
+  [key: string]: any;
   maxAge: number;
   reportDate: Date;
   organization: string;
@@ -380,6 +407,7 @@ export interface OwnershipList {
 }
 
 export interface FundPerformance {
+  [key: string]: any;
   maxAge: number;
   loadAdjustedReturns?: PeriodRange;
   rankInCategory?: PeriodRange;
@@ -395,6 +423,7 @@ export interface FundPerformance {
 }
 
 export interface PeriodRange {
+  [key: string]: any;
   asOfDate?: Date;
   ytd?: number;
   oneMonth?: number;
@@ -406,11 +435,13 @@ export interface PeriodRange {
 }
 
 export interface FundPerformanceTrailingReturns extends PeriodRange {
+  [key: string]: any;
   lastBullMkt?: number;
   lastBearMkt?: number;
 }
 
 export interface FundPerformancePerformanceOverview {
+  [key: string]: any;
   asOfDate?: Date;
   ytdReturnPct?: number;
   oneYearTotalReturn?: number;
@@ -425,16 +456,19 @@ export interface FundPerformancePerformanceOverview {
 }
 
 export interface FundPerformancePerformanceOverviewCat {
+  [key: string]: any;
   ytdReturnPct?: number;
   fiveYrAvgReturnPct?: number;
 }
 
 export interface FundPerformanceReturns {
+  [key: string]: any;
   returns: FundPerformanceReturnsRow[];
   returnsCat?: FundPerformanceReturnsRow[];
 }
 
 export interface FundPerformanceReturnsRow {
+  [key: string]: any;
   year: number; // coerce to number from string "2020"
   annualValue?: number;
   q1?: number;
@@ -444,15 +478,18 @@ export interface FundPerformanceReturnsRow {
 }
 
 export interface FundPerformanceRiskOverviewStats {
+  [key: string]: any;
   riskStatistics: FundPerformanceRiskOverviewStatsRow[];
   riskRating?: number;
 }
 
 export interface FundPerformanceRiskOverviewStatsCat {
+  [key: string]: any;
   riskStatisticsCat: FundPerformanceRiskOverviewStatsRow[];
 }
 
 export interface FundPerformanceRiskOverviewStatsRow {
+  [key: string]: any;
   year: string; // "5y" | "3y" | "10y" | anything else?
   alpha: number; // 7.76
   beta: number; // 1.04
@@ -464,6 +501,7 @@ export interface FundPerformanceRiskOverviewStatsRow {
 }
 
 export interface FundProfile {
+  [key: string]: any;
   maxAge: number;
   styleBoxUrl?: null | string;
   family: null | string;
@@ -482,12 +520,14 @@ export interface FundProfile {
 }
 
 export interface FundProfileManagementInfo {
+  [key: string]: any;
   managerName: null | string;
   managerBio: null | string;
   startdate?: Date;
 }
 
 export interface FundProfileFeesExpensesInvestment {
+  [key: string]: any;
   annualHoldingsTurnover?: number;
   annualReportExpenseRatio?: number;
   grossExpRatio?: number;
@@ -498,17 +538,20 @@ export interface FundProfileFeesExpensesInvestment {
 
 export interface FundProfileFeesExpensesInvestmentCat
   extends Omit<FundProfileFeesExpensesInvestment, "projectionValues"> {
+  [key: string]: any;
   projectionValuesCat: object;
 }
 
 export interface FundProfileBrokerage {}
 
 export interface IncomeStatementHistory {
+  [key: string]: any;
   incomeStatementHistory: IncomeStatementHistoryElement[];
   maxAge: number;
 }
 
 export interface IncomeStatementHistoryElement {
+  [key: string]: any;
   maxAge: number;
   endDate: Date;
   totalRevenue: number;
@@ -536,6 +579,7 @@ export interface IncomeStatementHistoryElement {
 }
 
 export interface IndexTrend {
+  [key: string]: any;
   maxAge: number;
   symbol: string;
   peRatio: number;
@@ -544,22 +588,26 @@ export interface IndexTrend {
 }
 
 export interface Estimate {
+  [key: string]: any;
   period: string;
   growth?: number;
 }
 
 export interface Trend {
+  [key: string]: any;
   maxAge: number;
   symbol: null;
   estimates: any[];
 }
 
 export interface Holders {
+  [key: string]: any;
   holders: Holder[];
   maxAge: number;
 }
 
 export interface Holder {
+  [key: string]: any;
   maxAge: number;
   name: string;
   relation: Relation | string;
@@ -589,11 +637,13 @@ export enum Relation {
 }
 
 export interface InsiderTransactions {
+  [key: string]: any;
   transactions: Transaction[];
   maxAge: number;
 }
 
 export interface Transaction {
+  [key: string]: any;
   maxAge: number;
   shares: number;
   filerUrl: string;
@@ -612,6 +662,7 @@ export enum OwnershipEnum {
 }
 
 export interface MajorHoldersBreakdown {
+  [key: string]: any;
   maxAge: number;
   insidersPercentHeld?: number;
   institutionsPercentHeld?: number;
@@ -619,6 +670,7 @@ export interface MajorHoldersBreakdown {
   institutionsCount?: number;
 }
 export interface NetSharePurchaseActivity {
+  [key: string]: any;
   maxAge: number;
   period: string;
   buyInfoCount: number;
@@ -638,6 +690,7 @@ export interface NetSharePurchaseActivity {
  * result to include an ISODate.
  */
 export interface Price {
+  [key: string]: any;
   averageDailyVolume10Day?: number;
   averageDailyVolume3Month?: number;
   exchange: string;
@@ -689,6 +742,7 @@ export interface Price {
 }
 
 export interface QuoteType {
+  [key: string]: any;
   exchange: string;
   quoteType: string;
   symbol: string;
@@ -705,11 +759,13 @@ export interface QuoteType {
 }
 
 export interface RecommendationTrend {
+  [key: string]: any;
   trend: RecommendationTrendTrend[];
   maxAge: number;
 }
 
 export interface RecommendationTrendTrend {
+  [key: string]: any;
   period: string;
   strongBuy: number;
   buy: number;
@@ -719,11 +775,13 @@ export interface RecommendationTrendTrend {
 }
 
 export interface SECFilings {
+  [key: string]: any;
   filings: Filing[];
   maxAge: number;
 }
 
 export interface Filing {
+  [key: string]: any;
   date: string; // TODO: check the format
   epochDate: Date;
   type: Type;
@@ -742,6 +800,7 @@ export enum Type {
 }
 
 export interface SummaryDetail {
+  [key: string]: any;
   maxAge: number;
   priceHint: number;
   previousClose: number;
@@ -797,6 +856,7 @@ export interface SummaryDetail {
 }
 
 export interface SummaryProfile {
+  [key: string]: any;
   address1?: string;
   address2?: string;
   address3?: string;
@@ -823,6 +883,7 @@ export interface SummaryProfile {
 }
 
 export interface TopHoldings {
+  [key: string]: any;
   maxAge: number;
   stockPosition: number;
   bondPosition: number;
@@ -838,12 +899,14 @@ export interface TopHoldings {
 }
 
 export interface TopHoldingsHolding {
+  [key: string]: any;
   symbol: string;
   holdingName: string;
   holdingPercent: number;
 }
 
 export interface TopHoldingsEquityHoldings {
+  [key: string]: any;
   medianMarketCap?: number;
   medianMarketCapCat?: number;
   priceToBook: number;
@@ -859,6 +922,7 @@ export interface TopHoldingsEquityHoldings {
 }
 
 export interface TopHoldingsBondRating {
+  [key: string]: any;
   a?: number;
   aa?: number;
   aaa?: number;
@@ -871,6 +935,7 @@ export interface TopHoldingsBondRating {
 }
 
 export interface TopHoldingsSectorWeighting {
+  [key: string]: any;
   realestate?: number;
   consumer_cyclical?: number;
   basic_materials?: number;
@@ -885,11 +950,13 @@ export interface TopHoldingsSectorWeighting {
 }
 
 export interface UpgradeDowngradeHistory {
+  [key: string]: any;
   history: UpgradeDowngradeHistoryHistory[];
   maxAge: number;
 }
 
 export interface UpgradeDowngradeHistoryHistory {
+  [key: string]: any;
   epochGradeDate: Date;
   firm: string;
   toGrade: Grade;
