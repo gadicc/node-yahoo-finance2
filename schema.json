@@ -64,8 +64,7 @@
       "required": [
         "meta",
         "indicators"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ChartMeta": {
       "type": "object",
@@ -165,8 +164,7 @@
         "dataGranularity",
         "range",
         "validRanges"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ChartMetaTradingPeriod": {
       "type": "object",
@@ -189,8 +187,7 @@
         "start",
         "end",
         "gmtoffset"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ChartMetaTradingPeriods": {
       "type": "object",
@@ -222,8 +219,7 @@
             }
           }
         }
-      },
-      "additionalProperties": false
+      }
     },
     "ChartEventsObject": {
       "type": "object",
@@ -234,8 +230,7 @@
         "splits": {
           "$ref": "#/definitions/ChartEventSplits"
         }
-      },
-      "additionalProperties": false
+      }
     },
     "ChartEventDividends": {
       "type": "object",
@@ -256,8 +251,7 @@
       "required": [
         "amount",
         "date"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ChartEventSplits": {
       "type": "object",
@@ -286,8 +280,7 @@
         "numerator",
         "denominator",
         "splitRatio"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ChartIndicatorsObject": {
       "type": "object",
@@ -307,8 +300,7 @@
       },
       "required": [
         "quote"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ChartIndicatorQuote": {
       "type": "object",
@@ -350,8 +342,7 @@
         "open",
         "close",
         "volume"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ChartIndicatorAdjclose": {
       "type": "object",
@@ -365,8 +356,7 @@
       },
       "required": [
         "adjclose"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ChartResultArray": {
       "type": "object",
@@ -405,8 +395,7 @@
             "$ref": "#/definitions/ChartEventSplit"
           }
         }
-      },
-      "additionalProperties": false
+      }
     },
     "ChartResultArrayQuote": {
       "type": "object",
@@ -440,8 +429,7 @@
         "open",
         "close",
         "volume"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ChartOptions": {
       "type": "object",
@@ -742,8 +730,7 @@
         "low",
         "close",
         "volume"
-      ],
-      "additionalProperties": false
+      ]
     },
     "HistoricalOptions": {
       "type": "object",
@@ -879,8 +866,7 @@
       "required": [
         "symbol",
         "sigDevs"
-      ],
-      "additionalProperties": false
+      ]
     },
     "InsightsInstrumentInfo": {
       "type": "object",
@@ -904,8 +890,7 @@
           "required": [
             "provider",
             "stopLoss"
-          ],
-          "additionalProperties": false
+          ]
         },
         "technicalEvents": {
           "type": "object",
@@ -931,8 +916,7 @@
             "shortTermOutlook",
             "intermediateTermOutlook",
             "longTermOutlook"
-          ],
-          "additionalProperties": false
+          ]
         },
         "valuation": {
           "type": "object",
@@ -955,16 +939,14 @@
           },
           "required": [
             "provider"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "keyTechnicals",
         "technicalEvents",
         "valuation"
-      ],
-      "additionalProperties": false
+      ]
     },
     "InsightsOutlook": {
       "type": "object",
@@ -1008,8 +990,7 @@
         "indexDirection",
         "indexScore",
         "indexScoreDescription"
-      ],
-      "additionalProperties": false
+      ]
     },
     "InsightsDirection": {
       "type": "string",
@@ -1046,8 +1027,7 @@
             "dividends": {
               "yahooFinanceType": "number"
             }
-          },
-          "additionalProperties": false
+          }
         },
         "sector": {
           "type": "object",
@@ -1076,16 +1056,14 @@
             "hiring",
             "insiderSentiments",
             "dividends"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "sectorInfo",
         "company",
         "sector"
-      ],
-      "additionalProperties": false
+      ]
     },
     "InsightsEvent": {
       "type": "object",
@@ -1120,8 +1098,7 @@
         "imageUrl",
         "startDate",
         "endDate"
-      ],
-      "additionalProperties": false
+      ]
     },
     "InsightsReport": {
       "type": "object",
@@ -1152,8 +1129,7 @@
         "reportDate",
         "reportTitle",
         "reportType"
-      ],
-      "additionalProperties": false
+      ]
     },
     "InsightsSigDev": {
       "type": "object",
@@ -1168,8 +1144,7 @@
       "required": [
         "headline",
         "date"
-      ],
-      "additionalProperties": false
+      ]
     },
     "InsightsUpsell": {
       "type": "object",
@@ -1184,8 +1159,7 @@
       "required": [
         "companyName",
         "upsellReportType"
-      ],
-      "additionalProperties": false
+      ]
     },
     "InsightsOptions": {
       "type": "object",
@@ -1537,8 +1511,7 @@
         "priceHint",
         "fullExchangeName",
         "symbol"
-      ],
-      "additionalProperties": false
+      ]
     },
     "TwoNumberRange": {
       "type": "object",
@@ -1886,8 +1859,7 @@
         "toCurrency",
         "tradeable",
         "triggerable"
-      ],
-      "additionalProperties": false
+      ]
     },
     "QuoteCurrency": {
       "type": "object",
@@ -2188,8 +2160,7 @@
         "symbol",
         "tradeable",
         "triggerable"
-      ],
-      "additionalProperties": false
+      ]
     },
     "QuoteEtf": {
       "type": "object",
@@ -2490,8 +2461,7 @@
         "symbol",
         "tradeable",
         "triggerable"
-      ],
-      "additionalProperties": false
+      ]
     },
     "QuoteEquity": {
       "type": "object",
@@ -2792,8 +2762,7 @@
         "symbol",
         "tradeable",
         "triggerable"
-      ],
-      "additionalProperties": false
+      ]
     },
     "QuoteIndex": {
       "type": "object",
@@ -3094,8 +3063,7 @@
         "symbol",
         "tradeable",
         "triggerable"
-      ],
-      "additionalProperties": false
+      ]
     },
     "QuoteOption": {
       "type": "object",
@@ -3413,8 +3381,7 @@
         "tradeable",
         "triggerable",
         "underlyingSymbol"
-      ],
-      "additionalProperties": false
+      ]
     },
     "QuoteMutualfund": {
       "type": "object",
@@ -3715,8 +3682,7 @@
         "symbol",
         "tradeable",
         "triggerable"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Quote": {
       "anyOf": [
@@ -4020,8 +3986,7 @@
         "hasMiniOptions",
         "quote",
         "options"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Option": {
       "type": "object",
@@ -4050,8 +4015,7 @@
         "hasMiniOptions",
         "calls",
         "puts"
-      ],
-      "additionalProperties": false
+      ]
     },
     "CallOrPut": {
       "type": "object",
@@ -4116,8 +4080,7 @@
         "lastTradeDate",
         "impliedVolatility",
         "inTheMoney"
-      ],
-      "additionalProperties": false
+      ]
     },
     "OptionsOptions": {
       "type": "object",
@@ -4272,8 +4235,7 @@
         "upgradeDowngradeHistory": {
           "$ref": "#/definitions/UpgradeDowngradeHistory"
         }
-      },
-      "additionalProperties": false
+      }
     },
     "AssetProfile": {
       "type": "object",
@@ -4369,8 +4331,7 @@
       "required": [
         "maxAge",
         "companyOfficers"
-      ],
-      "additionalProperties": false
+      ]
     },
     "CompanyOfficer": {
       "type": "object",
@@ -4407,8 +4368,7 @@
         "maxAge",
         "name",
         "title"
-      ],
-      "additionalProperties": false
+      ]
     },
     "BalanceSheetHistory": {
       "type": "object",
@@ -4426,8 +4386,7 @@
       "required": [
         "balanceSheetStatements",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "BalanceSheetStatement": {
       "type": "object",
@@ -4529,8 +4488,7 @@
       "required": [
         "maxAge",
         "endDate"
-      ],
-      "additionalProperties": false
+      ]
     },
     "CalendarEvents": {
       "type": "object",
@@ -4551,8 +4509,7 @@
       "required": [
         "maxAge",
         "earnings"
-      ],
-      "additionalProperties": false
+      ]
     },
     "CalendarEventsEarnings": {
       "type": "object",
@@ -4584,8 +4541,7 @@
       },
       "required": [
         "earningsDate"
-      ],
-      "additionalProperties": false
+      ]
     },
     "CashflowStatementHistory": {
       "type": "object",
@@ -4603,8 +4559,7 @@
       "required": [
         "cashflowStatements",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "CashflowStatement": {
       "type": "object",
@@ -4680,8 +4635,7 @@
         "maxAge",
         "endDate",
         "netIncome"
-      ],
-      "additionalProperties": false
+      ]
     },
     "DefaultKeyStatistics": {
       "type": "object",
@@ -4859,8 +4813,7 @@
         "fundFamily",
         "legalType",
         "lastSplitFactor"
-      ],
-      "additionalProperties": false
+      ]
     },
     "QuoteSummaryEarnings": {
       "type": "object",
@@ -4882,8 +4835,7 @@
         "maxAge",
         "earningsChart",
         "financialsChart"
-      ],
-      "additionalProperties": false
+      ]
     },
     "EarningsChart": {
       "type": "object",
@@ -4913,8 +4865,7 @@
       "required": [
         "quarterly",
         "earningsDate"
-      ],
-      "additionalProperties": false
+      ]
     },
     "EarningsChartQuarterly": {
       "type": "object",
@@ -4933,8 +4884,7 @@
         "date",
         "actual",
         "estimate"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FinancialsChart": {
       "type": "object",
@@ -4955,8 +4905,7 @@
       "required": [
         "yearly",
         "quarterly"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Yearly": {
       "type": "object",
@@ -4975,8 +4924,7 @@
         "date",
         "revenue",
         "earnings"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FinancialsChartQuarterly": {
       "type": "object",
@@ -4995,8 +4943,7 @@
         "date",
         "revenue",
         "earnings"
-      ],
-      "additionalProperties": false
+      ]
     },
     "EarningsHistory": {
       "type": "object",
@@ -5014,8 +4961,7 @@
       "required": [
         "history",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "EarningsHistoryHistory": {
       "type": "object",
@@ -5050,8 +4996,7 @@
         "surprisePercent",
         "quarter",
         "period"
-      ],
-      "additionalProperties": false
+      ]
     },
     "EarningsTrend": {
       "type": "object",
@@ -5069,8 +5014,7 @@
       "required": [
         "trend",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "EarningsTrendTrend": {
       "type": "object",
@@ -5109,8 +5053,7 @@
         "revenueEstimate",
         "epsTrend",
         "epsRevisions"
-      ],
-      "additionalProperties": false
+      ]
     },
     "EarningsEstimate": {
       "type": "object",
@@ -5141,8 +5084,7 @@
         "yearAgoEps",
         "numberOfAnalysts",
         "growth"
-      ],
-      "additionalProperties": false
+      ]
     },
     "RevenueEstimate": {
       "type": "object",
@@ -5173,8 +5115,7 @@
         "numberOfAnalysts",
         "yearAgoRevenue",
         "growth"
-      ],
-      "additionalProperties": false
+      ]
     },
     "EpsTrend": {
       "type": "object",
@@ -5201,8 +5142,7 @@
         "30daysAgo",
         "60daysAgo",
         "90daysAgo"
-      ],
-      "additionalProperties": false
+      ]
     },
     "EpsRevisions": {
       "type": "object",
@@ -5225,8 +5165,7 @@
         "upLast30days",
         "downLast30days",
         "downLast90days"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FinancialData": {
       "type": "object",
@@ -5330,8 +5269,7 @@
         "currentPrice",
         "recommendationKey",
         "financialCurrency"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Ownership": {
       "type": "object",
@@ -5349,8 +5287,7 @@
       "required": [
         "maxAge",
         "ownershipList"
-      ],
-      "additionalProperties": false
+      ]
     },
     "OwnershipList": {
       "type": "object",
@@ -5381,8 +5318,7 @@
         "pctHeld",
         "position",
         "value"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FundPerformance": {
       "type": "object",
@@ -5435,8 +5371,7 @@
         "pastQuarterlyReturns",
         "riskOverviewStatistics",
         "riskOverviewStatisticsCat"
-      ],
-      "additionalProperties": false
+      ]
     },
     "PeriodRange": {
       "type": "object",
@@ -5465,8 +5400,7 @@
         "tenYear": {
           "yahooFinanceType": "number"
         }
-      },
-      "additionalProperties": false
+      }
     },
     "FundPerformancePerformanceOverview": {
       "type": "object",
@@ -5504,8 +5438,7 @@
         "worstThreeYrTotalReturn": {
           "yahooFinanceType": "number"
         }
-      },
-      "additionalProperties": false
+      }
     },
     "FundPerformancePerformanceOverviewCat": {
       "type": "object",
@@ -5516,8 +5449,7 @@
         "fiveYrAvgReturnPct": {
           "yahooFinanceType": "number"
         }
-      },
-      "additionalProperties": false
+      }
     },
     "FundPerformanceTrailingReturns": {
       "type": "object",
@@ -5552,8 +5484,7 @@
         "lastBearMkt": {
           "yahooFinanceType": "number"
         }
-      },
-      "additionalProperties": false
+      }
     },
     "FundPerformanceReturns": {
       "type": "object",
@@ -5573,8 +5504,7 @@
       },
       "required": [
         "returns"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FundPerformanceReturnsRow": {
       "type": "object",
@@ -5600,8 +5530,7 @@
       },
       "required": [
         "year"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FundPerformanceRiskOverviewStats": {
       "type": "object",
@@ -5618,8 +5547,7 @@
       },
       "required": [
         "riskStatistics"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FundPerformanceRiskOverviewStatsRow": {
       "type": "object",
@@ -5658,8 +5586,7 @@
         "stdDev",
         "sharpeRatio",
         "treynorRatio"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FundPerformanceRiskOverviewStatsCat": {
       "type": "object",
@@ -5673,8 +5600,7 @@
       },
       "required": [
         "riskStatisticsCat"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FundProfile": {
       "type": "object",
@@ -5745,8 +5671,7 @@
         "family",
         "categoryName",
         "legalType"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FundProfileManagementInfo": {
       "type": "object",
@@ -5770,8 +5695,7 @@
       "required": [
         "managerName",
         "managerBio"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FundProfileFeesExpensesInvestment": {
       "type": "object",
@@ -5797,8 +5721,7 @@
       },
       "required": [
         "projectionValues"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FundProfileFeesExpensesInvestmentCat": {
       "type": "object",
@@ -5824,8 +5747,7 @@
       },
       "required": [
         "projectionValuesCat"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FundProfileBrokerage": {
       "type": "object",
@@ -5847,8 +5769,7 @@
       "required": [
         "incomeStatementHistory",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "IncomeStatementHistoryElement": {
       "type": "object",
@@ -5951,8 +5872,7 @@
         "otherItems",
         "netIncome",
         "netIncomeApplicableToCommonShares"
-      ],
-      "additionalProperties": false
+      ]
     },
     "IndexTrend": {
       "type": "object",
@@ -5982,8 +5902,7 @@
         "peRatio",
         "pegRatio",
         "estimates"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Estimate": {
       "type": "object",
@@ -5997,8 +5916,7 @@
       },
       "required": [
         "period"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Trend": {
       "type": "object",
@@ -6018,8 +5936,7 @@
         "maxAge",
         "symbol",
         "estimates"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Holders": {
       "type": "object",
@@ -6037,8 +5954,7 @@
       "required": [
         "holders",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Holder": {
       "type": "object",
@@ -6091,8 +6007,7 @@
         "url",
         "transactionDescription",
         "latestTransDate"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Relation": {
       "type": "string",
@@ -6127,8 +6042,7 @@
       "required": [
         "transactions",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Transaction": {
       "type": "object",
@@ -6188,8 +6102,7 @@
         "moneyText",
         "startDate",
         "ownership"
-      ],
-      "additionalProperties": false
+      ]
     },
     "OwnershipEnum": {
       "type": "string",
@@ -6219,8 +6132,7 @@
       },
       "required": [
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "NetSharePurchaseActivity": {
       "type": "object",
@@ -6271,8 +6183,7 @@
         "netInfoCount",
         "netInfoShares",
         "totalInsiderShares"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Price": {
       "type": "object",
@@ -6436,8 +6347,7 @@
         "lastMarket",
         "marketState",
         "fromCurrency"
-      ],
-      "additionalProperties": false
+      ]
     },
     "QuoteType": {
       "type": "object",
@@ -6504,8 +6414,7 @@
         "uuid",
         "gmtOffSetMilliseconds",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "RecommendationTrend": {
       "type": "object",
@@ -6523,8 +6432,7 @@
       "required": [
         "trend",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "RecommendationTrendTrend": {
       "type": "object",
@@ -6555,8 +6463,7 @@
         "hold",
         "sell",
         "strongSell"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SECFilings": {
       "type": "object",
@@ -6574,8 +6481,7 @@
       "required": [
         "filings",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Filing": {
       "type": "object",
@@ -6609,8 +6515,7 @@
         "title",
         "edgarUrl",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Type": {
       "type": "string",
@@ -6792,8 +6697,7 @@
         "tradeable",
         "fromCurrency",
         "lastMarket"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SummaryProfile": {
       "type": "object",
@@ -6863,8 +6767,7 @@
       "required": [
         "companyOfficers",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "TopHoldings": {
       "type": "object",
@@ -6924,8 +6827,7 @@
         "bondHoldings",
         "bondRatings",
         "sectorWeightings"
-      ],
-      "additionalProperties": false
+      ]
     },
     "TopHoldingsHolding": {
       "type": "object",
@@ -6944,8 +6846,7 @@
         "symbol",
         "holdingName",
         "holdingPercent"
-      ],
-      "additionalProperties": false
+      ]
     },
     "TopHoldingsEquityHoldings": {
       "type": "object",
@@ -6992,8 +6893,7 @@
         "priceToCashflow",
         "priceToEarnings",
         "priceToSales"
-      ],
-      "additionalProperties": false
+      ]
     },
     "TopHoldingsBondRating": {
       "type": "object",
@@ -7025,8 +6925,7 @@
         "us_government": {
           "yahooFinanceType": "number"
         }
-      },
-      "additionalProperties": false
+      }
     },
     "TopHoldingsSectorWeighting": {
       "type": "object",
@@ -7064,8 +6963,7 @@
         "healthcare": {
           "yahooFinanceType": "number"
         }
-      },
-      "additionalProperties": false
+      }
     },
     "UpgradeDowngradeHistory": {
       "type": "object",
@@ -7083,8 +6981,7 @@
       "required": [
         "history",
         "maxAge"
-      ],
-      "additionalProperties": false
+      ]
     },
     "UpgradeDowngradeHistoryHistory": {
       "type": "object",
@@ -7110,8 +7007,7 @@
         "firm",
         "toGrade",
         "action"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Grade": {
       "type": "string",
@@ -7262,8 +7158,7 @@
             "required": [
               "score",
               "symbol"
-            ],
-            "additionalProperties": false
+            ]
           }
         },
         "symbol": {
@@ -7273,8 +7168,7 @@
       "required": [
         "recommendedSymbols",
         "symbol"
-      ],
-      "additionalProperties": false
+      ]
     },
     "RecommendationsBySymbolResponseArray": {
       "type": "array",
@@ -7363,8 +7257,7 @@
         "exchange",
         "index",
         "score"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchQuoteYahooEquity": {
       "type": "object",
@@ -7421,8 +7314,7 @@
         "score",
         "symbol",
         "typeDisp"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchQuoteYahooOption": {
       "type": "object",
@@ -7479,8 +7371,7 @@
         "score",
         "symbol",
         "typeDisp"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchQuoteYahooETF": {
       "type": "object",
@@ -7537,8 +7428,7 @@
         "score",
         "symbol",
         "typeDisp"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchQuoteYahooFund": {
       "type": "object",
@@ -7595,8 +7485,7 @@
         "score",
         "symbol",
         "typeDisp"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchQuoteYahooIndex": {
       "type": "object",
@@ -7653,8 +7542,7 @@
         "score",
         "symbol",
         "typeDisp"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchQuoteYahooCurrency": {
       "type": "object",
@@ -7711,8 +7599,7 @@
         "score",
         "symbol",
         "typeDisp"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchQuoteYahooCryptocurrency": {
       "type": "object",
@@ -7769,8 +7656,7 @@
         "score",
         "symbol",
         "typeDisp"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchQuoteYahooFuture": {
       "type": "object",
@@ -7827,8 +7713,7 @@
         "score",
         "symbol",
         "typeDisp"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchQuoteNonYahoo": {
       "type": "object",
@@ -7852,8 +7737,7 @@
         "name",
         "permalink",
         "isYahooFinance"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchNews": {
       "type": "object",
@@ -7884,8 +7768,7 @@
         "link",
         "providerPublishTime",
         "type"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchResult": {
       "type": "object",
@@ -8004,8 +7887,7 @@
         "timeTakenForCrunchbase",
         "timeTakenForNav",
         "timeTakenForResearchReports"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SearchOptions": {
       "type": "object",
@@ -8077,8 +7959,7 @@
       },
       "required": [
         "symbol"
-      ],
-      "additionalProperties": false
+      ]
     },
     "TrendingSymbolsResult": {
       "type": "object",
@@ -8104,8 +7985,7 @@
         "quotes",
         "jobTimestamp",
         "startInterval"
-      ],
-      "additionalProperties": false
+      ]
     }
   }
 }
