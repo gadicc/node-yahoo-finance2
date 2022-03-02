@@ -1,0 +1,130 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=ZRC-USD"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "0q12e4th1uh7d"
+      ],
+      "x-yahoo-request-id": [
+        "0q12e4th1uh7d"
+      ],
+      "x-request-id": [
+        "fff850f0-8af5-4de4-ade3-0c98c17af45a"
+      ],
+      "content-length": [
+        "1584"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 02 Mar 2022 10:20:29 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "CRYPTOCURRENCY",
+            "quoteSourceName": "CoinMarketCap",
+            "triggerable": true,
+            "customPriceAlertConfidence": "HIGH",
+            "currency": "USD",
+            "firstTradeDateMilliseconds": 1497571200000,
+            "priceHint": 6,
+            "circulatingSupply": 4988893,
+            "lastMarket": "CoinMarketCap",
+            "fromCurrency": "ZRC",
+            "toCurrency": "USD=X",
+            "regularMarketChange": 0,
+            "regularMarketChangePercent": 0,
+            "regularMarketTime": 1644085740,
+            "regularMarketPrice": 0.076522574,
+            "regularMarketDayHigh": 0.076522574,
+            "regularMarketDayRange": "0.076522574 - 0.076522574",
+            "regularMarketDayLow": 0.076522574,
+            "regularMarketPreviousClose": 0.076522574,
+            "fullExchangeName": "CCC",
+            "regularMarketOpen": 0.076522574,
+            "averageDailyVolume3Month": 2,
+            "averageDailyVolume10Day": 0,
+            "fiftyTwoWeekLowChange": 0.009822577,
+            "fiftyTwoWeekLowChangePercent": 0.14726503,
+            "fiftyTwoWeekRange": "0.0667 - 0.420399",
+            "fiftyTwoWeekHighChange": -0.34387642,
+            "fiftyTwoWeekHighChangePercent": -0.8179763,
+            "fiftyTwoWeekLow": 0.0667,
+            "fiftyTwoWeekHigh": 0.420399,
+            "fiftyDayAverage": 0.08974824,
+            "fiftyDayAverageChange": -0.013225667,
+            "fiftyDayAverageChangePercent": -0.14736408,
+            "twoHundredDayAverage": 0.1775316,
+            "twoHundredDayAverageChange": -0.101009026,
+            "twoHundredDayAverageChangePercent": -0.56896365,
+            "marketCap": 381762,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "marketState": "REGULAR",
+            "exchange": "CCC",
+            "shortName": "ZrCoin USD",
+            "messageBoardId": "finmb_ZRC_CCC",
+            "exchangeTimezoneName": "UTC",
+            "exchangeTimezoneShortName": "UTC",
+            "gmtOffSetMilliseconds": 0,
+            "market": "ccc_market",
+            "esgPopulated": false,
+            "symbol": "ZRC-USD"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
