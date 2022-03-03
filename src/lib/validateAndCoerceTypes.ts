@@ -217,6 +217,7 @@ function disallowAdditionalProps(show = false) {
       disallowed.add(key);
     }
   }
+  /* istanbul ignore next */
   if (show)
     console.log(
       "Disallowed additional props in " + Array.from(disallowed).join(", ")
