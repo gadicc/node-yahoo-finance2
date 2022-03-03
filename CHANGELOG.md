@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.9...v2.2.0) (2022-03-03)
+
+
+### Features
+
+* **validation:** allow additionalProperties (closes [#401](https://github.com/gadicc/node-yahoo-finance2/issues/401)) ([#411](https://github.com/gadicc/node-yahoo-finance2/issues/411)) ([00f4f8e](https://github.com/gadicc/node-yahoo-finance2/commit/00f4f8e5705c7e3c8709ee38b66fe916f987874c))
+
 ## [2.1.9](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.8...v2.1.9) (2022-02-27)
 
 
