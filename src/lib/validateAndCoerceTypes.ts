@@ -205,6 +205,7 @@ export interface ValidateParams {
 
 function disallowAdditionalProps(show = false) {
   const disallowed = new Set();
+  // @ts-ignore: this can cause a breaking catch-22 on schema generation
   for (let key of Object.keys(schema.definitions)) {
     if (key.match(/Options$/)) {
       continue;
