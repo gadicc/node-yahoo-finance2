@@ -8,6 +8,7 @@ import type {
 import { Quote } from "./quote.js";
 
 export interface OptionsResult {
+  [key: string]: any;
   underlyingSymbol: string;
   expirationDates: Date[];
   strikes: number[];
@@ -17,6 +18,7 @@ export interface OptionsResult {
 }
 
 export interface Option {
+  [key: string]: any;
   expirationDate: Date;
   hasMiniOptions: boolean;
   calls: CallOrPut[];
@@ -24,6 +26,7 @@ export interface Option {
 }
 
 export interface CallOrPut {
+  [key: string]: any;
   contractSymbol: string;
   strike: number;
   currency: string;

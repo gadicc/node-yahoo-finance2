@@ -203,6 +203,29 @@ export interface ValidateParams {
   options: ValidationOptions;
 }
 
+function disallowAdditionalProps(show = false) {
+  const disallowed = new Set();
+  // @ts-ignore: this can cause a breaking catch-22 on schema generation
+  for (let key of Object.keys(schema.definitions)) {
+    if (key.match(/Options$/)) {
+      continue;
+    }
+    // @ts-ignore
+    const def = schema.definitions[key];
+    if (def.type === "object" && def.additionalProperties === undefined) {
+      def.additionalProperties = false;
+      disallowed.add(key);
+    }
+  }
+  /* istanbul ignore next */
+  if (show)
+    console.log(
+      "Disallowed additional props in " + Array.from(disallowed).join(", ")
+    );
+}
+
+if (process.env.NODE_ENV === "test") disallowAdditionalProps();
+
 function validate({
   source,
   type,
@@ -270,4 +293,5 @@ see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.
   }
 }
 
+export { disallowAdditionalProps };
 export default validate;

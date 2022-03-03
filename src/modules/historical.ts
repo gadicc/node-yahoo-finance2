@@ -8,6 +8,7 @@ import type {
 export type HistoricalResult = Array<HistoricalRow>;
 
 export interface HistoricalRow {
+  [key: string]: any;
   date: Date;
   open: number;
   high: number;

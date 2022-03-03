@@ -8,6 +8,7 @@ import type {
 } from "../lib/moduleCommon.js";
 
 export interface ChartResultObject {
+  [key: string]: any;
   meta: ChartMeta;
   timestamp?: Array<number>;
   events?: ChartEventsObject;
@@ -21,6 +22,7 @@ export interface ChartResultArray {
 }
 
 export interface ChartResultArrayQuote {
+  [key: string]: any;
   date: Date;
   high: number;
   low: number;
@@ -31,6 +33,7 @@ export interface ChartResultArrayQuote {
 }
 
 export interface ChartMeta {
+  [key: string]: any;
   currency: string; // "USD"
   symbol: string; // "AAPL",
   exchangeName: string; // "NMS",
@@ -46,6 +49,7 @@ export interface ChartMeta {
   scale?: number; // 3,
   priceHint: number; // 2,
   currentTradingPeriod: {
+    [key: string]: any;
     pre: ChartMetaTradingPeriod;
     regular: ChartMetaTradingPeriod;
     post: ChartMetaTradingPeriod;
@@ -57,6 +61,7 @@ export interface ChartMeta {
 }
 
 export interface ChartMetaTradingPeriod {
+  [key: string]: any;
   timezone: string; // "EST",
   start: Date; // new Date(1637355600 * 1000),
   end: Date; // new Date(1637370000 * 10000),
@@ -64,17 +69,20 @@ export interface ChartMetaTradingPeriod {
 }
 
 export interface ChartMetaTradingPeriods {
+  [key: string]: any;
   pre?: Array<Array<ChartMetaTradingPeriod>>;
   post?: Array<Array<ChartMetaTradingPeriod>>;
   regular?: Array<Array<ChartMetaTradingPeriod>>;
 }
 
 export interface ChartEventsObject {
+  [key: string]: any;
   dividends?: ChartEventDividends;
   splits?: ChartEventSplits;
 }
 
 export interface ChartEventsArray {
+  [key: string]: any;
   dividends?: Array<ChartEventDividend>;
   splits?: Array<ChartEventSplit>;
 }
@@ -84,6 +92,7 @@ export interface ChartEventDividends {
 }
 
 export interface ChartEventDividend {
+  [key: string]: any;
   amount: number;
   date: Date;
 }
@@ -93,6 +102,7 @@ export interface ChartEventSplits {
 }
 
 export interface ChartEventSplit {
+  [key: string]: any;
   date: Date; // new Date(1598880600 * 1000)
   numerator: number; // 4
   denominator: number; // 1
@@ -100,11 +110,13 @@ export interface ChartEventSplit {
 }
 
 export interface ChartIndicatorsObject {
+  [key: string]: any;
   quote: Array<ChartIndicatorQuote>;
   adjclose?: Array<ChartIndicatorAdjclose>;
 }
 
 export interface ChartIndicatorQuote {
+  [key: string]: any;
   high: Array<number>;
   low: Array<number>;
   open: Array<number>;
@@ -113,6 +125,7 @@ export interface ChartIndicatorQuote {
 }
 
 export interface ChartIndicatorAdjclose {
+  [key: string]: any;
   adjclose: Array<number>;
 }
 
