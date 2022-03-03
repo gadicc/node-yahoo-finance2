@@ -49,6 +49,7 @@ export interface ChartMeta {
   scale?: number; // 3,
   priceHint: number; // 2,
   currentTradingPeriod: {
+    [key: string]: any;
     pre: ChartMetaTradingPeriod;
     regular: ChartMetaTradingPeriod;
     post: ChartMetaTradingPeriod;
