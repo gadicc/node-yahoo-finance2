@@ -8,6 +8,7 @@ side-step this if you understand the risks.
 1. [Using Unvalidated Data](#using-unvalidated-data)
 1. [Skip Validation Completely](#using-unvalidated-data)
 1. [Don't Log Validation Failures](#dont-log-validation-fails)
+1. [A Note on Additional Properties](#note-additional-props)
 
 <a name="why-validate"></a>
 ## Why Validate
@@ -130,3 +131,26 @@ simply set:
 ```js
 yahooFinance.setGlobalConfig({ validation: { logErrors: false} });
 ```
+
+<a name="note-additional-props"></a>
+## A Note on "Additional Properties"
+
+*Since v2.2 (March 2022)*
+
+We now allow "additional properties" on results received from Yahoo.
+
+This means that while we can still guarantee the type of all known fields we
+receive back, we'll no longer throw a new error on new unknown keys.
+
+This is important because Yahoo constantly add new fields, and this would
+break all existing deployments.
+
+You can revert to the old behaviour with:
+
+```js
+yahooFinance._disallowAdditionalProps();
+```
+
+which is the default when `NODE_ENV==="test"`.  This means that during our
+development of the library itself, we make sure that we're testing against
+all types.
