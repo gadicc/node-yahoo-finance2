@@ -63,7 +63,7 @@ describe("chart", () => {
     // Skip nocache tests because:
     // "30m data not available for startTime=1637539200 and endTime=1637625600.
     // The requested range must be within the last 60 days."
-    if (process.env.FETCH_DEVEL === "nocache")
+    if (process.env.FETCH_DEVEL !== "nocache")
       it("handles queries with tradingPeriod.regular", async () => {
         // Had tradingPeriod.regular, probably a timezone thing
         await yf.chart(
@@ -100,7 +100,7 @@ describe("chart", () => {
     });
   });
 
-  if (process.env.FETCH_DEVEL === "nocache")
+  if (process.env.FETCH_DEVEL !== "nocache")
     it("throws on malformed result", () => {
       return expect(() => {
         consoleSilent();
