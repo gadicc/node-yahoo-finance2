@@ -837,7 +837,6 @@
             }
           },
           "required": [
-            "targetPrice",
             "provider",
             "rating"
           ],
@@ -863,6 +862,24 @@
         },
         "upsell": {
           "$ref": "#/definitions/InsightsUpsell"
+        },
+        "upsellSearchDD": {
+          "type": "object",
+          "properties": {
+            "researchReports": {
+              "$ref": "#/definitions/InsightsResearchReport"
+            }
+          },
+          "required": [
+            "researchReports"
+          ],
+          "additionalProperties": false
+        },
+        "secReports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InsightsSecReport"
+          }
         }
       },
       "required": [
@@ -1115,13 +1132,32 @@
           "type": "string"
         },
         "reportDate": {
-          "type": "string"
+          "yahooFinanceType": "date"
         },
         "reportTitle": {
           "type": "string"
         },
         "reportType": {
           "type": "string"
+        },
+        "targetPrice": {
+          "yahooFinanceType": "number"
+        },
+        "targetPriceStatus": {
+          "type": "string",
+          "enum": [
+            "Increased",
+            "Maintained",
+            "Decreased"
+          ]
+        },
+        "investmentRating": {
+          "type": "string",
+          "enum": [
+            "Bullish",
+            "Neutral",
+            "Bearish"
+          ]
         }
       },
       "required": [
@@ -1151,6 +1187,21 @@
     "InsightsUpsell": {
       "type": "object",
       "properties": {
+        "msBullishSummary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "msBearishSummary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "msBullishBearishSummariesPublishDate": {
+          "yahooFinanceType": "DateInMs"
+        },
         "companyName": {
           "type": "string"
         },
@@ -1159,9 +1210,84 @@
         }
       },
       "required": [
-        "companyName",
-        "upsellReportType"
+        "companyName"
       ]
+    },
+    "DateInMs": {
+      "yahooFinanceType": "date"
+    },
+    "InsightsResearchReport": {
+      "type": "object",
+      "properties": {
+        "reportId": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "reportDate": {
+          "yahooFinanceType": "date"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "investmentRating": {
+          "type": "string",
+          "enum": [
+            "Bullish",
+            "Neutral",
+            "Bearish"
+          ]
+        }
+      },
+      "required": [
+        "reportId",
+        "provider",
+        "title",
+        "reportDate",
+        "summary",
+        "investmentRating"
+      ],
+      "additionalProperties": false
+    },
+    "InsightsSecReport": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "filingDate": {
+          "yahooFinanceType": "DateInMs"
+        },
+        "snapshotUrl": {
+          "type": "string"
+        },
+        "formType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "title",
+        "description",
+        "filingDate",
+        "snapshotUrl",
+        "formType"
+      ],
+      "additionalProperties": false
     },
     "InsightsOptions": {
       "type": "object",
@@ -1530,9 +1656,6 @@
         "high"
       ],
       "additionalProperties": false
-    },
-    "DateInMs": {
-      "yahooFinanceType": "date"
     },
     "QuoteCryptoCurrency": {
       "type": "object",

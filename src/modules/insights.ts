@@ -5,13 +5,15 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.js";
 
+import type { DateInMs } from "../lib/commonTypes.js";
+
 export interface InsightsResult {
   [key: string]: any;
   symbol: string;
   instrumentInfo?: InsightsInstrumentInfo;
   companySnapshot?: InsightsCompanySnapshot;
   recommendation?: {
-    targetPrice: number;
+    targetPrice?: number;
     provider: string;
     rating: "BUY" | "SELL" | "HOLD";
   };
@@ -19,6 +21,10 @@ export interface InsightsResult {
   reports?: InsightsReport[];
   sigDevs: InsightsSigDev[];
   upsell?: InsightsUpsell;
+  upsellSearchDD?: {
+    researchReports: InsightsResearchReport;
+  };
+  secReports?: InsightsSecReport[];
 }
 
 export interface InsightsSigDev {
@@ -32,9 +38,31 @@ export interface InsightsReport {
   id: string;
   headHtml: string;
   provider: string;
-  reportDate: string;
+  reportDate: Date;
   reportTitle: string;
   reportType: string;
+  targetPrice?: number;
+  targetPriceStatus?: "Increased" | "Maintained" | "Decreased";
+  investmentRating?: "Bullish" | "Neutral" | "Bearish";
+}
+
+export interface InsightsResearchReport {
+  reportId: string;
+  provider: string;
+  title: string;
+  reportDate: Date;
+  summary: string;
+  investmentRating: "Bullish" | "Neutral" | "Bearish";
+}
+
+export interface InsightsSecReport {
+  id: string;
+  type: string;
+  title: string;
+  description: string;
+  filingDate: DateInMs;
+  snapshotUrl: string;
+  formType: string;
 }
 
 export interface InsightsEvent {
@@ -116,8 +144,11 @@ export interface InsightsOutlook {
 
 export interface InsightsUpsell {
   [key: string]: any;
+  msBullishSummary?: Array<string>;
+  msBearishSummary?: Array<string>;
+  msBullishBearishSummariesPublishDate?: DateInMs;
   companyName: string;
-  upsellReportType: string;
+  upsellReportType?: string;
 }
 
 export interface InsightsOptions {
