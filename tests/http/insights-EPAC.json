@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "cache-control": [
         "public, max-age=300, stale-while-revalidate=120"
@@ -17,31 +17,31 @@
         "Origin,Accept-Encoding"
       ],
       "y-rid": [
-        "fhmlhdlg9tcb8"
+        "7v3hnmdh29j2k"
       ],
       "x-yahoo-request-id": [
-        "fhmlhdlg9tcb8"
+        "7v3hnmdh29j2k"
       ],
       "x-request-id": [
-        "02617a03-29da-4d20-bb0d-f6203a5cf4e5"
+        "c456874b-9ea9-47c1-a1e3-65a6d3240ade"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "1061"
+        "1593"
       ],
       "x-envoy-upstream-service-time": [
-        "5"
+        "6"
       ],
       "date": [
-        "Fri, 14 May 2021 17:20:40 GMT"
+        "Sun, 06 Mar 2022 14:59:32 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-market-analytics-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
         "0"
@@ -79,50 +79,50 @@
               "shortTermOutlook": {
                 "stateDescription": "Recent bullish events outweigh bearish events.",
                 "direction": "Bullish",
-                "score": 2,
-                "scoreDescription": "Bullish Evidence",
+                "score": 4,
+                "scoreDescription": "Very Strong Bullish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bullish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "Bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 1,
+                "scoreDescription": "Weak Bearish Evidence",
                 "sectorDirection": "Bearish",
                 "sectorScore": 2,
                 "sectorScoreDescription": "Bearish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 4,
-                "indexScoreDescription": "Very Strong Bearish Evidence"
+                "indexScore": 3,
+                "indexScoreDescription": "Strong Bearish Evidence"
               },
-              "intermediateTermOutlook": {
-                "stateDescription": "All events are bullish.",
-                "direction": "Bullish",
-                "score": 2,
-                "scoreDescription": "Bullish Evidence",
-                "sectorDirection": "Bullish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bullish Evidence",
+              "longTermOutlook": {
+                "stateDescription": "Bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 1,
+                "scoreDescription": "Weak Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bearish Evidence",
                 "indexDirection": "Bearish",
                 "indexScore": 2,
                 "indexScoreDescription": "Bearish Evidence"
-              },
-              "longTermOutlook": {
-                "stateDescription": "Bullish events outweigh bearish events.",
-                "direction": "Bullish",
-                "score": 1,
-                "scoreDescription": "Weak Bullish Evidence",
-                "sectorDirection": "Bullish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bullish Evidence",
-                "indexDirection": "Bullish",
-                "indexScore": 1,
-                "indexScoreDescription": "Weak Bullish Evidence"
               }
             },
             "keyTechnicals": {
               "provider": "Trading Central",
-              "support": 21.875,
-              "resistance": 27.8,
-              "stopLoss": 23.69803
+              "support": 17.31,
+              "resistance": 21.615,
+              "stopLoss": 15.972658
             },
             "valuation": {
               "color": 0,
               "description": "Overvalued",
-              "discount": "-49%",
+              "discount": "-22%",
               "relativeValue": "Premium",
               "provider": "Trading Central"
             }
@@ -130,10 +130,10 @@
           "companySnapshot": {
             "sectorInfo": "Industrials",
             "company": {
-              "innovativeness": 0.8090999999999999,
-              "insiderSentiments": 0.7852,
-              "earningsReports": 0.9913,
-              "dividends": 0.012
+              "innovativeness": 0.7490000000000001,
+              "insiderSentiments": 0.7881,
+              "earningsReports": 0.86,
+              "dividends": 0.018500000000000003
             },
             "sector": {
               "innovativeness": 0.5,
@@ -145,43 +145,126 @@
             }
           },
           "recommendation": {
-            "targetPrice": 22,
+            "targetPrice": 18,
             "provider": "Argus Research",
-            "rating": "SELL"
+            "rating": "HOLD"
+          },
+          "upsell": {
+            "companyName": "Enerpac Tool Group Corp."
           },
           "events": [
             {
-              "eventType": "Price Crosses Moving Average",
+              "eventType": "Momentum",
               "pricePeriod": "D",
               "tradingHorizon": "S",
               "tradeType": "L",
               "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
-              "startDate": 1620912600,
-              "endDate": 1620912600
+              "startDate": 1646317800,
+              "endDate": 1646317800
             }
           ],
           "reports": [
             {
-              "id": "ARGUS_3767_QuantitativeReport_1620777600000",
-              "headHtml": "EPAC: What does Argus have to say about EPAC?",
+              "id": "ARGUS_3767_QuantitativeReport_1646179200000",
+              "headHtml": ": What does Argus have to say about EPAC?",
               "provider": "Argus Research",
-              "reportDate": "2021-05-12T00:00:00Z",
-              "reportTitle": "ENERPAC TOOL GROUP CORP has an Investment Rating of SELL; a target price of $22.000000; an Industry Subrating of High; a Management Subrating of Low; a Safety Subrating of Medium; a Financial Strength Subrating of Medium; a Growth Subrating of Low; and a Value Subrating of Low.",
-              "reportType": "Quantitative Report"
+              "reportDate": "2022-03-02T00:00:00Z",
+              "reportTitle": "ENERPAC TOOL GROUP CORP has an Investment Rating of HOLD; a target price of $18.000000; an Industry Subrating of High; a Management Subrating of Low; a Safety Subrating of Medium; a Financial Strength Subrating of Low; a Growth Subrating of Low; and a Value Subrating of High.",
+              "reportType": "Quantitative Report",
+              "targetPrice": 18,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Neutral"
             },
             {
-              "id": "ARGUS_3767_QuantitativeReport_1620172800000",
-              "headHtml": "EPAC: Raising target price to $22.00",
+              "id": "ARGUS_3767_QuantitativeReport_1645574400000",
+              "headHtml": ": What does Argus have to say about EPAC?",
               "provider": "Argus Research",
-              "reportDate": "2021-05-05T00:00:00Z",
-              "reportTitle": "ENERPAC TOOL GROUP CORP has an Investment Rating of SELL; a target price of $22.000000; an Industry Subrating of High; a Management Subrating of Low; a Safety Subrating of Medium; a Financial Strength Subrating of Medium; a Growth Subrating of Low; and a Value Subrating of Low.",
-              "reportType": "Quantitative Report"
+              "reportDate": "2022-02-23T00:00:00Z",
+              "reportTitle": "ENERPAC TOOL GROUP CORP has an Investment Rating of HOLD; a target price of $18.000000; an Industry Subrating of High; a Management Subrating of Low; a Safety Subrating of Medium; a Financial Strength Subrating of Low; a Growth Subrating of Low; and a Value Subrating of High.",
+              "reportType": "Quantitative Report",
+              "targetPrice": 18,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Neutral"
             }
           ],
           "sigDevs": [
             {
-              "headline": "Enerpac Tool Group Reports Second Quarter Fiscal 2021 Results",
-              "date": "2021-03-24"
+              "headline": "Enerpac Tool Group CFO Rick Dillon To Step Down",
+              "date": "2022-01-31"
+            }
+          ],
+          "secReports": [
+            {
+              "id": "0000080255-22-001852_6955",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644796800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0000080255/000008025522001852/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0000905729-22-000037_6955",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644451200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001562855/000090572922000037/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001104659-22-017465_6955",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644451200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0000102909/000110465922017465/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001678858-22-000280_6955",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643932800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0000902219/000167885822000280/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001157523-22-000123_6955",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1643587200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/6955/000115752322000123/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0000834237-22-001776_6955",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643241600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001364742/000083423722001776/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0000006955-22-000002_6955",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1643241600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/6955/000000695522000002/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001564590-22-001847_6955",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1642723200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001027796/000156459022001847/thumbnail.png",
+              "formType": "SC 13G/A"
             }
           ]
         },

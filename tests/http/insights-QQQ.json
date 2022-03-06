@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "cache-control": [
         "public, max-age=300, stale-while-revalidate=120"
@@ -17,31 +17,31 @@
         "Origin,Accept-Encoding"
       ],
       "y-rid": [
-        "96bim0tg9tcb7"
+        "8emutj5h29j2h"
       ],
       "x-yahoo-request-id": [
-        "96bim0tg9tcb7"
+        "8emutj5h29j2h"
       ],
       "x-request-id": [
-        "66923f8d-21a5-4103-88cd-774284a316e7"
+        "b4c7009b-1c4e-470f-89d6-98cb18eb041e"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "1425"
+        "1691"
       ],
       "x-envoy-upstream-service-time": [
         "5"
       ],
       "date": [
-        "Fri, 14 May 2021 17:20:39 GMT"
+        "Sun, 06 Mar 2022 14:59:29 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-market-analytics-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
         "0"
@@ -76,13 +76,13 @@
             "technicalEvents": {
               "provider": "Trading Central",
               "shortTermOutlook": {
-                "stateDescription": "Recent bearish events outweigh bullish events.",
-                "direction": "Bearish",
-                "score": 3,
-                "scoreDescription": "Strong Bearish Evidence",
+                "stateDescription": "Recent bullish events outweigh bearish events.",
+                "direction": "Bullish",
+                "score": 2,
+                "scoreDescription": "Bullish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 4,
-                "indexScoreDescription": "Very Strong Bearish Evidence"
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bearish Evidence"
               },
               "intermediateTermOutlook": {
                 "stateDescription": "Recent bearish events outweigh bullish events.",
@@ -90,24 +90,24 @@
                 "score": 1,
                 "scoreDescription": "Weak Bearish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 2,
-                "indexScoreDescription": "Bearish Evidence"
+                "indexScore": 3,
+                "indexScoreDescription": "Strong Bearish Evidence"
               },
               "longTermOutlook": {
-                "stateDescription": "There are no events.",
-                "direction": "Neutral",
-                "score": 0,
-                "scoreDescription": "No Evidence",
-                "indexDirection": "Bullish",
-                "indexScore": 1,
-                "indexScoreDescription": "Weak Bullish Evidence"
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
               }
             },
             "keyTechnicals": {
               "provider": "Trading Central",
-              "support": 193.09,
-              "resistance": 336.45,
-              "stopLoss": 302.682223
+              "support": 333.58,
+              "resistance": 340.6,
+              "stopLoss": 310.498572
             },
             "valuation": {
               "provider": "Trading Central"
@@ -115,34 +115,60 @@
           },
           "events": [
             {
-              "eventType": "Commodity Channel Index",
+              "eventType": "Engulfing Line (Bearish)",
               "pricePeriod": "D",
               "tradingHorizon": "S",
               "tradeType": "S",
               "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
-              "startDate": 1620653400,
-              "endDate": 1620653400
+              "startDate": 1646231400,
+              "endDate": 1646317800
             }
           ],
           "reports": [
             {
-              "id": "MS_0P000003IJ_AnalystReport_1620756397000",
+              "id": "MS_0P000003IJ_AnalystReport_1645793345000",
               "headHtml": "Analyst Report: McDonald's Corporation",
               "provider": "Morningstar",
-              "reportDate": "2021-05-11T18:06:37Z",
-              "reportTitle": "McDonald’s Corporation is the largest restaurant owner-operator in the world, with 2020 systemwide sales of $93 billion across 39,000 stores and 119 countries. McDonald’s revolutionized the restaurant industry with a cheap and fast core menu, building its impressive footprint through partnerships with independent restaurant franchisees. The firm earns 57% of its revenue from franchise royalty fees and lease payments, with the remainder coming from company-operated stores across its three core segments: the United States, internationally operated markets, and international developmental/licensed. McDonald’s owns 55% of the real estate and 80% of the buildings in its franchise system, offering it substantial leverage in maintaining quality standards and consistency across markets.",
-              "reportType": "Analyst Report"
+              "reportDate": "2022-02-25T12:49:05Z",
+              "reportTitle": "McDonald’s is the largest restaurant owner-operator in the world, with trailing 12-month system sales of $112 billion (as of year-end 2021) across nearly 40,000 stores and 119 countries. McDonald’s pioneered the franchise model, building its impressive footprint through partnerships with independent restaurant franchisees around the world. The firm earns nearly 60% of its revenue from franchise royalty fees and lease payments, with the remainder coming from company-operated stores across its three core segments: the United States, internationally operated markets, and international developmental/licensed markets. McDonald’s owns 55% of the real estate and 80% of the buildings in its franchise system, offering it substantial leverage in maintaining quality standards and consistency. ",
+              "reportType": "Analyst Report",
+              "targetPrice": 250,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Neutral"
             },
             {
-              "id": "MS_0P00000031_AnalystReport_1620169311000",
-              "headHtml": "Analyst Report: AT&T Inc.",
+              "id": "MS_0P000003RE_AnalystReport_1645229294000",
+              "headHtml": "Analyst Report: NVIDIA Corporation",
               "provider": "Morningstar",
-              "reportDate": "2021-05-04T23:01:51Z",
-              "reportTitle": "Wireless is AT&T’s largest business, contributing about 40% of revenue. The firm is the third-largest U.S. wireless carrier, connecting 64 million postpaid and 17 million prepaid phone customers. WarnerMedia contributes a bit less than 20% of revenue with media assets that include HBO, the Turner cable networks, and the Warner Brothers studios. Fixed-line business communications services, provided to a wide range of entities, provide about 15% of revenue. The consumer broadband segment (about 7% of revenue) primarily provides broadband service to 15 million households. The firm recently sold a stake in its traditional television business, which serves 17 million customers and generates about 17% of sales. This business will be removed from AT&T's financials going forward.",
-              "reportType": "Analyst Report"
+              "reportDate": "2022-02-19T00:08:14Z",
+              "reportTitle": "Nvidia is the top designer of discrete graphics processing units that enhance the experience on computing platforms. The firm's chips are used in a variety of end markets, including high-end PCs for gaming, data centers, and automotive infotainment systems. In recent years, the firm has broadened its focus from traditional PC graphics applications such as gaming to more complex and favorable opportunities, including artificial intelligence and autonomous driving, which leverage the high-performance capabilities of the firm's graphics processing units. ",
+              "reportType": "Analyst Report",
+              "targetPrice": 200,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Neutral"
             }
           ],
-          "sigDevs": []
+          "sigDevs": [],
+          "secReports": [
+            {
+              "id": "0001193125-22-021328_1067839",
+              "type": "Prospectus",
+              "title": "497J : Prospectus",
+              "description": "Certification of no change in definitive materials under paragraph (j) of Securities Act Rule 497",
+              "filingDate": 1643328000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001067839/000119312522021328/thumbnail.png",
+              "formType": "497J"
+            },
+            {
+              "id": "0001193125-22-019964_1067839",
+              "type": "Periodic Reports",
+              "title": "485BPOS : Periodic Reports",
+              "description": "Post-effective amendment filed pursuant to Securities Act Rule 485(b) (this filing cannot be submitted as a 1940 Act only filing)",
+              "filingDate": 1643241600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001067839/000119312522019964/thumbnail.png",
+              "formType": "485BPOS"
+            }
+          ]
         },
         "error": null
       }

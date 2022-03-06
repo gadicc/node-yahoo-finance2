@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "cache-control": [
         "public, max-age=300, stale-while-revalidate=120"
@@ -17,31 +17,31 @@
         "Origin,Accept-Encoding"
       ],
       "y-rid": [
-        "3beq7ihg9tcb8"
+        "eh91bi9h29j2j"
       ],
       "x-yahoo-request-id": [
-        "3beq7ihg9tcb8"
+        "eh91bi9h29j2j"
       ],
       "x-request-id": [
-        "c3e5acd4-7ba6-48f9-b050-3beb80a138fb"
+        "7e37d7e0-2a0b-4170-b74b-ff101b5cedde"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "1195"
+        "2397"
       ],
       "x-envoy-upstream-service-time": [
-        "8"
+        "5"
       ],
       "date": [
-        "Fri, 14 May 2021 17:20:39 GMT"
+        "Sun, 06 Mar 2022 14:59:30 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-market-analytics-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
         "1"
@@ -79,50 +79,50 @@
               "shortTermOutlook": {
                 "stateDescription": "Bullish events outweigh bearish events.",
                 "direction": "Bullish",
-                "score": 1,
-                "scoreDescription": "Weak Bullish Evidence",
-                "sectorDirection": "Bearish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bearish Evidence",
-                "indexDirection": "Bearish",
-                "indexScore": 4,
-                "indexScoreDescription": "Very Strong Bearish Evidence"
-              },
-              "intermediateTermOutlook": {
-                "stateDescription": "Recent bullish events outweigh bearish events.",
-                "direction": "Bullish",
                 "score": 2,
                 "scoreDescription": "Bullish Evidence",
-                "sectorDirection": "Bearish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bearish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bullish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 2,
-                "indexScoreDescription": "Bearish Evidence"
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bearish Evidence"
               },
-              "longTermOutlook": {
+              "intermediateTermOutlook": {
                 "stateDescription": "All events are bullish.",
                 "direction": "Bullish",
                 "score": 1,
                 "scoreDescription": "Weak Bullish Evidence",
-                "sectorDirection": "Bullish",
+                "sectorDirection": "Bearish",
                 "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bullish Evidence",
-                "indexDirection": "Bullish",
-                "indexScore": 1,
-                "indexScoreDescription": "Weak Bullish Evidence"
+                "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 3,
+                "indexScoreDescription": "Strong Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "All events are bullish.",
+                "direction": "Bullish",
+                "score": 2,
+                "scoreDescription": "Bullish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 2,
+                "sectorScoreDescription": "Bullish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
               }
             },
             "keyTechnicals": {
               "provider": "Trading Central",
-              "support": 107.31,
-              "resistance": 116.93,
-              "stopLoss": 111.064383
+              "support": 116.2799,
+              "resistance": 150.79,
+              "stopLoss": 142.961141
             },
             "valuation": {
               "color": 0,
               "description": "Overvalued",
-              "discount": "-48%",
+              "discount": "-21%",
               "relativeValue": "Premium",
               "provider": "Trading Central"
             }
@@ -130,12 +130,12 @@
           "companySnapshot": {
             "sectorInfo": "Healthcare",
             "company": {
-              "innovativeness": 0.9392,
-              "hiring": 0.9244,
-              "sustainability": 0.7686,
-              "insiderSentiments": 0.1215,
-              "earningsReports": 0.9343,
-              "dividends": 0.9433
+              "innovativeness": 0.9571,
+              "hiring": 0.919,
+              "sustainability": 0.7759999999999999,
+              "insiderSentiments": 0.1307,
+              "earningsReports": 0.9117000000000001,
+              "dividends": 0.8633
             },
             "sector": {
               "innovativeness": 0.5,
@@ -147,9 +147,34 @@
             }
           },
           "recommendation": {
-            "targetPrice": 130,
+            "targetPrice": 165,
             "provider": "Argus Research",
             "rating": "BUY"
+          },
+          "upsell": {
+            "msBullishSummary": [
+              "AbbVie supports a strong dividend yield, which should act as valuation support, as the cash flows to support the dividend look secure over the next few years. ",
+              "AbbVie's increasing entrenchment in blood cancers should bode well for growth as pricing power remains solid in this therapeutic area of the pharmaceutical market.",
+              "AbbVie's next generation immunology drugs targeting the IL23 and JAK pathways should help mitigate the competitive threats facing Humira."
+            ],
+            "msBearishSummary": [
+              "Several of AbbVie's pipeline drugs in immunology have mechanisms of action similar to drugs already approved, taking away the first mover advantage for AbbVie.",
+              "The high profit margins on Humira will likely cause an amplified impact on earnings as sales are lost to eventual biosimilar competition.",
+              "The extra debt needed to finance the Allergan deal could put amplified pressure on AbbVie if core assets like Botox and Humira face tougher competition than expected."
+            ],
+            "companyName": "AbbVie Inc.",
+            "msBullishBearishSummariesPublishDate": 1643825717000,
+            "upsellReportType": "MORNINGSTAR_ANALYST"
+          },
+          "upsellSearchDD": {
+            "researchReports": {
+              "reportId": "ARGUS_3610_AnalystReport_1644498460000",
+              "provider": "Argus",
+              "title": "Reaffirming BUY; raising target to $165",
+              "reportDate": "2022-02-10T13:07:40Z",
+              "summary": "AbbVie, a research-based biopharmaceutical company, was spun off from Abbott Laboratories in January 2013. The company is based in suburban Chicago. The shares are a component of the S&P 500.",
+              "investmentRating": "Bullish"
+            }
           },
           "events": [
             {
@@ -158,32 +183,88 @@
               "tradingHorizon": "S",
               "tradeType": "S",
               "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
-              "startDate": 1620739800,
-              "endDate": 1620739800
+              "startDate": 1646058600,
+              "endDate": 1646058600
             }
           ],
           "reports": [
             {
-              "id": "MS_0P0000XPGW_AnalystReport_1620945331000",
-              "headHtml": "Analyst Report: AbbVie Inc.",
-              "provider": "Morningstar",
-              "reportDate": "2021-05-13T22:35:31Z",
-              "reportTitle": "AbbVie is a drug company with a strong exposure to immunology and oncology. The company's top drug, Humira, represents close to half of the company's current profits. The company was spun off from Abbott in early 2013. The recent acquisition of Allergan adds several new drugs in aesthetics and women's health.",
-              "reportType": "Analyst Report"
+              "id": "ARGUS_32286_TopBottomInsiderActivity_1646289377000",
+              "headHtml": "Daily – Vickers Top Buyers & Sellers for 03/03/2022",
+              "provider": "Argus Research",
+              "reportDate": "2022-03-03T06:36:17Z",
+              "reportTitle": "The Vickers Top Buyers & Sellers is a daily report that identifies the five companies the largest insider purchase transactions based on the dollar value of the transactions as well as the five companies the largest insider sales transactions based on the dollar value of the transactions.",
+              "reportType": "Top/Bottom Insider Activity"
             },
             {
-              "id": "ARGUS_3610_AnalystReport_1620911988000",
-              "headHtml": "Analyst Report: AbbVie Inc",
+              "id": "ARGUS_32275_TopBottomInsiderActivity_1646202512000",
+              "headHtml": "Daily – Vickers Top Buyers & Sellers for 03/02/2022",
               "provider": "Argus Research",
-              "reportDate": "2021-05-13T13:19:48Z",
-              "reportTitle": "AbbVie, a research-based biopharmaceutical company, was spun off from Abbott Laboratories in January 2013. The company is based in suburban Chicago. The shares are a component of the S&P 500.",
-              "reportType": "Analyst Report"
+              "reportDate": "2022-03-02T06:28:32Z",
+              "reportTitle": "The Vickers Top Buyers & Sellers is a daily report that identifies the five companies the largest insider purchase transactions based on the dollar value of the transactions as well as the five companies the largest insider sales transactions based on the dollar value of the transactions.",
+              "reportType": "Top/Bottom Insider Activity"
             }
           ],
           "sigDevs": [
             {
-              "headline": "Inventiva: Cash, Cash Equivalents At EUR 107.8 Mln At End-March",
-              "date": "2021-05-12"
+              "headline": "Abbvie Provides Update Regarding Skyrizi (Risankizumab-Rzaa) For The Treatment Of Moderate To Severe Crohn's Disease In The U.S.",
+              "date": "2022-02-28"
+            }
+          ],
+          "secReports": [
+            {
+              "id": "0001104659-22-030613_1551152",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1646352000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001551152/000110465922030613/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001104659-22-025712_1551152",
+              "type": "Offering Registrations",
+              "title": "S-3ASR : Offering Registrations",
+              "description": "Automatic shelf registration statement of securities of well-known seasoned issuers",
+              "filingDate": 1645488000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001551152/000110465922025712/thumbnail.png",
+              "formType": "S-3ASR"
+            },
+            {
+              "id": "0001551152-22-000007_1551152",
+              "type": "Periodic Financial Reports",
+              "title": "10-K : Periodic Financial Reports",
+              "description": "Annual report pursuant to Section 13 and 15(d)",
+              "filingDate": 1645142400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1551152/000155115222000007/thumbnail.png",
+              "formType": "10-K"
+            },
+            {
+              "id": "0001104659-22-016352_1551152",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644364800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001551152/000110465922016352/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0000834237-22-006222_1551152",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643846400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001551152/000083423722006222/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001551152-22-000003_1551152",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1643760000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1551152/000155115222000003/thumbnail.png",
+              "formType": "8-K"
             }
           ]
         },

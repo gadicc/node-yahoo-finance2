@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "cache-control": [
         "public, max-age=300, stale-while-revalidate=120"
@@ -17,31 +17,28 @@
         "Origin,Accept-Encoding"
       ],
       "y-rid": [
-        "09gabs5g9tcb6"
+        "ftf0pddh29j2f"
       ],
       "x-yahoo-request-id": [
-        "09gabs5g9tcb6"
+        "ftf0pddh29j2f"
       ],
       "x-request-id": [
-        "e8d6aaac-db97-4f6d-b565-820b2390c304"
+        "f722afd4-0168-4e42-901d-3210681a6873"
       ],
       "content-encoding": [
         "gzip"
       ],
-      "content-length": [
-        "1477"
-      ],
       "x-envoy-upstream-service-time": [
-        "4"
+        "6"
       ],
       "date": [
-        "Fri, 14 May 2021 17:20:38 GMT"
+        "Sun, 06 Mar 2022 14:59:27 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-market-analytics-api--mtls-baseline-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
         "0"
@@ -54,6 +51,9 @@
       ],
       "x-frame-options": [
         "SAMEORIGIN"
+      ],
+      "transfer-encoding": [
+        "chunked"
       ],
       "connection": [
         "close"
@@ -77,62 +77,62 @@
               "provider": "Trading Central",
               "sector": "Communication Services",
               "shortTermOutlook": {
-                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "stateDescription": "The bullish and bearish events are balanced.",
+                "direction": "Neutral",
+                "score": 0,
+                "scoreDescription": "Neutral Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bullish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "All events are bearish.",
                 "direction": "Bearish",
                 "score": 4,
                 "scoreDescription": "Very Strong Bearish Evidence",
                 "sectorDirection": "Bearish",
-                "sectorScore": 3,
-                "sectorScoreDescription": "Strong Bearish Evidence",
-                "indexDirection": "Bearish",
-                "indexScore": 4,
-                "indexScoreDescription": "Very Strong Bearish Evidence"
-              },
-              "intermediateTermOutlook": {
-                "stateDescription": "There is one bullish event.",
-                "direction": "Bullish",
-                "score": 1,
-                "scoreDescription": "Weak Bullish Evidence",
-                "sectorDirection": "Bearish",
                 "sectorScore": 2,
                 "sectorScoreDescription": "Bearish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 2,
-                "indexScoreDescription": "Bearish Evidence"
+                "indexScore": 3,
+                "indexScoreDescription": "Strong Bearish Evidence"
               },
               "longTermOutlook": {
-                "stateDescription": "There is one bullish event.",
-                "direction": "Bullish",
-                "score": 1,
-                "scoreDescription": "Weak Bullish Evidence",
-                "sectorDirection": "Neutral",
-                "sectorScore": 0,
-                "sectorScoreDescription": "No Evidence",
-                "indexDirection": "Bullish",
-                "indexScore": 1,
-                "indexScoreDescription": "Weak Bullish Evidence"
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
               }
             },
             "keyTechnicals": {
               "provider": "Trading Central",
-              "support": 1518.27,
-              "resistance": 2306.5965,
-              "stopLoss": 2120.144404
+              "support": 1771.365,
+              "resistance": 2776.17,
+              "stopLoss": 2401.425366
             },
             "valuation": {
-              "color": 0,
-              "description": "Overvalued",
-              "discount": "-2%",
-              "relativeValue": "Premium",
+              "color": 1,
+              "description": "Undervalued",
+              "discount": "29%",
+              "relativeValue": "Discount",
               "provider": "Trading Central"
             }
           },
           "companySnapshot": {
             "sectorInfo": "Communication Services",
             "company": {
-              "innovativeness": 0.9926,
-              "insiderSentiments": 0.0959,
-              "earningsReports": 0.8844
+              "innovativeness": 0.9889,
+              "insiderSentiments": 0.0073,
+              "earningsReports": 0.8690000000000001
             },
             "sector": {
               "innovativeness": 0.5,
@@ -143,39 +143,159 @@
               "dividends": 0.5
             }
           },
+          "upsell": {
+            "msBullishSummary": [
+              "As the number of online users and usage increase, so will digital ad spending, of which Google will remain one of the main beneficiaries.",
+              "Android’s dominant global market share of smartphones leaves Alphabet’s Google well positioned to continue generating top-line growth as search traffic shifts from desktop to mobile.",
+              "The significant cash generated from the Google search business allows Alphabet to remain focused on innovation and the long-term growth opportunities that new areas present."
+            ],
+            "msBearishSummary": [
+              "There is little revenue diversification within Alphabet, as it remains heavily dependent on Google and the state of the search ad space.",
+              "Alphabet is allocating too much capital toward high-risk bets, which face a very low probability of generating returns.",
+              "Google’s dominant position in online search is not sustainable, as more companies and regulatory agencies are contesting the methods through which the company has been extending its leadership. "
+            ],
+            "companyName": "Alphabet Inc.",
+            "msBullishBearishSummariesPublishDate": 1643776008000,
+            "upsellReportType": "MORNINGSTAR_ANALYST"
+          },
+          "upsellSearchDD": {
+            "researchReports": {
+              "reportId": "MS_0P00012BBI_AnalystReport_1643776008000",
+              "provider": "Morningstar",
+              "title": "Alphabet Beats Q4 Expectations; Strength on All Fronts; Increasing FVE to $3,600; Shares Attractive",
+              "reportDate": "2022-02-02T04:26:48Z",
+              "summary": "Alphabet is a holding company, with Google, the Internet media giant, as a wholly owned subsidiary. Google generates 99% of Alphabet revenue, of which more than 85% is from online ads. Google’s other revenue is from sales of apps and content on Google Play and YouTube, as well as cloud service fees and other licensing revenue. Sales of hardware such as Chromebooks, the Pixel smartphone, and smart homes products, which include Nest and Google Home, also contribute to other revenue. Alphabet’s moonshot investments are in its other bets segment, where it bets on technology to enhance health (Verily), faster Internet access to homes (Google Fiber), self-driving cars (Waymo), and more. Alphabet’s operating margin has been 25%-30%, with Google at 30% and other bets operating at a loss. ",
+              "investmentRating": "Bullish"
+            }
+          },
           "events": [
             {
-              "eventType": "Inside Bar (Bullish)",
+              "eventType": "Momentum",
               "pricePeriod": "D",
               "tradingHorizon": "S",
               "tradeType": "L",
               "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
-              "startDate": 1620912600,
-              "endDate": 1620912600
+              "startDate": 1646317800,
+              "endDate": 1646317800
             }
           ],
           "reports": [
             {
-              "id": "ARGUS_29860_TopBottomInsiderActivity_1620803931000",
-              "headHtml": "Daily – Vickers Top Buyers & Sellers for 05/12/2021",
-              "provider": "Argus Research",
-              "reportDate": "2021-05-12T07:18:51Z",
-              "reportTitle": "The Vickers Top Buyers & Sellers is a daily report that identifies the five companies the largest insider purchase transactions based on the dollar value of the transactions as well as the five companies the largest insider sales transactions based on the dollar value of the transactions.",
-              "reportType": "Top/Bottom Insider Activity"
-            },
-            {
-              "id": "MS_0P00012BBI_AnalystReport_1620742413000",
+              "id": "MS_0P00012BBI_AnalystReport_1643776008000",
               "headHtml": "Analyst Report: Alphabet Inc.",
               "provider": "Morningstar",
-              "reportDate": "2021-05-11T14:13:33Z",
-              "reportTitle": "Alphabet is a holding company, with Google, the Internet media giant, as a wholly owned subsidiary. Google generates 99% of Alphabet revenue, of which more than 85% is from online ads. Google’s other revenue is from sales of apps and content on Google Play and YouTube, as well as cloud service fees and other licensing revenue. Sales of hardware such as Chromebooks, the Pixel smartphone, and smart homes products, which include Nest and Google Home, also contribute to other revenue. Alphabet’s moonshot investments are in its other bets segment, where it bets on technology to enhance health (Verily), faster Internet access to homes (Google Fiber), self-driving cars (Waymo), and more. Alphabet’s operating margin has been 25%-30%, with Google at 30% and other bets operating at a loss.",
-              "reportType": "Analyst Report"
+              "reportDate": "2022-02-02T04:26:48Z",
+              "reportTitle": "Alphabet is a holding company, with Google, the Internet media giant, as a wholly owned subsidiary. Google generates 99% of Alphabet revenue, of which more than 85% is from online ads. Google’s other revenue is from sales of apps and content on Google Play and YouTube, as well as cloud service fees and other licensing revenue. Sales of hardware such as Chromebooks, the Pixel smartphone, and smart homes products, which include Nest and Google Home, also contribute to other revenue. Alphabet’s moonshot investments are in its other bets segment, where it bets on technology to enhance health (Verily), faster Internet access to homes (Google Fiber), self-driving cars (Waymo), and more. Alphabet’s operating margin has been 25%-30%, with Google at 30% and other bets operating at a loss. ",
+              "reportType": "Analyst Report",
+              "targetPrice": 3600,
+              "targetPriceStatus": "Increased",
+              "investmentRating": "Bullish"
+            },
+            {
+              "id": "ARGUS_31859_TopBottomInsiderActivity_1641969582000",
+              "headHtml": "Daily – Vickers Top Buyers & Sellers for 01/12/2022",
+              "provider": "Argus Research",
+              "reportDate": "2022-01-12T06:39:42Z",
+              "reportTitle": "The Vickers Top Buyers & Sellers is a daily report that identifies the five companies the largest insider purchase transactions based on the dollar value of the transactions as well as the five companies the largest insider sales transactions based on the dollar value of the transactions.",
+              "reportType": "Top/Bottom Insider Activity"
             }
           ],
           "sigDevs": [
             {
-              "headline": "Google Cloud And Spacex's Starlink To Deliver Secure, Global Connectivity",
-              "date": "2021-05-13"
+              "headline": "Google - Due To The Ongoing War In Ukraine, Co Will Be Temporarily Pausing Google ADS From Serving To Users Located In Russia",
+              "date": "2022-03-04"
+            }
+          ],
+          "secReports": [
+            {
+              "id": "0001193125-22-042001_1652044",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644796800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001652044/000119312522042001/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001193125-22-037016_1652044",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644537600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001652044/000119312522037016/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001193125-22-037444_1652044",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644537600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001652044/000119312522037444/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001104659-22-016220_1652044",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644364800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001652044/000110465922016220/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001104659-22-016219_1652044",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644364800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001652044/000110465922016219/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0000834237-22-008378_1652044",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644278400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001652044/000083423722008378/thumbnail.png",
+              "formType": "SC 13G"
+            },
+            {
+              "id": "0000834237-22-006221_1652044",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643846400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001652044/000083423722006221/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001652044-22-000019_1652044",
+              "type": "Periodic Financial Reports",
+              "title": "10-K : Periodic Financial Reports",
+              "description": "Annual report pursuant to Section 13 and 15(d)",
+              "filingDate": 1643760000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1652044/000165204422000019/thumbnail.png",
+              "formType": "10-K"
+            },
+            {
+              "id": "0001193125-22-025218_1652044",
+              "type": "Offering Registrations",
+              "title": "S-3ASR : Offering Registrations",
+              "description": "Automatic shelf registration statement of securities of well-known seasoned issuers",
+              "filingDate": 1643760000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001652044/000119312522025218/thumbnail.png",
+              "formType": "S-3ASR"
+            },
+            {
+              "id": "0001652044-22-000015_1652044",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1643673600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1652044/000165204422000015/thumbnail.png",
+              "formType": "8-K"
             }
           ]
         },

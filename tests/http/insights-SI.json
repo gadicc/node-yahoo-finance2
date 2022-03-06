@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "cache-control": [
         "public, max-age=300, stale-while-revalidate=120"
@@ -17,34 +17,34 @@
         "Origin,Accept-Encoding"
       ],
       "y-rid": [
-        "3oa2ul5g9tcb7"
+        "c21blmlh29j2i"
       ],
       "x-yahoo-request-id": [
-        "3oa2ul5g9tcb7"
+        "c21blmlh29j2i"
       ],
       "x-request-id": [
-        "7aa122f8-9d5b-47f1-ba7c-f135c7730931"
+        "2eb4423e-4a16-410c-9ad6-eb56766c130e"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "1121"
+        "1602"
       ],
       "x-envoy-upstream-service-time": [
-        "6"
+        "5"
       ],
       "date": [
-        "Fri, 14 May 2021 17:20:39 GMT"
+        "Sun, 06 Mar 2022 14:59:30 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-market-analytics-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
-        "3"
+        "0"
       ],
       "strict-transport-security": [
         "max-age=15552000"
@@ -77,59 +77,62 @@
               "provider": "Trading Central",
               "sector": "Financial Services",
               "shortTermOutlook": {
-                "stateDescription": "Bearish events outweigh bullish events.",
+                "stateDescription": "Recent bearish events outweigh bullish events.",
                 "direction": "Bearish",
-                "score": 3,
-                "scoreDescription": "Strong Bearish Evidence",
+                "score": 4,
+                "scoreDescription": "Very Strong Bearish Evidence",
                 "sectorDirection": "Bearish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bearish Evidence",
+                "sectorScore": 4,
+                "sectorScoreDescription": "Very Strong Bearish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 4,
-                "indexScoreDescription": "Very Strong Bearish Evidence"
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bearish Evidence"
               },
               "intermediateTermOutlook": {
                 "stateDescription": "All events are bearish.",
                 "direction": "Bearish",
                 "score": 4,
                 "scoreDescription": "Very Strong Bearish Evidence",
-                "sectorDirection": "Bullish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bullish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 2,
+                "sectorScoreDescription": "Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 3,
+                "indexScoreDescription": "Strong Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 2,
+                "scoreDescription": "Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bearish Evidence",
                 "indexDirection": "Bearish",
                 "indexScore": 2,
                 "indexScoreDescription": "Bearish Evidence"
-              },
-              "longTermOutlook": {
-                "stateDescription": "There are no events.",
-                "direction": "Neutral",
-                "score": 0,
-                "scoreDescription": "No Evidence",
-                "sectorDirection": "Bullish",
-                "sectorScore": 2,
-                "sectorScoreDescription": "Bullish Evidence",
-                "indexDirection": "Bullish",
-                "indexScore": 1,
-                "indexScoreDescription": "Weak Bullish Evidence"
               }
             },
             "keyTechnicals": {
               "provider": "Trading Central",
-              "stopLoss": 45.097755
+              "support": 14.88,
+              "resistance": 109.605,
+              "stopLoss": 56.070571
             },
             "valuation": {
-              "color": 0.5,
-              "description": "Near Fair Value",
-              "discount": "24%",
+              "color": 1,
+              "description": "Undervalued",
+              "discount": "49%",
+              "relativeValue": "Discount",
               "provider": "Trading Central"
             }
           },
           "companySnapshot": {
             "sectorInfo": "Financial Services",
             "company": {
-              "innovativeness": 0.3667,
-              "insiderSentiments": 0.064,
-              "earningsReports": 0.9464
+              "innovativeness": 0.345,
+              "insiderSentiments": 0.0206,
+              "earningsReports": 0.9395
             },
             "sector": {
               "innovativeness": 0.5,
@@ -140,6 +143,9 @@
               "dividends": 0.5
             }
           },
+          "upsell": {
+            "companyName": "Silvergate Capital Corporation"
+          },
           "events": [
             {
               "eventType": "Commodity Channel Index",
@@ -147,32 +153,124 @@
               "tradingHorizon": "S",
               "tradeType": "U",
               "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
-              "startDate": 1620912600,
-              "endDate": 1620912600
+              "startDate": 1646317800,
+              "endDate": 1646317800
             }
           ],
           "reports": [
             {
-              "id": "MS_0P00000016_AnalystReport_1620664161000",
-              "headHtml": "Analyst Report: ABB Ltd",
-              "provider": "Morningstar",
-              "reportDate": "2021-05-10T16:29:21Z",
-              "reportTitle": "ABB is a global supplier of electrical equipment and automation products. Founded in the late 19th century, the company was created out of the merger of two old industrial companies--ASEA and BBC--and is now called Asea Brown Boveri Group, or ABB. The company is the number-one or number-two supplier in all of its core markets and the number-two robotic arm supplier globally. In automation, it offers a full suite of products for both discrete and process automation as well as industrial robotics.",
-              "reportType": "Analyst Report"
+              "id": "ARGUS_32063_TopBottomInsiderActivity_1644216257000",
+              "headHtml": "Daily – Vickers Top Buyers & Sellers for 02/07/2022",
+              "provider": "Argus Research",
+              "reportDate": "2022-02-07T06:44:17Z",
+              "reportTitle": "The Vickers Top Buyers & Sellers is a daily report that identifies the five companies the largest insider purchase transactions based on the dollar value of the transactions as well as the five companies the largest insider sales transactions based on the dollar value of the transactions.",
+              "reportType": "Top/Bottom Insider Activity"
             },
             {
-              "id": "MS_0P00000016_AnalystReport_1619527788000",
-              "headHtml": "Analyst Report: ABB Ltd",
-              "provider": "Morningstar",
-              "reportDate": "2021-04-27T12:49:48Z",
-              "reportTitle": "ABB is a global supplier of electrical equipment and automation products. Founded in the late 19th century, the company was created out of the merger of two old industrial companies--ASEA and BBC--and is now called Asea Brown Boveri Group, or ABB. The company is the number-one or number-two supplier in all of its core markets and the number-two robotic arm supplier globally. In automation, it offers a full suite of products for both discrete and process automation as well as robotics.",
-              "reportType": "Analyst Report"
+              "id": "ARGUS_31357_TopBottomInsiderActivity_1636526068000",
+              "headHtml": "Daily – Vickers Top Buyers & Sellers for 11/10/2021",
+              "provider": "Argus Research",
+              "reportDate": "2021-11-10T06:34:28Z",
+              "reportTitle": "The Vickers Top Buyers & Sellers is a daily report that identifies the five companies the largest insider purchase transactions based on the dollar value of the transactions as well as the five companies the largest insider sales transactions based on the dollar value of the transactions.",
+              "reportType": "Top/Bottom Insider Activity"
             }
           ],
           "sigDevs": [
             {
-              "headline": "Silvergate Capital Corp Announces First Quarter 2021 Results",
-              "date": "2021-04-20"
+              "headline": "Silvergate Purchases Blockchain Payment Network Assets From Diem",
+              "date": "2022-01-31"
+            }
+          ],
+          "secReports": [
+            {
+              "id": "0001312109-22-000051_1312109",
+              "type": "Periodic Financial Reports",
+              "title": "10-K : Periodic Financial Reports",
+              "description": "Annual report pursuant to Section 13 and 15(d)",
+              "filingDate": 1646006400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001312109/000131210922000051/thumbnail.png",
+              "formType": "10-K"
+            },
+            {
+              "id": "0001312109-22-000032_1312109",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1644883200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1312109/000131210922000032/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001312109-22-000028_1312109",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1644796800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1312109/000131210922000028/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0000895345-22-000171_1312109",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644537600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001353254/000089534522000171/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001104659-22-018562_1312109",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644451200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001312109/000110465922018562/thumbnail.png",
+              "formType": "SC 13G"
+            },
+            {
+              "id": "0000902664-22-001303_1312109",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644364800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001328785/000090266422001303/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0000834237-22-008451_1312109",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644278400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001364742/000083423722008451/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001104659-22-012016_1312109",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1643932800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1312109/000110465922012016/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001312109-22-000021_1312109",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1643587200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1312109/000131210922000021/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001312109-22-000018_1312109",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1642723200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1312109/000131210922000018/thumbnail.png",
+              "formType": "8-K"
             }
           ]
         },

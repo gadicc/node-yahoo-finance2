@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "cache-control": [
         "public, max-age=300, stale-while-revalidate=120"
@@ -17,34 +17,31 @@
         "Origin,Accept-Encoding"
       ],
       "y-rid": [
-        "fgmf449g9tcb6"
+        "5ech43lh29j2f"
       ],
       "x-yahoo-request-id": [
-        "fgmf449g9tcb6"
+        "5ech43lh29j2f"
       ],
       "x-request-id": [
-        "e0f69d95-af10-4142-b321-a70b75dafa7e"
+        "d79dc737-8197-45b5-929e-3f04b706f995"
       ],
       "content-encoding": [
         "gzip"
-      ],
-      "content-length": [
-        "1085"
       ],
       "x-envoy-upstream-service-time": [
         "5"
       ],
       "date": [
-        "Fri, 14 May 2021 17:20:38 GMT"
+        "Sun, 06 Mar 2022 14:59:26 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-market-analytics-api--mtls-baseline-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-market-analytics-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
-        "0"
+        "1"
       ],
       "strict-transport-security": [
         "max-age=15552000"
@@ -54,6 +51,9 @@
       ],
       "x-frame-options": [
         "SAMEORIGIN"
+      ],
+      "transfer-encoding": [
+        "chunked"
       ],
       "connection": [
         "close"
@@ -77,16 +77,16 @@
               "provider": "Trading Central",
               "sector": "Communication Services",
               "shortTermOutlook": {
-                "stateDescription": "Bullish events outweigh bearish events.",
-                "direction": "Bullish",
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
                 "score": 1,
-                "scoreDescription": "Weak Bullish Evidence",
-                "sectorDirection": "Bearish",
+                "scoreDescription": "Weak Bearish Evidence",
+                "sectorDirection": "Bullish",
                 "sectorScore": 3,
-                "sectorScoreDescription": "Strong Bearish Evidence",
+                "sectorScoreDescription": "Strong Bullish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 4,
-                "indexScoreDescription": "Very Strong Bearish Evidence"
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bearish Evidence"
               },
               "intermediateTermOutlook": {
                 "stateDescription": "All events are bearish.",
@@ -97,27 +97,27 @@
                 "sectorScore": 2,
                 "sectorScoreDescription": "Bearish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 2,
-                "indexScoreDescription": "Bearish Evidence"
+                "indexScore": 3,
+                "indexScoreDescription": "Strong Bearish Evidence"
               },
               "longTermOutlook": {
                 "stateDescription": "All events are bearish.",
                 "direction": "Bearish",
                 "score": 2,
                 "scoreDescription": "Bearish Evidence",
-                "sectorDirection": "Neutral",
-                "sectorScore": 0,
-                "sectorScoreDescription": "No Evidence",
-                "indexDirection": "Bullish",
-                "indexScore": 1,
-                "indexScoreDescription": "Weak Bullish Evidence"
+                "sectorDirection": "Bearish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
               }
             },
             "keyTechnicals": {
               "provider": "Trading Central",
-              "support": 146.87,
-              "resistance": 271.71,
-              "stopLoss": 194.681466
+              "support": 123.3,
+              "resistance": 238.26,
+              "stopLoss": 117.754547
             },
             "valuation": {
               "color": 0,
@@ -129,7 +129,7 @@
           "companySnapshot": {
             "sectorInfo": "Communication Services",
             "company": {
-              "innovativeness": 0.9225
+              "innovativeness": 0.7852
             },
             "sector": {
               "innovativeness": 0.5,
@@ -140,39 +140,135 @@
               "dividends": 0.5
             }
           },
+          "upsell": {
+            "msBullishSummary": [
+              "Spotify’s listener growth may help it negotiate much better terms with record labels over time.",
+              "By investing in more services and tools for artists, Spotify may attract artists away from record labels and toward independent distribution, which may allow the company to pay lower royalties over time.",
+              "Revenue growth during the next 10 years should accelerate as Spotify keeps investing in different content such as podcasts and video, attracting more users and advertisers."
+            ],
+            "msBearishSummary": [
+              "Apple, Google, and Amazon can allocate more capital toward their music streaming offerings and potentially take users from Spotify.",
+              "Content acquisition costs make Spotify’s overall cost of revenue variable, which will prevent significant gross margin expansion.",
+              "Spotify will remain at the mercy of record labels, which can potentially raise royalties owed by Spotify at any time. "
+            ],
+            "companyName": "Spotify Technology S.A.",
+            "msBullishBearishSummariesPublishDate": 1643931135000,
+            "upsellReportType": "MORNINGSTAR_ANALYST"
+          },
+          "upsellSearchDD": {
+            "researchReports": {
+              "reportId": "MS_0P0001CX12_AnalystReport_1643931135000",
+              "provider": "Morningstar",
+              "title": "Spotify Ends 2021 on an Inline Note; Shares Hit by Weak User Guidance ",
+              "reportDate": "2022-02-03T23:32:15Z",
+              "summary": "Spotify, headquartered in Stockholm, Sweden, is one of the world’s largest music streaming service providers, with over 150 million total listeners. The firm monetizes its users through both a paid subscription model, referred to as its premium service, and an ad-based model, referred to as its ad-supported service. Revenue from premium and ad-supported services represented 90% and 10% of Spotify’s 2017 total revenue, respectively. ",
+              "investmentRating": "Bullish"
+            }
+          },
           "events": [
             {
               "eventType": "Commodity Channel Index",
-              "pricePeriod": "W",
+              "pricePeriod": "D",
               "tradingHorizon": "S",
               "tradeType": "S",
               "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
-              "startDate": 1620394200,
-              "endDate": 1620394200
+              "startDate": 1646317800,
+              "endDate": 1646317800
             }
           ],
           "reports": [
             {
-              "id": "MS_0P0001CX12_AnalystReport_1619823044000",
+              "id": "MS_0P0001CX12_AnalystReport_1643931135000",
               "headHtml": "Analyst Report: Spotify Technology S.A.",
               "provider": "Morningstar",
-              "reportDate": "2021-04-30T22:50:44Z",
-              "reportTitle": "Spotify, headquartered in Stockholm, Sweden, is one of the world’s largest music streaming service providers, with over 150 million total listeners. The firm monetizes its users through both a paid subscription model, referred to as its premium service, and an ad-based model, referred to as its ad-supported service. Revenue from premium and ad-supported services represented 90% and 10% of Spotify’s 2017 total revenue, respectively.",
-              "reportType": "Analyst Report"
+              "reportDate": "2022-02-03T23:32:15Z",
+              "reportTitle": "Spotify, headquartered in Stockholm, Sweden, is one of the world’s largest music streaming service providers, with over 150 million total listeners. The firm monetizes its users through both a paid subscription model, referred to as its premium service, and an ad-based model, referred to as its ad-supported service. Revenue from premium and ad-supported services represented 90% and 10% of Spotify’s 2017 total revenue, respectively. ",
+              "reportType": "Analyst Report",
+              "targetPrice": 212,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Bullish"
             },
             {
-              "id": "MS_0P0001CX12_AnalystReport_1619738747000",
+              "id": "MS_0P0001CX12_AnalystReport_1643863279000",
               "headHtml": "Analyst Report: Spotify Technology S.A.",
               "provider": "Morningstar",
-              "reportDate": "2021-04-29T23:25:47Z",
-              "reportTitle": "Spotify, headquartered in Stockholm, Sweden, is one of the world’s largest music streaming service providers, with over 150 million total listeners. The firm monetizes its users through both a paid subscription model, referred to as its premium service, and an ad-based model, referred to as its ad-supported service. Revenue from premium and ad-supported services represented 90% and 10% of Spotify’s 2017 total revenue, respectively.",
-              "reportType": "Analyst Report"
+              "reportDate": "2022-02-03T04:41:19Z",
+              "reportTitle": "Spotify, headquartered in Stockholm, Sweden, is one of the world’s largest music streaming service providers, with over 150 million total listeners. The firm monetizes its users through both a paid subscription model, referred to as its premium service, and an ad-based model, referred to as its ad-supported service. Revenue from premium and ad-supported services represented 90% and 10% of Spotify’s 2017 total revenue, respectively. ",
+              "reportType": "Analyst Report",
+              "targetPrice": 212,
+              "targetPriceStatus": "Decreased",
+              "investmentRating": "Neutral"
             }
           ],
           "sigDevs": [
             {
-              "headline": "Spotify Technology Qtrly Loss Per Share EUR 0.25",
-              "date": "2021-04-28"
+              "headline": "Spotify Says Qtrly Revenue Eur 2,689 Million, Grew 24% Y/Y",
+              "date": "2022-02-02"
+            }
+          ],
+          "secReports": [
+            {
+              "id": "0000080255-22-002179_1639920",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644796800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001639920/000008025522002179/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0000895421-22-000342_1639920",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644537600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001639920/000089542122000342/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001140361-22-003781_1639920",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643846400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001766610/000114036122003781/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001140361-22-003783_1639920",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643846400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001767568/000114036122003783/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001639920-22-000004_1639920",
+              "type": "Periodic Financial Reports",
+              "title": "20-F : Periodic Financial Reports",
+              "description": "Annual and transition report of foreign private issuers pursuant to Section 13 or 15(d)",
+              "filingDate": 1643846400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1639920/000163992022000004/thumbnail.png",
+              "formType": "20-F"
+            },
+            {
+              "id": "0001140361-22-003619_1639920",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "6-K : Corporate Changes & Voting Matters",
+              "description": "Current report of foreign issuer pursuant to Rules 13a-16 and 15d-16 Amendments",
+              "filingDate": 1643760000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001639920/000114036122003619/thumbnail.png",
+              "formType": "6-K"
+            },
+            {
+              "id": "0001088875-22-000058_1639920",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643155200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001639920/000108887522000058/thumbnail.png",
+              "formType": "SC 13G/A"
             }
           ]
         },

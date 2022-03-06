@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "cache-control": [
         "public, max-age=300, stale-while-revalidate=120"
@@ -17,34 +17,34 @@
         "Origin,Accept-Encoding"
       ],
       "y-rid": [
-        "f17kgjtg9tcb6"
+        "b0kbhkph29j2e"
       ],
       "x-yahoo-request-id": [
-        "f17kgjtg9tcb6"
+        "b0kbhkph29j2e"
       ],
       "x-request-id": [
-        "3451f8f6-1327-437c-9681-d47656a82717"
+        "3ebb926e-8361-4af8-b8f1-c38b61a4a796"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "1017"
+        "1574"
       ],
       "x-envoy-upstream-service-time": [
         "4"
       ],
       "date": [
-        "Fri, 14 May 2021 17:20:37 GMT"
+        "Sun, 06 Mar 2022 14:59:26 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-market-analytics-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
-        "1"
+        "0"
       ],
       "strict-transport-security": [
         "max-age=15552000"
@@ -77,7 +77,7 @@
               "provider": "Trading Central",
               "sector": "Consumer Cyclical",
               "shortTermOutlook": {
-                "stateDescription": "Bearish events outweigh bullish events.",
+                "stateDescription": "Recent bearish events outweigh bullish events.",
                 "direction": "Bearish",
                 "score": 4,
                 "scoreDescription": "Very Strong Bearish Evidence",
@@ -85,43 +85,44 @@
                 "sectorScore": 4,
                 "sectorScoreDescription": "Very Strong Bearish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 4,
-                "indexScoreDescription": "Very Strong Bearish Evidence"
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bearish Evidence"
               },
               "intermediateTermOutlook": {
-                "stateDescription": "Recent bearish events outweigh bullish events.",
-                "direction": "Bearish",
-                "score": 4,
-                "scoreDescription": "Very Strong Bearish Evidence",
+                "stateDescription": "Recent bullish events outweigh bearish events.",
+                "direction": "Bullish",
+                "score": 2,
+                "scoreDescription": "Bullish Evidence",
                 "sectorDirection": "Bearish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bearish Evidence",
+                "sectorScore": 4,
+                "sectorScoreDescription": "Very Strong Bearish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 2,
-                "indexScoreDescription": "Bearish Evidence"
+                "indexScore": 3,
+                "indexScoreDescription": "Strong Bearish Evidence"
               },
               "longTermOutlook": {
-                "stateDescription": "All events are bearish.",
+                "stateDescription": "Recent bearish events outweigh bullish events.",
                 "direction": "Bearish",
                 "score": 2,
                 "scoreDescription": "Bearish Evidence",
-                "sectorDirection": "Bullish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bullish Evidence",
-                "indexDirection": "Bullish",
-                "indexScore": 1,
-                "indexScoreDescription": "Weak Bullish Evidence"
+                "sectorDirection": "Bearish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bearish Evidence"
               }
             },
             "keyTechnicals": {
               "provider": "Trading Central",
-              "support": 19.95,
-              "resistance": 45.56,
-              "stopLoss": 36.390413
+              "support": 40.265,
+              "resistance": 43.5,
+              "stopLoss": 36.857193
             },
             "valuation": {
               "color": 0,
               "description": "Overvalued",
+              "discount": "-23%",
               "relativeValue": "Premium",
               "provider": "Trading Central"
             }
@@ -129,10 +130,10 @@
           "companySnapshot": {
             "sectorInfo": "Consumer Cyclical",
             "company": {
-              "innovativeness": 0.5011,
-              "sustainability": 0.9316,
-              "insiderSentiments": 0.3785,
-              "earningsReports": 0.24780000000000002,
+              "innovativeness": 0.48109999999999997,
+              "sustainability": 0.9158,
+              "insiderSentiments": 0.9947,
+              "earningsReports": 0.8915000000000001,
               "dividends": 0.8269
             },
             "sector": {
@@ -145,43 +146,99 @@
             }
           },
           "recommendation": {
-            "targetPrice": 34,
+            "targetPrice": 45,
             "provider": "Argus Research",
-            "rating": "SELL"
+            "rating": "HOLD"
+          },
+          "upsell": {
+            "companyName": "Six Flags Entertainment Corpora"
           },
           "events": [
             {
-              "eventType": "Fast Stochastic",
+              "eventType": "Price Crosses Moving Average",
               "pricePeriod": "D",
-              "tradingHorizon": "S",
-              "tradeType": "L",
+              "tradingHorizon": "I",
+              "tradeType": "S",
               "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
-              "startDate": 1620653400,
-              "endDate": 1620653400
+              "startDate": 1646317800,
+              "endDate": 1646317800
             }
           ],
           "reports": [
             {
-              "id": "ARGUS_4574_QuantitativeReport_1620777600000",
-              "headHtml": "SIX: Lowering target price to $34.00",
+              "id": "ARGUS_4574_QuantitativeReport_1645574400000",
+              "headHtml": "SIX: Lowering target price to $46.00",
               "provider": "Argus Research",
-              "reportDate": "2021-05-12T00:00:00Z",
-              "reportTitle": "SIX FLAGS ENTERTAINMENT CORP has an Investment Rating of SELL; a target price of $34.000000; an Industry Subrating of Medium; a Management Subrating of Low; a Safety Subrating of Low; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of Low.",
-              "reportType": "Quantitative Report"
+              "reportDate": "2022-02-23T00:00:00Z",
+              "reportTitle": "SIX FLAGS ENTERTAINMENT CORP has an Investment Rating of HOLD; a target price of $46.000000; an Industry Subrating of Medium; a Management Subrating of Medium; a Safety Subrating of Low; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of High.",
+              "reportType": "Quantitative Report",
+              "targetPrice": 46,
+              "targetPriceStatus": "Decreased",
+              "investmentRating": "Neutral"
             },
             {
-              "id": "ARGUS_4574_QuantitativeReport_1620172800000",
-              "headHtml": "SIX: Lowering target price to $35.00",
+              "id": "ARGUS_4574_QuantitativeReport_1644969600000",
+              "headHtml": "SIX: Raising target price to $49.00",
               "provider": "Argus Research",
-              "reportDate": "2021-05-05T00:00:00Z",
-              "reportTitle": "SIX FLAGS ENTERTAINMENT CORP has an Investment Rating of SELL; a target price of $35.000000; an Industry Subrating of Medium; a Management Subrating of Low; a Safety Subrating of Low; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of Low.",
-              "reportType": "Quantitative Report"
+              "reportDate": "2022-02-16T00:00:00Z",
+              "reportTitle": "SIX FLAGS ENTERTAINMENT CORP has an Investment Rating of HOLD; a target price of $49.000000; an Industry Subrating of Medium; a Management Subrating of Medium; a Safety Subrating of Low; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of High.",
+              "reportType": "Quantitative Report",
+              "targetPrice": 49,
+              "targetPriceStatus": "Increased",
+              "investmentRating": "Neutral"
             }
           ],
           "sigDevs": [
             {
-              "headline": "Six Flags Announces First Quarter 2021 Performance",
-              "date": "2021-04-28"
+              "headline": "Six Flags Entertainment Eliminates Role Of Executive VP, General Counsel And Chief Administrative Officer",
+              "date": "2021-12-03"
+            }
+          ],
+          "secReports": [
+            {
+              "id": "0000701374-22-000005_701374",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1646006400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0000701374/000070137422000005/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001558370-22-001971_701374",
+              "type": "Periodic Financial Reports",
+              "title": "10-K : Periodic Financial Reports",
+              "description": "Annual report pursuant to Section 13 and 15(d)",
+              "filingDate": 1645660800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/701374/000155837022001971/thumbnail.png",
+              "formType": "10-K"
+            },
+            {
+              "id": "0001558370-22-001823_701374",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1645660800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/701374/000155837022001823/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001104659-22-018573_701374",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644451200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0000701374/000110465922018573/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0000834237-22-003933_701374",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643673600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001364742/000083423722003933/thumbnail.png",
+              "formType": "SC 13G/A"
             }
           ]
         },

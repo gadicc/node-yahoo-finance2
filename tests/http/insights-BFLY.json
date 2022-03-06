@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "cache-control": [
         "public, max-age=300, stale-while-revalidate=120"
@@ -17,31 +17,31 @@
         "Origin,Accept-Encoding"
       ],
       "y-rid": [
-        "epdqjc1g9tcb5"
+        "f0pvl3lh29j2d"
       ],
       "x-yahoo-request-id": [
-        "epdqjc1g9tcb5"
+        "f0pvl3lh29j2d"
       ],
       "x-request-id": [
-        "7f18c596-38dc-4c7f-a8de-b5763997df5a"
+        "b9eb42d0-6290-41dc-a80e-cbd8444bc8d4"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "1245"
+        "1590"
       ],
       "x-envoy-upstream-service-time": [
         "5"
       ],
       "date": [
-        "Fri, 14 May 2021 17:20:37 GMT"
+        "Sun, 06 Mar 2022 14:59:25 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-market-analytics-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
         "0"
@@ -77,45 +77,45 @@
               "provider": "Trading Central",
               "sector": "Healthcare",
               "shortTermOutlook": {
-                "stateDescription": "All events are bearish.",
+                "stateDescription": "Recent bearish events outweigh bullish events.",
                 "direction": "Bearish",
                 "score": 3,
                 "scoreDescription": "Strong Bearish Evidence",
-                "sectorDirection": "Bearish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bearish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bullish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 4,
-                "indexScoreDescription": "Very Strong Bearish Evidence"
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bearish Evidence"
               },
               "intermediateTermOutlook": {
-                "stateDescription": "All events are bearish.",
+                "stateDescription": "Recent bearish events outweigh bullish events.",
                 "direction": "Bearish",
                 "score": 2,
                 "scoreDescription": "Bearish Evidence",
                 "sectorDirection": "Bearish",
                 "sectorScore": 1,
                 "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 3,
+                "indexScoreDescription": "Strong Bearish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "There are no events.",
+                "direction": "Neutral",
+                "score": 0,
+                "scoreDescription": "No Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 2,
+                "sectorScoreDescription": "Bullish Evidence",
                 "indexDirection": "Bearish",
                 "indexScore": 2,
                 "indexScoreDescription": "Bearish Evidence"
-              },
-              "longTermOutlook": {
-                "stateDescription": "There is one bearish event.",
-                "direction": "Bearish",
-                "score": 2,
-                "scoreDescription": "Bearish Evidence",
-                "sectorDirection": "Bullish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bullish Evidence",
-                "indexDirection": "Bullish",
-                "indexScore": 1,
-                "indexScoreDescription": "Weak Bullish Evidence"
               }
             },
             "keyTechnicals": {
               "provider": "Trading Central",
-              "stopLoss": 7.069115
+              "stopLoss": 3.120284
             },
             "valuation": {
               "provider": "Trading Central"
@@ -124,8 +124,8 @@
           "companySnapshot": {
             "sectorInfo": "Healthcare",
             "company": {
-              "insiderSentiments": 0.8144,
-              "earningsReports": 0.7182999999999999
+              "insiderSentiments": 0.3009,
+              "earningsReports": 0.0793
             },
             "sector": {
               "innovativeness": 0.5,
@@ -136,39 +136,116 @@
               "dividends": 0.5
             }
           },
+          "upsell": {
+            "companyName": "Butterfly Network, Inc."
+          },
           "events": [
             {
-              "eventType": "MACD",
+              "eventType": "Short-term KST",
               "pricePeriod": "D",
               "tradingHorizon": "S",
               "tradeType": "S",
               "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
-              "startDate": 1620307800,
-              "endDate": 1620307800
+              "startDate": 1646145000,
+              "endDate": 1646145000
             }
           ],
           "reports": [
             {
-              "id": "ARGUS_3853_QuantitativeReport_1620777600000",
-              "headHtml": "WWE: Lowering target price to $56.00",
+              "id": "ARGUS_31871_TopBottomInsiderActivity_1642054648000",
+              "headHtml": "Daily – Vickers Top Buyers & Sellers for 01/13/2022",
               "provider": "Argus Research",
-              "reportDate": "2021-05-12T00:00:00Z",
-              "reportTitle": "WORLD WRESTLING ENTERTAIN-A has an Investment Rating of HOLD; a target price of $56.000000; an Industry Subrating of High; a Management Subrating of Medium; a Safety Subrating of Medium; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of Medium.",
-              "reportType": "Quantitative Report"
+              "reportDate": "2022-01-13T06:17:28Z",
+              "reportTitle": "The Vickers Top Buyers & Sellers is a daily report that identifies the five companies the largest insider purchase transactions based on the dollar value of the transactions as well as the five companies the largest insider sales transactions based on the dollar value of the transactions.",
+              "reportType": "Top/Bottom Insider Activity"
             },
             {
-              "id": "MS_0P0001KOSE_AnalystReport_1620758488000",
-              "headHtml": "Analyst Report: Palantir Technologies Inc.",
-              "provider": "Morningstar",
-              "reportDate": "2021-05-11T18:41:28Z",
-              "reportTitle": "Palantir Technologies provides organizations with solutions to manage large disparate data sets in an attempt to gain insight and drive operational outcomes. Founded in 2003, Palantir released its Gotham software platform in 2008, which focuses on the government intelligence and defense sectors. Palantir expanded into various commercial markets with its Foundry software platform in 2016 with the intent of becoming the data operating system for companies and industries. The Denver, Colorado company had 125 customers as of its IPO and roughly splits its revenue between commercial and government customers.",
-              "reportType": "Analyst Report"
+              "id": "ARGUS_31684_TopBottomInsiderActivity_1639985756000",
+              "headHtml": "Daily – Vickers Top Buyers & Sellers for 12/20/2021",
+              "provider": "Argus Research",
+              "reportDate": "2021-12-20T07:35:56Z",
+              "reportTitle": "The Vickers Top Buyers & Sellers is a daily report that identifies the five companies the largest insider purchase transactions based on the dollar value of the transactions as well as the five companies the largest insider sales transactions based on the dollar value of the transactions.",
+              "reportType": "Top/Bottom Insider Activity"
             }
           ],
           "sigDevs": [
             {
-              "headline": "Butterfly Network Reports Q1 2021 Financial Results",
-              "date": "2021-05-13"
+              "headline": "Butterfly Network Reports Fourth Quarter And Full Year 2021 Financial Results",
+              "date": "2022-02-28"
+            }
+          ],
+          "secReports": [
+            {
+              "id": "0001104659-22-028693_1804176",
+              "type": "Offering Registrations",
+              "title": "S-8 : Offering Registrations",
+              "description": "Initial registration statement for securities to be offered to employees pursuant to employee benefit plans",
+              "filingDate": 1646092800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001804176/000110465922028693/thumbnail.png",
+              "formType": "S-8"
+            },
+            {
+              "id": "0001104659-22-027645_1804176",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1646006400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001804176/000110465922027645/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001558370-22-002397_1804176",
+              "type": "Periodic Financial Reports",
+              "title": "10-K : Periodic Financial Reports",
+              "description": "Annual report pursuant to Section 13 and 15(d)",
+              "filingDate": 1646006400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001804176/000155837022002397/thumbnail.png",
+              "formType": "10-K"
+            },
+            {
+              "id": "0000315066-22-000872_1804176",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644364800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001804176/000031506622000872/thumbnail.png",
+              "formType": "SC 13G"
+            },
+            {
+              "id": "0001104659-22-016712_1804176",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644364800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001804176/000110465922016712/thumbnail.png",
+              "formType": "SC 13G"
+            },
+            {
+              "id": "0001104659-22-011971_1804176",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1643932800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1804176/000110465922011971/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0000834237-22-007203_1804176",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643932800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001804176/000083423722007203/thumbnail.png",
+              "formType": "SC 13G"
+            },
+            {
+              "id": "0001104659-22-011989_1804176",
+              "type": "Prospectus",
+              "title": "424B3 : Prospectus",
+              "description": "Prospectus filed pursuant to Rule 424(b)(3)",
+              "filingDate": 1643932800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001804176/000110465922011989/thumbnail.png",
+              "formType": "424B3"
             }
           ]
         },

@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "cache-control": [
         "public, max-age=300, stale-while-revalidate=120"
@@ -17,31 +17,28 @@
         "Origin,Accept-Encoding"
       ],
       "y-rid": [
-        "74e6jvlg9tcb5"
+        "2taqid1h29j2b"
       ],
       "x-yahoo-request-id": [
-        "74e6jvlg9tcb5"
+        "2taqid1h29j2b"
       ],
       "x-request-id": [
-        "9387d95c-ce01-456f-aada-c84e047bed45"
+        "e1c5701f-cc35-4ece-9bfc-248943c6de7a"
       ],
       "content-encoding": [
         "gzip"
       ],
-      "content-length": [
-        "1624"
-      ],
       "x-envoy-upstream-service-time": [
-        "5"
+        "6"
       ],
       "date": [
-        "Fri, 14 May 2021 17:20:37 GMT"
+        "Sun, 06 Mar 2022 14:59:23 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-market-analytics-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
         "0"
@@ -54,6 +51,9 @@
       ],
       "x-frame-options": [
         "SAMEORIGIN"
+      ],
+      "transfer-encoding": [
+        "chunked"
       ],
       "connection": [
         "close"
@@ -79,50 +79,51 @@
               "shortTermOutlook": {
                 "stateDescription": "Recent bearish events outweigh bullish events.",
                 "direction": "Bearish",
+                "score": 4,
+                "scoreDescription": "Very Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 4,
+                "sectorScoreDescription": "Very Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bearish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
                 "score": 3,
                 "scoreDescription": "Strong Bearish Evidence",
                 "sectorDirection": "Bearish",
                 "sectorScore": 4,
                 "sectorScoreDescription": "Very Strong Bearish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 4,
-                "indexScoreDescription": "Very Strong Bearish Evidence"
+                "indexScore": 3,
+                "indexScoreDescription": "Strong Bearish Evidence"
               },
-              "intermediateTermOutlook": {
-                "stateDescription": "Recent bullish events outweigh bearish events.",
-                "direction": "Bullish",
-                "score": 2,
-                "scoreDescription": "Bullish Evidence",
+              "longTermOutlook": {
+                "stateDescription": "All events are bearish.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
                 "sectorDirection": "Bearish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bearish Evidence",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bearish Evidence",
                 "indexDirection": "Bearish",
                 "indexScore": 2,
                 "indexScoreDescription": "Bearish Evidence"
-              },
-              "longTermOutlook": {
-                "stateDescription": "Recent bearish events outweigh bullish events.",
-                "direction": "Bearish",
-                "score": 2,
-                "scoreDescription": "Bearish Evidence",
-                "sectorDirection": "Bullish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bullish Evidence",
-                "indexDirection": "Bullish",
-                "indexScore": 1,
-                "indexScoreDescription": "Weak Bullish Evidence"
               }
             },
             "keyTechnicals": {
               "provider": "Trading Central",
-              "support": 3135.7,
-              "resistance": 3182.63,
-              "stopLoss": 3012.689805
+              "support": 2878.7,
+              "resistance": 3297.37,
+              "stopLoss": 2630.190703
             },
             "valuation": {
-              "color": 0.5,
-              "description": "Near Fair Value",
-              "discount": "22%",
+              "color": 0,
+              "description": "Overvalued",
+              "discount": "-5%",
+              "relativeValue": "Premium",
               "provider": "Trading Central"
             }
           },
@@ -130,10 +131,10 @@
             "sectorInfo": "Consumer Cyclical",
             "company": {
               "innovativeness": 0.9978,
-              "hiring": 0.9745,
-              "sustainability": 0.8632,
-              "insiderSentiments": 0.0424,
-              "earningsReports": 0.9262
+              "hiring": 0.9739,
+              "sustainability": 0.9406,
+              "insiderSentiments": 0.0159,
+              "earningsReports": 0.9281
             },
             "sector": {
               "innovativeness": 0.5,
@@ -149,39 +150,147 @@
             "provider": "Argus Research",
             "rating": "BUY"
           },
+          "upsell": {
+            "msBullishSummary": [
+              "Amazon is the clear leader in e-commerce and enjoys unrivaled scale to continue to invest in growth opportunities and drive the very best customer experience.\n\n",
+              "High margin advertising and AWS are growing faster than the corporate average, which should continue to boost profitability over the next several years.",
+              "Amazon Prime memberships help attract and retain customers who spend more with Amazon and reinforces a powerful network effect while bringing in recurring and high margin revenue."
+            ],
+            "msBearishSummary": [
+              "Regulatory concerns are rising for large technology firms, including Amazon. Further, the firm may face increasing regulatory and compliance issues as it expands internationally.",
+              "New investments, notably in fulfillment, delivery, and AWS should dampen free cash flow growth. Also, Amazon’s penetration into some countries might be harder than in the U.S. due to inferior logistic networks.",
+              "Amazon may not be as successful in penetrating new retail categories, such as luxury goods, due to consumer preferences and an improved e-commerce experience from larger retailers."
+            ],
+            "companyName": "Amazon.com, Inc.",
+            "msBullishBearishSummariesPublishDate": 1643951533000,
+            "upsellReportType": "MORNINGSTAR_ANALYST"
+          },
+          "upsellSearchDD": {
+            "researchReports": {
+              "reportId": "ARGUS_2710_AnalystReport_1643980271000",
+              "provider": "Argus",
+              "title": "Strong holiday quarter, AWS amazes; reiterating BUY",
+              "reportDate": "2022-02-04T13:11:11Z",
+              "summary": "Amazon.com is the leading U.S. e-commerce retailer and among the top e-commerce sites globally. Amazon.com also provides Amazon Web Services (AWS), which is the global leader in cloud-based Infrastructure-as-a-Service (IaaS) platforms. The company's Prime membership platform is a key online retail differentiator, providing customers with free shipping (after an annual fee) along with exclusive media content (music, video, audible books, etc.). The company's Kindle reader and Alexa-based Echo and Dot digital voice assistants are category leaders. Amazon acquired Whole Foods Market in August 2017.",
+              "investmentRating": "Bullish"
+            }
+          },
           "events": [
             {
-              "eventType": "Price Crosses Moving Average",
+              "eventType": "MACD",
               "pricePeriod": "D",
-              "tradingHorizon": "L",
+              "tradingHorizon": "S",
               "tradeType": "S",
               "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
-              "startDate": 1620826200,
-              "endDate": 1620826200
+              "startDate": 1646317800,
+              "endDate": 1646317800
             }
           ],
           "reports": [
             {
-              "id": "ARGUS_2710_AnalystReport_1619792462000",
-              "headHtml": "Analyst Report: Amazon.com Inc.",
-              "provider": "Argus Research",
-              "reportDate": "2021-04-30T14:21:02Z",
-              "reportTitle": "Amazon.com is the leading U.S. e-commerce retailer and among the top e-commerce sites globally. Amazon.com also provides Amazon Web Services (AWS), which is the global leader in cloud-based Infrastructure-as-a-Service (IaaS) platforms. The company's Prime membership platform is a key online retail differentiator, providing customers with free shipping (after an annual fee) along with exclusive media content (music, video, audible books, etc.). The company's Kindle reader and Alexa-based Echo and Dot digital voice assistants are category leaders. Amazon acquired Whole Foods Market in August 2017.",
-              "reportType": "Analyst Report"
+              "id": "MS_1076940_StockPicks_1644252306000",
+              "headHtml": "Morningstar | A Weekly Summary of Stock Ideas and Developments in the Companies We Cover",
+              "provider": "Morningstar",
+              "reportDate": "2022-02-07T16:45:06Z",
+              "reportTitle": "This edition features Okta's identity, opening up to Assa Abloy, and Bath & Body Works' value bubbling up.",
+              "reportType": "Stock Picks"
             },
             {
-              "id": "ARGUS_29773_MarketUpdate_1619791562000",
-              "headHtml": "Market Update: AMZN, AVY, FHI, HOLX, IPG, NOK, RJF, TROW, UTHR",
-              "provider": "Argus Research",
-              "reportDate": "2021-04-30T14:06:02Z",
-              "reportTitle": "Stocks fell on Friday morning following a new round of first-quarter earnings reports from major companies along with March consumer spending data. The Commerce Department said that U.S. consumer spending rose a strong 4.2% last month after a decline of 1.0% in February. The reading came in slightly ahead of the Reuters consensus forecast of 4.1%. The Dow fell 0.6%, the S&P 0.5%, and the Nasdaq 0.2%. Crude oil traded near $64 per barrel, while gold fell slightly to $1769 per ounce.",
-              "reportType": "Market Update"
+              "id": "MS_1076940_StockPicks_1644018306000",
+              "headHtml": "Morningstar | A Weekly Summary of Stock Ideas and Developments in the Companies We Cover",
+              "provider": "Morningstar",
+              "reportDate": "2022-02-04T23:45:06Z",
+              "reportTitle": "This edition features Okta's identity, opening up to Assa Abloy, and Bath & Body Works' value bubbling up.",
+              "reportType": "Stock Picks"
             }
           ],
           "sigDevs": [
             {
-              "headline": "Amazon Hiring 75,000 Employees Across Fulfillment And Transportation, With Average Starting Pay Of Over $17 Per Hour And Sign-On Bonuses Of Up To $1,000",
-              "date": "2021-05-13"
+              "headline": "Tesla CEO Elon Musk Says Rivian's 'Negative Gross Margin Will Be Staggering' - Tweet",
+              "date": "2022-03-02"
+            }
+          ],
+          "secReports": [
+            {
+              "id": "0001104659-22-016438_1018724",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644364800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001018724/000110465922016438/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0000834237-22-008379_1018724",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644278400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001364742/000083423722008379/thumbnail.png",
+              "formType": "SC 13G"
+            },
+            {
+              "id": "0001018724-22-000005_1018724",
+              "type": "Periodic Financial Reports",
+              "title": "10-K : Periodic Financial Reports",
+              "description": "Annual report pursuant to Section 13 and 15(d)",
+              "filingDate": 1643932800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1018724/000101872422000005/thumbnail.png",
+              "formType": "10-K"
+            },
+            {
+              "id": "0001018724-22-000002_1018724",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1643846400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/1018724/000101872422000002/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001193125-22-025753_1018724",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643760000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001018724/000119312522025753/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001193125-22-025835_1018724",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643760000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001874178/000119312522025835/thumbnail.png",
+              "formType": "SC 13G"
+            },
+            {
+              "id": "0000950123-22-000831_1018724",
+              "type": "Security Holdings by Insiders & Institutions",
+              "title": "13F-HR : Security Holdings by Insiders & Institutions",
+              "description": "Initial Quarterly Form 13F Holdings Report filed by institutional managers",
+              "filingDate": 1643760000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001018724/000095012322000831/xslForm13F_X01/thumbnail.png",
+              "formType": "13F-HR"
+            },
+            {
+              "id": "0001193125-22-025796_1018724",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643760000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001828108/000119312522025796/thumbnail.png",
+              "formType": "SC 13G"
+            },
+            {
+              "id": "0001193125-22-021680_1018724",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1643328000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001043298/000119312522021680/thumbnail.png",
+              "formType": "SC 13G/A"
             }
           ]
         },

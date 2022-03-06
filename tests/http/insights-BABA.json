@@ -8,7 +8,7 @@
     "statusText": "OK",
     "headers": {
       "content-type": [
-        "application/json"
+        "application/json;charset=utf-8"
       ],
       "cache-control": [
         "public, max-age=300, stale-while-revalidate=120"
@@ -17,34 +17,31 @@
         "Origin,Accept-Encoding"
       ],
       "y-rid": [
-        "9f24pd9g9tcb7"
+        "fbt22o9h29j2h"
       ],
       "x-yahoo-request-id": [
-        "9f24pd9g9tcb7"
+        "fbt22o9h29j2h"
       ],
       "x-request-id": [
-        "697d8b51-cecf-4133-a3e6-2b1914854f6a"
+        "d1b71a93-d5a0-4e27-af9e-df1cb8a67b75"
       ],
       "content-encoding": [
         "gzip"
       ],
-      "content-length": [
-        "1354"
-      ],
       "x-envoy-upstream-service-time": [
-        "5"
+        "6"
       ],
       "date": [
-        "Fri, 14 May 2021 17:20:39 GMT"
+        "Sun, 06 Mar 2022 14:59:28 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-market-analytics-api--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-market-analytics-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
-        "0"
+        "1"
       ],
       "strict-transport-security": [
         "max-age=15552000"
@@ -54,6 +51,9 @@
       ],
       "x-frame-options": [
         "SAMEORIGIN"
+      ],
+      "transfer-encoding": [
+        "chunked"
       ],
       "connection": [
         "close"
@@ -77,61 +77,61 @@
               "provider": "Trading Central",
               "sector": "Consumer Cyclical",
               "shortTermOutlook": {
-                "stateDescription": "Recent bearish events outweigh bullish events.",
-                "direction": "Bearish",
-                "score": 1,
-                "scoreDescription": "Weak Bearish Evidence",
+                "stateDescription": "The bullish and bearish events are balanced.",
+                "direction": "Neutral",
+                "score": 0,
+                "scoreDescription": "Neutral Evidence",
                 "sectorDirection": "Bearish",
                 "sectorScore": 4,
                 "sectorScoreDescription": "Very Strong Bearish Evidence",
                 "indexDirection": "Bearish",
-                "indexScore": 4,
-                "indexScoreDescription": "Very Strong Bearish Evidence"
+                "indexScore": 1,
+                "indexScoreDescription": "Weak Bearish Evidence"
               },
               "intermediateTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 4,
+                "sectorScoreDescription": "Very Strong Bearish Evidence",
+                "indexDirection": "Bearish",
+                "indexScore": 3,
+                "indexScoreDescription": "Strong Bearish Evidence"
+              },
+              "longTermOutlook": {
                 "stateDescription": "All events are bearish.",
                 "direction": "Bearish",
                 "score": 2,
                 "scoreDescription": "Bearish Evidence",
                 "sectorDirection": "Bearish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bearish Evidence",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bearish Evidence",
                 "indexDirection": "Bearish",
                 "indexScore": 2,
                 "indexScoreDescription": "Bearish Evidence"
-              },
-              "longTermOutlook": {
-                "stateDescription": "All events are bearish.",
-                "direction": "Bearish",
-                "score": 3,
-                "scoreDescription": "Strong Bearish Evidence",
-                "sectorDirection": "Bullish",
-                "sectorScore": 1,
-                "sectorScoreDescription": "Weak Bullish Evidence",
-                "indexDirection": "Bullish",
-                "indexScore": 1,
-                "indexScoreDescription": "Weak Bullish Evidence"
               }
             },
             "keyTechnicals": {
               "provider": "Trading Central",
-              "support": 176.9382,
-              "resistance": 224.88,
-              "stopLoss": 193.384108
+              "support": 100.02,
+              "resistance": 122,
+              "stopLoss": 88.576089
             },
             "valuation": {
-              "color": 1,
-              "description": "Undervalued",
-              "discount": "52%",
-              "relativeValue": "Discount",
+              "color": 0,
+              "description": "Overvalued",
+              "discount": "-11%",
+              "relativeValue": "Premium",
               "provider": "Trading Central"
             }
           },
           "companySnapshot": {
             "sectorInfo": "Consumer Cyclical",
             "company": {
-              "innovativeness": 0.9381999999999999,
-              "hiring": 0.1387,
+              "innovativeness": 0.9621,
+              "hiring": 0.1306,
               "sustainability": 0.7027
             },
             "sector": {
@@ -144,43 +144,155 @@
             }
           },
           "recommendation": {
-            "targetPrice": 330,
             "provider": "Argus Research",
-            "rating": "BUY"
+            "rating": "HOLD"
+          },
+          "upsell": {
+            "msBullishSummary": [
+              "Monthly gross merchandise volume per annual active user was CNY 770 for the year ended March 2021 for Alibaba, higher than CNY 176 in 2020 for Pinduoduo and CNY 461 in 2020 for JD.",
+              "Core annual active users on Alibaba's China retail marketplaces had a retention rate of over 90% for the year ended September 2021.",
+              "Alibaba’s core commerce (which includes China marketplace-based businesses and other loss-making businesses) adjusted EBITA margin was 26.2%, higher than JD retail’s 2.3% non-GAAP EBIT margin and PDD’s 15.2% non-GAAP EBIT margin for the September quarter of 2021."
+            ],
+            "msBearishSummary": [
+              "Expansion of other e-commerce players could slow Alibaba's growth. Pinduoduo's active buyers in the year ended September 2021 were 867 million, higher than Alibaba's 863 million.",
+              "Expansion into non-physical-goods-marketplace businesses and other regions lead to lower margins and the timing of profitability of these businesses is unknown. ",
+              "Any Internet companies with traffic like Douyin and Tencent can enter the e-commerce space due to its low barriers of entry. Douyin has gained market share in the apparel and beauty space against Alibaba."
+            ],
+            "companyName": "Alibaba Group Holding Limited",
+            "msBullishBearishSummariesPublishDate": 1646092148000,
+            "upsellReportType": "MORNINGSTAR_ANALYST"
+          },
+          "upsellSearchDD": {
+            "researchReports": {
+              "reportId": "MS_0P00013K81_AnalystReport_1646092148000",
+              "provider": "Morningstar",
+              "title": "We Are More Positive on Wide-Moat Alibaba Post-Results; Share Price Attractive",
+              "reportDate": "2022-02-28T23:49:08Z",
+              "summary": "Alibaba is the world’s largest online and mobile commerce company as measured by gross merchandise volume (CNY 7.5 trillion for the fiscal year ended March 2021). It operates China’s online marketplaces, including Taobao (consumer-to-consumer) and Tmall (business-to-consumer). Alibaba's China commerce retail division accounted for 63% of revenue in the September 2021 quarter. Additional revenue sources include China commerce wholesale (2%), international retail/wholesale marketplaces (5%/2%), cloud computing (10%), digital media and entertainment platforms (4%), Cainiao logistics services (5%), and innovation initiatives/other (1%).  ",
+              "investmentRating": "Bullish"
+            }
           },
           "events": [
             {
-              "eventType": "Gap Down",
+              "eventType": "Slow Stochastic",
               "pricePeriod": "D",
               "tradingHorizon": "S",
-              "tradeType": "U",
+              "tradeType": "L",
               "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
-              "startDate": 1620826200,
-              "endDate": 1620912600
+              "startDate": 1646145000,
+              "endDate": 1646145000
             }
           ],
           "reports": [
             {
-              "id": "MS_0P00013K81_AnalystReport_1620999270000",
+              "id": "MS_0P00013K81_AnalystReport_1646092148000",
               "headHtml": "Analyst Report: Alibaba Group Holding Limited",
               "provider": "Morningstar",
-              "reportDate": "2021-05-14T13:34:30Z",
-              "reportTitle": "Alibaba is the world’s largest online and mobile commerce company, measured by GMV (CNY 6.6 trillion/$1 trillion for the fiscal year ended March 2020). It operates China’s most-visited online marketplaces, including Taobao (consumer-to-consumer) and Tmall (business-to-consumer). Alibaba's China commerce retail division accounted for 69% of revenue in the December 2020 quarter, with Taobao generating revenue through advertising and other merchant data services and Tmall deriving revenue from commission fees. Additional revenue sources include China commerce wholesales (2%), international retail/wholesale marketplaces (5%/2%), cloud computing (7%), digital media and entertainment platforms (4%), Cainiao logistics services (5%), and innovation initiatives/other (2%). ",
-              "reportType": "Analyst Report"
+              "reportDate": "2022-02-28T23:49:08Z",
+              "reportTitle": "Alibaba is the world’s largest online and mobile commerce company as measured by gross merchandise volume (CNY 7.5 trillion for the fiscal year ended March 2021). It operates China’s online marketplaces, including Taobao (consumer-to-consumer) and Tmall (business-to-consumer). Alibaba's China commerce retail division accounted for 63% of revenue in the September 2021 quarter. Additional revenue sources include China commerce wholesale (2%), international retail/wholesale marketplaces (5%/2%), cloud computing (10%), digital media and entertainment platforms (4%), Cainiao logistics services (5%), and innovation initiatives/other (1%).  ",
+              "reportType": "Analyst Report",
+              "targetPrice": 188,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Bullish"
             },
             {
-              "id": "MS_0P00013K81_AnalystReport_1619155485000",
-              "headHtml": "Analyst Report: Alibaba Group Holding Limited",
-              "provider": "Morningstar",
-              "reportDate": "2021-04-23T05:24:45Z",
-              "reportTitle": "Alibaba is the world’s largest online and mobile commerce company, measured by GMV (CNY 6.6 trillion/$1 trillion for the fiscal year ended March 2020). It operates China’s most-visited online marketplaces, including Taobao (consumer-to-consumer) and Tmall (business-to-consumer). Alibaba's China commerce retail division accounted for 69% of revenue in the December 2020 quarter, with Taobao generating revenue through advertising and other merchant data services and Tmall deriving revenue from commission fees. Additional revenue sources include China commerce wholesales (2%), international retail/wholesale marketplaces (5%/2%), cloud computing (7%), digital media and entertainment platforms (4%), Cainiao logistics services (5%), and innovation initiatives/other (2%). ",
-              "reportType": "Analyst Report"
+              "id": "ARGUS_3758_AnalystReport_1646032985000",
+              "headHtml": "Analyst Report: Alibaba Group Holding Ltd",
+              "provider": "Argus Research",
+              "reportDate": "2022-02-28T07:23:05Z",
+              "reportTitle": "Alibaba provides Chinese and international e-commerce platforms, logistics, and ancillary services. The company operates in four segments: Core Commerce; Cloud Computing; Digital Media & Entertainment; and Innovation Initiatives. Key marketplaces include Taobao, a consumer marketplace; Tmall, a third-party platform for brands and retailers; Juhuasuan, a platform for 'flash' sales; and Alibaba.com and 1688.com, which are online wholesale marketplaces. Additional platforms include Alitrip (online travel booking), Alipay (online payments), Lazada (online commerce in Southeast Asia), and multiple others.",
+              "reportType": "Analyst Report",
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Neutral"
             }
           ],
           "sigDevs": [
             {
-              "headline": "Alibaba Group Says Expect To Generate Over RMB930 Bln In Revenue In FY22",
-              "date": "2021-05-13"
+              "headline": "Perfect Corp To List On Nasdaq By Merging With Provident Acquisition Corp",
+              "date": "2022-03-03"
+            }
+          ],
+          "secReports": [
+            {
+              "id": "0001104659-22-026569_1577552",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "6-K : Corporate Changes & Voting Matters",
+              "description": "Current report of foreign issuer pursuant to Rules 13a-16 and 15d-16 Amendments",
+              "filingDate": 1645660800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001577552/000110465922026569/thumbnail.png",
+              "formType": "6-K"
+            },
+            {
+              "id": "0000950123-22-003074_1577552",
+              "type": "Security Holdings by Insiders & Institutions",
+              "title": "13F-HR : Security Holdings by Insiders & Institutions",
+              "description": "Initial Quarterly Form 13F Holdings Report filed by institutional managers",
+              "filingDate": 1644796800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001577552/000095012322003074/xslForm13F_X01/thumbnail.png",
+              "formType": "13F-HR"
+            },
+            {
+              "id": "0001104659-22-021536_1577552",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644796800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001633999/000110465922021536/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001193125-22-039481_1577552",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644796800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001577552/000119312522039481/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001104659-22-019698_1577552",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "6-K : Corporate Changes & Voting Matters",
+              "description": "Current report of foreign issuer pursuant to Rules 13a-16 and 15d-16 Amendments",
+              "filingDate": 1644537600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001577552/000110465922019698/thumbnail.png",
+              "formType": "6-K"
+            },
+            {
+              "id": "0001104659-22-019748_1577552",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644537600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001834253/000110465922019748/thumbnail.png",
+              "formType": "SC 13G"
+            },
+            {
+              "id": "0001104659-22-019484_1577552",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644451200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001723690/000110465922019484/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001104659-22-019481_1577552",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13G/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities by passive investors and certain institutions",
+              "filingDate": 1644451200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001577552/000110465922019481/thumbnail.png",
+              "formType": "SC 13G/A"
+            },
+            {
+              "id": "0001193805-22-000150_1577552",
+              "type": "Offering Registrations",
+              "title": "F-6EF : Offering Registrations",
+              "description": "Auto effective registration statement for American Depositary Receipts representing securities of certain foreign private issuers",
+              "filingDate": 1643932800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001577552/000119380522000150/thumbnail.png",
+              "formType": "F-6EF"
             }
           ]
         },
