@@ -1,3 +1,16 @@
+# [2.3.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.2.0...v2.3.0) (2022-03-06)
+
+
+### Bug Fixes
+
+* **insights:** fix schema for more recent yahoo results ([c71a400](https://github.com/gadicc/node-yahoo-finance2/commit/c71a400588011171839ae15f571518e8fca17549))
+* **validation:** Date, allow ISODate without ms precision too ([82ba1cb](https://github.com/gadicc/node-yahoo-finance2/commit/82ba1cbc8ad910a6badfdb77791786fecd44c632))
+
+
+### Features
+
+* **yahoo:** Configurable YF_QUERY_HOST in URLs ([#109](https://github.com/gadicc/node-yahoo-finance2/issues/109)) ([716c0f1](https://github.com/gadicc/node-yahoo-finance2/commit/716c0f115571c15d76ff5e1e2ef10aab5fbf02e6))
+
 # [2.2.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.1.9...v2.2.0) (2022-03-03)
 
 
