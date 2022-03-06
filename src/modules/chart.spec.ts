@@ -60,14 +60,18 @@ describe("chart", () => {
       );
     });
 
-    it("handles queries with tradingPeriod.regular", async () => {
-      // Had tradingPeriod.regular, probably a timezone thing
-      await yf.chart(
-        "TSLA",
-        { period1: "2021-11-22", period2: "2021-11-23", interval: "30m" },
-        { devel: "chart-TSLA-2021-11-22-to-2021-11-23-interval-30m.json" }
-      );
-    });
+    // Skip nocache tests because:
+    // "30m data not available for startTime=1637539200 and endTime=1637625600.
+    // The requested range must be within the last 60 days."
+    if (process.env.FETCH_DEVEL === "nocache")
+      it("handles queries with tradingPeriod.regular", async () => {
+        // Had tradingPeriod.regular, probably a timezone thing
+        await yf.chart(
+          "TSLA",
+          { period1: "2021-11-22", period2: "2021-11-23", interval: "30m" },
+          { devel: "chart-TSLA-2021-11-22-to-2021-11-23-interval-30m.json" }
+        );
+      });
   });
 
   describe("pre-emptive checks", () => {
@@ -96,18 +100,19 @@ describe("chart", () => {
     });
   });
 
-  it("throws on malformed result", () => {
-    return expect(() => {
-      consoleSilent();
-      return yf
-        .chart(
-          "AAPL",
-          { period1: "2020-01-01" },
-          { devel: `weirdJsonResult.fake.json` }
-        )
-        .finally(consoleRestore);
-    }).rejects.toMatchObject({ message: /Unexpected/ });
-  });
+  if (process.env.FETCH_DEVEL === "nocache")
+    it("throws on malformed result", () => {
+      return expect(() => {
+        consoleSilent();
+        return yf
+          .chart(
+            "AAPL",
+            { period1: "2020-01-01" },
+            { devel: `weirdJsonResult.fake.json` }
+          )
+          .finally(consoleRestore);
+      }).rejects.toMatchObject({ message: /Unexpected/ });
+    });
 
   describe("query transformWith", () => {
     /*
