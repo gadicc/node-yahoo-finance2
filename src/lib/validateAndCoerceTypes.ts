@@ -130,7 +130,7 @@ ajv.addKeyword({
           if (
             data.match(/^\d{4,4}-\d{2,2}-\d{2,2}$/) ||
             data.match(
-              /^\d{4,4}-\d{2,2}-\d{2,2}T\d{2,2}:\d{2,2}:\d{2,2}\.\d{3,3}Z$/
+              /^\d{4,4}-\d{2,2}-\d{2,2}T\d{2,2}:\d{2,2}:\d{2,2}(\.\d{3,3})?Z$/
             )
           )
             return set(new Date(data));
