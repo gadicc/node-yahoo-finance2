@@ -247,7 +247,7 @@ export default async function quote(
     moduleName: "quote",
 
     query: {
-      url: "https://query2.finance.yahoo.com/v7/finance/quote",
+      url: "https://${YF_QUERY_HOST}/v7/finance/quote",
       schemaKey: "#/definitions/QuoteOptions",
       defaults: queryOptionsDefaults,
       runtime: { symbols },

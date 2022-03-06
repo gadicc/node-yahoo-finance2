@@ -168,7 +168,7 @@ export default function search(
     moduleName: "search",
 
     query: {
-      url: "https://query2.finance.yahoo.com/v1/finance/search",
+      url: "https://${YF_QUERY_HOST}/v1/finance/search",
       schemaKey: "#/definitions/SearchOptions",
       defaults: queryOptionsDefaults,
       runtime: { q: query },

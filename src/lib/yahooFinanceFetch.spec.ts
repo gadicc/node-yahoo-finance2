@@ -2,7 +2,9 @@ import * as util from "util";
 import { jest } from "@jest/globals";
 
 import Queue from "./queue.js";
-import _yahooFinanceFetch from "./yahooFinanceFetch.js";
+import _yahooFinanceFetch, {
+  substituteVariables,
+} from "./yahooFinanceFetch.js";
 import errors from "./errors.js";
 
 import _env from "../env-node.js";
@@ -44,7 +46,7 @@ describe("yahooFinanceFetch", () => {
     it("throws HTTPError if !res.ok and no error in json result", () => {
       return expect(
         yahooFinanceFetch(
-          "https://query1.finance.yahoo.com/nonExistingURL-CACHED",
+          "https://query2.finance.yahoo.com/nonExistingURL-CACHED",
           {},
           { devel: "pageWith404andJson.fake.json" }
         )
@@ -54,7 +56,7 @@ describe("yahooFinanceFetch", () => {
   it("throws Error if we receive unknown error from json result", () => {
     return expect(
       yahooFinanceFetch(
-        "https://query1.finance.yahoo.com/nonExistingURL-CACHED",
+        "https://query2.finance.yahoo.com/nonExistingURL-CACHED",
         {},
         { devel: "pageWithUnknownError.json" }
       )
@@ -169,5 +171,32 @@ describe("yahooFinanceFetch", () => {
     });
 
     // TODO, timeout test
+  });
+
+  describe("URL variable substitution", () => {
+    const that = { _opts };
+
+    it("subs YF_QUERY_HOST from _opts", () => {
+      const origUrl = "https://${YF_QUERY_HOST}/v8/something";
+      // @ts-ignore: partial This for testing
+      const newUrl = substituteVariables.call(that, origUrl);
+      expect(newUrl).toBe("https://query2.finance.yahoo.com/v8/something");
+    });
+
+    it("subs query2 if no option", () => {
+      const that = { _env, _opts: { ..._opts } };
+      delete that._opts.YF_QUERY_HOST;
+      const origUrl = "https://${YF_QUERY_HOST}/v8/something";
+      // @ts-ignore: partial This for testing
+      const newUrl = substituteVariables.call(that, origUrl);
+      expect(newUrl).toBe("https://query2.finance.yahoo.com/v8/something");
+    });
+
+    it("leaves non-matches", () => {
+      const origUrl = "${something}";
+      // @ts-ignore: partial This for testing
+      const newUrl = substituteVariables.call(that, origUrl);
+      expect(newUrl).toBe("${something}");
+    });
   });
 });

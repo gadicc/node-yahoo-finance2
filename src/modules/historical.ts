@@ -57,7 +57,7 @@ export default function historical(
 
     query: {
       assertSymbol: symbol,
-      url: "https://query1.finance.yahoo.com/v7/finance/download/" + symbol,
+      url: "https://${YF_QUERY_HOST}/v7/finance/download/" + symbol,
       schemaKey: "#/definitions/HistoricalOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,

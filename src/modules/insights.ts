@@ -157,7 +157,7 @@ export default function trendingSymbols(
     moduleName: "insights",
     query: {
       assertSymbol: symbol,
-      url: "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights",
+      url: "https://${YF_QUERY_HOST}/ws/insights/v2/finance/insights",
       schemaKey: "#/definitions/InsightsOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,

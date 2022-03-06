@@ -52,7 +52,7 @@ export default function trendingSymbols(
   return this._moduleExec({
     moduleName: "trendingSymbols",
     query: {
-      url: `https://query1.finance.yahoo.com/v1/finance/trending/${query}`,
+      url: "https://${YF_QUERY_HOST}/v1/finance/trending/" + query,
       schemaKey: "#/definitions/TrendingSymbolsOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
