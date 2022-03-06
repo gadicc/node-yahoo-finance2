@@ -47,39 +47,43 @@ describe("historical", () => {
 
   // #208
   describe("null values", () => {
-    it("strips all-null rows", async () => {
-      const createHistoricalPromise = () =>
-        yf.historical(
-          "EURGBP=X",
-          {
-            period1: 1567728000,
-            period2: 1570665600,
-          },
-          { devel: "historical-EURGBP-nulls.json" }
-        );
-
-      await expect(createHistoricalPromise()).resolves.toBeDefined();
-
-      const result = await createHistoricalPromise();
-
-      // Without stripping, it's about 25 rows.
-      expect(result.length).toBe(5);
-
-      // No need to really check there are no nulls in the data, as
-      // validation handles that for us automatically.
-    });
-
-    it("throws on a row with some nulls", () => {
-      consoleSilent();
-      return expect(
-        yf
-          .historical(
+    if (process.env.FETCH_DEVEL !== "nocache")
+      it("strips all-null rows", async () => {
+        const createHistoricalPromise = () =>
+          yf.historical(
             "EURGBP=X",
-            { period1: 1567728000, period2: 1570665600 },
-            { devel: "historical-EURGBP-nulls.fake.json" }
-          )
-          .finally(consoleRestore)
-      ).rejects.toThrow("SOME (but not all) null values");
-    });
+            {
+              period1: 1567728000,
+              period2: 1570665600,
+            },
+            // Not a "fake" but seems fixed in newer Yahoo requests
+            // so let's test against our previously saved cache.
+            { devel: "historical-EURGBP-nulls.saved.fake.json" }
+          );
+
+        await expect(createHistoricalPromise()).resolves.toBeDefined();
+
+        const result = await createHistoricalPromise();
+
+        // Without stripping, it's about 25 rows.
+        expect(result.length).toBe(5);
+
+        // No need to really check there are no nulls in the data, as
+        // validation handles that for us automatically.
+      });
+
+    if (process.env.FETCH_DEVEL !== "nocache")
+      it("throws on a row with some nulls", () => {
+        consoleSilent();
+        return expect(
+          yf
+            .historical(
+              "EURGBP=X",
+              { period1: 1567728000, period2: 1570665600 },
+              { devel: "historical-EURGBP-nulls.fake.json" }
+            )
+            .finally(consoleRestore)
+        ).rejects.toThrow("SOME (but not all) null values");
+      });
   });
 });
