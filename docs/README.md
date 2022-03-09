@@ -54,7 +54,7 @@ const result = await yahooFinance.module(query, queryOpts, moduleOpts);
 ## Error Handling
 
 The modules rely on external services and *things can go wrong*.  Therefore,
-it's important to wrap your use of this library in try..catch statements,
+it's important to wrap your use of this library in try...catch statements,
 e.g.:
 
 ```js

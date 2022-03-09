@@ -26,7 +26,7 @@ Notes:
 * Each `quoteCombine()` call receives the result for only the symbol it
  asked for.
 
-* Query options (i.e. `fields`, above) and the shape of the return result is
+* Query options (i.e. `fields`, above) and the shape of the return result are
 identical to that of [quote()](../modules/quote.md).
 
 * If you call `quoteCombine()` multiple times with different `queryOptions`,
