@@ -51,6 +51,8 @@ const result = await yahooFinance.search(query, /* queryOptions */);
 }
 ```
 
+**Note:** The example output above does not cover all possible return results, which can vary by asset type and even time of day (trading period). For an exhausting list of everything we cover and that you might get back, please see the TypeScript interface in https://github.com/gadicc/node-yahoo-finance2/blob/devel/src/modules/search.ts
+
 See also: [autoc](./autoc.md) (auto complete).
 
 ## API

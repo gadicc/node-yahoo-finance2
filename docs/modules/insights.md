@@ -124,6 +124,8 @@ in companies that are making progress on sustainability. He doubled down in his 
 }
 ```
 
+**Note:** The example output above does not cover all possible return results, which can vary by asset type and even time of day (trading period). For an exhausting list of everything we cover and that you might get back, please see the TypeScript interface in https://github.com/gadicc/node-yahoo-finance2/blob/devel/src/modules/insights.ts
+
 ## API
 
 ```js
