@@ -241,14 +241,62 @@ function validate({
 
   if (type === "result") {
     /* istanbul ignore else */
-    if (validator.errors)
+    if (validator.errors) {
       validator.errors.forEach((error) => {
         // For now let's ignore the base object which could be huge.
         /* istanbul ignore else */
         if (error.instancePath !== "")
           // Note, not the regular ajv data value from verbose:true
           error.data = resolvePath(object, error.instancePath);
+
+        if (error.schemaPath === "#/anyOf")
+          error.data = "[shortened by validateAndCoerceTypes]";
       });
+
+      // Becaue of the "anyOf" in quote, errors are huuuuge and mostly
+      // irrelevant... so let's filter out (some of) the latter
+      validator.errors = validator.errors.filter((error) => {
+        if (error.schemaPath.startsWith("#/definitions/Quote")) {
+          const schemaQuoteType = error.schemaPath
+            .substring(19)
+            .split("/")[0]
+            .toUpperCase();
+
+          /*
+           * Filter out entries for non-matching schema type, i.e.
+           * {
+           *   schemaPath: '#/definitions/QuoteCryptoCurrency/properties...'
+           *   data: {
+           *     quoteType: "EQUITY"
+           *   }
+           * }
+           */
+          if (
+            typeof error.data === "object" &&
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore: Properrty "quoteType" does not exist on type "object"
+            error.data?.quoteType !== schemaQuoteType
+          )
+            return false;
+
+          /*
+           * Filter out the non-matching "const" for the above.
+           * {
+           *   schemaPath: '#/definitions/QuoteCryptoCurrency/properties/quoteType/const'
+           *   keyword: "const",
+           *   params: { allowedValue: "CRYPTOCURRENCY"}},
+           *   data: "EQUITY"
+           * }
+           */
+          if (
+            typeof error.data === "string" &&
+            error.params?.allowedValue === schemaQuoteType
+          )
+            return false;
+        }
+        return true;
+      });
+    }
 
     if (options.logErrors === true) {
       const title = encodeURIComponent("Failed validation: " + schemaKey);
