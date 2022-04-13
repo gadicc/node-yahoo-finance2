@@ -16,7 +16,8 @@ export interface QuoteBase {
   quoteSourceName?: string; // "Delayed Quote",
   triggerable: boolean; // true,
   currency?: string; // "USD",
-  customPriceAlertConfidence: string; // "HIGH" | "LOW"; TODO: anything else?
+  // Seems to appear / disappear based not on symbol but network load (#445)
+  customPriceAlertConfidence?: string; // "HIGH" | "LOW"; TODO: anything else?
   marketState: "REGULAR" | "CLOSED" | "PRE" | "PREPRE" | "POST" | "POSTPOST";
   tradeable: boolean; // false,
   exchange: string; // "NMS",
