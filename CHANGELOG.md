@@ -1,3 +1,12 @@
+## [2.3.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.0...v2.3.1) (2022-04-13)
+
+
+### Bug Fixes
+
+* **quote:** make customPriceAlertConfidence optional ([#248](https://github.com/gadicc/node-yahoo-finance2/issues/248),[#445](https://github.com/gadicc/node-yahoo-finance2/issues/445)) ([1863fbf](https://github.com/gadicc/node-yahoo-finance2/commit/1863fbfd5c24608f82c262ad60635d18cb69feda))
+* **quote:** optional "openInterest" prop; schema + tests ([#248](https://github.com/gadicc/node-yahoo-finance2/issues/248)) ([d8c7808](https://github.com/gadicc/node-yahoo-finance2/commit/d8c7808e87a9415639bc55e49cbc3bea7975cef1))
+* **quote:** optional "typeDisp" prop ([#248](https://github.com/gadicc/node-yahoo-finance2/issues/248)) ([cf7703a](https://github.com/gadicc/node-yahoo-finance2/commit/cf7703add6e919cbb8407103bb4330e160fc831c))
+
 # [2.3.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.2.0...v2.3.0) (2022-03-06)
 
 
