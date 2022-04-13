@@ -8,6 +8,7 @@ const testSymbols = [
   "AAPL220121C00025000", // Option
   "LDO.MI", // additionalProperty: underlyingSymbol (#363)
   "ZRC-USD", // Low cap crypto (#403)
+  "SOHO", // "openInterest" prop (#445)
 ];
 
 const marketStates = [

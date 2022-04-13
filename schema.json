@@ -1353,6 +1353,9 @@
         "quoteType": {
           "type": "string"
         },
+        "typeDisp": {
+          "type": "string"
+        },
         "quoteSourceName": {
           "type": "string"
         },
@@ -1618,6 +1621,9 @@
         },
         "pageViewGrowthWeekly": {
           "yahooFinanceType": "number"
+        },
+        "openInterest": {
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -1625,7 +1631,6 @@
         "region",
         "quoteType",
         "triggerable",
-        "customPriceAlertConfidence",
         "marketState",
         "tradeable",
         "exchange",
@@ -1670,6 +1675,9 @@
           "type": "string",
           "const": "CRYPTOCURRENCY"
         },
+        "typeDisp": {
+          "type": "string"
+        },
         "quoteSourceName": {
           "type": "string"
         },
@@ -1936,6 +1944,9 @@
         "pageViewGrowthWeekly": {
           "yahooFinanceType": "number"
         },
+        "openInterest": {
+          "yahooFinanceType": "number"
+        },
         "circulatingSupply": {
           "yahooFinanceType": "number"
         },
@@ -1963,7 +1974,6 @@
       },
       "required": [
         "circulatingSupply",
-        "customPriceAlertConfidence",
         "esgPopulated",
         "exchange",
         "exchangeDataDelayedBy",
@@ -1999,6 +2009,9 @@
           "type": "string",
           "const": "CURRENCY"
         },
+        "typeDisp": {
+          "type": "string"
+        },
         "quoteSourceName": {
           "type": "string"
         },
@@ -2264,10 +2277,12 @@
         },
         "pageViewGrowthWeekly": {
           "yahooFinanceType": "number"
+        },
+        "openInterest": {
+          "yahooFinanceType": "number"
         }
       },
       "required": [
-        "customPriceAlertConfidence",
         "esgPopulated",
         "exchange",
         "exchangeDataDelayedBy",
@@ -2300,6 +2315,9 @@
           "type": "string",
           "const": "ETF"
         },
+        "typeDisp": {
+          "type": "string"
+        },
         "quoteSourceName": {
           "type": "string"
         },
@@ -2565,10 +2583,12 @@
         },
         "pageViewGrowthWeekly": {
           "yahooFinanceType": "number"
+        },
+        "openInterest": {
+          "yahooFinanceType": "number"
         }
       },
       "required": [
-        "customPriceAlertConfidence",
         "esgPopulated",
         "exchange",
         "exchangeDataDelayedBy",
@@ -2601,6 +2621,9 @@
           "type": "string",
           "const": "EQUITY"
         },
+        "typeDisp": {
+          "type": "string"
+        },
         "quoteSourceName": {
           "type": "string"
         },
@@ -2866,10 +2889,12 @@
         },
         "pageViewGrowthWeekly": {
           "yahooFinanceType": "number"
+        },
+        "openInterest": {
+          "yahooFinanceType": "number"
         }
       },
       "required": [
-        "customPriceAlertConfidence",
         "esgPopulated",
         "exchange",
         "exchangeDataDelayedBy",
@@ -2902,6 +2927,9 @@
           "type": "string",
           "const": "INDEX"
         },
+        "typeDisp": {
+          "type": "string"
+        },
         "quoteSourceName": {
           "type": "string"
         },
@@ -3167,10 +3195,12 @@
         },
         "pageViewGrowthWeekly": {
           "yahooFinanceType": "number"
+        },
+        "openInterest": {
+          "yahooFinanceType": "number"
         }
       },
       "required": [
-        "customPriceAlertConfidence",
         "esgPopulated",
         "exchange",
         "exchangeDataDelayedBy",
@@ -3203,6 +3233,9 @@
           "type": "string",
           "const": "OPTION"
         },
+        "typeDisp": {
+          "type": "string"
+        },
         "quoteSourceName": {
           "type": "string"
         },
@@ -3469,10 +3502,10 @@
         "pageViewGrowthWeekly": {
           "yahooFinanceType": "number"
         },
-        "strike": {
+        "openInterest": {
           "yahooFinanceType": "number"
         },
-        "openInterest": {
+        "strike": {
           "yahooFinanceType": "number"
         },
         "expireDate": {
@@ -3483,7 +3516,6 @@
         }
       },
       "required": [
-        "customPriceAlertConfidence",
         "esgPopulated",
         "exchange",
         "exchangeDataDelayedBy",
@@ -3521,6 +3553,9 @@
           "type": "string",
           "const": "MUTUALFUND"
         },
+        "typeDisp": {
+          "type": "string"
+        },
         "quoteSourceName": {
           "type": "string"
         },
@@ -3786,10 +3821,12 @@
         },
         "pageViewGrowthWeekly": {
           "yahooFinanceType": "number"
+        },
+        "openInterest": {
+          "yahooFinanceType": "number"
         }
       },
       "required": [
-        "customPriceAlertConfidence",
         "esgPopulated",
         "exchange",
         "exchangeDataDelayedBy",
@@ -3848,6 +3885,7 @@
         "startDate",
         "language",
         "region",
+        "typeDisp",
         "quoteSourceName",
         "triggerable",
         "currency",
@@ -3934,8 +3972,8 @@
         "prevName",
         "averageAnalystRating",
         "pageViewGrowthWeekly",
-        "strike",
         "openInterest",
+        "strike",
         "expireDate",
         "expireIsoDate"
       ]
