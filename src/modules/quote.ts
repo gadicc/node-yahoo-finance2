@@ -12,6 +12,7 @@ export interface QuoteBase {
   language: string; // "en-US",
   region: string; // "US",
   quoteType: string; // "EQUITY" | "ETF" | "MUTUALFUND";
+  typeDisp?: string; // "Equity", not always present.
   quoteSourceName?: string; // "Delayed Quote",
   triggerable: boolean; // true,
   currency?: string; // "USD",
