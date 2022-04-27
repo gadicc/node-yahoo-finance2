@@ -1,0 +1,159 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/GC=F?formatted=false&modules=assetProfile%2CbalanceSheetHistory%2CbalanceSheetHistoryQuarterly%2CcalendarEvents%2CcashflowStatementHistory%2CcashflowStatementHistoryQuarterly%2CdefaultKeyStatistics%2Cearnings%2CearningsHistory%2CearningsTrend%2CfinancialData%2CfundOwnership%2CfundPerformance%2CfundProfile%2CincomeStatementHistory%2CincomeStatementHistoryQuarterly%2CindexTrend%2CindustryTrend%2CinsiderHolders%2CinsiderTransactions%2CinstitutionOwnership%2CmajorDirectHolders%2CmajorHoldersBreakdown%2CnetSharePurchaseActivity%2Cprice%2CquoteType%2CrecommendationTrend%2CsecFilings%2CsectorTrend%2CsummaryDetail%2CsummaryProfile%2CtopHoldings%2CupgradeDowngradeHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "d5vdnvph6ig68"
+      ],
+      "x-yahoo-request-id": [
+        "d5vdnvph6ig68"
+      ],
+      "x-request-id": [
+        "2a0d39e2-cc24-4b3d-a32c-b3fe11f3bd77"
+      ],
+      "content-length": [
+        "1861"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 27 Apr 2022 13:10:32 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--aws-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 1904.1,
+              "open": 1907.4,
+              "dayLow": 1883.2,
+              "dayHigh": 1908.1,
+              "regularMarketPreviousClose": 1904.1,
+              "regularMarketOpen": 1907.4,
+              "regularMarketDayLow": 1883.2,
+              "regularMarketDayHigh": 1908.1,
+              "volume": 79556,
+              "regularMarketVolume": 79556,
+              "averageVolume": 3280,
+              "averageVolume10days": 317,
+              "averageDailyVolume10Day": 317,
+              "bid": 1897.3,
+              "ask": 1897.4,
+              "bidSize": 1400,
+              "askSize": 900,
+              "expireDate": 1656374400,
+              "openInterest": 444411,
+              "fiftyTwoWeekLow": 1692.6,
+              "fiftyTwoWeekHigh": 2072,
+              "fiftyDayAverage": 1936.236,
+              "twoHundredDayAverage": 1831.8674,
+              "currency": "USD",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "algorithm": null,
+              "tradeable": false
+            },
+            "quoteType": {
+              "exchange": "CMX",
+              "quoteType": "FUTURE",
+              "symbol": "GCM22.CMX",
+              "underlyingSymbol": "GC=F",
+              "shortName": "Gold Jun 22",
+              "longName": null,
+              "firstTradeDateEpochUtc": 967608000,
+              "timeZoneFullName": "America/New_York",
+              "timeZoneShortName": "EDT",
+              "uuid": "14f8f2ec-b820-38f7-ba5f-b3f5a47aec05",
+              "messageBoardId": null,
+              "gmtOffSetMilliseconds": -14400000,
+              "maxAge": 1
+            },
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": -0.0034661917,
+              "regularMarketChange": -6.5999756,
+              "regularMarketTime": 1651064430,
+              "priceHint": 2,
+              "regularMarketPrice": 1897.5,
+              "regularMarketDayHigh": 1908.1,
+              "regularMarketDayLow": 1883.2,
+              "regularMarketVolume": 79556,
+              "averageDailyVolume10Day": 317,
+              "averageDailyVolume3Month": 3280,
+              "regularMarketPreviousClose": 1904.1,
+              "regularMarketSource": "DELAYED",
+              "regularMarketOpen": 1907.4,
+              "openInterest": 444411,
+              "expireDate": 1656374400,
+              "exchange": "CMX",
+              "exchangeName": "COMEX",
+              "exchangeDataDelayedBy": 10,
+              "marketState": "REGULAR",
+              "quoteType": "FUTURE",
+              "symbol": "GC=F",
+              "underlyingSymbol": "GCM22.CMX",
+              "shortName": "Gold Jun 22",
+              "longName": null,
+              "currency": "USD",
+              "quoteSourceName": "Delayed Quote",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

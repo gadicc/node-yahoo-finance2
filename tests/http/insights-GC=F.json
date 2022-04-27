@@ -1,0 +1,78 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=GC%3DF"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "d215lulh6ig60"
+      ],
+      "x-yahoo-request-id": [
+        "d215lulh6ig60"
+      ],
+      "x-request-id": [
+        "81bf8277-466c-4edf-8d5b-81bc5e27bb97"
+      ],
+      "content-length": [
+        "66"
+      ],
+      "x-envoy-upstream-service-time": [
+        "89"
+      ],
+      "date": [
+        "Wed, 27 Apr 2022 13:10:24 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--aws-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "GC=F",
+          "sigDevs": []
+        },
+        "error": null
+      }
+    }
+  }
+}

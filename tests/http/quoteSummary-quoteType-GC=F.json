@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/GC=F?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "5m4rntph6ig67"
+      ],
+      "x-yahoo-request-id": [
+        "5m4rntph6ig67"
+      ],
+      "x-request-id": [
+        "33926590-84ea-4fd6-a6d8-73079c94dfe3"
+      ],
+      "content-length": [
+        "397"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Wed, 27 Apr 2022 13:10:30 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--aws-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "CMX",
+              "quoteType": "FUTURE",
+              "symbol": "GCM22.CMX",
+              "underlyingSymbol": "GC=F",
+              "shortName": "Gold Jun 22",
+              "longName": null,
+              "firstTradeDateEpochUtc": 967608000,
+              "timeZoneFullName": "America/New_York",
+              "timeZoneShortName": "EDT",
+              "uuid": "14f8f2ec-b820-38f7-ba5f-b3f5a47aec05",
+              "messageBoardId": null,
+              "gmtOffSetMilliseconds": -14400000,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

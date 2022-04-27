@@ -723,7 +723,7 @@ export interface Price {
   quoteType: string;
 
   symbol: string;
-  underlyingSymbol: null;
+  underlyingSymbol: null | string; // "GCM22.CMX" (from GC=F future)
   shortName: null | string;
   longName: null | string;
 
@@ -739,6 +739,10 @@ export interface Price {
   volume24Hr?: number;
   volumeAllCurrencies?: number;
   circulatingSupply?: number;
+
+  // futures
+  expireDate?: Date; // 1656374400,
+  openInterest?: number; // 444411,
 }
 
 export interface QuoteType {
@@ -853,6 +857,10 @@ export interface SummaryDetail {
   volumeAllCurrencies?: number; // 62650314752
   circulatingSupply?: number; // 18638932
   startDate?: Date; // new Date(1367107200 * 1000)
+
+  // futures
+  expireDate?: Date; // 1656374400,
+  openInterest?: number; // 444411,
 }
 
 export interface SummaryProfile {

@@ -1,0 +1,111 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/GC=F?formatted=false&modules=summaryDetail"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "4j1jn8hh6ig67"
+      ],
+      "x-yahoo-request-id": [
+        "4j1jn8hh6ig67"
+      ],
+      "x-request-id": [
+        "59f6ebc7-a121-457a-8827-9d64038e5178"
+      ],
+      "content-length": [
+        "719"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 27 Apr 2022 13:10:31 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--aws-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 1904.1,
+              "open": 1907.4,
+              "dayLow": 1883.2,
+              "dayHigh": 1908.1,
+              "regularMarketPreviousClose": 1904.1,
+              "regularMarketOpen": 1907.4,
+              "regularMarketDayLow": 1883.2,
+              "regularMarketDayHigh": 1908.1,
+              "volume": 79556,
+              "regularMarketVolume": 79556,
+              "averageVolume": 3280,
+              "averageVolume10days": 317,
+              "averageDailyVolume10Day": 317,
+              "bid": 1897.3,
+              "ask": 1897.4,
+              "bidSize": 1400,
+              "askSize": 900,
+              "expireDate": 1656374400,
+              "openInterest": 444411,
+              "fiftyTwoWeekLow": 1692.6,
+              "fiftyTwoWeekHigh": 2072,
+              "fiftyDayAverage": 1936.236,
+              "twoHundredDayAverage": 1831.8674,
+              "currency": "USD",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "algorithm": null,
+              "tradeable": false
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

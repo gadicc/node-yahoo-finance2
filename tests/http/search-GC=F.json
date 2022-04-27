@@ -1,0 +1,186 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=GC%3DF"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "eqlir4ph6ig60"
+      ],
+      "x-yahoo-request-id": [
+        "eqlir4ph6ig60"
+      ],
+      "x-request-id": [
+        "18aa4d23-2e69-449e-89af-c3a0dd77a3dc"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1194"
+      ],
+      "x-envoy-upstream-service-time": [
+        "26"
+      ],
+      "date": [
+        "Wed, 27 Apr 2022 13:10:24 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--aws-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 9,
+      "quotes": [
+        {
+          "exchange": "CMX",
+          "shortname": "Gold Jun 22",
+          "quoteType": "FUTURE",
+          "symbol": "GC=F",
+          "index": "quotes",
+          "score": 11645000,
+          "typeDisp": "Future",
+          "exchDisp": "New York Commodity Exchange",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [
+        {
+          "uuid": "b6990eac-93fe-3b84-a6e4-3173d46ce919",
+          "title": "Gold dips back below $1,900 an ounce as U.S. dollar jumps",
+          "publisher": "MarketWatch",
+          "link": "https://finance.yahoo.com/m/b6990eac-93fe-3b84-a6e4-3173d46ce919/gold-dips-back-below-%241%2C900.html",
+          "providerPublishTime": 1651061940,
+          "type": "STORY"
+        },
+        {
+          "uuid": "48f2f961-18e3-34a8-b38b-c4a1651383bb",
+          "title": "GLOBAL MARKETS-Euro hits 5-year low after Russia halts gas; stocks stage small rebound",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/global-markets-euro-hits-5-111204026.html",
+          "providerPublishTime": 1651057924,
+          "type": "STORY"
+        },
+        {
+          "uuid": "46476a47-f192-38e0-9f06-6d7725bc4e8c",
+          "title": "With inflation, gold notes and cards find their way into America's wallet",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/inflation-gold-notes-cards-way-100000016.html",
+          "providerPublishTime": 1651053600,
+          "type": "STORY"
+        },
+        {
+          "uuid": "a8d8b407-8826-31a5-9c8c-45dcd2bc68fe",
+          "title": "GLOBAL MARKETS-Euro hits 5-year low, stocks down again on mixed earnings",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/global-markets-euro-hits-5-082228625.html",
+          "providerPublishTime": 1651047748,
+          "type": "STORY"
+        }
+      ],
+      "nav": [],
+      "lists": [
+        {
+          "slug": "most-bought-by-activist-hedge-funds",
+          "name": "Most Bought by Activist Hedge Funds",
+          "index": "most-bought-by-activist-hedge-funds",
+          "score": 13.9978695,
+          "type": "ALGO_WATCHLIST",
+          "brandSlug": "yahoo-finance",
+          "pfId": "most_bought_by_activist_hedge_funds",
+          "symbolCount": 30,
+          "dailyPercentGain": -2.410922932282858,
+          "followerCount": 56953
+        },
+        {
+          "slug": "most-bought-by-hedge-funds",
+          "name": "Most Bought by Hedge Funds",
+          "index": "most-bought-by-hedge-funds",
+          "score": 9.561255,
+          "type": "ALGO_WATCHLIST",
+          "brandSlug": "yahoo-finance",
+          "pfId": "most_bought_by_hedge_funds",
+          "symbolCount": 30,
+          "dailyPercentGain": -2.871179229918529,
+          "followerCount": 38101
+        },
+        {
+          "slug": "the-fight-against-covid19",
+          "name": "The Fight Against COVID19",
+          "index": "the-fight-against-covid19",
+          "score": 6.027563,
+          "type": "ALGO_WATCHLIST",
+          "brandSlug": "trea",
+          "pfId": "the_fight_against_covid19",
+          "symbolCount": 13,
+          "dailyPercentGain": -2.7692290982357357,
+          "followerCount": 23335
+        },
+        {
+          "slug": "most-watched",
+          "name": "Most Watched by Yahoo Finance Users",
+          "index": "most-watched",
+          "score": 5.648755,
+          "type": "ALGO_WATCHLIST",
+          "brandSlug": "yahoo-finance",
+          "pfId": "most_watched",
+          "symbolCount": 21,
+          "dailyPercentGain": -3.992647028072078,
+          "followerCount": 27253
+        }
+      ],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 24,
+      "timeTakenForQuotes": 412,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0
+    }
+  }
+}
