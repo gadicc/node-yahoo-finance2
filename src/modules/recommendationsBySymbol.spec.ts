@@ -11,6 +11,7 @@ describe("recommendationsBySymbol", () => {
       // 404 Not Found
       "ADH",
       "BTC-USD",
+      "GC=F",
     ];
     const symbols = testSymbols.filter((s) => !symbolsToSkip.includes(s));
     it.each(symbols)("for symbol '%s'", async (symbol) => {

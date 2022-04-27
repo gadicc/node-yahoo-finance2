@@ -26,4 +26,5 @@ export const testSymbols = [
   "SIMP", // see #107,
   "ORSTED.CO", // quoteSummary.price.shortName = null (#197),
   "^VXAPL", // Index (#248)
+  "GC=F", // Futures (#449)
 ];

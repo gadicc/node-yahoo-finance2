@@ -147,6 +147,15 @@ export interface QuoteEquity extends QuoteBase {
   quoteType: "EQUITY";
 }
 
+export interface QuoteFuture extends QuoteBase {
+  quoteType: "FUTURE";
+  headSymbolAsString: string; // "GC=F"
+  contractSymbol: boolean; // false
+  underlyingExchangeSymbol: string; // "GCM22.CMX"
+  expireDate: Date; // 1656374400
+  expireIsoDate: number; // 2022
+}
+
 export interface QuoteIndex extends QuoteBase {
   quoteType: "INDEX";
 }
@@ -169,6 +178,7 @@ export type Quote =
   | QuoteCurrency
   | QuoteEtf
   | QuoteEquity
+  | QuoteFuture
   | QuoteIndex
   | QuoteMutualfund
   | QuoteOption;
