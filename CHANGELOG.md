@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.1...v2.3.2) (2022-04-27)
+
+
+### Bug Fixes
+
+* **quote,quoteSummary:** support FUTURE type + tests (closes [#449](https://github.com/gadicc/node-yahoo-finance2/issues/449)) ([56b664b](https://github.com/gadicc/node-yahoo-finance2/commit/56b664bd46098f432a46716c6b6b83d29f9537f2))
+
 ## [2.3.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.0...v2.3.1) (2022-04-13)
 
 
