@@ -70,10 +70,18 @@ export default function historical(
           const value = queryOptions[fieldName];
           if (value instanceof Date)
             queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
-          else if (typeof value === "string")
-            queryOptions[fieldName] = Math.floor(
-              new Date(value as string).getTime() / 1000
-            );
+          else if (typeof value === "string") {
+            const timestamp = new Date(value as string).getTime();
+
+            if (isNaN(timestamp) || timestamp <= 0)
+              throw new Error(
+                "yahooFinance.historical() option '" +
+                  fieldName +
+                  "' invalid date provided."
+              );
+
+            queryOptions[fieldName] = Math.floor(timestamp / 1000);
+          }
         }
 
         if (queryOptions.period1 === queryOptions.period2) {
