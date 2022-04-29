@@ -109,7 +109,7 @@ throw if they don't match.  If you're returning a fake result, name
 your file `.fake.json`.
 
 Occasionally we want to skip caching and only return live results, e.g.
-to check if our validation pasts at different times of the day (when
+to check if our validation passes at different times of the day (when
 different markets are open):
 
 ```bash
