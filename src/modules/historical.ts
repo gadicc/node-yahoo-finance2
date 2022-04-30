@@ -73,11 +73,13 @@ export default function historical(
           else if (typeof value === "string") {
             const timestamp = new Date(value as string).getTime();
 
-            if (isNaN(timestamp) || timestamp <= 0)
+            if (isNaN(timestamp))
               throw new Error(
                 "yahooFinance.historical() option '" +
                   fieldName +
-                  "' invalid date provided."
+                  "' invalid date provided: '" +
+                  value +
+                  "'"
               );
 
             queryOptions[fieldName] = Math.floor(timestamp / 1000);
