@@ -30,6 +30,16 @@ describe("historical", () => {
     ).rejects.toThrow(/cannot share the same value/);
   });
 
+  it("throws if period{1,2} gets an invalid string for new Date()", async () => {
+    await expect(yf.historical("TSLA", { period1: "invalid" })).rejects.toThrow(
+      /invalid date provided/
+    );
+
+    await expect(
+      yf.historical("TSLA", { period1: "2022-02-022", period2: "invalid" })
+    ).rejects.toThrow(/invalid date provided/);
+  });
+
   describe("transformWith", () => {
     const yf = { _moduleExec: jest.fn(), historical };
     // @ts-ignore: TODO
