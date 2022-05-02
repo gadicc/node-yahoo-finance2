@@ -1,0 +1,101 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/APS.AX?formatted=false&modules=summaryDetail"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "4c8hja5h6v5uv"
+      ],
+      "x-yahoo-request-id": [
+        "4c8hja5h6v5uv"
+      ],
+      "x-request-id": [
+        "9924aba6-7838-494c-b89a-7ce4bfaf4282"
+      ],
+      "content-length": [
+        "463"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Mon, 02 May 2022 08:35:42 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--aws-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 4,
+              "open": 0.2,
+              "dayLow": 0.17,
+              "dayHigh": 0.21,
+              "regularMarketOpen": 0.2,
+              "regularMarketDayLow": 0.17,
+              "regularMarketDayHigh": 0.21,
+              "volume": 2195190,
+              "regularMarketVolume": 2195190,
+              "bid": 0.16,
+              "ask": 0.17,
+              "fiftyTwoWeekLow": 0.17,
+              "fiftyTwoWeekHigh": 0.21,
+              "trailingAnnualDividendRate": 0,
+              "currency": "AUD",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "algorithm": null,
+              "tradeable": false
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

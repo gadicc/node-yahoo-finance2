@@ -38,13 +38,13 @@ export interface ChartMeta {
   symbol: string; // "AAPL",
   exchangeName: string; // "NMS",
   instrumentType: string; // "EQUITY",
-  firstTradeDate: Date; // new Date(345479400 * 1000),
+  firstTradeDate: Date | null; // new Date(345479400 * 1000); null in e.g. "APS.AX"
   regularMarketTime: Date; // new Date(1637355602 * 1000),
   gmtoffset: number; // -18000,
   timezone: string; /// "EST",
   exchangeTimezoneName: string; // "America/New_York",
   regularMarketPrice: number; // 160.55,
-  chartPreviousClose: number; // 79.75,
+  chartPreviousClose?: number; // 79.75; missing in e.g. "APS.AX"
   previousClose?: number; // 1137.06
   scale?: number; // 3,
   priceHint: number; // 2,
@@ -126,7 +126,7 @@ export interface ChartIndicatorQuote {
 
 export interface ChartIndicatorAdjclose {
   [key: string]: any;
-  adjclose: Array<number>;
+  adjclose?: Array<number>; // Missing in e.g. "APS.AX"
 }
 
 export interface ChartOptions {

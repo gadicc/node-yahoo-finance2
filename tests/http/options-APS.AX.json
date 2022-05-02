@@ -1,0 +1,128 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/options/APS.AX?formatted=false&lang=en-US&region=US"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "bmige85h6v5uo"
+      ],
+      "x-yahoo-request-id": [
+        "bmige85h6v5uo"
+      ],
+      "x-request-id": [
+        "afe5346f-ba3d-4d30-861f-6a590e389ffa"
+      ],
+      "content-length": [
+        "1297"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Mon, 02 May 2022 08:35:36 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-quote-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "APS.AX",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "EQUITY",
+              "typeDisp": "Equity",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": false,
+              "customPriceAlertConfidence": "LOW",
+              "currency": "AUD",
+              "marketState": "POSTPOST",
+              "exchange": "ASX",
+              "longName": "Allup Silica Limited",
+              "messageBoardId": "finmb_1760330749",
+              "exchangeTimezoneName": "Australia/Sydney",
+              "exchangeTimezoneShortName": "AEST",
+              "gmtOffSetMilliseconds": 36000000,
+              "market": "au_market",
+              "esgPopulated": false,
+              "trailingAnnualDividendRate": 0,
+              "sourceInterval": 20,
+              "exchangeDataDelayedBy": 20,
+              "newListingDate": "2022-05-02",
+              "tradeable": false,
+              "priceHint": 4,
+              "regularMarketChange": 0.17,
+              "regularMarketChangePercent": 3400.0032,
+              "regularMarketTime": 1651471826,
+              "regularMarketPrice": 0.17,
+              "regularMarketDayHigh": 0.21,
+              "regularMarketDayRange": "0.17 - 0.21",
+              "regularMarketDayLow": 0.17,
+              "regularMarketVolume": 2195190,
+              "bid": 0.16,
+              "ask": 0.17,
+              "fullExchangeName": "ASX",
+              "regularMarketOpen": 0.2,
+              "fiftyTwoWeekLowChange": 0,
+              "fiftyTwoWeekLowChangePercent": 0,
+              "fiftyTwoWeekRange": "0.17 - 0.21",
+              "fiftyTwoWeekHighChange": -0.03999999,
+              "fiftyTwoWeekHighChangePercent": -0.19047615,
+              "fiftyTwoWeekLow": 0.17,
+              "fiftyTwoWeekHigh": 0.21,
+              "symbol": "APS.AX"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

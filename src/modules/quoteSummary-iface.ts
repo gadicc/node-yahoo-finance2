@@ -807,11 +807,11 @@ export interface SummaryDetail {
   [key: string]: any;
   maxAge: number;
   priceHint: number;
-  previousClose: number;
+  previousClose?: number; // missing in e.g. "APS.AX"
   open?: number;
   dayLow?: number;
   dayHigh?: number;
-  regularMarketPreviousClose: number;
+  regularMarketPreviousClose?: number; // missing in e.g. "APS.AX"
   regularMarketOpen?: number;
   regularMarketDayLow?: number;
   regularMarketDayHigh?: number;

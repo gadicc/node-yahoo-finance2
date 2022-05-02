@@ -12,6 +12,7 @@ describe("recommendationsBySymbol", () => {
       "ADH",
       "BTC-USD",
       "GC=F",
+      "APS.AX",
     ];
     const symbols = testSymbols.filter((s) => !symbolsToSkip.includes(s));
     it.each(symbols)("for symbol '%s'", async (symbol) => {

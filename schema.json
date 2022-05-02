@@ -85,7 +85,7 @@
           "type": "string"
         },
         "firstTradeDate": {
-          "yahooFinanceType": "date"
+          "yahooFinanceType": "date|null"
         },
         "regularMarketTime": {
           "yahooFinanceType": "date"
@@ -160,7 +160,6 @@
         "timezone",
         "exchangeTimezoneName",
         "regularMarketPrice",
-        "chartPreviousClose",
         "priceHint",
         "currentTradingPeriod",
         "dataGranularity",
@@ -355,10 +354,7 @@
             "yahooFinanceType": "number"
           }
         }
-      },
-      "required": [
-        "adjclose"
-      ]
+      }
     },
     "ChartResultArray": {
       "type": "object",
@@ -1208,10 +1204,7 @@
         "upsellReportType": {
           "type": "string"
         }
-      },
-      "required": [
-        "companyName"
-      ]
+      }
     },
     "DateInMs": {
       "yahooFinanceType": "date"
@@ -7200,8 +7193,6 @@
       "required": [
         "maxAge",
         "priceHint",
-        "previousClose",
-        "regularMarketPreviousClose",
         "currency",
         "algorithm",
         "tradeable",

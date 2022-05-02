@@ -147,7 +147,7 @@ export interface InsightsUpsell {
   msBullishSummary?: Array<string>;
   msBearishSummary?: Array<string>;
   msBullishBearishSummariesPublishDate?: DateInMs;
-  companyName: string;
+  companyName?: string; // Missing in e.g. APS.AX
   upsellReportType?: string;
 }
 
