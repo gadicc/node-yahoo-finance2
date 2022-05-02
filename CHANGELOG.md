@@ -1,3 +1,10 @@
+## [2.3.3](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.2...v2.3.3) (2022-05-02)
+
+
+### Bug Fixes
+
+* schema for APS.AX in insights,quoteSummary,recommends ([#461](https://github.com/gadicc/node-yahoo-finance2/issues/461)) ([e0cf583](https://github.com/gadicc/node-yahoo-finance2/commit/e0cf5839bb42a86fc97b9f2954f94c9a63a24621))
+
 ## [2.3.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.1...v2.3.2) (2022-04-27)
 
 
