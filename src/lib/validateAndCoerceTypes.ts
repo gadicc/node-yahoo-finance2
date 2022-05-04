@@ -242,6 +242,8 @@ function validate({
   if (type === "result") {
     /* istanbul ignore else */
     if (validator.errors) {
+      let origData: any = false;
+
       validator.errors.forEach((error) => {
         // For now let's ignore the base object which could be huge.
         /* istanbul ignore else */
@@ -249,8 +251,13 @@ function validate({
           // Note, not the regular ajv data value from verbose:true
           error.data = resolvePath(object, error.instancePath);
 
-        if (error.schemaPath === "#/anyOf")
-          error.data = "[shortened by validateAndCoerceTypes]";
+        if (error.schemaPath === "#/anyOf") {
+          if (origData === false) {
+            origData = error.data;
+          } else if (origData === error.data) {
+            error.data = "[shortened by validateAndCoerceTypes]";
+          }
+        }
       });
 
       // Becaue of the "anyOf" in quote, errors are huuuuge and mostly
@@ -296,6 +303,13 @@ function validate({
         }
         return true;
       });
+
+      // In the case of there being NO match in #anyOf, bring back the data
+      if (
+        validator.errors.length === 1 &&
+        validator.errors[0].schemaPath === "#/anyOf"
+      )
+        validator.errors[0].data = origData;
     }
 
     if (options.logErrors === true) {
