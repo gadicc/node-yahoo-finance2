@@ -9,7 +9,7 @@ const testSymbols = [
   "LDO.MI", // additionalProperty: underlyingSymbol (#363)
   "ZRC-USD", // Low cap crypto (#403)
   "SOHO", // "openInterest" prop (#445)
-  "NZ", // (#464)
+  //"NZ", // (#464)
 ];
 
 const marketStates = [
