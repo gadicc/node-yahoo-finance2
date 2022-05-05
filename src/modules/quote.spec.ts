@@ -1,16 +1,6 @@
 import quote from "./quote.js";
-import { testSymbols as testSymbolsOriginal } from "../../tests/symbols.js";
+import testSymbols from "../../tests/testSymbols.js";
 import testYf from "../../tests/testYf.js";
-
-const testSymbols = [
-  ...testSymbolsOriginal,
-  "AZT.OL", // Far less properties than other symbols (#42)
-  "AAPL220121C00025000", // Option
-  "LDO.MI", // additionalProperty: underlyingSymbol (#363)
-  "ZRC-USD", // Low cap crypto (#403)
-  "SOHO", // "openInterest" prop (#445)
-  //"NZ", // (#464)
-];
 
 const marketStates = [
   "PREPRE",
@@ -24,14 +14,24 @@ const marketStates = [
 const yf = testYf({ quote });
 
 describe("quote", () => {
+  const symbols = testSymbols({
+    add: [
+      "AZT.OL", // Far less properties than other symbols (#42)
+      "AAPL220121C00025000", // Option
+      "LDO.MI", // additionalProperty: underlyingSymbol (#363)
+      "ZRC-USD", // Low cap crypto (#403)
+      "SOHO", // "openInterest" prop (#445)
+    ],
+  });
+
   describe("passes validation", () => {
-    it.each(testSymbols)("for symbol '%s'", async (symbol) => {
+    it.each(symbols)("for symbol '%s'", async (symbol) => {
       const devel = `quote-${symbol}.json`;
       await yf.quote(symbol, {}, { devel });
     });
 
     if (0)
-      it.each(testSymbols)("for symbol %s (for 10AM data)", async (symbol) => {
+      it.each(symbols)("for symbol %s (for 10AM data)", async (symbol) => {
         const devel = `old/quote-${symbol}-10am.json`;
         await yf.quote(symbol, {}, { devel });
       });

@@ -1,7 +1,7 @@
 import { jest } from "@jest/globals";
 
 import historical from "./historical.js";
-import { testSymbols } from "../../tests/symbols.js";
+import testSymbols from "../../tests/testSymbols.js";
 
 import testYf from "../../tests/testYf.js";
 import { consoleSilent, consoleRestore } from "../../tests/console.js";
@@ -11,14 +11,10 @@ const yf = testYf({ historical });
 describe("historical", () => {
   // See also common module tests in moduleExec.spec.js
 
-  const symbolsToSkip = [
-    "BEKE",
-    "BFLY",
-    "SIMP",
-    "^VXAPL",
-    "APS.AX" /* Not Found */,
-  ];
-  const symbols = testSymbols.filter((s) => symbolsToSkip.indexOf(s) === -1);
+  const symbols = testSymbols({
+    skip: ["BEKE", "BFLY", "SIMP", "^VXAPL", "APS.AX" /* Not Found */],
+  });
+
   it.each(symbols)("passes validation for symbol '%s'", async (symbol) => {
     await yf.historical(
       symbol,

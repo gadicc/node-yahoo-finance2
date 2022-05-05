@@ -1,5 +1,5 @@
 import recommendationsBySymbol from "./recommendationsBySymbol.js";
-import { testSymbols } from "../../tests/symbols.js";
+import testSymbols from "../../tests/testSymbols.js";
 import testYf from "../../tests/testYf.js";
 
 const yf = testYf({ recommendationsBySymbol });
@@ -7,14 +7,16 @@ const yf = testYf({ recommendationsBySymbol });
 describe("recommendationsBySymbol", () => {
   // make sure it passes validation for some symbols
   describe("passes validation", () => {
-    const symbolsToSkip = [
-      // 404 Not Found
-      "ADH",
-      "BTC-USD",
-      "GC=F",
-      "APS.AX",
-    ];
-    const symbols = testSymbols.filter((s) => !symbolsToSkip.includes(s));
+    const symbols = testSymbols({
+      skip: [
+        // 404 Not Found
+        "ADH",
+        "BTC-USD",
+        "GC=F",
+        "APS.AX",
+      ],
+    });
+
     it.each(symbols)("for symbol '%s'", async (symbol) => {
       const devel = `recommendationsBySymbol-${symbol}.json`;
       await yf.recommendationsBySymbol(symbol, {}, { devel });

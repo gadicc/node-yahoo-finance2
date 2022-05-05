@@ -1,4 +1,4 @@
-export const testSymbols = [
+const commonSymbols = [
   "AAPL", // NMS (Nasdaq)
   "ADH", // Mutual fund, YHD
   "AFRAF", // PNK
@@ -30,13 +30,13 @@ export const testSymbols = [
   "APS.AX", // .AX (#461); chart, historical, insights, recommendations, quoteSummary
 ];
 
-interface createTestSymbolsOptions {
+interface testSymbolsOptions {
   add?: Array<string>;
   skip?: Array<string>;
 }
 
-export default function createTestSymbols(options?: createTestSymbolsOptions) {
-  let symbols = testSymbols;
+export default function testSymbols(options?: testSymbolsOptions) {
+  let symbols = commonSymbols;
 
   if (!options) return symbols;
 

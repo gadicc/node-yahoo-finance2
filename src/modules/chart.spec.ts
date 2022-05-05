@@ -1,7 +1,7 @@
 import { jest } from "@jest/globals";
 
 import chart from "./chart.js";
-import { testSymbols } from "../../tests/symbols.js";
+import testSymbols from "../../tests/testSymbols.js";
 
 import testYf from "../../tests/testYf.js";
 import { consoleSilent, consoleRestore } from "../../tests/console.js";
@@ -11,14 +11,14 @@ const yf = testYf({ chart });
 describe("chart", () => {
   // See also common module tests in moduleExec.spec.js
 
-  const symbolsToSkip = [
-    "ADH", // currency: null; Yahoo-finance does show a chart though, should we allow this?
-    "BEKE", // BadRequestError: Data doesn't exist for startDate = 1577836800, endDate = 1578009600
-    "BFLY", // BadRequestError: Data doesn't exist for startDate = 1577836800, endDate = 1578009600
-    "^VXAPL", // firstTradeDate: null; Yahoo-finance shows an empty chart even though there's some data.
-  ];
-  const symbols = testSymbols.filter((s) => symbolsToSkip.indexOf(s) === -1);
-  //const symbols = ["ADH"];
+  const symbols = testSymbols({
+    skip: [
+      "ADH", // currency: null; Yahoo-finance does show a chart though, should we allow this?
+      "BEKE", // BadRequestError: Data doesn't exist for startDate = 1577836800, endDate = 1578009600
+      "BFLY", // BadRequestError: Data doesn't exist for startDate = 1577836800, endDate = 1578009600
+      "^VXAPL", // firstTradeDate: null; Yahoo-finance shows an empty chart even though there's some data.
+    ],
+  });
 
   it.each(symbols)("passes validation for symbol '%s'", async (symbol) => {
     await yf.chart(

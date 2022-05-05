@@ -1,17 +1,8 @@
 import quoteSummary, { QuoteSummaryModules } from "./quoteSummary.js";
 import { InvalidOptionsError } from "../lib/errors.js";
 
-import { testSymbols as commonTestSymbols } from "../../tests/symbols.js";
+import testSymbols from "../../tests/testSymbols.js";
 import testYf from "../../tests/testYf.js";
-
-const testSymbols = [
-  ...commonTestSymbols,
-  // incomeStatementHistory/sellingGeneralAdministrative is null (#258)
-  // "Got {}->null for 'number', did you want 'number | null' ?"
-  "CMCOM.AS",
-  "CRM",
-  "ADA-USD", // has summaryProfile.twitter (#418)
-];
 
 const yf = testYf({ quoteSummary });
 
@@ -23,7 +14,16 @@ function itValidates(
   name: QuoteSummaryModules | "all",
   opts: itValidatesOpts = {}
 ) {
-  let symbols = testSymbols;
+  let symbols = testSymbols({
+    add: [
+      // incomeStatementHistory/sellingGeneralAdministrative is null (#258)
+      // "Got {}->null for 'number', did you want 'number | null' ?"
+      "CMCOM.AS",
+      "CRM",
+      "ADA-USD", // has summaryProfile.twitter (#418)
+    ],
+  });
+
   if (opts.skip)
     // @ts-ignore
     symbols = symbols.filter((s) => !opts.skip.includes(s));
