@@ -404,6 +404,7 @@ export interface OwnershipList {
   pctHeld: number;
   position: number;
   value: number;
+  pctChange?: number;
 }
 
 export interface FundPerformance {
@@ -801,6 +802,7 @@ export enum Type {
   The8K = "8-K",
   The8KA = "8-K/A",
   The10KA = "10-K/A",
+  The10QA = "10-Q/A",
 }
 
 export interface SummaryDetail {
@@ -857,6 +859,7 @@ export interface SummaryDetail {
   volumeAllCurrencies?: number; // 62650314752
   circulatingSupply?: number; // 18638932
   startDate?: Date; // new Date(1367107200 * 1000)
+  coinMarketCapLink?: string | null; // "https://coinmarketcap.com/currencies/cardano"
 
   // futures
   expireDate?: Date; // 1656374400,
