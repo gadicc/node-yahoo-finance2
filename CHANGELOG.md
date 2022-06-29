@@ -1,3 +1,12 @@
+## [2.3.4](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.3...v2.3.4) (2022-06-29)
+
+
+### Bug Fixes
+
+* **quoteSummary:** 10-QA; pctChange; coinMarketCapLink (fixes [#500](https://github.com/gadicc/node-yahoo-finance2/issues/500)) ([a1119a8](https://github.com/gadicc/node-yahoo-finance2/commit/a1119a854d5672cea174bed9a62c7ab22fff6502))
+* **validation:** 3rd hint help text for "bad" symbols (closes [#465](https://github.com/gadicc/node-yahoo-finance2/issues/465)) ([9e84387](https://github.com/gadicc/node-yahoo-finance2/commit/9e84387e453b34a4945e78e4a9df1157468c32ad))
+* **validation:** show pkg name and version in help text ([f27b901](https://github.com/gadicc/node-yahoo-finance2/commit/f27b9017fd5643932f4067c5d7b2a641f783a7ea))
+
 ## [2.3.3](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.2...v2.3.3) (2022-05-02)
 
 
