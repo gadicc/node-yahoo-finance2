@@ -330,7 +330,7 @@ Please see if anyone has reported this previously:
 
   ${pkg.repository}/issues?q=is%3Aissue+${title}
 
-or open a new issue (and mention the symbol):
+or open a new issue (and mention the symbol):  ${pkg.name} v${pkg.version}
 
   ${pkg.repository}/issues/new?labels=bug%2C+validation&template=validation.md&title=${title}
 
