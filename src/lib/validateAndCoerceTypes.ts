@@ -324,8 +324,9 @@ This may happen intermittently and you should catch errors appropriately.
 However:  1) if this recently started happening on every request for a symbol
 that used to work, Yahoo may have changed their API.  2) If this happens on
 every request for a symbol you've never used before, but not for other
-symbols, you've found an edge-case.  Please see if anyone has reported
-this previously:
+symbols, you've found an edge-case (OR, we may just be protecting you from
+"bad" data sometimes stored for e.g. misspelt symbols on Yahoo's side).
+Please see if anyone has reported this previously:
 
   ${pkg.repository}/issues?q=is%3Aissue+${title}
 
