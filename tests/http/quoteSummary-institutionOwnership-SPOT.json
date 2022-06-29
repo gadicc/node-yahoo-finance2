@@ -7,41 +7,53 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "x-yahoo-request-id": [
-        "5bts1k5g6s989"
+      "content-type": [
+        "application/json;charset=utf-8"
       ],
       "cache-control": [
-        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "269c0qthbp3ie"
+      ],
+      "x-yahoo-request-id": [
+        "269c0qthbp3ie"
+      ],
+      "x-request-id": [
+        "70d9be09-dc56-491a-9807-62934f71078d"
       ],
       "content-encoding": [
         "gzip"
       ],
-      "content-type": [
-        "application/json;charset=utf-8"
-      ],
-      "vary": [
-        "Origin"
-      ],
       "content-length": [
-        "856"
+        "971"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
       ],
       "date": [
-        "Wed, 07 Apr 2021 21:32:58 GMT"
-      ],
-      "age": [
-        "3"
+        "Wed, 29 Jun 2022 17:39:26 GMT"
       ],
       "server": [
         "ATS"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "connection": [
         "close"
@@ -61,229 +73,269 @@
         "result": [
           {
             "institutionOwnership": {
+              "maxAge": 1,
               "ownershipList": [
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
                   "organization": "Baillie Gifford and Company",
                   "pctHeld": {
-                    "raw": 0.116000004,
-                    "fmt": "11.60%"
+                    "raw": 0.1296,
+                    "fmt": "12.96%"
                   },
                   "position": {
-                    "raw": 20795970,
-                    "fmt": "20.8M",
-                    "longFmt": "20,795,970"
+                    "raw": 23228574,
+                    "fmt": "23.23M",
+                    "longFmt": "23,228,574"
                   },
                   "value": {
-                    "raw": 6543659920,
-                    "fmt": "6.54B",
-                    "longFmt": "6,543,659,920"
+                    "raw": 2227852617,
+                    "fmt": "2.23B",
+                    "longFmt": "2,227,852,617"
+                  },
+                  "pctChange": {
+                    "raw": 0.0493,
+                    "fmt": "4.93%"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
-                  },
-                  "organization": "Morgan Stanley",
-                  "pctHeld": {
-                    "raw": 0.0995,
-                    "fmt": "9.95%"
-                  },
-                  "position": {
-                    "raw": 17835062,
-                    "fmt": "17.84M",
-                    "longFmt": "17,835,062"
-                  },
-                  "value": {
-                    "raw": 5611980608,
-                    "fmt": "5.61B",
-                    "longFmt": "5,611,980,608"
-                  }
-                },
-                {
-                  "maxAge": 1,
-                  "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
                   "organization": "Price (T.Rowe) Associates Inc",
                   "pctHeld": {
-                    "raw": 0.0795,
-                    "fmt": "7.95%"
+                    "raw": 0.088999994,
+                    "fmt": "8.90%"
                   },
                   "position": {
-                    "raw": 14252970,
-                    "fmt": "14.25M",
-                    "longFmt": "14,252,970"
+                    "raw": 15947931,
+                    "fmt": "15.95M",
+                    "longFmt": "15,947,931"
                   },
                   "value": {
-                    "raw": 4484839540,
-                    "fmt": "4.48B",
-                    "longFmt": "4,484,839,540"
+                    "raw": 1529566120,
+                    "fmt": "1.53B",
+                    "longFmt": "1,529,566,120"
+                  },
+                  "pctChange": {
+                    "raw": -0.0095999995,
+                    "fmt": "-0.96%"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
-                  "organization": "Jennison Associates LLC",
+                  "organization": "Morgan Stanley",
                   "pctHeld": {
-                    "raw": 0.0337,
-                    "fmt": "3.37%"
+                    "raw": 0.0592,
+                    "fmt": "5.92%"
                   },
                   "position": {
-                    "raw": 6036247,
-                    "fmt": "6.04M",
-                    "longFmt": "6,036,247"
+                    "raw": 10618601,
+                    "fmt": "10.62M",
+                    "longFmt": "10,618,601"
                   },
                   "value": {
-                    "raw": 1899365481,
-                    "fmt": "1.9B",
-                    "longFmt": "1,899,365,481"
-                  }
-                },
-                {
-                  "maxAge": 1,
-                  "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
-                  },
-                  "organization": "Technology Crossover Management VIII, Ltd.",
-                  "pctHeld": {
-                    "raw": 0.0252,
-                    "fmt": "2.52%"
-                  },
-                  "position": {
-                    "raw": 4522840,
-                    "fmt": "4.52M",
-                    "longFmt": "4,522,840"
-                  },
-                  "value": {
-                    "raw": 1423156834,
-                    "fmt": "1.42B",
-                    "longFmt": "1,423,156,834"
-                  }
-                },
-                {
-                  "maxAge": 1,
-                  "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
-                  },
-                  "organization": "Blackrock Inc.",
-                  "pctHeld": {
-                    "raw": 0.0186,
-                    "fmt": "1.86%"
-                  },
-                  "position": {
-                    "raw": 3333572,
-                    "fmt": "3.33M",
-                    "longFmt": "3,333,572"
-                  },
-                  "value": {
-                    "raw": 1048941765,
-                    "fmt": "1.05B",
-                    "longFmt": "1,048,941,765"
-                  }
-                },
-                {
-                  "maxAge": 1,
-                  "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
-                  },
-                  "organization": "JP Morgan Chase & Company",
-                  "pctHeld": {
-                    "raw": 0.018,
-                    "fmt": "1.80%"
-                  },
-                  "position": {
-                    "raw": 3228803,
-                    "fmt": "3.23M",
-                    "longFmt": "3,228,803"
-                  },
-                  "value": {
-                    "raw": 1015975151,
+                    "raw": 1018430060,
                     "fmt": "1.02B",
-                    "longFmt": "1,015,975,151"
+                    "longFmt": "1,018,430,060"
+                  },
+                  "pctChange": {
+                    "raw": -0.1774,
+                    "fmt": "-17.74%"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
-                  },
-                  "organization": "Tiger Global Management, LLC",
-                  "pctHeld": {
-                    "raw": 0.0178,
-                    "fmt": "1.78%"
-                  },
-                  "position": {
-                    "raw": 3184013,
-                    "fmt": "3.18M",
-                    "longFmt": "3,184,013"
-                  },
-                  "value": {
-                    "raw": 1001881530,
-                    "fmt": "1B",
-                    "longFmt": "1,001,881,530"
-                  }
-                },
-                {
-                  "maxAge": 1,
-                  "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
                   "organization": "ARK Investment Management, LLC",
                   "pctHeld": {
-                    "raw": 0.013099999,
-                    "fmt": "1.31%"
+                    "raw": 0.024500001,
+                    "fmt": "2.45%"
                   },
                   "position": {
-                    "raw": 2356336,
-                    "fmt": "2.36M",
-                    "longFmt": "2,356,336"
+                    "raw": 4388330,
+                    "fmt": "4.39M",
+                    "longFmt": "4,388,330"
                   },
                   "value": {
-                    "raw": 741444685,
-                    "fmt": "741.44M",
-                    "longFmt": "741,444,685"
+                    "raw": 420884746,
+                    "fmt": "420.88M",
+                    "longFmt": "420,884,746"
+                  },
+                  "pctChange": {
+                    "raw": 0.093,
+                    "fmt": "9.30%"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
+                  },
+                  "organization": "Blackrock Inc.",
+                  "pctHeld": {
+                    "raw": 0.0226,
+                    "fmt": "2.26%"
+                  },
+                  "position": {
+                    "raw": 4046153,
+                    "fmt": "4.05M",
+                    "longFmt": "4,046,153"
+                  },
+                  "value": {
+                    "raw": 388066549,
+                    "fmt": "388.07M",
+                    "longFmt": "388,066,549"
+                  },
+                  "pctChange": {
+                    "raw": 0.0633,
+                    "fmt": "6.33%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
+                  },
+                  "organization": "Technology Crossover Management VIII, Ltd.",
+                  "pctHeld": {
+                    "raw": 0.0202,
+                    "fmt": "2.02%"
+                  },
+                  "position": {
+                    "raw": 3618272,
+                    "fmt": "3.62M",
+                    "longFmt": "3,618,272"
+                  },
+                  "value": {
+                    "raw": 347028480,
+                    "fmt": "347.03M",
+                    "longFmt": "347,028,480"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
                   "organization": "Alecta Pensionsforsakring, Omsesidigt",
                   "pctHeld": {
-                    "raw": 0.0128,
-                    "fmt": "1.28%"
+                    "raw": 0.014400001,
+                    "fmt": "1.44%"
                   },
                   "position": {
-                    "raw": 2285600,
-                    "fmt": "2.29M",
-                    "longFmt": "2,285,600"
+                    "raw": 2585600,
+                    "fmt": "2.59M",
+                    "longFmt": "2,585,600"
                   },
                   "value": {
-                    "raw": 719186896,
-                    "fmt": "719.19M",
-                    "longFmt": "719,186,896"
+                    "raw": 247984905,
+                    "fmt": "247.98M",
+                    "longFmt": "247,984,905"
+                  },
+                  "pctChange": {
+                    "raw": 0.0838,
+                    "fmt": "8.38%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
+                  },
+                  "organization": "Sumitomo Mitsui Trust Holdings, Inc.",
+                  "pctHeld": {
+                    "raw": 0.0119,
+                    "fmt": "1.19%"
+                  },
+                  "position": {
+                    "raw": 2131425,
+                    "fmt": "2.13M",
+                    "longFmt": "2,131,425"
+                  },
+                  "value": {
+                    "raw": 204424979,
+                    "fmt": "204.42M",
+                    "longFmt": "204,424,979"
+                  },
+                  "pctChange": {
+                    "raw": 1,
+                    "fmt": "100.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
+                  },
+                  "organization": "Nikko Asset Management Americas, Inc.",
+                  "pctHeld": {
+                    "raw": 0.0117,
+                    "fmt": "1.17%"
+                  },
+                  "position": {
+                    "raw": 2097799,
+                    "fmt": "2.1M",
+                    "longFmt": "2,097,799"
+                  },
+                  "value": {
+                    "raw": 201199909,
+                    "fmt": "201.2M",
+                    "longFmt": "201,199,909"
+                  },
+                  "pctChange": {
+                    "raw": 0.1096,
+                    "fmt": "10.96%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
+                  },
+                  "organization": "AMF Tjanstepension AB",
+                  "pctHeld": {
+                    "raw": 0.0112,
+                    "fmt": "1.12%"
+                  },
+                  "position": {
+                    "raw": 2000000,
+                    "fmt": "2M",
+                    "longFmt": "2,000,000"
+                  },
+                  "value": {
+                    "raw": 191820007,
+                    "fmt": "191.82M",
+                    "longFmt": "191,820,007"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
                   }
                 }
-              ],
-              "maxAge": 1
+              ]
             }
           }
         ],

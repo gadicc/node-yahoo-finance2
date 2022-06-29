@@ -7,41 +7,50 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "x-yahoo-request-id": [
-        "8bpv4ptg6s9as"
-      ],
-      "cache-control": [
-        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
-      ],
-      "content-encoding": [
-        "gzip"
-      ],
       "content-type": [
         "application/json;charset=utf-8"
       ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
       "vary": [
-        "Origin"
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "deirvadhbp3ij"
+      ],
+      "x-yahoo-request-id": [
+        "deirvadhbp3ij"
+      ],
+      "x-request-id": [
+        "18a65476-5896-4384-ac8e-a065ca789467"
       ],
       "content-length": [
-        "678"
+        "1818"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
       ],
       "date": [
-        "Wed, 07 Apr 2021 21:34:20 GMT"
-      ],
-      "age": [
-        "0"
+        "Wed, 29 Jun 2022 17:39:31 GMT"
       ],
       "server": [
         "ATS"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "connection": [
         "close"
@@ -63,30 +72,32 @@
             "summaryDetail": {
               "maxAge": 1,
               "priceHint": 4,
-              "previousClose": 1.1875074,
-              "open": 1.1873665,
-              "dayLow": 1.186521,
-              "dayHigh": 1.1918951,
-              "regularMarketPreviousClose": 1.1875074,
-              "regularMarketOpen": 1.1873665,
-              "regularMarketDayLow": 1.186521,
-              "regularMarketDayHigh": 1.1918951,
+              "previousClose": 1.0525208,
+              "open": 1.0525208,
+              "dayLow": 1.0447137,
+              "dayHigh": 1.0539628,
+              "regularMarketPreviousClose": 1.0525208,
+              "regularMarketOpen": 1.0525208,
+              "regularMarketDayLow": 1.0447137,
+              "regularMarketDayHigh": 1.0539628,
               "volume": 0,
               "regularMarketVolume": 0,
               "averageVolume": 0,
               "averageVolume10days": 0,
               "averageDailyVolume10Day": 0,
-              "bid": 1.1873665,
-              "ask": 1.186662,
+              "bid": 1.0448229,
+              "ask": 1.0442773,
               "bidSize": 0,
               "askSize": 0,
-              "fiftyTwoWeekLow": 1.0727657,
-              "fiftyTwoWeekHigh": 1.2350253,
-              "fiftyDayAverage": 1.195349,
-              "twoHundredDayAverage": 1.1966405,
+              "fiftyTwoWeekLow": 1.0351967,
+              "fiftyTwoWeekHigh": 1.1911001,
+              "fiftyDayAverage": 1.0599366,
+              "twoHundredDayAverage": 1.1120417,
               "currency": "USD",
               "fromCurrency": null,
+              "toCurrency": null,
               "lastMarket": null,
+              "coinMarketCapLink": null,
               "algorithm": null,
               "tradeable": false
             },
@@ -101,24 +112,25 @@
               "timeZoneFullName": "Europe/London",
               "timeZoneShortName": "BST",
               "uuid": "1c974a98-f49a-3294-a47a-52edc95109aa",
+              "messageBoardId": "finmb_EUR_X",
               "gmtOffSetMilliseconds": 3600000,
               "maxAge": 1
             },
             "price": {
               "maxAge": 1,
-              "regularMarketChangePercent": -0.00035611368,
-              "regularMarketChange": -0.00042283535,
-              "regularMarketTime": 1617831201,
+              "regularMarketChangePercent": -0.0073137283,
+              "regularMarketChange": -0.0076978207,
+              "regularMarketTime": 1656524321,
               "priceHint": 4,
-              "regularMarketPrice": 1.1870846,
-              "regularMarketDayHigh": 1.1918951,
-              "regularMarketDayLow": 1.186521,
+              "regularMarketPrice": 1.0448229,
+              "regularMarketDayHigh": 1.0539628,
+              "regularMarketDayLow": 1.0447137,
               "regularMarketVolume": 0,
               "averageDailyVolume10Day": 0,
               "averageDailyVolume3Month": 0,
-              "regularMarketPreviousClose": 1.1875074,
+              "regularMarketPreviousClose": 1.0525208,
               "regularMarketSource": "DELAYED",
-              "regularMarketOpen": 1.1873665,
+              "regularMarketOpen": 1.0525208,
               "exchange": "CCY",
               "exchangeName": "CCY",
               "exchangeDataDelayedBy": 0,
@@ -129,8 +141,10 @@
               "shortName": "EUR/USD",
               "longName": null,
               "currency": "USD",
+              "quoteSourceName": "Delayed Quote",
               "currencySymbol": "$",
               "fromCurrency": null,
+              "toCurrency": null,
               "lastMarket": null
             }
           }

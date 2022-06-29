@@ -7,41 +7,50 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "x-yahoo-request-id": [
-        "23ii4atg6s98a"
-      ],
-      "cache-control": [
-        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
-      ],
-      "content-encoding": [
-        "gzip"
-      ],
       "content-type": [
         "application/json;charset=utf-8"
       ],
       "vary": [
-        "Origin"
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "fijutbphbp3ie"
+      ],
+      "x-yahoo-request-id": [
+        "fijutbphbp3ie"
+      ],
+      "x-request-id": [
+        "a3c7b104-07b6-498a-bbc2-897441648a8f"
       ],
       "content-length": [
-        "263"
+        "404"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
       ],
       "date": [
-        "Wed, 07 Apr 2021 21:32:58 GMT"
-      ],
-      "age": [
-        "0"
+        "Wed, 29 Jun 2022 17:39:26 GMT"
       ],
       "server": [
         "ATS"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "connection": [
         "close"
@@ -61,31 +70,35 @@
         "result": [
           {
             "institutionOwnership": {
+              "maxAge": 1,
               "ownershipList": [
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
-                  "organization": "Gilder, Gagnon, Howe & Co.",
+                  "organization": "Gagnon Securities, LLC",
                   "pctHeld": {
-                    "raw": 0.0139,
-                    "fmt": "1.39%"
+                    "raw": 0.0001,
+                    "fmt": "0.01%"
                   },
                   "position": {
-                    "raw": 10411702,
-                    "fmt": "10.41M",
-                    "longFmt": "10,411,702"
+                    "raw": 44882,
+                    "fmt": "44.88k",
+                    "longFmt": "44,882"
                   },
                   "value": {
-                    "raw": 238115624,
-                    "fmt": "238.12M",
-                    "longFmt": "238,115,624"
+                    "raw": 35950482,
+                    "fmt": "35.95M",
+                    "longFmt": "35,950,482"
+                  },
+                  "pctChange": {
+                    "raw": 0.254,
+                    "fmt": "25.40%"
                   }
                 }
-              ],
-              "maxAge": 1
+              ]
             }
           }
         ],

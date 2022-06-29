@@ -7,41 +7,53 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "x-yahoo-request-id": [
-        "69g7m3hg6s98a"
-      ],
-      "cache-control": [
-        "max-age=1, stale-while-revalidate=15, stale-if-error=3600"
-      ],
-      "content-encoding": [
-        "gzip"
-      ],
       "content-type": [
         "application/json;charset=utf-8"
       ],
       "vary": [
-        "Origin"
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "csm4althbp3ie"
+      ],
+      "x-yahoo-request-id": [
+        "csm4althbp3ie"
+      ],
+      "x-request-id": [
+        "4202fad3-583f-4497-8755-267d17f5d500"
+      ],
+      "content-encoding": [
+        "gzip"
       ],
       "content-length": [
-        "860"
+        "903"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
       ],
       "date": [
-        "Wed, 07 Apr 2021 21:32:59 GMT"
-      ],
-      "age": [
-        "3"
+        "Wed, 29 Jun 2022 17:39:26 GMT"
       ],
       "server": [
         "ATS"
       ],
-      "x-frame-options": [
-        "SAMEORIGIN"
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
       ],
       "referrer-policy": [
         "no-referrer-when-downgrade"
       ],
-      "strict-transport-security": [
-        "max-age=15552000"
+      "x-frame-options": [
+        "SAMEORIGIN"
       ],
       "connection": [
         "close"
@@ -61,229 +73,269 @@
         "result": [
           {
             "institutionOwnership": {
+              "maxAge": 1,
               "ownershipList": [
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
-                  "organization": "Blackrock Inc.",
+                  "organization": "Goldman Sachs Group Inc",
                   "pctHeld": {
-                    "raw": 0.0323,
-                    "fmt": "3.23%"
+                    "raw": 0.0084,
+                    "fmt": "0.84%"
                   },
                   "position": {
-                    "raw": 87360674,
-                    "fmt": "87.36M",
-                    "longFmt": "87,360,674"
+                    "raw": 22711922,
+                    "fmt": "22.71M",
+                    "longFmt": "22,711,922"
                   },
                   "value": {
-                    "raw": 20331449660,
-                    "fmt": "20.33B",
-                    "longFmt": "20,331,449,660"
+                    "raw": 2620047335,
+                    "fmt": "2.62B",
+                    "longFmt": "2,620,047,335"
+                  },
+                  "pctChange": {
+                    "raw": -0.4278,
+                    "fmt": "-42.78%"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
-                  "organization": "Vanguard Group, Inc. (The)",
+                  "organization": "Primecap Management Company",
                   "pctHeld": {
-                    "raw": 0.0232,
-                    "fmt": "2.32%"
+                    "raw": 0.0064,
+                    "fmt": "0.64%"
                   },
                   "position": {
-                    "raw": 62656838,
-                    "fmt": "62.66M",
-                    "longFmt": "62,656,838"
+                    "raw": 17358547,
+                    "fmt": "17.36M",
+                    "longFmt": "17,358,547"
                   },
                   "value": {
-                    "raw": 14582125907,
-                    "fmt": "14.58B",
-                    "longFmt": "14,582,125,907"
+                    "raw": 2002481992,
+                    "fmt": "2B",
+                    "longFmt": "2,002,481,992"
+                  },
+                  "pctChange": {
+                    "raw": -0.0015,
+                    "fmt": "-0.15%"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
+                  },
+                  "organization": "Fisher Asset Management, LLC",
+                  "pctHeld": {
+                    "raw": 0.0053,
+                    "fmt": "0.53%"
+                  },
+                  "position": {
+                    "raw": 14445021,
+                    "fmt": "14.45M",
+                    "longFmt": "14,445,021"
+                  },
+                  "value": {
+                    "raw": 1666377631,
+                    "fmt": "1.67B",
+                    "longFmt": "1,666,377,631"
+                  },
+                  "pctChange": {
+                    "raw": 0.018099999,
+                    "fmt": "1.81%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
+                  },
+                  "organization": "HSBC Holdings Plc",
+                  "pctHeld": {
+                    "raw": 0.005,
+                    "fmt": "0.50%"
+                  },
+                  "position": {
+                    "raw": 13608712,
+                    "fmt": "13.61M",
+                    "longFmt": "13,608,712"
+                  },
+                  "value": {
+                    "raw": 1569901024,
+                    "fmt": "1.57B",
+                    "longFmt": "1,569,901,024"
+                  },
+                  "pctChange": {
+                    "raw": -0.1254,
+                    "fmt": "-12.54%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
                   "organization": "Price (T.Rowe) Associates Inc",
                   "pctHeld": {
-                    "raw": 0.0215,
-                    "fmt": "2.15%"
+                    "raw": 0.0049,
+                    "fmt": "0.49%"
                   },
                   "position": {
-                    "raw": 58101878,
-                    "fmt": "58.1M",
-                    "longFmt": "58,101,878"
+                    "raw": 13287616,
+                    "fmt": "13.29M",
+                    "longFmt": "13,287,616"
                   },
                   "value": {
-                    "raw": 13522050066,
-                    "fmt": "13.52B",
-                    "longFmt": "13,522,050,066"
+                    "raw": 1532859389,
+                    "fmt": "1.53B",
+                    "longFmt": "1,532,859,389"
+                  },
+                  "pctChange": {
+                    "raw": -0.080699995,
+                    "fmt": "-8.07%"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
-                  "organization": "State Street Corporation",
+                  "organization": "E Fund Management Co., Ltd.",
                   "pctHeld": {
-                    "raw": 0.012999999,
-                    "fmt": "1.30%"
+                    "raw": 0.0045,
+                    "fmt": "0.45%"
                   },
                   "position": {
-                    "raw": 35287693,
-                    "fmt": "35.29M",
-                    "longFmt": "35,287,693"
+                    "raw": 12150324,
+                    "fmt": "12.15M",
+                    "longFmt": "12,150,324"
                   },
                   "value": {
-                    "raw": 8212504791,
-                    "fmt": "8.21B",
-                    "longFmt": "8,212,504,791"
+                    "raw": 1401661384,
+                    "fmt": "1.4B",
+                    "longFmt": "1,401,661,384"
+                  },
+                  "pctChange": {
+                    "raw": 0.3134,
+                    "fmt": "31.34%"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
-                  "organization": "Baillie Gifford and Company",
+                  "organization": "Dodge & Cox Inc",
                   "pctHeld": {
-                    "raw": 0.0093,
-                    "fmt": "0.93%"
+                    "raw": 0.0044,
+                    "fmt": "0.44%"
                   },
                   "position": {
-                    "raw": 25069408,
-                    "fmt": "25.07M",
-                    "longFmt": "25,069,408"
+                    "raw": 11920270,
+                    "fmt": "11.92M",
+                    "longFmt": "11,920,270"
                   },
                   "value": {
-                    "raw": 5834403323,
-                    "fmt": "5.83B",
-                    "longFmt": "5,834,403,323"
+                    "raw": 1375122354,
+                    "fmt": "1.38B",
+                    "longFmt": "1,375,122,354"
+                  },
+                  "pctChange": {
+                    "raw": 0.3394,
+                    "fmt": "33.94%"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
-                  "organization": "Norges Bank Investment Management",
+                  "organization": "FIL LTD",
                   "pctHeld": {
-                    "raw": 0.0091,
-                    "fmt": "0.91%"
+                    "raw": 0.0039,
+                    "fmt": "0.39%"
                   },
                   "position": {
-                    "raw": 24548114,
-                    "fmt": "24.55M",
-                    "longFmt": "24,548,114"
+                    "raw": 10438390,
+                    "fmt": "10.44M",
+                    "longFmt": "10,438,390"
                   },
                   "value": {
-                    "raw": 5713082571,
-                    "fmt": "5.71B",
-                    "longFmt": "5,713,082,571"
+                    "raw": 1204172676,
+                    "fmt": "1.2B",
+                    "longFmt": "1,204,172,676"
+                  },
+                  "pctChange": {
+                    "raw": 0.1415,
+                    "fmt": "14.15%"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
                   "organization": "FMR, LLC",
                   "pctHeld": {
-                    "raw": 0.0089,
-                    "fmt": "0.89%"
+                    "raw": 0.0037,
+                    "fmt": "0.37%"
                   },
                   "position": {
-                    "raw": 23982428,
-                    "fmt": "23.98M",
-                    "longFmt": "23,982,428"
+                    "raw": 9945857,
+                    "fmt": "9.95M",
+                    "longFmt": "9,945,857"
                   },
                   "value": {
-                    "raw": 5581430468,
-                    "fmt": "5.58B",
-                    "longFmt": "5,581,430,468"
+                    "raw": 1147354069,
+                    "fmt": "1.15B",
+                    "longFmt": "1,147,354,069"
+                  },
+                  "pctChange": {
+                    "raw": 0.2694,
+                    "fmt": "26.94%"
                   }
                 },
                 {
                   "maxAge": 1,
                   "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1648684800,
+                    "fmt": "2022-03-31"
                   },
-                  "organization": "Schroder Investment Management Group",
+                  "organization": "Morgan Stanley",
                   "pctHeld": {
-                    "raw": 0.0083,
-                    "fmt": "0.83%"
+                    "raw": 0.0037,
+                    "fmt": "0.37%"
                   },
                   "position": {
-                    "raw": 22372373,
-                    "fmt": "22.37M",
-                    "longFmt": "22,372,373"
+                    "raw": 10123809,
+                    "fmt": "10.12M",
+                    "longFmt": "10,123,809"
                   },
                   "value": {
-                    "raw": 5206722368,
-                    "fmt": "5.21B",
-                    "longFmt": "5,206,722,368"
-                  }
-                },
-                {
-                  "maxAge": 1,
-                  "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
+                    "raw": 1167882612,
+                    "fmt": "1.17B",
+                    "longFmt": "1,167,882,612"
                   },
-                  "organization": "Invesco Ltd.",
-                  "pctHeld": {
-                    "raw": 0.007900001,
-                    "fmt": "0.79%"
-                  },
-                  "position": {
-                    "raw": 21378030,
-                    "fmt": "21.38M",
-                    "longFmt": "21,378,030"
-                  },
-                  "value": {
-                    "raw": 4975308921,
-                    "fmt": "4.98B",
-                    "longFmt": "4,975,308,921"
-                  }
-                },
-                {
-                  "maxAge": 1,
-                  "reportDate": {
-                    "raw": 1609372800,
-                    "fmt": "2020-12-31"
-                  },
-                  "organization": "Wellington Management Group, LLP",
-                  "pctHeld": {
-                    "raw": 0.0070999996,
-                    "fmt": "0.71%"
-                  },
-                  "position": {
-                    "raw": 19214305,
-                    "fmt": "19.21M",
-                    "longFmt": "19,214,305"
-                  },
-                  "value": {
-                    "raw": 4471745202,
-                    "fmt": "4.47B",
-                    "longFmt": "4,471,745,202"
+                  "pctChange": {
+                    "raw": 0.0117,
+                    "fmt": "1.17%"
                   }
                 }
-              ],
-              "maxAge": 1
+              ]
             }
           }
         ],
