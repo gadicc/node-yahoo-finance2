@@ -17,34 +17,34 @@
         "public, max-age=120, stale-while-revalidate=180"
       ],
       "y-rid": [
-        "b964k99gh7rcv"
+        "7mvce09hbql95"
       ],
       "x-yahoo-request-id": [
-        "b964k99gh7rcv"
+        "7mvce09hbql95"
       ],
       "x-request-id": [
-        "a67295b1-7a9b-4c06-bc40-b8813d9e46f2"
+        "6235e1ba-7e2f-4397-b41a-cdbb420e548f"
       ],
       "content-encoding": [
         "gzip"
       ],
       "content-length": [
-        "1048"
+        "1646"
       ],
       "x-envoy-upstream-service-time": [
-        "44"
+        "99"
       ],
       "date": [
-        "Wed, 11 Aug 2021 15:32:46 GMT"
+        "Thu, 30 Jun 2022 07:47:49 GMT"
       ],
       "server": [
         "ATS"
       ],
       "x-envoy-decorator-operation": [
-        "finance-search--mtls-production-bf1.finance-k8s.svc.yahoo.local:4080/*"
+        "finance-search--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
       ],
       "age": [
-        "1"
+        "0"
       ],
       "strict-transport-security": [
         "max-age=15552000"
@@ -78,9 +78,13 @@
           "quoteType": "EQUITY",
           "symbol": "GOOG",
           "index": "quotes",
-          "score": 13693400,
+          "score": 19641500,
           "typeDisp": "Equity",
           "longname": "Alphabet Inc.",
+          "exchDisp": "NASDAQ",
+          "sector": "Communication Services",
+          "industry": "Internet Content & Information",
+          "dispSecIndFlag": true,
           "isYahooFinance": true
         },
         {
@@ -89,9 +93,37 @@
           "quoteType": "EQUITY",
           "symbol": "GOOGL",
           "index": "quotes",
-          "score": 98799,
+          "score": 131633,
           "typeDisp": "Equity",
           "longname": "Alphabet Inc.",
+          "exchDisp": "NASDAQ",
+          "sector": "Communication Services",
+          "industry": "Internet Content & Information",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "CCC",
+          "shortname": "Google tokenized stock FTX USD",
+          "quoteType": "CRYPTOCURRENCY",
+          "symbol": "GOOGL-USD",
+          "index": "quotes",
+          "score": 20407,
+          "typeDisp": "Cryptocurrency",
+          "exchDisp": "CCC",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NEO",
+          "shortname": "ALPHABET INC. CDR (CAD HEDGED)",
+          "quoteType": "EQUITY",
+          "symbol": "GOOG.NE",
+          "index": "quotes",
+          "score": 20113,
+          "typeDisp": "Equity",
+          "longname": "Alphabet Inc.",
+          "exchDisp": "NEO",
+          "sector": "Communication Services",
+          "industry": "Internet Content & Information",
           "isYahooFinance": true
         },
         {
@@ -100,92 +132,120 @@
           "quoteType": "EQUITY",
           "symbol": "GOOGL.MI",
           "index": "quotes",
-          "score": 20254,
+          "score": 20066,
           "typeDisp": "Equity",
+          "exchDisp": "Milan",
+          "sector": "Communication Services",
+          "industry": "Internet Content & Information",
           "isYahooFinance": true
         },
         {
-          "exchange": "MEX",
-          "shortname": "ALPHABET INC",
-          "quoteType": "EQUITY",
-          "symbol": "GOOGL.MX",
-          "index": "quotes",
-          "score": 20090,
-          "typeDisp": "Equity",
-          "longname": "Alphabet Inc.",
-          "isYahooFinance": true
-        },
-        {
-          "exchange": "BUE",
-          "shortname": "ALPHABET INC",
-          "quoteType": "EQUITY",
-          "symbol": "GOOGL.BA",
-          "index": "quotes",
-          "score": 20046,
-          "typeDisp": "Equity",
-          "longname": "Alphabet Inc.",
-          "isYahooFinance": true
-        },
-        {
-          "index": "bfe08d459a84ccd622b7fa0f11b396ec",
-          "name": "Adometry By Google",
-          "permalink": "adometry",
+          "index": "26e6817312a98f234d2fcf80fa1abc1c",
+          "name": "Google Cloud",
+          "permalink": "google-cloud-platform",
           "isYahooFinance": false
         },
         {
-          "index": "c791e9f0f3bb4b3c8a0530b77123014e",
-          "name": "Googut Wine & Spirits",
-          "permalink": "googut-wine-spirits-014e",
+          "index": "5167b830a941ed08d275f74473d13e91",
+          "name": "Google for Startups",
+          "permalink": "google-for-entrepreneurs",
           "isYahooFinance": false
         }
       ],
       "news": [
         {
-          "uuid": "a088361d-7837-31df-be3b-1866de40a51a",
-          "title": "Google-Backed Duolingo Just Went Public. Here's What Investors Should Know",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/m/a088361d-7837-31df-be3b-1866de40a51a/google-backed-duolingo-just.html",
-          "providerPublishTime": 1628676600,
-          "type": "STORY"
+          "uuid": "54dd1927-bf27-3434-b7f3-adf6a4670550",
+          "title": "Google Phases Out Free G Suite For Small Business",
+          "publisher": "Investopedia",
+          "link": "https://finance.yahoo.com/m/54dd1927-bf27-3434-b7f3-adf6a4670550/google-phases-out-free-g.html",
+          "providerPublishTime": 1656553367,
+          "type": "STORY",
+          "relatedTickers": [
+            "GOOG",
+            "GOOGL"
+          ]
         },
         {
-          "uuid": "e75104b4-1563-49fe-9085-b58b970574ab",
-          "title": "Samsung and Google take aim at the Apple Watch with the Galaxy Watch4 and Watch4 Classic",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/news/samsung-galaxy-watch4-watch4-classic-versus-apple-watch-140046960.html",
-          "providerPublishTime": 1628690446,
-          "type": "STORY"
+          "uuid": "24a7616e-1931-3a5a-b9b9-ea436ca2b7c2",
+          "title": "UPDATE 1-Google targeted in fresh EU consumer groups' privacy complaints",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/1-google-targeted-fresh-eu-065047309.html",
+          "providerPublishTime": 1656571847,
+          "type": "STORY",
+          "relatedTickers": [
+            "GOOGL"
+          ]
         },
         {
-          "uuid": "dff4d146-6d73-3b3a-ade7-33aa0558fa4c",
-          "title": "Snowflake Partners With The Trade Desk -- Could Snowflake Create a Big Data Digital Advertising Moat?",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/m/dff4d146-6d73-3b3a-ade7-33aa0558fa4c/snowflake-partners-with-the.html",
-          "providerPublishTime": 1628690400,
-          "type": "STORY"
+          "uuid": "b7977a5c-869a-3cbf-91c9-abc4ed58e5b0",
+          "title": "H&M Is About to Go Big With AI",
+          "publisher": "WWD",
+          "link": "https://finance.yahoo.com/m/b7977a5c-869a-3cbf-91c9-abc4ed58e5b0/h%26m-is-about-to-go-big-with%C2%A0ai.html",
+          "providerPublishTime": 1656565210,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/oOj8Sc1lBARJNP35fY2.3w--~B/aD00MTQ3O3c9NjIyMTthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/uu/api/res/1.2/GRBQqx3NZNFBk23yOPazbA--~B/aD00MTQ3O3c9NjIyMTthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/wwd_finance_675/c117623300825bee1cfa3b8d028fc752",
+                "width": 6221,
+                "height": 4147,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/m0VmjsiVY6fVZ7W0FYaz8w--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/uu/api/res/1.2/GRBQqx3NZNFBk23yOPazbA--~B/aD00MTQ3O3c9NjIyMTthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/wwd_finance_675/c117623300825bee1cfa3b8d028fc752",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "GOOGL"
+          ]
         },
         {
-          "uuid": "21af4f65-6ea5-4687-9dca-91bdb048550e",
-          "title": "Samsung debuts $1,799 Galaxy Z Fold3 with a more durable screen and stylus support",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/news/samsung-galaxy-z-fold3-1799-140037490.html",
-          "providerPublishTime": 1628690437,
-          "type": "STORY"
+          "uuid": "bb191b0d-fb57-3e20-8779-293d6b9e67ed",
+          "title": "European, U.S. Groups Plan Salvo of Privacy Complaints Against Google",
+          "publisher": "The Wall Street Journal",
+          "link": "https://finance.yahoo.com/m/bb191b0d-fb57-3e20-8779-293d6b9e67ed/european%2C-u.s.-groups-plan.html",
+          "providerPublishTime": 1656540060,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/EPgfPEGVsnZcqK.TxjGJiQ--~B/aD02NDA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/uu/api/res/1.2/79YV224ug5fAKgc7w0iP.w--~B/aD02NDA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/wsj.com/37eec2ddb310934c7f0bbd6bd2cb229d",
+                "width": 1280,
+                "height": 640,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/MzK5xM6qINNwZTFCuAYO.g--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/uu/api/res/1.2/79YV224ug5fAKgc7w0iP.w--~B/aD02NDA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/wsj.com/37eec2ddb310934c7f0bbd6bd2cb229d",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "GOOG",
+            "GOOGL"
+          ]
         }
       ],
       "nav": [],
       "lists": [],
       "researchReports": [],
       "screenerFieldResults": [],
-      "totalTime": 42,
-      "timeTakenForQuotes": 423,
-      "timeTakenForNews": 600,
+      "totalTime": 96,
+      "timeTakenForQuotes": 455,
+      "timeTakenForNews": 700,
       "timeTakenForAlgowatchlist": 400,
       "timeTakenForPredefinedScreener": 400,
       "timeTakenForCrunchbase": 400,
       "timeTakenForNav": 400,
       "timeTakenForResearchReports": 0,
-      "timeTakenForScreenerField": 0
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0
     }
   }
 }
