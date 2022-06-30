@@ -18,6 +18,9 @@ export interface SearchQuoteYahoo {
   newListingDate?: Date; // "2021-02-16"
   prevName?: string;
   nameChangeDate?: Date;
+  sector?: string; // "Industrials"
+  industry?: string; // "Building Products & Equipment"
+  dispSecIndFlag?: boolean; // true
 }
 export interface SearchQuoteYahooEquity extends SearchQuoteYahoo {
   quoteType: "EQUITY";
@@ -69,6 +72,15 @@ export interface SearchNews {
   link: string; // "https://finance.yahoo.com/m/9aff624a-e84c-35f3-9c23-db39852006dc/analyst-report%3A-alibaba-group.html"
   providerPublishTime: Date; // coerced to new Date(1611286342 * 1000)
   type: string; // "STORY"    TODO "STORY" | ???
+  thumbnail?: { resolutions: SearchNewsThumbnailResolution[] };
+  relatedTickers?: string[]; // [ "AAPL" ]
+}
+
+export interface SearchNewsThumbnailResolution {
+  url: string;
+  width: number;
+  height: number;
+  tag: string;
 }
 
 export interface SearchResult {

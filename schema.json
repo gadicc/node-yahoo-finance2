@@ -7760,6 +7760,15 @@
         },
         "nameChangeDate": {
           "yahooFinanceType": "date"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "dispSecIndFlag": {
+          "type": "boolean"
         }
       },
       "required": [
@@ -7807,6 +7816,15 @@
         },
         "nameChangeDate": {
           "yahooFinanceType": "date"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "dispSecIndFlag": {
+          "type": "boolean"
         },
         "quoteType": {
           "type": "string",
@@ -7865,6 +7883,15 @@
         "nameChangeDate": {
           "yahooFinanceType": "date"
         },
+        "sector": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "dispSecIndFlag": {
+          "type": "boolean"
+        },
         "quoteType": {
           "type": "string",
           "const": "OPTION"
@@ -7921,6 +7948,15 @@
         },
         "nameChangeDate": {
           "yahooFinanceType": "date"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "dispSecIndFlag": {
+          "type": "boolean"
         },
         "quoteType": {
           "type": "string",
@@ -7979,6 +8015,15 @@
         "nameChangeDate": {
           "yahooFinanceType": "date"
         },
+        "sector": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "dispSecIndFlag": {
+          "type": "boolean"
+        },
         "quoteType": {
           "type": "string",
           "const": "MUTUALFUND"
@@ -8035,6 +8080,15 @@
         },
         "nameChangeDate": {
           "yahooFinanceType": "date"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "dispSecIndFlag": {
+          "type": "boolean"
         },
         "quoteType": {
           "type": "string",
@@ -8093,6 +8147,15 @@
         "nameChangeDate": {
           "yahooFinanceType": "date"
         },
+        "sector": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "dispSecIndFlag": {
+          "type": "boolean"
+        },
         "quoteType": {
           "type": "string",
           "const": "CURRENCY"
@@ -8150,6 +8213,15 @@
         "nameChangeDate": {
           "yahooFinanceType": "date"
         },
+        "sector": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "dispSecIndFlag": {
+          "type": "boolean"
+        },
         "quoteType": {
           "type": "string",
           "const": "CRYPTOCURRENCY"
@@ -8206,6 +8278,15 @@
         },
         "nameChangeDate": {
           "yahooFinanceType": "date"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "dispSecIndFlag": {
+          "type": "boolean"
         },
         "quoteType": {
           "type": "string",
@@ -8270,6 +8351,27 @@
         },
         "type": {
           "type": "string"
+        },
+        "thumbnail": {
+          "type": "object",
+          "properties": {
+            "resolutions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SearchNewsThumbnailResolution"
+              }
+            }
+          },
+          "required": [
+            "resolutions"
+          ],
+          "additionalProperties": false
+        },
+        "relatedTickers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "required": [
@@ -8280,6 +8382,30 @@
         "providerPublishTime",
         "type"
       ]
+    },
+    "SearchNewsThumbnailResolution": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "yahooFinanceType": "number"
+        },
+        "height": {
+          "yahooFinanceType": "number"
+        },
+        "tag": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "width",
+        "height",
+        "tag"
+      ],
+      "additionalProperties": false
     },
     "SearchResult": {
       "type": "object",
