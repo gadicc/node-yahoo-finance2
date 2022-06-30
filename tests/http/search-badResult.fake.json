@@ -1,0 +1,288 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=AAPL"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=120, stale-while-revalidate=180"
+      ],
+      "y-rid": [
+        "199bbglhbqlud"
+      ],
+      "x-yahoo-request-id": [
+        "199bbglhbqlud"
+      ],
+      "x-request-id": [
+        "b8d551cd-c66c-4831-afe1-54e2a2877eea"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1930"
+      ],
+      "x-envoy-upstream-service-time": [
+        "81"
+      ],
+      "date": [
+        "Thu, 30 Jun 2022 07:59:09 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-search--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 11,
+      "quotes": [
+        {
+          "exchange": "NMS",
+          "shortname": "Apple Inc.",
+          "quoteType": "EQUITY",
+          "symbol": "AAPL",
+          "index": "quotes",
+          "score": "BADRESULT (should be a number): 53120200",
+          "typeDisp": "Equity",
+          "longname": "Apple Inc.",
+          "exchDisp": "NASDAQ",
+          "sector": "Technology",
+          "industry": "Consumer Electronics",
+          "dispSecIndFlag": true,
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NEO",
+          "shortname": "APPLE CDR (CAD HEDGED)",
+          "quoteType": "EQUITY",
+          "symbol": "AAPL.NE",
+          "index": "quotes",
+          "score": 20629,
+          "typeDisp": "Equity",
+          "longname": "Apple Inc.",
+          "exchDisp": "NEO",
+          "sector": "Technology",
+          "industry": "Consumer Electronics",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "BUE",
+          "shortname": "APPLE INC",
+          "quoteType": "EQUITY",
+          "symbol": "AAPL.BA",
+          "index": "quotes",
+          "score": 20195,
+          "typeDisp": "Equity",
+          "longname": "Apple Inc.",
+          "exchDisp": "Buenos Aires",
+          "sector": "Technology",
+          "industry": "Consumer Electronics",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "AAPL Sep 2022 150.000 call",
+          "quoteType": "OPTION",
+          "symbol": "AAPL220916C00150000",
+          "index": "quotes",
+          "score": 20157,
+          "typeDisp": "Option",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "MEX",
+          "shortname": "APPLE INC",
+          "quoteType": "EQUITY",
+          "symbol": "AAPL.MX",
+          "index": "quotes",
+          "score": 20146,
+          "typeDisp": "Equity",
+          "longname": "Apple Inc.",
+          "exchDisp": "Mexico",
+          "sector": "Technology",
+          "industry": "Consumer Electronics",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "AAPL Jul 2022 140.000 call",
+          "quoteType": "OPTION",
+          "symbol": "AAPL220715C00140000",
+          "index": "quotes",
+          "score": 20107,
+          "typeDisp": "Option",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "index": "78ddc07626ff4bbcae663e88514c23a0",
+          "name": "AAPlasma",
+          "permalink": "aaplasma",
+          "isYahooFinance": false
+        }
+      ],
+      "news": [
+        {
+          "uuid": "53e36e5e-9d29-3e66-9ee6-f5348b57b4d3",
+          "title": "Here is What to Know Beyond Why Apple Inc. (AAPL) is a Trending Stock",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/news/know-beyond-why-apple-inc-130001873.html",
+          "providerPublishTime": 1656507601,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/aZJISTBDbLQprkAivv8_Zw--~B/aD04NzY7dz05MDA7YXBwaWQ9eXRhY2h5b24-/https://s.yimg.com/uu/api/res/1.2/UYup8AGIrn99rMsHiTllqA--~B/aD04NzY7dz05MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/zacks.com/d0d4ab152198da2f423d92da8a7d22ee",
+                "width": 900,
+                "height": 876,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/gzj3SiD9eD0uG5FsmaII7Q--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/uu/api/res/1.2/UYup8AGIrn99rMsHiTllqA--~B/aD04NzY7dz05MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/zacks.com/d0d4ab152198da2f423d92da8a7d22ee",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "AAPL"
+          ]
+        },
+        {
+          "uuid": "c4f3da72-0817-3b9b-b33b-a20b2191a92d",
+          "title": "The Growing Relevance of Leadership Skills for Physicians: AAPL Releases its 100th Podcast Featuring Luminaries in Healthcare",
+          "publisher": "PR Newswire",
+          "link": "https://finance.yahoo.com/news/growing-relevance-leadership-skills-physicians-135100027.html",
+          "providerPublishTime": 1656510660,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/cizkiLKw24X6deJ_Ve.USQ--~B/aD0xNjt3PTE2O2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/uu/api/res/1.2/ExnX5DMIX7Kuppt14biYtA--~B/aD0xNjt3PTE2O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/prnewswire.com/621421eded35bd9ffa7fc1b9773a8a0d",
+                "width": 16,
+                "height": 16,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/ugYPijGtv7gsUVNDjSq2ug--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/uu/api/res/1.2/ExnX5DMIX7Kuppt14biYtA--~B/aD0xNjt3PTE2O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/prnewswire.com/621421eded35bd9ffa7fc1b9773a8a0d",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          }
+        },
+        {
+          "uuid": "69f15ce2-a482-30a5-a084-3e36b74b0224",
+          "title": "FCC’s Commissioner Carr Wants TikTok Yanked From Apple and Google App Stores",
+          "publisher": "Barrons.com",
+          "link": "https://finance.yahoo.com/m/69f15ce2-a482-30a5-a084-3e36b74b0224/fcc%E2%80%99s-commissioner-carr-wants.html",
+          "providerPublishTime": 1656574020,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/aCqngmNA0vEvOCEoUYG1cA--~B/aD02NDA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/uu/api/res/1.2/lQnuskf.AqifCmWg.X6swQ--~B/aD02NDA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/Barrons.com/236959c81a5837467eb88857c52f006b",
+                "width": 1280,
+                "height": 640,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/DGZ9YsRrOArV4tx706fiiw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/uu/api/res/1.2/lQnuskf.AqifCmWg.X6swQ--~B/aD02NDA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/Barrons.com/236959c81a5837467eb88857c52f006b",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "AAPL",
+            "RMPL-P",
+            "TWTR"
+          ]
+        },
+        {
+          "uuid": "39bad960-403a-3d87-8ebc-c111523f49e3",
+          "title": "Samsung Is First to Start Mass Production of 3-Nanometer Chips",
+          "publisher": "Bloomberg",
+          "link": "https://finance.yahoo.com/news/samsung-first-start-mass-production-051606035.html",
+          "providerPublishTime": 1656566166,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/P73UBQG169D2_zZilCSXJg--~B/aD03OTg7dz0xMjk2O2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/uu/api/res/1.2/g1lb4qYYxEbM1lgqxe5apg--~B/aD03OTg7dz0xMjk2O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/bloomberg_markets_842/aa6ab8d544277d3a25d8e23cf382a325",
+                "width": 1296,
+                "height": 798,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/.0wCst1eW6393bSIdpWmZA--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/uu/api/res/1.2/g1lb4qYYxEbM1lgqxe5apg--~B/aD03OTg7dz0xMjk2O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/bloomberg_markets_842/aa6ab8d544277d3a25d8e23cf382a325",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "SSNLF",
+            "TSM",
+            "AAPL"
+          ]
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 78,
+      "timeTakenForQuotes": 454,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0
+    }
+  }
+}
