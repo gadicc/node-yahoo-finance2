@@ -20,7 +20,8 @@ function itValidates(
       // "Got {}->null for 'number', did you want 'number | null' ?"
       "CMCOM.AS",
       "CRM",
-      "ADA-USD", // has summaryProfile.twitter (#418)
+      "ADA-USD", // has summaryProfile.twitter (#418),
+      "EREGL.IS", // null in incomeStatementHistory/operatingIncome, in some .IS (#517)
     ],
   });
 

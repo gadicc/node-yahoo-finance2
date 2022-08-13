@@ -1,0 +1,91 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EREGL.IS?formatted=false&modules=calendarEvents"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "3gutesphfebml"
+      ],
+      "x-yahoo-request-id": [
+        "3gutesphfebml"
+      ],
+      "x-request-id": [
+        "95dcd796-a36d-4719-a845-5d45b57cffec"
+      ],
+      "content-length": [
+        "234"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sat, 13 Aug 2022 04:55:49 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "calendarEvents": {
+              "maxAge": 1,
+              "earnings": {
+                "earningsDate": [
+                  1666616400,
+                  1666962000
+                ],
+                "revenueAverage": 34819600000,
+                "revenueLow": 33271700000,
+                "revenueHigh": 36367400000
+              },
+              "exDividendDate": 1647907200
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

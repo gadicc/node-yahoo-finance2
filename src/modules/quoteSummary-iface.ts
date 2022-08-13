@@ -563,7 +563,7 @@ export interface IncomeStatementHistoryElement {
   nonRecurring: number | null;
   otherOperatingExpenses: number | null;
   totalOperatingExpenses: number;
-  operatingIncome: number;
+  operatingIncome: number | null; // Example of null in EREGL.IS (#517)
   totalOtherIncomeExpenseNet: number;
   ebit: number;
   interestExpense: number | null;

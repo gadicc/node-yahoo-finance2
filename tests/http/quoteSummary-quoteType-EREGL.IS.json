@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EREGL.IS?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "akcvu19hfebms"
+      ],
+      "x-yahoo-request-id": [
+        "akcvu19hfebms"
+      ],
+      "x-request-id": [
+        "12ce340a-33b0-48b5-8b8d-e397c3ba2681"
+      ],
+      "content-length": [
+        "455"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Sat, 13 Aug 2022 04:55:56 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "IST",
+              "quoteType": "EQUITY",
+              "symbol": "EREGL.IS",
+              "underlyingSymbol": "EREGL.IS",
+              "shortName": "EREGLI DEMIR CELIK",
+              "longName": "Eregli Demir ve Çelik Fabrikalari T.A.S.",
+              "firstTradeDateEpochUtc": 957940200,
+              "timeZoneFullName": "Europe/Istanbul",
+              "timeZoneShortName": "TRST",
+              "uuid": "00a370af-7294-3072-9550-c21ecabf91f4",
+              "messageBoardId": "finmb_879694",
+              "gmtOffSetMilliseconds": 10800000,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

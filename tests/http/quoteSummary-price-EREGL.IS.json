@@ -1,0 +1,108 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EREGL.IS?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "77o39cphfebms"
+      ],
+      "x-yahoo-request-id": [
+        "77o39cphfebms"
+      ],
+      "x-request-id": [
+        "e4f31519-011a-4761-8c6d-dc2d06cd13c6"
+      ],
+      "content-length": [
+        "794"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Sat, 13 Aug 2022 04:55:56 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": -0.015373883,
+              "regularMarketChange": -0.44000053,
+              "regularMarketTime": 1660316982,
+              "priceHint": 2,
+              "regularMarketPrice": 28.18,
+              "regularMarketDayHigh": 28.72,
+              "regularMarketDayLow": 28.06,
+              "regularMarketVolume": 43312410,
+              "regularMarketPreviousClose": 28.62,
+              "regularMarketSource": "DELAYED",
+              "regularMarketOpen": 28.68,
+              "exchange": "IST",
+              "exchangeName": "Istanbul",
+              "exchangeDataDelayedBy": 15,
+              "marketState": "CLOSED",
+              "quoteType": "EQUITY",
+              "symbol": "EREGL.IS",
+              "underlyingSymbol": null,
+              "shortName": "EREGLI DEMIR CELIK",
+              "longName": "Eregli Demir ve Çelik Fabrikalari T.A.S.",
+              "currency": "TRY",
+              "quoteSourceName": "Delayed Quote",
+              "currencySymbol": "₺",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "marketCap": 95591071744
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

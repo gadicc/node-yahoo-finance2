@@ -1,0 +1,110 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EREGL.IS?formatted=false&modules=defaultKeyStatistics"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "ep8rpadhfebmm"
+      ],
+      "x-yahoo-request-id": [
+        "ep8rpadhfebmm"
+      ],
+      "x-request-id": [
+        "37c8f4bc-90cc-4903-bfbb-fe094cd5c7da"
+      ],
+      "content-length": [
+        "822"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Sat, 13 Aug 2022 04:55:50 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "defaultKeyStatistics": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "enterpriseValue": 115002621952,
+              "profitMargins": 0.20506,
+              "floatShares": 1775025133,
+              "sharesOutstanding": 3392160000,
+              "heldPercentInsiders": 0.61365,
+              "heldPercentInstitutions": 0.08274,
+              "beta": 0.987606,
+              "impliedSharesOutstanding": 0,
+              "category": null,
+              "bookValue": 23.138,
+              "priceToBook": 1.2179099,
+              "fundFamily": null,
+              "legalType": null,
+              "lastFiscalYearEnd": 1640908800,
+              "nextFiscalYearEnd": 1703980800,
+              "mostRecentQuarter": 1656547200,
+              "earningsQuarterlyGrowth": 1.086,
+              "netIncomeToCommon": 21991407616,
+              "trailingEps": 5.25,
+              "forwardEps": 5,
+              "lastSplitFactor": "113:100",
+              "lastSplitDate": 1365724800,
+              "enterpriseToRevenue": 1.072,
+              "enterpriseToEbitda": 3.079,
+              "52WeekChange": 0.4421699,
+              "SandP52WeekChange": -0.0445475,
+              "lastDividendValue": 4.45,
+              "lastDividendDate": 1647907200
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
