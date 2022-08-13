@@ -1,3 +1,11 @@
+## [2.3.5](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.4...v2.3.5) (2022-08-13)
+
+
+### Bug Fixes
+
+* **quoteSummary:** null operatingIncome (some .IS stocks; [#517](https://github.com/gadicc/node-yahoo-finance2/issues/517)) ([1b00e06](https://github.com/gadicc/node-yahoo-finance2/commit/1b00e06f3a1e54984515b008587beab8c1273f35))
+* **search:** add types for new fields ([714d891](https://github.com/gadicc/node-yahoo-finance2/commit/714d891e021375b2968180f24088db0fc8756e66))
+
 ## [2.3.4](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.3...v2.3.4) (2022-06-29)
 
 
