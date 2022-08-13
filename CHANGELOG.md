@@ -1,3 +1,10 @@
+## [2.3.6](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.5...v2.3.6) (2022-08-13)
+
+
+### Bug Fixes
+
+* **quoteSummary:** more incomeStatement nulls; THYAO.IS; fixes [#517](https://github.com/gadicc/node-yahoo-finance2/issues/517) ([46cb9eb](https://github.com/gadicc/node-yahoo-finance2/commit/46cb9eb5803ba2c628e7ba34856399bdf7212dd8))
+
 ## [2.3.5](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.4...v2.3.5) (2022-08-13)
 
 
