@@ -1,0 +1,117 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/THYAO.IS?formatted=false&modules=summaryDetail"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "bg0vka1hfekvf"
+      ],
+      "x-yahoo-request-id": [
+        "bg0vka1hfekvf"
+      ],
+      "x-request-id": [
+        "4b7ab646-a5b8-4b59-9acf-27e781264707"
+      ],
+      "content-length": [
+        "881"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Sat, 13 Aug 2022 07:34:07 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 61.4,
+              "open": 61.85,
+              "dayLow": 61.25,
+              "dayHigh": 63.35,
+              "regularMarketPreviousClose": 61.4,
+              "regularMarketOpen": 61.85,
+              "regularMarketDayLow": 61.25,
+              "regularMarketDayHigh": 63.35,
+              "exDividendDate": 1369872000,
+              "payoutRatio": 0,
+              "trailingPE": 4.3943663,
+              "forwardPE": 5.3516297,
+              "volume": 101328664,
+              "regularMarketVolume": 101328664,
+              "averageVolume": 101730026,
+              "averageVolume10days": 107099871,
+              "averageDailyVolume10Day": 107099871,
+              "bid": 62.1,
+              "ask": 62.45,
+              "bidSize": 0,
+              "askSize": 0,
+              "marketCap": 86112002048,
+              "fiftyTwoWeekLow": 12.1,
+              "fiftyTwoWeekHigh": 63.35,
+              "fiftyDayAverage": 50.6702,
+              "twoHundredDayAverage": 34.1869,
+              "trailingAnnualDividendRate": 0,
+              "trailingAnnualDividendYield": 0,
+              "currency": "TRY",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "coinMarketCapLink": null,
+              "algorithm": null,
+              "tradeable": false
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

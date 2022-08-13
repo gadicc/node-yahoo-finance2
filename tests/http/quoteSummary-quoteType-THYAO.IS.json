@@ -1,0 +1,93 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/THYAO.IS?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "4gafvithfekve"
+      ],
+      "x-yahoo-request-id": [
+        "4gafvithfekve"
+      ],
+      "x-request-id": [
+        "1ae682fa-1805-4762-9acd-4d99032219d3"
+      ],
+      "content-length": [
+        "448"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Sat, 13 Aug 2022 07:34:06 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "quoteType": {
+              "exchange": "IST",
+              "quoteType": "EQUITY",
+              "symbol": "THYAO.IS",
+              "underlyingSymbol": "THYAO.IS",
+              "shortName": "TURK HAVA YOLLARI",
+              "longName": "Türk Hava Yollari Anonim Ortakligi",
+              "firstTradeDateEpochUtc": 957940200,
+              "timeZoneFullName": "Europe/Istanbul",
+              "timeZoneShortName": "TRST",
+              "uuid": "240595ca-21e9-34bf-861b-0d9e7a7826f4",
+              "messageBoardId": "finmb_884162",
+              "gmtOffSetMilliseconds": 10800000,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

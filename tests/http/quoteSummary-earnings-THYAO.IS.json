@@ -1,0 +1,158 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/THYAO.IS?formatted=false&modules=earnings"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "6jn6h45hfekv8"
+      ],
+      "x-yahoo-request-id": [
+        "6jn6h45hfekv8"
+      ],
+      "x-request-id": [
+        "2a5ff621-b712-4073-8c75-373660f06051"
+      ],
+      "content-length": [
+        "936"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Sat, 13 Aug 2022 07:34:00 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earnings": {
+              "maxAge": 86400,
+              "earningsChart": {
+                "quarterly": [
+                  {
+                    "date": "3Q2021",
+                    "actual": 4.56,
+                    "estimate": 2.49
+                  },
+                  {
+                    "date": "4Q2021",
+                    "actual": 1.43,
+                    "estimate": 1.04
+                  },
+                  {
+                    "date": "1Q2022",
+                    "actual": 1.61,
+                    "estimate": 0.74
+                  },
+                  {
+                    "date": "2Q2022",
+                    "actual": 6.63,
+                    "estimate": 5.01
+                  }
+                ],
+                "currentQuarterEstimateDate": "3Q",
+                "currentQuarterEstimateYear": 2022,
+                "earningsDate": [
+                  1667300340,
+                  1667822400
+                ]
+              },
+              "financialsChart": {
+                "yearly": [
+                  {
+                    "date": 2018,
+                    "revenue": 62853000000,
+                    "earnings": 4045000000
+                  },
+                  {
+                    "date": 2019,
+                    "revenue": 75118000000,
+                    "earnings": 4535000000
+                  },
+                  {
+                    "date": 2020,
+                    "revenue": 46448000000,
+                    "earnings": -5588000000
+                  },
+                  {
+                    "date": 2021,
+                    "revenue": 97378000000,
+                    "earnings": 8213000000
+                  }
+                ],
+                "quarterly": [
+                  {
+                    "date": "3Q2021",
+                    "revenue": 29033000000,
+                    "earnings": 6291000000
+                  },
+                  {
+                    "date": "4Q2021",
+                    "revenue": 36860000000,
+                    "earnings": 1981000000
+                  },
+                  {
+                    "date": "1Q2022",
+                    "revenue": 42614000000,
+                    "earnings": 2220000000
+                  },
+                  {
+                    "date": "2Q2022",
+                    "revenue": 0,
+                    "earnings": 0
+                  }
+                ]
+              },
+              "financialCurrency": "TRY"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
