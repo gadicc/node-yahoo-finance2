@@ -567,16 +567,16 @@ export interface IncomeStatementHistoryElement {
   totalOtherIncomeExpenseNet: number;
   ebit: number;
   interestExpense: number | null;
-  incomeBeforeTax: number;
+  incomeBeforeTax: number | null;
   incomeTaxExpense: number;
   minorityInterest: number | null;
-  netIncomeFromContinuingOps: number;
+  netIncomeFromContinuingOps: number | null;
   discontinuedOperations: number | null;
   extraordinaryItems: number | null;
   effectOfAccountingCharges: number | null;
   otherItems: number | null;
   netIncome: number;
-  netIncomeApplicableToCommonShares: number;
+  netIncomeApplicableToCommonShares: number | null;
 }
 
 export interface IndexTrend {
