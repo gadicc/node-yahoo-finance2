@@ -5,9 +5,15 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.js";
 
-export type HistoricalResult = Array<HistoricalRow>;
+export type HistoricalHistoryResult = Array<HistoricalRowHistory>;
+export type HistoricalDividendsResult = Array<HistoricalRowDividend>;
+export type HistoricalStockSplitsResult = Array<HistoricalRowStockSplit>;
+export type HistoricalResult =
+  | HistoricalHistoryResult
+  | HistoricalDividendsResult
+  | HistoricalStockSplitsResult;
 
-export interface HistoricalRow {
+export interface HistoricalRowHistory {
   [key: string]: any;
   date: Date;
   open: number;
@@ -18,12 +24,34 @@ export interface HistoricalRow {
   volume: number;
 }
 
+export interface HistoricalRowDividend {
+  date: Date;
+  dividends: number;
+}
+
+export interface HistoricalRowStockSplit {
+  date: Date;
+  stockSplits: string;
+}
+
 export interface HistoricalOptions {
   period1: Date | string | number;
   period2?: Date | string | number;
   interval?: "1d" | "1wk" | "1mo"; // '1d',  TODO: all | types
   events?: string; // 'history',
   includeAdjustedClose?: boolean; // true,
+}
+
+export interface HistoricalOptionsEventsHistory extends HistoricalOptions {
+  events: "history";
+}
+
+export interface HistoricalOptionsEventsDividends extends HistoricalOptions {
+  events: "dividends";
+}
+
+export interface HistoricalOptionsEventsSplit extends HistoricalOptions {
+  events: "split";
 }
 
 const queryOptionsDefaults: Omit<HistoricalOptions, "period1"> = {
@@ -35,9 +63,23 @@ const queryOptionsDefaults: Omit<HistoricalOptions, "period1"> = {
 export default function historical(
   this: ModuleThis,
   symbol: string,
-  queryOptionsOverrides: HistoricalOptions,
+  queryOptionsOverrides: HistoricalOptionsEventsHistory,
   moduleOptions?: ModuleOptionsWithValidateTrue
-): Promise<HistoricalResult>;
+): Promise<HistoricalHistoryResult>;
+
+export default function historical(
+  this: ModuleThis,
+  symbol: string,
+  queryOptionsOverrides: HistoricalOptionsEventsDividends,
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<HistoricalDividendsResult>;
+
+export default function historical(
+  this: ModuleThis,
+  symbol: string,
+  queryOptionsOverrides: HistoricalOptionsEventsSplit,
+  moduleOptions?: ModuleOptionsWithValidateTrue
+): Promise<HistoricalStockSplitsResult>;
 
 export default function historical(
   this: ModuleThis,
@@ -52,6 +94,18 @@ export default function historical(
   queryOptionsOverrides: HistoricalOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
+  let schemaKey;
+  if (
+    !queryOptionsOverrides.events ||
+    queryOptionsOverrides.events === "history"
+  )
+    schemaKey = "#/definitions/HistoricalHistoryResult";
+  else if (queryOptionsOverrides.events === "dividends")
+    schemaKey = "#/definitions/HistoricalDividendsResult";
+  else if (queryOptionsOverrides.events === "split")
+    schemaKey = "#/definitions/HistoricalStockSplitsResult";
+  else throw new Error("No such event type:" + queryOptionsOverrides.events);
+
   return this._moduleExec({
     moduleName: "historical",
 
@@ -98,7 +152,7 @@ export default function historical(
     },
 
     result: {
-      schemaKey: "#/definitions/HistoricalResult",
+      schemaKey,
       transformWith(result: any) {
         const filteredResults = [];
         const fieldCount = Object.keys(result[0]).length;
