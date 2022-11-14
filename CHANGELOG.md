@@ -1,3 +1,10 @@
+## [2.3.7](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.6...v2.3.7) (2022-11-14)
+
+
+### Bug Fixes
+
+* **historical:** validation for events {dividends,split} (fixes [#557](https://github.com/gadicc/node-yahoo-finance2/issues/557)) ([e83ede6](https://github.com/gadicc/node-yahoo-finance2/commit/e83ede678684a4fb08668cd49113a1e37ef5cbbb))
+
 ## [2.3.6](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.5...v2.3.6) (2022-08-13)
 
 
