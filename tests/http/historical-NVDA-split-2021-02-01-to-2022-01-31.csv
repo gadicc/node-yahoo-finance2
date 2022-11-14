@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/download/NVDA?interval=1d&events=split&includeAdjustedClose=true&period1=1612137600&period2=1643587200"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-disposition": [
+        "attachment; filename=NVDA.csv"
+      ],
+      "content-type": [
+        "text/csv;charset=utf-8"
+      ],
+      "cache-control": [
+        "private, max-age=10, stale-while-revalidate=20"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "y-rid": [
+        "7vtkm61hn48n2"
+      ],
+      "x-yahoo-request-id": [
+        "7vtkm61hn48n2"
+      ],
+      "x-request-id": [
+        "4f1506fe-d8a9-4919-91f5-35f53ec1690d"
+      ],
+      "content-length": [
+        "32"
+      ],
+      "x-envoy-upstream-service-time": [
+        "14"
+      ],
+      "date": [
+        "Mon, 14 Nov 2022 11:13:37 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-chart-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=15552000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "Date,Stock Splits\n2021-07-20,4:1"
+  }
+}

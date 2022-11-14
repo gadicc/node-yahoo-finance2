@@ -42,6 +42,30 @@ describe("historical", () => {
     ).rejects.toThrow(/invalid date provided/);
   });
 
+  it("dividends pass validation (#557)", async () => {
+    await yf.historical(
+      "MSFT",
+      {
+        period1: "2021-02-01",
+        period2: "2022-01-31",
+        events: "dividends",
+      },
+      { devel: "historical-MSFT-dividends-2021-02-01-to-2022-01-31.csv" }
+    );
+  });
+
+  it("splits pass validation (#557)", async () => {
+    await yf.historical(
+      "NVDA",
+      {
+        period1: "2021-02-01",
+        period2: "2022-01-31",
+        events: "split",
+      },
+      { devel: "historical-NVDA-split-2021-02-01-to-2022-01-31.csv" }
+    );
+  });
+
   describe("transformWith", () => {
     const yf = { _moduleExec: jest.fn(), historical };
     // @ts-ignore: TODO
