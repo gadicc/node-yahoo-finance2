@@ -1,3 +1,10 @@
+## [2.3.9](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.8...v2.3.9) (2022-11-16)
+
+
+### Bug Fixes
+
+* **options,quote:** EBAY "ask", "cryptoTradeable" fields (fixes [#560](https://github.com/gadicc/node-yahoo-finance2/issues/560)) ([b2c4b5a](https://github.com/gadicc/node-yahoo-finance2/commit/b2c4b5a348117b48bcd4378f98c6f6933d1f2c74))
+
 ## [2.3.8](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.7...v2.3.8) (2022-11-16)
 
 
