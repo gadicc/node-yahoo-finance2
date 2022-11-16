@@ -11,6 +11,9 @@ describe("options", () => {
       //   {strike: 97.5 }, {expirationDate: 1649894400 }
       "BRKS",
     ],
+    add: [
+      "EBAY", // Missing "ask" (#560)
+    ],
   });
 
   it.each(symbols)("passes validation for symbol '%s'", async (symbol) => {

@@ -36,7 +36,7 @@ export interface CallOrPut {
   volume?: number;
   openInterest?: number;
   bid?: number;
-  ask: number;
+  ask?: number;
   contractSize: "REGULAR";
   expiration: Date;
   lastTradeDate: Date;

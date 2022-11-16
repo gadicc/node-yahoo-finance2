@@ -20,6 +20,7 @@ export interface QuoteBase {
   customPriceAlertConfidence?: string; // "HIGH" | "LOW"; TODO: anything else?
   marketState: "REGULAR" | "CLOSED" | "PRE" | "PREPRE" | "POST" | "POSTPOST";
   tradeable: boolean; // false,
+  cryptoTradeable?: boolean; // false
   exchange: string; // "NMS",
   shortName?: string; // "NVIDIA Corporation",
   longName?: string; // "NVIDIA Corporation",
