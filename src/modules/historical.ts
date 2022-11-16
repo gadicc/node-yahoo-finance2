@@ -43,7 +43,7 @@ export interface HistoricalOptions {
 }
 
 export interface HistoricalOptionsEventsHistory extends HistoricalOptions {
-  events: "history";
+  events?: "history";
 }
 
 export interface HistoricalOptionsEventsDividends extends HistoricalOptions {
