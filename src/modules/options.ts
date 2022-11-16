@@ -29,10 +29,10 @@ export interface CallOrPut {
   [key: string]: any;
   contractSymbol: string;
   strike: number;
-  currency: string;
+  currency?: string;
   lastPrice: number;
   change: number;
-  percentChange: number;
+  percentChange?: number;
   volume?: number;
   openInterest?: number;
   bid?: number;

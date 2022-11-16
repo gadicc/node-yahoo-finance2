@@ -13,6 +13,7 @@ describe("options", () => {
     ],
     add: [
       "EBAY", // Missing "ask" (#560)
+      "PYPL",
     ],
   });
 
