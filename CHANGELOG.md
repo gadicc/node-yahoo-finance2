@@ -1,3 +1,11 @@
+## [2.3.8](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.7...v2.3.8) (2022-11-16)
+
+
+### Bug Fixes
+
+* **historical:** typescript fix for backwards compatibility ([2533dab](https://github.com/gadicc/node-yahoo-finance2/commit/2533dab067fea7ea99de84a6c4a4b15d9c2ed2e7))
+* **historical:** update schema for last commit :`) ([7ddf93c](https://github.com/gadicc/node-yahoo-finance2/commit/7ddf93c1e32fb4d3b2af1036cae47264aca931f0))
+
 ## [2.3.7](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.6...v2.3.7) (2022-11-14)
 
 
