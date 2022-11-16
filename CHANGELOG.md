@@ -1,3 +1,10 @@
+## [2.3.10](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.9...v2.3.10) (2022-11-16)
+
+
+### Bug Fixes
+
+* **options:** currency, percentChange optional e.g. PYPL (fixes [#561](https://github.com/gadicc/node-yahoo-finance2/issues/561)) ([3c99145](https://github.com/gadicc/node-yahoo-finance2/commit/3c991456c335f204441f75c18f14a8e1b5ae8e9c))
+
 ## [2.3.9](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.8...v2.3.9) (2022-11-16)
 
 
