@@ -13,7 +13,7 @@ describe("options", () => {
     ],
     add: [
       "EBAY", // Missing "ask" (#560)
-      "PYPL",
+      "PYPL", // Missing currency, percentChange (#561)
     ],
   });
 
