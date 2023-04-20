@@ -1,3 +1,4 @@
+import type { RequestInit } from "node-fetch";
 import Queue from "./queue.js";
 
 import type { YahooFinanceOptions } from "./options.js";
@@ -5,6 +6,8 @@ import type { QueueOptions } from "./queue.js";
 
 import errors from "./errors.js";
 import pkg from "../../package.json";
+import getCrumb from "./getCrumb.js";
+import cookieJar from "./cookieJar.js";
 
 const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
 
@@ -23,7 +26,7 @@ interface YahooFinanceFetchThis {
 
 interface YahooFinanceFetchModuleOptions {
   devel?: string | boolean;
-  fetchOptions?: Object;
+  fetchOptions?: RequestInit;
   queue?: QueueOptions;
 }
 
@@ -73,26 +76,47 @@ async function yahooFinanceFetch(
 
   const { URLSearchParams, fetch, fetchDevel } = this._env;
 
-  // @ts-ignore TODO copy interface? @types lib?
-  const urlSearchParams = new URLSearchParams(params);
-  const url =
-    substituteVariables.call(this, urlBase) + "?" + urlSearchParams.toString();
-
   /* istanbul ignore next */
   // no need to force coverage on real network request.
   const fetchFunc = moduleOpts.devel ? await fetchDevel() : fetch;
 
-  const fetchOptions = {
-    "User-Agent": userAgent,
+  const fetchOptionsBase = {
     ...moduleOpts.fetchOptions,
     devel: moduleOpts.devel,
+    headers: {
+      "User-Agent": userAgent,
+      ...moduleOpts.fetchOptions?.headers,
+    },
   };
+
+  // @ts-expect-error: TODO, crumb string type for partial params
+  params.crumb = await getCrumb(fetchFunc, fetchOptionsBase);
+
+  // @ts-expect-error: TODO copy interface? @types lib?
+  const urlSearchParams = new URLSearchParams(params);
+  const url =
+    substituteVariables.call(this, urlBase) + "?" + urlSearchParams.toString();
+  console.log(url);
+
+  const fetchOptions = {
+    ...fetchOptionsBase,
+    headers: {
+      ...fetchOptionsBase.headers,
+      cookie: cookieJar.getCookieStringSync(url),
+    },
+  };
+
+  console.log(fetchOptions);
 
   // used in moduleExec.ts
   if (func === "csv") func = "text";
 
-  const res = (await queue.add(() => fetchFunc(url, fetchOptions))) as any;
-  const result = await res[func]();
+  const response = (await queue.add(() => fetchFunc(url, fetchOptions))) as any;
+
+  const setCookieHeader = response.headers.get("set-cookie");
+  if (setCookieHeader) cookieJar.setFromSetCookieHeaders(setCookieHeader, url);
+
+  const result = await response[func]();
 
   /*
     {
@@ -118,10 +142,10 @@ async function yahooFinanceFetch(
   }
 
   // We do this last as it generally contains less information (e.g. no desc).
-  if (!res.ok) {
+  if (!response.ok) {
     console.error(url);
-    const error = new errors.HTTPError(res.statusText);
-    error.code = res.status;
+    const error = new errors.HTTPError(response.statusText);
+    error.code = response.status;
     throw error;
   }
 

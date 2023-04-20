@@ -1,0 +1,26 @@
+import { Cookie, CookieJar } from "tough-cookie";
+
+class MyCookieJar extends CookieJar {
+  setFromSetCookieHeaders(
+    setCookieHeader: string | Array<string>,
+    url: string
+  ) {
+    let cookies;
+
+    if (typeof setCookieHeader === "undefined") {
+      // no-op
+    } else if (setCookieHeader instanceof Array) {
+      cookies = setCookieHeader.map((header) => Cookie.parse(header));
+    } else if (typeof setCookieHeader === "string") {
+      cookies = [Cookie.parse(setCookieHeader)];
+    }
+
+    if (cookies)
+      for (const cookie of cookies)
+        if (cookie instanceof Cookie) this.setCookieSync(cookie, url);
+  }
+}
+
+const cookiejar = new MyCookieJar();
+
+export default cookiejar;

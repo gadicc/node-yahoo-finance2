@@ -263,6 +263,7 @@ export default async function quote(
     query: {
       url: "https://${YF_QUERY_HOST}/v7/finance/quote",
       schemaKey: "#/definitions/QuoteOptions",
+      needsCrumb: true,
       defaults: queryOptionsDefaults,
       runtime: { symbols },
       overrides: queryOptionsOverrides,
