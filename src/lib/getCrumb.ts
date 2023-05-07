@@ -2,17 +2,21 @@ import type { RequestInfo, RequestInit, Response } from "node-fetch";
 import cookieJar from "./cookieJar.js";
 
 let crumb: string | null = null;
-let crumbFetchTime = 0;
-const MAX_CRUMB_CACHE_TIME = 60_000 * 60 * 24;
+// let crumbFetchTime = 0;
+// const MAX_CRUMB_CACHE_TIME = 60_000 * 60 * 24;
 
 export default async function getCrumb(
   fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>,
   fetchOptionsBase: RequestInit,
   url = "https://finance.yahoo.com/quote/AAPL"
 ) {
-  if (crumb && crumbFetchTime + MAX_CRUMB_CACHE_TIME > Date.now()) return crumb;
+  // if (crumb && crumbFetchTime + MAX_CRUMB_CACHE_TIME > Date.now()) return crumb;
 
-  console.log("Fetching crumb from " + url + "...");
+  // If we still have a valid (non-expired) cookie, return the existing crumb.
+  const existingCookies = cookieJar.getCookiesSync(url, { expire: true });
+  if (existingCookies.length) return crumb;
+
+  console.log("Fetching crumb and cookies from " + url + "...");
 
   const fetchOptions = {
     ...fetchOptionsBase,
@@ -32,6 +36,15 @@ export default async function getCrumb(
   // console.log(response.headers);
   // console.log(setCookieHeader);
   // console.log(cookieJar);
+  const cookie = cookieJar.getCookiesSync(url, { expire: true })[0];
+  if (cookie) {
+    console.log("Success.  Cookie expires on " + cookie.expires);
+  } else {
+    console.error(
+      "No cookie was retreieved.  Probably the next request " +
+        "will fail.  Please report."
+    );
+  }
 
   const source = await response.text();
 
@@ -60,7 +73,7 @@ export default async function getCrumb(
       "Could not find crumb.  Yahoo's API may have changed; please report."
     );
 
-  crumbFetchTime = Date.now();
+  // crumbFetchTime = Date.now();
 
   return crumb;
 }
