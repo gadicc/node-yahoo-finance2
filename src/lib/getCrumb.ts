@@ -18,7 +18,10 @@ export default async function getCrumb(
     ...fetchOptionsBase,
     headers: {
       ...fetchOptionsBase.headers,
-      cookie: cookieJar.getCookieStringSync(url),
+      // NB, we won't get a set-cookie header back without this:
+      accept: "text/html,application/xhtml+xml,application/xml",
+      // This request will get our first cookies, so nothing to send.
+      // cookie: cookieJar.getCookieStringSync(url),
     },
   };
 
@@ -26,9 +29,9 @@ export default async function getCrumb(
   const setCookieHeader = response.headers.get("set-cookie");
   if (setCookieHeader) cookieJar.setFromSetCookieHeaders(setCookieHeader, url);
 
-  console.log(response.headers);
-  console.log(setCookieHeader);
-  console.log(cookieJar);
+  // console.log(response.headers);
+  // console.log(setCookieHeader);
+  // console.log(cookieJar);
 
   const source = await response.text();
 

@@ -1,4 +1,4 @@
-import type { RequestInit } from "node-fetch";
+import type { RequestInfo, RequestInit, Response } from "node-fetch";
 import Queue from "./queue.js";
 
 import type { YahooFinanceOptions } from "./options.js";
@@ -14,8 +14,10 @@ const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
 interface YahooFinanceFetchThisEnv {
   [key: string]: any;
   URLSearchParams: (init?: any) => any;
-  fetch: Function;
-  fetchDevel: Function;
+  fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>;
+  fetchDevel: () => Promise<
+    (url: RequestInfo, init?: RequestInit) => Promise<Response>
+  >;
 }
 
 interface YahooFinanceFetchThis {
@@ -45,7 +47,7 @@ function assertQueueOptions(queue: any, opts: any) {
 }
 
 function substituteVariables(this: YahooFinanceFetchThis, urlBase: string) {
-  return urlBase.replace(/\$\{([^\}]+)\}/g, (match, varName) => {
+  return urlBase.replace(/\$\{([^}]+)\}/g, (match, varName) => {
     if (varName === "YF_QUERY_HOST") {
       // const hosts = ["query1.finance.yahoo.com", "query2.finance.yahoo.com"];
       // return hosts[Math.floor(Math.random() * hosts.length)];
@@ -96,7 +98,7 @@ async function yahooFinanceFetch(
   const urlSearchParams = new URLSearchParams(params);
   const url =
     substituteVariables.call(this, urlBase) + "?" + urlSearchParams.toString();
-  console.log(url);
+  // console.log(url);
 
   const fetchOptions = {
     ...fetchOptionsBase,
@@ -106,7 +108,7 @@ async function yahooFinanceFetch(
     },
   };
 
-  console.log(fetchOptions);
+  // console.log(fetchOptions);
 
   // used in moduleExec.ts
   if (func === "csv") func = "text";

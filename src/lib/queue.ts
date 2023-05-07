@@ -12,9 +12,9 @@ export interface QueueOptions {
 }
 
 export default class Queue {
-  concurrency: number = 1;
+  concurrency = 1;
 
-  _running: number = 0;
+  _running = 0;
   _queue: Array<Job> = [];
 
   constructor(opts: QueueOptions = {}) {
@@ -40,7 +40,7 @@ export default class Queue {
     if (this._running < this.concurrency) this.runNext();
   }
 
-  add(func: () => Promise<void>) {
+  add(func: () => Promise<any>) {
     return new Promise((resolve, reject) => {
       this._queue.push({ func, resolve, reject });
       this.checkQueue();
