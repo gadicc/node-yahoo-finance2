@@ -64,7 +64,8 @@ async function yahooFinanceFetch(
   urlBase: string,
   params = {},
   moduleOpts: YahooFinanceFetchModuleOptions = {},
-  func = "json"
+  func = "json",
+  needsCrumb = false
 ) {
   if (!(this && this._env))
     throw new errors.NoEnvironmentError(
@@ -91,8 +92,10 @@ async function yahooFinanceFetch(
     },
   };
 
-  // @ts-expect-error: TODO, crumb string type for partial params
-  params.crumb = await getCrumb(fetchFunc, fetchOptionsBase);
+  if (needsCrumb) {
+    // @ts-expect-error: TODO, crumb string type for partial params
+    params.crumb = await getCrumb(fetchFunc, fetchOptionsBase);
+  }
 
   // @ts-expect-error: TODO copy interface? @types lib?
   const urlSearchParams = new URLSearchParams(params);

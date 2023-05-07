@@ -74,6 +74,10 @@ interface ModuleExecOptions {
      * Default: 'json'.  Can be 'text' or 'csv' (augments fetch's "text").
      */
     fetchType?: string;
+    /**
+     * Default: false.  This request requires Yahoo cookies & crumb.
+     */
+    needsCrumb: boolean;
   };
 
   result: {
@@ -145,7 +149,8 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
     queryOpts.url,
     queryOptions,
     moduleOpts,
-    queryOpts.fetchType
+    queryOpts.fetchType,
+    queryOpts.needsCrumb
   );
 
   if (queryOpts.fetchType === "csv") result = csv2json(result);
