@@ -1,20 +1,25 @@
 import type { RequestInfo, RequestInit, Response } from "node-fetch";
-import cookieJar from "./cookieJar.js";
+import defaultCookieJar from "./cookieJar.js";
 
 let crumb: string | null = null;
 // let crumbFetchTime = 0;
 // const MAX_CRUMB_CACHE_TIME = 60_000 * 60 * 24;
 
-async function _getCrumb(
+export async function _getCrumb(
   fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>,
   fetchOptionsBase: RequestInit,
-  url = "https://finance.yahoo.com/quote/AAPL"
+  url = "https://finance.yahoo.com/quote/AAPL",
+  develOverride = "getCrumb-quote-AAPL.json",
+  noCache = false,
+  cookieJar = defaultCookieJar
 ) {
   // if (crumb && crumbFetchTime + MAX_CRUMB_CACHE_TIME > Date.now()) return crumb;
 
-  // If we still have a valid (non-expired) cookie, return the existing crumb.
-  const existingCookies = cookieJar.getCookiesSync(url, { expire: true });
-  if (existingCookies.length) return crumb;
+  if (!noCache) {
+    // If we still have a valid (non-expired) cookie, return the existing crumb.
+    const existingCookies = cookieJar.getCookiesSync(url, { expire: true });
+    if (existingCookies.length) return crumb;
+  }
 
   console.log("Fetching crumb and cookies from " + url + "...");
 
@@ -28,8 +33,9 @@ async function _getCrumb(
       // cookie: cookieJar.getCookieStringSync(url),
     },
 
-    // @ts-expect-error: fetchDevel still has no types (yet)
-    devel: fetchOptionsBase.devel && "getCrumb-quote-AAPL.json",
+    devel:
+      // @ts-expect-error: fetchDevel still has no types (yet)
+      fetchOptionsBase.devel && develOverride,
   };
 
   const response = await fetch(url, fetchOptions);
@@ -44,9 +50,14 @@ async function _getCrumb(
   if (cookie) {
     console.log("Success.  Cookie expires on " + cookie.expires);
   } else {
+    /*
     console.error(
       "No cookie was retreieved.  Probably the next request " +
         "will fail.  Please report."
+    );
+    */
+    throw new Error(
+      "No set-cookie header present in Yahoo's response.  Something must have changed, please report."
     );
   }
 
@@ -85,15 +96,23 @@ async function _getCrumb(
 let promise: Promise<string | null> | null = null;
 let promiseTime = 0;
 
+export function getCrumbClear() {
+  crumb = null;
+  promise = null;
+  promiseTime = 0;
+  defaultCookieJar.removeAllCookiesSync();
+}
+
 export default function getCrumb(
   fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>,
   fetchOptionsBase: RequestInit,
-  url = "https://finance.yahoo.com/quote/AAPL"
+  url = "https://finance.yahoo.com/quote/AAPL",
+  __getCrumb = _getCrumb
 ) {
   // TODO, rather do this with cookie expire time somehow
   const now = Date.now();
   if (!promise || now - promiseTime > 60_000) {
-    promise = _getCrumb(fetch, fetchOptionsBase, url);
+    promise = __getCrumb(fetch, fetchOptionsBase, url);
     promiseTime = now;
   }
 

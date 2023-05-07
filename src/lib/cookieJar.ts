@@ -1,6 +1,6 @@
 import { Cookie, CookieJar } from "tough-cookie";
 
-class MyCookieJar extends CookieJar {
+export class MyCookieJar extends CookieJar {
   setFromSetCookieHeaders(
     setCookieHeader: string | Array<string>,
     url: string
