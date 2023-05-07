@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import nodeFetch from "node-fetch";
+import nodeFetch, { Headers } from "node-fetch";
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
@@ -10,6 +10,7 @@ const BASE_URL = new URL("../../tests/http/", import.meta.url);
 class FakeResponse {
   constructor(props) {
     Object.keys(props).forEach((key) => (this[key] = props[key]));
+    this.headers = new Headers(this.headers);
   }
 
   async json() {
@@ -38,6 +39,9 @@ async function fetchDevel(url, fetchOptions) {
     /^https:\/\/query1.finance.yahoo.com/,
     "https://query2.finance.yahoo.com"
   );
+
+  // Remove crumb param to have consistent cacheable URLs
+  url = url.replace(/[?&]crumb=[^?&]+/, "");
 
   // If devel===true, hash the url, otherwise use the value of devel
   // This allows us to specify our own static filename vs url hash.
