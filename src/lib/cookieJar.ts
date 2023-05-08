@@ -6,6 +6,7 @@ export class MyCookieJar extends CookieJar {
     url: string
   ) {
     let cookies;
+    // console.log("setFromSetCookieHeaders", setCookieHeader);
 
     if (typeof setCookieHeader === "undefined") {
       // no-op
@@ -17,7 +18,10 @@ export class MyCookieJar extends CookieJar {
 
     if (cookies)
       for (const cookie of cookies)
-        if (cookie instanceof Cookie) this.setCookieSync(cookie, url);
+        if (cookie instanceof Cookie) {
+          // console.log("setCookieSync", cookie, url);
+          this.setCookieSync(cookie, url);
+        }
   }
 }
 
