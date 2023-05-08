@@ -121,8 +121,8 @@ describe("getCrumb", () => {
       ).rejects.toThrowError(/Could not find crumb/);
     });
 
-    it.only("redirect https://guce.yahoo.com/consent?brandType=nonEu", async () => {
-      consoleRestore();
+    it("redirect https://guce.yahoo.com/consent?brandType=nonEu", async () => {
+      // consoleRestore();
       const fetch = await env.fetchDevel();
 
       const crumb = await _getCrumb(
@@ -135,7 +135,7 @@ describe("getCrumb", () => {
         new MyCookieJar()
       );
       expect(crumb).toBe("Ky3Po5TGQRZ");
-      consoleSilent();
+      // consoleSilent();
     });
   });
 
