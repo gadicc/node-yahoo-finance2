@@ -1,7 +1,6 @@
 /* istanbul ignore file */
 import nodeFetch, { Headers } from "node-fetch";
 import fs from "fs";
-import path from "path";
 import crypto from "crypto";
 
 //const FILE_BASE = path.join(__dirname, "..", "..", "tests", "http");
@@ -10,7 +9,10 @@ const BASE_URL = new URL("../../tests/http/", import.meta.url);
 class FakeResponse {
   constructor(props) {
     Object.keys(props).forEach((key) => (this[key] = props[key]));
-    this.headers = new Headers(this.headers);
+    const rawHeaders = this.headers;
+    this.headers = new Headers(rawHeaders);
+    // node-fetch extension, needed to handle multiple set-cookie headers
+    this.headers.raw = () => rawHeaders;
   }
 
   async json() {

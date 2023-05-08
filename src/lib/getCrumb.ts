@@ -26,12 +26,9 @@ export async function _getCrumb(
     if (existingCookies.length) return crumb;
   }
 
-  function processSetCookieHeader(header: string | null, url: string) {
-    const setCookieHeaders = header && header.split(",");
-    if (setCookieHeaders) {
-      setCookieHeaders.forEach((setCookieHeader: string) =>
-        cookieJar.setFromSetCookieHeaders(setCookieHeader, url)
-      );
+  function processSetCookieHeader(header: string[] | undefined, url: string) {
+    if (header) {
+      cookieJar.setFromSetCookieHeaders(header, url);
       return true;
     }
     return false;
@@ -56,14 +53,12 @@ export async function _getCrumb(
   };
 
   const response = await fetch(url, fetchOptions);
-  processSetCookieHeader(response.headers.get("set-cookie"), url);
+  processSetCookieHeader(response.headers.raw()["set-cookie"], url);
 
-  // console.log(response.headers);
-  // console.log(setCookieHeader);
+  // console.log(response.headers.raw());
   // console.log(cookieJar);
 
   const location = response.headers.get("location");
-  console.log({ location });
   if (location) {
     if (location.match(/guce.yahoo/)) {
       const consentFetchOptions: typeof fetchOptions = {
@@ -76,10 +71,9 @@ export async function _getCrumb(
         devel: "getCrumb-quote-AAPL-consent.html",
       };
       // Returns 302 to collectConsent?sessionId=XXX
-      console.log("fetch", location, consentFetchOptions);
+      console.log("fetch", location /*, consentFetchOptions */);
       const consentResponse = await fetch(location, consentFetchOptions);
       const consentLocation = consentResponse.headers.get("location");
-      console.log({ consentLocation });
 
       if (consentLocation) {
         if (!consentLocation.match(/collectConsent/))
@@ -93,7 +87,7 @@ export async function _getCrumb(
           },
           devel: "getCrumb-quote-AAPL-collectConsent.html",
         };
-        console.log("fetch", consentLocation, collectConsentFetchOptions);
+        console.log("fetch", consentLocation /*, collectConsentFetchOptions */);
 
         const collectConsentResponse = await fetch(
           consentLocation,
@@ -125,7 +119,10 @@ export async function _getCrumb(
           body: collectConsentResponseParams,
           devel: "getCrumb-quote-AAPL-collectConsentSubmit",
         };
-        console.log("fetch", consentLocation, collectConsentSubmitFetchOptions);
+        console.log(
+          "fetch",
+          consentLocation /*, collectConsentSubmitFetchOptions */
+        );
         const collectConsentSubmitResponse = await fetch(
           consentLocation,
           collectConsentSubmitFetchOptions
@@ -134,7 +131,7 @@ export async function _getCrumb(
         // Set-Cookie: CFC=AQABCAFkWkdkjEMdLwQ9&s=AQAAAClxdtC-&g=ZFj24w; Expires=Wed, 8 May 2024 01:18:54 GMT; Domain=consent.yahoo.com; Path=/; Secure
         if (
           !processSetCookieHeader(
-            collectConsentSubmitResponse.headers.get("set-cookie"),
+            collectConsentSubmitResponse.headers.raw()["set-cookie"],
             consentLocation
           )
         )
@@ -150,8 +147,6 @@ export async function _getCrumb(
             "collectConsentSubmitResponse unexpectedly did not return a Location header, please report."
           );
 
-        console.log({ collectConsentSubmitResponseLocation });
-
         const copyConsentFetchOptions: typeof fetchOptions = {
           ...consentFetchOptions,
           headers: {
@@ -165,8 +160,7 @@ export async function _getCrumb(
 
         console.log(
           "fetch",
-          collectConsentSubmitResponseLocation,
-          copyConsentFetchOptions
+          collectConsentSubmitResponseLocation /*, copyConsentFetchOptions */
         );
         const copyConsentResponse = await fetch(
           collectConsentSubmitResponseLocation,
@@ -175,7 +169,7 @@ export async function _getCrumb(
 
         if (
           !processSetCookieHeader(
-            copyConsentResponse.headers.get("set-cookie"),
+            copyConsentResponse.headers.raw()["set-cookie"],
             collectConsentSubmitResponseLocation
           )
         )
@@ -190,8 +184,6 @@ export async function _getCrumb(
             "collectConsentSubmitResponse unexpectedly did not return a Location header, please report."
           );
 
-        console.log({ copyConsentResponseLocation });
-
         const finalResponseFetchOptions: typeof fetchOptions = {
           ...fetchOptions,
           headers: {
@@ -203,11 +195,13 @@ export async function _getCrumb(
           devel: "getCrumb-quote-AAPL-consent-final-redirect.html",
         };
 
+        /*
         console.log(
           "fetch",
           copyConsentResponseLocation,
           finalResponseFetchOptions
         );
+        */
 
         return await _getCrumb(
           fetch,

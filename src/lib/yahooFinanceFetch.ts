@@ -103,7 +103,7 @@ async function yahooFinanceFetch(
     substituteVariables.call(this, urlBase) + "?" + urlSearchParams.toString();
   // console.log(url);
 
-  console.log(cookieJar.serializeSync());
+  // console.log(cookieJar.serializeSync());
 
   const fetchOptions = {
     ...fetchOptionsBase,
@@ -113,21 +113,16 @@ async function yahooFinanceFetch(
     },
   };
 
-  console.log("fetch", url, fetchOptions);
-
-  // console.log(fetchOptions);
+  // console.log("fetch", url, fetchOptions);
 
   // used in moduleExec.ts
   if (func === "csv") func = "text";
 
   const response = (await queue.add(() => fetchFunc(url, fetchOptions))) as any;
 
-  const setCookieHeader = response.headers.get("set-cookie");
-  const setCookieHeaders = setCookieHeader && setCookieHeader.split(",");
+  const setCookieHeaders = response.headers.raw()["set-cookie"];
   if (setCookieHeaders)
-    setCookieHeaders.forEach((setCookieHeader: string) =>
-      cookieJar.setFromSetCookieHeaders(setCookieHeader, url)
-    );
+    cookieJar.setFromSetCookieHeaders(setCookieHeaders, url);
 
   const result = await response[func]();
 
