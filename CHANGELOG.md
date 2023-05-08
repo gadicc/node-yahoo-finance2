@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.0...v2.4.1) (2023-05-08)
+
+
+### Bug Fixes
+
+* **getCrumb:** handle consent when required i.e. in EU ([#637](https://github.com/gadicc/node-yahoo-finance2/issues/637)) ([a4f90f1](https://github.com/gadicc/node-yahoo-finance2/commit/a4f90f1b400f772cb851a2e4b38f471ffece2213))
+
 # [2.4.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.10...v2.4.0) (2023-05-08)
 
 
