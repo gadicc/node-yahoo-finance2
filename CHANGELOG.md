@@ -1,3 +1,18 @@
+# [2.4.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.10...v2.4.0) (2023-05-08)
+
+
+### Bug Fixes
+
+* **crumb:** needsCrumb option, and in quote() only ([cf92258](https://github.com/gadicc/node-yahoo-finance2/commit/cf92258b7a28cf9341f254b1e589d93cd3c2c086))
+* **crumb:** send accept header; cleanup, type fixes ([c21f025](https://github.com/gadicc/node-yahoo-finance2/commit/c21f02592538aba43eeb371af3d1c4f6e3372c4c))
+* **crumb:** use cookie expire time for crumb cache ([c943a65](https://github.com/gadicc/node-yahoo-finance2/commit/c943a65022306d9a058d6f495a31b6bfa23a15e4))
+* **deps:** update dependency node-fetch to v2.6.9 ([b85629a](https://github.com/gadicc/node-yahoo-finance2/commit/b85629ac278d75103c9b7816162e40a2afd793db))
+
+
+### Features
+
+* **crumb:** initial work... cookieJar, getCrumb, use cookies / crumb ([32f3042](https://github.com/gadicc/node-yahoo-finance2/commit/32f3042eaad5815511967edebafcaf20072e4b66))
+
 ## [2.3.10](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.9...v2.3.10) (2022-11-16)
 
 
