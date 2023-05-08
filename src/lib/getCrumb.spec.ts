@@ -120,6 +120,23 @@ describe("getCrumb", () => {
         )
       ).rejects.toThrowError(/Could not find crumb/);
     });
+
+    it.only("redirect https://guce.yahoo.com/consent?brandType=nonEu", async () => {
+      consoleRestore();
+      const fetch = await env.fetchDevel();
+
+      const crumb = await _getCrumb(
+        fetch,
+        // @ts-expect-error: fetchDevel still has no types (yet)
+        { devel: true },
+        "https://finance.yahoo.com/quote/AAPL",
+        "getCrumb-quote-AAPL-pre-consent-VPN-UK.json",
+        true,
+        new MyCookieJar()
+      );
+      expect(crumb).toBe("Ky3Po5TGQRZ");
+      consoleSilent();
+    });
   });
 
   describe("getCrumb", () => {

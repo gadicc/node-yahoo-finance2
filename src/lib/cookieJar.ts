@@ -17,7 +17,10 @@ export class MyCookieJar extends CookieJar {
 
     if (cookies)
       for (const cookie of cookies)
-        if (cookie instanceof Cookie) this.setCookieSync(cookie, url);
+        if (cookie instanceof Cookie) {
+          console.log("setCookieSync", cookie, url);
+          this.setCookieSync(cookie, url);
+        }
   }
 }
 

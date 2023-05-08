@@ -82,9 +82,9 @@ async function fetchDevel(url, fetchOptions) {
         },
       };
 
-      const contentType =
-        contentObj.response.headers["content-type"][0].split(";");
-      if (contentType[0] === "application/json") {
+      const contentTypeHeader = contentObj.response.headers["content-type"];
+      const contentType = contentTypeHeader && contentTypeHeader[0].split(";");
+      if (contentType === "application/json") {
         contentObj.response.bodyJson = await res.json();
       } else {
         contentObj.response.body = await res.text();

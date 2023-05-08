@@ -103,13 +103,17 @@ async function yahooFinanceFetch(
     substituteVariables.call(this, urlBase) + "?" + urlSearchParams.toString();
   // console.log(url);
 
+  console.log(cookieJar.serializeSync());
+
   const fetchOptions = {
     ...fetchOptionsBase,
     headers: {
       ...fetchOptionsBase.headers,
-      cookie: cookieJar.getCookieStringSync(url),
+      cookie: cookieJar.getCookieStringSync(url, { allPaths: true }),
     },
   };
+
+  console.log("fetch", url, fetchOptions);
 
   // console.log(fetchOptions);
 
@@ -119,7 +123,11 @@ async function yahooFinanceFetch(
   const response = (await queue.add(() => fetchFunc(url, fetchOptions))) as any;
 
   const setCookieHeader = response.headers.get("set-cookie");
-  if (setCookieHeader) cookieJar.setFromSetCookieHeaders(setCookieHeader, url);
+  const setCookieHeaders = setCookieHeader && setCookieHeader.split(",");
+  if (setCookieHeaders)
+    setCookieHeaders.forEach((setCookieHeader: string) =>
+      cookieJar.setFromSetCookieHeaders(setCookieHeader, url)
+    );
 
   const result = await response[func]();
 
