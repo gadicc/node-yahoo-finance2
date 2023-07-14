@@ -1,3 +1,10 @@
+## [2.4.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.1...v2.4.2) (2023-07-14)
+
+
+### Bug Fixes
+
+* **quoteSummary:** "needsCrump" since a few days ago?  fixes [#633](https://github.com/gadicc/node-yahoo-finance2/issues/633). ([d05a764](https://github.com/gadicc/node-yahoo-finance2/commit/d05a764b4456309e2c0ae73c05474481f3fa146d))
+
 ## [2.4.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.0...v2.4.1) (2023-05-08)
 
 
