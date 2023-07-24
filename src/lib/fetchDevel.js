@@ -43,6 +43,7 @@ async function fetchDevel(url, fetchOptions) {
   );
 
   // Remove crumb param to have consistent cacheable URLs
+  const origUrl = url;
   url = url.replace(/[?&]crumb=[^?&]+/, "");
 
   // If devel===true, hash the url, otherwise use the value of devel
@@ -69,7 +70,7 @@ async function fetchDevel(url, fetchOptions) {
     contentObj = JSON.parse(contentJson);
   } catch (error) {
     if (error.code === "ENOENT") {
-      const res = await nodeFetch(url, fetchOptions);
+      const res = await nodeFetch(origUrl, fetchOptions);
 
       contentObj = {
         request: {
