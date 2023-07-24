@@ -1,3 +1,27 @@
+## [2.4.3](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.2...v2.4.3) (2023-07-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency node-fetch to v2.6.12 ([adbd93f](https://github.com/gadicc/node-yahoo-finance2/commit/adbd93ffb1a2c1f04523ce5bb523f19c2f836514))
+* **deps:** update dependency tough-cookie to v4.1.3 ([aa4d087](https://github.com/gadicc/node-yahoo-finance2/commit/aa4d0874e5a26b47fcbfb0a38d3cd6b5f8654a0c))
+* **fixDevel:** send real request with full URL with crumb ([2911f36](https://github.com/gadicc/node-yahoo-finance2/commit/2911f36146bd1b59490f653b6728c85a9f28d79c))
+* **quoteSummary:** schema: optional {stock,bond}Position (fixes [#639](https://github.com/gadicc/node-yahoo-finance2/issues/639)) ([cd63b48](https://github.com/gadicc/node-yahoo-finance2/commit/cd63b481f8f4b90c48d1706de6e19d86cecee12c))
+
+## [2.4.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.1...v2.4.2) (2023-07-14)
+
+
+### Bug Fixes
+
+* **quoteSummary:** "needsCrump" since a few days ago?  fixes [#633](https://github.com/gadicc/node-yahoo-finance2/issues/633). ([d05a764](https://github.com/gadicc/node-yahoo-finance2/commit/d05a764b4456309e2c0ae73c05474481f3fa146d))
+
+## [2.4.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.0...v2.4.1) (2023-05-08)
+
+
+### Bug Fixes
+
+* **getCrumb:** handle consent when required i.e. in EU ([#637](https://github.com/gadicc/node-yahoo-finance2/issues/637)) ([a4f90f1](https://github.com/gadicc/node-yahoo-finance2/commit/a4f90f1b400f772cb851a2e4b38f471ffece2213))
+
 # [2.4.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.3.10...v2.4.0) (2023-05-08)
 
 
