@@ -23,6 +23,7 @@ function itValidates(
       "ADA-USD", // has summaryProfile.twitter (#418),
       "EREGL.IS", // null in incomeStatementHistory/operatingIncome, in some .IS (#517)
       "THYAO.IS", // (#517)
+      "HISU-U.TO", // topHoldings: missing StockPosition, bondPosition (#639)
     ],
   });
 
