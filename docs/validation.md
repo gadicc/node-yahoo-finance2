@@ -9,6 +9,7 @@ side-step this if you understand the risks.
 1. [Skip Validation Completely](#using-unvalidated-data)
 1. [Don't Log Validation Failures](#dont-log-validation-fails)
 1. [A Note on Additional Properties](#note-additional-props)
+1. [Help Fix Validation Errors](#help-fix)
 
 <a name="why-validate"></a>
 ## Why Validate
@@ -154,3 +155,39 @@ yahooFinance._disallowAdditionalProps();
 which is the default when `NODE_ENV==="test"`.  This means that during our
 development of the library itself, we make sure that we're testing against
 all types.
+
+<a name="help-fix"></a>
+## Help Fix Validation Errors
+
+1. Fork the repo, clone locally and setup dev environment.
+   See [CONTRIBUTING](../CONTRIBUTING.md).
+
+1. Add the problematic symbol, depending on whether it affects just one or
+   multiple modules, either do the appropriate `.spec.ts` file for that
+   module, or to
+   [tests/testSymbols.ts](https://github.com/gadicc/node-yahoo-finance2/blob/devel/tests/testSymbols.ts).
+
+1. Run `yarn test` or `yarn test <moduleName>`, as relevant.  The API call
+   will be made and cached locally.  The test will fail as expected.
+
+1. Inspect the error and update the typescript interface in the relevant
+   module(s).
+
+1. Run `yarn schema` to rebuild the schema.
+
+1. Re-run `yarn test` and make sure the test now passes.
+
+1. (If noticed the issue for multiple symbols, you can test the rest of the
+   symbols via the CLI.  `yarn build` and then `yahoo-finance <module> <symbol>`.)
+
+1. (If you previously ran `yarn test <moduleName>`, run `yarn test` to make
+   sure *everything* is still working).
+
+1. Commit changes, e.g.
+
+   `git commit -am "fix(moduleName): make stockPosition optional (fixes #656)`
+
+1. `git push`
+
+1. Go back to GitHub and GitHub will suggest to open a pull request.
+
