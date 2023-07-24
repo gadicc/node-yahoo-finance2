@@ -170,8 +170,61 @@ all types.
 1. Run `yarn test` or `yarn test <moduleName>`, as relevant.  The API call
    will be made and cached locally.  The test will fail as expected.
 
-1. Inspect the error and update the typescript interface in the relevant
-   module(s).
+1. **Inspect the error and update the typescript interface in the relevant
+   module(s).**
+
+For example, say we had this error:
+
+`The following result did not validate with schema: #/definitions/QuoteSummaryResult`
+
+```js
+[
+  {
+    instancePath: '/topHoldings',
+    schemaPath: '#/required',
+    keyword: 'required',
+    params: { missingProperty: 'stockPosition' },
+    message: "must have required property 'stockPosition'",
+    data: {
+      maxAge: 1,
+      holdings: [],
+      equityHoldings: {
+        priceToEarnings: 0,
+        priceToBook: 0,
+        priceToSales: 0,
+        priceToCashflow: 0
+      },
+      bondHoldings: {},
+      bondRatings: [],
+      sectorWeightings: []
+    }
+  }
+]
+```
+
+We can see that:
+
+a) The module is **quoteSummary** (from `#/definitions/QuoteSummaryResult`)
+
+b) The error occured in `topHoldings`
+
+c) The issue is that it `"must have required property 'stockPosition'"` but didn't (you can see the exact response in `data`)
+
+So, we can fix this by making `stockPosition` optional by adding a
+`?` to its interface entry.  Modify `src/modules/quoteSummary-iface.ts`:
+
+```diff
+export interface TopHoldings {
+  [key: string]: any;
+  maxAge: number;
+-  stockPosition: number;
++  stockPosition?: number;
+  holdings: TopHoldingsHolding[];
+  equityHoldings: TopHoldingsEquityHoldings;
+  bondHoldings: object;
+```
+
+Now let's test our fix.
 
 1. Run `yarn schema` to rebuild the schema.
 
