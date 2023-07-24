@@ -447,6 +447,7 @@ export interface FundPerformancePerformanceOverview {
   ytdReturnPct?: number;
   oneYearTotalReturn?: number;
   threeYearTotalReturn?: number;
+  fiveYrAvgReturnPct?: number;
   morningStarReturnRating?: number;
   numYearsUp?: number;
   numYearsDown?: number;
@@ -896,8 +897,8 @@ export interface SummaryProfile {
 export interface TopHoldings {
   [key: string]: any;
   maxAge: number;
-  stockPosition: number;
-  bondPosition: number;
+  stockPosition?: number;
+  bondPosition?: number;
   holdings: TopHoldingsHolding[];
   equityHoldings: TopHoldingsEquityHoldings;
   bondHoldings: object;

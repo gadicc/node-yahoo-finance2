@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/HISU-U.TO?formatted=false&modules=assetProfile%2CbalanceSheetHistory%2CbalanceSheetHistoryQuarterly%2CcalendarEvents%2CcashflowStatementHistory%2CcashflowStatementHistoryQuarterly%2CdefaultKeyStatistics%2Cearnings%2CearningsHistory%2CearningsTrend%2CfinancialData%2CfundOwnership%2CfundPerformance%2CfundProfile%2CincomeStatementHistory%2CincomeStatementHistoryQuarterly%2CindexTrend%2CindustryTrend%2CinsiderHolders%2CinsiderTransactions%2CinstitutionOwnership%2CmajorDirectHolders%2CmajorHoldersBreakdown%2CnetSharePurchaseActivity%2Cprice%2CquoteType%2CrecommendationTrend%2CsecFilings%2CsectorTrend%2CsummaryDetail%2CsummaryProfile%2CtopHoldings%2CupgradeDowngradeHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "0tjop9pibscjn"
+      ],
+      "x-yahoo-request-id": [
+        "0tjop9pibscjn"
+      ],
+      "x-request-id": [
+        "4484f512-4e21-4e8f-b96c-d2494b3d7bd8"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1467"
+      ],
+      "x-envoy-upstream-service-time": [
+        "5"
+      ],
+      "date": [
+        "Mon, 24 Jul 2023 08:12:38 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"assetProfile\":{\"companyOfficers\":[],\"maxAge\":86400},\"fundProfile\":{\"maxAge\":1,\"styleBoxUrl\":\"https://s.yimg.com/lq/i/fi/3_0stylelargeeq.gif\",\"family\":\"Evolve Funds Group Inc\",\"categoryName\":null,\"legalType\":\"Exchange Traded Fund\",\"managementInfo\":{\"managerName\":null,\"managerBio\":null},\"feesExpensesInvestment\":{\"annualReportExpenseRatio\":0.0,\"annualHoldingsTurnover\":0.0,\"totalNetAssets\":0.0,\"projectionValues\":{}},\"feesExpensesInvestmentCat\":{\"totalNetAssets\":0.0,\"projectionValuesCat\":{}},\"brokerages\":[]},\"summaryDetail\":{\"maxAge\":1,\"priceHint\":2,\"previousClose\":100.32,\"open\":100.33,\"dayLow\":100.33,\"dayHigh\":100.34,\"regularMarketPreviousClose\":100.32,\"regularMarketOpen\":100.33,\"regularMarketDayLow\":100.33,\"regularMarketDayHigh\":100.34,\"volume\":6031,\"regularMarketVolume\":6031,\"averageVolume\":4788,\"averageVolume10days\":5237,\"averageDailyVolume10Day\":5237,\"bid\":100.33,\"ask\":100.45,\"totalAssets\":492777152,\"fiftyTwoWeekLow\":100.0,\"fiftyTwoWeekHigh\":100.5,\"fiftyDayAverage\":100.2454,\"twoHundredDayAverage\":100.20145,\"navPrice\":100.3328,\"currency\":\"USD\",\"fromCurrency\":null,\"toCurrency\":null,\"lastMarket\":null,\"coinMarketCapLink\":null,\"algorithm\":null,\"tradeable\":false},\"price\":{\"maxAge\":1,\"regularMarketChangePercent\":1.9932858E-4,\"regularMarketChange\":0.019996643,\"regularMarketTime\":1689969599,\"priceHint\":2,\"regularMarketPrice\":100.34,\"regularMarketDayHigh\":100.34,\"regularMarketDayLow\":100.33,\"regularMarketVolume\":6031,\"averageDailyVolume10Day\":5237,\"averageDailyVolume3Month\":4788,\"regularMarketPreviousClose\":100.32,\"regularMarketSource\":\"FREE_REALTIME\",\"regularMarketOpen\":100.33,\"exchange\":\"TOR\",\"exchangeName\":\"Toronto\",\"exchangeDataDelayedBy\":15,\"marketState\":\"PREPRE\",\"quoteType\":\"ETF\",\"symbol\":\"HISU-U.TO\",\"underlyingSymbol\":null,\"shortName\":\"US HIGH INTEREST SAVINGS ACCOUN\",\"longName\":\"US High Interest Savings Account Fund\",\"currency\":\"USD\",\"quoteSourceName\":\"Delayed Quote\",\"currencySymbol\":\"$\",\"fromCurrency\":null,\"toCurrency\":null,\"lastMarket\":null},\"defaultKeyStatistics\":{\"maxAge\":1,\"priceHint\":2,\"category\":null,\"ytdReturn\":0.0279495,\"beta3Year\":0.0,\"totalAssets\":492777152,\"fundFamily\":\"Evolve Funds Group Inc\",\"fundInceptionDate\":1661817600,\"legalType\":\"Exchange Traded Fund\",\"lastSplitFactor\":null},\"summaryProfile\":{\"companyOfficers\":[],\"maxAge\":86400},\"topHoldings\":{\"maxAge\":1,\"holdings\":[],\"equityHoldings\":{\"priceToEarnings\":0.0,\"priceToBook\":0.0,\"priceToSales\":0.0,\"priceToCashflow\":0.0},\"bondHoldings\":{},\"bondRatings\":[],\"sectorWeightings\":[]},\"fundPerformance\":{\"maxAge\":1,\"performanceOverview\":{\"asOfDate\":1689897600,\"ytdReturnPct\":0.0279495,\"fiveYrAvgReturnPct\":0.0,\"oneYearTotalReturn\":0.0,\"threeYearTotalReturn\":0.0},\"performanceOverviewCat\":{},\"trailingReturns\":{\"asOfDate\":1689897600,\"ytd\":0.0279495,\"oneMonth\":0.004391,\"threeMonth\":0.012919299,\"oneYear\":0.0,\"threeYear\":0.0,\"fiveYear\":0.0,\"tenYear\":0.0,\"lastBullMkt\":0.0,\"lastBearMkt\":0.0},\"trailingReturnsNav\":{\"ytd\":0.0279495,\"oneMonth\":0.004391,\"threeMonth\":0.012919299,\"oneYear\":0.0,\"threeYear\":0.0,\"fiveYear\":0.0,\"tenYear\":0.0},\"trailingReturnsCat\":{\"ytd\":0.0,\"oneMonth\":0.0,\"threeMonth\":0.0,\"oneYear\":0.0,\"threeYear\":0.0,\"fiveYear\":0.0,\"tenYear\":0.0,\"lastBullMkt\":0.0,\"lastBearMkt\":0.0},\"annualTotalReturns\":{\"returns\":[],\"returnsCat\":[]},\"pastQuarterlyReturns\":{\"returns\":[]},\"riskOverviewStatistics\":{\"riskStatistics\":[{\"year\":\"5y\",\"alpha\":0.0,\"beta\":0.0,\"meanAnnualReturn\":0.0,\"rSquared\":0.0,\"stdDev\":0.0,\"sharpeRatio\":0.0,\"treynorRatio\":0.0},{\"year\":\"3y\",\"alpha\":0.0,\"beta\":0.0,\"meanAnnualReturn\":0.0,\"rSquared\":0.0,\"stdDev\":0.0,\"sharpeRatio\":0.0,\"treynorRatio\":0.0},{\"year\":\"10y\",\"alpha\":0.0,\"beta\":0.0,\"meanAnnualReturn\":0.0,\"rSquared\":0.0,\"stdDev\":0.0,\"sharpeRatio\":0.0,\"treynorRatio\":0.0}]},\"riskOverviewStatisticsCat\":{\"riskStatisticsCat\":[]}},\"quoteType\":{\"exchange\":\"TOR\",\"quoteType\":\"ETF\",\"symbol\":\"HISU-U.TO\",\"underlyingSymbol\":\"HISU-U.TO\",\"shortName\":\"US HIGH INTEREST SAVINGS ACCOUN\",\"longName\":\"US High Interest Savings Account Fund\",\"firstTradeDateEpochUtc\":1661866200,\"timeZoneFullName\":\"America/Toronto\",\"timeZoneShortName\":\"EDT\",\"uuid\":\"06b5c08c-5841-3893-aaa9-8e2db93a17e8\",\"messageBoardId\":\"finmb_1793710275\",\"gmtOffSetMilliseconds\":-14400000,\"maxAge\":1}}],\"error\":null}}"
+  }
+}
