@@ -53,7 +53,7 @@ export interface SearchQuoteYahooCryptocurrency extends SearchQuoteYahoo {
 
 export interface SearchQuoteYahooFuture extends SearchQuoteYahoo {
   quoteType: "FUTURE";
-  typeDisp: "Future";
+  typeDisp: "Future" | "Futures";
 }
 
 export interface SearchQuoteNonYahoo {
