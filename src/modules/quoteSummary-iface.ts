@@ -790,21 +790,28 @@ export interface Filing {
   [key: string]: any;
   date: string; // TODO: check the format
   epochDate: Date;
-  type: Type;
+  type: FilingType;
   title: string;
   edgarUrl: string;
   maxAge: number;
   url?: string;
+  exhibits?: { type: string; url: string; downloadUrl?: string }[];
 }
 
-export enum Type {
-  The10K = "10-K",
-  The10Q = "10-Q",
-  The8K = "8-K",
-  The8KA = "8-K/A",
-  The10KA = "10-K/A",
-  The10QA = "10-Q/A",
-}
+// May consider switching this to string, as we keep finding more and more.
+type FilingType =
+  | "10-K"
+  | "10-Q"
+  | "8-K"
+  | "8-K/A"
+  | "10-K/A"
+  | "10-Q/A"
+  | "SD"
+  | "PX14A6G"
+  | "SC 13G/A"
+  | "DEFA14A"
+  | "25-NSE"
+  | "S-8 POS";
 
 export interface SummaryDetail {
   [key: string]: any;

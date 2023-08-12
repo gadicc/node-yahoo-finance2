@@ -163,6 +163,16 @@ describe("quoteSummary", () => {
 
     describe("secFilings", () => {
       itValidates("secFilings");
+
+      it("something", async () => {
+        const result = await yf.quoteSummary(
+          "AAPL",
+          {
+            modules: ["secFilings"],
+          },
+          { devel: "quoteSummary-secFilings-AAPL-new.json" }
+        );
+      });
     });
 
     describe("summaryDetail", () => {
