@@ -1,3 +1,18 @@
+## [2.4.4](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.3...v2.4.4) (2023-08-12)
+
+
+### Bug Fixes
+
+* **csv2json,historical:** dividends/csv with no data (fixes [#658](https://github.com/gadicc/node-yahoo-finance2/issues/658)) ([13dcc64](https://github.com/gadicc/node-yahoo-finance2/commit/13dcc644ea1d5224ff45ada4171ea201eb716c0b))
+* **deps:** update dependency node-fetch to v2.6.12 ([9f2352b](https://github.com/gadicc/node-yahoo-finance2/commit/9f2352bfaf4d3ad8fe42306cc2fc8866d369d248))
+* **deps:** update dependency tough-cookie to v4.1.3 ([8ea89d2](https://github.com/gadicc/node-yahoo-finance2/commit/8ea89d230eafda2416ec66037471a75a788656a9))
+* **fixDevel:** send real request with full URL with crumb ([e3b2409](https://github.com/gadicc/node-yahoo-finance2/commit/e3b240960c5fb0019fb888bc61f4c761e1c7af97))
+* **quoteSummary:** schema: optional {stock,bond}Position (fixes [#639](https://github.com/gadicc/node-yahoo-finance2/issues/639)) ([cc669b8](https://github.com/gadicc/node-yahoo-finance2/commit/cc669b8771ba8ae1a6606379bd853b4047bca070))
+* **schema:** quoteSummary, secFilings types (fixes [#646](https://github.com/gadicc/node-yahoo-finance2/issues/646)) ([e92702e](https://github.com/gadicc/node-yahoo-finance2/commit/e92702e03b7b83ad7b4227f5fe14bc7071f0c224))
+* **search:** also "Futures" (in addition to "Future") for typeDisp ([d745b67](https://github.com/gadicc/node-yahoo-finance2/commit/d745b67896345fec0a87f4187ffdfc89938082e3))
+* **validateAndCoerceTypes:** add a node for #help-fix doc ([662760d](https://github.com/gadicc/node-yahoo-finance2/commit/662760da63d5bc9d1890d7504a3fde330bedc37f))
+* **validations:** quoteSummary BMW.DE (fixes [#638](https://github.com/gadicc/node-yahoo-finance2/issues/638)) ([d943e97](https://github.com/gadicc/node-yahoo-finance2/commit/d943e97b8f6b111414c7f1bbbd720bedad342675))
+
 ## [2.4.3](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.2...v2.4.3) (2023-07-24)
 
 
