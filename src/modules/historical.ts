@@ -154,6 +154,8 @@ export default function historical(
     result: {
       schemaKey,
       transformWith(result: any) {
+        if (result.length === 0) return result;
+
         const filteredResults = [];
         const fieldCount = Object.keys(result[0]).length;
 
