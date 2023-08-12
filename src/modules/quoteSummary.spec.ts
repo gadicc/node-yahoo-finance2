@@ -164,8 +164,8 @@ describe("quoteSummary", () => {
     describe("secFilings", () => {
       itValidates("secFilings");
 
-      it("something", async () => {
-        const result = await yf.quoteSummary(
+      it("handles AAPL's secFilings", async () => {
+        await yf.quoteSummary(
           "AAPL",
           {
             modules: ["secFilings"],
@@ -192,5 +192,36 @@ describe("quoteSummary", () => {
     // Some modules change the output format of other modules!
     // @ts-ignore
     itValidates("all");
+  });
+
+  // Output can differ depending on the combination of modules.
+  describe("other combinations", () => {
+    it("handles BMW.DE module combinations", async () => {
+      await yf.quoteSummary(
+        "BMW.DE",
+        {
+          modules: [
+            "price",
+            "assetProfile",
+            "incomeStatementHistory",
+            "incomeStatementHistoryQuarterly",
+            "balanceSheetHistory",
+            "balanceSheetHistoryQuarterly",
+            "cashflowStatementHistory",
+            "cashflowStatementHistoryQuarterly",
+            "quoteType",
+            "financialData",
+            "defaultKeyStatistics",
+            "earnings",
+            "earningsHistory",
+            "earningsTrend",
+            "calendarEvents",
+            "summaryDetail",
+            "summaryProfile",
+          ],
+        },
+        { devel: "quoteSummary-other-BMW.DE.json" }
+      );
+    });
   });
 });

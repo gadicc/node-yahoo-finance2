@@ -62,8 +62,10 @@ export interface AssetProfile {
   fax?: string;
   website?: string;
   industry?: string;
+  industryDisp?: string;
   industrySymbol?: string;
   sector?: string;
+  sectorDisp?: string;
   longBusinessSummary?: string;
   fullTimeEmployees?: number;
   companyOfficers: CompanyOfficer[];
@@ -887,7 +889,9 @@ export interface SummaryProfile {
   fax?: string;
   website?: string;
   industry?: string;
+  industryDisp?: string;
   sector?: string;
+  sectorDisp?: string;
   longBusinessSummary?: string;
   fullTimeEmployees?: number;
   companyOfficers: any[];
