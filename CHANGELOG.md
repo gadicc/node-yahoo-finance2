@@ -1,3 +1,10 @@
+## [2.4.5](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.4...v2.4.5) (2023-09-03)
+
+
+### Bug Fixes
+
+* **quote:** schema dividend{Rate,Yield}, 52wkChngPercent (fixes [#636](https://github.com/gadicc/node-yahoo-finance2/issues/636)) ([4e6ed20](https://github.com/gadicc/node-yahoo-finance2/commit/4e6ed2051ad62c27417c4e2908b592edcca05a63))
+
 ## [2.4.4](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.3...v2.4.4) (2023-08-12)
 
 
