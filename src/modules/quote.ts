@@ -37,6 +37,7 @@ export interface QuoteBase {
   fiftyTwoWeekHighChangePercent?: number; // -0.07712155,
   fiftyTwoWeekLow?: number; // 180.68,
   fiftyTwoWeekHigh?: number; // 589.07,
+  fiftyTwoWeekChangePercent?: number; // 22.604025
   dividendDate?: Date; // 1609200000,
   // maybe always present on EQUITY?
   earningsTimestamp?: Date; // 1614200400,
@@ -146,6 +147,8 @@ export interface QuoteEtf extends QuoteBase {
 
 export interface QuoteEquity extends QuoteBase {
   quoteType: "EQUITY";
+  dividendRate?: number; // 0.96
+  dividendYield?: number; // 0.51,
 }
 
 export interface QuoteFuture extends QuoteBase {
