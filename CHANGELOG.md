@@ -1,3 +1,11 @@
+## [2.4.6](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.5...v2.4.6) (2023-09-04)
+
+
+### Bug Fixes
+
+* **chart/validation:** allow null results in some fields ([#662](https://github.com/gadicc/node-yahoo-finance2/issues/662)) ([83233fb](https://github.com/gadicc/node-yahoo-finance2/commit/83233fb5d6792cb84fe02a8c2dce07929bb8ae03))
+* **chart/validation:** commit updated schema and http fixture ([#662](https://github.com/gadicc/node-yahoo-finance2/issues/662)) ([e99cb18](https://github.com/gadicc/node-yahoo-finance2/commit/e99cb186284ae36efab54e7ce8228b4128da83fa))
+
 ## [2.4.5](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.4...v2.4.5) (2023-09-03)
 
 
