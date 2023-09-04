@@ -34,6 +34,20 @@ describe("chart", () => {
     );
   });
 
+  it("passes validation if some results are null", async () => {
+    await yf.chart(
+        "WSU.DE",
+        {
+          period1: "2023-08-04", // This was yielding a FailedYahooValidationError since
+          period2: "2023-08-09", // there are no results on the 2023-08-07
+          return: "object", // native Yahoo return format, first validation step.
+        },
+        {
+          devel: `chart-WSU.DE-2023-08-04-to-2023-08-09.json`,
+        }
+    );
+  });
+
   it("throws if period1,period2 are the same", async () => {
     await expect(
       yf.chart("TSLA", { period1: "2022-02-22", period2: "2022-02-22" })
