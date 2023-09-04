@@ -24,12 +24,12 @@ export interface ChartResultArray {
 export interface ChartResultArrayQuote {
   [key: string]: any;
   date: Date;
-  high: number;
-  low: number;
-  open: number;
-  close: number;
-  volume: number;
-  adjclose?: number;
+  high: number | null;
+  low: number | null;
+  open: number | null;
+  close: number | null;
+  volume: number | null;
+  adjclose?: number | null;
 }
 
 export interface ChartMeta {
@@ -117,16 +117,16 @@ export interface ChartIndicatorsObject {
 
 export interface ChartIndicatorQuote {
   [key: string]: any;
-  high: Array<number>;
-  low: Array<number>;
-  open: Array<number>;
-  close: Array<number>;
-  volume: Array<number>;
+  high: Array<number | null>;
+  low: Array<number | null>;
+  open: Array<number | null>;
+  close: Array<number | null>;
+  volume: Array<number | null>;
 }
 
 export interface ChartIndicatorAdjclose {
   [key: string]: any;
-  adjclose?: Array<number>; // Missing in e.g. "APS.AX"
+  adjclose?: Array<number | null>; // Missing in e.g. "APS.AX"
 }
 
 export interface ChartOptions {
