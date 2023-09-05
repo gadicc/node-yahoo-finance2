@@ -83,7 +83,7 @@ export interface InsightsInstrumentInfo {
     provider: string;
     support?: number;
     resistance?: number;
-    stopLoss: number;
+    stopLoss?: number;
   };
   technicalEvents: {
     [key: string]: any;
@@ -105,7 +105,7 @@ export interface InsightsInstrumentInfo {
 
 export interface InsightsCompanySnapshot {
   [key: string]: any;
-  sectorInfo: string;
+  sectorInfo?: string;
   company: {
     [key: string]: any;
     innovativeness?: number;
