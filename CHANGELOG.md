@@ -1,3 +1,12 @@
+## [2.4.7](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.6...v2.4.7) (2023-09-06)
+
+
+### Bug Fixes
+
+* **insights:** Insights and SEC Filings validation errors ([#665](https://github.com/gadicc/node-yahoo-finance2/issues/665)) ([23f2789](https://github.com/gadicc/node-yahoo-finance2/commit/23f27895f0678692ae829b8c8bf3478b7f59b341)), closes [#663](https://github.com/gadicc/node-yahoo-finance2/issues/663) [#664](https://github.com/gadicc/node-yahoo-finance2/issues/664)
+* **insights:** missing/optional fields/enums, tests (fixes [#663](https://github.com/gadicc/node-yahoo-finance2/issues/663)) ([3c02753](https://github.com/gadicc/node-yahoo-finance2/commit/3c0275336f9533630a008a9a37ada9a63eb83996))
+* **quoteSummary:** add Grade "ConvictionBuy"; tests foR ARMK ([#664](https://github.com/gadicc/node-yahoo-finance2/issues/664)) ([c0efc07](https://github.com/gadicc/node-yahoo-finance2/commit/c0efc074dfbb6d92462a290c4fcc605663eebaba))
+
 ## [2.4.6](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.5...v2.4.6) (2023-09-04)
 
 
