@@ -42,8 +42,9 @@ export interface InsightsReport {
   reportTitle: string;
   reportType: string;
   targetPrice?: number;
-  targetPriceStatus?: "Increased" | "Maintained" | "Decreased";
+  targetPriceStatus?: "Increased" | "Maintained" | "Decreased" | "-";
   investmentRating?: "Bullish" | "Neutral" | "Bearish";
+  tickers?: string[];
 }
 
 export interface InsightsResearchReport {
@@ -52,7 +53,7 @@ export interface InsightsResearchReport {
   title: string;
   reportDate: Date;
   summary: string;
-  investmentRating: "Bullish" | "Neutral" | "Bearish";
+  investmentRating?: "Bullish" | "Neutral" | "Bearish";
 }
 
 export interface InsightsSecReport {

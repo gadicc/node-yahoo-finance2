@@ -9,6 +9,9 @@ describe("insights", () => {
   const symbols = testSymbols({
     add: [
       "ABBOTINDIA.NS", // field "upsell" with { "companyName", "upsellReportType" }
+      "HIDV", //  instrumentInfo/keyTechnicals missingProperty: "stopLoss" (#663)
+      "MPAY", // companySnapshot missingProperty: "sectorInfo" (#663)
+      "RUSHA", // targetPriceStatus/enum "-" (#663)
     ],
   });
 

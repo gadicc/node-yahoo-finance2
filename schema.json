@@ -1351,7 +1351,8 @@
           "enum": [
             "Increased",
             "Maintained",
-            "Decreased"
+            "Decreased",
+            "-"
           ]
         },
         "investmentRating": {
@@ -1361,6 +1362,12 @@
             "Neutral",
             "Bearish"
           ]
+        },
+        "tickers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "required": [
@@ -1448,8 +1455,7 @@
         "provider",
         "title",
         "reportDate",
-        "summary",
-        "investmentRating"
+        "summary"
       ],
       "additionalProperties": false
     },

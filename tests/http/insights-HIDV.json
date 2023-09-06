@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=HIDV"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=300, stale-while-revalidate=120"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "49e1lalifgdks"
+      ],
+      "x-yahoo-request-id": [
+        "49e1lalifgdks"
+      ],
+      "x-request-id": [
+        "a1a9d41e-2cad-4905-9787-2e0775179d19"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "933"
+      ],
+      "x-envoy-upstream-service-time": [
+        "13"
+      ],
+      "date": [
+        "Wed, 06 Sep 2023 08:21:48 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-market-analytics-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "3"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"finance\":{\"result\":{\"symbol\":\"HIDV\",\"instrumentInfo\":{\"technicalEvents\":{\"provider\":\"Trading Central\",\"shortTermOutlook\":{\"stateDescription\":\"Recent bullish events outweigh bearish events.\",\"direction\":\"Bullish\",\"score\":4,\"scoreDescription\":\"Very Strong Bullish Evidence\",\"indexDirection\":\"Bullish\",\"indexScore\":4,\"indexScoreDescription\":\"Very Strong Bullish Evidence\"},\"intermediateTermOutlook\":{\"stateDescription\":\"There is one bullish event.\",\"direction\":\"Bullish\",\"score\":2,\"scoreDescription\":\"Bullish Evidence\",\"indexDirection\":\"Bearish\",\"indexScore\":2,\"indexScoreDescription\":\"Bearish Evidence\"},\"longTermOutlook\":{\"stateDescription\":\"There are no events.\",\"direction\":\"Neutral\",\"score\":0,\"scoreDescription\":\"No Evidence\",\"indexDirection\":\"Bullish\",\"indexScore\":2,\"indexScoreDescription\":\"Bullish Evidence\"}},\"keyTechnicals\":{\"provider\":\"Trading Central\"},\"valuation\":{\"provider\":\"Trading Central\"}},\"upsell\":{},\"events\":[{\"eventType\":\"Short-term KST\",\"pricePeriod\":\"D\",\"tradingHorizon\":\"S\",\"tradeType\":\"L\",\"imageUrl\":\"https://s.yimg.com/uc/fin/img/assets/generic.svg\",\"startDate\":1693575000,\"endDate\":1693575000}],\"reports\":[{\"id\":\"ARGUS_37482_InsiderActivity_1693216990000\",\"headHtml\":\"Daily – Vickers Top Insider Picks for 08/28/2023\",\"provider\":\"Argus Research\",\"reportDate\":\"2023-08-28T10:03:10Z\",\"reportTitle\":\"The Vickers Top Insider Picks is a daily report that utilizes a proprietary algorithm to identify 25 companies with compelling insider purchase histories based on transactions over the past three months.\",\"reportType\":\"Insider Activity\",\"tickers\":[\"AIRG\",\"BSBK\",\"DOMH\",\"STRR\",\"CALC\",\"NXGL\",\"FBK\",\"GRNT\",\"TCBI\",\"ASYS\",\"SFST\",\"ADV\",\"FSCO\",\"TURN\",\"ESSA\",\"OPOF\",\"NVCT\",\"FWRD\",\"HCWB\",\"SLND\",\"HASI\",\"ASLE\",\"RMCF\",\"CLRO\",\"ULBI\"]},{\"id\":\"ARGUS_37256_InsiderActivity_1691061357000\",\"headHtml\":\"Daily – Vickers Top Insider Picks for 08/03/2023\",\"provider\":\"Argus Research\",\"reportDate\":\"2023-08-03T11:15:57Z\",\"reportTitle\":\"The Vickers Top Insider Picks is a daily report that utilizes a proprietary algorithm to identify 25 companies with compelling insider purchase histories based on transactions over the past three months.\",\"reportType\":\"Insider Activity\",\"tickers\":[\"SHFS\",\"BSBK\",\"DOMH\",\"STRR\",\"HCWB\",\"MOFG\",\"ATLO\",\"CALC\",\"MRBK\",\"NXGL\",\"LARK\",\"GRNT\",\"SFST\",\"EWBC\",\"ADV\",\"KORE\",\"RYAM\",\"FSCO\",\"FARO\",\"ULBI\",\"BOTJ\",\"OPOF\",\"NVCT\",\"BBGI\"]}],\"sigDevs\":[]},\"error\":null}}"
+  }
+}
