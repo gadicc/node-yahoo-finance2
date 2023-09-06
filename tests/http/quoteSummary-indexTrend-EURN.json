@@ -1,0 +1,70 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EURN?formatted=false&modules=indexTrend"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "4uoobphifgd63"
+      ],
+      "x-yahoo-request-id": [
+        "4uoobphifgd63"
+      ],
+      "x-request-id": [
+        "b5619510-73b5-4d6e-9e41-2b0ab9eafe86"
+      ],
+      "content-length": [
+        "327"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Wed, 06 Sep 2023 08:13:55 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"indexTrend\":{\"maxAge\":1,\"symbol\":\"SP5\",\"peRatio\":16.5852,\"pegRatio\":-2.0165,\"estimates\":[{\"period\":\"0q\",\"growth\":0.053000003},{\"period\":\"+1q\",\"growth\":0.116000004},{\"period\":\"0y\",\"growth\":0.011},{\"period\":\"+1y\",\"growth\":0.101},{\"period\":\"+5y\",\"growth\":0.0843721},{\"period\":\"-5y\"}]}}],\"error\":null}}"
+  }
+}

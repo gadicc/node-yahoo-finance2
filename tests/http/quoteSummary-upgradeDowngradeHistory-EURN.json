@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EURN?formatted=false&modules=upgradeDowngradeHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "7sq3di9ifgd65"
+      ],
+      "x-yahoo-request-id": [
+        "7sq3di9ifgd65"
+      ],
+      "x-request-id": [
+        "8f7f788c-ded7-4756-8749-a21ba7da2f4a"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "926"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Wed, 06 Sep 2023 08:13:57 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"upgradeDowngradeHistory\":{\"history\":[{\"epochGradeDate\":1692088476,\"firm\":\"JP Morgan\",\"toGrade\":\"Overweight\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1683882081,\"firm\":\"Deutsche Bank\",\"toGrade\":\"Buy\",\"fromGrade\":\"Hold\",\"action\":\"up\"},{\"epochGradeDate\":1683799741,\"firm\":\"Jefferies\",\"toGrade\":\"Buy\",\"fromGrade\":\"Buy\",\"action\":\"reit\"},{\"epochGradeDate\":1682424924,\"firm\":\"Stifel\",\"toGrade\":\"Buy\",\"fromGrade\":\"Hold\",\"action\":\"up\"},{\"epochGradeDate\":1679591258,\"firm\":\"Jefferies\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"reit\"},{\"epochGradeDate\":1679409024,\"firm\":\"Jefferies\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"reit\"},{\"epochGradeDate\":1677520072,\"firm\":\"Jefferies\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"main\"},{\"epochGradeDate\":1673532295,\"firm\":\"Deutsche Bank\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"main\"},{\"epochGradeDate\":1673442248,\"firm\":\"JonesTrading\",\"toGrade\":\"Buy\",\"fromGrade\":\"Hold\",\"action\":\"up\"},{\"epochGradeDate\":1673354926,\"firm\":\"Stifel\",\"toGrade\":\"Hold\",\"fromGrade\":\"Buy\",\"action\":\"down\"},{\"epochGradeDate\":1669716553,\"firm\":\"Jefferies\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"main\"},{\"epochGradeDate\":1666873456,\"firm\":\"BTIG\",\"toGrade\":\"Neutral\",\"fromGrade\":\"Buy\",\"action\":\"down\"},{\"epochGradeDate\":1662460657,\"firm\":\"Deutsche Bank\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"main\"},{\"epochGradeDate\":1662453451,\"firm\":\"Jefferies\",\"toGrade\":\"Buy\",\"fromGrade\":\"Hold\",\"action\":\"up\"},{\"epochGradeDate\":1658398856,\"firm\":\"Jefferies\",\"toGrade\":\"Hold\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1658237448,\"firm\":\"Stifel\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"main\"},{\"epochGradeDate\":1651048853,\"firm\":\"Jefferies\",\"toGrade\":\"Hold\",\"fromGrade\":\"Buy\",\"action\":\"down\"},{\"epochGradeDate\":1617019659,\"firm\":\"HC Wainwright & Co.\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1610109517,\"firm\":\"BTIG\",\"toGrade\":\"Buy\",\"fromGrade\":\"Neutral\",\"action\":\"up\"},{\"epochGradeDate\":1603442989,\"firm\":\"Jefferies\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"main\"},{\"epochGradeDate\":1603296053,\"firm\":\"BTIG\",\"toGrade\":\"Neutral\",\"fromGrade\":\"Buy\",\"action\":\"down\"},{\"epochGradeDate\":1600703454,\"firm\":\"JonesTrading\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1548248721,\"firm\":\"JP Morgan\",\"toGrade\":\"Overweight\",\"fromGrade\":\"Neutral\",\"action\":\"up\"},{\"epochGradeDate\":1543582961,\"firm\":\"DNB Markets\",\"toGrade\":\"Hold\",\"fromGrade\":\"Buy\",\"action\":\"down\"},{\"epochGradeDate\":1538402188,\"firm\":\"Jefferies\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1538045302,\"firm\":\"BTIG Research\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1534250385,\"firm\":\"Pareto\",\"toGrade\":\"Buy\",\"fromGrade\":\"Hold\",\"action\":\"up\"},{\"epochGradeDate\":1534247007,\"firm\":\"Wells Fargo\",\"toGrade\":\"Outperform\",\"fromGrade\":\"Outperform\",\"action\":\"main\"},{\"epochGradeDate\":1533901967,\"firm\":\"JP Morgan\",\"toGrade\":\"Neutral\",\"fromGrade\":\"Neutral\",\"action\":\"main\"},{\"epochGradeDate\":1521805927,\"firm\":\"JP Morgan\",\"toGrade\":\"Neutral\",\"fromGrade\":\"Neutral\",\"action\":\"main\"},{\"epochGradeDate\":1518438337,\"firm\":\"Morgan Stanley\",\"toGrade\":\"Overweight\",\"fromGrade\":\"Equal-Weight\",\"action\":\"up\"},{\"epochGradeDate\":1516992844,\"firm\":\"UBS\",\"toGrade\":\"Neutral\",\"fromGrade\":\"Neutral\",\"action\":\"main\"},{\"epochGradeDate\":1483444140,\"firm\":\"Deutsche Bank\",\"toGrade\":\"Buy\",\"fromGrade\":\"Hold\",\"action\":\"up\"},{\"epochGradeDate\":1476676800,\"firm\":\"Credit Suisse\",\"toGrade\":\"Outperform\",\"fromGrade\":\"\",\"action\":\"main\"},{\"epochGradeDate\":1475755246,\"firm\":\"Citigroup\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"main\"},{\"epochGradeDate\":1472113907,\"firm\":\"Morgan Stanley\",\"toGrade\":\"Equal-Weight\",\"fromGrade\":\"Overweight\",\"action\":\"down\"},{\"epochGradeDate\":1469803391,\"firm\":\"Citigroup\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"main\"},{\"epochGradeDate\":1469534950,\"firm\":\"UBS\",\"toGrade\":\"Neutral\",\"fromGrade\":\"Buy\",\"action\":\"down\"},{\"epochGradeDate\":1460047570,\"firm\":\"JP Morgan\",\"toGrade\":\"Neutral\",\"fromGrade\":\"\",\"action\":\"main\"},{\"epochGradeDate\":1456483530,\"firm\":\"Deutsche Bank\",\"toGrade\":\"Hold\",\"fromGrade\":\"Buy\",\"action\":\"down\"},{\"epochGradeDate\":1452599740,\"firm\":\"JP Morgan\",\"toGrade\":\"Neutral\",\"fromGrade\":\"\",\"action\":\"down\"},{\"epochGradeDate\":1440503874,\"firm\":\"Wells Fargo\",\"toGrade\":\"Outperform\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1440071755,\"firm\":\"UBS\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1436959589,\"firm\":\"Stifel Nicolaus\",\"toGrade\":\"Hold\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1436959562,\"firm\":\"Stifel Nicolaus\",\"toGrade\":\"Hold\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1431945648,\"firm\":\"JP Morgan\",\"toGrade\":\"Overweight\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1431592406,\"firm\":\"Credit Suisse\",\"toGrade\":\"Outperform\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1427979600,\"firm\":\"Citigroup\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"main\"},{\"epochGradeDate\":1425298502,\"firm\":\"JP Morgan\",\"toGrade\":\"Overweight\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1424447049,\"firm\":\"Seaport Global\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1424192989,\"firm\":\"Evercore ISI Group\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1424177352,\"firm\":\"Citigroup\",\"toGrade\":\"\",\"fromGrade\":\"Buy\",\"action\":\"init\"},{\"epochGradeDate\":1424177250,\"firm\":\"Deutsche Bank\",\"toGrade\":\"Buy\",\"fromGrade\":\"\",\"action\":\"init\"},{\"epochGradeDate\":1424169557,\"firm\":\"Morgan Stanley\",\"toGrade\":\"Overweight\",\"fromGrade\":\"\",\"action\":\"init\"}],\"maxAge\":86400}}],\"error\":null}}"
+  }
+}

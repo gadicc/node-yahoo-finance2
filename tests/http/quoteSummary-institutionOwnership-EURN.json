@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EURN?formatted=false&modules=institutionOwnership"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "5nhe9h9ifgd64"
+      ],
+      "x-yahoo-request-id": [
+        "5nhe9h9ifgd64"
+      ],
+      "x-request-id": [
+        "0e93092c-a734-4bad-8477-ec439659f1a6"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "911"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Wed, 06 Sep 2023 08:13:56 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"institutionOwnership\":{\"maxAge\":1,\"ownershipList\":[{\"maxAge\":1,\"reportDate\":{\"raw\":1672444800,\"fmt\":\"2022-12-31\"},\"organization\":\"Norges Bank Investment Management\",\"pctHeld\":{\"raw\":0.0249,\"fmt\":\"2.49%\"},\"position\":{\"raw\":5467874,\"fmt\":\"5.47M\",\"longFmt\":\"5,467,874\"},\"value\":{\"raw\":89399741,\"fmt\":\"89.4M\",\"longFmt\":\"89,399,741\"},\"pctChange\":{\"raw\":1.0,\"fmt\":\"100.00%\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1688083200,\"fmt\":\"2023-06-30\"},\"organization\":\"Vanguard Group Inc\",\"pctHeld\":{\"raw\":0.0201,\"fmt\":\"2.01%\"},\"position\":{\"raw\":4431305,\"fmt\":\"4.43M\",\"longFmt\":\"4,431,305\"},\"value\":{\"raw\":72451838,\"fmt\":\"72.45M\",\"longFmt\":\"72,451,838\"},\"pctChange\":{\"raw\":0.0095,\"fmt\":\"0.95%\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1688083200,\"fmt\":\"2023-06-30\"},\"organization\":\"M&G Investment Management Ltd\",\"pctHeld\":{\"raw\":0.0182,\"fmt\":\"1.82%\"},\"position\":{\"raw\":4000421,\"fmt\":\"4M\",\"longFmt\":\"4,000,421\"},\"value\":{\"raw\":65406884,\"fmt\":\"65.41M\",\"longFmt\":\"65,406,884\"},\"pctChange\":{\"raw\":-0.0021,\"fmt\":\"-0.21%\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1688083200,\"fmt\":\"2023-06-30\"},\"organization\":\"Barclays Plc\",\"pctHeld\":{\"raw\":0.0115,\"fmt\":\"1.15%\"},\"position\":{\"raw\":2524075,\"fmt\":\"2.52M\",\"longFmt\":\"2,524,075\"},\"value\":{\"raw\":41268627,\"fmt\":\"41.27M\",\"longFmt\":\"41,268,627\"},\"pctChange\":{\"raw\":0.5068,\"fmt\":\"50.68%\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1688083200,\"fmt\":\"2023-06-30\"},\"organization\":\"Millennium Management Llc\",\"pctHeld\":{\"raw\":0.010199999,\"fmt\":\"1.02%\"},\"position\":{\"raw\":2245490,\"fmt\":\"2.25M\",\"longFmt\":\"2,245,490\"},\"value\":{\"raw\":36713762,\"fmt\":\"36.71M\",\"longFmt\":\"36,713,762\"},\"pctChange\":{\"raw\":1.1454,\"fmt\":\"114.54%\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1688083200,\"fmt\":\"2023-06-30\"},\"organization\":\"Schonfeld Strategic Advisors Llc\",\"pctHeld\":{\"raw\":0.0101,\"fmt\":\"1.01%\"},\"position\":{\"raw\":2226500,\"fmt\":\"2.23M\",\"longFmt\":\"2,226,500\"},\"value\":{\"raw\":36403275,\"fmt\":\"36.4M\",\"longFmt\":\"36,403,275\"},\"pctChange\":{\"raw\":-0.1099,\"fmt\":\"-10.99%\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1688083200,\"fmt\":\"2023-06-30\"},\"organization\":\"Morgan Stanley\",\"pctHeld\":{\"raw\":0.006,\"fmt\":\"0.60%\"},\"position\":{\"raw\":1318970,\"fmt\":\"1.32M\",\"longFmt\":\"1,318,970\"},\"value\":{\"raw\":21565160,\"fmt\":\"21.57M\",\"longFmt\":\"21,565,160\"},\"pctChange\":{\"raw\":-0.1522,\"fmt\":\"-15.22%\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1688083200,\"fmt\":\"2023-06-30\"},\"organization\":\"Balyasny Asset Management LLC\",\"pctHeld\":{\"raw\":0.006,\"fmt\":\"0.60%\"},\"position\":{\"raw\":1311144,\"fmt\":\"1.31M\",\"longFmt\":\"1,311,144\"},\"value\":{\"raw\":21437204,\"fmt\":\"21.44M\",\"longFmt\":\"21,437,204\"},\"pctChange\":{\"raw\":6.2775,\"fmt\":\"627.75%\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1688083200,\"fmt\":\"2023-06-30\"},\"organization\":\"Renaissance Technologies, LLC\",\"pctHeld\":{\"raw\":0.0053,\"fmt\":\"0.53%\"},\"position\":{\"raw\":1167902,\"fmt\":\"1.17M\",\"longFmt\":\"1,167,902\"},\"value\":{\"raw\":19095198,\"fmt\":\"19.1M\",\"longFmt\":\"19,095,198\"},\"pctChange\":{\"raw\":-0.0291,\"fmt\":\"-2.91%\"}},{\"maxAge\":1,\"reportDate\":{\"raw\":1688083200,\"fmt\":\"2023-06-30\"},\"organization\":\"ExodusPoint Capital Management, LP\",\"pctHeld\":{\"raw\":0.0046,\"fmt\":\"0.46%\"},\"position\":{\"raw\":1008775,\"fmt\":\"1.01M\",\"longFmt\":\"1,008,775\"},\"value\":{\"raw\":16493471,\"fmt\":\"16.49M\",\"longFmt\":\"16,493,471\"},\"pctChange\":{\"raw\":-0.0655,\"fmt\":\"-6.55%\"}}]}}],\"error\":null}}"
+  }
+}

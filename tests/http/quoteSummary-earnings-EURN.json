@@ -1,0 +1,70 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EURN?formatted=false&modules=earnings"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "4r5rajdifgd63"
+      ],
+      "x-yahoo-request-id": [
+        "4r5rajdifgd63"
+      ],
+      "x-request-id": [
+        "afab5e57-1e1c-429a-a1b8-29e1d4937e86"
+      ],
+      "content-length": [
+        "923"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 06 Sep 2023 08:13:55 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"earnings\":{\"maxAge\":86400,\"earningsChart\":{\"quarterly\":[{\"date\":\"3Q2022\",\"actual\":0.08,\"estimate\":0.11},{\"date\":\"4Q2022\",\"actual\":1.16,\"estimate\":0.72},{\"date\":\"1Q2023\",\"actual\":0.87,\"estimate\":0.72},{\"date\":\"2Q2023\",\"actual\":0.8,\"estimate\":0.81}],\"currentQuarterEstimate\":0.41,\"currentQuarterEstimateDate\":\"3Q\",\"currentQuarterEstimateYear\":2023,\"earningsDate\":[]},\"financialsChart\":{\"yearly\":[{\"date\":2019,\"revenue\":914711000,\"earnings\":112230000},{\"date\":2020,\"revenue\":1210341000,\"earnings\":473238000},{\"date\":2021,\"revenue\":419770000,\"earnings\":-338777000},{\"date\":2022,\"revenue\":854669000,\"earnings\":202891000}],\"quarterly\":[{\"date\":\"3Q2022\",\"revenue\":223539000,\"earnings\":16448000},{\"date\":\"4Q2022\",\"revenue\":368068000,\"earnings\":234719000},{\"date\":\"1Q2023\",\"revenue\":0,\"earnings\":0},{\"date\":\"2Q2023\",\"revenue\":348161000,\"earnings\":161820000}]},\"financialCurrency\":\"USD\"}}],\"error\":null}}"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EURN?formatted=false&modules=price"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "y-rid": [
+        "0rij7hhifgd64"
+      ],
+      "x-yahoo-request-id": [
+        "0rij7hhifgd64"
+      ],
+      "x-request-id": [
+        "d4f5f099-0576-4af7-9583-00e19a0744a4"
+      ],
+      "content-length": [
+        "1046"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 06 Sep 2023 08:13:56 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"price\":{\"maxAge\":1,\"preMarketChangePercent\":0.011575521,\"preMarketChange\":0.17999935,\"preMarketTime\":1693987201,\"preMarketPrice\":15.73,\"preMarketSource\":\"FREE_REALTIME\",\"postMarketChangePercent\":0.005504596,\"postMarketChange\":0.09000015,\"postMarketTime\":1693958041,\"postMarketPrice\":16.44,\"postMarketSource\":\"DELAYED\",\"regularMarketChangePercent\":-0.044418477,\"regularMarketChange\":-0.7600002,\"regularMarketTime\":1693944001,\"priceHint\":2,\"regularMarketPrice\":16.35,\"regularMarketDayHigh\":16.78,\"regularMarketDayLow\":16.29,\"regularMarketVolume\":1612390,\"regularMarketPreviousClose\":17.11,\"regularMarketSource\":\"DELAYED\",\"regularMarketOpen\":16.78,\"exchange\":\"NYQ\",\"exchangeName\":\"NYSE\",\"exchangeDataDelayedBy\":0,\"marketState\":\"PRE\",\"quoteType\":\"EQUITY\",\"symbol\":\"EURN\",\"underlyingSymbol\":null,\"shortName\":\"Euronav NV\",\"longName\":\"Euronav NV\",\"currency\":\"USD\",\"quoteSourceName\":\"Nasdaq Real Time Price\",\"currencySymbol\":\"$\",\"fromCurrency\":null,\"toCurrency\":null,\"lastMarket\":null,\"marketCap\":3431718144}}],\"error\":null}}"
+  }
+}

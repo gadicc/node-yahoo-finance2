@@ -24,6 +24,7 @@ function itValidates(
       "EREGL.IS", // null in incomeStatementHistory/operatingIncome, in some .IS (#517)
       "THYAO.IS", // (#517)
       "HISU-U.TO", // topHoldings: missing StockPosition, bondPosition (#639)
+      "EURN", // secFilings: missing some filing types (#664)
     ],
   });
 
