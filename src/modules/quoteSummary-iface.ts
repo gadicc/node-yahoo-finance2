@@ -823,11 +823,7 @@ type FilingType =
   | "SC 13G"
   | "S-8"
   | "DEF 14A"
-  | "F-10"
-  
-  
-  
-  ;
+  | "F-10";
 
 export interface SummaryDetail {
   [key: string]: any;
