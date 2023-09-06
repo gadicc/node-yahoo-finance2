@@ -813,7 +813,17 @@ type FilingType =
   | "SC 13G/A"
   | "DEFA14A"
   | "25-NSE"
-  | "S-8 POS";
+  | "S-8 POS"
+  | "6-K"
+  | "F-3ASR"
+  | "SC 13D/A"
+  | "20-F"
+  | "425"
+  | "SC14D9C"
+  | "SC 13G"
+  | "S-8"
+  | "DEF 14A"
+  | "F-10";
 
 export interface SummaryDetail {
   [key: string]: any;
