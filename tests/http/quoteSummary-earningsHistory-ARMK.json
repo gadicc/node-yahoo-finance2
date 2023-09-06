@@ -1,0 +1,70 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ARMK?formatted=false&modules=earningsHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "45cc5bdifgd9v"
+      ],
+      "x-yahoo-request-id": [
+        "45cc5bdifgd9v"
+      ],
+      "x-request-id": [
+        "94df80f2-cfa9-4847-870e-fc4ec8da3052"
+      ],
+      "content-length": [
+        "1057"
+      ],
+      "x-envoy-upstream-service-time": [
+        "1"
+      ],
+      "date": [
+        "Wed, 06 Sep 2023 08:15:58 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "1"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"earningsHistory\":{\"history\":[{\"maxAge\":1,\"epsActual\":{\"raw\":0.49,\"fmt\":\"0.49\"},\"epsEstimate\":{\"raw\":0.49,\"fmt\":\"0.49\"},\"epsDifference\":{\"raw\":0.0,\"fmt\":\"0\"},\"surprisePercent\":{\"raw\":0.0,\"fmt\":\"0.00%\"},\"quarter\":{\"raw\":1664496000,\"fmt\":\"2022-09-30\"},\"period\":\"-4q\"},{\"maxAge\":1,\"epsActual\":{\"raw\":0.41,\"fmt\":\"0.41\"},\"epsEstimate\":{\"raw\":0.43,\"fmt\":\"0.43\"},\"epsDifference\":{\"raw\":-0.02,\"fmt\":\"-0.02\"},\"surprisePercent\":{\"raw\":-0.047,\"fmt\":\"-4.70%\"},\"quarter\":{\"raw\":1672444800,\"fmt\":\"2022-12-31\"},\"period\":\"-3q\"},{\"maxAge\":1,\"epsActual\":{\"raw\":0.28,\"fmt\":\"0.28\"},\"epsEstimate\":{\"raw\":0.26,\"fmt\":\"0.26\"},\"epsDifference\":{\"raw\":0.02,\"fmt\":\"0.02\"},\"surprisePercent\":{\"raw\":0.077,\"fmt\":\"7.70%\"},\"quarter\":{\"raw\":1680220800,\"fmt\":\"2023-03-31\"},\"period\":\"-2q\"},{\"maxAge\":1,\"epsActual\":{\"raw\":0.36,\"fmt\":\"0.36\"},\"epsEstimate\":{\"raw\":0.34,\"fmt\":\"0.34\"},\"epsDifference\":{\"raw\":0.02,\"fmt\":\"0.02\"},\"surprisePercent\":{\"raw\":0.059,\"fmt\":\"5.90%\"},\"quarter\":{\"raw\":1688083200,\"fmt\":\"2023-06-30\"},\"period\":\"-1q\"}],\"maxAge\":86400}}],\"error\":null}}"
+  }
+}

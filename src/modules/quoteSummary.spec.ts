@@ -25,6 +25,7 @@ function itValidates(
       "THYAO.IS", // (#517)
       "HISU-U.TO", // topHoldings: missing StockPosition, bondPosition (#639)
       "EURN", // secFilings: missing some filing types (#664)
+      "ARMK", // secFilings: missing some filing types (#664)
     ],
   });
 

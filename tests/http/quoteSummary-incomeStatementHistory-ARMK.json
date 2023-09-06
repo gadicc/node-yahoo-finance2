@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ARMK?formatted=false&modules=incomeStatementHistory"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "5b9269hifgd9v"
+      ],
+      "x-yahoo-request-id": [
+        "5b9269hifgd9v"
+      ],
+      "x-request-id": [
+        "698bdea4-e89c-435b-9ae0-df1f5ddaaf63"
+      ],
+      "content-encoding": [
+        "gzip"
+      ],
+      "content-length": [
+        "1370"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 06 Sep 2023 08:15:59 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"incomeStatementHistory\":{\"incomeStatementHistory\":[{\"maxAge\":1,\"endDate\":{\"raw\":1664496000,\"fmt\":\"2022-09-30\"},\"totalRevenue\":{\"raw\":16326624000,\"fmt\":\"16.33B\",\"longFmt\":\"16,326,624,000\"},\"costOfRevenue\":{\"raw\":13836949000,\"fmt\":\"13.84B\",\"longFmt\":\"13,836,949,000\"},\"grossProfit\":{\"raw\":2489675000,\"fmt\":\"2.49B\",\"longFmt\":\"2,489,675,000\"},\"researchDevelopment\":{},\"sellingGeneralAdministrative\":{\"raw\":1367132000,\"fmt\":\"1.37B\",\"longFmt\":\"1,367,132,000\"},\"nonRecurring\":{},\"otherOperatingExpenses\":{},\"totalOperatingExpenses\":{\"raw\":15736408000,\"fmt\":\"15.74B\",\"longFmt\":\"15,736,408,000\"},\"operatingIncome\":{\"raw\":590216000,\"fmt\":\"590.22M\",\"longFmt\":\"590,216,000\"},\"totalOtherIncomeExpenseNet\":{\"raw\":-334578000,\"fmt\":\"-334.58M\",\"longFmt\":\"-334,578,000\"},\"ebit\":{\"raw\":590216000,\"fmt\":\"590.22M\",\"longFmt\":\"590,216,000\"},\"interestExpense\":{\"raw\":-381533000,\"fmt\":\"-381.53M\",\"longFmt\":\"-381,533,000\"},\"incomeBeforeTax\":{\"raw\":255638000,\"fmt\":\"255.64M\",\"longFmt\":\"255,638,000\"},\"incomeTaxExpense\":{\"raw\":61461000,\"fmt\":\"61.46M\",\"longFmt\":\"61,461,000\"},\"minorityInterest\":{\"raw\":8840000,\"fmt\":\"8.84M\",\"longFmt\":\"8,840,000\"},\"netIncomeFromContinuingOps\":{\"raw\":194177000,\"fmt\":\"194.18M\",\"longFmt\":\"194,177,000\"},\"discontinuedOperations\":{},\"extraordinaryItems\":{},\"effectOfAccountingCharges\":{},\"otherItems\":{},\"netIncome\":{\"raw\":194484000,\"fmt\":\"194.48M\",\"longFmt\":\"194,484,000\"},\"netIncomeApplicableToCommonShares\":{\"raw\":194484000,\"fmt\":\"194.48M\",\"longFmt\":\"194,484,000\"}},{\"maxAge\":1,\"endDate\":{\"raw\":1633046400,\"fmt\":\"2021-10-01\"},\"totalRevenue\":{\"raw\":12095965000,\"fmt\":\"12.1B\",\"longFmt\":\"12,095,965,000\"},\"costOfRevenue\":{\"raw\":10503828000,\"fmt\":\"10.5B\",\"longFmt\":\"10,503,828,000\"},\"grossProfit\":{\"raw\":1592137000,\"fmt\":\"1.59B\",\"longFmt\":\"1,592,137,000\"},\"researchDevelopment\":{},\"sellingGeneralAdministrative\":{\"raw\":856101000,\"fmt\":\"856.1M\",\"longFmt\":\"856,101,000\"},\"nonRecurring\":{},\"otherOperatingExpenses\":{},\"totalOperatingExpenses\":{\"raw\":11910621000,\"fmt\":\"11.91B\",\"longFmt\":\"11,910,621,000\"},\"operatingIncome\":{\"raw\":185344000,\"fmt\":\"185.34M\",\"longFmt\":\"185,344,000\"},\"totalOtherIncomeExpenseNet\":{\"raw\":-318196000,\"fmt\":\"-318.2M\",\"longFmt\":\"-318,196,000\"},\"ebit\":{\"raw\":185344000,\"fmt\":\"185.34M\",\"longFmt\":\"185,344,000\"},\"interestExpense\":{\"raw\":-411013000,\"fmt\":\"-411.01M\",\"longFmt\":\"-411,013,000\"},\"incomeBeforeTax\":{\"raw\":-132852000,\"fmt\":\"-132.85M\",\"longFmt\":\"-132,852,000\"},\"incomeTaxExpense\":{\"raw\":-40633000,\"fmt\":\"-40.63M\",\"longFmt\":\"-40,633,000\"},\"minorityInterest\":{\"raw\":9050000,\"fmt\":\"9.05M\",\"longFmt\":\"9,050,000\"},\"netIncomeFromContinuingOps\":{\"raw\":-92219000,\"fmt\":\"-92.22M\",\"longFmt\":\"-92,219,000\"},\"discontinuedOperations\":{},\"extraordinaryItems\":{},\"effectOfAccountingCharges\":{},\"otherItems\":{},\"netIncome\":{\"raw\":-90833000,\"fmt\":\"-90.83M\",\"longFmt\":\"-90,833,000\"},\"netIncomeApplicableToCommonShares\":{\"raw\":-90833000,\"fmt\":\"-90.83M\",\"longFmt\":\"-90,833,000\"}},{\"maxAge\":1,\"endDate\":{\"raw\":1601596800,\"fmt\":\"2020-10-02\"},\"totalRevenue\":{\"raw\":12829559000,\"fmt\":\"12.83B\",\"longFmt\":\"12,829,559,000\"},\"costOfRevenue\":{\"raw\":11552168000,\"fmt\":\"11.55B\",\"longFmt\":\"11,552,168,000\"},\"grossProfit\":{\"raw\":1277391000,\"fmt\":\"1.28B\",\"longFmt\":\"1,277,391,000\"},\"researchDevelopment\":{},\"sellingGeneralAdministrative\":{\"raw\":881015000,\"fmt\":\"881.01M\",\"longFmt\":\"881,015,000\"},\"nonRecurring\":{},\"otherOperatingExpenses\":{},\"totalOperatingExpenses\":{\"raw\":13028378000,\"fmt\":\"13.03B\",\"longFmt\":\"13,028,378,000\"},\"operatingIncome\":{\"raw\":-198819000,\"fmt\":\"-198.82M\",\"longFmt\":\"-198,819,000\"},\"totalOtherIncomeExpenseNet\":{\"raw\":-448900000,\"fmt\":\"-448.9M\",\"longFmt\":\"-448,900,000\"},\"ebit\":{\"raw\":-198819000,\"fmt\":\"-198.82M\",\"longFmt\":\"-198,819,000\"},\"interestExpense\":{\"raw\":-368534000,\"fmt\":\"-368.53M\",\"longFmt\":\"-368,534,000\"},\"incomeBeforeTax\":{\"raw\":-647719000,\"fmt\":\"-647.72M\",\"longFmt\":\"-647,719,000\"},\"incomeTaxExpense\":{\"raw\":-186284000,\"fmt\":\"-186.28M\",\"longFmt\":\"-186,284,000\"},\"minorityInterest\":{\"raw\":9988000,\"fmt\":\"9.99M\",\"longFmt\":\"9,988,000\"},\"netIncomeFromContinuingOps\":{\"raw\":-461435000,\"fmt\":\"-461.44M\",\"longFmt\":\"-461,435,000\"},\"discontinuedOperations\":{},\"extraordinaryItems\":{},\"effectOfAccountingCharges\":{},\"otherItems\":{},\"netIncome\":{\"raw\":-461529000,\"fmt\":\"-461.53M\",\"longFmt\":\"-461,529,000\"},\"netIncomeApplicableToCommonShares\":{\"raw\":-461529000,\"fmt\":\"-461.53M\",\"longFmt\":\"-461,529,000\"}},{\"maxAge\":1,\"endDate\":{\"raw\":1569542400,\"fmt\":\"2019-09-27\"},\"totalRevenue\":{\"raw\":16227341000,\"fmt\":\"16.23B\",\"longFmt\":\"16,227,341,000\"},\"costOfRevenue\":{\"raw\":14520662000,\"fmt\":\"14.52B\",\"longFmt\":\"14,520,662,000\"},\"grossProfit\":{\"raw\":1706679000,\"fmt\":\"1.71B\",\"longFmt\":\"1,706,679,000\"},\"researchDevelopment\":{},\"sellingGeneralAdministrative\":{\"raw\":358256000,\"fmt\":\"358.26M\",\"longFmt\":\"358,256,000\"},\"nonRecurring\":{},\"otherOperatingExpenses\":{},\"totalOperatingExpenses\":{\"raw\":15471491000,\"fmt\":\"15.47B\",\"longFmt\":\"15,471,491,000\"},\"operatingIncome\":{\"raw\":755850000,\"fmt\":\"755.85M\",\"longFmt\":\"755,850,000\"},\"totalOtherIncomeExpenseNet\":{\"raw\":-199678000,\"fmt\":\"-199.68M\",\"longFmt\":\"-199,678,000\"},\"ebit\":{\"raw\":755850000,\"fmt\":\"755.85M\",\"longFmt\":\"755,850,000\"},\"interestExpense\":{\"raw\":-352812000,\"fmt\":\"-352.81M\",\"longFmt\":\"-352,812,000\"},\"incomeBeforeTax\":{\"raw\":556172000,\"fmt\":\"556.17M\",\"longFmt\":\"556,172,000\"},\"incomeTaxExpense\":{\"raw\":107706000,\"fmt\":\"107.71M\",\"longFmt\":\"107,706,000\"},\"minorityInterest\":{\"raw\":9915000,\"fmt\":\"9.91M\",\"longFmt\":\"9,915,000\"},\"netIncomeFromContinuingOps\":{\"raw\":448466000,\"fmt\":\"448.47M\",\"longFmt\":\"448,466,000\"},\"discontinuedOperations\":{},\"extraordinaryItems\":{},\"effectOfAccountingCharges\":{},\"otherItems\":{},\"netIncome\":{\"raw\":448549000,\"fmt\":\"448.55M\",\"longFmt\":\"448,549,000\"},\"netIncomeApplicableToCommonShares\":{\"raw\":448549000,\"fmt\":\"448.55M\",\"longFmt\":\"448,549,000\"}}],\"maxAge\":86400}}],\"error\":null}}"
+  }
+}

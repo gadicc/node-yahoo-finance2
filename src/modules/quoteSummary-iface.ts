@@ -1011,6 +1011,7 @@ export enum Grade {
   Average = "Average",
   BelowAverage = "Below Average",
   Buy = "Buy",
+  ConvictionBuy = "Conviction Buy",
   Empty = "",
   EqualWeight = "Equal-Weight",
   FairValue = "Fair Value",

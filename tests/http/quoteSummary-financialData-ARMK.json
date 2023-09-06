@@ -1,0 +1,70 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ARMK?formatted=false&modules=financialData"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "66skjnhifgd9v"
+      ],
+      "x-yahoo-request-id": [
+        "66skjnhifgd9v"
+      ],
+      "x-request-id": [
+        "1c12e7f4-38f6-42c5-8213-e753e8bcbafc"
+      ],
+      "content-length": [
+        "785"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Wed, 06 Sep 2023 08:15:59 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"financialData\":{\"maxAge\":86400,\"currentPrice\":37.36,\"targetHighPrice\":50.0,\"targetLowPrice\":38.0,\"targetMeanPrice\":46.03,\"targetMedianPrice\":47.0,\"recommendationMean\":2.2,\"recommendationKey\":\"buy\",\"numberOfAnalystOpinions\":15,\"totalCash\":512214016,\"totalCashPerShare\":1.962,\"ebitda\":1290256000,\"totalDebt\":8020721152,\"quickRatio\":1.015,\"currentRatio\":1.296,\"totalRevenue\":18342748160,\"debtToEquity\":225.337,\"revenuePerShare\":70.605,\"returnOnAssets\":0.03085,\"returnOnEquity\":0.16766001,\"grossProfits\":2489675000,\"freeCashflow\":213754752,\"operatingCashflow\":566398976,\"earningsGrowth\":7.239,\"revenueGrowth\":0.151,\"grossMargins\":0.14526,\"ebitdaMargins\":0.07034,\"operatingMargins\":0.04088,\"profitMargins\":0.029679999,\"financialCurrency\":\"USD\"}}],\"error\":null}}"
+  }
+}

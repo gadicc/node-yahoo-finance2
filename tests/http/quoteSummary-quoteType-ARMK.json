@@ -1,0 +1,70 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ARMK?formatted=false&modules=quoteType"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=1, stale-while-revalidate=9"
+      ],
+      "y-rid": [
+        "3sc5qftifgda0"
+      ],
+      "x-yahoo-request-id": [
+        "3sc5qftifgda0"
+      ],
+      "x-request-id": [
+        "d112aaf3-9cb0-409d-a2c4-b75450b3e542"
+      ],
+      "content-length": [
+        "405"
+      ],
+      "x-envoy-upstream-service-time": [
+        "19"
+      ],
+      "date": [
+        "Wed, 06 Sep 2023 08:16:00 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "3"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"quoteSummary\":{\"result\":[{\"quoteType\":{\"exchange\":\"NYQ\",\"quoteType\":\"EQUITY\",\"symbol\":\"ARMK\",\"underlyingSymbol\":\"ARMK\",\"shortName\":\"Aramark\",\"longName\":\"Aramark\",\"firstTradeDateEpochUtc\":1386858600,\"timeZoneFullName\":\"America/New_York\",\"timeZoneShortName\":\"EDT\",\"uuid\":\"3cd92ef1-652b-382d-aa68-e4899e818ce3\",\"messageBoardId\":\"finmb_1004106\",\"gmtOffSetMilliseconds\":-14400000,\"maxAge\":1}}],\"error\":null}}"
+  }
+}
