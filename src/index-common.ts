@@ -17,6 +17,7 @@ import quoteSummary from "./modules/quoteSummary.js";
 import recommendationsBySymbol from "./modules/recommendationsBySymbol.js";
 import search from "./modules/search.js";
 import trendingSymbols from "./modules/trendingSymbols.js";
+import dailyGainers from "./modules/dailyGainers.js";
 
 // other
 import quoteCombine from "./other/quoteCombine.js";
@@ -44,6 +45,7 @@ export default {
   recommendationsBySymbol,
   search,
   trendingSymbols,
+  dailyGainers,
 
   // other
   quoteCombine,
