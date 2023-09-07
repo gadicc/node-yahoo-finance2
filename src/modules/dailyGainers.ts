@@ -165,7 +165,7 @@ export default function dailyGainers(
   return this._moduleExec({
     moduleName: "dailyGainers",
     query: {
-      url: "https://query2.finance.yahoo.com/v1/finance/screener/predefined/saved",
+      url: "https://${YF_QUERY_HOST}/v1/finance/screener/predefined/saved",
       schemaKey: "#/definitions/DailyGainersOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
