@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.7...v2.5.0) (2023-09-07)
+
+
+### Features
+
+* **dailyGainers:** add new dailyGainers module ([#666](https://github.com/gadicc/node-yahoo-finance2/issues/666)) ([5085014](https://github.com/gadicc/node-yahoo-finance2/commit/50850149e3cd5dbd18c4ab23d980ce2863a1d51e))
+
 ## [2.4.7](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.6...v2.4.7) (2023-09-06)
 
 
