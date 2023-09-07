@@ -76,7 +76,7 @@ export interface DailyGainersQuote {
   messageBoardId: string;
   fullExchangeName: string;
   longName: string;
-  financialCurrency: string;
+  financialCurrency?: string;
   regularMarketOpen: number;
   averageDailyVolume3Month: number;
   averageDailyVolume10Day: number;
@@ -92,12 +92,12 @@ export interface DailyGainersQuote {
   trailingAnnualDividendRate: number;
   trailingAnnualDividendYield: number;
   marketState: string;
-  epsTrailingTwelveMonths: number;
+  epsTrailingTwelveMonths?: number;
   epsForward?: number;
   epsCurrentYear?: number;
   priceEpsCurrentYear?: number;
   sharesOutstanding: number;
-  bookValue: number;
+  bookValue?: number;
   fiftyDayAverage: number;
   fiftyDayAverageChange: number;
   fiftyDayAverageChangePercent: number;
@@ -106,7 +106,7 @@ export interface DailyGainersQuote {
   twoHundredDayAverageChangePercent: number;
   marketCap: number;
   forwardPE?: number;
-  priceToBook: number;
+  priceToBook?: number;
   sourceInterval: number;
   exchangeDataDelayedBy: number;
   exchangeTimezoneName: string;
