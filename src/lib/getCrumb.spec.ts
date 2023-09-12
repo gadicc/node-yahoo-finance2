@@ -3,8 +3,11 @@ import getCrumb, { _getCrumb, getCrumbClear } from "./getCrumb";
 import { MyCookieJar } from "./cookieJar.js";
 import { jest } from "@jest/globals";
 import { consoleSilent, consoleRestore } from "../../tests/console.js";
+import options from "./options.js";
 
 describe("getCrumb", () => {
+  const { logger } = options;
+
   beforeAll(consoleSilent);
   afterAll(consoleRestore);
 
@@ -14,8 +17,8 @@ describe("getCrumb", () => {
 
       const crumb = await _getCrumb(
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/AAPL",
         "getCrumb-quote-AAPL.json",
         true,
@@ -27,11 +30,7 @@ describe("getCrumb", () => {
     it("ditto with shared cookie jar (don't use it for other tests)", async () => {
       const fetch = await env.fetchDevel();
 
-      const crumb = await _getCrumb(
-        fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
-        { devel: true }
-      );
+      const crumb = await _getCrumb(fetch, { devel: true }, logger);
       expect(crumb).toBe("mloUP8q7ZPH");
     });
 
@@ -40,8 +39,8 @@ describe("getCrumb", () => {
 
       let crumb = await _getCrumb(
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/AAPL"
       );
       expect(crumb).toBe("mloUP8q7ZPH");
@@ -50,8 +49,8 @@ describe("getCrumb", () => {
 
       crumb = await _getCrumb(
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/AAPL"
       );
       expect(crumb).toBe("mloUP8q7ZPH");
@@ -63,8 +62,8 @@ describe("getCrumb", () => {
       await expect(() =>
         _getCrumb(
           fetch,
-          // @ts-expect-error: fetchDevel still has no types (yet)
           { devel: true },
+          logger,
           "https://finance.yahoo.com/quote/AAPL",
           "getCrumb-quote-AAPL-no-cookies.fake.json",
           true,
@@ -79,8 +78,8 @@ describe("getCrumb", () => {
       await expect(() =>
         _getCrumb(
           fetch,
-          // @ts-expect-error: fetchDevel still has no types (yet)
           { devel: true },
+          logger,
           "https://finance.yahoo.com/quote/AAPL",
           "getCrumb-quote-AAPL-no-context.fake.json",
           true,
@@ -95,8 +94,8 @@ describe("getCrumb", () => {
       await expect(() =>
         _getCrumb(
           fetch,
-          // @ts-expect-error: fetchDevel still has no types (yet)
           { devel: true },
+          logger,
           "https://finance.yahoo.com/quote/AAPL",
           "getCrumb-quote-AAPL-invalid-json.fake.json",
           true,
@@ -111,8 +110,8 @@ describe("getCrumb", () => {
       await expect(() =>
         _getCrumb(
           fetch,
-          // @ts-expect-error: fetchDevel still has no types (yet)
           { devel: true },
+          logger,
           "https://finance.yahoo.com/quote/AAPL",
           "getCrumb-quote-AAPL-no-crumb.fake.json",
           true,
@@ -127,8 +126,8 @@ describe("getCrumb", () => {
 
       const crumb = await _getCrumb(
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/AAPL",
         "getCrumb-quote-AAPL-pre-consent-VPN-UK.json",
         true,
@@ -143,11 +142,7 @@ describe("getCrumb", () => {
     it("works", async () => {
       getCrumbClear();
       const fetch = await env.fetchDevel();
-      const crumb = await getCrumb(
-        fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
-        { devel: true }
-      );
+      const crumb = await getCrumb(fetch, { devel: true }, logger);
       expect(crumb).toBe("mloUP8q7ZPH");
     });
 
@@ -158,18 +153,18 @@ describe("getCrumb", () => {
 
       getCrumb(
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/TSLA",
-        _getCrumb
+        _getCrumb as any
       );
 
       getCrumb(
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/TSLA",
-        _getCrumb
+        _getCrumb as any
       );
 
       expect(_getCrumb).toHaveBeenCalledTimes(1);

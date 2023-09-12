@@ -2,10 +2,18 @@
 import type { ValidationOptions } from "./validateAndCoerceTypes.js";
 import type { QueueOptions } from "./queue.js";
 
+export interface Logger {
+  info: (...args: any[]) => void;
+  warn: (...args: any[]) => void;
+  error: (...args: any[]) => void;
+  debug: (...args: any[]) => void;
+}
+
 export interface YahooFinanceOptions {
   YF_QUERY_HOST?: string;
   queue?: QueueOptions;
   validation?: ValidationOptions;
+  logger: Logger;
 }
 
 const options: YahooFinanceOptions = {
@@ -17,6 +25,12 @@ const options: YahooFinanceOptions = {
   validation: {
     logErrors: true,
     logOptionsErrors: true,
+  },
+  logger: {
+    info: (...args: any[]) => console.log(...args),
+    warn: (...args: any[]) => console.error(...args),
+    error: (...args: any[]) => console.error(...args),
+    debug: (...args: any[]) => console.log(...args),
   },
 };
 

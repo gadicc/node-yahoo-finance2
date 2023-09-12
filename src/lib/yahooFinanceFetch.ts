@@ -94,7 +94,11 @@ async function yahooFinanceFetch(
 
   if (needsCrumb) {
     // @ts-expect-error: TODO, crumb string type for partial params
-    params.crumb = await getCrumb(fetchFunc, fetchOptionsBase);
+    params.crumb = await getCrumb(
+      fetchFunc,
+      fetchOptionsBase,
+      this._opts.logger
+    );
   }
 
   // @ts-expect-error: TODO copy interface? @types lib?
