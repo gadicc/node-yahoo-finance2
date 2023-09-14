@@ -7,8 +7,7 @@ import crypto from "crypto";
 // const BASE_URL = new URL("../../tests/http/", import.meta.url);
 
 const BASE_URL = () => {
-  const pathsToCheck = ["../../tests", "../../../tests"];
-
+  const pathsToCheck = ["../../tests/http/", "../../../tests/http/"];
   for (const path of pathsToCheck) {
     try {
       if (fs.existsSync(path)) {
