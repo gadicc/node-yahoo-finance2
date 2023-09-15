@@ -12,7 +12,7 @@ export interface Logger {
 
 export interface YahooFinanceOptions {
   YF_QUERY_HOST?: string;
-  cookieJar: ExtendedCookieJar;
+  cookieJar?: ExtendedCookieJar;
   queue?: QueueOptions;
   validation?: ValidationOptions;
   logger: Logger;
