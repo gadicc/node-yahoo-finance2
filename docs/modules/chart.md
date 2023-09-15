@@ -1,9 +1,4 @@
-# _chart
-
-WARNING: the `chart` module is still in development; as such, it is currently
-prefixed with an underscore (`_`), i.e. as `_chart`, to reflect that the API
-is not final and may still change.  Until this module is available as `chart`
-(without the underscore), you should expect that package upgrades MAY break.
+# chart
 
 ## Usage:
 
@@ -12,7 +7,7 @@ import yahooFinance from 'yahoo-finance2';
 
 const query = 'AAPL';
 const queryOptions = { period1: '2021-05-08', /* ... */ };
-const result = await yahooFinance._chart(query, queryOptions);
+const result = await yahooFinance.chart(query, queryOptions);
 
 {
   meta: {
@@ -100,7 +95,7 @@ libraries might actually prefer the original format, which you can get with
 
 const query = 'AAPL';
 const queryOptions = { period1: '2021-05-08', return: "object", /* ... */ };
-const result = await yahooFinance._chart(query, queryOptions);
+const result = await yahooFinance.chart(query, queryOptions);
 
 {
   meta: { /* same format as previous example */ },
@@ -152,7 +147,7 @@ const result = await yahooFinance._chart(query, queryOptions);
 ## API
 
 ```js
-await yahooFinance._chart(query, queryOptions, moduleOptions);
+await yahooFinance.chart(query, queryOptions, moduleOptions);
 ```
 
 ### Query term
