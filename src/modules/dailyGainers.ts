@@ -174,7 +174,7 @@ export default function dailyGainers(
     result: {
       schemaKey: "#/definitions/DailyGainersResult",
       transformWith(result: any) {
-        console.log(result);
+        // console.log(result);
         if (!result.finance)
           throw new Error("Unexpected result: " + JSON.stringify(result));
         return result.finance.result[0];
