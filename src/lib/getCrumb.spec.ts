@@ -141,7 +141,7 @@ describe("getCrumb", () => {
 
   describe("getCrumb", () => {
     it("works", async () => {
-      getCrumbClear();
+      await getCrumbClear();
       const fetch = await env.fetchDevel();
       const crumb = await getCrumb(
         fetch,
@@ -154,7 +154,7 @@ describe("getCrumb", () => {
     it("only calls getCrumb once", async () => {
       const fetch = await env.fetchDevel();
       const _getCrumb = jest.fn(() => "crumb");
-      getCrumbClear();
+      await getCrumbClear();
 
       getCrumb(
         fetch,

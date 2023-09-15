@@ -272,11 +272,11 @@ export async function _getCrumb(
 let promise: Promise<string | null> | null = null;
 let promiseTime = 0;
 
-export function getCrumbClear() {
+export async function getCrumbClear() {
   crumb = null;
   promise = null;
   promiseTime = 0;
-  defaultCookieJar.removeAllCookiesSync();
+  await defaultCookieJar.removeAllCookies();
 }
 
 export default function getCrumb(
