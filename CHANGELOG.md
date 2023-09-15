@@ -1,3 +1,17 @@
+# [2.6.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.5.0...v2.6.0) (2023-09-15)
+
+
+### Bug Fixes
+
+* **chart:** belatedly promote to stable ("chart" vs "_chart") ([b1c8c67](https://github.com/gadicc/node-yahoo-finance2/commit/b1c8c67a7a7f83d852844e3ac24a00fa3cb09043))
+* **deps:** update dependency @types/tough-cookie to v4.0.3 ([#673](https://github.com/gadicc/node-yahoo-finance2/issues/673)) ([321607c](https://github.com/gadicc/node-yahoo-finance2/commit/321607c6673ec8cbc7cdbb00e9cb3218307fc6f6))
+* **schema:** update (rename _chart to chart) ([77a96d2](https://github.com/gadicc/node-yahoo-finance2/commit/77a96d29d17c17e79e3dec81332d2d48317f203a))
+
+
+### Features
+
+* **cli:** add guidance to use CLI with submodules ([#626](https://github.com/gadicc/node-yahoo-finance2/issues/626)) ([c2c848f](https://github.com/gadicc/node-yahoo-finance2/commit/c2c848f1fe955e8b96232e65d54fa78489d63d63))
+
 # [2.5.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.4.7...v2.5.0) (2023-09-07)
 
 
