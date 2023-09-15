@@ -2,7 +2,7 @@
 
 import yahooFinance from "../dist/esm/src/index-node.js";
 const moduleNames = Object.keys(yahooFinance).filter((n) => !n.startsWith("_"));
-moduleNames.push("_chart"); // modules in development
+// moduleNames.push("_chart"); // modules in development
 
 const node = process.argv[0];
 const script = process.argv[1];
