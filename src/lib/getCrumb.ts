@@ -22,13 +22,16 @@ export async function _getCrumb(
 
   if (crumb && !noCache) {
     // If we still have a valid (non-expired) cookie, return the existing crumb.
-    const existingCookies = cookieJar.getCookiesSync(url, { expire: true });
+    const existingCookies = await cookieJar.getCookies(url, { expire: true });
     if (existingCookies.length) return crumb;
   }
 
-  function processSetCookieHeader(header: string[] | undefined, url: string) {
+  async function processSetCookieHeader(
+    header: string[] | undefined,
+    url: string
+  ) {
     if (header) {
-      cookieJar.setFromSetCookieHeaders(header, url);
+      await cookieJar.setFromSetCookieHeaders(header, url);
       return true;
     }
     return false;
@@ -43,7 +46,7 @@ export async function _getCrumb(
       // NB, we won't get a set-cookie header back without this:
       accept: "text/html,application/xhtml+xml,application/xml",
       // This request will get our first cookies, so nothing to send.
-      // cookie: cookieJar.getCookieStringSync(url),
+      // cookie: await cookieJar.getCookieString(url),
     },
     redirect: "manual",
 
@@ -53,7 +56,7 @@ export async function _getCrumb(
   };
 
   const response = await fetch(url, fetchOptions);
-  processSetCookieHeader(response.headers.raw()["set-cookie"], url);
+  await processSetCookieHeader(response.headers.raw()["set-cookie"], url);
 
   // console.log(response.headers.raw());
   // console.log(cookieJar);
@@ -66,7 +69,7 @@ export async function _getCrumb(
         headers: {
           ...fetchOptions.headers,
           // GUCS=XXXXXXXX; Max-Age=1800; Domain=.yahoo.com; Path=/; Secure
-          cookie: cookieJar.getCookieStringSync(location),
+          cookie: await cookieJar.getCookieString(location),
         },
         devel: "getCrumb-quote-AAPL-consent.html",
       };
@@ -83,7 +86,7 @@ export async function _getCrumb(
           ...consentFetchOptions,
           headers: {
             ...fetchOptions.headers,
-            cookie: cookieJar.getCookieStringSync(consentLocation),
+            cookie: await cookieJar.getCookieString(consentLocation),
           },
           devel: "getCrumb-quote-AAPL-collectConsent.html",
         };
@@ -111,7 +114,7 @@ export async function _getCrumb(
           ...consentFetchOptions,
           headers: {
             ...fetchOptions.headers,
-            cookie: cookieJar.getCookieStringSync(consentLocation),
+            cookie: await cookieJar.getCookieString(consentLocation),
             "content-type": "application/x-www-form-urlencoded",
           },
           method: "POST",
@@ -130,10 +133,10 @@ export async function _getCrumb(
 
         // Set-Cookie: CFC=AQABCAFkWkdkjEMdLwQ9&s=AQAAAClxdtC-&g=ZFj24w; Expires=Wed, 8 May 2024 01:18:54 GMT; Domain=consent.yahoo.com; Path=/; Secure
         if (
-          !processSetCookieHeader(
+          !(await processSetCookieHeader(
             collectConsentSubmitResponse.headers.raw()["set-cookie"],
             consentLocation
-          )
+          ))
         )
           throw new Error(
             "No set-cookie header on collectConsentSubmitResponse, please report."
@@ -151,7 +154,7 @@ export async function _getCrumb(
           ...consentFetchOptions,
           headers: {
             ...fetchOptions.headers,
-            cookie: cookieJar.getCookieStringSync(
+            cookie: await cookieJar.getCookieString(
               collectConsentSubmitResponseLocation
             ),
           },
@@ -168,10 +171,10 @@ export async function _getCrumb(
         );
 
         if (
-          !processSetCookieHeader(
+          !(await processSetCookieHeader(
             copyConsentResponse.headers.raw()["set-cookie"],
             collectConsentSubmitResponseLocation
-          )
+          ))
         )
           throw new Error(
             "No set-cookie header on copyConsentResponse, please report."
@@ -188,7 +191,7 @@ export async function _getCrumb(
           ...fetchOptions,
           headers: {
             ...fetchOptions.headers,
-            cookie: cookieJar.getCookieStringSync(
+            cookie: await cookieJar.getCookieString(
               collectConsentSubmitResponseLocation
             ),
           },
@@ -219,7 +222,7 @@ export async function _getCrumb(
     }
   }
 
-  const cookie = cookieJar.getCookiesSync(url, { expire: true })[0];
+  const cookie = (await cookieJar.getCookies(url, { expire: true }))[0];
   if (cookie) {
     console.log("Success.  Cookie expires on " + cookie.expires);
   } else {
