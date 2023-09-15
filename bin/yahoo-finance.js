@@ -9,6 +9,23 @@ const script = process.argv[1];
 const moduleName = process.argv[2];
 const argsAsStrings = process.argv.slice(3);
 
+if (moduleName === "--help" || moduleName === "-h") {
+  console.log();
+  console.log("Usage: yahoo-finance.js <module> <args>");
+  console.log();
+  console.log("Get a quote for AAPL:");
+  console.log("$ yahoo-finance.js quoteSummary AAPL");
+  console.log();
+  console.log("Run the quoteSummary module with two submodules:");
+  console.log(
+    '$ yahoo-finance.js quoteSummary AAPL \'{"modules":["assetProfile", "secFilings"]}\''
+  );
+  console.log();
+  console.log("Available modules:");
+  console.log(moduleNames.join(", "));
+  process.exit();
+}
+
 if (!moduleNames.includes(moduleName)) {
   console.log("No such module: " + moduleName);
   console.log("Available modules: " + moduleNames.join(", "));

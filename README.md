@@ -33,7 +33,10 @@ considered acknowledgement and acceptance of these terms and of its license.
 **CLI** (Command line interface)
 
 ```bash
+$ npx yahoo-finance2 --help
 $ npx yahoo-finance2 search AAPL
+$ npx yahoo-finance2 quoteSummary AAPL
+$ npx yahoo-finance2 quoteSummary AAPL '{"modules":["assetProfile", "secFilings"]}'
 
 # or install it
 $ npm install -g yahoo-finance2
