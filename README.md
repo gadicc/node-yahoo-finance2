@@ -26,14 +26,17 @@ since 2013.
 Nevertheless, we make no guarantees and you use this package at your own risk.
 The developers (and obviously Yahoo) cannot be held responsible for any losses
 you may incur as a result of using this service.  Use of this package is
-considered acknowledgement and acceptance of these terms and of it's license.
+considered acknowledgement and acceptance of these terms and of its license.
 
 ## Quickstart
 
 **CLI** (Command line interface)
 
 ```bash
+$ npx yahoo-finance2 --help
 $ npx yahoo-finance2 search AAPL
+$ npx yahoo-finance2 quoteSummary AAPL
+$ npx yahoo-finance2 quoteSummary AAPL '{"modules":["assetProfile", "secFilings"]}'
 
 # or install it
 $ npm install -g yahoo-finance2

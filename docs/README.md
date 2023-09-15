@@ -32,7 +32,7 @@ const result = await yahooFinance.module(query, queryOpts, moduleOpts);
 ## Modules
 
 1. ~[autoc](./modules/autoc.md)~ - decomissioned, use [search](./modules/search.md) instead.
-1. [_chart](./modules/chart.md) - chart, like historical on steroids.
+1. [chart](./modules/chart.md) - chart, like historical on steroids.
 1. [historical](./modules/historical.md) - historical market prices.
 1. [quote](./modules/quote.md) - essential symbol info.
 1. [quoteSummary](./modules/quoteSummary.md) - comprehensive symbol info.
