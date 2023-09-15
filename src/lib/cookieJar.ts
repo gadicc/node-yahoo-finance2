@@ -1,6 +1,6 @@
 import { Cookie, CookieJar } from "tough-cookie";
 
-export class MyCookieJar extends CookieJar {
+export class ExtendedCookieJar extends CookieJar {
   async setFromSetCookieHeaders(
     setCookieHeader: string | Array<string>,
     url: string
@@ -24,7 +24,3 @@ export class MyCookieJar extends CookieJar {
         }
   }
 }
-
-const cookiejar = new MyCookieJar();
-
-export default cookiejar;

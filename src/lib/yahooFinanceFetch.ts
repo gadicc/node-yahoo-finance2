@@ -7,7 +7,6 @@ import type { QueueOptions } from "./queue.js";
 import errors from "./errors.js";
 import pkg from "../../package.json";
 import getCrumb from "./getCrumb.js";
-import cookieJar from "./cookieJar.js";
 
 const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
 
@@ -62,7 +61,7 @@ function substituteVariables(this: YahooFinanceFetchThis, urlBase: string) {
 async function yahooFinanceFetch(
   this: YahooFinanceFetchThis,
   urlBase: string,
-  params = {},
+  params: Record<string, string> = {},
   moduleOpts: YahooFinanceFetchModuleOptions = {},
   func = "json",
   needsCrumb = false
@@ -93,12 +92,13 @@ async function yahooFinanceFetch(
   };
 
   if (needsCrumb) {
-    // @ts-expect-error: TODO, crumb string type for partial params
-    params.crumb = await getCrumb(
+    const crumb = await getCrumb(
+      this._opts.cookieJar,
       fetchFunc,
       fetchOptionsBase,
       this._opts.logger
     );
+    if (crumb) params.crumb = crumb;
   }
 
   // @ts-expect-error: TODO copy interface? @types lib?
@@ -113,7 +113,9 @@ async function yahooFinanceFetch(
     ...fetchOptionsBase,
     headers: {
       ...fetchOptionsBase.headers,
-      cookie: cookieJar.getCookieStringSync(url, { allPaths: true }),
+      cookie: await this._opts.cookieJar.getCookieString(url, {
+        allPaths: true,
+      }),
     },
   };
 
@@ -126,7 +128,7 @@ async function yahooFinanceFetch(
 
   const setCookieHeaders = response.headers.raw()["set-cookie"];
   if (setCookieHeaders)
-    cookieJar.setFromSetCookieHeaders(setCookieHeaders, url);
+    this._opts.cookieJar.setFromSetCookieHeaders(setCookieHeaders, url);
 
   const result = await response[func]();
 

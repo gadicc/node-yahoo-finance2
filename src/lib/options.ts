@@ -1,6 +1,7 @@
 // TODO, keep defaults there too?
 import type { ValidationOptions } from "./validateAndCoerceTypes.js";
 import type { QueueOptions } from "./queue.js";
+import { ExtendedCookieJar } from "./cookieJar.js";
 
 export interface Logger {
   info: (...args: any[]) => void;
@@ -11,6 +12,7 @@ export interface Logger {
 
 export interface YahooFinanceOptions {
   YF_QUERY_HOST?: string;
+  cookieJar: ExtendedCookieJar;
   queue?: QueueOptions;
   validation?: ValidationOptions;
   logger: Logger;
@@ -18,6 +20,7 @@ export interface YahooFinanceOptions {
 
 const options: YahooFinanceOptions = {
   YF_QUERY_HOST: process.env.YF_QUERY_HOST || "query2.finance.yahoo.com",
+  cookieJar: new ExtendedCookieJar(),
   queue: {
     concurrency: 4, // Min: 1, Max: Infinity
     timeout: 60,
