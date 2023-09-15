@@ -1,5 +1,5 @@
 import type { RequestInfo, RequestInit, Response } from "node-fetch";
-import defaultCookieJar from "./cookieJar.js";
+import type { ExtendedCookieJar } from "./cookieJar";
 
 let crumb: string | null = null;
 // let crumbFetchTime = 0;
@@ -11,12 +11,12 @@ const parseHtmlEntities = (str: string) =>
   );
 
 export async function _getCrumb(
+  cookieJar: ExtendedCookieJar,
   fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>,
   fetchOptionsBase: RequestInit,
   url = "https://finance.yahoo.com/quote/AAPL",
   develOverride = "getCrumb-quote-AAPL.json",
-  noCache = false,
-  cookieJar = defaultCookieJar
+  noCache = false
 ): Promise<string | null> {
   // if (crumb && crumbFetchTime + MAX_CRUMB_CACHE_TIME > Date.now()) return crumb;
 
@@ -207,12 +207,12 @@ export async function _getCrumb(
         */
 
         return await _getCrumb(
+          cookieJar,
           fetch,
           finalResponseFetchOptions,
           copyConsentResponseLocation,
           "getCrumb-quote-AAPL-consent-final-redirect.html",
-          noCache,
-          cookieJar
+          noCache
         );
       }
     } else {
@@ -272,14 +272,15 @@ export async function _getCrumb(
 let promise: Promise<string | null> | null = null;
 let promiseTime = 0;
 
-export async function getCrumbClear() {
+export async function getCrumbClear(cookieJar: ExtendedCookieJar) {
   crumb = null;
   promise = null;
   promiseTime = 0;
-  await defaultCookieJar.removeAllCookies();
+  await cookieJar.removeAllCookies();
 }
 
 export default function getCrumb(
+  cookieJar: ExtendedCookieJar,
   fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>,
   fetchOptionsBase: RequestInit,
   url = "https://finance.yahoo.com/quote/AAPL",
@@ -288,7 +289,7 @@ export default function getCrumb(
   // TODO, rather do this with cookie expire time somehow
   const now = Date.now();
   if (!promise || now - promiseTime > 60_000) {
-    promise = __getCrumb(fetch, fetchOptionsBase, url);
+    promise = __getCrumb(cookieJar, fetch, fetchOptionsBase, url);
     promiseTime = now;
   }
 

@@ -120,21 +120,23 @@ describe("yahooFinanceFetch", () => {
       expect(queue.concurrency).toBe(5);
     });
 
-    it("yahooFinanceFetch branch check for alternate queue", () => {
+    it("yahooFinanceFetch branch check for alternate queue", async () => {
       const promises = [
         yahooFinanceFetch("", {}),
         yahooFinanceFetch("", {}, {}),
         yahooFinanceFetch("", {}, { queue: {} }),
       ];
 
+      await immediate();
+
       env.fetch.fetches[0].resolveWith({ ok: true });
       env.fetch.fetches[1].resolveWith({ ok: true });
       env.fetch.fetches[2].resolveWith({ ok: true });
 
-      return Promise.all(promises);
+      await Promise.all(promises);
     });
 
-    it("assert defualts to {} for empty queue opts", () => {
+    it("assert defualts to {} for empty queue opts", async () => {
       moduleOpts.queue.concurrency = 1;
       const opts = { ..._opts };
       // @ts-ignore: intentional to test runtime failures
@@ -142,16 +144,18 @@ describe("yahooFinanceFetch", () => {
       const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env: env, _opts });
 
       const promise = yahooFinanceFetch("", {}, moduleOpts);
+      await immediate();
       env.fetch.fetches[0].resolveWith({ ok: true });
-      return expect(promise).resolves.toMatchObject({ ok: true });
+      await expect(promise).resolves.toMatchObject({ ok: true });
     });
 
-    it("single item in queue", () => {
+    it("single item in queue", async () => {
       moduleOpts.queue.concurrency = 1;
 
       const promise = yahooFinanceFetch("", {}, moduleOpts);
+      await immediate();
       env.fetch.fetches[0].resolveWith({ ok: true });
-      return expect(promise).resolves.toMatchObject({ ok: true });
+      await expect(promise).resolves.toMatchObject({ ok: true });
     });
 
     it("waits if exceeding concurrency max", async () => {
@@ -161,6 +165,7 @@ describe("yahooFinanceFetch", () => {
         yahooFinanceFetch("", {}, moduleOpts),
         yahooFinanceFetch("", {}, moduleOpts),
       ];
+      await immediate();
 
       // Second func should not be called until 1st reoslves (limit 1)
       expect(env.fetch.fetches.length).toBe(1);

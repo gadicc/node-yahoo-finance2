@@ -13,6 +13,7 @@ export default function setGlobalConfig(
     options: this._opts.validation,
     schemaKey: "#/definitions/YahooFinanceOptions",
   });
+  // @ts-expect-error: TODO
   mergeObjects(this._opts, config as Obj);
 }
 
