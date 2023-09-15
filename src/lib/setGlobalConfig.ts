@@ -1,11 +1,15 @@
 import type { YahooFinanceOptions } from "./options.js";
 import type { ModuleThis } from "./moduleCommon.js";
 import validateAndCoerceTypes from "./validateAndCoerceTypes.js";
+import { ExtendedCookieJar } from "./cookieJar.js";
 
 export default function setGlobalConfig(
   this: ModuleThis,
-  config: YahooFinanceOptions
+  _config: YahooFinanceOptions
 ): void {
+  // Instances (e.g. cookieJar) don't validate well :)
+  const { cookieJar, ...config } = _config;
+
   validateAndCoerceTypes({
     object: config,
     source: "setGlobalConfig",
@@ -13,8 +17,14 @@ export default function setGlobalConfig(
     options: this._opts.validation,
     schemaKey: "#/definitions/YahooFinanceOptions",
   });
-  // @ts-expect-error: TODO
+
   mergeObjects(this._opts, config as Obj);
+
+  if (cookieJar) {
+    if (!(cookieJar instanceof ExtendedCookieJar))
+      throw new Error("cookieJar must be an instance of ExtendedCookieJar");
+    this._opts.cookieJar = cookieJar;
+  }
 }
 
 type Obj = Record<string, string | ObjRecurse>;

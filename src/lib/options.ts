@@ -5,7 +5,7 @@ import { ExtendedCookieJar } from "./cookieJar.js";
 
 export interface YahooFinanceOptions {
   YF_QUERY_HOST?: string;
-  cookieJar: ExtendedCookieJar;
+  cookieJar?: ExtendedCookieJar;
   queue?: QueueOptions;
   validation?: ValidationOptions;
 }
