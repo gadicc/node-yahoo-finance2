@@ -13,7 +13,7 @@ Supports Node 12.0.0 and up (tests are run against 12.0.0).
 v1. NB: The API has changed, see [UPGRADING](./docs/UPGRADING.md)
 for more information.
 
-[Live Demo on CodeSandbox](https://codesandbox.io/s/yahoo-finance2-312x2?file=/src/index.ts)
+[Live Demo on CodeSandbox](https://codesandbox.io/p/sandbox/yf2-node-xzdjrt?file=/index.js)
 
 ## Unofficial API
 
