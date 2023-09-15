@@ -8,6 +8,9 @@
         "YF_QUERY_HOST": {
           "type": "string"
         },
+        "cookieJar": {
+          "$ref": "#/definitions/ExtendedCookieJar"
+        },
         "queue": {
           "$ref": "#/definitions/QueueOptions"
         },
@@ -15,6 +18,18 @@
           "$ref": "#/definitions/ValidationOptions"
         }
       },
+      "required": [
+        "cookieJar"
+      ],
+      "additionalProperties": false
+    },
+    "ExtendedCookieJar": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {}
+    },
+    "CookieJar": {
+      "type": "object",
       "additionalProperties": false
     },
     "QueueOptions": {
