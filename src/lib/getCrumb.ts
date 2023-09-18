@@ -27,7 +27,7 @@ export async function _getCrumb(
     for (const cookie of cookies) {
       if (cookie.key === "crumb") {
         crumb = cookie.value;
-        console.log("Retrieved crumb from cookie store: " + crumb);
+        logger.debug("Retrieved crumb from cookie store: " + crumb);
         break;
       }
     }
@@ -270,7 +270,7 @@ export async function _getCrumb(
       "Could not find crumb.  Yahoo's API may have changed; please report."
     );
 
-  console.log("New crumb: " + crumb);
+  logger.debug("New crumb: " + crumb);
   await cookieJar.setCookie(
     new Cookie({
       key: "crumb",
