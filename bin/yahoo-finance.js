@@ -8,7 +8,7 @@ import { ExtendedCookieJar } from "../dist/esm/src/lib/cookieJar.js";
 
 const cookiePath = path.join(os.homedir(), ".yf2-cookies.json");
 const cookieJar = new ExtendedCookieJar(new FileCookieStore(cookiePath));
-// yahooFinance.setGlobalConfig({ cookieJar });
+yahooFinance.setGlobalConfig({ cookieJar });
 
 const moduleNames = Object.keys(yahooFinance).filter((n) => !n.startsWith("_"));
 // moduleNames.push("_chart"); // modules in development
@@ -67,6 +67,4 @@ function decodeArgs(stringArgs) {
 
   if (process.stdout.isTTY) console.dir(result, { depth: null, colors: true });
   else console.log(JSON.stringify(result, null, 2));
-
-  console.dir(await yahooFinance[moduleName](...args));
 })();
