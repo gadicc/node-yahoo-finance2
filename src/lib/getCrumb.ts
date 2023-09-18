@@ -6,8 +6,6 @@ import { Cookie } from "tough-cookie";
 const CONFIG_FAKE_URL = "http://config.yf2/";
 
 let crumb: string | null = null;
-// let crumbFetchTime = 0;
-// const MAX_CRUMB_CACHE_TIME = 60_000 * 60 * 24;
 
 const parseHtmlEntities = (str: string) =>
   str.replace(/&#x([0-9A-Fa-f]{1,3});/gi, (_, numStr) =>
@@ -24,8 +22,6 @@ export async function _getCrumb(
   develOverride = "getCrumb-quote-AAPL.json",
   noCache = false
 ): Promise<string | null> {
-  // if (crumb && crumbFetchTime + MAX_CRUMB_CACHE_TIME > Date.now()) return crumb;
-
   if (!crumb) {
     const cookies = await cookieJar.getCookies(CONFIG_FAKE_URL);
     for (const cookie of cookies) {
@@ -274,7 +270,6 @@ export async function _getCrumb(
       "Could not find crumb.  Yahoo's API may have changed; please report."
     );
 
-  // crumbFetchTime = Date.now();
   console.log("New crumb: " + crumb);
   await cookieJar.setCookie(
     new Cookie({
@@ -284,16 +279,15 @@ export async function _getCrumb(
     CONFIG_FAKE_URL
   );
 
+  promise = null;
   return crumb;
 }
 
 let promise: Promise<string | null> | null = null;
-let promiseTime = 0;
 
 export async function getCrumbClear(cookieJar: ExtendedCookieJar) {
   crumb = null;
   promise = null;
-  promiseTime = 0;
   await cookieJar.removeAllCookies();
 }
 
@@ -305,12 +299,8 @@ export default function getCrumb(
   url = "https://finance.yahoo.com/quote/AAPL",
   __getCrumb = _getCrumb
 ) {
-  // TODO, rather do this with cookie expire time somehow
-  const now = Date.now();
-  if (!promise || now - promiseTime > 60_000) {
+  if (!promise)
     promise = __getCrumb(cookieJar, fetch, fetchOptionsBase, logger, url);
-    promiseTime = now;
-  }
 
   return promise;
 }
