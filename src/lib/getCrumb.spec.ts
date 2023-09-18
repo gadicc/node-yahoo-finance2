@@ -8,6 +8,8 @@ import { ExtendedCookieJar } from "./cookieJar.js";
 
 describe("getCrumb", () => {
   const { logger } = options;
+  if (!logger) throw new Error("logger was unset");
+
   let cookieJar: ExtendedCookieJar;
   beforeAll(() => {
     consoleSilent();

@@ -94,6 +94,8 @@ async function yahooFinanceFetch(
   if (needsCrumb) {
     if (!this._opts.cookieJar) throw new Error("No cookieJar set");
 
+    if (!this._opts.logger) throw new Error("Logger was unset.");
+
     const crumb = await getCrumb(
       this._opts.cookieJar,
       fetchFunc,

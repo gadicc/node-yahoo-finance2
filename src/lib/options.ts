@@ -15,7 +15,7 @@ export interface YahooFinanceOptions {
   cookieJar?: ExtendedCookieJar;
   queue?: QueueOptions;
   validation?: ValidationOptions;
-  logger: Logger;
+  logger?: Logger;
 }
 
 const options: YahooFinanceOptions = {
