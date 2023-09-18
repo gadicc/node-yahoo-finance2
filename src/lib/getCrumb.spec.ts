@@ -2,10 +2,12 @@ import env from "../env-node";
 import getCrumb, { _getCrumb, getCrumbClear } from "./getCrumb";
 import { jest } from "@jest/globals";
 import { consoleSilent, consoleRestore } from "../../tests/console.js";
+import options from "./options.js";
 
 import { ExtendedCookieJar } from "./cookieJar.js";
 
 describe("getCrumb", () => {
+  const { logger } = options;
   let cookieJar: ExtendedCookieJar;
   beforeAll(() => {
     consoleSilent();
@@ -20,8 +22,8 @@ describe("getCrumb", () => {
       const crumb = await _getCrumb(
         new ExtendedCookieJar(),
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/AAPL",
         "getCrumb-quote-AAPL.json",
         true
@@ -32,12 +34,7 @@ describe("getCrumb", () => {
     it("ditto with shared cookie jar (don't use it for other tests)", async () => {
       const fetch = await env.fetchDevel();
 
-      const crumb = await _getCrumb(
-        cookieJar,
-        fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
-        { devel: true }
-      );
+      const crumb = await _getCrumb(cookieJar, fetch, { devel: true }, logger);
       expect(crumb).toBe("mloUP8q7ZPH");
     });
 
@@ -47,8 +44,8 @@ describe("getCrumb", () => {
       let crumb = await _getCrumb(
         cookieJar,
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/AAPL"
       );
       expect(crumb).toBe("mloUP8q7ZPH");
@@ -58,8 +55,8 @@ describe("getCrumb", () => {
       crumb = await _getCrumb(
         cookieJar,
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/AAPL"
       );
       expect(crumb).toBe("mloUP8q7ZPH");
@@ -72,8 +69,8 @@ describe("getCrumb", () => {
         _getCrumb(
           new ExtendedCookieJar(),
           fetch,
-          // @ts-expect-error: fetchDevel still has no types (yet)
           { devel: true },
+          logger,
           "https://finance.yahoo.com/quote/AAPL",
           "getCrumb-quote-AAPL-no-cookies.fake.json",
           true
@@ -88,8 +85,8 @@ describe("getCrumb", () => {
         _getCrumb(
           new ExtendedCookieJar(),
           fetch,
-          // @ts-expect-error: fetchDevel still has no types (yet)
           { devel: true },
+          logger,
           "https://finance.yahoo.com/quote/AAPL",
           "getCrumb-quote-AAPL-no-context.fake.json",
           true
@@ -104,8 +101,8 @@ describe("getCrumb", () => {
         _getCrumb(
           new ExtendedCookieJar(),
           fetch,
-          // @ts-expect-error: fetchDevel still has no types (yet)
           { devel: true },
+          logger,
           "https://finance.yahoo.com/quote/AAPL",
           "getCrumb-quote-AAPL-invalid-json.fake.json",
           true
@@ -120,8 +117,8 @@ describe("getCrumb", () => {
         _getCrumb(
           new ExtendedCookieJar(),
           fetch,
-          // @ts-expect-error: fetchDevel still has no types (yet)
           { devel: true },
+          logger,
           "https://finance.yahoo.com/quote/AAPL",
           "getCrumb-quote-AAPL-no-crumb.fake.json",
           true
@@ -136,8 +133,8 @@ describe("getCrumb", () => {
       const crumb = await _getCrumb(
         new ExtendedCookieJar(),
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/AAPL",
         "getCrumb-quote-AAPL-pre-consent-VPN-UK.json",
         true
@@ -151,12 +148,7 @@ describe("getCrumb", () => {
     it("works", async () => {
       await getCrumbClear(cookieJar);
       const fetch = await env.fetchDevel();
-      const crumb = await getCrumb(
-        cookieJar,
-        fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
-        { devel: true }
-      );
+      const crumb = await getCrumb(cookieJar, fetch, { devel: true }, logger);
       expect(crumb).toBe("mloUP8q7ZPH");
     });
 
@@ -168,19 +160,19 @@ describe("getCrumb", () => {
       getCrumb(
         cookieJar,
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/TSLA",
-        _getCrumb
+        _getCrumb as any
       );
 
       getCrumb(
         cookieJar,
         fetch,
-        // @ts-expect-error: fetchDevel still has no types (yet)
         { devel: true },
+        logger,
         "https://finance.yahoo.com/quote/TSLA",
-        _getCrumb
+        _getCrumb as any
       );
 
       expect(_getCrumb).toHaveBeenCalledTimes(1);

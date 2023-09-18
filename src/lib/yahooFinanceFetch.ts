@@ -95,7 +95,8 @@ async function yahooFinanceFetch(
     const crumb = await getCrumb(
       this._opts.cookieJar,
       fetchFunc,
-      fetchOptionsBase
+      fetchOptionsBase,
+      this._opts.logger
     );
     if (crumb) params.crumb = crumb;
   }
