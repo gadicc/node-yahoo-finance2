@@ -1,3 +1,27 @@
+# [2.7.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.6.0...v2.7.0) (2023-09-18)
+
+
+### Bug Fixes
+
+* **chart:** belatedly promote to stable ("chart" vs "_chart") ([28ba479](https://github.com/gadicc/node-yahoo-finance2/commit/28ba479ecb8de02e4faa21ffcd9dc0b446981d04))
+* **deps:** update dependency @types/tough-cookie to v4.0.3 ([#673](https://github.com/gadicc/node-yahoo-finance2/issues/673)) ([625acc0](https://github.com/gadicc/node-yahoo-finance2/commit/625acc044e5eb41a010d26c37e2c6ef733f120cf))
+* **getCrumb:** rely on cookie expiry time exclusively ([178e122](https://github.com/gadicc/node-yahoo-finance2/commit/178e122a9656b2ca548611a3c95cdfd247802c05))
+* **getCrumb:** store crumb in cookie store too ([#670](https://github.com/gadicc/node-yahoo-finance2/issues/670)) ([81031e8](https://github.com/gadicc/node-yahoo-finance2/commit/81031e8510ee36551c353391952148d3485a6a73))
+* **getCrumb:** use logger.debug vs console.log ([bb1c06c](https://github.com/gadicc/node-yahoo-finance2/commit/bb1c06c0ea3d7af1f5869f6ec92db8d04b187810))
+* **schema:** options / cookieJar ([#670](https://github.com/gadicc/node-yahoo-finance2/issues/670)) ([4d658bf](https://github.com/gadicc/node-yahoo-finance2/commit/4d658bf9eaec8a779a0255451dde991aa0c62510))
+* **schema:** options / cookieJar ([#670](https://github.com/gadicc/node-yahoo-finance2/issues/670)) ([f65f69c](https://github.com/gadicc/node-yahoo-finance2/commit/f65f69c30fabad5afd92d549bcbe6660c2755e9e))
+* **schema:** skip function types (not in js-schema), related fixes ([b772399](https://github.com/gadicc/node-yahoo-finance2/commit/b7723992a0cb20464d3c29c68b5ac675a62fbcd3))
+* **schema:** update (rename _chart to chart) ([fd30770](https://github.com/gadicc/node-yahoo-finance2/commit/fd3077080f45d0eb26abcdd6b3db2b7b25db2a96))
+
+
+### Features
+
+* **cli:** add guidance to use CLI with submodules ([#626](https://github.com/gadicc/node-yahoo-finance2/issues/626)) ([7d08bb1](https://github.com/gadicc/node-yahoo-finance2/commit/7d08bb10210b9b1a5dd69de72a455e05a59d76aa))
+* **cli:** use a file-cookie-store ([#670](https://github.com/gadicc/node-yahoo-finance2/issues/670)) ([e2239b4](https://github.com/gadicc/node-yahoo-finance2/commit/e2239b45e93b171a29d5fd94b0452bcefbeb6d83))
+* Customisable logging ([8ed81ae](https://github.com/gadicc/node-yahoo-finance2/commit/8ed81ae10d9d84c5222d25ad54189b448d058130))
+* **getCrumb:** ability to specify custom cookie jar / store ([#670](https://github.com/gadicc/node-yahoo-finance2/issues/670)) ([6390a80](https://github.com/gadicc/node-yahoo-finance2/commit/6390a80c8d5330aab414eaa8fd7a8b788893eb4c))
+* **getCrumb:** ability to specify custom cookie jar / store ([#670](https://github.com/gadicc/node-yahoo-finance2/issues/670)) ([b298844](https://github.com/gadicc/node-yahoo-finance2/commit/b298844f2fdd848e18473261e4d9cf4666ee5f30))
+
 # [2.6.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.5.0...v2.6.0) (2023-09-15)
 
 
