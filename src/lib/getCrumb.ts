@@ -1,6 +1,9 @@
 import type { RequestInfo, RequestInit, Response } from "node-fetch";
 import type { ExtendedCookieJar } from "./cookieJar";
 import { Logger } from "./options.js";
+import { Cookie } from "tough-cookie";
+
+const CONFIG_FAKE_URL = "http://config.yf2/";
 
 let crumb: string | null = null;
 // let crumbFetchTime = 0;
@@ -22,6 +25,17 @@ export async function _getCrumb(
   noCache = false
 ): Promise<string | null> {
   // if (crumb && crumbFetchTime + MAX_CRUMB_CACHE_TIME > Date.now()) return crumb;
+
+  if (!crumb) {
+    const cookies = await cookieJar.getCookies(CONFIG_FAKE_URL);
+    for (const cookie of cookies) {
+      if (cookie.key === "crumb") {
+        crumb = cookie.value;
+        console.log("Retrieved crumb from cookie store: " + crumb);
+        break;
+      }
+    }
+  }
 
   if (crumb && !noCache) {
     // If we still have a valid (non-expired) cookie, return the existing crumb.
@@ -261,6 +275,14 @@ export async function _getCrumb(
     );
 
   // crumbFetchTime = Date.now();
+  console.log("New crumb: " + crumb);
+  await cookieJar.setCookie(
+    new Cookie({
+      key: "crumb",
+      value: crumb,
+    }),
+    CONFIG_FAKE_URL
+  );
 
   return crumb;
 }
