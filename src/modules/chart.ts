@@ -171,28 +171,31 @@ export interface ChartOptionsWithReturnObject extends ChartOptions {
 
 /* --- array input, typed output, honor "return" param --- */
 
-export default function _chart(
+// TODO: make this a deprecration passthrough
+export const _chart = chart;
+
+export default function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptionsWithReturnObject,
   moduleOptions?: ModuleOptionsWithValidateTrue
 ): Promise<ChartResultObject>;
 
-export default function _chart(
+export default function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptionsWithReturnArray,
   moduleOptions?: ModuleOptionsWithValidateTrue
 ): Promise<ChartResultArray>;
 
-export default function _chart(
+export default function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse
 ): Promise<any>;
 
-export default async function _chart(
+export default async function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptions,
@@ -201,7 +204,7 @@ export default async function _chart(
   const returnAs = queryOptionsOverrides?.return || "array";
 
   const result = (await this._moduleExec({
-    moduleName: "_chart",
+    moduleName: "chart",
 
     query: {
       assertSymbol: symbol,
@@ -272,7 +275,7 @@ export default async function _chart(
   if (returnAs === "object") {
     return result;
   } else if (returnAs === "array") {
-    let timestamp = result.timestamp;
+    const timestamp = result.timestamp;
 
     /*
     seems as though yahoo inserts extra quotes at the event times, so no need.
@@ -304,7 +307,7 @@ export default async function _chart(
 
     const result2 = {
       meta: result.meta,
-      quotes: timestamp ? new Array(timestamp.length) : new Array(),
+      quotes: timestamp ? new Array(timestamp.length) : [],
     } as ChartResultArray;
 
     const adjclose = result?.indicators?.adjclose?.[0].adjclose;
@@ -319,17 +322,14 @@ export default async function _chart(
           low: result.indicators.quote[0].low[i],
           close: result.indicators.quote[0].close[i],
         };
-        // @ts-ignore: adjClose guarantees the chain.
         if (adjclose) result2.quotes[i].adjclose = adjclose[i];
       }
 
     if (result.events) {
       result2.events = {};
 
-      for (let event of ["dividends", "splits"]) {
-        // @ts-ignore
+      for (const event of ["dividends", "splits"]) {
         if (result.events[event])
-          // @ts-ignore: TODO?
           result2.events[event] = Object.values(result.events[event]);
       }
     }

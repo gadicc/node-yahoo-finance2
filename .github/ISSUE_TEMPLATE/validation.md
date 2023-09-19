@@ -24,7 +24,7 @@ labels: bug, validation
 Browser or Node: <!-- Please state either `browser` or `node` here -->
 Node version (if applicable): 
 Npm version: 
-Browser verion (if applicable):
+Browser version (if applicable):
 Library version (e.g. `1.10.1`): 
 
 ## Additional Context

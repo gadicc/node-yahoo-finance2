@@ -1,62 +1,75 @@
 import type { RequestInfo, RequestInit, Response } from "node-fetch";
-import defaultCookieJar from "./cookieJar.js";
+import type { ExtendedCookieJar } from "./cookieJar";
+import { Logger } from "./options.js";
+import { Cookie } from "tough-cookie";
+
+const CONFIG_FAKE_URL = "http://config.yf2/";
 
 let crumb: string | null = null;
-// let crumbFetchTime = 0;
-// const MAX_CRUMB_CACHE_TIME = 60_000 * 60 * 24;
 
 const parseHtmlEntities = (str: string) =>
   str.replace(/&#x([0-9A-Fa-f]{1,3});/gi, (_, numStr) =>
     String.fromCharCode(parseInt(numStr, 16))
   );
 
+type CrumbOptions = RequestInit & { devel?: boolean | string };
 export async function _getCrumb(
+  cookieJar: ExtendedCookieJar,
   fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>,
-  fetchOptionsBase: RequestInit,
+  fetchOptionsBase: CrumbOptions,
+  logger: Logger,
   url = "https://finance.yahoo.com/quote/AAPL",
   develOverride = "getCrumb-quote-AAPL.json",
-  noCache = false,
-  cookieJar = defaultCookieJar
+  noCache = false
 ): Promise<string | null> {
-  // if (crumb && crumbFetchTime + MAX_CRUMB_CACHE_TIME > Date.now()) return crumb;
+  if (!crumb) {
+    const cookies = await cookieJar.getCookies(CONFIG_FAKE_URL);
+    for (const cookie of cookies) {
+      if (cookie.key === "crumb") {
+        crumb = cookie.value;
+        logger.debug("Retrieved crumb from cookie store: " + crumb);
+        break;
+      }
+    }
+  }
 
   if (crumb && !noCache) {
     // If we still have a valid (non-expired) cookie, return the existing crumb.
-    const existingCookies = cookieJar.getCookiesSync(url, { expire: true });
+    const existingCookies = await cookieJar.getCookies(url, { expire: true });
     if (existingCookies.length) return crumb;
   }
 
-  function processSetCookieHeader(header: string[] | undefined, url: string) {
+  async function processSetCookieHeader(
+    header: string[] | undefined,
+    url: string
+  ) {
     if (header) {
-      cookieJar.setFromSetCookieHeaders(header, url);
+      await cookieJar.setFromSetCookieHeaders(header, url);
       return true;
     }
     return false;
   }
 
-  console.log("Fetching crumb and cookies from " + url + "...");
+  logger.debug("Fetching crumb and cookies from " + url + "...");
 
-  const fetchOptions: RequestInit & { devel: string } = {
+  const fetchOptions: CrumbOptions = {
     ...fetchOptionsBase,
     headers: {
       ...fetchOptionsBase.headers,
       // NB, we won't get a set-cookie header back without this:
       accept: "text/html,application/xhtml+xml,application/xml",
       // This request will get our first cookies, so nothing to send.
-      // cookie: cookieJar.getCookieStringSync(url),
+      // cookie: await cookieJar.getCookieString(url),
     },
     redirect: "manual",
-
-    devel:
-      // @ts-expect-error: fetchDevel still has no types (yet)
-      fetchOptionsBase.devel && develOverride,
+    devel: fetchOptionsBase.devel && develOverride,
   };
 
   const response = await fetch(url, fetchOptions);
-  processSetCookieHeader(response.headers.raw()["set-cookie"], url);
+  await processSetCookieHeader(response.headers.raw()["set-cookie"], url);
 
-  // console.log(response.headers.raw());
-  // console.log(cookieJar);
+  // logger.debug(response.headers.raw());
+  // logger.debug(cookieJar);
 
   const location = response.headers.get("location");
   if (location) {
@@ -66,12 +79,12 @@ export async function _getCrumb(
         headers: {
           ...fetchOptions.headers,
           // GUCS=XXXXXXXX; Max-Age=1800; Domain=.yahoo.com; Path=/; Secure
-          cookie: cookieJar.getCookieStringSync(location),
+          cookie: await cookieJar.getCookieString(location),
         },
         devel: "getCrumb-quote-AAPL-consent.html",
       };
       // Returns 302 to collectConsent?sessionId=XXX
-      console.log("fetch", location /*, consentFetchOptions */);
+      logger.debug("fetch", location /*, consentFetchOptions */);
       const consentResponse = await fetch(location, consentFetchOptions);
       const consentLocation = consentResponse.headers.get("location");
 
@@ -83,11 +96,14 @@ export async function _getCrumb(
           ...consentFetchOptions,
           headers: {
             ...fetchOptions.headers,
-            cookie: cookieJar.getCookieStringSync(consentLocation),
+            cookie: await cookieJar.getCookieString(consentLocation),
           },
           devel: "getCrumb-quote-AAPL-collectConsent.html",
         };
-        console.log("fetch", consentLocation /*, collectConsentFetchOptions */);
+        logger.debug(
+          "fetch",
+          consentLocation /*, collectConsentFetchOptions */
+        );
 
         const collectConsentResponse = await fetch(
           consentLocation,
@@ -111,7 +127,7 @@ export async function _getCrumb(
           ...consentFetchOptions,
           headers: {
             ...fetchOptions.headers,
-            cookie: cookieJar.getCookieStringSync(consentLocation),
+            cookie: await cookieJar.getCookieString(consentLocation),
             "content-type": "application/x-www-form-urlencoded",
           },
           method: "POST",
@@ -119,7 +135,7 @@ export async function _getCrumb(
           body: collectConsentResponseParams,
           devel: "getCrumb-quote-AAPL-collectConsentSubmit",
         };
-        console.log(
+        logger.debug(
           "fetch",
           consentLocation /*, collectConsentSubmitFetchOptions */
         );
@@ -130,10 +146,10 @@ export async function _getCrumb(
 
         // Set-Cookie: CFC=AQABCAFkWkdkjEMdLwQ9&s=AQAAAClxdtC-&g=ZFj24w; Expires=Wed, 8 May 2024 01:18:54 GMT; Domain=consent.yahoo.com; Path=/; Secure
         if (
-          !processSetCookieHeader(
+          !(await processSetCookieHeader(
             collectConsentSubmitResponse.headers.raw()["set-cookie"],
             consentLocation
-          )
+          ))
         )
           throw new Error(
             "No set-cookie header on collectConsentSubmitResponse, please report."
@@ -151,14 +167,14 @@ export async function _getCrumb(
           ...consentFetchOptions,
           headers: {
             ...fetchOptions.headers,
-            cookie: cookieJar.getCookieStringSync(
+            cookie: await cookieJar.getCookieString(
               collectConsentSubmitResponseLocation
             ),
           },
           devel: "getCrumb-quote-AAPL-copyConsent",
         };
 
-        console.log(
+        logger.debug(
           "fetch",
           collectConsentSubmitResponseLocation /*, copyConsentFetchOptions */
         );
@@ -168,10 +184,10 @@ export async function _getCrumb(
         );
 
         if (
-          !processSetCookieHeader(
+          !(await processSetCookieHeader(
             copyConsentResponse.headers.raw()["set-cookie"],
             collectConsentSubmitResponseLocation
-          )
+          ))
         )
           throw new Error(
             "No set-cookie header on copyConsentResponse, please report."
@@ -188,28 +204,21 @@ export async function _getCrumb(
           ...fetchOptions,
           headers: {
             ...fetchOptions.headers,
-            cookie: cookieJar.getCookieStringSync(
+            cookie: await cookieJar.getCookieString(
               collectConsentSubmitResponseLocation
             ),
           },
           devel: "getCrumb-quote-AAPL-consent-final-redirect.html",
         };
 
-        /*
-        console.log(
-          "fetch",
-          copyConsentResponseLocation,
-          finalResponseFetchOptions
-        );
-        */
-
         return await _getCrumb(
+          cookieJar,
           fetch,
           finalResponseFetchOptions,
+          logger,
           copyConsentResponseLocation,
           "getCrumb-quote-AAPL-consent-final-redirect.html",
-          noCache,
-          cookieJar
+          noCache
         );
       }
     } else {
@@ -219,12 +228,12 @@ export async function _getCrumb(
     }
   }
 
-  const cookie = cookieJar.getCookiesSync(url, { expire: true })[0];
+  const cookie = (await cookieJar.getCookies(url, { expire: true }))[0];
   if (cookie) {
-    console.log("Success.  Cookie expires on " + cookie.expires);
+    logger.debug("Success. Cookie expires on " + cookie.expires);
   } else {
     /*
-    console.error(
+    logger.error(
       "No cookie was retreieved.  Probably the next request " +
         "will fail.  Please report."
     );
@@ -248,8 +257,8 @@ export async function _getCrumb(
   try {
     context = JSON.parse(match[1]);
   } catch (error) {
-    console.log(match[1]);
-    console.log(error);
+    logger.debug(match[1]);
+    logger.error(error);
     throw new Error(
       "Could not parse window.YAHOO.context.  Yahoo's API may have changed; please report."
     );
@@ -261,33 +270,37 @@ export async function _getCrumb(
       "Could not find crumb.  Yahoo's API may have changed; please report."
     );
 
-  // crumbFetchTime = Date.now();
+  logger.debug("New crumb: " + crumb);
+  await cookieJar.setCookie(
+    new Cookie({
+      key: "crumb",
+      value: crumb,
+    }),
+    CONFIG_FAKE_URL
+  );
 
+  promise = null;
   return crumb;
 }
 
 let promise: Promise<string | null> | null = null;
-let promiseTime = 0;
 
-export function getCrumbClear() {
+export async function getCrumbClear(cookieJar: ExtendedCookieJar) {
   crumb = null;
   promise = null;
-  promiseTime = 0;
-  defaultCookieJar.removeAllCookiesSync();
+  await cookieJar.removeAllCookies();
 }
 
 export default function getCrumb(
+  cookieJar: ExtendedCookieJar,
   fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>,
-  fetchOptionsBase: RequestInit,
+  fetchOptionsBase: CrumbOptions,
+  logger: Logger,
   url = "https://finance.yahoo.com/quote/AAPL",
   __getCrumb = _getCrumb
 ) {
-  // TODO, rather do this with cookie expire time somehow
-  const now = Date.now();
-  if (!promise || now - promiseTime > 60_000) {
-    promise = __getCrumb(fetch, fetchOptionsBase, url);
-    promiseTime = now;
-  }
+  if (!promise)
+    promise = __getCrumb(cookieJar, fetch, fetchOptionsBase, logger, url);
 
   return promise;
 }

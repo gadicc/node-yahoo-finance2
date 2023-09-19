@@ -1,7 +1,7 @@
 import { Cookie, CookieJar } from "tough-cookie";
 
-export class MyCookieJar extends CookieJar {
-  setFromSetCookieHeaders(
+export class ExtendedCookieJar extends CookieJar {
+  async setFromSetCookieHeaders(
     setCookieHeader: string | Array<string>,
     url: string
   ) {
@@ -20,11 +20,7 @@ export class MyCookieJar extends CookieJar {
       for (const cookie of cookies)
         if (cookie instanceof Cookie) {
           // console.log("setCookieSync", cookie, url);
-          this.setCookieSync(cookie, url);
+          await this.setCookie(cookie, url);
         }
   }
 }
-
-const cookiejar = new MyCookieJar();
-
-export default cookiejar;

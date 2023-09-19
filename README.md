@@ -6,14 +6,15 @@ Copyright (c) 2021 by Gadi Cohen and Pilwon Huh.  [MIT licensed](./LICENSE).
 
 [![npm](https://img.shields.io/npm/v/yahoo-finance2)](https://www.npmjs.com/package/yahoo-finance2) [![CircleCI](https://img.shields.io/circleci/build/github/gadicc/node-yahoo-finance2)](https://circleci.com/gh/gadicc/node-yahoo-finance2) [![coverage](https://img.shields.io/codecov/c/github/gadicc/node-yahoo-finance2)](https://codecov.io/gh/gadicc/node-yahoo-finance2) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/) [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
-Supports Node 12.0.0 and up (tests are run against 12.0.0).
+Supports Node 16.10.0 and up (tests are run against 16.10.0),
+e.g. all active LTS versions.
 
 **Stable release** - supersedes the ubiquitous
 [node-yahoo-finance](https://www.npmjs.com/package/yahoo-finance)
 v1. NB: The API has changed, see [UPGRADING](./docs/UPGRADING.md)
 for more information.
 
-[Live Demo on CodeSandbox](https://codesandbox.io/s/yahoo-finance2-312x2?file=/src/index.ts)
+[Live Demo on CodeSandbox](https://codesandbox.io/p/sandbox/yf2-node-xzdjrt?file=/index.js)
 
 ## Unofficial API
 
@@ -26,14 +27,17 @@ since 2013.
 Nevertheless, we make no guarantees and you use this package at your own risk.
 The developers (and obviously Yahoo) cannot be held responsible for any losses
 you may incur as a result of using this service.  Use of this package is
-considered acknowledgement and acceptance of these terms and of it's license.
+considered acknowledgement and acceptance of these terms and of its license.
 
 ## Quickstart
 
 **CLI** (Command line interface)
 
 ```bash
+$ npx yahoo-finance2 --help
 $ npx yahoo-finance2 search AAPL
+$ npx yahoo-finance2 quoteSummary AAPL
+$ npx yahoo-finance2 quoteSummary AAPL '{"modules":["assetProfile", "secFilings"]}'
 
 # or install it
 $ npm install -g yahoo-finance2

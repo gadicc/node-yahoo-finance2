@@ -10,7 +10,9 @@ import yahooFinance from 'yahoo-finance2';
 yahooFinance.setGlobalConfig({
     queue: {
         // some options here
-    }
+    },
+    cookieJar,              // see example below
+    logger: { /* ... */ },  // see example below
 });
 ```
 
@@ -28,6 +30,55 @@ yahooFinance.setGlobalConfig({
         // timeout is still set
     }
 });
+```
+
+## Options
+
+### Cookie Jar
+
+Certain Yahoo APIs require various cookies to run.  By default, an
+in-memory cookie store is for cookies.  This requires zero
+configuration, however, it means everytime yahoo-finance2 is
+reloaded (and that's A LOT on serverless), all the cookies and
+consent flow needs to be executed again, which wastes time and
+consumes unnecessary resources on Yahoo's side.
+
+Yahoo-finance2 uses
+[`tough-cookie`](https://www.npmjs.com/package/tough-cookie)
+internally, so any compatible cookie store may be used.  Here we
+give an example of storing cookies on the filesystem (but for
+serverless / edge, a database store would be a better fit):
+
+1. Install `tough-cookie-file-store` with npm / yarn / pnpm / bun:
+
+```ts
+import os from "os";
+import path from "path";
+import { FileCookieStore } from "tough-cookie-file-store";
+import yahooFinance from "../dist/esm/src/index-node.js";
+import { ExtendedCookieJar } from "../dist/esm/src/lib/cookieJar.js";
+
+const cookiePath = path.join(os.homedir(), ".yf2-cookies.json");
+const cookieJar = new ExtendedCookieJar(new FileCookieStore(cookiePath));
+yahooFinance.setGlobalConfig({ cookieJar });
+```
+
+This is the same code used in the CLI to store cookies in your homedir.
+
+### Logger
+
+By default, `console` is used for logging, but you can replace this
+with your own custom logger, extending the default, e.g.:
+
+```ts
+yahooFinance.setGlobalConfig({
+  logger: {
+    info: (...args: any[]) => console.log(...args),
+    warn: (...args: any[]) => console.error(...args),
+    error: (...args: any[]) => console.error(...args),
+    debug: (...args: any[]) => console.log(...args),
+  },
+})
 ```
 
 ## Options not documented elsewhere
