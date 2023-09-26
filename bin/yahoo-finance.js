@@ -1,6 +1,15 @@
 #!/usr/bin/env -S node --experimental-json-modules --experimental-vm-modules
 
+import os from "os";
+import path from "path";
+import { FileCookieStore } from "tough-cookie-file-store";
 import yahooFinance from "../dist/esm/src/index-node.js";
+import { ExtendedCookieJar } from "../dist/esm/src/lib/cookieJar.js";
+
+const cookiePath = path.join(os.homedir(), ".yf2-cookies.json");
+const cookieJar = new ExtendedCookieJar(new FileCookieStore(cookiePath));
+yahooFinance.setGlobalConfig({ cookieJar });
+
 const moduleNames = Object.keys(yahooFinance).filter((n) => !n.startsWith("_"));
 // moduleNames.push("_chart"); // modules in development
 
@@ -31,6 +40,8 @@ if (!moduleNames.includes(moduleName)) {
   console.log("Available modules: " + moduleNames.join(", "));
   process.exit();
 }
+
+console.log("Storing cookies in " + cookiePath);
 
 function decodeArgs(stringArgs) {
   return stringArgs.map((arg) => {

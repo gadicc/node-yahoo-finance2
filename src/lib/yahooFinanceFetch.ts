@@ -92,10 +92,15 @@ async function yahooFinanceFetch(
   };
 
   if (needsCrumb) {
+    if (!this._opts.cookieJar) throw new Error("No cookieJar set");
+
+    if (!this._opts.logger) throw new Error("Logger was unset.");
+
     const crumb = await getCrumb(
       this._opts.cookieJar,
       fetchFunc,
-      fetchOptionsBase
+      fetchOptionsBase,
+      this._opts.logger
     );
     if (crumb) params.crumb = crumb;
   }
@@ -107,6 +112,8 @@ async function yahooFinanceFetch(
   // console.log(url);
 
   // console.log(cookieJar.serializeSync());
+
+  if (!this._opts.cookieJar) throw new Error("No cookieJar set");
 
   const fetchOptions = {
     ...fetchOptionsBase,
@@ -126,8 +133,10 @@ async function yahooFinanceFetch(
   const response = (await queue.add(() => fetchFunc(url, fetchOptions))) as any;
 
   const setCookieHeaders = response.headers.raw()["set-cookie"];
-  if (setCookieHeaders)
+  if (setCookieHeaders) {
+    if (!this._opts.cookieJar) throw new Error("No cookieJar set");
     this._opts.cookieJar.setFromSetCookieHeaders(setCookieHeaders, url);
+  }
 
   const result = await response[func]();
 

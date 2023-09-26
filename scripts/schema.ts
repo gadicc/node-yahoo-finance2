@@ -8,12 +8,13 @@ import {
   Config,
 } from "ts-json-schema-generator";
 
-// @ts-ignore
+// @ts-expect-error: no types
 import schemaWalker from "oas-schema-walker";
 import walkerCallback from "./schema/postWalker.js";
 
 import yfNumberTypeFormatter from "./schema/TypeFormatter/yfNumberTypeFormatter.js";
 import yfReferenceTypeFormatter from "./schema/TypeFormatter/yfReferenceTypeFormatter.js";
+import yfFunctionIgnorer from "./schema/TypeFormatter/yfFunctionIgnorer.js";
 
 //const OUTPUT_PATH = "schema.json";
 const OUTPUT_PATH = process.stdout;
@@ -34,7 +35,8 @@ const formatter = createFormatter(
           config.encodeRefs ?? true
         )
       )
-      .addTypeFormatter(new yfNumberTypeFormatter());
+      .addTypeFormatter(new yfNumberTypeFormatter())
+      .addTypeFormatter(new yfFunctionIgnorer());
   }
 );
 
@@ -52,9 +54,9 @@ const schema = {
   ..._schema,
 };
 
-// @ts-ignore
-for (let key of Object.keys(schema.definitions)) {
-  // @ts-ignore
+// @ts-expect-error: no types
+for (const key of Object.keys(schema.definitions)) {
+  // @ts-expect-error: no types
   schemaWalker.walkSchema(schema.definitions[key], {}, {}, walkerCallback);
 }
 
