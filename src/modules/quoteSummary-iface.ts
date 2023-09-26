@@ -1040,4 +1040,18 @@ export enum Grade {
   Underperform = "Underperform",
   Underperformer = "Underperformer",
   Underweight = "Underweight",
+  Trim = "Trim",
+  AboveAverage = "Above Average",
+  Inline = "In-line",
+  Outperformer = "Outperformer",
+  OVerweight = "OVerweight", // Not a typo, how it was returned from API
+  Cautious = "Cautious",
+  MarketWeight = "Market Weight",
+  SectorUnderperform = "Sector Underperform",
+  MarketUnderperform = "Market Underperform",
+  Peerperform = "Peer perform",
+  GraduallyAccumulate = "Gradually Accumulate",
+  ActionListBuy = "Action List Buy",
+  Performer = "Performer",
+  SectorPerformer = "SectorPerformer",
 }
