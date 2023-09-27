@@ -8609,6 +8609,558 @@
       ],
       "additionalProperties": false
     },
+    "ScreenerResult": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "canonicalName": {
+          "type": "string"
+        },
+        "criteriaMeta": {
+          "$ref": "#/definitions/ScreenerCriteriaMeta"
+        },
+        "rawCriteria": {
+          "type": "string"
+        },
+        "start": {
+          "yahooFinanceType": "number"
+        },
+        "count": {
+          "yahooFinanceType": "number"
+        },
+        "total": {
+          "yahooFinanceType": "number"
+        },
+        "quotes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScreenerQuote"
+          }
+        },
+        "useRecords": {
+          "type": "boolean"
+        },
+        "predefinedScr": {
+          "type": "boolean"
+        },
+        "versionId": {
+          "yahooFinanceType": "number"
+        },
+        "creationDate": {
+          "yahooFinanceType": "number"
+        },
+        "lastUpdated": {
+          "yahooFinanceType": "number"
+        },
+        "isPremium": {
+          "type": "boolean"
+        },
+        "iconUrl": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "canonicalName",
+        "criteriaMeta",
+        "rawCriteria",
+        "start",
+        "count",
+        "total",
+        "quotes",
+        "useRecords",
+        "predefinedScr",
+        "versionId",
+        "creationDate",
+        "lastUpdated",
+        "isPremium",
+        "iconUrl"
+      ],
+      "additionalProperties": false
+    },
+    "ScreenerCriteriaMeta": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "yahooFinanceType": "number"
+        },
+        "offset": {
+          "yahooFinanceType": "number"
+        },
+        "sortField": {
+          "type": "string"
+        },
+        "sortType": {
+          "type": "string"
+        },
+        "quoteType": {
+          "type": "string"
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScreenerCriterum"
+          }
+        },
+        "topOperator": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "size",
+        "offset",
+        "sortField",
+        "sortType",
+        "quoteType",
+        "criteria",
+        "topOperator"
+      ],
+      "additionalProperties": false
+    },
+    "ScreenerCriterum": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "operators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "yahooFinanceType": "number"
+          }
+        },
+        "labelsSelected": {
+          "type": "array",
+          "items": {
+            "yahooFinanceType": "number"
+          }
+        },
+        "dependentValues": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "field",
+        "operators",
+        "values",
+        "labelsSelected",
+        "dependentValues"
+      ],
+      "additionalProperties": false
+    },
+    "ScreenerQuote": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "quoteType": {
+          "type": "string"
+        },
+        "typeDisp": {
+          "type": "string"
+        },
+        "quoteSourceName": {
+          "type": "string"
+        },
+        "triggerable": {
+          "type": "boolean"
+        },
+        "customPriceAlertConfidence": {
+          "type": "string"
+        },
+        "lastCloseTevEbitLtm": {
+          "yahooFinanceType": "number"
+        },
+        "lastClosePriceToNNWCPerShare": {
+          "yahooFinanceType": "number"
+        },
+        "firstTradeDateMilliseconds": {
+          "yahooFinanceType": "number"
+        },
+        "priceHint": {
+          "yahooFinanceType": "number"
+        },
+        "postMarketChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "postMarketTime": {
+          "yahooFinanceType": "number"
+        },
+        "postMarketPrice": {
+          "yahooFinanceType": "number"
+        },
+        "postMarketChange": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketChange": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketTime": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketPrice": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketDayHigh": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketDayRange": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "regularMarketDayLow": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketVolume": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketPreviousClose": {
+          "yahooFinanceType": "number"
+        },
+        "bid": {
+          "yahooFinanceType": "number"
+        },
+        "ask": {
+          "yahooFinanceType": "number"
+        },
+        "bidSize": {
+          "yahooFinanceType": "number"
+        },
+        "askSize": {
+          "yahooFinanceType": "number"
+        },
+        "market": {
+          "type": "string"
+        },
+        "messageBoardId": {
+          "type": "string"
+        },
+        "fullExchangeName": {
+          "type": "string"
+        },
+        "longName": {
+          "type": "string"
+        },
+        "financialCurrency": {
+          "type": "string"
+        },
+        "regularMarketOpen": {
+          "yahooFinanceType": "number"
+        },
+        "averageDailyVolume3Month": {
+          "yahooFinanceType": "number"
+        },
+        "averageDailyVolume10Day": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekLowChange": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekLowChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekRange": {
+          "type": "string"
+        },
+        "fiftyTwoWeekHighChange": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekHighChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "earningsTimestamp": {
+          "yahooFinanceType": "number"
+        },
+        "earningsTimestampStart": {
+          "yahooFinanceType": "number"
+        },
+        "earningsTimestampEnd": {
+          "yahooFinanceType": "number"
+        },
+        "trailingAnnualDividendRate": {
+          "yahooFinanceType": "number"
+        },
+        "trailingAnnualDividendYield": {
+          "yahooFinanceType": "number"
+        },
+        "marketState": {
+          "type": "string"
+        },
+        "epsTrailingTwelveMonths": {
+          "yahooFinanceType": "number"
+        },
+        "epsForward": {
+          "yahooFinanceType": "number"
+        },
+        "epsCurrentYear": {
+          "yahooFinanceType": "number"
+        },
+        "priceEpsCurrentYear": {
+          "yahooFinanceType": "number"
+        },
+        "sharesOutstanding": {
+          "yahooFinanceType": "number"
+        },
+        "bookValue": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyDayAverage": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyDayAverageChange": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyDayAverageChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "twoHundredDayAverage": {
+          "yahooFinanceType": "number"
+        },
+        "twoHundredDayAverageChange": {
+          "yahooFinanceType": "number"
+        },
+        "twoHundredDayAverageChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "marketCap": {
+          "yahooFinanceType": "number"
+        },
+        "forwardPE": {
+          "yahooFinanceType": "number"
+        },
+        "priceToBook": {
+          "yahooFinanceType": "number"
+        },
+        "sourceInterval": {
+          "yahooFinanceType": "number"
+        },
+        "exchangeDataDelayedBy": {
+          "yahooFinanceType": "number"
+        },
+        "exchangeTimezoneName": {
+          "type": "string"
+        },
+        "exchangeTimezoneShortName": {
+          "type": "string"
+        },
+        "gmtOffSetMilliseconds": {
+          "yahooFinanceType": "number"
+        },
+        "esgPopulated": {
+          "type": "boolean"
+        },
+        "tradeable": {
+          "type": "boolean"
+        },
+        "cryptoTradeable": {
+          "type": "boolean"
+        },
+        "exchange": {
+          "type": "string"
+        },
+        "fiftyTwoWeekLow": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekHigh": {
+          "yahooFinanceType": "number"
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "averageAnalystRating": {
+          "type": "string"
+        },
+        "regularMarketChangePercent": {
+          "yahooFinanceType": "number"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "dividendDate": {
+          "yahooFinanceType": "number"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "trailingPE": {
+          "yahooFinanceType": "number"
+        },
+        "prevName": {
+          "type": "string"
+        },
+        "nameChangeDate": {
+          "yahooFinanceType": "number"
+        },
+        "ipoExpectedDate": {
+          "yahooFinanceType": "number"
+        },
+        "dividendYield": {
+          "yahooFinanceType": "number"
+        },
+        "dividendRate": {
+          "yahooFinanceType": "number"
+        },
+        "yieldTTM": {
+          "yahooFinanceType": "number"
+        },
+        "peTTM": {
+          "yahooFinanceType": "number"
+        },
+        "annualReturnNavY3": {
+          "yahooFinanceType": "number"
+        },
+        "annualReturnNavY5": {
+          "yahooFinanceType": "number"
+        },
+        "ytdReturn": {
+          "yahooFinanceType": "number"
+        },
+        "trailingThreeMonthReturns": {
+          "yahooFinanceType": "number"
+        },
+        "netAssets": {
+          "yahooFinanceType": "number"
+        },
+        "netExpenseRatio": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "language",
+        "region",
+        "quoteType",
+        "typeDisp",
+        "quoteSourceName",
+        "triggerable",
+        "customPriceAlertConfidence",
+        "firstTradeDateMilliseconds",
+        "priceHint",
+        "regularMarketChange",
+        "regularMarketTime",
+        "regularMarketPrice",
+        "currency",
+        "regularMarketPreviousClose",
+        "market",
+        "messageBoardId",
+        "fullExchangeName",
+        "longName",
+        "averageDailyVolume3Month",
+        "averageDailyVolume10Day",
+        "fiftyTwoWeekLowChange",
+        "fiftyTwoWeekLowChangePercent",
+        "fiftyTwoWeekRange",
+        "fiftyTwoWeekHighChange",
+        "fiftyTwoWeekHighChangePercent",
+        "fiftyTwoWeekChangePercent",
+        "marketState",
+        "fiftyDayAverage",
+        "fiftyDayAverageChange",
+        "fiftyDayAverageChangePercent",
+        "twoHundredDayAverage",
+        "twoHundredDayAverageChange",
+        "twoHundredDayAverageChangePercent",
+        "sourceInterval",
+        "exchangeDataDelayedBy",
+        "exchangeTimezoneName",
+        "exchangeTimezoneShortName",
+        "gmtOffSetMilliseconds",
+        "esgPopulated",
+        "tradeable",
+        "cryptoTradeable",
+        "exchange",
+        "fiftyTwoWeekLow",
+        "fiftyTwoWeekHigh",
+        "shortName",
+        "regularMarketChangePercent",
+        "symbol"
+      ],
+      "additionalProperties": false
+    },
+    "PredefinedScreenerModules": {
+      "type": "string",
+      "enum": [
+        "aggressive_small_caps",
+        "conservative_foreign_funds",
+        "day_gainers",
+        "day_losers",
+        "growth_technology_stocks",
+        "high_yield_bond",
+        "most_actives",
+        "most_shorted_stocks",
+        "portfolio_anchors",
+        "small_cap_gainers",
+        "solid_large_growth_funds",
+        "solid_midcap_growth_funds",
+        "top_mutual_funds",
+        "undervalued_growth_stocks",
+        "undervalued_large_caps"
+      ]
+    },
+    "ScreenerOptions": {
+      "type": "object",
+      "properties": {
+        "lang": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "scrIds": {
+          "$ref": "#/definitions/PredefinedScreenerModules"
+        },
+        "count": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "scrIds"
+      ],
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof screener>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/ScreenerOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this"
+      ],
+      "additionalProperties": false
+    },
     "SearchQuoteYahoo": {
       "type": "object",
       "properties": {
