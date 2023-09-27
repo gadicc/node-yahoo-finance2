@@ -1061,9 +1061,9 @@ export enum Grade {
   HoldNeutral = "Hold Neutral",
   Developing = "Developing",
   buy = "buy",
-  HOld = "HOld",
+  HOld = "HOld", // Not a typo, how it was returned from API
   TradingSell = "Trading Sell",
   Tender = "Tender",
   marketperform = "market perform",
-  BUy = "BUy",
+  BUy = "BUy", // Not a typo, how it was returned from API
 }
