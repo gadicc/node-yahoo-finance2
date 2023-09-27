@@ -361,7 +361,7 @@ export interface RevenueEstimate {
 export interface FinancialData {
   [key: string]: any;
   maxAge: number;
-  currentPrice: number;
+  currentPrice?: number;
   targetHighPrice?: number;
   targetLowPrice?: number;
   targetMeanPrice?: number;
@@ -1060,4 +1060,10 @@ export enum Grade {
   NotRated = "Not Rated",
   HoldNeutral = "Hold Neutral",
   Developing = "Developing",
+  buy = "buy",
+  HOld = "HOld",
+  TradingSell = "Trading Sell",
+  Tender = "Tender",
+  marketperform = "market perform",
+  BUy = "BUy",
 }
