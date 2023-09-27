@@ -1,3 +1,11 @@
+## [2.7.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.7.0...v2.7.1) (2023-09-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency node-fetch to v2.7.0 ([26d53e3](https://github.com/gadicc/node-yahoo-finance2/commit/26d53e37001ffec7e8fc756dfd9b39baa303983d))
+* **validation:** updated upgradeDowngradeHistory Grades ([#684](https://github.com/gadicc/node-yahoo-finance2/issues/684)) ([fe6de09](https://github.com/gadicc/node-yahoo-finance2/commit/fe6de097ab864e82bfa62be170fe392e10b60135))
+
 # [2.7.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.6.0...v2.7.0) (2023-09-18)
 
 
