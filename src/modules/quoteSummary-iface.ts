@@ -1059,5 +1059,5 @@ export enum Grade {
   SpeculativeHold = "Speculative Hold",
   NotRated = "Not Rated",
   HoldNeutral = "Hold Neutral",
-  Developing = "Developing"
+  Developing = "Developing",
 }
