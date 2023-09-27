@@ -361,7 +361,7 @@ export interface RevenueEstimate {
 export interface FinancialData {
   [key: string]: any;
   maxAge: number;
-  currentPrice: number;
+  currentPrice?: number;
   targetHighPrice?: number;
   targetLowPrice?: number;
   targetMeanPrice?: number;
@@ -697,9 +697,9 @@ export interface Price {
   [key: string]: any;
   averageDailyVolume10Day?: number;
   averageDailyVolume3Month?: number;
-  exchange: string;
-  exchangeName: string;
-  exchangeDataDelayedBy: number;
+  exchange?: string;
+  exchangeName?: string;
+  exchangeDataDelayedBy?: number;
   maxAge: number;
   postMarketChangePercent?: number;
   postMarketChange?: number;
@@ -732,7 +732,7 @@ export interface Price {
   longName: null | string;
 
   lastMarket: null | string;
-  marketState: string;
+  marketState?: string;
   marketCap?: number;
 
   // Crypto only?  Is Price actually Quote?  TODO after
@@ -1040,4 +1040,30 @@ export enum Grade {
   Underperform = "Underperform",
   Underperformer = "Underperformer",
   Underweight = "Underweight",
+  Trim = "Trim",
+  AboveAverage = "Above Average",
+  Inline = "In-line",
+  Outperformer = "Outperformer",
+  OVerweight = "OVerweight", // Not a typo, how it was returned from API
+  Cautious = "Cautious",
+  MarketWeight = "Market Weight",
+  SectorUnderperform = "Sector Underperform",
+  MarketUnderperform = "Market Underperform",
+  Peerperform = "Peer perform",
+  GraduallyAccumulate = "Gradually Accumulate",
+  ActionListBuy = "Action List Buy",
+  Performer = "Performer",
+  SectorPerformer = "Sector Performer",
+  SpeculativeBuy = "Speculative Buy",
+  StrongSell = "Strong Sell",
+  SpeculativeHold = "Speculative Hold",
+  NotRated = "Not Rated",
+  HoldNeutral = "Hold Neutral",
+  Developing = "Developing",
+  buy = "buy",
+  HOld = "HOld", // Not a typo, how it was returned from API
+  TradingSell = "Trading Sell",
+  Tender = "Tender",
+  marketperform = "market perform",
+  BUy = "BUy", // Not a typo, how it was returned from API
 }
