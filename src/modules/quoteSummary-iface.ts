@@ -697,9 +697,9 @@ export interface Price {
   [key: string]: any;
   averageDailyVolume10Day?: number;
   averageDailyVolume3Month?: number;
-  exchange: string;
-  exchangeName: string;
-  exchangeDataDelayedBy: number;
+  exchange?: string;
+  exchangeName?: string;
+  exchangeDataDelayedBy?: number;
   maxAge: number;
   postMarketChangePercent?: number;
   postMarketChange?: number;
@@ -732,7 +732,7 @@ export interface Price {
   longName: null | string;
 
   lastMarket: null | string;
-  marketState: string;
+  marketState?: string;
   marketCap?: number;
 
   // Crypto only?  Is Price actually Quote?  TODO after
@@ -1053,5 +1053,11 @@ export enum Grade {
   GraduallyAccumulate = "Gradually Accumulate",
   ActionListBuy = "Action List Buy",
   Performer = "Performer",
-  SectorPerformer = "SectorPerformer",
+  SectorPerformer = "Sector Performer",
+  SpeculativeBuy = "Speculative Buy",
+  StrongSell = "Strong Sell",
+  SpeculativeHold = "Speculative Hold",
+  NotRated = "Not Rated",
+  HoldNeutral = "Hold Neutral",
+  Developing = "Developing"
 }
