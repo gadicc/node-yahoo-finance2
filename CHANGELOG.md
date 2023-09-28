@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.7.1...v2.8.0) (2023-09-28)
+
+
+### Features
+
+* **module:** add screener ([#688](https://github.com/gadicc/node-yahoo-finance2/issues/688)) ([8fb3e3d](https://github.com/gadicc/node-yahoo-finance2/commit/8fb3e3d5ae5728ef7e412902aa8e9c3f6d4cd9f7))
+
 ## [2.7.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.7.0...v2.7.1) (2023-09-27)
 
 
