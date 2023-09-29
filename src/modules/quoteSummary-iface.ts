@@ -63,6 +63,7 @@ export interface AssetProfile {
   website?: string;
   industry?: string;
   industryDisp?: string;
+  industryKey?: string;
   industrySymbol?: string;
   sector?: string;
   sectorDisp?: string;
