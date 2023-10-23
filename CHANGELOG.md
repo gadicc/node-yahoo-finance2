@@ -1,3 +1,11 @@
+## [2.8.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.8.0...v2.8.1) (2023-10-23)
+
+
+### Bug Fixes
+
+* **assetProfile:** Add `sectorKey` and `industryKey` ([#689](https://github.com/gadicc/node-yahoo-finance2/issues/689)) ([3104739](https://github.com/gadicc/node-yahoo-finance2/commit/3104739dce98d16c09bdf29857ff6ff6e1a5ae51))
+* **deps:** update dependency @types/tough-cookie to v4.0.4 ([120574c](https://github.com/gadicc/node-yahoo-finance2/commit/120574ccbccd2470b297c1ced33d201a4a425ddb))
+
 # [2.8.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.7.1...v2.8.0) (2023-09-28)
 
 
