@@ -63,9 +63,11 @@ export interface AssetProfile {
   website?: string;
   industry?: string;
   industryDisp?: string;
+  industryKey?: string;
   industrySymbol?: string;
   sector?: string;
   sectorDisp?: string;
+  sectorKey?: string;
   longBusinessSummary?: string;
   fullTimeEmployees?: number;
   companyOfficers: CompanyOfficer[];
