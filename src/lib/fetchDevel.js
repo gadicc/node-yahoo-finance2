@@ -4,7 +4,21 @@ import fs from "fs";
 import crypto from "crypto";
 
 //const FILE_BASE = path.join(__dirname, "..", "..", "tests", "http");
-const BASE_URL = new URL("../../tests/http/", import.meta.url);
+// const BASE_URL = new URL("../../tests/http/", import.meta.url);
+
+const BASE_URL = () => {
+  const pathsToCheck = ["../../tests/http/", "../../../tests/http/"];
+  for (const path of pathsToCheck) {
+    try {
+      if (fs.existsSync(path)) {
+        return new URL(path, import.meta.url);
+      }
+    } catch (err) {
+      throw err;
+    }
+  }
+  throw new Error("tests folder not found.");
+};
 
 class FakeResponse {
   constructor(props) {
