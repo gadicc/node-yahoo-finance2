@@ -1,3 +1,15 @@
+# [2.9.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.8.1...v2.9.0) (2023-11-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/tough-cookie to v4.0.5 ([ffb5108](https://github.com/gadicc/node-yahoo-finance2/commit/ffb510807073f8e730074a0423bbb645882da6ae))
+
+
+### Features
+
+* **quote:** add beta to quote field option ([#713](https://github.com/gadicc/node-yahoo-finance2/issues/713)) ([be20a87](https://github.com/gadicc/node-yahoo-finance2/commit/be20a871b982c5d3be2e0bdbe998f648e1f26522))
+
 ## [2.8.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.8.0...v2.8.1) (2023-10-23)
 
 
