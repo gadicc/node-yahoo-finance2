@@ -1,4 +1,4 @@
-import yahooFinance from "../../../dist/esm/src/index-node.js";
+import yahooFinance from "../../../dist/esm/src/index-test.js";
 
 describe("esm", () => {
   it("sanity", () => {

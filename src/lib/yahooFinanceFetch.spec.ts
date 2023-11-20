@@ -8,7 +8,7 @@ import _yahooFinanceFetch, {
 } from "./yahooFinanceFetch.js";
 import errors from "./errors.js";
 
-import _env from "../env-node.js";
+import _env from "../env-test.js";
 import _opts from "./options.js";
 
 // https://dev.to/devcrafter91/elegant-way-to-check-if-a-promise-is-pending-577g
