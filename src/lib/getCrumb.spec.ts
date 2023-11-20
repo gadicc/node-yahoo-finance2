@@ -1,4 +1,4 @@
-import env from "../env-node";
+import env from "../env-test";
 import getCrumb, { _getCrumb, getCrumbClear } from "./getCrumb";
 import { jest } from "@jest/globals";
 import { consoleSilent, consoleRestore } from "../../tests/console.js";
