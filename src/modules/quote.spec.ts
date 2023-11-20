@@ -130,4 +130,12 @@ describe("quote", () => {
       expect(result).toBe(undefined);
     });
   });
+
+  it("passes through beta field option", async () => {
+    const devel = "quote-MSFT-fields-beta.json";
+    const queryOpts = { fields: ["beta"] };
+    const result = await yf.quote("MSFT", queryOpts, { devel });
+    expect(result.symbol).toBe("MSFT");
+    expect(result.beta).toBeDefined();
+  });
 });
