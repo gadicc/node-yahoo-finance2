@@ -83,6 +83,7 @@ export default function options(
     query: {
       assertSymbol: symbol,
       url: "https://${YF_QUERY_HOST}/v7/finance/options/" + symbol,
+      needsCrumb: true,
       schemaKey: "#/definitions/OptionsOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
