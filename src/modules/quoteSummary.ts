@@ -111,7 +111,7 @@ export default function quoteSummary(
   moduleOptions?: ModuleOptions
 ): Promise<QuoteSummaryResult> {
   return this._moduleExec({
-    moduleName: "search",
+    moduleName: "quoteSummary",
 
     query: {
       assertSymbol: symbol,
