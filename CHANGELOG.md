@@ -1,3 +1,12 @@
+## [2.9.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.9.0...v2.9.1) (2024-02-05)
+
+
+### Bug Fixes
+
+* **options:** add { needsCrumb: true } (fixes [#736](https://github.com/gadicc/node-yahoo-finance2/issues/736)) ([79e33d9](https://github.com/gadicc/node-yahoo-finance2/commit/79e33d936fc2401d431e8f0e366a389dccd25903))
+* **quoteSummary:** allow totalOtherIncomeExpenseNet null (fixes [#734](https://github.com/gadicc/node-yahoo-finance2/issues/734)) ([1d0d48e](https://github.com/gadicc/node-yahoo-finance2/commit/1d0d48e3d5c1592d73676a4a05bfb0eedcaeb01a))
+* **quoteSummary:** moduleName s/search/quoteSummary/ fix ([bf58aa8](https://github.com/gadicc/node-yahoo-finance2/commit/bf58aa8632b1d3c3a2be3f85f7dde78fdc44cf92))
+
 # [2.9.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.8.1...v2.9.0) (2023-11-20)
 
 
