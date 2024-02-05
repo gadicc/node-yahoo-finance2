@@ -569,7 +569,7 @@ export interface IncomeStatementHistoryElement {
   otherOperatingExpenses: number | null;
   totalOperatingExpenses: number;
   operatingIncome: number | null; // Example of null in EREGL.IS (#517)
-  totalOtherIncomeExpenseNet: number;
+  totalOtherIncomeExpenseNet: number | null; // null since Since Feb 22 (#734)
   ebit: number;
   interestExpense: number | null;
   incomeBeforeTax: number | null;
