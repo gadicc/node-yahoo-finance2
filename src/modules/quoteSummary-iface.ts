@@ -501,7 +501,7 @@ export interface FundPerformanceRiskOverviewStatsRow {
   beta: number; // 1.04
   meanAnnualReturn: number; // 2.05
   rSquared: number; // 84.03
-  stdDev: number; // 17.12
+  stdDev?: number; // 17.12
   sharpeRatio: number; // 1.37
   treynorRatio: number; // 23.61
 }
