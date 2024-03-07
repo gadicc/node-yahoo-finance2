@@ -1,3 +1,10 @@
+## [2.9.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.9.1...v2.9.2) (2024-03-07)
+
+
+### Bug Fixes
+
+* **quoteSummary:** stdDev ? in FPerfRiskOverviewStatsRow (fix [#744](https://github.com/gadicc/node-yahoo-finance2/issues/744)) ([fc1430e](https://github.com/gadicc/node-yahoo-finance2/commit/fc1430ea2b36e8f41321d91ecaf6aba49939f1ee))
+
 ## [2.9.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.9.0...v2.9.1) (2024-02-05)
 
 
