@@ -1,3 +1,10 @@
+# [2.10.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.9.2...v2.10.0) (2024-03-09)
+
+
+### Features
+
+* **module:** Add new fundamentals time series module ([#748](https://github.com/gadicc/node-yahoo-finance2/issues/748)) ([1681d33](https://github.com/gadicc/node-yahoo-finance2/commit/1681d334fb220738001dea44821464f2c1262e61))
+
 ## [2.9.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.9.1...v2.9.2) (2024-03-07)
 
 
