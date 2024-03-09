@@ -15,7 +15,7 @@ export const FundamentalsTimeSeries_Types: Record<string, any> = {
 export type FundamentalsTimeSeriesResults = Array<FundamentalsTimeSeriesResult>;
 
 export interface FundamentalsTimeSeriesResult {
-  [key: string]: any;
+  [key: string]: unknown;
   date: Date;
 }
 
@@ -80,7 +80,7 @@ export default function fundamentalsTimeSeries(
 
             if (isNaN(timestamp))
               throw new Error(
-                "yahooFinance.historical() option '" +
+                "yahooFinance.fundamentalsTimeSeries() option '" +
                   fieldName +
                   "' invalid date provided: '" +
                   value +
@@ -93,7 +93,7 @@ export default function fundamentalsTimeSeries(
 
         if (queryOptions.period1 === queryOptions.period2) {
           throw new Error(
-            "yahooFinance.historical() options `period1` and `period2` " +
+            "yahooFinance.fundamentalsTimeSeries() options `period1` and `period2` " +
               "cannot share the same value."
           );
         }
@@ -114,42 +114,42 @@ export default function fundamentalsTimeSeries(
     result: {
       schemaKey: "#/definitions/FundamentalsTimeSeriesResults",
       transformWith(response: any) {
-        if (!response.timeseries)
-          throw new Error("Unexpected result: " + JSON.stringify(response));
-        if (response.timeseries.error)
-          throw new Error(
-            "Error: " + JSON.stringify(response.timeseries.error)
-          );
+        if (!response || !response.timeseries)
+          throw new Error(`Unexpected result: ${JSON.stringify(response)}`);
 
-        const keyedByTimestamp: Record<string, any> = {};
-        for (let ct = 0; ct < response.timeseries.result.length; ct++) {
-          const result = response.timeseries.result[ct];
-          if (!result.timestamp || !result.timestamp.length) {
-            continue;
-          }
-          for (let ct = 0; ct < result.timestamp.length; ct++) {
-            const timestamp = result.timestamp[ct];
-            const dataKey = Object.keys(result)[2];
-
-            if (!keyedByTimestamp[timestamp]) {
-              keyedByTimestamp[timestamp] = { date: timestamp };
-            }
-            if (
-              !result[dataKey][ct] ||
-              !result[dataKey][ct].reportedValue ||
-              !result[dataKey][ct].reportedValue.raw
-            ) {
-              continue;
-            }
-            keyedByTimestamp[timestamp][dataKey] =
-              result[dataKey][ct].reportedValue.raw;
-          }
-        }
-
-        return Object.keys(keyedByTimestamp).map((k) => keyedByTimestamp[k]);
+        return processResponse(response);
       },
     },
 
     moduleOptions,
   });
 }
+
+export const processResponse = function (response: any): any {
+  const keyedByTimestamp: Record<string, any> = {};
+  for (let ct = 0; ct < response.timeseries.result.length; ct++) {
+    const result = response.timeseries.result[ct];
+    if (!result.timestamp || !result.timestamp.length) {
+      continue;
+    }
+    for (let ct = 0; ct < result.timestamp.length; ct++) {
+      const timestamp = result.timestamp[ct];
+      const dataKey = Object.keys(result)[2];
+
+      if (!keyedByTimestamp[timestamp]) {
+        keyedByTimestamp[timestamp] = { date: timestamp };
+      }
+      if (
+        !result[dataKey][ct] ||
+        !result[dataKey][ct].reportedValue ||
+        !result[dataKey][ct].reportedValue.raw
+      ) {
+        continue;
+      }
+      keyedByTimestamp[timestamp][dataKey] =
+        result[dataKey][ct].reportedValue.raw;
+    }
+  }
+
+  return Object.keys(keyedByTimestamp).map((k) => keyedByTimestamp[k]);
+};

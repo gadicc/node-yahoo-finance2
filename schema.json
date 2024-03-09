@@ -1247,7 +1247,8 @@
       },
       "required": [
         "date"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "FundamentalsTimeSeriesOptions": {
       "type": "object",
@@ -1319,6 +1320,16 @@
         "this",
         "symbol",
         "queryOptionsOverrides"
+      ],
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof processResponse>": {
+      "type": "object",
+      "properties": {
+        "response": {}
+      },
+      "required": [
+        "response"
       ],
       "additionalProperties": false
     },
