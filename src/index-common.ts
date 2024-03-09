@@ -14,6 +14,7 @@ import insights from "./modules/insights.js";
 import optionsModule from "./modules/options.js";
 import quote from "./modules/quote.js";
 import quoteSummary from "./modules/quoteSummary.js";
+import fundamentalsTimeSeries from "./modules/fundamentalsTimeSeries.js";
 import recommendationsBySymbol from "./modules/recommendationsBySymbol.js";
 import search from "./modules/search.js";
 import trendingSymbols from "./modules/trendingSymbols.js";
@@ -44,6 +45,7 @@ export default {
   options: optionsModule,
   quote,
   quoteSummary,
+  fundamentalsTimeSeries,
   recommendationsBySymbol,
   search,
   trendingSymbols,
