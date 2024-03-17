@@ -4,7 +4,7 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import { TIMESERIES_KEYS } from "../lib/timeseriesKeys.js";
+import { Timeseries_Keys } from "../lib/timeseriesKeys.js";
 
 export const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
 
@@ -117,7 +117,7 @@ export default function fundamentalsTimeSeries(
         }
 
         // Join the keys for the module into query types.
-        const timeseriesKeys = TIMESERIES_KEYS[queryOptions.module];
+        const timeseriesKeys = Timeseries_Keys[queryOptions.module];
         queryOptions.type =
           queryOptions.type + timeseriesKeys.join(`,${queryOptions.type}`);
         return queryOptions;

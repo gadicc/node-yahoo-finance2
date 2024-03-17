@@ -1,5 +1,5 @@
 // List with available timeseries keys (sorting WIP).
-export const TIMESERIES_KEYS: Record<string, string[]> = {
+export const Timeseries_Keys: Record<string, string[]> = {
   income: [
     // Revenue and gross profit.
     "TotalRevenue",
