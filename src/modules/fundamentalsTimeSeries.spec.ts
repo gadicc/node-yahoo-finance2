@@ -64,6 +64,16 @@ describe("fundamentalsTimeSeries", () => {
     ).rejects.toThrow(/option type invalid/);
   });
 
+  it("throws if invalid module", async () => {
+    await expect(
+      yf.fundamentalsTimeSeries("TSLA", {
+        period1: "2020-01-01",
+        period2: "2021-01-01",
+        module: "invalid"
+      })
+    ).rejects.toThrow(/option module invalid/);
+  });
+
   it("throws error with unexpected results", () => {
     return expect(
       yf.fundamentalsTimeSeries(
