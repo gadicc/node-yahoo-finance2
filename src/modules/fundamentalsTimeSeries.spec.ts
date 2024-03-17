@@ -69,7 +69,7 @@ describe("fundamentalsTimeSeries", () => {
       yf.fundamentalsTimeSeries("TSLA", {
         period1: "2020-01-01",
         period2: "2021-01-01",
-        module: "invalid"
+        module: "invalid",
       })
     ).rejects.toThrow(/option module invalid/);
   });

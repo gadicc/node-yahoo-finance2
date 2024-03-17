@@ -8,7 +8,12 @@ import { TIMESERIES_KEYS } from "../lib/timeseriesKeys.js";
 
 export const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
 
-export const FundamentalsTimeSeries_Modules = ["income", "balance", "cashflow", "all"]
+export const FundamentalsTimeSeries_Modules = [
+  "income",
+  "balance",
+  "cashflow",
+  "all",
+];
 
 export type FundamentalsTimeSeriesResults = Array<FundamentalsTimeSeriesResult>;
 
@@ -34,7 +39,7 @@ const queryOptionsDefaults: Omit<FundamentalsTimeSeriesOptions, "period1"> = {
   lang: "en-US",
   region: "US",
   type: "quarterly",
-  module: "income"
+  module: "income",
 };
 
 export default function fundamentalsTimeSeries(
@@ -99,11 +104,13 @@ export default function fundamentalsTimeSeries(
         }
 
         // Validate timeseries type and module
-        if (!FundamentalsTimeSeries_Types.includes(queryOptions.type || '')) {
+        if (!FundamentalsTimeSeries_Types.includes(queryOptions.type || "")) {
           throw new Error(
             "yahooFinance.fundamentalsTimeSeries() option type invalid."
           );
-        } else if (!FundamentalsTimeSeries_Modules.includes(queryOptions.module || '')) {
+        } else if (
+          !FundamentalsTimeSeries_Modules.includes(queryOptions.module || "")
+        ) {
           throw new Error(
             "yahooFinance.fundamentalsTimeSeries() option module invalid."
           );
@@ -111,7 +118,8 @@ export default function fundamentalsTimeSeries(
 
         // Join the keys for the module into query types.
         const timeseriesKeys = TIMESERIES_KEYS[queryOptions.module];
-        queryOptions.type = queryOptions.type + timeseriesKeys.join(`,${queryOptions.type}`)
+        queryOptions.type =
+          queryOptions.type + timeseriesKeys.join(`,${queryOptions.type}`);
         return queryOptions;
       },
     },
@@ -132,7 +140,7 @@ export default function fundamentalsTimeSeries(
 
 export const processResponse = function (response: any): any {
   const keyedByTimestamp: Record<string, any> = {};
-  const replace = new RegExp(FundamentalsTimeSeries_Types.join('|'))
+  const replace = new RegExp(FundamentalsTimeSeries_Types.join("|"));
   for (let ct = 0; ct < response.timeseries.result.length; ct++) {
     const result = response.timeseries.result[ct];
     if (!result.timestamp || !result.timestamp.length) {
@@ -154,10 +162,12 @@ export const processResponse = function (response: any): any {
       }
 
       // Extract the type from the dataKey for later mapping.
-      const short = dataKey.replace(replace,'');
-      const key = (short == short.toUpperCase()) ? short : short[0].toLowerCase() + short.slice(1)
-      keyedByTimestamp[timestamp][key] =
-        result[dataKey][ct].reportedValue.raw;
+      const short = dataKey.replace(replace, "");
+      const key =
+        short == short.toUpperCase()
+          ? short
+          : short[0].toLowerCase() + short.slice(1);
+      keyedByTimestamp[timestamp][key] = result[dataKey][ct].reportedValue.raw;
     }
   }
 
