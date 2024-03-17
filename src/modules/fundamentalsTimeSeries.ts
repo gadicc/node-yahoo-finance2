@@ -33,13 +33,15 @@ export interface FundamentalsTimeSeriesOptions {
   module: string;
 }
 
-const queryOptionsDefaults: Omit<FundamentalsTimeSeriesOptions, "period1"> = {
+const queryOptionsDefaults: Omit<
+  FundamentalsTimeSeriesOptions,
+  "period1" | "module"
+> = {
   merge: false,
   padTimeSeries: true,
   lang: "en-US",
   region: "US",
   type: "quarterly",
-  module: "income",
 };
 
 export default function fundamentalsTimeSeries(
@@ -72,7 +74,9 @@ export default function fundamentalsTimeSeries(
       schemaKey: "#/definitions/FundamentalsTimeSeriesOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
-      transformWith(queryOptions: FundamentalsTimeSeriesOptions) {
+      transformWith(
+        queryOptions: FundamentalsTimeSeriesOptions
+      ): Partial<FundamentalsTimeSeriesOptions> {
         // Convert dates
         if (!queryOptions.period2) queryOptions.period2 = new Date();
         const dates = ["period1", "period2"] as const;
@@ -108,6 +112,10 @@ export default function fundamentalsTimeSeries(
           throw new Error(
             "yahooFinance.fundamentalsTimeSeries() option type invalid."
           );
+        } else if (!queryOptions.module) {
+          throw new Error(
+            "yahooFinance.fundamentalsTimeSeries() option module not set."
+          );
         } else if (
           !FundamentalsTimeSeries_Modules.includes(queryOptions.module || "")
         ) {
@@ -117,10 +125,15 @@ export default function fundamentalsTimeSeries(
         }
 
         // Join the keys for the module into query types.
-        const timeseriesKeys = Timeseries_Keys[queryOptions.module];
-        queryOptions.type =
-          queryOptions.type + timeseriesKeys.join(`,${queryOptions.type}`);
-        return queryOptions;
+        const keys = Timeseries_Keys[queryOptions.module];
+        const queryType =
+          queryOptions.type + keys.join(`,${queryOptions.type}`);
+
+        return {
+          period1: queryOptions.period1,
+          period2: queryOptions.period2,
+          type: queryType,
+        };
       },
     },
 

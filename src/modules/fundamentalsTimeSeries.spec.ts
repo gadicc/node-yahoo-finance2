@@ -22,6 +22,7 @@ describe("fundamentalsTimeSeries", () => {
       {
         period1: "2020-01-01",
         period2: "2024-01-01",
+        module: "income",
       },
       {
         devel: `fundamentalsTimeSeries-${symbol}-2020-01-01-to-2021-01-01.json`,
@@ -34,6 +35,7 @@ describe("fundamentalsTimeSeries", () => {
       yf.fundamentalsTimeSeries("TSLA", {
         period1: "2020-01-01",
         period2: "2020-01-01",
+        module: "income",
       })
     ).rejects.toThrow(/cannot share the same value/);
   });
@@ -43,6 +45,7 @@ describe("fundamentalsTimeSeries", () => {
       yf.fundamentalsTimeSeries("TSLA", {
         period1: "invalid",
         period2: "2021-01-01",
+        module: "income",
       })
     ).rejects.toThrow(/invalid date provided/);
 
@@ -50,6 +53,7 @@ describe("fundamentalsTimeSeries", () => {
       yf.fundamentalsTimeSeries("TSLA", {
         period1: "2020-01-011",
         period2: "invalid",
+        module: "income",
       })
     ).rejects.toThrow(/invalid date provided/);
   });
@@ -60,6 +64,7 @@ describe("fundamentalsTimeSeries", () => {
         period1: "2020-01-01",
         period2: "2021-01-01",
         type: "invalid",
+        module: "income",
       })
     ).rejects.toThrow(/option type invalid/);
   });
@@ -78,7 +83,7 @@ describe("fundamentalsTimeSeries", () => {
     return expect(
       yf.fundamentalsTimeSeries(
         "EURGBP=X",
-        { period1: 1567728000, period2: 1570665600 },
+        { period1: 1567728000, period2: 1570665600, module: "income" },
         { devel: "fundamentalsTimeSeries-EURGBP-unexpected-results.fake.json" }
       )
     ).rejects.toThrow(/Unexpected result/);
