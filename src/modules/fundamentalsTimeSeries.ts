@@ -74,67 +74,7 @@ export default function fundamentalsTimeSeries(
       schemaKey: "#/definitions/FundamentalsTimeSeriesOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
-      transformWith(
-        queryOptions: FundamentalsTimeSeriesOptions
-      ): Partial<FundamentalsTimeSeriesOptions> {
-        // Convert dates
-        if (!queryOptions.period2) queryOptions.period2 = new Date();
-        const dates = ["period1", "period2"] as const;
-        for (const fieldName of dates) {
-          const value = queryOptions[fieldName];
-          if (value instanceof Date)
-            queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
-          else if (typeof value === "string") {
-            const timestamp = new Date(value as string).getTime();
-
-            if (isNaN(timestamp))
-              throw new Error(
-                "yahooFinance.fundamentalsTimeSeries() option '" +
-                  fieldName +
-                  "' invalid date provided: '" +
-                  value +
-                  "'"
-              );
-
-            queryOptions[fieldName] = Math.floor(timestamp / 1000);
-          }
-        }
-
-        if (queryOptions.period1 === queryOptions.period2) {
-          throw new Error(
-            "yahooFinance.fundamentalsTimeSeries() options `period1` and `period2` " +
-              "cannot share the same value."
-          );
-        }
-
-        // Validate timeseries type and module
-        if (!FundamentalsTimeSeries_Types.includes(queryOptions.type || "")) {
-          throw new Error(
-            "yahooFinance.fundamentalsTimeSeries() option type invalid."
-          );
-        } else if (!queryOptions.module) {
-          throw new Error(
-            "yahooFinance.fundamentalsTimeSeries() option module not set."
-          );
-        } else if (
-          !FundamentalsTimeSeries_Modules.includes(queryOptions.module || "")
-        ) {
-          throw new Error(
-            "yahooFinance.fundamentalsTimeSeries() option module invalid."
-          );
-        }
-
-        // Join the keys for the module into query types.
-        const keys = Timeseries_Keys[queryOptions.module];
-        const queryType =
-          queryOptions.type + keys.join(`,${queryOptions.type}`);
-
-        return {
-          period1: queryOptions.period1,
-          period2: queryOptions.period2,
-          type: queryType,
-        };
-      },
+      transformWith: processQuery,
     },
 
     result: {
@@ -151,9 +91,97 @@ export default function fundamentalsTimeSeries(
   });
 }
 
+/**
+ * Transform the input options into query parameters.
+ * The options module defines which keys that are used in the query.
+ * The keys are joined together into the query parameter type and
+ * pre-fixed with the options type (e.g. annualTotalRevenue).
+ * @param queryOptions Input query options.
+ * @returns Query parameters.
+ */
+export const processQuery = function (
+  queryOptions: FundamentalsTimeSeriesOptions
+): Partial<FundamentalsTimeSeriesOptions> {
+  // Convert dates
+  if (!queryOptions.period2) queryOptions.period2 = new Date();
+  const dates = ["period1", "period2"] as const;
+
+  for (const fieldName of dates) {
+    const value = queryOptions[fieldName];
+    if (value instanceof Date)
+      queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
+    else if (typeof value === "string") {
+      const timestamp = new Date(value as string).getTime();
+
+      if (isNaN(timestamp))
+        throw new Error(
+          "yahooFinance.fundamentalsTimeSeries() option '" +
+            fieldName +
+            "' invalid date provided: '" +
+            value +
+            "'"
+        );
+
+      queryOptions[fieldName] = Math.floor(timestamp / 1000);
+    }
+  }
+
+  // Validate query parameters.
+  if (queryOptions.period1 === queryOptions.period2) {
+    throw new Error(
+      "yahooFinance.fundamentalsTimeSeries() options `period1` and `period2` " +
+        "cannot share the same value."
+    );
+  } else if (!FundamentalsTimeSeries_Types.includes(queryOptions.type || "")) {
+    throw new Error(
+      "yahooFinance.fundamentalsTimeSeries() option type invalid."
+    );
+  } else if (!queryOptions.module) {
+    throw new Error(
+      "yahooFinance.fundamentalsTimeSeries() option module not set."
+    );
+  } else if (
+    !FundamentalsTimeSeries_Modules.includes(queryOptions.module || "")
+  ) {
+    throw new Error(
+      "yahooFinance.fundamentalsTimeSeries() option module invalid."
+    );
+  }
+
+  // Join the keys for the module into query types.
+  const keys = Object.entries(Timeseries_Keys).reduce(
+    (previous: Array<string>, [module, keys]) => {
+      if (queryOptions.module == "all") {
+        return previous.concat(keys);
+      } else if (module == queryOptions.module) {
+        return previous.concat(Timeseries_Keys[queryOptions.module]);
+      } else return previous;
+    },
+    [] as Array<string>
+  );
+  const queryType = queryOptions.type + keys.join(`,${queryOptions.type}`);
+
+  return {
+    period1: queryOptions.period1,
+    period2: queryOptions.period2,
+    type: queryType,
+  };
+};
+
+/**
+ * Transforms the time-series into an array with reported values per period.
+ * Each object represents a period and its properties are the data points.
+ * Financial statement content variates and keys are skipped when empty.
+ * The query keys include the option type  (e.g. annualTotalRevenue).
+ * In the response the type is removed (e.g. totalRevenue) for
+ * easier mapping by the client.
+ * @param response Query response.
+ * @returns Formatted response.
+ */
 export const processResponse = function (response: any): any {
   const keyedByTimestamp: Record<string, any> = {};
   const replace = new RegExp(FundamentalsTimeSeries_Types.join("|"));
+
   for (let ct = 0; ct < response.timeseries.result.length; ct++) {
     const result = response.timeseries.result[ct];
     if (!result.timestamp || !result.timestamp.length) {
@@ -174,7 +202,6 @@ export const processResponse = function (response: any): any {
         continue;
       }
 
-      // Extract the type from the dataKey for later mapping.
       const short = dataKey.replace(replace, "");
       const key =
         short == short.toUpperCase()

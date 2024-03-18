@@ -22,7 +22,7 @@ describe("fundamentalsTimeSeries", () => {
       {
         period1: "2020-01-01",
         period2: "2024-01-01",
-        module: "income",
+        module: "all",
       },
       {
         devel: `fundamentalsTimeSeries-${symbol}-2020-01-01-to-2021-01-01.json`,
@@ -77,6 +77,15 @@ describe("fundamentalsTimeSeries", () => {
         module: "invalid",
       })
     ).rejects.toThrow(/option module invalid/);
+  });
+
+  it("throws if module not set", async () => {
+    await expect(
+      yf.fundamentalsTimeSeries("TSLA", {
+        period1: "2020-01-01",
+        period2: "2021-01-01",
+      })
+    ).rejects.toThrow(/called with invalid options/);
   });
 
   it("throws error with unexpected results", () => {
