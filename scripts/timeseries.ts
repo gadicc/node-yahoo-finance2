@@ -61,7 +61,13 @@ async function main() {
     /* Extract the type of request from the referer. */
     const module = refererHeader.value.split("/").pop();
     const keysArray = module ? json[module] : undefined;
-    if (keysArray && module) {
+
+    /* Use the first key to confirm the module. */
+    if (keysArray && !typeParam.value.includes(keysArray[0])) {
+      console.log(`${module} does not contain key: ${keysArray[0]}`);
+      console.log("Referer most likely does not contain the right module.");
+      continue;
+    } else if (keysArray && module) {
       const keySet = new Set(keysArray);
       const paramKeys = typeParam.value.split(",");
       console.log(`Module: ${module} with ${keySet.size} keys.`);
