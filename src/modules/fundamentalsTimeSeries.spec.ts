@@ -30,6 +30,20 @@ describe("fundamentalsTimeSeries", () => {
     );
   });
 
+  it("passes validation with module all", async () => {
+    await yf.fundamentalsTimeSeries(
+      "INTC",
+      {
+        period1: "2020-01-01",
+        period2: "2024-01-01",
+        module: "all",
+      },
+      {
+        devel: `fundamentalsTimeSeries-INTC-2020-01-01-to-2024-01-01.json`,
+      }
+    );
+  });
+
   it("throws if period1,period2 are the same", async () => {
     await expect(
       yf.fundamentalsTimeSeries("TSLA", {

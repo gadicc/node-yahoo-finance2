@@ -136,10 +136,6 @@ export const processQuery = function (
     throw new Error(
       "yahooFinance.fundamentalsTimeSeries() option type invalid."
     );
-  } else if (!queryOptions.module) {
-    throw new Error(
-      "yahooFinance.fundamentalsTimeSeries() option module not set."
-    );
   } else if (
     !FundamentalsTimeSeries_Modules.includes(queryOptions.module || "")
   ) {
