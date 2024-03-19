@@ -1,12 +1,9 @@
-// List with available timeseries keys (sorting WIP).
-export const Timeseries_Keys: Record<string, string[]> = {
-  income: [
-    // Revenue and gross profit.
+{
+  "financials": [
     "TotalRevenue",
     "OperatingRevenue",
     "CostOfRevenue",
     "GrossProfit",
-    // Operating expenses.
     "SellingGeneralAndAdministration",
     "SellingAndMarketingExpense",
     "GeneralAndAdministrativeExpense",
@@ -21,12 +18,10 @@ export const Timeseries_Keys: Record<string, string[]> = {
     "OtherOperatingExpenses",
     "OperatingExpense",
     "OperatingIncome",
-    // Non-Operating expenses.
     "InterestExpenseNonOperating",
     "InterestIncomeNonOperating",
     "TotalOtherFinanceCost",
     "NetNonOperatingInterestIncomeExpense",
-    // Other income & expenses.
     "WriteOff",
     "SpecialIncomeCharges",
     "GainOnSaleOfPPE",
@@ -35,7 +30,6 @@ export const Timeseries_Keys: Record<string, string[]> = {
     "OtherSpecialCharges",
     "OtherIncomeExpense",
     "OtherNonOperatingIncomeExpenses",
-    // Net income.
     "TotalExpenses",
     "PretaxIncome",
     "TaxProvision",
@@ -49,11 +43,9 @@ export const Timeseries_Keys: Record<string, string[]> = {
     "OtherunderPreferredStockDividend",
     "NetIncomeCommonStockholders",
     "NetIncome",
-    // Shares.
     "BasicAverageShares",
     "DilutedAverageShares",
     "DividendPerShare",
-    // Basic per share
     "ReportedNormalizedBasicEPS",
     "ContinuingAndDiscontinuedBasicEPS",
     "BasicEPSOtherGainsLosses",
@@ -64,7 +56,6 @@ export const Timeseries_Keys: Record<string, string[]> = {
     "BasicExtraordinary",
     "BasicDiscontinuousOperations",
     "BasicContinuousOperations",
-    // Diluted per share.
     "ReportedNormalizedDilutedEPS",
     "ContinuingAndDiscontinuedDilutedEPS",
     "TaxLossCarryforwardDilutedEPS",
@@ -77,7 +68,6 @@ export const Timeseries_Keys: Record<string, string[]> = {
     "DilutedDiscontinuousOperations",
     "DilutedNIAvailtoComStockholders",
     "DilutedEPSOtherGainsLosses",
-    // Other items and normalized.
     "TotalOperatingIncomeAsReported",
     "NetIncomeFromContinuingAndDiscontinuedOperation",
     "NormalizedIncome",
@@ -92,7 +82,6 @@ export const Timeseries_Keys: Record<string, string[]> = {
     "NormalizedEBITDA",
     "TaxRateForCalcs",
     "TaxEffectOfUnusualItems",
-    // Unsorted
     "RentExpenseSupplemental",
     "EarningsFromEquityInterestNetOfTax",
     "ImpairmentOfCapitalAssets",
@@ -104,9 +93,9 @@ export const Timeseries_Keys: Record<string, string[]> = {
     "InsuranceAndClaims",
     "RentAndLandingFees",
     "SalariesAndWages",
-    "ExciseTaxes",
+    "ExciseTaxes"
   ],
-  balance: [
+  "balance-sheet": [
     "TreasurySharesNumber",
     "PreferredSharesNumber",
     "OrdinarySharesNumber",
@@ -250,9 +239,9 @@ export const Timeseries_Keys: Record<string, string[]> = {
     "OtherShortTermInvestments",
     "CashAndCashEquivalents",
     "CashEquivalents",
-    "CashFinancial",
+    "CashFinancial"
   ],
-  cashflow: [
+  "cash-flow": [
     "ForeignSales",
     "DomesticSales",
     "AdjustedGeographySegmentData",
@@ -374,6 +363,6 @@ export const Timeseries_Keys: Record<string, string[]> = {
     "ClassesofCashReceiptsfromOperatingActivities",
     "OtherCashReceiptsfromOperatingActivities",
     "ReceiptsfromGovernmentGrants",
-    "ReceiptsfromCustomers",
-  ],
-};
+    "ReceiptsfromCustomers"
+  ]
+}

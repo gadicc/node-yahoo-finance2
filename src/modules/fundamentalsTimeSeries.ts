@@ -4,14 +4,14 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import { Timeseries_Keys } from "../lib/timeseriesKeys.js";
+import Timeseries_Keys from "../../timeseries.json";
 
 export const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
 
 export const FundamentalsTimeSeries_Modules = [
-  "income",
-  "balance",
-  "cashflow",
+  "financials",
+  "balance-sheet",
+  "cash-flow",
   "all",
 ];
 
@@ -154,7 +154,7 @@ export const processQuery = function (
       if (queryOptions.module == "all") {
         return previous.concat(keys);
       } else if (module == queryOptions.module) {
-        return previous.concat(Timeseries_Keys[queryOptions.module]);
+        return previous.concat(keys);
       } else return previous;
     },
     [] as Array<string>
