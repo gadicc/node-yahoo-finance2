@@ -327,7 +327,8 @@ an array of symbols, and you'll receive an array of results back.
 | ------------- | ----------| ---------- | --------------------------------- |
 | `period1`     | Date*     | *required* | Starting period
 | `period2`     | Date*     | (today)    | Ending period
-| `type`        | "quarterly", "annual" | "quarterly" | Financial time series type
+| `type`        | "quarterly", "annual", "trailing" | "quarterly" | Reporting period type
+| `module`        | "financials", "balance-sheet", "cash-flow", "all" | *required* | Financial modules
 | `lang`      | string | `"en-US"` |                                                                   |
 | `region`    | string | `"US"`    |                                                                   |
 

@@ -4,13 +4,16 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
+import Timeseries_Keys from "../../timeseries.json";
 
-export const FundamentalsTimeSeries_Types: Record<string, any> = {
-  quarterly:
-    "quarterlyTreasurySharesNumber,quarterlyPreferredSharesNumber,quarterlyOrdinarySharesNumber,quarterlyShareIssued,quarterlyNetDebt,quarterlyTotalDebt,quarterlyTangibleBookValue,quarterlyInvestedCapital,quarterlyWorkingCapital,quarterlyNetTangibleAssets,quarterlyCapitalLeaseObligations,quarterlyCommonStockEquity,quarterlyPreferredStockEquity,quarterlyTotalCapitalization,quarterlyTotalEquityGrossMinorityInterest,quarterlyMinorityInterest,quarterlyStockholdersEquity,quarterlyOtherEquityInterest,quarterlyGainsLossesNotAffectingRetainedEarnings,quarterlyOtherEquityAdjustments,quarterlyFixedAssetsRevaluationReserve,quarterlyForeignCurrencyTranslationAdjustments,quarterlyMinimumPensionLiabilities,quarterlyUnrealizedGainLoss,quarterlyTreasuryStock,quarterlyRetainedEarnings,quarterlyAdditionalPaidInCapital,quarterlyCapitalStock,quarterlyOtherCapitalStock,quarterlyCommonStock,quarterlyPreferredStock,quarterlyTotalPartnershipCapital,quarterlyGeneralPartnershipCapital,quarterlyLimitedPartnershipCapital,quarterlyTotalLiabilitiesNetMinorityInterest,quarterlyTotalNonCurrentLiabilitiesNetMinorityInterest,quarterlyOtherNonCurrentLiabilities,quarterlyLiabilitiesHeldforSaleNonCurrent,quarterlyRestrictedCommonStock,quarterlyPreferredSecuritiesOutsideStockEquity,quarterlyDerivativeProductLiabilities,quarterlyEmployeeBenefits,quarterlyNonCurrentPensionAndOtherPostretirementBenefitPlans,quarterlyNonCurrentAccruedExpenses,quarterlyDuetoRelatedPartiesNonCurrent,quarterlyTradeandOtherPayablesNonCurrent,quarterlyNonCurrentDeferredLiabilities,quarterlyNonCurrentDeferredRevenue,quarterlyNonCurrentDeferredTaxesLiabilities,quarterlyLongTermDebtAndCapitalLeaseObligation,quarterlyLongTermCapitalLeaseObligation,quarterlyLongTermDebt,quarterlyLongTermProvisions,quarterlyCurrentLiabilities,quarterlyOtherCurrentLiabilities,quarterlyCurrentDeferredLiabilities,quarterlyCurrentDeferredRevenue,quarterlyCurrentDeferredTaxesLiabilities,quarterlyCurrentDebtAndCapitalLeaseObligation,quarterlyCurrentCapitalLeaseObligation,quarterlyCurrentDebt,quarterlyOtherCurrentBorrowings,quarterlyLineOfCredit,quarterlyCommercialPaper,quarterlyCurrentNotesPayable,quarterlyPensionandOtherPostRetirementBenefitPlansCurrent,quarterlyCurrentProvisions,quarterlyPayablesAndAccruedExpenses,quarterlyCurrentAccruedExpenses,quarterlyInterestPayable,quarterlyPayables,quarterlyOtherPayable,quarterlyDuetoRelatedPartiesCurrent,quarterlyDividendsPayable,quarterlyTotalTaxPayable,quarterlyIncomeTaxPayable,quarterlyAccountsPayable,quarterlyTotalAssets,quarterlyTotalNonCurrentAssets,quarterlyOtherNonCurrentAssets,quarterlyDefinedPensionBenefit,quarterlyNonCurrentPrepaidAssets,quarterlyNonCurrentDeferredAssets,quarterlyNonCurrentDeferredTaxesAssets,quarterlyDuefromRelatedPartiesNonCurrent,quarterlyNonCurrentNoteReceivables,quarterlyNonCurrentAccountsReceivable,quarterlyFinancialAssets,quarterlyInvestmentsAndAdvances,quarterlyOtherInvestments,quarterlyInvestmentinFinancialAssets,quarterlyHeldToMaturitySecurities,quarterlyAvailableForSaleSecurities,quarterlyFinancialAssetsDesignatedasFairValueThroughProfitorLossTotal,quarterlyTradingSecurities,quarterlyLongTermEquityInvestment,quarterlyInvestmentsinJointVenturesatCost,quarterlyInvestmentsInOtherVenturesUnderEquityMethod,quarterlyInvestmentsinAssociatesatCost,quarterlyInvestmentsinSubsidiariesatCost,quarterlyInvestmentProperties,quarterlyGoodwillAndOtherIntangibleAssets,quarterlyOtherIntangibleAssets,quarterlyGoodwill,quarterlyNetPPE,quarterlyAccumulatedDepreciation,quarterlyGrossPPE,quarterlyLeases,quarterlyConstructionInProgress,quarterlyOtherProperties,quarterlyMachineryFurnitureEquipment,quarterlyBuildingsAndImprovements,quarterlyLandAndImprovements,quarterlyProperties,quarterlyCurrentAssets,quarterlyOtherCurrentAssets,quarterlyHedgingAssetsCurrent,quarterlyAssetsHeldForSaleCurrent,quarterlyCurrentDeferredAssets,quarterlyCurrentDeferredTaxesAssets,quarterlyRestrictedCash,quarterlyPrepaidAssets,quarterlyInventory,quarterlyInventoriesAdjustmentsAllowances,quarterlyOtherInventories,quarterlyFinishedGoods,quarterlyWorkInProcess,quarterlyRawMaterials,quarterlyReceivables,quarterlyReceivablesAdjustmentsAllowances,quarterlyOtherReceivables,quarterlyDuefromRelatedPartiesCurrent,quarterlyTaxesReceivable,quarterlyAccruedInterestReceivable,quarterlyNotesReceivable,quarterlyLoansReceivable,quarterlyAccountsReceivable,quarterlyAllowanceForDoubtfulAccountsReceivable,quarterlyGrossAccountsReceivable,quarterlyCashCashEquivalentsAndShortTermInvestments,quarterlyOtherShortTermInvestments,quarterlyCashAndCashEquivalents,quarterlyCashEquivalents,quarterlyCashFinancial",
-  annual:
-    "annualTaxEffectOfUnusualItems,trailingTaxEffectOfUnusualItems,annualTaxRateForCalcs,trailingTaxRateForCalcs,annualNormalizedEBITDA,trailingNormalizedEBITDA,annualNormalizedDilutedEPS,trailingNormalizedDilutedEPS,annualNormalizedBasicEPS,trailingNormalizedBasicEPS,annualTotalUnusualItems,trailingTotalUnusualItems,annualTotalUnusualItemsExcludingGoodwill,trailingTotalUnusualItemsExcludingGoodwill,annualNetIncomeFromContinuingOperationNetMinorityInterest,trailingNetIncomeFromContinuingOperationNetMinorityInterest,annualReconciledDepreciation,trailingReconciledDepreciation,annualReconciledCostOfRevenue,trailingReconciledCostOfRevenue,annualEBITDA,trailingEBITDA,annualEBIT,trailingEBIT,annualNetInterestIncome,trailingNetInterestIncome,annualInterestExpense,trailingInterestExpense,annualInterestIncome,trailingInterestIncome,annualContinuingAndDiscontinuedDilutedEPS,trailingContinuingAndDiscontinuedDilutedEPS,annualContinuingAndDiscontinuedBasicEPS,trailingContinuingAndDiscontinuedBasicEPS,annualNormalizedIncome,trailingNormalizedIncome,annualNetIncomeFromContinuingAndDiscontinuedOperation,trailingNetIncomeFromContinuingAndDiscontinuedOperation,annualTotalExpenses,trailingTotalExpenses,annualRentExpenseSupplemental,trailingRentExpenseSupplemental,annualReportedNormalizedDilutedEPS,trailingReportedNormalizedDilutedEPS,annualReportedNormalizedBasicEPS,trailingReportedNormalizedBasicEPS,annualTotalOperatingIncomeAsReported,trailingTotalOperatingIncomeAsReported,annualDividendPerShare,trailingDividendPerShare,annualDilutedAverageShares,trailingDilutedAverageShares,annualBasicAverageShares,trailingBasicAverageShares,annualDilutedEPS,trailingDilutedEPS,annualDilutedEPSOtherGainsLosses,trailingDilutedEPSOtherGainsLosses,annualTaxLossCarryforwardDilutedEPS,trailingTaxLossCarryforwardDilutedEPS,annualDilutedAccountingChange,trailingDilutedAccountingChange,annualDilutedExtraordinary,trailingDilutedExtraordinary,annualDilutedDiscontinuousOperations,trailingDilutedDiscontinuousOperations,annualDilutedContinuousOperations,trailingDilutedContinuousOperations,annualBasicEPS,trailingBasicEPS,annualBasicEPSOtherGainsLosses,trailingBasicEPSOtherGainsLosses,annualTaxLossCarryforwardBasicEPS,trailingTaxLossCarryforwardBasicEPS,annualBasicAccountingChange,trailingBasicAccountingChange,annualBasicExtraordinary,trailingBasicExtraordinary,annualBasicDiscontinuousOperations,trailingBasicDiscontinuousOperations,annualBasicContinuousOperations,trailingBasicContinuousOperations,annualDilutedNIAvailtoComStockholders,trailingDilutedNIAvailtoComStockholders,annualAverageDilutionEarnings,trailingAverageDilutionEarnings,annualNetIncomeCommonStockholders,trailingNetIncomeCommonStockholders,annualOtherunderPreferredStockDividend,trailingOtherunderPreferredStockDividend,annualPreferredStockDividends,trailingPreferredStockDividends,annualNetIncome,trailingNetIncome,annualMinorityInterests,trailingMinorityInterests,annualNetIncomeIncludingNoncontrollingInterests,trailingNetIncomeIncludingNoncontrollingInterests,annualNetIncomeFromTaxLossCarryforward,trailingNetIncomeFromTaxLossCarryforward,annualNetIncomeExtraordinary,trailingNetIncomeExtraordinary,annualNetIncomeDiscontinuousOperations,trailingNetIncomeDiscontinuousOperations,annualNetIncomeContinuousOperations,trailingNetIncomeContinuousOperations,annualEarningsFromEquityInterestNetOfTax,trailingEarningsFromEquityInterestNetOfTax,annualTaxProvision,trailingTaxProvision,annualPretaxIncome,trailingPretaxIncome,annualOtherIncomeExpense,trailingOtherIncomeExpense,annualOtherNonOperatingIncomeExpenses,trailingOtherNonOperatingIncomeExpenses,annualSpecialIncomeCharges,trailingSpecialIncomeCharges,annualGainOnSaleOfPPE,trailingGainOnSaleOfPPE,annualGainOnSaleOfBusiness,trailingGainOnSaleOfBusiness,annualOtherSpecialCharges,trailingOtherSpecialCharges,annualWriteOff,trailingWriteOff,annualImpairmentOfCapitalAssets,trailingImpairmentOfCapitalAssets,annualRestructuringAndMergernAcquisition,trailingRestructuringAndMergernAcquisition,annualSecuritiesAmortization,trailingSecuritiesAmortization,annualEarningsFromEquityInterest,trailingEarningsFromEquityInterest,annualGainOnSaleOfSecurity,trailingGainOnSaleOfSecurity,annualNetNonOperatingInterestIncomeExpense,trailingNetNonOperatingInterestIncomeExpense,annualTotalOtherFinanceCost,trailingTotalOtherFinanceCost,annualInterestExpenseNonOperating,trailingInterestExpenseNonOperating,annualInterestIncomeNonOperating,trailingInterestIncomeNonOperating,annualOperatingIncome,trailingOperatingIncome,annualOperatingExpense,trailingOperatingExpense,annualOtherOperatingExpenses,trailingOtherOperatingExpenses,annualOtherTaxes,trailingOtherTaxes,annualProvisionForDoubtfulAccounts,trailingProvisionForDoubtfulAccounts,annualDepreciationAmortizationDepletionIncomeStatement,trailingDepreciationAmortizationDepletionIncomeStatement,annualDepletionIncomeStatement,trailingDepletionIncomeStatement,annualDepreciationAndAmortizationInIncomeStatement,trailingDepreciationAndAmortizationInIncomeStatement,annualAmortization,trailingAmortization,annualAmortizationOfIntangiblesIncomeStatement,trailingAmortizationOfIntangiblesIncomeStatement,annualDepreciationIncomeStatement,trailingDepreciationIncomeStatement,annualResearchAndDevelopment,trailingResearchAndDevelopment,annualSellingGeneralAndAdministration,trailingSellingGeneralAndAdministration,annualSellingAndMarketingExpense,trailingSellingAndMarketingExpense,annualGeneralAndAdministrativeExpense,trailingGeneralAndAdministrativeExpense,annualOtherGandA,trailingOtherGandA,annualInsuranceAndClaims,trailingInsuranceAndClaims,annualRentAndLandingFees,trailingRentAndLandingFees,annualSalariesAndWages,trailingSalariesAndWages,annualGrossProfit,trailingGrossProfit,annualCostOfRevenue,trailingCostOfRevenue,annualTotalRevenue,trailingTotalRevenue,annualExciseTaxes,trailingExciseTaxes,annualOperatingRevenue,trailingOperatingRevenue",
-};
+export const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
+
+export const FundamentalsTimeSeries_Modules = [
+  "financials",
+  "balance-sheet",
+  "cash-flow",
+  "all",
+];
 
 export type FundamentalsTimeSeriesResults = Array<FundamentalsTimeSeriesResult>;
 
@@ -27,9 +30,13 @@ export interface FundamentalsTimeSeriesOptions {
   padTimeSeries?: boolean; // Not exactly sure what this does, assume it pads p1 and p2???
   lang?: string;
   region?: string;
+  module: string;
 }
 
-const queryOptionsDefaults: Omit<FundamentalsTimeSeriesOptions, "period1"> = {
+const queryOptionsDefaults: Omit<
+  FundamentalsTimeSeriesOptions,
+  "period1" | "module"
+> = {
   merge: false,
   padTimeSeries: true,
   lang: "en-US",
@@ -67,48 +74,7 @@ export default function fundamentalsTimeSeries(
       schemaKey: "#/definitions/FundamentalsTimeSeriesOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
-      transformWith(queryOptions: FundamentalsTimeSeriesOptions) {
-        // Convert dates
-        if (!queryOptions.period2) queryOptions.period2 = new Date();
-        const dates = ["period1", "period2"] as const;
-        for (const fieldName of dates) {
-          const value = queryOptions[fieldName];
-          if (value instanceof Date)
-            queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
-          else if (typeof value === "string") {
-            const timestamp = new Date(value as string).getTime();
-
-            if (isNaN(timestamp))
-              throw new Error(
-                "yahooFinance.fundamentalsTimeSeries() option '" +
-                  fieldName +
-                  "' invalid date provided: '" +
-                  value +
-                  "'"
-              );
-
-            queryOptions[fieldName] = Math.floor(timestamp / 1000);
-          }
-        }
-
-        if (queryOptions.period1 === queryOptions.period2) {
-          throw new Error(
-            "yahooFinance.fundamentalsTimeSeries() options `period1` and `period2` " +
-              "cannot share the same value."
-          );
-        }
-
-        // Add timeseries types
-        if (!FundamentalsTimeSeries_Types[queryOptions.type || ""]) {
-          throw new Error(
-            "yahooFinance.fundamentalsTimeSeries() option type invalid."
-          );
-        }
-        queryOptions.type =
-          FundamentalsTimeSeries_Types[queryOptions.type || ""];
-
-        return queryOptions;
-      },
+      transformWith: processQuery,
     },
 
     result: {
@@ -125,8 +91,93 @@ export default function fundamentalsTimeSeries(
   });
 }
 
+/**
+ * Transform the input options into query parameters.
+ * The options module defines which keys that are used in the query.
+ * The keys are joined together into the query parameter type and
+ * pre-fixed with the options type (e.g. annualTotalRevenue).
+ * @param queryOptions Input query options.
+ * @returns Query parameters.
+ */
+export const processQuery = function (
+  queryOptions: FundamentalsTimeSeriesOptions
+): Partial<FundamentalsTimeSeriesOptions> {
+  // Convert dates
+  if (!queryOptions.period2) queryOptions.period2 = new Date();
+  const dates = ["period1", "period2"] as const;
+
+  for (const fieldName of dates) {
+    const value = queryOptions[fieldName];
+    if (value instanceof Date)
+      queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
+    else if (typeof value === "string") {
+      const timestamp = new Date(value as string).getTime();
+
+      if (isNaN(timestamp))
+        throw new Error(
+          "yahooFinance.fundamentalsTimeSeries() option '" +
+            fieldName +
+            "' invalid date provided: '" +
+            value +
+            "'"
+        );
+
+      queryOptions[fieldName] = Math.floor(timestamp / 1000);
+    }
+  }
+
+  // Validate query parameters.
+  if (queryOptions.period1 === queryOptions.period2) {
+    throw new Error(
+      "yahooFinance.fundamentalsTimeSeries() options `period1` and `period2` " +
+        "cannot share the same value."
+    );
+  } else if (!FundamentalsTimeSeries_Types.includes(queryOptions.type || "")) {
+    throw new Error(
+      "yahooFinance.fundamentalsTimeSeries() option type invalid."
+    );
+  } else if (
+    !FundamentalsTimeSeries_Modules.includes(queryOptions.module || "")
+  ) {
+    throw new Error(
+      "yahooFinance.fundamentalsTimeSeries() option module invalid."
+    );
+  }
+
+  // Join the keys for the module into query types.
+  const keys = Object.entries(Timeseries_Keys).reduce(
+    (previous: Array<string>, [module, keys]) => {
+      if (queryOptions.module == "all") {
+        return previous.concat(keys);
+      } else if (module == queryOptions.module) {
+        return previous.concat(keys);
+      } else return previous;
+    },
+    [] as Array<string>
+  );
+  const queryType = queryOptions.type + keys.join(`,${queryOptions.type}`);
+
+  return {
+    period1: queryOptions.period1,
+    period2: queryOptions.period2,
+    type: queryType,
+  };
+};
+
+/**
+ * Transforms the time-series into an array with reported values per period.
+ * Each object represents a period and its properties are the data points.
+ * Financial statement content variates and keys are skipped when empty.
+ * The query keys include the option type  (e.g. annualTotalRevenue).
+ * In the response the type is removed (e.g. totalRevenue) for
+ * easier mapping by the client.
+ * @param response Query response.
+ * @returns Formatted response.
+ */
 export const processResponse = function (response: any): any {
   const keyedByTimestamp: Record<string, any> = {};
+  const replace = new RegExp(FundamentalsTimeSeries_Types.join("|"));
+
   for (let ct = 0; ct < response.timeseries.result.length; ct++) {
     const result = response.timeseries.result[ct];
     if (!result.timestamp || !result.timestamp.length) {
@@ -146,8 +197,13 @@ export const processResponse = function (response: any): any {
       ) {
         continue;
       }
-      keyedByTimestamp[timestamp][dataKey] =
-        result[dataKey][ct].reportedValue.raw;
+
+      const short = dataKey.replace(replace, "");
+      const key =
+        short == short.toUpperCase()
+          ? short
+          : short[0].toLowerCase() + short.slice(1);
+      keyedByTimestamp[timestamp][key] = result[dataKey][ct].reportedValue.raw;
     }
   }
 

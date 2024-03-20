@@ -1293,10 +1293,14 @@
         },
         "region": {
           "type": "string"
+        },
+        "module": {
+          "type": "string"
         }
       },
       "required": [
-        "period1"
+        "period1",
+        "module"
       ],
       "additionalProperties": false
     },
@@ -1323,10 +1327,25 @@
       ],
       "additionalProperties": false
     },
+    "NamedParameters<typeof processQuery>": {
+      "type": "object",
+      "properties": {
+        "queryOptions": {
+          "$ref": "#/definitions/FundamentalsTimeSeriesOptions",
+          "description": "Input query options."
+        }
+      },
+      "required": [
+        "queryOptions"
+      ],
+      "additionalProperties": false
+    },
     "NamedParameters<typeof processResponse>": {
       "type": "object",
       "properties": {
-        "response": {}
+        "response": {
+          "description": "Query response."
+        }
       },
       "required": [
         "response"
