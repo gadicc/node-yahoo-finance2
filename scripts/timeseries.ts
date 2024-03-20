@@ -10,7 +10,7 @@ import type { PathLike } from "fs";
 import type { Har } from "har-format";
 
 const INPUT_PATH = "timeseries.har";
-const OUTPUT_PATH = "timeseries.json";
+const OUTPUT_PATH = "../src/lib/timeseries.json";
 const STRIP_REGEX = new RegExp("annual|quarterly|trailing");
 
 async function fileExists(path: PathLike): Promise<boolean> {

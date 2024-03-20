@@ -4,7 +4,7 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import Timeseries_Keys from "../../timeseries.json";
+import Timeseries_Keys from "../lib/timeseries.json";
 
 export const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
 
