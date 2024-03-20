@@ -1,15 +1,6 @@
 import fundamentalsTimeSeries from "./fundamentalsTimeSeries.js";
 import testSymbols from "../../tests/testSymbols.js";
-import fs from "fs";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-import path from "path";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 import testYf from "../../tests/testYf.js";
-import { processResponse } from "./fundamentalsTimeSeries.js";
 
 const yf = testYf({ fundamentalsTimeSeries });
 
@@ -17,7 +8,7 @@ describe("fundamentalsTimeSeries", () => {
   const symbols = testSymbols();
 
   it.each(symbols)("passes validation for symbol '%s'", async (symbol) => {
-    await yf.fundamentalsTimeSeries(
+    const res = await yf.fundamentalsTimeSeries(
       symbol,
       {
         period1: "2020-01-01",
@@ -25,23 +16,144 @@ describe("fundamentalsTimeSeries", () => {
         module: "financials",
       },
       {
-        devel: `fundamentalsTimeSeries-${symbol}-2020-01-01-to-2021-01-01.json`,
+        devel: `fundamentalsTimeSeries-${symbol}-financials-quarterly.json`,
       }
     );
+    console.log(`${symbol} fetched ${res.length} reports.`);
   });
 
-  it("passes validation with module all", async () => {
-    await yf.fundamentalsTimeSeries(
-      "INTC",
+  it("passes validation with module all & quarterly", async () => {
+    const res = await yf.fundamentalsTimeSeries(
+      "AAPL",
       {
+        type: "quarterly",
         period1: "2020-01-01",
         period2: "2024-01-01",
         module: "all",
       },
       {
-        devel: `fundamentalsTimeSeries-INTC-2020-01-01-to-2024-01-01.json`,
+        devel: `fundamentalsTimeSeries-AAPL-all-quarterly.json`,
       }
     );
+    expect(res).toHaveLength(5);
+  });
+
+  it("passes validation with module financials & quarterly", async () => {
+    const res = await yf.fundamentalsTimeSeries(
+      "AAPL",
+      {
+        type: "quarterly",
+        period1: "2020-01-01",
+        period2: "2024-01-01",
+        module: "financials",
+      },
+      {
+        devel: `fundamentalsTimeSeries-AAPL-financials-quarterly.json`,
+      }
+    );
+    expect(res).toHaveLength(5);
+    expect(res[0]).toHaveProperty("totalRevenue");
+  });
+
+  it("passes validation with module balance-sheet & quarterly", async () => {
+    const res = await yf.fundamentalsTimeSeries(
+      "AAPL",
+      {
+        type: "quarterly",
+        period1: "2020-01-01",
+        period2: "2024-01-01",
+        module: "balance-sheet",
+      },
+      {
+        devel: `fundamentalsTimeSeries-AAPL-balance-sheet-quarterly.json`,
+      }
+    );
+    expect(res).toHaveLength(5);
+    expect(res[0]).toHaveProperty("netDebt");
+  });
+
+  it("passes validation with module cash-flow & quarterly", async () => {
+    const res = await yf.fundamentalsTimeSeries(
+      "AAPL",
+      {
+        type: "quarterly",
+        period1: "2020-01-01",
+        period2: "2024-01-01",
+        module: "cash-flow",
+      },
+      {
+        devel: `fundamentalsTimeSeries-AAPL-cash-flow-quarterly.json`,
+      }
+    );
+    expect(res).toHaveLength(5);
+    expect(res[0]).toHaveProperty("freeCashFlow");
+  });
+
+  it("passes validation with module all & annual", async () => {
+    const res = await yf.fundamentalsTimeSeries(
+      "AAPL",
+      {
+        type: "annual",
+        period1: "2020-01-01",
+        period2: "2024-01-01",
+        module: "all",
+      },
+      {
+        devel: `fundamentalsTimeSeries-AAPL-all-annual.json`,
+      }
+    );
+    expect(res).toHaveLength(4);
+  });
+
+  it("passes validation with module financials & annual", async () => {
+    const res = await yf.fundamentalsTimeSeries(
+      "AAPL",
+      {
+        type: "annual",
+        period1: "2020-01-01",
+        period2: "2024-01-01",
+        module: "financials",
+      },
+      {
+        devel: `fundamentalsTimeSeries-AAPL-financials-annual.json`,
+      }
+    );
+    expect(res).toHaveLength(4);
+    expect(res[0]).toHaveProperty("totalRevenue");
+  });
+
+  it("passes validation with module balance-sheet & annual", async () => {
+    const res = await yf.fundamentalsTimeSeries(
+      "AAPL",
+      {
+        type: "annual",
+        period1: "2020-01-01",
+        period2: "2024-01-01",
+        module: "balance-sheet",
+      },
+      {
+        devel: `fundamentalsTimeSeries-AAPL-balance-sheet-annual.json`,
+      }
+    );
+    expect(res).toHaveLength(4);
+    expect(res[0]).toHaveProperty("netDebt");
+  });
+
+  it("passes validation with module cash-flow & annual", async () => {
+    const res = await yf.fundamentalsTimeSeries(
+      "AAPL",
+      {
+        type: "annual",
+        period1: "2020-01-01",
+        period2: "2024-01-01",
+        module: "cash-flow",
+      },
+      {
+        devel: `fundamentalsTimeSeries-AAPL-cash-flow-annual.json`,
+      }
+    );
+    expect(res).toHaveLength(4);
+    expect(res[0]).toHaveProperty("freeCashFlow");
   });
 
   it("throws if period1,period2 are the same", async () => {
@@ -110,17 +222,5 @@ describe("fundamentalsTimeSeries", () => {
         { devel: "fundamentalsTimeSeries-EURGBP-unexpected-results.fake.json" }
       )
     ).rejects.toThrow(/Unexpected result/);
-  });
-
-  it("has valid output", async () => {
-    const cachedFile = path.join(
-      __dirname,
-      "../../tests/http/fundamentalsTimeSeries-AMZN-2020-01-01-to-2021-01-01.json"
-    );
-    const request = JSON.parse(await fs.readFileSync(cachedFile, "utf-8"));
-    const response = JSON.parse(request.response.body);
-
-    const processed = processResponse(response);
-    expect(processed.length).toBeGreaterThan(0);
   });
 });
