@@ -1,3 +1,15 @@
+# [2.11.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.10.0...v2.11.0) (2024-03-20)
+
+
+### Bug Fixes
+
+* **pkg:** commit yarn.lock with @types/har-format ([b1270b5](https://github.com/gadicc/node-yahoo-finance2/commit/b1270b584ecfbfd17a83591c4781cdca4113c54a))
+
+
+### Features
+
+* **fundamentalsTimeSeries:** improved financial reports ([#753](https://github.com/gadicc/node-yahoo-finance2/issues/753)) ([188860a](https://github.com/gadicc/node-yahoo-finance2/commit/188860a166be56d914d7c453dfcd73790962add7))
+
 # [2.10.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.9.2...v2.10.0) (2024-03-09)
 
 
