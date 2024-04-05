@@ -55,8 +55,8 @@ serverless / edge, a database store would be a better fit):
 import os from "os";
 import path from "path";
 import { FileCookieStore } from "tough-cookie-file-store";
-import yahooFinance from "../dist/esm/src/index-node.js";
-import { ExtendedCookieJar } from "../dist/esm/src/lib/cookieJar.js";
+import yahooFinance from "yahoo-finance2";
+import { ExtendedCookieJar } from "yahoo-finance2";
 
 const cookiePath = path.join(os.homedir(), ".yf2-cookies.json");
 const cookieJar = new ExtendedCookieJar(new FileCookieStore(cookiePath));
