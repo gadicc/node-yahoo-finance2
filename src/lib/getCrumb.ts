@@ -249,7 +249,11 @@ export async function _getCrumb(
   const match = source.match(/\nwindow.YAHOO.context = ({[\s\S]+\n});\n/);
   if (!match) {
     throw new Error(
-      "Could not find window.YAHOO.context. Yahoo's API may have changed; please report."
+      "Could not find window.YAHOO.context.  This is usually caused by " +
+        "temporary issues on Yahoo's servers that tend to resolve " +
+        "themselves; however, if the error persists for more than 12 " +
+        "hours, Yahoo's API may have changed, and you can help by reporting " +
+        "the issue.  Thanks :)"
     );
   }
 
