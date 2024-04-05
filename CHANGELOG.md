@@ -1,3 +1,10 @@
+## [2.11.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.11.0...v2.11.1) (2024-04-05)
+
+
+### Bug Fixes
+
+* **cookieJar:** re-export ExtendedCJ from package root (fixes [#761](https://github.com/gadicc/node-yahoo-finance2/issues/761)) ([5f99351](https://github.com/gadicc/node-yahoo-finance2/commit/5f993518882338b24d1d47f7a0f724869d7c7c06))
+
 # [2.11.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.10.0...v2.11.0) (2024-03-20)
 
 
