@@ -18,6 +18,8 @@ for more information.
 
 ## Unofficial API
 
+***Update 2024-04-15*: Yahoo has disabled API-access to quotes data.  Please see the discussion and our stance at https://github.com/gadicc/node-yahoo-finance2/issues/764#issuecomment-2056623851.**
+
 This project is neither created nor endorsed by Yahoo Inc.  Yahoo does not
 provide any official API to developers, nor makes any guarantees regarding
 service availability or API consistency.  In practice however, the open
