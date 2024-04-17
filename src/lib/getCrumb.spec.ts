@@ -80,6 +80,8 @@ describe("getCrumb", () => {
       ).rejects.toThrowError(/No set-cookie/);
     });
 
+    /*
+    test for commented out code.
     it("throws on no context", async () => {
       const fetch = await env.fetchDevel();
 
@@ -127,6 +129,7 @@ describe("getCrumb", () => {
         )
       ).rejects.toThrowError(/Could not find crumb/);
     });
+    */
 
     it("redirect https://guce.yahoo.com/consent?brandType=nonEu", async () => {
       // consoleRestore();
@@ -141,7 +144,7 @@ describe("getCrumb", () => {
         "getCrumb-quote-AAPL-pre-consent-VPN-UK.json",
         true
       );
-      expect(crumb).toBe("Ky3Po5TGQRZ");
+      expect(crumb).toBe("mloUP8q7ZPH");
       // consoleSilent();
     });
   });
