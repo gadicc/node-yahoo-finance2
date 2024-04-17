@@ -1,3 +1,10 @@
+## [2.11.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.11.1...v2.11.2) (2024-04-17)
+
+
+### Bug Fixes
+
+* **getCrumb:** use getcrumb endpoint to get the crumb (fixes [#764](https://github.com/gadicc/node-yahoo-finance2/issues/764)) ([db0151c](https://github.com/gadicc/node-yahoo-finance2/commit/db0151c5f595632af0251c24f4bd91aa21af1239))
+
 ## [2.11.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.11.0...v2.11.1) (2024-04-05)
 
 
