@@ -1,5 +1,6 @@
 import type { RequestInfo, RequestInit, Response } from "node-fetch";
 import type { ExtendedCookieJar } from "./cookieJar";
+import pkg from "../../package.json";
 import { Logger } from "./options.js";
 import { Cookie } from "tough-cookie";
 
@@ -243,9 +244,15 @@ export async function _getCrumb(
     );
   }
 
+  /*
+  // This is the old way of getting the crumb, which is no longer working.
+  // Instead we make use of the code block that follows this comment, which
+  // uses the `/v1/test/getcrumb` endpoint.  However, the commented code
+  // below may still be useful in the future, so it is left here for now.
+
   const source = await response.text();
 
-  // Could also match on window.YAHOO.context = { /* multi-line JSON */ }
+  // Could also match on window.YAHOO.context = { /* multi-line JSON */ /* }
   const match = source.match(/\nwindow.YAHOO.context = ({[\s\S]+\n});\n/);
   if (!match) {
     throw new Error(
@@ -269,6 +276,40 @@ export async function _getCrumb(
   }
 
   crumb = context.crumb;
+  */
+
+  const GET_CRUMB_URL = "https://query1.finance.yahoo.com/v1/test/getcrumb";
+  const getCrumbOptions: typeof fetchOptions = {
+    ...fetchOptions,
+    headers: {
+      ...fetchOptions.headers,
+      // Big thanks to @nocodehummel who figured out a User-Agent that both
+      // works but still allows us to identify ourselves honestly.
+      "User-Agent": `Mozilla/5.0 (compatible; ${pkg.name}/${pkg.version})`,
+      cookie: await cookieJar.getCookieString(GET_CRUMB_URL),
+      origin: "https://finance.yahoo.com",
+      referer: url,
+      accept: "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "en-US,en;q=0.9",
+      "content-type": "text/plain",
+    },
+    devel: "getCrumb-getcrumb",
+  };
+
+  logger.debug("fetch", GET_CRUMB_URL /*, getCrumbOptions */);
+  const getCrumbResponse = await fetch(GET_CRUMB_URL, getCrumbOptions);
+  if (getCrumbResponse.status !== 200) {
+    throw new Error(
+      "Failed to get crumb, status " +
+        getCrumbResponse.status +
+        ", statusText: " +
+        getCrumbResponse.statusText
+    );
+  }
+
+  const crumbFromGetCrumb = await getCrumbResponse.text();
+  crumb = crumbFromGetCrumb;
   if (!crumb)
     throw new Error(
       "Could not find crumb.  Yahoo's API may have changed; please report."
@@ -295,6 +336,8 @@ export async function getCrumbClear(cookieJar: ExtendedCookieJar) {
   await cookieJar.removeAllCookies();
 }
 
+let shownYahooSurvey = false;
+
 export default function getCrumb(
   cookieJar: ExtendedCookieJar,
   fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>,
@@ -303,6 +346,15 @@ export default function getCrumb(
   url = "https://finance.yahoo.com/quote/AAPL",
   __getCrumb = _getCrumb
 ) {
+  if (!shownYahooSurvey) {
+    logger.info(
+      "Please consider completing the survey at https://bit.ly/yahoo-finance-api-feedback " +
+        "if you haven't already; for more info see " +
+        "https://github.com/gadicc/node-yahoo-finance2/issues/764#issuecomment-2056623851."
+    );
+    shownYahooSurvey = true;
+  }
+
   if (!promise)
     promise = __getCrumb(cookieJar, fetch, fetchOptionsBase, logger, url);
 
