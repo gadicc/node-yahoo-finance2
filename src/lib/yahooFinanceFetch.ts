@@ -132,11 +132,9 @@ async function yahooFinanceFetch(
 
   const response = (await queue.add(() => fetchFunc(url, fetchOptions))) as any;
 
-  const setCookieHeaders = response.headers.raw()["set-cookie"];
-  if (setCookieHeaders) {
-    if (!this._opts.cookieJar) throw new Error("No cookieJar set");
-    this._opts.cookieJar.setFromSetCookieHeaders(setCookieHeaders, url);
-  }
+  if (this._opts.cookieJar) {
+    await this._opts.cookieJar.setFromHeaders(response.headers, url);
+  } else throw new Error("No cookieJar set");
 
   const result = await response[func]();
 

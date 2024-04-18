@@ -1,26 +1,23 @@
 import { Cookie, CookieJar } from "tough-cookie";
 
 export class ExtendedCookieJar extends CookieJar {
-  async setFromSetCookieHeaders(
-    setCookieHeader: string | Array<string>,
-    url: string
-  ) {
-    let cookies;
-    // console.log("setFromSetCookieHeaders", setCookieHeader);
+  async setFromHeaders(headers: Headers, url: string): Promise<boolean> {
+    const setCookieHeader = headers.get("set-cookie");
+    let cookies: (Cookie | undefined)[];
 
-    if (typeof setCookieHeader === "undefined") {
-      // no-op
-    } else if (setCookieHeader instanceof Array) {
+    if (Array.isArray(setCookieHeader)) {
       cookies = setCookieHeader.map((header) => Cookie.parse(header));
     } else if (typeof setCookieHeader === "string") {
       cookies = [Cookie.parse(setCookieHeader)];
-    }
+    } else return false;
 
-    if (cookies)
-      for (const cookie of cookies)
+    if (cookies) {
+      for (const cookie of cookies) {
         if (cookie instanceof Cookie) {
-          // console.log("setCookieSync", cookie, url);
           await this.setCookie(cookie, url);
         }
+      }
+      return true;
+    } else return false;
   }
 }

@@ -40,17 +40,6 @@ export async function _getCrumb(
     if (existingCookies.length) return crumb;
   }
 
-  async function processSetCookieHeader(
-    header: string[] | undefined,
-    url: string
-  ) {
-    if (header) {
-      await cookieJar.setFromSetCookieHeaders(header, url);
-      return true;
-    }
-    return false;
-  }
-
   logger.debug("Fetching crumb and cookies from " + url + "...");
 
   const fetchOptions: CrumbOptions = {
@@ -67,7 +56,8 @@ export async function _getCrumb(
   };
 
   const response = await fetch(url, fetchOptions);
-  await processSetCookieHeader(response.headers.raw()["set-cookie"], url);
+  // NodeJS 19.7.0 is compatible - typescript temporary while refactoring.
+  await cookieJar.setFromHeaders(response.headers, url);
 
   // logger.debug(response.headers.raw());
   // logger.debug(cookieJar);
@@ -147,8 +137,8 @@ export async function _getCrumb(
 
         // Set-Cookie: CFC=AQABCAFkWkdkjEMdLwQ9&s=AQAAAClxdtC-&g=ZFj24w; Expires=Wed, 8 May 2024 01:18:54 GMT; Domain=consent.yahoo.com; Path=/; Secure
         if (
-          !(await processSetCookieHeader(
-            collectConsentSubmitResponse.headers.raw()["set-cookie"],
+          !(await cookieJar.setFromHeaders(
+            collectConsentSubmitResponse.headers,
             consentLocation
           ))
         )
@@ -185,8 +175,8 @@ export async function _getCrumb(
         );
 
         if (
-          !(await processSetCookieHeader(
-            copyConsentResponse.headers.raw()["set-cookie"],
+          !(await cookieJar.setFromHeaders(
+            copyConsentResponse.headers,
             collectConsentSubmitResponseLocation
           ))
         )
