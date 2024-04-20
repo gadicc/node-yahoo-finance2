@@ -1,4 +1,3 @@
-import type { RequestInfo, RequestInit, Response } from "node-fetch";
 import Queue from "./queue.js";
 
 import type { YahooFinanceOptions } from "./options.js";

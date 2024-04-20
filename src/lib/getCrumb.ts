@@ -1,4 +1,3 @@
-import type { RequestInfo, RequestInit, Response } from "node-fetch";
 import type { ExtendedCookieJar } from "./cookieJar";
 import pkg from "../../package.json";
 import { Logger } from "./options.js";
@@ -56,7 +55,6 @@ export async function _getCrumb(
   };
 
   const response = await fetch(url, fetchOptions);
-  // NodeJS 19.7.0 is compatible - typescript temporary while refactoring.
   await cookieJar.setFromHeaders(response.headers, url);
 
   // logger.debug(response.headers.raw());

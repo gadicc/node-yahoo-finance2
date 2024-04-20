@@ -1,6 +1,5 @@
 import * as util from "util";
 import { jest } from "@jest/globals";
-import { Headers } from "node-fetch";
 
 import Queue from "./queue.js";
 import _yahooFinanceFetch, {
