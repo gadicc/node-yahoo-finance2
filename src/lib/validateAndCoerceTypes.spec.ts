@@ -1,8 +1,11 @@
 import { jest } from "@jest/globals";
 
 import validateAndCoerceTypes, { ajv } from "./validateAndCoerceTypes.js";
+import { validateAndCoerceTypebox } from "./validateAndCoerceTypes.js";
 import type { ValidateParams } from "./validateAndCoerceTypes.js";
 import { InvalidOptionsError, FailedYahooValidationError } from "./errors.js";
+import { Type } from "@sinclair/typebox";
+import { YahooFinanceDate, YahooNumber } from "./yahooFinanceTypes.js";
 
 ajv.addSchema({
   $id: "testSchema",
@@ -402,5 +405,363 @@ describe("validateAndCoerceTypes", () => {
         expect(e.data).toBe(object.noAdditional);
       });
     });
+  });
+});
+
+describe("validateAndCoerceTypebox", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it("Should throw a sensible error on failure", () => {
+    const testCase = { date: { weird: 123 } };
+    const testSchema = Type.Object({
+      date: YahooFinanceDate,
+    });
+
+    let error;
+    try {
+      validateAndCoerceTypebox({
+        type: "result",
+        data: testCase,
+        schema: testSchema,
+        options: {},
+      });
+    } catch (e) {
+      error = e;
+    }
+
+    expect(error).toMatchInlineSnapshot(
+      `[Error: Unable to decode value as it does not match the expected schema]`
+    );
+    // TODO: Fix Jest types here
+    // @ts-ignore
+    expect(JSON.stringify(error?.error, null, 2)).toMatchInlineSnapshot(`
+      "{
+        "type": 62,
+        "schema": {
+          "title": "YahooFinanceDate",
+          "anyOf": [
+            {
+              "type": "Date"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "title": "RawDateObject",
+              "type": "object",
+              "properties": {
+                "raw": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "raw"
+              ]
+            },
+            {
+              "title": "ISOStringDate",
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "format": "year",
+                  "type": "string"
+                },
+                {
+                  "format": "date-time",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        },
+        "path": "/date",
+        "value": {
+          "weird": 123
+        },
+        "message": "Expected union value"
+      }"
+    `);
+
+    // TODO: Fix Jest types here
+    // @ts-ignore
+    expect(JSON.stringify(error?.value, null, 2)).toMatchInlineSnapshot(`
+      "{
+        "date": {
+          "weird": 123
+        }
+      }"
+    `);
+  });
+  it("Should log errors when logErrors = true", () => {
+    const logSpy = jest.spyOn(console, "log");
+    const logSpyFn = jest.fn(() => undefined);
+    logSpy.mockImplementation(logSpyFn);
+
+    const testSchema = Type.Object({
+      aNumber: YahooNumber,
+    });
+    const testCase = { aNumber: "foo" };
+    expect(() => {
+      validateAndCoerceTypebox({
+        type: "result",
+        data: testCase,
+        schema: testSchema,
+        options: {
+          logErrors: true,
+        },
+      });
+    }).toThrow();
+    expect(logSpy).toHaveBeenCalledTimes(2);
+    expect(logSpyFn).toMatchInlineSnapshot(`
+      [MockFunction] {
+        "calls": [
+          [
+            "{
+        "schema": {
+          "type": "object",
+          "properties": {
+            "aNumber": {
+              "title": "YahooNumber",
+              "anyOf": [
+                {
+                  "title": "RawNumber",
+                  "type": "object",
+                  "properties": {
+                    "raw": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "raw"
+                  ]
+                },
+                {
+                  "type": "number"
+                }
+              ]
+            }
+          },
+          "required": [
+            "aNumber"
+          ]
+        },
+        "value": {
+          "aNumber": "foo"
+        },
+        "error": {
+          "type": 62,
+          "schema": {
+            "title": "YahooNumber",
+            "anyOf": [
+              {
+                "title": "RawNumber",
+                "type": "object",
+                "properties": {
+                  "raw": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "raw"
+                ]
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "path": "/aNumber",
+          "value": "foo",
+          "message": "Expected union value"
+        }
+      }",
+          ],
+          [
+            "
+          This may happen intermittently and you should catch errors appropriately.
+          However:  1) if this recently started happening on every request for a symbol
+          that used to work, Yahoo may have changed their API.  2) If this happens on
+          every request for a symbol you've never used before, but not for other
+          symbols, you've found an edge-case (OR, we may just be protecting you from
+          "bad" data sometimes stored for e.g. misspelt symbols on Yahoo's side).
+          Please see if anyone has reported this previously:
+          
+            https://github.com/gadicc/node-yahoo-finance2/issues?q=is%3Aissue+undefined
+          
+          or open a new issue (and mention the symbol):  yahoo-finance2 v0.0.1
+          
+            https://github.com/gadicc/node-yahoo-finance2/issues/new?labels=bug%2C+validation&template=validation.md&title=undefined
+          
+          For information on how to turn off the above logging or skip these errors,
+          see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.
+          
+          At the end of the doc, there's also a section on how to
+          [Help Fix Validation Errors](https://github.com/gadicc/node-yahoo-finance2/blob/devel/docs/validation.md#help-fix)
+          in case you'd like to contribute to the project.  Most of the time, these
+          fixes are very quick and easy; it's just hard for our small core team to keep up,
+          so help is always appreciated!
+          ",
+          ],
+        ],
+        "results": [
+          {
+            "type": "return",
+            "value": undefined,
+          },
+          {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    `);
+  });
+  it("Should not log errors when logErrors = false", () => {
+    const logSpy = jest.spyOn(console, "log");
+    const logSpyFn = jest.fn(() => undefined);
+    logSpy.mockImplementation(logSpyFn);
+
+    const testSchema = Type.Object({
+      aNumber: YahooNumber,
+    });
+    const testCase = { aNumber: "foo" };
+    expect(() => {
+      validateAndCoerceTypebox({
+        type: "result",
+        data: testCase,
+        schema: testSchema,
+        options: {
+          logErrors: false,
+        },
+      });
+    }).toThrow();
+    expect(logSpy).toHaveBeenCalledTimes(0);
+  });
+
+  it("Should log options errors when logOptionsErrors = true", () => {
+    const logSpy = jest.spyOn(console, "error");
+    const logSpyFn = jest.fn(() => undefined);
+    logSpy.mockImplementation(logSpyFn);
+
+    const testSchema = Type.Object({
+      aNumber: YahooNumber,
+    });
+    const testCase = { aNumber: "foo" };
+    expect(() => {
+      validateAndCoerceTypebox({
+        type: "options",
+        data: testCase,
+        schema: testSchema,
+        options: {
+          // @ts-ignore
+          logErrors: "bananas",
+          logOptionsErrors: true,
+        },
+      });
+    }).toThrow();
+    expect(logSpy).toHaveBeenCalledTimes(1);
+    expect(logSpyFn).toMatchInlineSnapshot(`
+      [MockFunction] {
+        "calls": [
+          [
+            "[yahooFinance] Invalid options ("{
+        "type": 62,
+        "schema": {
+          "title": "YahooNumber",
+          "anyOf": [
+            {
+              "title": "RawNumber",
+              "type": "object",
+              "properties": {
+                "raw": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "raw"
+              ]
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "path": "/aNumber",
+        "value": "foo",
+        "message": "Expected union value"
+      }")",
+          ],
+        ],
+        "results": [
+          {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    `);
+  });
+
+  it("Should not log options errors when logOptionsErrors = false", () => {
+    const logSpy = jest.spyOn(console, "error");
+    const logSpyFn = jest.fn(() => undefined);
+    logSpy.mockImplementation(logSpyFn);
+
+    const testSchema = Type.Object({
+      aNumber: YahooNumber,
+    });
+    const testCase = { aNumber: "foo" };
+    expect(() => {
+      validateAndCoerceTypebox({
+        type: "options",
+        data: testCase,
+        schema: testSchema,
+        options: {
+          // @ts-ignore
+          logErrors: "bananas",
+          logOptionsErrors: false,
+        },
+      });
+    }).toThrow();
+    expect(logSpy).toHaveBeenCalledTimes(0);
+  });
+
+  it("Should not log errors when logErrors = true and validation succeeds", () => {
+    const logSpy = jest.spyOn(console, "log");
+    const logSpyFn = jest.fn(() => undefined);
+    logSpy.mockImplementation(logSpyFn);
+
+    const testSchema = Type.Object({
+      aNumber: YahooNumber,
+    });
+    const testCase = { aNumber: 10 };
+    expect(() => {
+      validateAndCoerceTypebox({
+        type: "result",
+        data: testCase,
+        schema: testSchema,
+        options: { logErrors: true },
+      });
+    }).not.toThrow();
+    expect(logSpy).toHaveBeenCalledTimes(0);
+  });
+
+  it("Should still throw if an unexpected error occurs", () => {
+    const testCase = { aNumber: 10 };
+    expect(() => {
+      validateAndCoerceTypebox({
+        type: "result",
+        data: testCase,
+        // Create a TypeError to ensure that we still crash hard even
+        // if it's not an error we expect
+        // @ts-ignore
+        schema: undefined,
+      });
+    }).toThrow(TypeError);
   });
 });

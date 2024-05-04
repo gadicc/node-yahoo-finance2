@@ -1,4 +1,5 @@
 //import ModuleExec from "./moduleExec.js";
+import moduleExecTypebox from "./moduleExecTypebox";
 
 export interface ModuleOptions {
   validateResult?: boolean;
@@ -19,4 +20,5 @@ export interface ModuleThis {
   // TODO: should be ModuleExec function but requiring functions breaks
   // schema generation because json-schema does not support functions.
   _moduleExec: any;
+  _moduleExecTypebox: typeof moduleExecTypebox;
 }
