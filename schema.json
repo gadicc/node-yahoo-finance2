@@ -697,10 +697,14 @@
     "ModuleThis": {
       "type": "object",
       "properties": {
-        "_moduleExec": {}
+        "_moduleExec": {},
+        "_moduleExecTypebox": {
+          "$comment": "(\n  this: { [key: string]: any },\n  opts: ModuleExecOptions<TOpts, TResult>) -> undefined"
+        }
       },
       "required": [
-        "_moduleExec"
+        "_moduleExec",
+        "_moduleExecTypebox"
       ]
     },
     "ModuleOptions": {
@@ -9314,6 +9318,67 @@
       ],
       "additionalProperties": false
     },
+    "NamedParameters<typeof search>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "query": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/SearchOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "query"
+      ],
+      "additionalProperties": false
+    },
+    "SearchOptions": {
+      "type": "object",
+      "properties": {
+        "lang": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "quotesCount": {
+          "yahooFinanceType": "number"
+        },
+        "newsCount": {
+          "yahooFinanceType": "number"
+        },
+        "enableFuzzyQuery": {
+          "type": "boolean"
+        },
+        "quotesQueryId": {
+          "type": "string"
+        },
+        "multiQuoteQueryId": {
+          "type": "string"
+        },
+        "newsQueryId": {
+          "type": "string"
+        },
+        "enableCb": {
+          "type": "boolean"
+        },
+        "enableNavLinks": {
+          "type": "boolean"
+        },
+        "enableEnhancedTrivialQuery": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
     "SearchQuoteYahoo": {
       "type": "object",
       "properties": {
@@ -10119,67 +10184,6 @@
         "timeTakenForNav",
         "timeTakenForResearchReports"
       ]
-    },
-    "SearchOptions": {
-      "type": "object",
-      "properties": {
-        "lang": {
-          "type": "string"
-        },
-        "region": {
-          "type": "string"
-        },
-        "quotesCount": {
-          "yahooFinanceType": "number"
-        },
-        "newsCount": {
-          "yahooFinanceType": "number"
-        },
-        "enableFuzzyQuery": {
-          "type": "boolean"
-        },
-        "quotesQueryId": {
-          "type": "string"
-        },
-        "multiQuoteQueryId": {
-          "type": "string"
-        },
-        "newsQueryId": {
-          "type": "string"
-        },
-        "enableCb": {
-          "type": "boolean"
-        },
-        "enableNavLinks": {
-          "type": "boolean"
-        },
-        "enableEnhancedTrivialQuery": {
-          "type": "boolean"
-        }
-      },
-      "additionalProperties": false
-    },
-    "NamedParameters<typeof search>": {
-      "type": "object",
-      "properties": {
-        "this": {
-          "$ref": "#/definitions/ModuleThis"
-        },
-        "query": {
-          "type": "string"
-        },
-        "queryOptionsOverrides": {
-          "$ref": "#/definitions/SearchOptions"
-        },
-        "moduleOptions": {
-          "$ref": "#/definitions/ModuleOptions"
-        }
-      },
-      "required": [
-        "this",
-        "query"
-      ],
-      "additionalProperties": false
     },
     "TrendingSymbol": {
       "type": "object",
