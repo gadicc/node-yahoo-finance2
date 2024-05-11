@@ -4,6 +4,7 @@ import search from "../modules/search.js";
 import chart from "../modules/chart.js";
 import { InvalidOptionsError } from "./errors.js";
 import testYf from "../../tests/testYf.js";
+import { TransformDecodeCheckError } from "@sinclair/typebox/value";
 
 const yf = testYf({ search, chart });
 yf._opts.validation.logOptionsErrors = false;
@@ -54,7 +55,7 @@ describe("moduleExec", () => {
         fakeConsole.log.mock.calls.length +
           fakeConsole.error.mock.calls.length +
           fakeConsole.dir.mock.calls.length
-      ).toBeGreaterThan(1);
+      ).toBe(1);
       yf._opts.validation.logOptionsErrors = false;
     });
 
@@ -83,7 +84,7 @@ describe("moduleExec", () => {
         yf._opts.validation.logErrors = false;
         await expect(
           yf.search("AAPL", {}, { devel: "search-badResult.fake.json" })
-        ).rejects.toThrow(/Failed Yahoo Schema/);
+        ).rejects.toThrow(TransformDecodeCheckError);
         yf._opts.validation.logErrors = true;
       });
 

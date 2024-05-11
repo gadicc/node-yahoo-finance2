@@ -1,6 +1,6 @@
 import { jest } from "@jest/globals";
 
-import search from "../modules/search.tb.js";
+import search from "../modules/search.js";
 import { InvalidOptionsError } from "./errors.js";
 import testYf from "../../tests/testYf.js";
 import { TransformDecodeCheckError } from "@sinclair/typebox/value";
