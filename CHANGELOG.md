@@ -1,3 +1,10 @@
+## [2.11.3](https://github.com/gadicc/node-yahoo-finance2/compare/v2.11.2...v2.11.3) (2024-05-30)
+
+
+### Bug Fixes
+
+* **getCrumb:** ignore (but log) unexpected redirect (fixes [#777](https://github.com/gadicc/node-yahoo-finance2/issues/777)) ([2e4c0b4](https://github.com/gadicc/node-yahoo-finance2/commit/2e4c0b4fc127f53387d3b2c35f29a5d2b893ef24))
+
 ## [2.11.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.11.1...v2.11.2) (2024-04-17)
 
 
