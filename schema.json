@@ -8611,6 +8611,51 @@
         "up"
       ]
     },
+    "NamedParameters<typeof quoteSummary>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/QuoteSummaryOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "symbol"
+      ],
+      "additionalProperties": false
+    },
+    "QuoteSummaryOptions": {
+      "type": "object",
+      "properties": {
+        "formatted": {
+          "type": "boolean"
+        },
+        "modules": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/QuoteSummaryModules"
+              }
+            },
+            {
+              "type": "string",
+              "const": "all"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
     "QuoteSummaryModules": {
       "type": "string",
       "enum": [
@@ -8648,51 +8693,6 @@
         "topHoldings",
         "upgradeDowngradeHistory"
       ]
-    },
-    "QuoteSummaryOptions": {
-      "type": "object",
-      "properties": {
-        "formatted": {
-          "type": "boolean"
-        },
-        "modules": {
-          "anyOf": [
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/QuoteSummaryModules"
-              }
-            },
-            {
-              "type": "string",
-              "const": "all"
-            }
-          ]
-        }
-      },
-      "additionalProperties": false
-    },
-    "NamedParameters<typeof quoteSummary>": {
-      "type": "object",
-      "properties": {
-        "this": {
-          "$ref": "#/definitions/ModuleThis"
-        },
-        "symbol": {
-          "type": "string"
-        },
-        "queryOptionsOverrides": {
-          "$ref": "#/definitions/QuoteSummaryOptions"
-        },
-        "moduleOptions": {
-          "$ref": "#/definitions/ModuleOptions"
-        }
-      },
-      "required": [
-        "this",
-        "symbol"
-      ],
-      "additionalProperties": false
     },
     "RecommendationsBySymbolResponse": {
       "type": "object",
