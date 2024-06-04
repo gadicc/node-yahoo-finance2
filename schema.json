@@ -5589,6 +5589,71 @@
       ],
       "additionalProperties": false
     },
+    "EnumGrade": {
+      "type": "string",
+      "enum": [
+        "Accumulate",
+        "Add",
+        "Average",
+        "Below Average",
+        "Buy",
+        "Conviction Buy",
+        "",
+        "Equal-Weight",
+        "Fair Value",
+        "Equal-weight",
+        "Long-term Buy",
+        "Hold",
+        "Long-Term Buy",
+        "Market Outperform",
+        "Market Perform",
+        "Mixed",
+        "Negative",
+        "Neutral",
+        "In-Line",
+        "Outperform",
+        "Overweight",
+        "Peer Perform",
+        "Perform",
+        "Positive",
+        "Reduce",
+        "Sector Outperform",
+        "Sector Perform",
+        "Sector Weight",
+        "Sell",
+        "Strong Buy",
+        "Top Pick",
+        "Underperform",
+        "Underperformer",
+        "Underweight",
+        "Trim",
+        "Above Average",
+        "In-line",
+        "Outperformer",
+        "OVerweight",
+        "Cautious",
+        "Market Weight",
+        "Sector Underperform",
+        "Market Underperform",
+        "Peer perform",
+        "Gradually Accumulate",
+        "Action List Buy",
+        "Performer",
+        "Sector Performer",
+        "Speculative Buy",
+        "Strong Sell",
+        "Speculative Hold",
+        "Not Rated",
+        "Hold Neutral",
+        "Developing",
+        "buy",
+        "HOld",
+        "Trading Sell",
+        "Tender",
+        "market perform",
+        "BUy"
+      ]
+    },
     "QuoteSummaryResult": {
       "type": "object",
       "properties": {
@@ -8694,6 +8759,42 @@
         "upgradeDowngradeHistory"
       ]
     },
+    "NamedParameters<typeof recommendationsBySymbol>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "query": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/RecommendationsBySymbolOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "query"
+      ],
+      "additionalProperties": false
+    },
+    "RecommendationsBySymbolOptions": {
+      "type": "object",
+      "additionalProperties": false
+    },
     "RecommendationsBySymbolResponse": {
       "type": "object",
       "properties": {
@@ -8730,41 +8831,64 @@
         "$ref": "#/definitions/RecommendationsBySymbolResponse"
       }
     },
-    "RecommendationsBySymbolOptions": {
-      "type": "object",
-      "additionalProperties": false
-    },
-    "NamedParameters<typeof recommendationsBySymbol>": {
+    "NamedParameters<typeof screener>": {
       "type": "object",
       "properties": {
         "this": {
           "$ref": "#/definitions/ModuleThis"
         },
-        "query": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          ]
-        },
         "queryOptionsOverrides": {
-          "$ref": "#/definitions/RecommendationsBySymbolOptions"
+          "$ref": "#/definitions/ScreenerOptions"
         },
         "moduleOptions": {
           "$ref": "#/definitions/ModuleOptions"
         }
       },
       "required": [
-        "this",
-        "query"
+        "this"
       ],
       "additionalProperties": false
+    },
+    "ScreenerOptions": {
+      "type": "object",
+      "properties": {
+        "lang": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "scrIds": {
+          "$ref": "#/definitions/PredefinedScreenerModules"
+        },
+        "count": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "scrIds"
+      ],
+      "additionalProperties": false
+    },
+    "PredefinedScreenerModules": {
+      "type": "string",
+      "enum": [
+        "aggressive_small_caps",
+        "conservative_foreign_funds",
+        "day_gainers",
+        "day_losers",
+        "growth_technology_stocks",
+        "high_yield_bond",
+        "most_actives",
+        "most_shorted_stocks",
+        "portfolio_anchors",
+        "small_cap_gainers",
+        "solid_large_growth_funds",
+        "solid_midcap_growth_funds",
+        "top_mutual_funds",
+        "undervalued_growth_stocks",
+        "undervalued_large_caps"
+      ]
     },
     "ScreenerResult": {
       "type": "object",
@@ -9256,65 +9380,6 @@
         "shortName",
         "regularMarketChangePercent",
         "symbol"
-      ],
-      "additionalProperties": false
-    },
-    "PredefinedScreenerModules": {
-      "type": "string",
-      "enum": [
-        "aggressive_small_caps",
-        "conservative_foreign_funds",
-        "day_gainers",
-        "day_losers",
-        "growth_technology_stocks",
-        "high_yield_bond",
-        "most_actives",
-        "most_shorted_stocks",
-        "portfolio_anchors",
-        "small_cap_gainers",
-        "solid_large_growth_funds",
-        "solid_midcap_growth_funds",
-        "top_mutual_funds",
-        "undervalued_growth_stocks",
-        "undervalued_large_caps"
-      ]
-    },
-    "ScreenerOptions": {
-      "type": "object",
-      "properties": {
-        "lang": {
-          "type": "string"
-        },
-        "region": {
-          "type": "string"
-        },
-        "scrIds": {
-          "$ref": "#/definitions/PredefinedScreenerModules"
-        },
-        "count": {
-          "yahooFinanceType": "number"
-        }
-      },
-      "required": [
-        "scrIds"
-      ],
-      "additionalProperties": false
-    },
-    "NamedParameters<typeof screener>": {
-      "type": "object",
-      "properties": {
-        "this": {
-          "$ref": "#/definitions/ModuleThis"
-        },
-        "queryOptionsOverrides": {
-          "$ref": "#/definitions/ScreenerOptions"
-        },
-        "moduleOptions": {
-          "$ref": "#/definitions/ModuleOptions"
-        }
-      },
-      "required": [
-        "this"
       ],
       "additionalProperties": false
     },
