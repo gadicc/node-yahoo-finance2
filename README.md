@@ -14,11 +14,10 @@ e.g. all active LTS versions.
 v1. NB: The API has changed, see [UPGRADING](./docs/UPGRADING.md)
 for more information.
 
-[Live Demo on CodeSandbox](https://codesandbox.io/p/sandbox/yf2-node-xzdjrt?file=/index.js)
+[Live Demo on CodeSandbox](https://codesandbox.io/p/devbox/yahoo-finance2-nextjs-sy42pv)
+(Updated 2024-06-17; NextJS with both RSC and Hook-Relay examples)
 
 ## Unofficial API
-
-***Update 2024-04-15*: Yahoo has disabled API-access to quotes data.  Please see the discussion and our stance at https://github.com/gadicc/node-yahoo-finance2/issues/764#issuecomment-2056623851.**
 
 This project is neither created nor endorsed by Yahoo Inc.  Yahoo does not
 provide any official API to developers, nor makes any guarantees regarding
