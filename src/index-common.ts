@@ -1,6 +1,7 @@
 // libs
 import yahooFinanceFetch from "./lib/yahooFinanceFetch.js";
 import moduleExec from "./lib/moduleExec.js";
+import moduleExecTypebox from "./lib/moduleExecTypebox.js";
 import options from "./lib/options.js";
 import errors from "./lib/errors.js";
 import setGlobalConfig from "./lib/setGlobalConfig.js";
@@ -17,6 +18,9 @@ import quoteSummary from "./modules/quoteSummary.js";
 import fundamentalsTimeSeries from "./modules/fundamentalsTimeSeries.js";
 import recommendationsBySymbol from "./modules/recommendationsBySymbol.js";
 import search from "./modules/search.js";
+import searchTypebox from "./modules/search.tb.js";
+import screenerTypebox from "./modules/screener.tb.js";
+import trendingSymbolsTypebox from "./modules/trendingSymbols.tb.js";
 import trendingSymbols from "./modules/trendingSymbols.js";
 import dailyGainers from "./modules/dailyGainers.js";
 import screener from "./modules/screener.js";
@@ -51,6 +55,12 @@ export default {
   trendingSymbols,
   dailyGainers,
   screener,
+  typebox: {
+    search: searchTypebox,
+    trendingSymbols: trendingSymbolsTypebox,
+    screener: screenerTypebox,
+    _moduleExec: moduleExecTypebox,
+  },
 
   // other
   quoteCombine,
