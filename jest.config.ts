@@ -12,7 +12,8 @@ const config: Config.InitialOptions = {
   modulePathIgnorePatterns: ["<rootDir>/tests-modules"],
   extensionsToTreatAsEsm: [".ts"],
   transform: {
-    "^.+\\.tsx?$": [
+    // to process js/ts with `ts-jest`
+    "^.+\\.[tj]sx?$": [
       "ts-jest",
       {
         useESM: true,

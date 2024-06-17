@@ -1,6 +1,4 @@
 import { URLSearchParams } from "url";
-import fetch from "node-fetch";
-import type { RequestInfo, RequestInit, Response } from "node-fetch";
 
 // This let's us still only require the file if we need it, at runtime.
 let fetchDevelFunc: (url: RequestInfo, init?: RequestInit) => Promise<Response>;
