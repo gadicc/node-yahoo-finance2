@@ -9,7 +9,7 @@ import { TransformDecodeCheckError } from "@sinclair/typebox/value";
 const yf = testYf({ search, chart });
 yf._opts.validation.logOptionsErrors = false;
 
-describe("moduleExec", () => {
+describe("moduleExecTypebox", () => {
   describe("assertSymbol", () => {
     const periodOpts = {
       period1: new Date("2022-02-22"),

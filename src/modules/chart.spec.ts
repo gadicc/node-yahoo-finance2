@@ -137,7 +137,7 @@ describe("chart", () => {
      * As long as it doesn't throw an error, that could confuse jest :)
      */
     const yf = {
-      _moduleExec: jest.fn(async () => ({
+      _moduleExecTypebox: jest.fn(async () => ({
         meta: {},
         timestamp: [],
       })),
@@ -147,7 +147,7 @@ describe("chart", () => {
     // @ts-ignore: TODO
     yf.chart("symbol", { period1: "required-but-not-used" });
     // @ts-ignore: TODO
-    const { transformWith } = yf._moduleExec.mock.calls[0][0].query;
+    const { transformWith } = yf._moduleExecTypebox.mock.calls[0][0].query;
 
     it("uses today's date as default for period2", () => {
       const now = new Date();
