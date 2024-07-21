@@ -1677,87 +1677,6 @@
       ],
       "additionalProperties": false
     },
-    "InsightsResult": {
-      "type": "object",
-      "properties": {
-        "symbol": {
-          "type": "string"
-        },
-        "instrumentInfo": {
-          "$ref": "#/definitions/InsightsInstrumentInfo"
-        },
-        "companySnapshot": {
-          "$ref": "#/definitions/InsightsCompanySnapshot"
-        },
-        "recommendation": {
-          "type": "object",
-          "properties": {
-            "targetPrice": {
-              "yahooFinanceType": "number"
-            },
-            "provider": {
-              "type": "string"
-            },
-            "rating": {
-              "type": "string",
-              "enum": [
-                "BUY",
-                "SELL",
-                "HOLD"
-              ]
-            }
-          },
-          "required": [
-            "provider",
-            "rating"
-          ],
-          "additionalProperties": false
-        },
-        "events": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/InsightsEvent"
-          }
-        },
-        "reports": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/InsightsReport"
-          }
-        },
-        "sigDevs": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/InsightsSigDev"
-          }
-        },
-        "upsell": {
-          "$ref": "#/definitions/InsightsUpsell"
-        },
-        "upsellSearchDD": {
-          "type": "object",
-          "properties": {
-            "researchReports": {
-              "$ref": "#/definitions/InsightsResearchReport"
-            }
-          },
-          "required": [
-            "researchReports"
-          ],
-          "additionalProperties": false
-        },
-        "secReports": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/InsightsSecReport"
-          }
-        }
-      },
-      "required": [
-        "symbol",
-        "sigDevs"
-      ]
-    },
     "InsightsInstrumentInfo": {
       "type": "object",
       "properties": {
@@ -1951,6 +1870,124 @@
       "required": [
         "company",
         "sector"
+      ]
+    },
+    "NamedParameters<typeof trendingSymbols>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "query": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/TrendingSymbolsOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "query"
+      ],
+      "additionalProperties": false
+    },
+    "TrendingSymbolsOptions": {
+      "type": "object",
+      "properties": {
+        "lang": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "count": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "InsightsResult": {
+      "type": "object",
+      "properties": {
+        "symbol": {
+          "type": "string"
+        },
+        "instrumentInfo": {
+          "$ref": "#/definitions/InsightsInstrumentInfo"
+        },
+        "companySnapshot": {
+          "$ref": "#/definitions/InsightsCompanySnapshot"
+        },
+        "recommendation": {
+          "type": "object",
+          "properties": {
+            "targetPrice": {
+              "yahooFinanceType": "number"
+            },
+            "provider": {
+              "type": "string"
+            },
+            "rating": {
+              "type": "string",
+              "enum": [
+                "BUY",
+                "SELL",
+                "HOLD"
+              ]
+            }
+          },
+          "required": [
+            "provider",
+            "rating"
+          ],
+          "additionalProperties": false
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InsightsEvent"
+          }
+        },
+        "reports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InsightsReport"
+          }
+        },
+        "sigDevs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InsightsSigDev"
+          }
+        },
+        "upsell": {
+          "$ref": "#/definitions/InsightsUpsell"
+        },
+        "upsellSearchDD": {
+          "type": "object",
+          "properties": {
+            "researchReports": {
+              "$ref": "#/definitions/InsightsResearchReport"
+            }
+          },
+          "required": [
+            "researchReports"
+          ],
+          "additionalProperties": false
+        },
+        "secReports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InsightsSecReport"
+          }
+        }
+      },
+      "required": [
+        "symbol",
+        "sigDevs"
       ]
     },
     "InsightsEvent": {
@@ -2171,43 +2208,6 @@
           "type": "string"
         },
         "reportsCount": {
-          "yahooFinanceType": "number"
-        }
-      },
-      "additionalProperties": false
-    },
-    "NamedParameters<typeof trendingSymbols>": {
-      "type": "object",
-      "properties": {
-        "this": {
-          "$ref": "#/definitions/ModuleThis"
-        },
-        "query": {
-          "type": "string"
-        },
-        "queryOptionsOverrides": {
-          "$ref": "#/definitions/TrendingSymbolsOptions"
-        },
-        "moduleOptions": {
-          "$ref": "#/definitions/ModuleOptions"
-        }
-      },
-      "required": [
-        "this",
-        "query"
-      ],
-      "additionalProperties": false
-    },
-    "TrendingSymbolsOptions": {
-      "type": "object",
-      "properties": {
-        "lang": {
-          "type": "string"
-        },
-        "region": {
-          "type": "string"
-        },
-        "count": {
           "yahooFinanceType": "number"
         }
       },
