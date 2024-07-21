@@ -1,3 +1,4 @@
+import { Static, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
@@ -5,33 +6,56 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.js";
 import Timeseries_Keys from "../lib/timeseries.json";
+import { YahooFinanceDate, YahooNumber } from "../lib/yahooFinanceTypes.js";
 
-export const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
+const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
 
-export const FundamentalsTimeSeries_Modules = [
+const FundamentalsTimeSeries_Modules = [
   "financials",
   "balance-sheet",
   "cash-flow",
   "all",
 ];
 
-export type FundamentalsTimeSeriesResults = Array<FundamentalsTimeSeriesResult>;
+const FundamentalsTimeSeriesResultSchema = Type.Object(
+  {
+    date: YahooFinanceDate,
+  },
+  {
+    additionalProperties: Type.Unknown(),
+    title: "FundamentalsTimeSeriesResult",
+  }
+);
 
-export interface FundamentalsTimeSeriesResult {
-  [key: string]: unknown;
-  date: Date;
-}
+const FundamentalsTimeSeriesOptionsSchema = Type.Object(
+  {
+    period1: Type.Union([YahooFinanceDate, YahooNumber, Type.String()]),
+    period2: Type.Optional(
+      Type.Union([YahooFinanceDate, YahooNumber, Type.String()])
+    ),
+    type: Type.Optional(Type.String()),
+    merge: Type.Optional(Type.Boolean()), // This returns a completely different format that will break the transformer
+    padTimeSeries: Type.Optional(Type.Boolean()), // Not exactly sure what this does, assume it pads p1 and p2???
+    lang: Type.Optional(Type.String()),
+    region: Type.Optional(Type.String()),
+    module: Type.String(),
+  },
+  {
+    title: "FundamentalsTimeSeriesOptions",
+  }
+);
 
-export interface FundamentalsTimeSeriesOptions {
-  period1: Date | number | string;
-  period2?: Date | number | string;
-  type?: string;
-  merge?: boolean; // This returns a completely different format that will break the transformer
-  padTimeSeries?: boolean; // Not exactly sure what this does, assume it pads p1 and p2???
-  lang?: string;
-  region?: string;
-  module: string;
-}
+type FundamentalsTimeSeriesOptions = Static<
+  typeof FundamentalsTimeSeriesOptionsSchema
+>;
+
+const FundamentalsTimeSeriesResultsSchema = Type.Array(
+  FundamentalsTimeSeriesResultSchema
+);
+
+type FundamentalsTimeSeriesResult = Static<
+  typeof FundamentalsTimeSeriesResultSchema
+>;
 
 const queryOptionsDefaults: Omit<
   FundamentalsTimeSeriesOptions,
@@ -64,21 +88,21 @@ export default function fundamentalsTimeSeries(
   queryOptionsOverrides: FundamentalsTimeSeriesOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-  return this._moduleExec({
+  return this._moduleExecTypebox({
     moduleName: "options",
 
     query: {
       assertSymbol: symbol,
       url: `https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/${symbol}`,
       needsCrumb: false,
-      schemaKey: "#/definitions/FundamentalsTimeSeriesOptions",
+      schema: FundamentalsTimeSeriesOptionsSchema,
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       transformWith: processQuery,
     },
 
     result: {
-      schemaKey: "#/definitions/FundamentalsTimeSeriesResults",
+      schema: FundamentalsTimeSeriesResultsSchema,
       transformWith(response: any) {
         if (!response || !response.timeseries)
           throw new Error(`Unexpected result: ${JSON.stringify(response)}`);
