@@ -88,7 +88,7 @@ export default function fundamentalsTimeSeries(
   queryOptionsOverrides: FundamentalsTimeSeriesOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-  return this._moduleExecTypebox({
+  return this._moduleExec({
     moduleName: "options",
 
     query: {

@@ -70,7 +70,7 @@ export default function trendingSymbols(
   queryOptionsOverrides?: TrendingSymbolsOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-  return this._moduleExecTypebox({
+  return this._moduleExec({
     moduleName: "trendingSymbols",
     query: {
       url: "https://${YF_QUERY_HOST}/v1/finance/trending/" + query,

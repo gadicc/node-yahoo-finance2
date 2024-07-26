@@ -76,7 +76,7 @@ export default function recommendationsBySymbol(
 ): Promise<any> {
   const symbols = typeof query === "string" ? query : query.join(",");
 
-  return this._moduleExecTypebox({
+  return this._moduleExec({
     moduleName: "recommendationsBySymbol",
 
     query: {

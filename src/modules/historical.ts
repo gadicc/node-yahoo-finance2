@@ -163,7 +163,7 @@ export default function historical(
     schema = HistoricalStockSplitsResultSchema;
   else throw new Error("No such event type:" + queryOptionsOverrides.events);
 
-  return this._moduleExecTypebox({
+  return this._moduleExec({
     moduleName: "historical",
 
     query: {

@@ -314,7 +314,7 @@ export default async function chart(
 ): Promise<any> {
   const returnAs = queryOptionsOverrides?.return || "array";
 
-  const result = (await this._moduleExecTypebox<ChartOptions>({
+  const result = (await this._moduleExec<ChartOptions>({
     moduleName: "chart",
 
     query: {

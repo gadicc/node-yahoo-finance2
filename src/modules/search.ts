@@ -283,7 +283,7 @@ export default function search(
   queryOptionsOverrides?: SearchOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-  return this._moduleExecTypebox({
+  return this._moduleExec({
     moduleName: "searchTypebox",
 
     query: {

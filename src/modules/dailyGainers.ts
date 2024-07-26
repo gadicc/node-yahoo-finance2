@@ -182,7 +182,7 @@ export default function dailyGainers(
   queryOptionsOverrides?: DailyGainersOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-  return this._moduleExecTypebox({
+  return this._moduleExec({
     moduleName: "dailyGainers",
     query: {
       url: "https://${YF_QUERY_HOST}/v1/finance/screener/predefined/saved",

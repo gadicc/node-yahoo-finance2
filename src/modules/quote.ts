@@ -332,7 +332,7 @@ export default async function quote(
   const symbols = typeof query === "string" ? query : query.join(",");
   const returnAs = queryOptionsOverrides && queryOptionsOverrides.return;
 
-  const results: Quote[] = await this._moduleExecTypebox<QuoteOptions>({
+  const results: Quote[] = await this._moduleExec<QuoteOptions>({
     moduleName: "quote",
 
     query: {

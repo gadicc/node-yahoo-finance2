@@ -241,7 +241,7 @@ export default function options(
   queryOptionsOverrides: OptionsOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-  return this._moduleExecTypebox<OptionsOptions>({
+  return this._moduleExec<OptionsOptions>({
     moduleName: "options",
 
     query: {

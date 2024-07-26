@@ -327,7 +327,7 @@ export default function trendingSymbols(
   queryOptionsOverrides?: InsightsOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-  return this._moduleExecTypebox({
+  return this._moduleExec({
     moduleName: "insights",
     query: {
       assertSymbol: symbol,

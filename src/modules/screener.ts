@@ -224,7 +224,7 @@ export default function screener(
   queryOptionsOverrides?: ScreenerOptions,
   moduleOptions?: ModuleOptions
 ): Promise<any> {
-  return this._moduleExecTypebox({
+  return this._moduleExec({
     moduleName: "screener",
     query: {
       url: "https://${YF_QUERY_HOST}/v1/finance/screener/predefined/saved",

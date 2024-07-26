@@ -116,7 +116,7 @@ export default function quoteSummary(
   queryOptionsOverrides?: QuoteSummaryOptions,
   moduleOptions?: ModuleOptions
 ): Promise<QuoteSummaryResult> {
-  return this._moduleExecTypebox({
+  return this._moduleExec({
     moduleName: "quoteSummary",
     query: {
       assertSymbol: symbol,

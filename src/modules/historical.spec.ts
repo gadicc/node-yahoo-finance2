@@ -67,11 +67,11 @@ describe("historical", () => {
   });
 
   describe("transformWith", () => {
-    const yf = { _moduleExecTypebox: jest.fn(), historical };
+    const yf = { _moduleExec: jest.fn(), historical };
     // @ts-ignore: TODO
     yf.historical("symbol", { period1: "required-but-not-used" });
     // @ts-ignore: TODO
-    const { transformWith } = yf._moduleExecTypebox.mock.calls[0][0].query;
+    const { transformWith } = yf._moduleExec.mock.calls[0][0].query;
 
     it("uses today's date as default for period2", () => {
       const now = new Date();
