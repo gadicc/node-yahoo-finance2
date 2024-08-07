@@ -3,7 +3,7 @@ import yahooFinanceFetch from "./lib/yahooFinanceFetch.js";
 import options from "./lib/options.js";
 import errors from "./lib/errors.js";
 import setGlobalConfig from "./lib/setGlobalConfig.js";
-import moduleExec from "./lib/moduleExec.js";
+import { suppressNotices } from "./lib/notices.js";
 
 // modules
 import autoc from "./modules/autoc.js";
@@ -33,6 +33,7 @@ export default {
   // common
   errors,
   setGlobalConfig,
+  suppressNotices,
 
   // modules,
   autoc,
