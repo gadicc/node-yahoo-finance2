@@ -41,6 +41,7 @@
     "build": "yarn run build:esm && yarn run build:cjs",
     "build:esm": "tsc --module es2020 --target es2019 --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --target es2015 --outDir dist/cjs && sed 's/\"type\": \"module\",/\"type:\": \"commonjs\",/' dist/cjs/package.json > dist/cjs/package-changed.json && mv dist/cjs/package-changed.json dist/cjs/package.json",
+    "prepublishOnly": "yarn build",
     "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
     "test:ts": "tsc --noEmit",
     "test:esm": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js -c tests-modules/esm/jest.config.js tests-modules/esm/tests/*",
