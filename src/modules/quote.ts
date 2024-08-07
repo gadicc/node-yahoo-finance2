@@ -356,7 +356,7 @@ export default async function quote(
     result: {
       schema: QuoteResponseArraySchema,
       transformWith(rawResult: any) {
-        console.log({ rawResult: JSON.stringify(rawResult, null, 2) });
+        // console.log({ rawResult: JSON.stringify(rawResult, null, 2) });
         let results = rawResult?.quoteResponse?.result;
 
         if (!results || !Array.isArray(results))
