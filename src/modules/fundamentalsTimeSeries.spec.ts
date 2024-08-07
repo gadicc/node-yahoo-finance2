@@ -19,7 +19,7 @@ describe("fundamentalsTimeSeries", () => {
         devel: `fundamentalsTimeSeries-${symbol}-financials-quarterly.json`,
       }
     );
-    console.log(`${symbol} fetched ${res.length} reports.`);
+    // console.log(`${symbol} fetched ${res.length} reports.`);
   });
 
   it("passes validation with module all & quarterly", async () => {
