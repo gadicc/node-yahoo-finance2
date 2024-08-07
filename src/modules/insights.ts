@@ -4,78 +4,240 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
+import { Type, Static } from "@sinclair/typebox";
 
-import type { DateInMs } from "../lib/commonTypes.js";
+import {
+  YahooDateInMs,
+  YahooFinanceDate,
+  YahooNumber,
+} from "../lib/yahooFinanceTypes.js";
 
-export interface InsightsResult {
-  [key: string]: any;
-  symbol: string;
-  instrumentInfo?: InsightsInstrumentInfo;
-  companySnapshot?: InsightsCompanySnapshot;
-  recommendation?: {
-    targetPrice?: number;
-    provider: string;
-    rating: "BUY" | "SELL" | "HOLD";
-  };
-  events?: InsightsEvent[];
-  reports?: InsightsReport[];
-  sigDevs: InsightsSigDev[];
-  upsell?: InsightsUpsell;
-  upsellSearchDD?: {
-    researchReports: InsightsResearchReport;
-  };
-  secReports?: InsightsSecReport[];
-}
+const InsightsDirection = Type.Union(
+  [Type.Literal("Bearish"), Type.Literal("Bullish"), Type.Literal("Neutral")],
+  { title: "InsightsDirection" }
+);
 
-export interface InsightsSigDev {
-  [key: string]: any;
-  headline: string;
-  date: Date;
-}
+const InsightsOutlookSchema = Type.Object(
+  {
+    stateDescription: Type.String(),
+    direction: InsightsDirection,
+    score: YahooNumber,
+    scoreDescription: Type.String(),
+    sectorDirection: Type.Optional(InsightsDirection),
+    sectorScore: Type.Optional(YahooNumber),
+    sectorScoreDescription: Type.Optional(Type.String()),
+    indexDirection: InsightsDirection,
+    indexScore: YahooNumber,
+    indexScoreDescription: Type.String(),
+  },
+  {
+    additionalProperties: Type.Any(),
+    title: "InsightsOutlook",
+  }
+);
 
-export interface InsightsReport {
-  [key: string]: any;
-  id: string;
-  headHtml: string;
-  provider: string;
-  reportDate: Date;
-  reportTitle: string;
-  reportType: string;
-  targetPrice?: number;
-  targetPriceStatus?: "Increased" | "Maintained" | "Decreased" | "-";
-  investmentRating?: "Bullish" | "Neutral" | "Bearish";
-  tickers?: string[];
-}
+const InsightsInstrumentInfo = Type.Object(
+  {
+    keyTechnicals: Type.Object(
+      {
+        provider: Type.String(),
+        support: Type.Optional(YahooNumber),
+        resistance: Type.Optional(YahooNumber),
+        stopLoss: Type.Optional(YahooNumber),
+      },
+      {
+        additionalProperties: Type.Any(),
+      }
+    ),
+    technicalEvents: Type.Object(
+      {
+        provider: Type.String(),
+        sector: Type.Optional(Type.String()),
+        shortTermOutlook: InsightsOutlookSchema,
+        intermediateTermOutlook: InsightsOutlookSchema,
+        longTermOutlook: InsightsOutlookSchema,
+      },
+      {
+        additionalProperties: Type.Any(),
+      }
+    ),
+    valuation: Type.Object(
+      {
+        color: Type.Optional(YahooNumber),
+        description: Type.Optional(Type.String()),
+        discount: Type.Optional(Type.String()),
+        provider: Type.String(),
+        relativeValue: Type.Optional(Type.String()),
+      },
+      {
+        additionalProperties: Type.Any(),
+      }
+    ),
+  },
+  {
+    additionalProperties: Type.Any(),
+    title: "InsightsInstrumentInfo",
+  }
+);
 
-export interface InsightsResearchReport {
-  reportId: string;
-  provider: string;
-  title: string;
-  reportDate: Date;
-  summary: string;
-  investmentRating?: "Bullish" | "Neutral" | "Bearish";
-}
+const InsightsCompanySnapshot = Type.Object(
+  {
+    sectorInfo: Type.Optional(Type.String()),
+    company: Type.Object(
+      {
+        innovativeness: Type.Optional(YahooNumber),
+        hiring: Type.Optional(YahooNumber),
+        sustainability: Type.Optional(YahooNumber),
+        insiderSentiments: Type.Optional(YahooNumber),
+        earningsReports: Type.Optional(YahooNumber),
+        dividends: Type.Optional(YahooNumber),
+      },
+      {
+        additionalProperties: Type.Any(),
+      }
+    ),
+    sector: Type.Object(
+      {
+        innovativeness: YahooNumber,
+        hiring: YahooNumber,
+        sustainability: Type.Optional(YahooNumber),
+        insiderSentiments: YahooNumber,
+        earningsReports: Type.Optional(YahooNumber),
+        dividends: YahooNumber,
+      },
+      {
+        additionalProperties: Type.Any(),
+      }
+    ),
+  },
+  { title: "InsightsCompanySnapshot", additionalProperties: Type.Any() }
+);
 
-export interface InsightsSecReport {
-  id: string;
-  type: string;
-  title: string;
-  description: string;
-  filingDate: DateInMs;
-  snapshotUrl: string;
-  formType: string;
-}
+const InsightsEventSchema = Type.Object(
+  {
+    eventType: Type.String(),
+    pricePeriod: Type.String(),
+    tradingHorizon: Type.String(),
+    tradeType: Type.String(),
+    imageUrl: Type.String(),
+    startDate: YahooFinanceDate,
+    endDate: YahooFinanceDate,
+  },
+  { title: "InsightsEvent", additionalProperties: Type.Any() }
+);
+const InsightsReport = Type.Object(
+  {
+    id: Type.String(),
+    headHtml: Type.String(),
+    provider: Type.String(),
+    reportDate: YahooFinanceDate,
+    reportTitle: Type.String(),
+    reportType: Type.String(),
+    targetPrice: Type.Optional(YahooNumber),
+    targetPriceStatus: Type.Optional(
+      Type.Union([
+        Type.Literal("Increased"),
+        Type.Literal("Maintained"),
+        Type.Literal("Decreased"),
+        Type.Literal("-"),
+      ])
+    ),
+    investmentRating: Type.Optional(
+      Type.Union([
+        Type.Literal("Bullish"),
+        Type.Literal("Neutral"),
+        Type.Literal("Bearish"),
+      ])
+    ),
+    tickers: Type.Optional(Type.Array(Type.String())),
+  },
+  { title: "InsightsReport", additionalProperties: Type.Any() }
+);
+const InsightsSigDev = Type.Object(
+  {
+    headline: Type.String(),
+    date: YahooFinanceDate,
+  },
+  { title: "InsightsSigDev", additionalProperties: Type.Any() }
+);
+const InsightsUpsell = Type.Object(
+  {
+    msBullishSummary: Type.Optional(Type.Array(Type.String())),
+    msBearishSummary: Type.Optional(Type.Array(Type.String())),
+    msBullishBearishSummariesPublishDate: Type.Optional(YahooDateInMs),
+    companyName: Type.Optional(Type.String()),
+    upsellReportType: Type.Optional(Type.String()),
+  },
+  { title: "InsightsUpsell", additionalProperties: Type.Any() }
+);
+const InsightsResearchReport = Type.Object(
+  {
+    reportId: Type.String(),
+    provider: Type.String(),
+    title: Type.String(),
+    reportDate: YahooFinanceDate,
+    summary: Type.String(),
+    investmentRating: Type.Optional(
+      Type.Union([
+        Type.Literal("Bullish"),
+        Type.Literal("Neutral"),
+        Type.Literal("Bearish"),
+      ])
+    ),
+  },
+  { title: "InsightsResearchReport" }
+);
+const InsightsSecReport = Type.Object(
+  {
+    id: Type.String(),
+    type: Type.String(),
+    title: Type.String(),
+    description: Type.String(),
+    filingDate: YahooDateInMs,
+    snapshotUrl: Type.String(),
+    formType: Type.String(),
+  },
+  {
+    title: "InsightsSecReport",
+    additionalProperties: Type.Any(),
+  }
+);
 
-export interface InsightsEvent {
-  [key: string]: any;
-  eventType: string;
-  pricePeriod: string;
-  tradingHorizon: string;
-  tradeType: string;
-  imageUrl: string;
-  startDate: Date;
-  endDate: Date;
-}
+const InsightsResultSchema = Type.Object(
+  {
+    symbol: Type.String(),
+    instrumentInfo: Type.Optional(InsightsInstrumentInfo),
+    companySnapshot: Type.Optional(InsightsCompanySnapshot),
+    recommendation: Type.Optional(
+      Type.Object({
+        targetPrice: Type.Optional(YahooNumber),
+        provider: Type.String(),
+        rating: Type.Union([
+          Type.Literal("BUY"),
+          Type.Literal("SELL"),
+          Type.Literal("HOLD"),
+        ]),
+      })
+    ),
+    events: Type.Optional(Type.Array(InsightsEventSchema)),
+    reports: Type.Optional(Type.Array(InsightsReport)),
+    sigDevs: Type.Optional(Type.Array(InsightsSigDev)),
+    upsell: Type.Optional(InsightsUpsell),
+    upsellSearchDD: Type.Optional(
+      Type.Object({
+        researchReports: InsightsResearchReport,
+      })
+    ),
+    secReports: Type.Optional(Type.Array(InsightsSecReport)),
+  },
+  {
+    additionalProperties: Type.Any(),
+    title: "InsightsResult",
+  }
+);
+
+type InsightsResult = Static<typeof InsightsResultSchema>;
+type InsightsOutlook = Static<typeof InsightsOutlookSchema>;
 
 export interface InsightsInstrumentInfo {
   [key: string]: any;
@@ -127,36 +289,16 @@ export interface InsightsCompanySnapshot {
   };
 }
 
-export type InsightsDirection = "Bearish" | "Bullish" | "Neutral";
+const InsightsOptionsSchema = Type.Object(
+  {
+    lang: Type.Optional(Type.String()),
+    region: Type.Optional(Type.String()),
+    reportsCount: Type.Optional(YahooNumber),
+  },
+  { title: "InsightsOptions" }
+);
 
-export interface InsightsOutlook {
-  [key: string]: any;
-  stateDescription: string;
-  direction: InsightsDirection;
-  score: number;
-  scoreDescription: string;
-  sectorDirection?: InsightsDirection;
-  sectorScore?: number;
-  sectorScoreDescription?: string;
-  indexDirection: InsightsDirection;
-  indexScore: number;
-  indexScoreDescription: string;
-}
-
-export interface InsightsUpsell {
-  [key: string]: any;
-  msBullishSummary?: Array<string>;
-  msBearishSummary?: Array<string>;
-  msBullishBearishSummariesPublishDate?: DateInMs;
-  companyName?: string; // Missing in e.g. APS.AX
-  upsellReportType?: string;
-}
-
-export interface InsightsOptions {
-  lang?: string;
-  region?: string;
-  reportsCount?: number;
-}
+type InsightsOptions = Static<typeof InsightsOptionsSchema>;
 
 const queryOptionsDefaults = {
   lang: "en-US",
@@ -190,13 +332,13 @@ export default function trendingSymbols(
     query: {
       assertSymbol: symbol,
       url: "https://${YF_QUERY_HOST}/ws/insights/v2/finance/insights",
-      schemaKey: "#/definitions/InsightsOptions",
+      schema: InsightsOptionsSchema,
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       runtime: { symbol },
     },
     result: {
-      schemaKey: "#/definitions/InsightsResult",
+      schema: InsightsResultSchema,
       transformWith(result: any) {
         if (!result.finance)
           throw new Error("Unexpected result: " + JSON.stringify(result));

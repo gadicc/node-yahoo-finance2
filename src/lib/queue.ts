@@ -1,15 +1,25 @@
+import { Static, Type } from "@sinclair/typebox";
+
 interface Job {
   func: () => Promise<void>;
   resolve: (arg: any) => void;
   reject: (arg: any) => void;
 }
 
-export interface QueueOptions {
-  // TODO: adds func type to json schema which is not supported
-  //_queue?: Queue;
-  concurrency?: number;
-  timeout?: number; // TODO
-}
+export const QueueOptionsSchema = Type.Object(
+  {
+    // TODO: adds func type to json schema which is not supported
+    //_queue?: Queue;
+    concurrency: Type.Optional(Type.Number()),
+    timeout: Type.Optional(Type.Number()), // TODO
+  },
+  {
+    additionalProperties: false,
+    title: "QueueOptions",
+  }
+);
+
+export type QueueOptions = Static<typeof QueueOptionsSchema>;
 
 export default class Queue {
   concurrency = 1;

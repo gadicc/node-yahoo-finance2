@@ -28,10 +28,52 @@ describe("setGlobalConfig", () => {
   it("should throw on invalid config", () => {
     consoleSilent();
 
-    expect(() => yf.setGlobalConfig({ queue: { abc: "" } })).toThrow(
-      /yahooFinance.setGlobalConfig called with invalid options\./
+    expect(() => yf.setGlobalConfig({ queue: { concurrency: "" } })).toThrow(
+      /Validation called with invalid options/
     );
 
+    consoleRestore();
+  });
+  it("should throw on an invalid logger", () => {
+    consoleSilent();
+
+    expect(() =>
+      yf.setGlobalConfig({
+        logger: {
+          info() {},
+          debug() {},
+          error() {},
+          warn: "yeh this won't work",
+        },
+      })
+    ).toThrow(/Validation called with invalid options/);
+
+    expect(() =>
+      yf.setGlobalConfig({
+        logger: {
+          info() {},
+          debug() {},
+          error() {},
+        },
+      })
+    ).toThrow(/Validation called with invalid options/);
+
+    expect(() =>
+      yf.setGlobalConfig({
+        logger: {},
+      })
+    ).toThrow(/Validation called with invalid options/);
+
+    consoleRestore();
+  });
+  it("should throw on an invalid cookie jar", () => {
+    consoleSilent();
+
+    expect(() =>
+      yf.setGlobalConfig({
+        cookieJar: "not a cookie jar",
+      })
+    ).toThrow(/cookieJar must be an instance of ExtendedCookieJar/);
     consoleRestore();
   });
 });

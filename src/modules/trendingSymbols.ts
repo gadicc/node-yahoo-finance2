@@ -1,30 +1,51 @@
+import { Static, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
+import { NullableYahooNumber, YahooNumber } from "../lib/yahooFinanceTypes.js";
 
-export interface TrendingSymbol {
-  [key: string]: any;
-  symbol: string;
-}
+const TrendingSymbol = Type.Object(
+  {
+    symbol: Type.String(),
+  },
+  {
+    additionalProperties: Type.Any(),
+  }
+);
 
-export interface TrendingSymbolsResult {
-  [key: string]: any;
-  count: number;
-  quotes: TrendingSymbol[];
-  jobTimestamp: number;
-  startInterval: number;
-}
+const TrendingSymbolsResult = Type.Object(
+  {
+    count: YahooNumber,
+    quotes: Type.Array(TrendingSymbol),
+    jobTimestamp: YahooNumber,
+    startInterval: YahooNumber,
+  },
+  {
+    additionalProperties: Type.Any(),
+    title: "TrendingSymbolsResult",
+  }
+);
 
-export interface TrendingSymbolsOptions {
-  lang?: string;
-  region?: string;
-  count?: number;
-}
+const TrendingSymbolsOptions = Type.Optional(
+  Type.Object(
+    {
+      lang: Type.Optional(Type.String()),
+      region: Type.Optional(Type.String()),
+      count: Type.Optional(YahooNumber),
+    },
+    {
+      title: "TrendingSymbolsOptions",
+    }
+  )
+);
 
-const queryOptionsDefaults = {
+type TrendingSymbolsResult = Static<typeof TrendingSymbolsResult>;
+type TrendingSymbolsOptions = Static<typeof TrendingSymbolsOptions>;
+
+const queryOptionsDefaults: TrendingSymbolsOptions = {
   lang: "en-US",
   count: 5,
 };
@@ -53,12 +74,12 @@ export default function trendingSymbols(
     moduleName: "trendingSymbols",
     query: {
       url: "https://${YF_QUERY_HOST}/v1/finance/trending/" + query,
-      schemaKey: "#/definitions/TrendingSymbolsOptions",
+      schema: TrendingSymbolsOptions,
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
     },
     result: {
-      schemaKey: "#/definitions/TrendingSymbolsResult",
+      schema: TrendingSymbolsResult,
       transformWith(result: any) {
         if (!result.finance)
           throw new Error("Unexpected result: " + JSON.stringify(result));

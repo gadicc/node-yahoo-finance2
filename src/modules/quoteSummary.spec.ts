@@ -1,5 +1,4 @@
-import quoteSummary, { QuoteSummaryModules } from "./quoteSummary.js";
-import { InvalidOptionsError } from "../lib/errors.js";
+import quoteSummary from "./quoteSummary.js";
 
 import testSymbols from "../../tests/testSymbols.js";
 import testYf from "../../tests/testYf.js";
@@ -10,10 +9,7 @@ interface itValidatesOpts {
   skip?: Array<string>;
 }
 
-function itValidates(
-  name: QuoteSummaryModules | "all",
-  opts: itValidatesOpts = {}
-) {
+function itValidates(name: string | "all", opts: itValidatesOpts = {}) {
   let symbols = testSymbols({
     add: [
       // incomeStatementHistory/sellingGeneralAdministrative is null (#258)

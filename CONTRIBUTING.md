@@ -71,11 +71,6 @@ work and submitting your PR.
 
 All PRs should be submitted against the `devel` branch (github default).
 
-**Changing TypeScript Interfaces**
-
-Run `yarn generateSchema` after changing any interfaces, this will regenerate
-the `schema.json` file which is used for run-time tests.
-
 **Commit Messages**
 
 Commit messages should follow the
@@ -134,12 +129,11 @@ TODO
 Checklist:
 
 1. Create it in `src/modules/myAmazingModule.ts`
-1. Run `yarn generateSchema` (and on any future interface changes)
-1. Test it in `src/modules/myAmazingModule.spec.ts`
-1. Add it to `src/index-common.ts`
-1. Docs in `docs/modules/myAmazingModule.md`
-1. Link these docs in `README.md` and `docs/README.md`.
-1. Commit all the above and any `tests/http/*` created in your tests.
+2. Test it in `src/modules/myAmazingModule.spec.ts`
+3. Add it to `src/index-common.ts`
+4. Docs in `docs/modules/myAmazingModule.md`
+5. Link these docs in `README.md` and `docs/README.md`.
+6. Commit all the above and any `tests/http/*` created in your tests.
 
 For a model example, see the
 [recommendationsBySymbol PR](https://github.com/gadicc/node-yahoo-finance2/pull/28)
