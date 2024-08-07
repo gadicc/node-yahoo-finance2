@@ -3,6 +3,7 @@ import type { ExtendedCookieJar } from "./cookieJar";
 import pkg from "../../package.json";
 import { Logger } from "./options.js";
 import { Cookie } from "tough-cookie";
+import { showNotice } from "./notices.js";
 
 const CONFIG_FAKE_URL = "http://config.yf2/";
 
@@ -342,8 +343,6 @@ export async function getCrumbClear(cookieJar: ExtendedCookieJar) {
   await cookieJar.removeAllCookies();
 }
 
-let shownYahooSurvey = false;
-
 export default function getCrumb(
   cookieJar: ExtendedCookieJar,
   fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>,
@@ -352,14 +351,7 @@ export default function getCrumb(
   url = "https://finance.yahoo.com/quote/AAPL",
   __getCrumb = _getCrumb
 ) {
-  if (!shownYahooSurvey) {
-    logger.info(
-      "Please consider completing the survey at https://bit.ly/yahoo-finance-api-feedback " +
-        "if you haven't already; for more info see " +
-        "https://github.com/gadicc/node-yahoo-finance2/issues/764#issuecomment-2056623851."
-    );
-    shownYahooSurvey = true;
-  }
+  showNotice("yahooSurvey");
 
   if (!promise)
     promise = __getCrumb(cookieJar, fetch, fetchOptionsBase, logger, url);

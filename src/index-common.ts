@@ -5,6 +5,7 @@ import options from "./lib/options.js";
 import errors from "./lib/errors.js";
 import setGlobalConfig from "./lib/setGlobalConfig.js";
 import { disallowAdditionalProps } from "./lib/validateAndCoerceTypes.js";
+import { suppressNotices } from "./lib/notices.js";
 
 // modules
 import autoc from "./modules/autoc.js";
@@ -35,6 +36,7 @@ export default {
   // common
   errors,
   setGlobalConfig,
+  suppressNotices,
 
   // modules,
   autoc,
