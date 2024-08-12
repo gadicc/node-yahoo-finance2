@@ -89,7 +89,7 @@ export const isTime = (value: string, strictTimeZone?: boolean): boolean => {
  */
 export const isDateTime = (
   value: string,
-  strictTimeZone?: boolean
+  strictTimeZone?: boolean,
 ): boolean => {
   const dateTime: string[] = value.split(DATE_TIME_SEPARATOR);
   return (

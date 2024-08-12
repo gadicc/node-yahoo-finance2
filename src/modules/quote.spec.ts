@@ -44,7 +44,7 @@ describe("quote", () => {
 
   it("allows blank options", async () => {
     await expect(() =>
-      yf.quote("AAPL", undefined, { devel: "quote-AAPL.json" })
+      yf.quote("AAPL", undefined, { devel: "quote-AAPL.json" }),
     ).not.toThrow();
   });
 
@@ -66,7 +66,7 @@ describe("quote", () => {
   if (process.env.FETCH_DEVEL !== "nocache")
     it("throws on unexpected result", async () => {
       await expect(
-        yf.quote("AAPL", {}, { devel: "weirdJsonResult.fake.json" })
+        yf.quote("AAPL", {}, { devel: "weirdJsonResult.fake.json" }),
       ).rejects.toThrow(/Unexpected result/);
     });
 
@@ -92,7 +92,7 @@ describe("quote", () => {
       const results = await yf.quote(
         ["AAPL", "BABA"],
         { return: "array" },
-        { devel }
+        { devel },
       );
       expect(results.length).toBe(2);
       expect(results[0].symbol).toBe("AAPL");
@@ -104,7 +104,7 @@ describe("quote", () => {
       const results = await yf.quote(
         ["AAPL", "BABA"],
         { return: "object" },
-        { devel }
+        { devel },
       );
       expect(Object.keys(results).length).toBe(2);
       expect(results.AAPL.symbol).toBe("AAPL");
@@ -116,7 +116,7 @@ describe("quote", () => {
       const results = await yf.quote(
         ["AAPL", "BABA"],
         { return: "map" },
-        { devel }
+        { devel },
       );
       expect(results.size).toBe(2);
       expect(results.get("AAPL").symbol).toBe("AAPL");

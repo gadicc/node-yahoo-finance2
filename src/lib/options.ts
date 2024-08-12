@@ -24,7 +24,7 @@ const ValidationOptionsSchema = Type.Object({
       default: process.env.NODE_ENV === "test",
       description:
         "Use this property to throw when properties beyond what is explicitly specified in the schema are provided. It is an internal option and subject to change, use at your own risk",
-    })
+    }),
   ),
 });
 
@@ -38,7 +38,7 @@ export const YahooFinanceOptionsSchema = Type.Object(
     validation: Type.Optional(ValidationOptionsSchema),
     logger: Type.Optional(LoggerSchema),
   },
-  { title: "YahooFinanceOptions" }
+  { title: "YahooFinanceOptions" },
 );
 
 /*

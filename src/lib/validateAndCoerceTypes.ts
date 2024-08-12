@@ -10,7 +10,7 @@ import { ValidationOptions } from "./options";
 
 const handleResultError = (
   e: TransformDecodeError | TransformDecodeCheckError,
-  options: ValidationOptions
+  options: ValidationOptions,
 ) => {
   const title = e.schema.title;
   if (options.logErrors) {
@@ -48,11 +48,11 @@ const handleResultError = (
 
 const handleOptionsError = (
   e: TransformDecodeCheckError | TransformDecodeError,
-  { logOptionsErrors }: ValidationOptions
+  { logOptionsErrors }: ValidationOptions,
 ) => {
   if (logOptionsErrors) {
     console.error(
-      `[yahooFinance] Invalid options ("${JSON.stringify(e.error, null, 2)}")`
+      `[yahooFinance] Invalid options ("${JSON.stringify(e.error, null, 2)}")`,
     );
   }
   throw new InvalidOptionsError("Validation called with invalid options");

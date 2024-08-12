@@ -22,23 +22,23 @@ describe("historical", () => {
         period1: "2020-01-01",
         period2: "2020-01-03",
       },
-      { devel: `historical-${symbol}-2020-01-01-to-2020-01-03.json` }
+      { devel: `historical-${symbol}-2020-01-01-to-2020-01-03.json` },
     );
   });
 
   it("throws if period1,period2 are the same", async () => {
     await expect(
-      yf.historical("TSLA", { period1: "2022-02-22", period2: "2022-02-22" })
+      yf.historical("TSLA", { period1: "2022-02-22", period2: "2022-02-22" }),
     ).rejects.toThrow(/cannot share the same value/);
   });
 
   it("throws if period{1,2} gets an invalid string for new Date()", async () => {
     await expect(yf.historical("TSLA", { period1: "invalid" })).rejects.toThrow(
-      /invalid date provided/
+      /invalid date provided/,
     );
 
     await expect(
-      yf.historical("TSLA", { period1: "2022-02-022", period2: "invalid" })
+      yf.historical("TSLA", { period1: "2022-02-022", period2: "invalid" }),
     ).rejects.toThrow(/invalid date provided/);
   });
 
@@ -50,7 +50,7 @@ describe("historical", () => {
         period2: "2022-01-31",
         events: "dividends",
       },
-      { devel: "historical-MSFT-dividends-2021-02-01-to-2022-01-31.csv" }
+      { devel: "historical-MSFT-dividends-2021-02-01-to-2022-01-31.csv" },
     );
   });
 
@@ -62,7 +62,7 @@ describe("historical", () => {
         period2: "2022-01-31",
         events: "split",
       },
-      { devel: "historical-NVDA-split-2021-02-01-to-2022-01-31.csv" }
+      { devel: "historical-NVDA-split-2021-02-01-to-2022-01-31.csv" },
     );
   });
 
@@ -94,7 +94,7 @@ describe("historical", () => {
             },
             // Not a "fake" but seems fixed in newer Yahoo requests
             // so let's test against our previously saved cache.
-            { devel: "historical-EURGBP-nulls.saved.fake.json" }
+            { devel: "historical-EURGBP-nulls.saved.fake.json" },
           );
 
         await expect(createHistoricalPromise()).resolves.toBeDefined();
@@ -116,9 +116,9 @@ describe("historical", () => {
             .historical(
               "EURGBP=X",
               { period1: 1567728000, period2: 1570665600 },
-              { devel: "historical-EURGBP-nulls.fake.json" }
+              { devel: "historical-EURGBP-nulls.fake.json" },
             )
-            .finally(consoleRestore)
+            .finally(consoleRestore),
         ).rejects.toThrow("SOME (but not all) null values");
       });
   });
@@ -132,7 +132,7 @@ describe("historical", () => {
         events: "dividends",
         interval: "1d",
       },
-      { devel: "historical-dividends-TSLA-no-dividends.json" }
+      { devel: "historical-dividends-TSLA-no-dividends.json" },
     );
     // Enough to check that this doesn't throw.
   });

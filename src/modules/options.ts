@@ -42,7 +42,7 @@ const QuoteCryptoCurrency = Type.Composite(
       startDate: Type.Optional(YahooFinanceDate), // new Date(1367103600 * 1000)
     }),
   ],
-  { title: "QuoteCryptoCurrency" }
+  { title: "QuoteCryptoCurrency" },
 );
 
 const QuoteCurrency = Type.Composite(
@@ -52,7 +52,7 @@ const QuoteCurrency = Type.Composite(
       quoteType: Type.Literal("CURRENCY"),
     }),
   ],
-  { title: "QuoteCurrency" }
+  { title: "QuoteCurrency" },
 );
 
 const QuoteEtf = Type.Composite([
@@ -71,7 +71,7 @@ const QuoteEquity = Type.Composite(
       dividendYield: Type.Optional(Type.Number()),
     }),
   ],
-  { title: "QuoteEquity" }
+  { title: "QuoteEquity" },
 );
 
 const QuoteFuture = Type.Composite(
@@ -88,7 +88,7 @@ const QuoteFuture = Type.Composite(
   ],
   {
     title: "QuoteFuture",
-  }
+  },
 );
 
 const QuoteIndex = Type.Composite(
@@ -100,7 +100,7 @@ const QuoteIndex = Type.Composite(
   ],
   {
     title: "QuoteIndex",
-  }
+  },
 );
 
 const QuoteOption = Type.Composite(
@@ -117,7 +117,7 @@ const QuoteOption = Type.Composite(
   ],
   {
     title: "QuoteOption",
-  }
+  },
 );
 
 const QuoteMutualfund = Type.Composite(
@@ -129,7 +129,7 @@ const QuoteMutualfund = Type.Composite(
   ],
   {
     title: "QuoteMutualFund",
-  }
+  },
 );
 
 const QuoteSchema = Type.Union(
@@ -145,7 +145,7 @@ const QuoteSchema = Type.Union(
   ],
   {
     title: "Quote",
-  }
+  },
 );
 
 const CallOrPut = Type.Object(
@@ -169,7 +169,7 @@ const CallOrPut = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "CallOrPut",
-  }
+  },
 );
 
 const Option = Type.Object(
@@ -182,7 +182,7 @@ const Option = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "Option",
-  }
+  },
 );
 
 const OptionsResultSchema = Type.Object(
@@ -197,7 +197,7 @@ const OptionsResultSchema = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "OptionsResult",
-  }
+  },
 );
 
 const OptionsOptionsSchema = Type.Object(
@@ -209,7 +209,7 @@ const OptionsOptionsSchema = Type.Object(
   },
   {
     title: "OptionsOptions",
-  }
+  },
 );
 
 type OptionsOptions = Static<typeof OptionsOptionsSchema>;
@@ -225,21 +225,21 @@ export default function options(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: OptionsOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<OptionsResult>;
 
 export default function options(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: OptionsOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function options(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: OptionsOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec<OptionsOptions>({
     moduleName: "options",

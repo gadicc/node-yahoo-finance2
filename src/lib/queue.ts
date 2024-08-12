@@ -16,7 +16,7 @@ export const QueueOptionsSchema = Type.Object(
   {
     additionalProperties: false,
     title: "QueueOptions",
-  }
+  },
 );
 
 export type QueueOptions = Static<typeof QueueOptionsSchema>;

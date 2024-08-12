@@ -28,7 +28,7 @@ describe("getCrumb", () => {
         logger,
         "https://finance.yahoo.com/quote/AAPL",
         "getCrumb-quote-AAPL.json",
-        true
+        true,
       );
       expect(crumb).toBe("mloUP8q7ZPH");
     });
@@ -48,7 +48,7 @@ describe("getCrumb", () => {
         fetch,
         { devel: true },
         logger,
-        "https://finance.yahoo.com/quote/AAPL"
+        "https://finance.yahoo.com/quote/AAPL",
       );
       expect(crumb).toBe("mloUP8q7ZPH");
 
@@ -59,7 +59,7 @@ describe("getCrumb", () => {
         fetch,
         { devel: true },
         logger,
-        "https://finance.yahoo.com/quote/AAPL"
+        "https://finance.yahoo.com/quote/AAPL",
       );
       expect(crumb).toBe("mloUP8q7ZPH");
     });
@@ -75,8 +75,8 @@ describe("getCrumb", () => {
           logger,
           "https://finance.yahoo.com/quote/AAPL",
           "getCrumb-quote-AAPL-no-cookies.fake.json",
-          true
-        )
+          true,
+        ),
       ).rejects.toThrowError(/No set-cookie/);
     });
 
@@ -142,7 +142,7 @@ describe("getCrumb", () => {
         logger,
         "https://finance.yahoo.com/quote/AAPL",
         "getCrumb-quote-AAPL-pre-consent-VPN-UK.json",
-        true
+        true,
       );
       expect(crumb).toBe("mloUP8q7ZPH");
       // consoleSilent();
@@ -168,7 +168,7 @@ describe("getCrumb", () => {
         { devel: true },
         logger,
         "https://finance.yahoo.com/quote/TSLA",
-        _getCrumb as any
+        _getCrumb as any,
       );
 
       getCrumb(
@@ -177,7 +177,7 @@ describe("getCrumb", () => {
         { devel: true },
         logger,
         "https://finance.yahoo.com/quote/TSLA",
-        _getCrumb as any
+        _getCrumb as any,
       );
 
       expect(_getCrumb).toHaveBeenCalledTimes(1);

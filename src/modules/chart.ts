@@ -19,7 +19,7 @@ const ChartMetaTradingPeriod = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "ChartMetaTradingPeriod",
-  }
+  },
 );
 
 const ChartMetaTradingPeriods = Type.Object(
@@ -31,7 +31,7 @@ const ChartMetaTradingPeriods = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "ChartMetaTradingPeriods",
-  }
+  },
 );
 
 const ChartResultArrayQuote = Type.Object(
@@ -47,7 +47,7 @@ const ChartResultArrayQuote = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "ChartResultArrayQuote",
-  }
+  },
 );
 
 const ChartEventDividend = Type.Object(
@@ -58,7 +58,7 @@ const ChartEventDividend = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "ChartEventDividend",
-  }
+  },
 );
 
 const ChartEventDividends = Type.Object(
@@ -66,7 +66,7 @@ const ChartEventDividends = Type.Object(
   {
     additionalProperties: ChartEventDividend,
     title: "ChartEventDividends",
-  }
+  },
 );
 
 const ChartEventSplit = Type.Object(
@@ -78,7 +78,7 @@ const ChartEventSplit = Type.Object(
   },
   {
     additionalProperties: Type.Any(),
-  }
+  },
 );
 const ChartEventsArray = Type.Object(
   {
@@ -88,7 +88,7 @@ const ChartEventsArray = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "ChartEventsArray",
-  }
+  },
 );
 
 const ChartMeta = Type.Object(
@@ -115,7 +115,7 @@ const ChartMeta = Type.Object(
       },
       {
         additionalProperties: Type.Any(),
-      }
+      },
     ),
     tradingPeriods: Type.Optional(ChartMetaTradingPeriods),
     dataGranularity: Type.String(), // "1d",
@@ -125,7 +125,7 @@ const ChartMeta = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "ChartMeta",
-  }
+  },
 );
 
 const ChartResultArraySchema = Type.Object(
@@ -134,7 +134,7 @@ const ChartResultArraySchema = Type.Object(
     events: Type.Optional(ChartEventsArray),
     quotes: Type.Array(ChartResultArrayQuote),
   },
-  { title: "ChartResultArray" }
+  { title: "ChartResultArray" },
 );
 
 const ChartEventSplits = Type.Object(
@@ -142,7 +142,7 @@ const ChartEventSplits = Type.Object(
   {
     additionalProperties: ChartEventSplit,
     title: "ChartEventSplits",
-  }
+  },
 );
 
 const ChartIndicatorQuote = Type.Object(
@@ -156,7 +156,7 @@ const ChartIndicatorQuote = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "ChartIndicatorQuote",
-  }
+  },
 );
 
 const ChartIndicatorAdjclose = Type.Object(
@@ -166,7 +166,7 @@ const ChartIndicatorAdjclose = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "ChartIndicatorAdjClose",
-  }
+  },
 );
 
 const ChartEventsObject = Type.Object(
@@ -176,7 +176,7 @@ const ChartEventsObject = Type.Object(
   },
   {
     additionalProperties: Type.Any(),
-  }
+  },
 );
 
 const ChartIndicatorsObject = Type.Object(
@@ -187,7 +187,7 @@ const ChartIndicatorsObject = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "ChartIndicatorObject",
-  }
+  },
 );
 const ChartResultObjectSchema = Type.Object(
   {
@@ -199,14 +199,14 @@ const ChartResultObjectSchema = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "ChartResultObject",
-  }
+  },
 );
 
 const ChartOptionsSchema = Type.Object(
   {
     period1: Type.Union([Type.Date(), Type.String(), YahooNumber]),
     period2: Type.Optional(
-      Type.Union([Type.Date(), Type.String(), YahooNumber])
+      Type.Union([Type.Date(), Type.String(), YahooNumber]),
     ),
     useYfid: Type.Optional(Type.Boolean()), // true
     interval: Type.Optional(
@@ -224,18 +224,18 @@ const ChartOptionsSchema = Type.Object(
         Type.Literal("1wk"),
         Type.Literal("1mo"),
         Type.Literal("3mo"),
-      ])
+      ]),
     ),
     includePrePost: Type.Optional(Type.Boolean()), // true
     events: Type.Optional(Type.String()), // 'history',
     lang: Type.Optional(Type.String()), // "en-US"
     return: Type.Optional(
-      Type.Union([Type.Literal("array"), Type.Literal("object")])
+      Type.Union([Type.Literal("array"), Type.Literal("object")]),
     ),
   },
   {
     title: "ChartOptions",
-  }
+  },
 );
 
 const ChartOptionsWithReturnArraySchema = Type.Composite(
@@ -247,7 +247,7 @@ const ChartOptionsWithReturnArraySchema = Type.Composite(
   ],
   {
     title: "ChartOptionsWithReturnArray",
-  }
+  },
 );
 
 const ChartOptionsWithReturnObjectSchema = Type.Composite(
@@ -259,7 +259,7 @@ const ChartOptionsWithReturnObjectSchema = Type.Composite(
   ],
   {
     title: "ChartOptionsWithReturnObject",
-  }
+  },
 );
 
 type ChartOptions = Static<typeof ChartOptionsSchema>;
@@ -289,28 +289,28 @@ export default function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptionsWithReturnObject,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<ChartResultObject>;
 
 export default function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptionsWithReturnArray,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<ChartResultArray>;
 
 export default function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default async function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   const returnAs = queryOptionsOverrides?.return || "array";
 
@@ -333,14 +333,14 @@ export default async function chart(
             queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
           else typeof value === "string";
           queryOptions[fieldName] = Math.floor(
-            new Date(value as string).getTime() / 1000
+            new Date(value as string).getTime() / 1000,
           );
         }
 
         if (queryOptions.period1 === queryOptions.period2) {
           throw new Error(
             "yahooFinance.chart() options `period1` and `period2` " +
-              "cannot share the same value."
+              "cannot share the same value.",
           );
         }
 
@@ -365,13 +365,13 @@ export default async function chart(
         if (!chart.timestamp) {
           if (chart.indicators.quote.length !== 1)
             throw new Error(
-              "No timestamp with quotes.length !== 1, please report with your query"
+              "No timestamp with quotes.length !== 1, please report with your query",
             );
           if (Object.keys(chart.indicators.quote[0]).length !== 0)
             // i.e. {}
             throw new Error(
               "No timestamp with unexpected quote, please report with your query" +
-                JSON.stringify(chart.indicators.quote[0])
+                JSON.stringify(chart.indicators.quote[0]),
             );
           chart.indicators.quote.pop();
         }
@@ -412,7 +412,7 @@ export default async function chart(
         quoteSize: result.indicators.quote[0].high.length,
       });
       throw new Error(
-        "Timestamp count mismatch, please report this with the query you used"
+        "Timestamp count mismatch, please report this with the query you used",
       );
     }
 

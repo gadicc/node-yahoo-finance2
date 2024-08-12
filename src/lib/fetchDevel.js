@@ -39,7 +39,7 @@ async function fetchDevel(url, fetchOptions) {
   // Use query2 for all our tests / fixtures / cache
   url = url.replace(
     /^https:\/\/query1.finance.yahoo.com/,
-    "https://query2.finance.yahoo.com"
+    "https://query2.finance.yahoo.com",
   );
 
   // Remove crumb param to have consistent cacheable URLs
@@ -56,7 +56,7 @@ async function fetchDevel(url, fetchOptions) {
   */
   const destUrl = new URL(
     "./" + (fetchOptions.devel === true ? urlHash(url) : fetchOptions.devel),
-    BASE_URL
+    BASE_URL,
   );
 
   const filename = destUrl.toString();

@@ -17,18 +17,18 @@ const RecommendationsBySymbolResponse = Type.Object(
         },
         {
           additionalProperties: Type.Any(),
-        }
-      )
+        },
+      ),
     ),
     symbol: Type.String(),
   },
   {
     additionalProperties: Type.Any(),
-  }
+  },
 );
 
 const RecommendationsBySymbolResponseArray = Type.Array(
-  RecommendationsBySymbolResponse
+  RecommendationsBySymbolResponse,
 );
 
 const RecommendationsBySymbolOptions = Type.Object({});
@@ -51,28 +51,28 @@ export default function recommendationsBySymbol(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<RecommendationsBySymbolResponse>;
 
 export default function recommendationsBySymbol(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<RecommendationsBySymbolResponseArray>;
 
 export default function recommendationsBySymbol(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function recommendationsBySymbol(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   const symbols = typeof query === "string" ? query : query.join(",");
 

@@ -29,7 +29,7 @@ describe("validateAndCoerceTypebox", () => {
     }
 
     expect(error).toMatchInlineSnapshot(
-      `[FailedYahooValidationError: Failed Yahoo Schema validation]`
+      `[FailedYahooValidationError: Failed Yahoo Schema validation]`,
     );
 
     expect(JSON.stringify(error?.errors?.[0], null, 2)).toMatchInlineSnapshot(`
@@ -419,7 +419,7 @@ describe("validateAndCoerceTypebox", () => {
 describe("_internalThrowOnAddtionalProperties", () => {
   const schema = Type.Object(
     { name: Type.String() },
-    { additionalProperties: Type.Any() }
+    { additionalProperties: Type.Any() },
   );
 
   const testCase = { name: "Gadi", aTotallyUnrelatedKey: "foo" };

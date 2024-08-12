@@ -17,28 +17,28 @@ export default function quoteCombine(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: QuoteOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<Quote>;
 
 export default function quoteCombine(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: QuoteOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function quoteCombine(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides: QuoteOptions = {},
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   const symbol = query;
 
   if (typeof symbol !== "string")
     throw new Error(
       "quoteCombine expects a string query parameter, received: " +
-        JSON.stringify(symbol, null, 2)
+        JSON.stringify(symbol, null, 2),
     );
 
   validateAndCoerceTypebox({

@@ -116,7 +116,7 @@ describe("YahooFinanceDate", () => {
     const testCase = "2024-02-29";
     expect(Value.Check(YahooFinanceDate, testCase)).toBe(true);
     expect(Value.Decode(YahooFinanceDate, testCase)).toMatchInlineSnapshot(
-      `2024-02-29T00:00:00.000Z`
+      `2024-02-29T00:00:00.000Z`,
     );
   });
 
@@ -124,7 +124,7 @@ describe("YahooFinanceDate", () => {
     const testCase = "2024-05-04T13:24:41.100Z";
     expect(Value.Check(YahooFinanceDate, testCase)).toBe(true);
     expect(Value.Decode(YahooFinanceDate, testCase)).toMatchInlineSnapshot(
-      `2024-05-04T13:24:41.100Z`
+      `2024-05-04T13:24:41.100Z`,
     );
   });
 
@@ -132,7 +132,7 @@ describe("YahooFinanceDate", () => {
     const testCase = "2024-05-04";
     expect(Value.Check(YahooFinanceDate, testCase)).toBe(true);
     expect(Value.Decode(YahooFinanceDate, testCase)).toMatchInlineSnapshot(
-      `2024-05-04T00:00:00.000Z`
+      `2024-05-04T00:00:00.000Z`,
     );
   });
 
@@ -169,7 +169,7 @@ describe("YahooDateInMs", () => {
     const testCase = 1612313997000;
     expect(Value.Check(YahooDateInMs, testCase)).toBe(true);
     expect(Value.Decode(YahooDateInMs, testCase)).toMatchInlineSnapshot(
-      `2021-02-03T00:59:57.000Z`
+      `2021-02-03T00:59:57.000Z`,
     );
   });
 });
@@ -186,8 +186,8 @@ describe("Test building block type encoding", () => {
     expect(
       Value.Encode(
         EmptyObjectCoerceToNull,
-        Value.Decode(EmptyObjectCoerceToNull, testCase)
-      )
+        Value.Decode(EmptyObjectCoerceToNull, testCase),
+      ),
     ).toMatchInlineSnapshot(`{}`);
   });
   it("Should encode RawNumber correctly", () => {
@@ -204,14 +204,14 @@ describe("Test building block type encoding", () => {
     expect(
       Value.Encode(
         TwoNumberRangeString,
-        Value.Decode(TwoNumberRangeString, testCase)
-      )
+        Value.Decode(TwoNumberRangeString, testCase),
+      ),
     ).toBe("10 - 20");
   });
   it("Should encode the epoch timestamp back to seconds", () => {
     const testCase = 1000;
     expect(
-      Value.Encode(EpochTimestamp, Value.Decode(EpochTimestamp, testCase))
+      Value.Encode(EpochTimestamp, Value.Decode(EpochTimestamp, testCase)),
     ).toBe(testCase);
   });
 
@@ -227,13 +227,13 @@ describe("Test building block type encoding", () => {
   it("Should encode the ISOStringDate back to a valid ISOString", () => {
     const testCase = new Date(1000).toISOString();
     expect(
-      Value.Encode(ISOStringDate, Value.Decode(ISOStringDate, testCase))
+      Value.Encode(ISOStringDate, Value.Decode(ISOStringDate, testCase)),
     ).toBe(testCase);
   });
   it("Should encode the YahooDateInMs back to MS", () => {
     const testCase = +new Date(1000);
     expect(
-      Value.Encode(YahooDateInMs, Value.Decode(YahooDateInMs, testCase))
+      Value.Encode(YahooDateInMs, Value.Decode(YahooDateInMs, testCase)),
     ).toBe(testCase);
   });
 });

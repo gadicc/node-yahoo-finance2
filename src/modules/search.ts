@@ -26,7 +26,7 @@ const SearchQuoteYahoo = Type.Object(
   },
   {
     additionalProperties: Type.Any(),
-  }
+  },
 );
 
 const SearchQuoteYahooEquity = Type.Composite(
@@ -39,7 +39,7 @@ const SearchQuoteYahooEquity = Type.Composite(
   ],
   {
     title: "SearchQuoteYahooEntity",
-  }
+  },
 );
 
 const SearchQuoteYahooOption = Type.Composite(
@@ -52,7 +52,7 @@ const SearchQuoteYahooOption = Type.Composite(
   ],
   {
     title: "SearchQuoteYahooOption",
-  }
+  },
 );
 
 const SearchQuoteYahooETF = Type.Composite(
@@ -65,7 +65,7 @@ const SearchQuoteYahooETF = Type.Composite(
   ],
   {
     title: "SearchQuoteYahooETF",
-  }
+  },
 );
 
 const SearchQuoteYahooFund = Type.Composite(
@@ -78,7 +78,7 @@ const SearchQuoteYahooFund = Type.Composite(
   ],
   {
     title: "SearchQuoteYahooFund",
-  }
+  },
 );
 
 const SearchQuoteYahooIndex = Type.Composite(
@@ -91,7 +91,7 @@ const SearchQuoteYahooIndex = Type.Composite(
   ],
   {
     title: "SearchQuoteYahooIndex",
-  }
+  },
 );
 
 const SearchQuoteYahooCurrency = Type.Composite(
@@ -104,7 +104,7 @@ const SearchQuoteYahooCurrency = Type.Composite(
   ],
   {
     title: "SearchQuoteYahooCurrency",
-  }
+  },
 );
 
 const SearchQuoteYahooCryptocurrency = Type.Composite([
@@ -125,7 +125,7 @@ const SearchQuoteYahooFuture = Type.Composite(
   ],
   {
     title: "SearchQuoteYahooFuture",
-  }
+  },
 );
 
 const SearchQuoteNonYahoo = Type.Object(
@@ -138,7 +138,7 @@ const SearchQuoteNonYahoo = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "SearchQuoteNonYahoo",
-  }
+  },
 );
 
 const SearchNewsThumbnailResolution = Type.Object(
@@ -150,7 +150,7 @@ const SearchNewsThumbnailResolution = Type.Object(
   },
   {
     title: "SearchNewsThumbnailResolution",
-  }
+  },
 );
 
 const SearchNews = Type.Object(
@@ -164,14 +164,14 @@ const SearchNews = Type.Object(
     thumbnail: Type.Optional(
       Type.Object({
         resolutions: Type.Array(SearchNewsThumbnailResolution),
-      })
+      }),
     ),
     relatedTickers: Type.Optional(Type.Array(Type.String())), // [ "AAPL" ]
   },
   {
     additionalProperties: Type.Any(),
     title: "SearchNews",
-  }
+  },
 );
 
 type SearchResult = Static<typeof SearchResultSchema>;
@@ -190,7 +190,7 @@ const SearchResultSchema = Type.Object(
         SearchQuoteYahooCryptocurrency,
         SearchQuoteNonYahoo,
         SearchQuoteYahooFuture,
-      ])
+      ]),
     ),
     news: Type.Array(SearchNews),
     nav: Type.Array(Type.Any()),
@@ -224,7 +224,7 @@ const SearchResultSchema = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "SearchResults",
-  }
+  },
 );
 
 const SearchOptionsSchema = Type.Object(
@@ -244,7 +244,7 @@ const SearchOptionsSchema = Type.Object(
   {
     title: "SearchOptions",
     additionalProperties: false,
-  }
+  },
 );
 
 type SearchOptions = Static<typeof SearchOptionsSchema>;
@@ -267,21 +267,21 @@ export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<SearchResult>;
 
 export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "searchTypebox",

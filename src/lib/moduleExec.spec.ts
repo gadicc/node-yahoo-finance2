@@ -19,7 +19,7 @@ describe("moduleExecTypebox", () => {
 
     it("accepts a string", async () => {
       await expect(
-        yf.chart("AAPL", periodOpts, { devel: "chart-AAPL.json" })
+        yf.chart("AAPL", periodOpts, { devel: "chart-AAPL.json" }),
       ).resolves.toBeDefined();
     });
 
@@ -37,7 +37,7 @@ describe("moduleExecTypebox", () => {
 
     it("accepts empty queryOptions", async () => {
       await expect(
-        yf.search("AAPL", undefined, { devel: "search-AAPL.json" })
+        yf.search("AAPL", undefined, { devel: "search-AAPL.json" }),
       ).resolves.toBeDefined();
     });
 
@@ -55,7 +55,7 @@ describe("moduleExecTypebox", () => {
       expect(
         fakeConsole.log.mock.calls.length +
           fakeConsole.error.mock.calls.length +
-          fakeConsole.dir.mock.calls.length
+          fakeConsole.dir.mock.calls.length,
       ).toBe(1);
       yf._opts.validation.logOptionsErrors = false;
     });
@@ -73,7 +73,7 @@ describe("moduleExecTypebox", () => {
       expect(
         fakeConsole.log.mock.calls.length +
           fakeConsole.error.mock.calls.length +
-          fakeConsole.dir.mock.calls.length
+          fakeConsole.dir.mock.calls.length,
       ).toBe(0);
     });
   });
@@ -83,7 +83,7 @@ describe("moduleExecTypebox", () => {
       it("throws on unexpected input", async () => {
         yf._opts.validation.logErrors = false;
         await expect(
-          yf.search("AAPL", {}, { devel: "search-badResult.fake.json" })
+          yf.search("AAPL", {}, { devel: "search-badResult.fake.json" }),
         ).rejects.toThrow(FailedYahooValidationError);
         yf._opts.validation.logErrors = true;
       });
@@ -103,8 +103,8 @@ describe("moduleExecTypebox", () => {
             {
               devel: "search-badResult.fake.json",
               validateResult: false,
-            }
-          )
+            },
+          ),
         ).resolves.toBeDefined();
       console = realConsole;
 
@@ -203,7 +203,7 @@ describe("moduleExecTypebox", () => {
             result: {
               schema: Type.Any(),
             },
-          })
+          }),
       ).rejects.toThrow();
     });
     it("should pass a string symbol when symbol assertion is enabled", () => {
@@ -218,7 +218,7 @@ describe("moduleExecTypebox", () => {
             result: {
               schema: Type.Any(),
             },
-          })
+          }),
       ).not.toThrow();
     });
   });

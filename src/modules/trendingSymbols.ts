@@ -13,7 +13,7 @@ const TrendingSymbol = Type.Object(
   },
   {
     additionalProperties: Type.Any(),
-  }
+  },
 );
 
 const TrendingSymbolsResult = Type.Object(
@@ -26,7 +26,7 @@ const TrendingSymbolsResult = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "TrendingSymbolsResult",
-  }
+  },
 );
 
 const TrendingSymbolsOptions = Type.Optional(
@@ -38,8 +38,8 @@ const TrendingSymbolsOptions = Type.Optional(
     },
     {
       title: "TrendingSymbolsOptions",
-    }
-  )
+    },
+  ),
 );
 
 type TrendingSymbolsResult = Static<typeof TrendingSymbolsResult>;
@@ -54,21 +54,21 @@ export default function trendingSymbols(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: TrendingSymbolsOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<TrendingSymbolsResult>;
 
 export default function trendingSymbols(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: TrendingSymbolsOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function trendingSymbols(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: TrendingSymbolsOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "trendingSymbols",

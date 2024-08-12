@@ -104,7 +104,7 @@ const UpgradeDowngradeHistoryHistory = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryUpgradeDowngradeHistoryHistory",
-  }
+  },
 );
 
 const UpgradeDowngradeHistory = Type.Object(
@@ -115,7 +115,7 @@ const UpgradeDowngradeHistory = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryUpgradeDowngradeHistory",
-  }
+  },
 );
 
 const TopHoldingsSectorWeighting = Type.Object(
@@ -135,7 +135,7 @@ const TopHoldingsSectorWeighting = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryTopHoldingsSectorWeighting",
-  }
+  },
 );
 
 const TopHoldingsBondRating = Type.Object(
@@ -153,7 +153,7 @@ const TopHoldingsBondRating = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryTopHoldingsBondRating",
-  }
+  },
 );
 
 const TopHoldingsEquityHoldings = Type.Object(
@@ -174,7 +174,7 @@ const TopHoldingsEquityHoldings = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryTopHoldingsEquityHoldings",
-  }
+  },
 );
 
 const TopHoldingsHolding = Type.Object(
@@ -186,7 +186,7 @@ const TopHoldingsHolding = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryTopHoldingsHolding",
-  }
+  },
 );
 
 const TopHoldings = Type.Object(
@@ -207,7 +207,7 @@ const TopHoldings = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryTopHoldings",
-  }
+  },
 );
 
 const SummaryProfile = Type.Object(
@@ -242,7 +242,7 @@ const SummaryProfile = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummarySummaryProfile",
-  }
+  },
 );
 
 const SummaryDetail = Type.Object(
@@ -309,7 +309,7 @@ const SummaryDetail = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummarySummaryDetail",
-  }
+  },
 );
 
 // May consider switching this to string, as we keep finding more and more.
@@ -340,7 +340,7 @@ const FilingType = Type.Union(
   ],
   {
     title: "QuoteSummaryFilingType",
-  }
+  },
 );
 
 const Filing = Type.Object(
@@ -358,14 +358,14 @@ const Filing = Type.Object(
           type: Type.String(),
           url: Type.String(),
           downloadUrl: Type.Optional(Type.String()),
-        })
-      )
+        }),
+      ),
     ),
   },
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFiling",
-  }
+  },
 );
 
 const SECFilings = Type.Object(
@@ -376,7 +376,7 @@ const SECFilings = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummarySECFilings",
-  }
+  },
 );
 
 const RecommendationTrendTrend = Type.Object(
@@ -391,7 +391,7 @@ const RecommendationTrendTrend = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryRecommendationTrendTrend",
-  }
+  },
 );
 
 const RecommendationTrend = Type.Object(
@@ -402,7 +402,7 @@ const RecommendationTrend = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryRecommendationTrend",
-  }
+  },
 );
 
 const QuoteType = Type.Object(
@@ -424,7 +424,7 @@ const QuoteType = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryQuoteType",
-  }
+  },
 );
 
 const Price = Type.Object(
@@ -478,7 +478,7 @@ const Price = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryPrice",
-  }
+  },
 );
 
 const NetSharePurchaseActivity = Type.Object(
@@ -499,7 +499,7 @@ const NetSharePurchaseActivity = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryNetSharePurchaseActivity",
-  }
+  },
 );
 
 const MajorHoldersBreakdown = Type.Object(
@@ -513,7 +513,7 @@ const MajorHoldersBreakdown = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryMajorHoldersBreakdown",
-  }
+  },
 );
 
 enum EnumOwnership {
@@ -558,7 +558,7 @@ const Transaction = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryTransaction",
-  }
+  },
 );
 
 const InsiderTransactions = Type.Object(
@@ -569,7 +569,7 @@ const InsiderTransactions = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryInsiderTransactions",
-  }
+  },
 );
 
 const Holder = Type.Object(
@@ -589,7 +589,7 @@ const Holder = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryHolder",
-  }
+  },
 );
 
 const Holders = Type.Object(
@@ -600,7 +600,7 @@ const Holders = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryHolders",
-  }
+  },
 );
 
 const Trend = Type.Object(
@@ -612,7 +612,7 @@ const Trend = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryTrend",
-  }
+  },
 );
 
 const Estimate = Type.Object(
@@ -623,7 +623,7 @@ const Estimate = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEstimate",
-  }
+  },
 );
 
 const IndexTrend = Type.Object(
@@ -637,7 +637,7 @@ const IndexTrend = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryIndexTrend",
-  }
+  },
 );
 
 const IncomeStatementHistoryElement = Type.Object(
@@ -670,7 +670,7 @@ const IncomeStatementHistoryElement = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryIncomeStatementHistoryElement",
-  }
+  },
 );
 
 const IncomeStatementHistory = Type.Object(
@@ -681,14 +681,14 @@ const IncomeStatementHistory = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryIncomeStatementHistory",
-  }
+  },
 );
 
 const FundProfileBrokerage = Type.Object(
   {},
   {
     title: "QuoteSummaryFundProfileBrokerage",
-  }
+  },
 );
 
 const FundProfileFeesExpensesInvestment = Type.Object(
@@ -703,7 +703,7 @@ const FundProfileFeesExpensesInvestment = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundProfileFeesExpensesInvestment",
-  }
+  },
 );
 
 const FundProfileFeesExpensesInvestmentCat = Type.Composite(
@@ -716,7 +716,7 @@ const FundProfileFeesExpensesInvestmentCat = Type.Composite(
   {
     title: "QuoteSummaryFundProfileFeesExpensesInvestmentCat",
     additionalProperties: Type.Any(),
-  }
+  },
 );
 
 const FundProfileManagementInfo = Type.Object(
@@ -728,7 +728,7 @@ const FundProfileManagementInfo = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundProfileManagementInfo",
-  }
+  },
 );
 
 const FundProfile = Type.Object(
@@ -741,7 +741,7 @@ const FundProfile = Type.Object(
     managementInfo: Type.Optional(FundProfileManagementInfo),
     feesExpensesInvestment: Type.Optional(FundProfileFeesExpensesInvestment),
     feesExpensesInvestmentCat: Type.Optional(
-      FundProfileFeesExpensesInvestmentCat
+      FundProfileFeesExpensesInvestmentCat,
     ),
     brokerages: Type.Optional(Type.Array(FundProfileBrokerage)),
     initInvestment: Type.Optional(YahooNumber),
@@ -754,7 +754,7 @@ const FundProfile = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundProfile",
-  }
+  },
 );
 
 const FundPerformanceRiskOverviewStatsRow = Type.Object(
@@ -771,7 +771,7 @@ const FundPerformanceRiskOverviewStatsRow = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundPerformanceRiskOverviewStatsRow",
-  }
+  },
 );
 
 const FundPerformanceRiskOverviewStatsCat = Type.Object(
@@ -781,7 +781,7 @@ const FundPerformanceRiskOverviewStatsCat = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundPerformanceRiskOverviewStatsCat",
-  }
+  },
 );
 
 const FundPerformanceRiskOverviewStats = Type.Object(
@@ -792,7 +792,7 @@ const FundPerformanceRiskOverviewStats = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundPerformanceRiskOverviewStats",
-  }
+  },
 );
 
 const FundPerformanceReturnsRow = Type.Object(
@@ -807,7 +807,7 @@ const FundPerformanceReturnsRow = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundPerformanceReturnsRow",
-  }
+  },
 );
 
 const FundPerformanceReturns = Type.Object(
@@ -818,7 +818,7 @@ const FundPerformanceReturns = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundPerformanceReturns",
-  }
+  },
 );
 
 const FundPerformancePerformanceOverviewCat = Type.Object(
@@ -829,7 +829,7 @@ const FundPerformancePerformanceOverviewCat = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundPerformancePerformanceOverviewCat",
-  }
+  },
 );
 
 const FundPerformancePerformanceOverview = Type.Object(
@@ -850,7 +850,7 @@ const FundPerformancePerformanceOverview = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundPerformancePerformanceOverview",
-  }
+  },
 );
 
 const PeriodRange = Type.Object(
@@ -867,7 +867,7 @@ const PeriodRange = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryPeriodRange",
-  }
+  },
 );
 
 const FundPerformanceTrailingReturns = Type.Composite(
@@ -880,12 +880,12 @@ const FundPerformanceTrailingReturns = Type.Composite(
       },
       {
         additionalProperties: Type.Any(),
-      }
+      },
     ),
   ],
   {
     title: "QuoteSummaryFundPerformanceTrailingReturns",
-  }
+  },
 );
 
 const FundPerformance = Type.Object(
@@ -906,7 +906,7 @@ const FundPerformance = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundPerformance",
-  }
+  },
 );
 
 const OwnershipList = Type.Object(
@@ -922,7 +922,7 @@ const OwnershipList = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryOwnershipList",
-  }
+  },
 );
 
 const Ownership = Type.Object(
@@ -933,7 +933,7 @@ const Ownership = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryOwnership",
-  }
+  },
 );
 
 const FinancialData = Type.Object(
@@ -972,7 +972,7 @@ const FinancialData = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFinancialData",
-  }
+  },
 );
 
 const RevenueEstimate = Type.Object(
@@ -987,7 +987,7 @@ const RevenueEstimate = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryRevenueEstimate",
-  }
+  },
 );
 
 const EpsTrend = Type.Object(
@@ -1001,7 +1001,7 @@ const EpsTrend = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEpsTrend",
-  }
+  },
 );
 
 const EpsRevisions = Type.Object(
@@ -1014,7 +1014,7 @@ const EpsRevisions = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEpsRevisions",
-  }
+  },
 );
 
 const EarningsEstimate = Type.Object(
@@ -1029,7 +1029,7 @@ const EarningsEstimate = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEarningsEstimate",
-  }
+  },
 );
 
 const EarningsTrendTrend = Type.Object(
@@ -1046,7 +1046,7 @@ const EarningsTrendTrend = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEarningsTrendTrend",
-  }
+  },
 );
 
 const EarningsTrend = Type.Object(
@@ -1057,7 +1057,7 @@ const EarningsTrend = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEarningsTrend",
-  }
+  },
 );
 
 const EarningsHistoryHistory = Type.Object(
@@ -1073,7 +1073,7 @@ const EarningsHistoryHistory = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEarningsHistoryHistory",
-  }
+  },
 );
 
 const EarningsHistory = Type.Object(
@@ -1084,7 +1084,7 @@ const EarningsHistory = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEarningsHistory",
-  }
+  },
 );
 
 const Yearly = Type.Object(
@@ -1096,7 +1096,7 @@ const Yearly = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryYearly",
-  }
+  },
 );
 
 const FinancialsChartQuarterly = Type.Object(
@@ -1108,7 +1108,7 @@ const FinancialsChartQuarterly = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFinancialsChartQuarterly",
-  }
+  },
 );
 
 const FinancialsChart = Type.Object(
@@ -1119,7 +1119,7 @@ const FinancialsChart = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFinancialsChart",
-  }
+  },
 );
 
 const EarningsChartQuarterly = Type.Object(
@@ -1131,7 +1131,7 @@ const EarningsChartQuarterly = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEarningsChartQuarterly",
-  }
+  },
 );
 
 const EarningsChart = Type.Object(
@@ -1145,7 +1145,7 @@ const EarningsChart = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEarningsChart",
-  }
+  },
 );
 
 const QuoteSummaryEarnings = Type.Object(
@@ -1158,7 +1158,7 @@ const QuoteSummaryEarnings = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEarnings",
-  }
+  },
 );
 
 const DefaultKeyStatistics = Type.Object(
@@ -1218,7 +1218,7 @@ const DefaultKeyStatistics = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryDefaultKeyStatistics",
-  }
+  },
 );
 
 const CashflowStatement = Type.Object(
@@ -1249,7 +1249,7 @@ const CashflowStatement = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryCashflowStatement",
-  }
+  },
 );
 const CashflowStatementHistory = Type.Object(
   {
@@ -1259,7 +1259,7 @@ const CashflowStatementHistory = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryCashflowStatementHistory",
-  }
+  },
 );
 
 const CalendarEventsEarnings = Type.Object(
@@ -1275,7 +1275,7 @@ const CalendarEventsEarnings = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSumamryCalendarEventsEarnings",
-  }
+  },
 );
 
 const CalendarEvents = Type.Object(
@@ -1288,7 +1288,7 @@ const CalendarEvents = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryCalendarEvents",
-  }
+  },
 );
 
 const BalanceSheetStatement = Type.Object(
@@ -1328,7 +1328,7 @@ const BalanceSheetStatement = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryBalanceSheetStatement",
-  }
+  },
 );
 
 const BalanceSheetHistory = Type.Object(
@@ -1339,7 +1339,7 @@ const BalanceSheetHistory = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryBalanceSheetHistory",
-  }
+  },
 );
 
 const CompanyOfficer = Type.Object(
@@ -1357,7 +1357,7 @@ const CompanyOfficer = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryCompanyOfficer",
-  }
+  },
 );
 
 const AssetProfile = Type.Object(
@@ -1399,7 +1399,7 @@ const AssetProfile = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryAssetProfile",
-  }
+  },
 );
 
 export const QuoteSummaryResult = Type.Object(
@@ -1435,5 +1435,5 @@ export const QuoteSummaryResult = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryResult",
-  }
+  },
 );

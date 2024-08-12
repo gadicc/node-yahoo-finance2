@@ -104,7 +104,7 @@ interface ModuleExecOptions<TOpts, TResult> {
 
 async function moduleExec<TOpts = unknown, TResult = unknown>(
   this: { [key: string]: any },
-  opts: ModuleExecOptions<TOpts, TResult>
+  opts: ModuleExecOptions<TOpts, TResult>,
 ) {
   const queryOpts = opts.query;
   const moduleOpts = opts.moduleOptions;
@@ -116,7 +116,7 @@ async function moduleExec<TOpts = unknown, TResult = unknown>(
     if (typeof symbol !== "string")
       throw new Error(
         `yahooFinance.${moduleName}() expects a single string symbol as its ` +
-          `query, not a(n) ${typeof symbol}: ${JSON.stringify(symbol)}`
+          `query, not a(n) ${typeof symbol}: ${JSON.stringify(symbol)}`,
       );
   }
 
@@ -149,7 +149,7 @@ async function moduleExec<TOpts = unknown, TResult = unknown>(
     queryOptions,
     moduleOpts,
     queryOpts.fetchType,
-    queryOpts.needsCrumb ?? false
+    queryOpts.needsCrumb ?? false,
   );
 
   if (queryOpts.fetchType === "csv") {

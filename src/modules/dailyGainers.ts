@@ -15,7 +15,7 @@ const DailyGainersCriterum = Type.Object(
     labelsSelected: Type.Array(YahooNumber),
     dependentValues: Type.Array(Type.Any()),
   },
-  { title: "DailyGainersCriterium" }
+  { title: "DailyGainersCriterium" },
 );
 
 const DailyGainersQuote = Type.Object(
@@ -107,7 +107,7 @@ const DailyGainersQuote = Type.Object(
     dividendYield: Type.Optional(YahooNumber),
     dividendRate: Type.Optional(YahooNumber),
   },
-  { title: "DailyGainersQuote" }
+  { title: "DailyGainersQuote" },
 );
 
 const DailyGainersOptionsSchema = Type.Object(
@@ -116,7 +116,7 @@ const DailyGainersOptionsSchema = Type.Object(
     region: Type.Optional(Type.String()),
     count: Type.Optional(YahooNumber),
   },
-  { title: "DailyGainersOptions" }
+  { title: "DailyGainersOptions" },
 );
 
 const DailyGainersCriteriaMeta = Type.Object(
@@ -129,7 +129,7 @@ const DailyGainersCriteriaMeta = Type.Object(
     criteria: Type.Array(DailyGainersCriterum),
     topOperator: Type.String(),
   },
-  { title: "DailyGainersCriteriaMeta" }
+  { title: "DailyGainersCriteriaMeta" },
 );
 
 const DailyGainersResultSchema = Type.Object(
@@ -152,7 +152,7 @@ const DailyGainersResultSchema = Type.Object(
     isPremium: Type.Boolean(),
     iconUrl: Type.String(),
   },
-  { title: "DailyGainersResult" }
+  { title: "DailyGainersResult" },
 );
 
 type DailyGainersResult = Static<typeof DailyGainersResultSchema>;
@@ -168,19 +168,19 @@ const queryOptionsDefaults = {
 export default function dailyGainers(
   this: ModuleThis,
   queryOptionsOverrides?: DailyGainersOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<DailyGainersResult>;
 
 export default function dailyGainers(
   this: ModuleThis,
   queryOptionsOverrides?: DailyGainersOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function dailyGainers(
   this: ModuleThis,
   queryOptionsOverrides?: DailyGainersOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "dailyGainers",

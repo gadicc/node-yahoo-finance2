@@ -21,7 +21,7 @@ const ScreenerCriterum = Type.Object(
   },
   {
     title: "ScreenerCriterum",
-  }
+  },
 );
 
 const ScreenerCriteriaMeta = Type.Object(
@@ -36,7 +36,7 @@ const ScreenerCriteriaMeta = Type.Object(
   },
   {
     title: "ScreenerCriteriaMeta",
-  }
+  },
 );
 
 const ScreenerQuote = Type.Object(
@@ -138,7 +138,7 @@ const ScreenerQuote = Type.Object(
   },
   {
     title: "ScreenerQuote",
-  }
+  },
 );
 
 const ScreenerResult = Type.Object(
@@ -163,7 +163,7 @@ const ScreenerResult = Type.Object(
   },
   {
     title: "ScreenerResult",
-  }
+  },
 );
 
 const PredefinedScreenerModules = Type.Union(
@@ -186,7 +186,7 @@ const PredefinedScreenerModules = Type.Union(
   ],
   {
     title: "ScreenerPredefinedScreenerModules",
-  }
+  },
 );
 
 type ScreenerResult = Static<typeof ScreenerResult>;
@@ -210,19 +210,19 @@ const ScreenerOptions = Type.Object({
 export default function screener(
   this: ModuleThis,
   queryOptionsOverrides?: ScreenerOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<ScreenerResult>;
 
 export default function screener(
   this: ModuleThis,
   queryOptionsOverrides?: ScreenerOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function screener(
   this: ModuleThis,
   queryOptionsOverrides?: ScreenerOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "screener",

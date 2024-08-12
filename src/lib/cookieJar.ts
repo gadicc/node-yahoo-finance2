@@ -3,7 +3,7 @@ import { Cookie, CookieJar } from "tough-cookie";
 export class ExtendedCookieJar extends CookieJar {
   async setFromSetCookieHeaders(
     setCookieHeader: string | Array<string>,
-    url: string
+    url: string,
   ) {
     let cookies;
     // console.log("setFromSetCookieHeaders", setCookieHeader);

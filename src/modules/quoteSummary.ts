@@ -87,7 +87,7 @@ type QuoteSummaryResult = Static<typeof QuoteSummaryResult>;
 const QuoteSummaryOptions = Type.Object({
   formatted: Type.Optional(Type.Boolean()),
   modules: Type.Optional(
-    Type.Union([Type.Array(QuoteSummaryModules), Type.Literal("all")])
+    Type.Union([Type.Array(QuoteSummaryModules), Type.Literal("all")]),
   ),
 });
 
@@ -100,21 +100,21 @@ export default function quoteSummary(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: QuoteSummaryOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<QuoteSummaryResult>;
 
 export default function quoteSummary(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: QuoteSummaryOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function quoteSummary(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: QuoteSummaryOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<QuoteSummaryResult> {
   return this._moduleExec({
     moduleName: "quoteSummary",

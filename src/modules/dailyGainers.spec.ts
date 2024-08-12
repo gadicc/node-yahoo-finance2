@@ -13,7 +13,7 @@ describe("dailyGainers", () => {
   it("throws on weird result", () => {
     const devel = "weirdJsonResult.fake.json";
     return expect(yf.dailyGainers({}, { devel })).rejects.toThrow(
-      /^Unexpected result/
+      /^Unexpected result/,
     );
   });
 });

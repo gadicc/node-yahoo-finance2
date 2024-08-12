@@ -27,7 +27,7 @@ if (moduleName === "--help" || moduleName === "-h") {
   console.log();
   console.log("Run the quoteSummary module with two submodules:");
   console.log(
-    '$ yahoo-finance.js quoteSummary AAPL \'{"modules":["assetProfile", "secFilings"]}\''
+    '$ yahoo-finance.js quoteSummary AAPL \'{"modules":["assetProfile", "secFilings"]}\'',
   );
   console.log();
   console.log("Available modules:");

@@ -29,7 +29,7 @@ describe("setGlobalConfig", () => {
     consoleSilent();
 
     expect(() => yf.setGlobalConfig({ queue: { concurrency: "" } })).toThrow(
-      /Validation called with invalid options/
+      /Validation called with invalid options/,
     );
 
     consoleRestore();
@@ -45,7 +45,7 @@ describe("setGlobalConfig", () => {
           error() {},
           warn: "yeh this won't work",
         },
-      })
+      }),
     ).toThrow(/Validation called with invalid options/);
 
     expect(() =>
@@ -55,13 +55,13 @@ describe("setGlobalConfig", () => {
           debug() {},
           error() {},
         },
-      })
+      }),
     ).toThrow(/Validation called with invalid options/);
 
     expect(() =>
       yf.setGlobalConfig({
         logger: {},
-      })
+      }),
     ).toThrow(/Validation called with invalid options/);
 
     consoleRestore();
@@ -72,7 +72,7 @@ describe("setGlobalConfig", () => {
     expect(() =>
       yf.setGlobalConfig({
         cookieJar: "not a cookie jar",
-      })
+      }),
     ).toThrow(/cookieJar must be an instance of ExtendedCookieJar/);
     consoleRestore();
   });

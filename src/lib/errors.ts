@@ -33,7 +33,7 @@ export class FailedYahooValidationError extends Error {
 
   constructor(
     message: string,
-    { result, errors }: { result: any; errors?: null | ValidationError[] }
+    { result, errors }: { result: any; errors?: null | ValidationError[] },
   ) {
     super(message);
     this.result = result;

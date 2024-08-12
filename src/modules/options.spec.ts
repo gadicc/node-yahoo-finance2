@@ -27,7 +27,7 @@ describe("options", () => {
     it("throws on weird result", () => {
       const devel = "weirdJsonResult.fake.json";
       return expect(yf.options("A", {}, { devel })).rejects.toThrow(
-        /^Unexpected result/
+        /^Unexpected result/,
       );
     });
 
@@ -38,25 +38,25 @@ describe("options", () => {
 
     it("accepts a Date", () => {
       return expect(
-        yf.options("AAPL", { date: new Date("2022-03-01") }, devel)
+        yf.options("AAPL", { date: new Date("2022-03-01") }, devel),
       ).resolves.not.toThrow();
     });
 
     it("accepts a number", () => {
       return expect(
-        yf.options("AAPL", { date: 1646092800 /* 2022-03-01 */ }, devel)
+        yf.options("AAPL", { date: 1646092800 /* 2022-03-01 */ }, devel),
       ).resolves.not.toThrow();
     });
 
     it("accepts a string", () => {
       return expect(
-        yf.options("AAPL", { date: "2022-03-01T00:00:00.000Z" }, devel)
+        yf.options("AAPL", { date: "2022-03-01T00:00:00.000Z" }, devel),
       ).resolves.not.toThrow();
     });
 
     it("throws on invalid", () => {
       return expect(
-        yf.options("AAPL", { date: "something yfDate can't parse" })
+        yf.options("AAPL", { date: "something yfDate can't parse" }),
       ).rejects.toThrow("Validation called with invalid options");
     });
   });

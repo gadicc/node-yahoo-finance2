@@ -14,7 +14,7 @@ import {
 
 const InsightsDirection = Type.Union(
   [Type.Literal("Bearish"), Type.Literal("Bullish"), Type.Literal("Neutral")],
-  { title: "InsightsDirection" }
+  { title: "InsightsDirection" },
 );
 
 const InsightsOutlookSchema = Type.Object(
@@ -33,7 +33,7 @@ const InsightsOutlookSchema = Type.Object(
   {
     additionalProperties: Type.Any(),
     title: "InsightsOutlook",
-  }
+  },
 );
 
 const InsightsInstrumentInfo = Type.Object(
@@ -47,7 +47,7 @@ const InsightsInstrumentInfo = Type.Object(
       },
       {
         additionalProperties: Type.Any(),
-      }
+      },
     ),
     technicalEvents: Type.Object(
       {
@@ -59,7 +59,7 @@ const InsightsInstrumentInfo = Type.Object(
       },
       {
         additionalProperties: Type.Any(),
-      }
+      },
     ),
     valuation: Type.Object(
       {
@@ -71,13 +71,13 @@ const InsightsInstrumentInfo = Type.Object(
       },
       {
         additionalProperties: Type.Any(),
-      }
+      },
     ),
   },
   {
     additionalProperties: Type.Any(),
     title: "InsightsInstrumentInfo",
-  }
+  },
 );
 
 const InsightsCompanySnapshot = Type.Object(
@@ -94,7 +94,7 @@ const InsightsCompanySnapshot = Type.Object(
       },
       {
         additionalProperties: Type.Any(),
-      }
+      },
     ),
     sector: Type.Object(
       {
@@ -107,10 +107,10 @@ const InsightsCompanySnapshot = Type.Object(
       },
       {
         additionalProperties: Type.Any(),
-      }
+      },
     ),
   },
-  { title: "InsightsCompanySnapshot", additionalProperties: Type.Any() }
+  { title: "InsightsCompanySnapshot", additionalProperties: Type.Any() },
 );
 
 const InsightsEventSchema = Type.Object(
@@ -123,7 +123,7 @@ const InsightsEventSchema = Type.Object(
     startDate: YahooFinanceDate,
     endDate: YahooFinanceDate,
   },
-  { title: "InsightsEvent", additionalProperties: Type.Any() }
+  { title: "InsightsEvent", additionalProperties: Type.Any() },
 );
 const InsightsReport = Type.Object(
   {
@@ -140,25 +140,25 @@ const InsightsReport = Type.Object(
         Type.Literal("Maintained"),
         Type.Literal("Decreased"),
         Type.Literal("-"),
-      ])
+      ]),
     ),
     investmentRating: Type.Optional(
       Type.Union([
         Type.Literal("Bullish"),
         Type.Literal("Neutral"),
         Type.Literal("Bearish"),
-      ])
+      ]),
     ),
     tickers: Type.Optional(Type.Array(Type.String())),
   },
-  { title: "InsightsReport", additionalProperties: Type.Any() }
+  { title: "InsightsReport", additionalProperties: Type.Any() },
 );
 const InsightsSigDev = Type.Object(
   {
     headline: Type.String(),
     date: YahooFinanceDate,
   },
-  { title: "InsightsSigDev", additionalProperties: Type.Any() }
+  { title: "InsightsSigDev", additionalProperties: Type.Any() },
 );
 const InsightsUpsell = Type.Object(
   {
@@ -168,7 +168,7 @@ const InsightsUpsell = Type.Object(
     companyName: Type.Optional(Type.String()),
     upsellReportType: Type.Optional(Type.String()),
   },
-  { title: "InsightsUpsell", additionalProperties: Type.Any() }
+  { title: "InsightsUpsell", additionalProperties: Type.Any() },
 );
 const InsightsResearchReport = Type.Object(
   {
@@ -182,10 +182,10 @@ const InsightsResearchReport = Type.Object(
         Type.Literal("Bullish"),
         Type.Literal("Neutral"),
         Type.Literal("Bearish"),
-      ])
+      ]),
     ),
   },
-  { title: "InsightsResearchReport" }
+  { title: "InsightsResearchReport" },
 );
 const InsightsSecReport = Type.Object(
   {
@@ -200,7 +200,7 @@ const InsightsSecReport = Type.Object(
   {
     title: "InsightsSecReport",
     additionalProperties: Type.Any(),
-  }
+  },
 );
 
 const InsightsResultSchema = Type.Object(
@@ -217,7 +217,7 @@ const InsightsResultSchema = Type.Object(
           Type.Literal("SELL"),
           Type.Literal("HOLD"),
         ]),
-      })
+      }),
     ),
     events: Type.Optional(Type.Array(InsightsEventSchema)),
     reports: Type.Optional(Type.Array(InsightsReport)),
@@ -226,14 +226,14 @@ const InsightsResultSchema = Type.Object(
     upsellSearchDD: Type.Optional(
       Type.Object({
         researchReports: InsightsResearchReport,
-      })
+      }),
     ),
     secReports: Type.Optional(Type.Array(InsightsSecReport)),
   },
   {
     additionalProperties: Type.Any(),
     title: "InsightsResult",
-  }
+  },
 );
 
 type InsightsResult = Static<typeof InsightsResultSchema>;
@@ -295,7 +295,7 @@ const InsightsOptionsSchema = Type.Object(
     region: Type.Optional(Type.String()),
     reportsCount: Type.Optional(YahooNumber),
   },
-  { title: "InsightsOptions" }
+  { title: "InsightsOptions" },
 );
 
 type InsightsOptions = Static<typeof InsightsOptionsSchema>;
@@ -311,21 +311,21 @@ export default function trendingSymbols(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: InsightsOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<InsightsResult>;
 
 export default function trendingSymbols(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: InsightsOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function trendingSymbols(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: InsightsOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "insights",

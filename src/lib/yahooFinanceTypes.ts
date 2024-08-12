@@ -9,7 +9,7 @@ FormatRegistry.Set("year", isYear);
 
 // Strictly must be empty
 export const EmptyObjectCoerceToNull = Type.Transform(
-  Type.Object({}, { maxProperties: 0, title: "EmptyObjectCoerceToNull" })
+  Type.Object({}, { maxProperties: 0, title: "EmptyObjectCoerceToNull" }),
 )
   .Decode(() => null)
   .Encode(() => ({}));
@@ -22,8 +22,8 @@ export const RawNumber = Type.Transform(
     },
     {
       title: "RawNumber",
-    }
-  )
+    },
+  ),
 )
   .Decode((v) => v.raw)
   .Encode((v) => ({ raw: v }));
@@ -31,7 +31,7 @@ export const RawNumber = Type.Transform(
 export const TwoNumberRangeString = Type.Transform(
   Type.RegExp(/^(-?\d+(?:\.\d+)?) - (-?\d+(?:\.\d+)?)$/g, {
     title: "TwoNumberRangeString",
-  })
+  }),
 )
   .Decode((value) => {
     // Split the two numbers allowing for negatives on either side
@@ -45,7 +45,7 @@ export const TwoNumberRangeString = Type.Transform(
 
     if (isNaN(low) || isNaN(high)) {
       throw new Error(
-        `Unable to decode number range from: ${value}. Decoded value for low is: ${low}, decoded value for high is: ${high}`
+        `Unable to decode number range from: ${value}. Decoded value for low is: ${low}, decoded value for high is: ${high}`,
       );
     }
     return { low, high };
@@ -57,7 +57,7 @@ const TwoNumberRange = Type.Object(
     low: Type.Number(),
     high: Type.Number(),
   },
-  { title: "TwoNumberRange" }
+  { title: "TwoNumberRange" },
 );
 
 export const EpochTimestamp = Type.Transform(Type.Number())
@@ -69,8 +69,8 @@ export const RawDateObject = Type.Transform(
     {
       raw: EpochTimestamp,
     },
-    { title: "RawDateObject" }
-  )
+    { title: "RawDateObject" },
+  ),
 )
   .Decode((v) => v.raw)
   .Encode((v) => ({
@@ -84,15 +84,15 @@ export const ISOStringDate = Type.Transform(
       Type.String({ format: "year" }),
       Type.String({ format: "date-time" }),
     ],
-    { title: "ISOStringDate" }
-  )
+    { title: "ISOStringDate" },
+  ),
 )
   .Decode((v) => new Date(v))
   .Encode((v) => v.toISOString());
 
 export const YahooFinanceDate = Type.Union(
   [Type.Date(), EpochTimestamp, RawDateObject, ISOStringDate],
-  { title: "YahooFinanceDate" }
+  { title: "YahooFinanceDate" },
 );
 
 /**
@@ -108,7 +108,7 @@ export const NullableYahooFinanceDate = Type.Union(
   [YahooFinanceDate, Type.Null(), EmptyObjectCoerceToNull],
   {
     title: "NullableYahooFinanceDate",
-  }
+  },
 );
 
 /**
@@ -128,7 +128,7 @@ export const YahooNumber = Type.Union([RawNumber, Type.Number()], {
  * - 1612313997000
  */
 export const YahooDateInMs = Type.Transform(
-  Type.Number({ title: "YahooDateInMs" })
+  Type.Number({ title: "YahooDateInMs" }),
 )
   .Decode((v) => new Date(v))
   .Encode((v) => +v);
@@ -144,7 +144,7 @@ export const NullableYahooNumber = Type.Union(
   [RawNumber, EmptyObjectCoerceToNull, Type.Number(), Type.Null()],
   {
     title: "NullableYahooNumber",
-  }
+  },
 );
 
 /**
@@ -157,5 +157,5 @@ export const YahooTwoNumberRange = Type.Union(
   [TwoNumberRange, TwoNumberRangeString],
   {
     title: "YahooTwoNumberRange",
-  }
+  },
 );
