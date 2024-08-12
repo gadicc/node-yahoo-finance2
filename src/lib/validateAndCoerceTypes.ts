@@ -1,4 +1,6 @@
-import pkg from "../../package.json";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: we have to ignore this for csm output.
+import pkg from "../../package.json" assert { type: "json" };
 import { FailedYahooValidationError, InvalidOptionsError } from "./errors.js";
 import { StaticDecode, type TSchema } from "@sinclair/typebox";
 import {
