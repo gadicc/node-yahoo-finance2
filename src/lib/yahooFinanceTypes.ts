@@ -1,7 +1,7 @@
 import { Type } from "@sinclair/typebox";
 import { Value } from "@sinclair/typebox/value";
 import { FormatRegistry } from "@sinclair/typebox";
-import { isDate, isDateTime, isYear } from "./datetime";
+import { isDate, isDateTime, isYear } from "./datetime.js";
 
 FormatRegistry.Set("date", isDate);
 FormatRegistry.Set("date-time", isDateTime);

@@ -4,7 +4,7 @@ import {
   NullableYahooNumber,
   YahooFinanceDate,
   YahooNumber,
-} from "../lib/yahooFinanceTypes";
+} from "../lib/yahooFinanceTypes.js";
 
 /*
  * To generate the initial file, we took the output of all submodules for
