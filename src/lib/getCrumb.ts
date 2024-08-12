@@ -1,6 +1,8 @@
 import type { RequestInfo, RequestInit, Response } from "node-fetch";
 import type { ExtendedCookieJar } from "./cookieJar";
-import pkg from "../../package.json";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: we have to ignore this for csm output.
+import pkg from "../../package.json" assert { type: "json" };
 import { Logger } from "./options.js";
 import { Cookie } from "tough-cookie";
 import { showNotice } from "./notices.js";
