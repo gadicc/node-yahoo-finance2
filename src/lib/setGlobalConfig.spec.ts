@@ -2,6 +2,8 @@ import { consoleSilent, consoleRestore } from "../../tests/console.js";
 import testYf from "../../tests/testYf.js";
 import options from "./options.js";
 import setGlobalConfig from "./setGlobalConfig.js";
+import { jest } from "@jest/globals";
+
 const yf = testYf({ setGlobalConfig });
 
 describe("setGlobalConfig", () => {
@@ -74,6 +76,23 @@ describe("setGlobalConfig", () => {
         cookieJar: "not a cookie jar",
       }),
     ).toThrow(/cookieJar must be an instance of ExtendedCookieJar/);
+    consoleRestore();
+  });
+});
+
+describe("Default options object", () => {
+  it("Should log to the console appropriately with the default logger", () => {
+    consoleSilent();
+    jest.spyOn(console, "log");
+    jest.spyOn(console, "error");
+
+    options.logger?.info("info");
+    options.logger?.warn("warn");
+    options.logger?.error("error");
+    options.logger?.debug("debug");
+
+    expect(console.log).toHaveBeenCalledTimes(2);
+    expect(console.error).toHaveBeenCalledTimes(2);
     consoleRestore();
   });
 });
