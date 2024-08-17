@@ -1,8 +1,5 @@
-import type { RequestInfo, RequestInit, Response } from "node-fetch";
 import type { ExtendedCookieJar } from "./cookieJar";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: we have to ignore this for csm output.
-import pkg from "../../package.json" assert { type: "json" };
+import pkg from "../../package.json";
 import { Logger } from "./options.js";
 import { Cookie } from "tough-cookie";
 import { showNotice } from "./notices.js";
@@ -70,12 +67,10 @@ export async function _getCrumb(
   };
 
   const response = await fetch(url, fetchOptions);
-  await processSetCookieHeader(response.headers.raw()["set-cookie"], url);
-
-  // logger.debug(response.headers.raw());
-  // logger.debug(cookieJar);
+  await processSetCookieHeader(response.headers.getSetCookie(), url);
 
   const location = response.headers.get("location");
+
   if (location) {
     if (location.match(/guce.yahoo/)) {
       const consentFetchOptions: typeof fetchOptions = {
@@ -151,7 +146,7 @@ export async function _getCrumb(
         // Set-Cookie: CFC=AQABCAFkWkdkjEMdLwQ9&s=AQAAAClxdtC-&g=ZFj24w; Expires=Wed, 8 May 2024 01:18:54 GMT; Domain=consent.yahoo.com; Path=/; Secure
         if (
           !(await processSetCookieHeader(
-            collectConsentSubmitResponse.headers.raw()["set-cookie"],
+            collectConsentSubmitResponse.headers.getSetCookie(),
             consentLocation,
           ))
         )
@@ -189,7 +184,7 @@ export async function _getCrumb(
 
         if (
           !(await processSetCookieHeader(
-            copyConsentResponse.headers.raw()["set-cookie"],
+            copyConsentResponse.headers.getSetCookie(),
             collectConsentSubmitResponseLocation,
           ))
         )

@@ -1,5 +1,4 @@
 /* istanbul ignore file */
-import nodeFetch, { Headers } from "node-fetch";
 import fs from "fs";
 import crypto from "crypto";
 
@@ -11,8 +10,7 @@ class FakeResponse {
     Object.keys(props).forEach((key) => (this[key] = props[key]));
     const rawHeaders = this.headers;
     this.headers = new Headers(rawHeaders);
-    // node-fetch extension, needed to handle multiple set-cookie headers
-    this.headers.raw = () => rawHeaders;
+    this.headers.getSetCookie = () => rawHeaders["set-cookie"];
   }
 
   async json() {
@@ -34,7 +32,7 @@ const cache = {};
 
 async function fetchDevel(url, fetchOptions) {
   if (process.env.FETCH_DEVEL === "nocache")
-    return await nodeFetch(url, fetchOptions);
+    return await fetch(url, fetchOptions);
 
   // Use query2 for all our tests / fixtures / cache
   url = url.replace(
@@ -70,18 +68,18 @@ async function fetchDevel(url, fetchOptions) {
     contentObj = JSON.parse(contentJson);
   } catch (error) {
     if (error.code === "ENOENT") {
-      const res = await nodeFetch(origUrl, fetchOptions);
+      const res = await fetch(origUrl, fetchOptions);
+      const { ok, status, statusText, headers } = res;
 
       contentObj = {
         request: {
           url: url,
         },
         response: {
-          ok: res.ok,
-          status: res.status,
-          statusText: res.statusText,
-          headers: res.headers.raw(),
-          // body: await res.text(),
+          ok,
+          status,
+          statusText,
+          headers,
         },
       };
 

@@ -62,106 +62,80 @@ describe("quoteSummary", () => {
     describe("assetProfile", () => {
       itValidates("assetProfile");
     });
-
     describe("balanceSheetHistory", () => {
       itValidates("balanceSheetHistory");
     });
-
     describe("balanceSheetHistoryQuarterly", () => {
       itValidates("balanceSheetHistoryQuarterly");
     });
-
     describe("calendarEvents", () => {
       itValidates("calendarEvents");
     });
-
     describe("cashflowStatementHistory", () => {
       itValidates("cashflowStatementHistory");
     });
-
     describe("cashflowStatementHistoryQuarterly", () => {
       itValidates("cashflowStatementHistoryQuarterly");
     });
-
     describe("defaultKeyStatistics", () => {
       itValidates("defaultKeyStatistics");
     });
-
     describe("earnings", () => {
       itValidates("earnings");
     });
-
     describe("earningsHistory", () => {
       itValidates("earningsHistory");
     });
-
     describe("earningsTrend", () => {
       itValidates("earningsTrend");
     });
-
     describe("financialData", () => {
       itValidates("financialData");
     });
-
     describe("fundOwnership", () => {
       itValidates("fundOwnership");
     });
-
     describe("incomeStatementHistory", () => {
       itValidates("incomeStatementHistory");
     });
-
     describe("incomeStatementHistoryQuarterly", () => {
       itValidates("incomeStatementHistoryQuarterly");
     });
-
     describe("indexTrend", () => {
       itValidates("indexTrend");
     });
-
     describe("industryTrend", () => {
       itValidates("industryTrend");
     });
-
     describe("insiderHolders", () => {
       itValidates("insiderHolders");
     });
-
     describe("insiderTransactions", () => {
       itValidates("insiderTransactions");
     });
-
     describe("institutionOwnership", () => {
       itValidates("institutionOwnership");
     });
-
     describe("majorDirectHolders", () => {
       itValidates("majorDirectHolders");
     });
-
     describe("majorHoldersBreakdown", () => {
       itValidates("majorHoldersBreakdown");
     });
-
     describe("netSharePurchaseActivity", () => {
       itValidates("netSharePurchaseActivity");
     });
-
     describe("price", () => {
       itValidates("price");
     });
-
     describe("quoteType", () => {
       itValidates("quoteType");
     });
-
     describe("recommendationTrend", () => {
       itValidates("recommendationTrend");
     });
-
     describe("secFilings", () => {
       itValidates("secFilings");
-
       it("handles AAPL's secFilings", async () => {
         await yf.quoteSummary(
           "AAPL",
@@ -172,20 +146,16 @@ describe("quoteSummary", () => {
         );
       });
     });
-
     describe("summaryDetail", () => {
       itValidates("summaryDetail");
     });
-
     describe("summaryProfile", () => {
       itValidates("summaryProfile");
     });
-
     describe("upgradeDowngradeHistory", () => {
       itValidates("upgradeDowngradeHistory");
     });
   }); /* modules */
-
   describe("all modules at once", () => {
     // Some modules change the output format of other modules!
     // @ts-ignore

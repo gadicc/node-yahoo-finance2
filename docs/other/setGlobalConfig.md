@@ -93,5 +93,3 @@ yahooFinance.setGlobalConfig({
     * `query1.finance.yahoo.com` serves `HTTP/1.0`
     * `query2.finance.yahoo.com` serves `HTTP/1.1`
     * [Differences between HTTP/1.0 and HTTP/1.1](https://stackoverflow.com/questions/246859/http-1-0-vs-1-1)
-
-  * This option in particular may also be set with an environment variable of the same name.

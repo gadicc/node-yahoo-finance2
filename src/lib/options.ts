@@ -21,7 +21,6 @@ const ValidationOptionsSchema = Type.Object({
   logOptionsErrors: Type.Optional(Type.Boolean()),
   _internalThrowOnAdditionalProperties: Type.Optional(
     Type.Boolean({
-      default: process.env.NODE_ENV === "test",
       description:
         "Use this property to throw when properties beyond what is explicitly specified in the schema are provided. It is an internal option and subject to change, use at your own risk",
     }),
@@ -53,7 +52,7 @@ export type YahooFinanceOptions = Static<typeof YahooFinanceOptionsSchema> & {
 };
 
 const options: YahooFinanceOptions = {
-  YF_QUERY_HOST: process.env.YF_QUERY_HOST || "query2.finance.yahoo.com",
+  YF_QUERY_HOST: "query2.finance.yahoo.com",
   cookieJar: new ExtendedCookieJar(),
   queue: {
     concurrency: 4, // Min: 1, Max: Infinity
