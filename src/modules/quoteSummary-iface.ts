@@ -1431,6 +1431,12 @@ export const QuoteSummaryResult = Type.Object(
     summaryProfile: Type.Optional(SummaryProfile),
     topHoldings: Type.Optional(TopHoldings),
     upgradeDowngradeHistory: Type.Optional(UpgradeDowngradeHistory),
+    indexTrend: Type.Optional(IndexTrend),
+    industryTrend: Type.Optional(Trend),
+    incomeStatementHistory: Type.Optional(IncomeStatementHistory),
+    insiderTransactions: Type.Optional(InsiderTransactions),
+    incomeStatementHistoryQuarterly: Type.Optional(IncomeStatementHistory),
+    insiderHolders: Type.Optional(Holders),
   },
   {
     additionalProperties: Type.Any(),
