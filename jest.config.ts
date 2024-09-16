@@ -1,7 +1,6 @@
 import type { Config } from "@jest/types";
 
 const config: Config.InitialOptions = {
-  preset: "ts-jest/presets/default-esm",
   setupFilesAfterEnv: ["<rootDir>/tests/setupTests.js"],
   testEnvironment: "node",
   testPathIgnorePatterns: [
@@ -12,12 +11,7 @@ const config: Config.InitialOptions = {
   modulePathIgnorePatterns: ["<rootDir>/tests-modules"],
   extensionsToTreatAsEsm: [".ts"],
   transform: {
-    "^.+\\.tsx?$": [
-      "ts-jest",
-      {
-        useESM: true,
-      },
-    ],
+    "^.+\\.(t|j)sx?$": "@swc/jest",
   },
   moduleNameMapper: {
     "(.*)\\.js$": "$1",
