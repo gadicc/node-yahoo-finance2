@@ -10,13 +10,13 @@ describe("trendingSymbols", () => {
       await yf.trendingSymbols(country, undefined, {
         devel: `trendingSymbols-${country}.json`,
       });
-    }
+    },
   );
   if (process.env.FETCH_DEVEL !== "nocache")
     it("throws on weird result", () => {
       const devel = "weirdJsonResult.fake.json";
       return expect(yf.trendingSymbols("GB", {}, { devel })).rejects.toThrow(
-        /^Unexpected result/
+        /^Unexpected result/,
       );
     });
 });

@@ -5,7 +5,9 @@ import type { YahooFinanceOptions } from "./options.js";
 import type { QueueOptions } from "./queue.js";
 
 import errors from "./errors.js";
-import pkg from "../../package.json";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: we have to ignore this for csm output.assert
+import pkg from "../../package.json" assert { type: "json" };
 import getCrumb from "./getCrumb.js";
 
 const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
@@ -64,11 +66,11 @@ async function yahooFinanceFetch(
   params: Record<string, string> = {},
   moduleOpts: YahooFinanceFetchModuleOptions = {},
   func = "json",
-  needsCrumb = false
+  needsCrumb = false,
 ) {
   if (!(this && this._env))
     throw new errors.NoEnvironmentError(
-      "yahooFinanceFetch called without this._env set"
+      "yahooFinanceFetch called without this._env set",
     );
 
   // TODO: adds func type to json schema which is not supported
@@ -100,7 +102,7 @@ async function yahooFinanceFetch(
       this._opts.cookieJar,
       fetchFunc,
       fetchOptionsBase,
-      this._opts.logger
+      this._opts.logger,
     );
     if (crumb) params.crumb = crumb;
   }

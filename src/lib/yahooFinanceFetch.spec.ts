@@ -32,14 +32,14 @@ describe("yahooFinanceFetch", () => {
     const url = "https://query2.finance.yahoo.com/v1/finance/search";
 
     return expect(
-      yahooFinanceFetch(url, {}, { devel: "search-noOpts.json" })
+      yahooFinanceFetch(url, {}, { devel: "search-noOpts.json" }),
     ).rejects.toBeInstanceOf(errors.BadRequestError);
   });
 
   it("throws if no environmennt set", () => {
     // @ts-ignore: we're explicityly testing for a bad runtime context
     return expect(_yahooFinanceFetch("")).rejects.toBeInstanceOf(
-      errors.NoEnvironmentError
+      errors.NoEnvironmentError,
     );
   });
 
@@ -49,8 +49,8 @@ describe("yahooFinanceFetch", () => {
         yahooFinanceFetch(
           "https://query2.finance.yahoo.com/nonExistingURL-CACHED",
           {},
-          { devel: "pageWith404andJson.fake.json" }
-        )
+          { devel: "pageWith404andJson.fake.json" },
+        ),
       ).rejects.toBeInstanceOf(errors.HTTPError);
     });
 
@@ -59,8 +59,8 @@ describe("yahooFinanceFetch", () => {
       yahooFinanceFetch(
         "https://query2.finance.yahoo.com/nonExistingURL-CACHED",
         {},
-        { devel: "pageWithUnknownError.json" }
-      )
+        { devel: "pageWithUnknownError.json" },
+      ),
     ).rejects.toBeInstanceOf(Error);
   });
 

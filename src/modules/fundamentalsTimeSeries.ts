@@ -1,37 +1,63 @@
+import { Static, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import Timeseries_Keys from "../lib/timeseries.json";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: we have to ignore this for csm output.
+import Timeseries_Keys from "../lib/timeseries.json" assert { type: "json" };
+import { YahooFinanceDate, YahooNumber } from "../lib/yahooFinanceTypes.js";
 
-export const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
+const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
 
-export const FundamentalsTimeSeries_Modules = [
+const FundamentalsTimeSeries_Modules = [
   "financials",
   "balance-sheet",
   "cash-flow",
   "all",
 ];
 
-export type FundamentalsTimeSeriesResults = Array<FundamentalsTimeSeriesResult>;
+const FundamentalsTimeSeriesResultSchema = Type.Object(
+  {
+    date: YahooFinanceDate,
+  },
+  {
+    additionalProperties: Type.Unknown(),
+    title: "FundamentalsTimeSeriesResult",
+  },
+);
 
-export interface FundamentalsTimeSeriesResult {
-  [key: string]: unknown;
-  date: Date;
-}
+const FundamentalsTimeSeriesOptionsSchema = Type.Object(
+  {
+    period1: Type.Union([YahooFinanceDate, YahooNumber, Type.String()]),
+    period2: Type.Optional(
+      Type.Union([YahooFinanceDate, YahooNumber, Type.String()]),
+    ),
+    type: Type.Optional(Type.String()),
+    merge: Type.Optional(Type.Boolean()), // This returns a completely different format that will break the transformer
+    padTimeSeries: Type.Optional(Type.Boolean()), // Not exactly sure what this does, assume it pads p1 and p2???
+    lang: Type.Optional(Type.String()),
+    region: Type.Optional(Type.String()),
+    module: Type.String(),
+  },
+  {
+    title: "FundamentalsTimeSeriesOptions",
+  },
+);
 
-export interface FundamentalsTimeSeriesOptions {
-  period1: Date | number | string;
-  period2?: Date | number | string;
-  type?: string;
-  merge?: boolean; // This returns a completely different format that will break the transformer
-  padTimeSeries?: boolean; // Not exactly sure what this does, assume it pads p1 and p2???
-  lang?: string;
-  region?: string;
-  module: string;
-}
+type FundamentalsTimeSeriesOptions = Static<
+  typeof FundamentalsTimeSeriesOptionsSchema
+>;
+
+const FundamentalsTimeSeriesResultsSchema = Type.Array(
+  FundamentalsTimeSeriesResultSchema,
+);
+
+type FundamentalsTimeSeriesResult = Static<
+  typeof FundamentalsTimeSeriesResultSchema
+>;
 
 const queryOptionsDefaults: Omit<
   FundamentalsTimeSeriesOptions,
@@ -48,21 +74,21 @@ export default function fundamentalsTimeSeries(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: FundamentalsTimeSeriesOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<FundamentalsTimeSeriesResult>;
 
 export default function fundamentalsTimeSeries(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: FundamentalsTimeSeriesOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function fundamentalsTimeSeries(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: FundamentalsTimeSeriesOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "options",
@@ -71,14 +97,14 @@ export default function fundamentalsTimeSeries(
       assertSymbol: symbol,
       url: `https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/${symbol}`,
       needsCrumb: false,
-      schemaKey: "#/definitions/FundamentalsTimeSeriesOptions",
+      schema: FundamentalsTimeSeriesOptionsSchema,
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       transformWith: processQuery,
     },
 
     result: {
-      schemaKey: "#/definitions/FundamentalsTimeSeriesResults",
+      schema: FundamentalsTimeSeriesResultsSchema,
       transformWith(response: any) {
         if (!response || !response.timeseries)
           throw new Error(`Unexpected result: ${JSON.stringify(response)}`);
@@ -100,7 +126,7 @@ export default function fundamentalsTimeSeries(
  * @returns Query parameters.
  */
 export const processQuery = function (
-  queryOptions: FundamentalsTimeSeriesOptions
+  queryOptions: FundamentalsTimeSeriesOptions,
 ): Partial<FundamentalsTimeSeriesOptions> {
   // Convert dates
   if (!queryOptions.period2) queryOptions.period2 = new Date();
@@ -119,7 +145,7 @@ export const processQuery = function (
             fieldName +
             "' invalid date provided: '" +
             value +
-            "'"
+            "'",
         );
 
       queryOptions[fieldName] = Math.floor(timestamp / 1000);
@@ -130,17 +156,17 @@ export const processQuery = function (
   if (queryOptions.period1 === queryOptions.period2) {
     throw new Error(
       "yahooFinance.fundamentalsTimeSeries() options `period1` and `period2` " +
-        "cannot share the same value."
+        "cannot share the same value.",
     );
   } else if (!FundamentalsTimeSeries_Types.includes(queryOptions.type || "")) {
     throw new Error(
-      "yahooFinance.fundamentalsTimeSeries() option type invalid."
+      "yahooFinance.fundamentalsTimeSeries() option type invalid.",
     );
   } else if (
     !FundamentalsTimeSeries_Modules.includes(queryOptions.module || "")
   ) {
     throw new Error(
-      "yahooFinance.fundamentalsTimeSeries() option module invalid."
+      "yahooFinance.fundamentalsTimeSeries() option module invalid.",
     );
   }
 
@@ -153,7 +179,7 @@ export const processQuery = function (
         return previous.concat(keys);
       } else return previous;
     },
-    [] as Array<string>
+    [] as Array<string>,
   );
   const queryType = queryOptions.type + keys.join(`,${queryOptions.type}`);
 

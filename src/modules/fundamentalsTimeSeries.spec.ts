@@ -17,9 +17,9 @@ describe("fundamentalsTimeSeries", () => {
       },
       {
         devel: `fundamentalsTimeSeries-${symbol}-financials-quarterly.json`,
-      }
+      },
     );
-    console.log(`${symbol} fetched ${res.length} reports.`);
+    // console.log(`${symbol} fetched ${res.length} reports.`);
   });
 
   it("passes validation with module all & quarterly", async () => {
@@ -33,7 +33,7 @@ describe("fundamentalsTimeSeries", () => {
       },
       {
         devel: `fundamentalsTimeSeries-AAPL-all-quarterly.json`,
-      }
+      },
     );
     expect(res).toHaveLength(5);
   });
@@ -49,7 +49,7 @@ describe("fundamentalsTimeSeries", () => {
       },
       {
         devel: `fundamentalsTimeSeries-AAPL-financials-quarterly.json`,
-      }
+      },
     );
     expect(res).toHaveLength(5);
     expect(res[0]).toHaveProperty("totalRevenue");
@@ -66,7 +66,7 @@ describe("fundamentalsTimeSeries", () => {
       },
       {
         devel: `fundamentalsTimeSeries-AAPL-balance-sheet-quarterly.json`,
-      }
+      },
     );
     expect(res).toHaveLength(5);
     expect(res[0]).toHaveProperty("netDebt");
@@ -83,7 +83,7 @@ describe("fundamentalsTimeSeries", () => {
       },
       {
         devel: `fundamentalsTimeSeries-AAPL-cash-flow-quarterly.json`,
-      }
+      },
     );
     expect(res).toHaveLength(5);
     expect(res[0]).toHaveProperty("freeCashFlow");
@@ -100,7 +100,7 @@ describe("fundamentalsTimeSeries", () => {
       },
       {
         devel: `fundamentalsTimeSeries-AAPL-all-annual.json`,
-      }
+      },
     );
     expect(res).toHaveLength(4);
   });
@@ -116,7 +116,7 @@ describe("fundamentalsTimeSeries", () => {
       },
       {
         devel: `fundamentalsTimeSeries-AAPL-financials-annual.json`,
-      }
+      },
     );
     expect(res).toHaveLength(4);
     expect(res[0]).toHaveProperty("totalRevenue");
@@ -133,7 +133,7 @@ describe("fundamentalsTimeSeries", () => {
       },
       {
         devel: `fundamentalsTimeSeries-AAPL-balance-sheet-annual.json`,
-      }
+      },
     );
     expect(res).toHaveLength(4);
     expect(res[0]).toHaveProperty("netDebt");
@@ -150,7 +150,7 @@ describe("fundamentalsTimeSeries", () => {
       },
       {
         devel: `fundamentalsTimeSeries-AAPL-cash-flow-annual.json`,
-      }
+      },
     );
     expect(res).toHaveLength(4);
     expect(res[0]).toHaveProperty("freeCashFlow");
@@ -162,7 +162,7 @@ describe("fundamentalsTimeSeries", () => {
         period1: "2020-01-01",
         period2: "2020-01-01",
         module: "financials",
-      })
+      }),
     ).rejects.toThrow(/cannot share the same value/);
   });
 
@@ -172,7 +172,7 @@ describe("fundamentalsTimeSeries", () => {
         period1: "invalid",
         period2: "2021-01-01",
         module: "financials",
-      })
+      }),
     ).rejects.toThrow(/invalid date provided/);
 
     await expect(
@@ -180,7 +180,7 @@ describe("fundamentalsTimeSeries", () => {
         period1: "2020-01-011",
         period2: "invalid",
         module: "financials",
-      })
+      }),
     ).rejects.toThrow(/invalid date provided/);
   });
 
@@ -191,7 +191,7 @@ describe("fundamentalsTimeSeries", () => {
         period2: "2021-01-01",
         type: "invalid",
         module: "financials",
-      })
+      }),
     ).rejects.toThrow(/option type invalid/);
   });
 
@@ -201,7 +201,7 @@ describe("fundamentalsTimeSeries", () => {
         period1: "2020-01-01",
         period2: "2021-01-01",
         module: "invalid",
-      })
+      }),
     ).rejects.toThrow(/option module invalid/);
   });
 
@@ -210,7 +210,7 @@ describe("fundamentalsTimeSeries", () => {
       yf.fundamentalsTimeSeries("TSLA", {
         period1: "2020-01-01",
         period2: "2021-01-01",
-      })
+      }),
     ).rejects.toThrow(/called with invalid options/);
   });
 
@@ -219,8 +219,8 @@ describe("fundamentalsTimeSeries", () => {
       yf.fundamentalsTimeSeries(
         "EURGBP=X",
         { period1: 1567728000, period2: 1570665600, module: "financials" },
-        { devel: "fundamentalsTimeSeries-EURGBP-unexpected-results.fake.json" }
-      )
+        { devel: "fundamentalsTimeSeries-EURGBP-unexpected-results.fake.json" },
+      ),
     ).rejects.toThrow(/Unexpected result/);
   });
 });

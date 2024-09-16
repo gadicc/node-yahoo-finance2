@@ -46,7 +46,7 @@ export default function testSymbols(options?: testSymbolsOptions) {
       (options.skip.length && typeof options.skip[0] !== "string")
     )
       throw new Error(
-        "createTestSymbols 'skip' option should be an array of strings"
+        "createTestSymbols 'skip' option should be an array of strings",
       );
     symbols = symbols.filter((symbol) => !options.skip!.includes(symbol));
   }
@@ -57,7 +57,7 @@ export default function testSymbols(options?: testSymbolsOptions) {
       (options.add.length && typeof options.add[0] !== "string")
     )
       throw new Error(
-        "createTestSymbols 'skip' option should be an array of strings"
+        "createTestSymbols 'skip' option should be an array of strings",
       );
     symbols = symbols.concat(options.add);
   }

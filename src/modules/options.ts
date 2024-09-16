@@ -4,52 +4,216 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
+import { Type, Static } from "@sinclair/typebox";
 
-import { Quote } from "./quote.js";
+import { YahooFinanceDate, YahooNumber } from "../lib/yahooFinanceTypes.js";
+import { QuoteBase } from "./quote.js";
+import { Value } from "@sinclair/typebox/value";
 
-export interface OptionsResult {
-  [key: string]: any;
-  underlyingSymbol: string;
-  expirationDates: Date[];
-  strikes: number[];
-  hasMiniOptions: boolean;
-  quote: Quote;
-  options: Option[];
-}
+/*
+ * [TODO] Fields seen in a query but not in this module yet:
+ *
+ *   - extendedMarketChange
+ *   - extendedMarketChangePercent
+ *   - extendedMarketPrice
+ *   - extendedMarketTime
+ *   - dayHigh (separate to regularMarketDayHigh, etc)
+ *   - dayLow (separate to regularMarketDayLow, etc)
+ *   - volume (separate to regularMarketVolume, etc)
+ *
+ * i.e. on yahoo site, with ?fields=dayHigh,dayLow,etc.
+ */
 
-export interface Option {
-  [key: string]: any;
-  expirationDate: Date;
-  hasMiniOptions: boolean;
-  calls: CallOrPut[];
-  puts: CallOrPut[];
-}
+/*
+ * Guaranteed fields, even we don't ask for them
+ */
+const QuoteCryptoCurrency = Type.Composite(
+  [
+    QuoteBase,
+    Type.Object({
+      quoteType: Type.Literal("CRYPTOCURRENCY"),
+      circulatingSupply: YahooNumber,
+      fromCurrency: Type.String(), // 'BTC'
+      toCurrency: Type.String(), // 'USD=X'
+      lastMarket: Type.String(), // 'CoinMarketCap'
+      coinImageUrl: Type.Optional(Type.String()), // 'https://s.yimg.com/uc/fin/img/reports-thumbnails/1.png'
+      volume24Hr: Type.Optional(YahooNumber), // 62631043072
+      volumeAllCurrencies: Type.Optional(YahooNumber), // 62631043072
+      startDate: Type.Optional(YahooFinanceDate), // new Date(1367103600 * 1000)
+    }),
+  ],
+  { title: "QuoteCryptoCurrency" },
+);
 
-export interface CallOrPut {
-  [key: string]: any;
-  contractSymbol: string;
-  strike: number;
-  currency?: string;
-  lastPrice: number;
-  change: number;
-  percentChange?: number;
-  volume?: number;
-  openInterest?: number;
-  bid?: number;
-  ask?: number;
-  contractSize: "REGULAR";
-  expiration: Date;
-  lastTradeDate: Date;
-  impliedVolatility: number;
-  inTheMoney: boolean;
-}
+const QuoteCurrency = Type.Composite(
+  [
+    QuoteBase,
+    Type.Object({
+      quoteType: Type.Literal("CURRENCY"),
+    }),
+  ],
+  { title: "QuoteCurrency" },
+);
 
-export interface OptionsOptions {
-  formatted?: boolean;
-  lang?: string;
-  region?: string;
-  date?: Date | number | string;
-}
+const QuoteEtf = Type.Composite([
+  QuoteBase,
+  Type.Object({
+    quoteType: Type.Literal("ETF"),
+  }),
+]);
+
+const QuoteEquity = Type.Composite(
+  [
+    QuoteBase,
+    Type.Object({
+      quoteType: Type.Literal("EQUITY"),
+      dividendRate: Type.Optional(Type.Number()),
+      dividendYield: Type.Optional(Type.Number()),
+    }),
+  ],
+  { title: "QuoteEquity" },
+);
+
+const QuoteFuture = Type.Composite(
+  [
+    QuoteBase,
+    Type.Object({
+      quoteType: Type.Literal("FUTURE"),
+      headSymbolAsString: Type.String(),
+      contractSymbol: Type.Boolean(),
+      underlyingExchangeSymbol: Type.String(),
+      expireDate: YahooFinanceDate,
+      expireIsoDate: YahooFinanceDate,
+    }),
+  ],
+  {
+    title: "QuoteFuture",
+  },
+);
+
+const QuoteIndex = Type.Composite(
+  [
+    QuoteBase,
+    Type.Object({
+      quoteType: Type.Literal("INDEX"),
+    }),
+  ],
+  {
+    title: "QuoteIndex",
+  },
+);
+
+const QuoteOption = Type.Composite(
+  [
+    QuoteBase,
+    Type.Object({
+      quoteType: Type.Literal("OPTION"),
+      strike: YahooNumber,
+      openInterest: YahooNumber,
+      expireDate: YahooNumber,
+      expireIsoDate: YahooNumber,
+      underlyingSymbol: Type.String(),
+    }),
+  ],
+  {
+    title: "QuoteOption",
+  },
+);
+
+const QuoteMutualfund = Type.Composite(
+  [
+    QuoteBase,
+    Type.Object({
+      quoteType: Type.Literal("MUTUALFUND"),
+    }),
+  ],
+  {
+    title: "QuoteMutualFund",
+  },
+);
+
+const QuoteSchema = Type.Union(
+  [
+    QuoteCryptoCurrency,
+    QuoteCurrency,
+    QuoteEtf,
+    QuoteEquity,
+    QuoteFuture,
+    QuoteIndex,
+    QuoteMutualfund,
+    QuoteOption,
+  ],
+  {
+    title: "Quote",
+  },
+);
+
+const CallOrPut = Type.Object(
+  {
+    contractSymbol: Type.String(),
+    strike: YahooNumber,
+    currency: Type.Optional(Type.String()),
+    lastPrice: YahooNumber,
+    change: YahooNumber,
+    percentChange: Type.Optional(YahooNumber),
+    volume: Type.Optional(YahooNumber),
+    openInterest: Type.Optional(YahooNumber),
+    bid: Type.Optional(YahooNumber),
+    ask: Type.Optional(YahooNumber),
+    contractSize: Type.Literal("REGULAR"),
+    expiration: YahooFinanceDate,
+    lastTradeDate: YahooFinanceDate,
+    impliedVolatility: YahooNumber,
+    inTheMoney: Type.Boolean(),
+  },
+  {
+    additionalProperties: Type.Any(),
+    title: "CallOrPut",
+  },
+);
+
+const Option = Type.Object(
+  {
+    expirationDate: YahooFinanceDate,
+    hasMiniOptions: Type.Boolean(),
+    calls: Type.Array(CallOrPut),
+    puts: Type.Array(CallOrPut),
+  },
+  {
+    additionalProperties: Type.Any(),
+    title: "Option",
+  },
+);
+
+const OptionsResultSchema = Type.Object(
+  {
+    underlyingSymbol: Type.String(),
+    expirationDates: Type.Array(YahooFinanceDate),
+    strikes: Type.Array(YahooNumber),
+    hasMiniOptions: Type.Boolean(),
+    quote: QuoteSchema,
+    options: Type.Array(Option),
+  },
+  {
+    additionalProperties: Type.Any(),
+    title: "OptionsResult",
+  },
+);
+
+const OptionsOptionsSchema = Type.Object(
+  {
+    formatted: Type.Optional(Type.Boolean()),
+    lang: Type.Optional(Type.String()),
+    region: Type.Optional(Type.String()),
+    date: Type.Optional(YahooFinanceDate),
+  },
+  {
+    title: "OptionsOptions",
+  },
+);
+
+type OptionsOptions = Static<typeof OptionsOptionsSchema>;
+type OptionsResult = Static<typeof OptionsResultSchema>;
 
 const queryOptionsDefaults: OptionsOptions = {
   formatted: false,
@@ -61,50 +225,45 @@ export default function options(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: OptionsOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<OptionsResult>;
 
 export default function options(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: OptionsOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function options(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: OptionsOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
-  return this._moduleExec({
+  return this._moduleExec<OptionsOptions>({
     moduleName: "options",
 
     query: {
       assertSymbol: symbol,
       url: "https://${YF_QUERY_HOST}/v7/finance/options/" + symbol,
       needsCrumb: true,
-      schemaKey: "#/definitions/OptionsOptions",
+      schema: OptionsOptionsSchema,
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       transformWith(queryOptions: OptionsOptions) {
-        const date = queryOptions.date;
-        if (date) {
-          // yfDate will convert valid number/string to Date.
-          if (date instanceof Date) {
-            // now we convert back to unix epoch in seconds for query
-            queryOptions.date = Math.floor(date.getTime() / 1000);
-          } else {
-            // yfDate didn't recognize it as a date.
-            throw new Error("Unsupported date type: " + date);
-          }
+        // This is honestly the easiest way to coerce the date properly
+        const parsed = Value.Decode(OptionsOptionsSchema, queryOptions);
+
+        if (parsed.date) {
+          queryOptions.date = Math.floor(parsed.date.getTime() / 1000);
         }
         return queryOptions;
       },
     },
 
     result: {
-      schemaKey: "#/definitions/OptionsResult",
+      schema: OptionsResultSchema,
       transformWith(result: any) {
         if (!result.optionChain)
           throw new Error("Unexpected result: " + JSON.stringify(result));

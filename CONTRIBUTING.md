@@ -71,11 +71,6 @@ work and submitting your PR.
 
 All PRs should be submitted against the `devel` branch (github default).
 
-**Changing TypeScript Interfaces**
-
-Run `yarn generateSchema` after changing any interfaces, this will regenerate
-the `schema.json` file which is used for run-time tests.
-
 **Commit Messages**
 
 Commit messages should follow the
@@ -134,7 +129,6 @@ TODO
 Checklist:
 
 1. Create it in `src/modules/myAmazingModule.ts`
-1. Run `yarn generateSchema` (and on any future interface changes)
 1. Test it in `src/modules/myAmazingModule.spec.ts`
 1. Add it to `src/index-common.ts`
 1. Docs in `docs/modules/myAmazingModule.md`

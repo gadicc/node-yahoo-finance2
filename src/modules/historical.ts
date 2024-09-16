@@ -1,58 +1,130 @@
+import { Static, Type } from "@sinclair/typebox";
+import { Value } from "@sinclair/typebox/value";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
+import { YahooFinanceDate, YahooNumber } from "../lib/yahooFinanceTypes.js";
+import _chart, { ChartOptionsSchema } from "./chart.js";
+import validateAndCoerceTypebox from "../lib/validateAndCoerceTypes.js";
+import { showNotice } from "../lib/notices.js";
 
-export type HistoricalHistoryResult = Array<HistoricalRowHistory>;
-export type HistoricalDividendsResult = Array<HistoricalRowDividend>;
-export type HistoricalStockSplitsResult = Array<HistoricalRowStockSplit>;
-export type HistoricalResult =
-  | HistoricalHistoryResult
-  | HistoricalDividendsResult
-  | HistoricalStockSplitsResult;
+const HistoricalRowHistory = Type.Object(
+  {
+    date: YahooFinanceDate,
+    open: YahooNumber,
+    high: YahooNumber,
+    low: YahooNumber,
+    close: YahooNumber,
+    adjClose: Type.Optional(YahooNumber),
+    volume: YahooNumber,
+  },
+  {
+    additionalProperties: Type.Any(),
+    title: "HistoricalRowHistory",
+  },
+);
 
-export interface HistoricalRowHistory {
-  [key: string]: any;
-  date: Date;
-  open: number;
-  high: number;
-  low: number;
-  close: number;
-  adjClose?: number;
-  volume: number;
-}
+const HistoricalRowDividend = Type.Object(
+  {
+    date: YahooFinanceDate,
+    dividends: YahooNumber,
+  },
+  { title: "HistoricalRowDividend" },
+);
 
-export interface HistoricalRowDividend {
-  date: Date;
-  dividends: number;
-}
+const HistoricalRowStockSplit = Type.Object(
+  {
+    date: YahooFinanceDate,
+    stockSplits: Type.String(),
+  },
+  { title: "HistoricalRowStockSplit" },
+);
 
-export interface HistoricalRowStockSplit {
-  date: Date;
-  stockSplits: string;
-}
+const HistoricalOptionsSchema = Type.Object(
+  {
+    period1: Type.Union([Type.Date(), Type.String(), Type.Number()]),
+    period2: Type.Optional(
+      Type.Union([Type.Date(), Type.String(), Type.Number()]),
+    ),
+    interval: Type.Optional(
+      Type.Union([
+        Type.Literal("1d"),
+        Type.Literal("1wk"),
+        Type.Literal("1mo"),
+      ]),
+    ),
+    // events: Type.Optional(Type.String()),
+    events: Type.Optional(
+      Type.Union([
+        Type.Literal("history"),
+        Type.Literal("dividends"),
+        Type.Literal("split"),
+      ]),
+    ),
+    includeAdjustedClose: Type.Optional(Type.Boolean()),
+  },
+  { title: "HistoricalOptions" },
+);
 
-export interface HistoricalOptions {
-  period1: Date | string | number;
-  period2?: Date | string | number;
-  interval?: "1d" | "1wk" | "1mo"; // '1d',  TODO: all | types
-  events?: string; // 'history',
-  includeAdjustedClose?: boolean; // true,
-}
+const HistoricalOptionsEventsHistorySchema = Type.Composite(
+  [
+    HistoricalOptionsSchema,
+    Type.Object({
+      events: Type.Optional(Type.Literal("history")),
+    }),
+  ],
+  { title: "HistoricalOptionsEventsHistory" },
+);
 
-export interface HistoricalOptionsEventsHistory extends HistoricalOptions {
-  events?: "history";
-}
+const HistoricalOptionsEventsDividendsSchema = Type.Composite(
+  [
+    HistoricalOptionsSchema,
+    Type.Object({
+      events: Type.Literal("dividends"),
+    }),
+  ],
+  { title: "HistoricalOptionsEventsDividends" },
+);
 
-export interface HistoricalOptionsEventsDividends extends HistoricalOptions {
-  events: "dividends";
-}
+const HistoricalOptionsEventsSplitSchema = Type.Composite(
+  [
+    HistoricalOptionsSchema,
+    Type.Object({
+      events: Type.Literal("split"),
+    }),
+  ],
+  { title: "HistoricalOptionsEventsSplit" },
+);
 
-export interface HistoricalOptionsEventsSplit extends HistoricalOptions {
-  events: "split";
-}
+const HistoricalHistoryResultSchema = Type.Array(HistoricalRowHistory, {
+  title: "HistoricalHistoryResult",
+});
+const HistoricalDividendsResultSchema = Type.Array(HistoricalRowDividend, {
+  title: "HistoricalDividendsResult",
+});
+const HistoricalStockSplitsResultSchema = Type.Array(HistoricalRowStockSplit, {
+  title: "HistoricalRowStockSplit",
+});
+
+type HistoricalOptions = Static<typeof HistoricalOptionsSchema>;
+type HistoricalOptionsEventsHistory = Static<
+  typeof HistoricalOptionsEventsHistorySchema
+>;
+
+type HistoricalHistoryResult = Static<typeof HistoricalHistoryResultSchema>;
+type HistoricalDividendsResult = Static<typeof HistoricalDividendsResultSchema>;
+type HistoricalOptionsEventsDividends = Static<
+  typeof HistoricalOptionsEventsDividendsSchema
+>;
+type HistoricalOptionsEventsSplit = Static<
+  typeof HistoricalOptionsEventsSplitSchema
+>;
+type HistoricalStockSplitsResult = Static<
+  typeof HistoricalStockSplitsResultSchema
+>;
 
 const queryOptionsDefaults: Omit<HistoricalOptions, "period1"> = {
   interval: "1d",
@@ -64,55 +136,134 @@ export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptionsEventsHistory,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<HistoricalHistoryResult>;
 
 export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptionsEventsDividends,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<HistoricalDividendsResult>;
 
 export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptionsEventsSplit,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<HistoricalStockSplitsResult>;
 
 export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
-export default function historical(
+export default async function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
-  let schemaKey;
+  showNotice("ripHistorical");
+
+  validateAndCoerceTypebox({
+    type: "options",
+    data: queryOptionsOverrides ?? {},
+    schema: HistoricalOptionsSchema,
+    options: this._opts.validation,
+  });
+
+  let schema;
   if (
     !queryOptionsOverrides.events ||
     queryOptionsOverrides.events === "history"
   )
-    schemaKey = "#/definitions/HistoricalHistoryResult";
+    schema = HistoricalHistoryResultSchema;
   else if (queryOptionsOverrides.events === "dividends")
-    schemaKey = "#/definitions/HistoricalDividendsResult";
+    schema = HistoricalDividendsResultSchema;
   else if (queryOptionsOverrides.events === "split")
-    schemaKey = "#/definitions/HistoricalStockSplitsResult";
+    schema = HistoricalStockSplitsResultSchema;
   else throw new Error("No such event type:" + queryOptionsOverrides.events);
 
+  const queryOpts = { ...queryOptionsDefaults, ...queryOptionsOverrides };
+  if (!Value.Check(HistoricalOptionsSchema, queryOpts))
+    throw new Error(
+      "Internal error, please report.  Overrides validated but not defaults?",
+    );
+
+  // Don't forget that queryOpts are already validated and safe-safe.
+  const eventsMap = { history: "", dividends: "div", split: "split" };
+  const chartQueryOpts = {
+    period1: queryOpts.period1,
+    period2: queryOpts.period2,
+    interval: queryOpts.interval,
+    events: eventsMap[queryOpts.events || "history"],
+  };
+  if (!Value.Check(ChartOptionsSchema, chartQueryOpts))
+    throw new Error(
+      "Internal error, please report.  historical() provided invalid chart() query options.",
+    );
+
+  // TODO: do we even care?
+  if (queryOpts.includeAdjustedClose === false) {
+    /* */
+  }
+
+  const result = await (this.chart as typeof _chart)(symbol, chartQueryOpts, {
+    ...moduleOptions,
+    validateResult: true,
+  });
+
+  let out;
+  if (queryOpts.events === "dividends") {
+    out = (result.events?.dividends ?? []).map((d) => ({
+      date: d.date,
+      dividends: d.amount,
+    }));
+  } else if (queryOpts.events === "split") {
+    out = (result.events?.splits ?? []).map((s) => ({
+      date: s.date,
+      stockSplits: s.splitRatio,
+    }));
+  } else {
+    out = result.quotes;
+  }
+
+  const validateResult =
+    !moduleOptions ||
+    moduleOptions.validateResult === undefined ||
+    moduleOptions.validateResult === true;
+
+  const validationOpts = {
+    ...this._opts.validation,
+    // Set logErrors=false if validateResult=false
+    logErrors: validateResult ? this._opts.validation.logErrors : false,
+  };
+
+  try {
+    validateAndCoerceTypebox({
+      type: "result",
+      data: out,
+      schema,
+      options: validationOpts,
+    });
+  } catch (error) {
+    if (validateResult) throw error;
+  }
+
+  return out;
+
+  /*
+  // Original historical() retrieval code when Yahoo API still existed.
   return this._moduleExec({
     moduleName: "historical",
 
     query: {
       assertSymbol: symbol,
       url: "https://${YF_QUERY_HOST}/v7/finance/download/" + symbol,
-      schemaKey: "#/definitions/HistoricalOptions",
+      schema: HistoricalOptionsSchema,
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       fetchType: "csv",
@@ -133,7 +284,7 @@ export default function historical(
                   fieldName +
                   "' invalid date provided: '" +
                   value +
-                  "'"
+                  "'",
               );
 
             queryOptions[fieldName] = Math.floor(timestamp / 1000);
@@ -143,7 +294,7 @@ export default function historical(
         if (queryOptions.period1 === queryOptions.period2) {
           throw new Error(
             "yahooFinance.historical() options `period1` and `period2` " +
-              "cannot share the same value."
+              "cannot share the same value.",
           );
         }
 
@@ -152,7 +303,7 @@ export default function historical(
     },
 
     result: {
-      schemaKey,
+      schema,
       transformWith(result: any) {
         if (result.length === 0) return result;
 
@@ -160,7 +311,10 @@ export default function historical(
         const fieldCount = Object.keys(result[0]).length;
 
         // Count number of null values in object (1-level deep)
-        function nullFieldCount(object: Object) {
+        function nullFieldCount(object: unknown) {
+          if (object == null) {
+            return;
+          }
           let nullCount = 0;
           for (const val of Object.values(object))
             if (val === null) nullCount++;
@@ -173,14 +327,14 @@ export default function historical(
           if (nullCount === 0) {
             // No nulls is a legit (regular) result
             filteredResults.push(row);
-          } else if (nullCount !== fieldCount - 1 /* skip "date" */) {
+          } else if (nullCount !== fieldCount - 1 /* skip "date" */ /*) {
             // Unhandled case: some but not all values are null.
             // Note: no need to check for null "date", validation does it for us
             console.error(nullCount, row);
             throw new Error(
               "Historical returned a result with SOME (but not " +
                 "all) null values.  Please report this, and provide the " +
-                "query that caused it."
+                "query that caused it.",
             );
           } else {
             // All fields (except "date") are null: silently skip (no-op)
@@ -191,11 +345,12 @@ export default function historical(
          * We may consider, for future optimization, to count rows and create
          * new array in advance, and skip consecutive blocks of null results.
          * Of doubtful utility.
-         */
+         */ /*
         return filteredResults;
       },
     },
 
     moduleOptions,
   });
+  */
 }
