@@ -1,3 +1,11 @@
+## [2.12.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.0...v2.12.1) (2024-09-16)
+
+
+### Bug Fixes
+
+* **historical:** re-add / adapt old null row filter ([63c4498](https://github.com/gadicc/node-yahoo-finance2/commit/63c449894e50a2803ef40dd0bd100f1fbb6965cc))
+* **options:** fix default log.warn() to use console.warn not .error ([4693dbb](https://github.com/gadicc/node-yahoo-finance2/commit/4693dbb8241363614608383b2fc6794e8867e8ad))
+
 # [2.12.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.11.3...v2.12.0) (2024-09-16)
 
 
