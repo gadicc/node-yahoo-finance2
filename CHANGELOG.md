@@ -1,3 +1,26 @@
+# [2.12.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.11.3...v2.12.0) (2024-09-16)
+
+
+### Bug Fixes
+
+* **chart:** fix and improve non-Date handling code for periods ([f1106c2](https://github.com/gadicc/node-yahoo-finance2/commit/f1106c2098736c55a34f0075c3d65f766cdcca63))
+* **circleci,readme:** use node:18.0.0 for tests, make clear in readme ([8365a90](https://github.com/gadicc/node-yahoo-finance2/commit/8365a90a74bd0a79c06bb7ef9d9bc765a7800043))
+* **historical:** map requests to chart() with deprec notice ([#795](https://github.com/gadicc/node-yahoo-finance2/issues/795)) ([c212df9](https://github.com/gadicc/node-yahoo-finance2/commit/c212df9ffeea804eb71ab9c598a6766b0b938e7e))
+* **imports:** add import assertions required in node since 17.5.0. ([7d0deea](https://github.com/gadicc/node-yahoo-finance2/commit/7d0deea26891da80f2d59c2143b159be2c7a871a))
+* **imports:** specify ".js" on local imports for full ESM compat ([46ee6c1](https://github.com/gadicc/node-yahoo-finance2/commit/46ee6c1c5e6e74066c68633bd0dc6b08719b37e6))
+* **index:** remove erroneously removed moduleExec import ([fe1a493](https://github.com/gadicc/node-yahoo-finance2/commit/fe1a493fd8001460527d2b77d60d6dabeb542ab2))
+* **notices:** historical() note, type improvement, onceOnly text ([c131e5c](https://github.com/gadicc/node-yahoo-finance2/commit/c131e5c475a49066c954005dada5a79d6e5e5c94))
+* **pkg/scripts:** still need `prepublishOnly` to run `build` ([4da1273](https://github.com/gadicc/node-yahoo-finance2/commit/4da12730fd7319dc8ed137639eb499dc06e2fead))
+* **pkg:** add babel importAttributes plugin ([e41f65d](https://github.com/gadicc/node-yahoo-finance2/commit/e41f65d55e0180a47604c737ef0d8f367512ebe6))
+* **pkg:** drop ts-jest, use [@swc-jest](https://github.com/swc-jest), { keepImportAssertions: false } ([a0e2847](https://github.com/gadicc/node-yahoo-finance2/commit/a0e28471aef2cc63ae080d7da9fb779ac57e6574))
+* **pkg:** use swc, remove babel (faster, fixes import assertions) ([110d28d](https://github.com/gadicc/node-yahoo-finance2/commit/110d28d3344e12c7a1d3a28eb19e2603db5c64b9))
+* **tests-modules:** use swc here too ([c7e849c](https://github.com/gadicc/node-yahoo-finance2/commit/c7e849cf900094fd00e5433ea10a5d74ca44ef2c))
+
+
+### Features
+
+* **notices:** notices lib, refactor, use for "yahooSurvey" ([#783](https://github.com/gadicc/node-yahoo-finance2/issues/783)) ([b4c016b](https://github.com/gadicc/node-yahoo-finance2/commit/b4c016b82743d394e89e828b23cf2b171a58d543))
+
 ## [2.11.3](https://github.com/gadicc/node-yahoo-finance2/compare/v2.11.2...v2.11.3) (2024-05-30)
 
 
