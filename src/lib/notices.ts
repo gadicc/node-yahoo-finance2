@@ -9,7 +9,7 @@ type Notice = {
   suppress?: boolean;
 };
 
-const notices = {
+const notices: Record<string, Notice> = {
   yahooSurvey: {
     id: "yahooSurvey",
     text:
@@ -17,7 +17,17 @@ const notices = {
       "if you haven't already; for more info see " +
       "https://github.com/gadicc/node-yahoo-finance2/issues/764#issuecomment-2056623851.",
     onceOnly: true,
-  } as Notice,
+  },
+  ripHistorical: {
+    id: "ripHistorical",
+    text:
+      "[Deprecated] historical() relies on an API that Yahoo have removed.  We'll " +
+      "map this request to chart() for convenience, but, please consider using " +
+      "chart() directly instead; for more info see " +
+      "https://github.com/gadicc/node-yahoo-finance2/issues/795.",
+    level: "warn",
+    onceOnly: true,
+  },
 };
 
 export function showNotice(id: keyof typeof notices) {
@@ -29,8 +39,8 @@ export function showNotice(id: keyof typeof notices) {
 
   const text =
     n.text +
-    // (n.onceOnly ? " (only shown once)" : "") +
-    "  You can supress this message in future with `yahooFinance.supressNotices(['" +
+    (n.onceOnly ? "  This will only be shown once, but you" : "You") +
+    " can supress this message in future with `yahooFinance.supressNotices(['" +
     id +
     "'])`.";
   const level = n.level || "info";
