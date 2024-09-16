@@ -218,12 +218,22 @@ export default async function chart(
         const dates = ["period1", "period2"] as const;
         for (const fieldName of dates) {
           const value = queryOptions[fieldName];
-          if (value instanceof Date)
+          if (value instanceof Date) {
             queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
-          else typeof value === "string";
-          queryOptions[fieldName] = Math.floor(
-            new Date(value as string).getTime() / 1000,
-          );
+          } else if (typeof value === "string") {
+            const timestamp = new Date(value as string).getTime();
+
+            if (isNaN(timestamp))
+              throw new Error(
+                "yahooFinance.chart() option '" +
+                  fieldName +
+                  "' invalid date provided: '" +
+                  value +
+                  "'",
+              );
+
+            queryOptions[fieldName] = Math.floor(timestamp / 1000);
+          }
         }
 
         if (queryOptions.period1 === queryOptions.period2) {
