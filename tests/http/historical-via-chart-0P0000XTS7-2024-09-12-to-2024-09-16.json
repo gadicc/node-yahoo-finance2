@@ -1,0 +1,64 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/0P0000XTS7?useYfid=true&interval=1d&includePrePost=true&events=&lang=en-US&period1=1726099200&period2=1726444800"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "y-rid": [
+        "6cp5sj5jegm24"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "cache-control": [
+        "public, max-age=10, stale-while-revalidate=20"
+      ],
+      "content-length": [
+        "1122"
+      ],
+      "x-envoy-upstream-service-time": [
+        "4"
+      ],
+      "date": [
+        "Mon, 16 Sep 2024 16:09:40 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-chart-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"chart\":{\"result\":[{\"meta\":{\"currency\":\"USD\",\"symbol\":\"0P0000XTS7\",\"exchangeName\":\"PNK\",\"fullExchangeName\":\"OTC Markets OTCPK\",\"instrumentType\":\"MUTUALFUND\",\"firstTradeDate\":1546353000,\"regularMarketTime\":1721419200,\"hasPrePostMarketData\":false,\"gmtoffset\":-14400,\"timezone\":\"EDT\",\"exchangeTimezoneName\":\"America/New_York\",\"regularMarketPrice\":11796.7,\"longName\":\"GS USD Liquid Reserve R Acc\",\"shortName\":\"Goldman Sachs US$ Liquid Reserv\",\"chartPreviousClose\":11885.41,\"priceHint\":2,\"currentTradingPeriod\":{\"pre\":{\"timezone\":\"EDT\",\"start\":1726473600,\"end\":1726493400,\"gmtoffset\":-14400},\"regular\":{\"timezone\":\"EDT\",\"start\":1726493400,\"end\":1726516800,\"gmtoffset\":-14400},\"post\":{\"timezone\":\"EDT\",\"start\":1726516800,\"end\":1726531200,\"gmtoffset\":-14400}},\"dataGranularity\":\"1d\",\"range\":\"\",\"validRanges\":[\"1mo\",\"3mo\",\"6mo\",\"ytd\",\"1y\",\"2y\",\"5y\",\"10y\",\"max\"]},\"timestamp\":[1726147800,1726234200],\"indicators\":{\"quote\":[{\"close\":[11887.099609375,null],\"open\":[11887.099609375,null],\"low\":[11887.099609375,null],\"volume\":[0,null],\"high\":[11887.099609375,null]}],\"adjclose\":[{\"adjclose\":[11887.099609375,null]}]}}],\"error\":null}}"
+  }
+}

@@ -63,6 +63,16 @@ const queryOptionsDefaults: Omit<HistoricalOptions, "period1"> = {
   includeAdjustedClose: true,
 };
 
+// Count number of null values in object (1-level deep)
+function nullFieldCount(object: unknown) {
+  if (object == null) {
+    return;
+  }
+  let nullCount = 0;
+  for (const val of Object.values(object)) if (val === null) nullCount++;
+  return nullCount;
+}
+
 export default function historical(
   this: ModuleThis,
   symbol: string,
@@ -164,7 +174,27 @@ export default async function historical(
       stockSplits: s.splitRatio,
     }));
   } else {
-    out = result.quotes;
+    out = (result.quotes ?? []).filter((quote) => {
+      const fieldCount = Object.keys(quote).length;
+      const nullCount = nullFieldCount(quote);
+
+      if (nullCount === 0) {
+        // No nulls is a legit (regular) result
+        return true;
+      } else if (nullCount !== fieldCount - 1 /* skip "date" */) {
+        // Unhandled case: some but not all values are null.
+        // Note: no need to check for null "date", validation does it for us
+        console.error(nullCount, quote);
+        throw new Error(
+          "Historical returned a result with SOME (but not " +
+            "all) null values.  Please report this, and provide the " +
+            "query that caused it.",
+        );
+      } else {
+        // All fields (except "date") are null
+        return false;
+      }
+    });
   }
 
   const validateResult =

@@ -80,6 +80,30 @@ describe("historical", () => {
   });
 
   /*
+   * {
+   *    "date": "2024-09-13T13:30:00.000Z",
+   *    "high": null,
+   *    "volume": null,
+   *    "open": null,
+   *    "low": null,
+   *    "close": null,
+   *    "adjclose": null
+   * }
+   */
+  it("filters out null rows", async () => {
+    await yf.historical(
+      "0P0000XTS7",
+      {
+        period1: "2024-09-12",
+        period2: "2024-09-16",
+      },
+      {
+        devel: "historical-via-chart-0P0000XTS7-2024-09-12-to-2024-09-16.json",
+      },
+    );
+  });
+
+  /*
   // Note: module no longer moduleExec, instead calls chart()
   describe("transformWith", () => {
     const yf = { _moduleExec: jest.fn(), historical };
