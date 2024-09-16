@@ -1,4 +1,5 @@
 import { Static, Type } from "@sinclair/typebox";
+import { Value } from "@sinclair/typebox/value";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
@@ -6,6 +7,9 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.js";
 import { YahooFinanceDate, YahooNumber } from "../lib/yahooFinanceTypes.js";
+import _chart, { ChartOptionsSchema } from "./chart.js";
+import validateAndCoerceTypebox from "../lib/validateAndCoerceTypes.js";
+import { showNotice } from "../lib/notices.js";
 
 const HistoricalRowHistory = Type.Object(
   {
@@ -52,7 +56,14 @@ const HistoricalOptionsSchema = Type.Object(
         Type.Literal("1mo"),
       ]),
     ),
-    events: Type.Optional(Type.String()),
+    // events: Type.Optional(Type.String()),
+    events: Type.Optional(
+      Type.Union([
+        Type.Literal("history"),
+        Type.Literal("dividends"),
+        Type.Literal("split"),
+      ]),
+    ),
     includeAdjustedClose: Type.Optional(Type.Boolean()),
   },
   { title: "HistoricalOptions" },
@@ -149,12 +160,21 @@ export default function historical(
   moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
-export default function historical(
+export default async function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
   moduleOptions?: ModuleOptions,
 ): Promise<any> {
+  showNotice("ripHistorical");
+
+  validateAndCoerceTypebox({
+    type: "options",
+    data: queryOptionsOverrides ?? {},
+    schema: HistoricalOptionsSchema,
+    options: this._opts.validation,
+  });
+
   let schema;
   if (
     !queryOptionsOverrides.events ||
@@ -167,6 +187,76 @@ export default function historical(
     schema = HistoricalStockSplitsResultSchema;
   else throw new Error("No such event type:" + queryOptionsOverrides.events);
 
+  const queryOpts = { ...queryOptionsDefaults, ...queryOptionsOverrides };
+  if (!Value.Check(HistoricalOptionsSchema, queryOpts))
+    throw new Error(
+      "Internal error, please report.  Overrides validated but not defaults?",
+    );
+
+  // Don't forget that queryOpts are already validated and safe-safe.
+  const eventsMap = { history: "", dividends: "div", split: "split" };
+  const chartQueryOpts = {
+    period1: queryOpts.period1,
+    period2: queryOpts.period2,
+    interval: queryOpts.interval,
+    events: eventsMap[queryOpts.events || "history"],
+  };
+  if (!Value.Check(ChartOptionsSchema, chartQueryOpts))
+    throw new Error(
+      "Internal error, please report.  historical() provided invalid chart() query options.",
+    );
+
+  // TODO: do we even care?
+  if (queryOpts.includeAdjustedClose === false) {
+    /* */
+  }
+
+  const result = await (this.chart as typeof _chart)(symbol, chartQueryOpts, {
+    ...moduleOptions,
+    validateResult: true,
+  });
+
+  let out;
+  if (queryOpts.events === "dividends") {
+    out = (result.events?.dividends ?? []).map((d) => ({
+      date: d.date,
+      dividends: d.amount,
+    }));
+  } else if (queryOpts.events === "split") {
+    out = (result.events?.splits ?? []).map((s) => ({
+      date: s.date,
+      stockSplits: s.splitRatio,
+    }));
+  } else {
+    out = result.quotes;
+  }
+
+  const validateResult =
+    !moduleOptions ||
+    moduleOptions.validateResult === undefined ||
+    moduleOptions.validateResult === true;
+
+  const validationOpts = {
+    ...this._opts.validation,
+    // Set logErrors=false if validateResult=false
+    logErrors: validateResult ? this._opts.validation.logErrors : false,
+  };
+
+  try {
+    validateAndCoerceTypebox({
+      type: "result",
+      data: out,
+      schema,
+      options: validationOpts,
+    });
+  } catch (error) {
+    if (validateResult) throw error;
+  }
+
+  return out;
+
+  /*
+  // Original historical() retrieval code when Yahoo API still existed.
   return this._moduleExec({
     moduleName: "historical",
 
@@ -237,7 +327,7 @@ export default function historical(
           if (nullCount === 0) {
             // No nulls is a legit (regular) result
             filteredResults.push(row);
-          } else if (nullCount !== fieldCount - 1 /* skip "date" */) {
+          } else if (nullCount !== fieldCount - 1 /* skip "date" */ /*) {
             // Unhandled case: some but not all values are null.
             // Note: no need to check for null "date", validation does it for us
             console.error(nullCount, row);
@@ -255,11 +345,12 @@ export default function historical(
          * We may consider, for future optimization, to count rows and create
          * new array in advance, and skip consecutive blocks of null results.
          * Of doubtful utility.
-         */
+         */ /*
         return filteredResults;
       },
     },
 
     moduleOptions,
   });
+  */
 }

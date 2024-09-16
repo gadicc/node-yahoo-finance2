@@ -1,0 +1,67 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/SI?useYfid=true&interval=1d&includePrePost=true&events=&lang=en-US&period1=1577836800&period2=1578009600"
+  },
+  "response": {
+    "ok": false,
+    "status": 404,
+    "statusText": "Not Found",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "y-rid": [
+        "76duklljeg8b1"
+      ],
+      "vary": [
+        "Origin"
+      ],
+      "content-length": [
+        "108"
+      ],
+      "x-envoy-upstream-service-time": [
+        "2"
+      ],
+      "date": [
+        "Mon, 16 Sep 2024 12:14:24 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-chart-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "cache-control": [
+        "max-age=0, private"
+      ],
+      "expires": [
+        "-1"
+      ],
+      "age": [
+        "65"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"chart\":{\"result\":null,\"error\":{\"code\":\"Not Found\",\"description\":\"No data found, symbol may be delisted\"}}}"
+  }
+}

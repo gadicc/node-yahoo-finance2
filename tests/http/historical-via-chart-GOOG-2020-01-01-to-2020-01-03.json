@@ -1,0 +1,64 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/GOOG?useYfid=true&interval=1d&includePrePost=true&events=&lang=en-US&period1=1577836800&period2=1578009600"
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "content-type": [
+        "application/json;charset=utf-8"
+      ],
+      "y-rid": [
+        "28c99kpjeg890"
+      ],
+      "cache-control": [
+        "public, max-age=10, stale-while-revalidate=20"
+      ],
+      "vary": [
+        "Origin,Accept-Encoding"
+      ],
+      "content-length": [
+        "1194"
+      ],
+      "x-envoy-upstream-service-time": [
+        "3"
+      ],
+      "date": [
+        "Mon, 16 Sep 2024 12:14:24 GMT"
+      ],
+      "server": [
+        "ATS"
+      ],
+      "x-envoy-decorator-operation": [
+        "finance-chart-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
+      ],
+      "age": [
+        "0"
+      ],
+      "strict-transport-security": [
+        "max-age=31536000"
+      ],
+      "referrer-policy": [
+        "no-referrer-when-downgrade"
+      ],
+      "x-frame-options": [
+        "SAMEORIGIN"
+      ],
+      "connection": [
+        "close"
+      ],
+      "expect-ct": [
+        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
+      ],
+      "x-xss-protection": [
+        "1; mode=block"
+      ],
+      "x-content-type-options": [
+        "nosniff"
+      ]
+    },
+    "body": "{\"chart\":{\"result\":[{\"meta\":{\"currency\":\"USD\",\"symbol\":\"GOOG\",\"exchangeName\":\"NMS\",\"fullExchangeName\":\"NasdaqGS\",\"instrumentType\":\"EQUITY\",\"firstTradeDate\":1092922200,\"regularMarketTime\":1726257601,\"hasPrePostMarketData\":true,\"gmtoffset\":-14400,\"timezone\":\"EDT\",\"exchangeTimezoneName\":\"America/New_York\",\"regularMarketPrice\":158.37,\"fiftyTwoWeekHigh\":159.27,\"fiftyTwoWeekLow\":156.12,\"regularMarketDayHigh\":159.27,\"regularMarketDayLow\":156.12,\"regularMarketVolume\":16656178,\"longName\":\"Alphabet Inc.\",\"shortName\":\"Alphabet Inc.\",\"chartPreviousClose\":66.851,\"priceHint\":2,\"currentTradingPeriod\":{\"pre\":{\"timezone\":\"EDT\",\"start\":1726473600,\"end\":1726493400,\"gmtoffset\":-14400},\"regular\":{\"timezone\":\"EDT\",\"start\":1726493400,\"end\":1726516800,\"gmtoffset\":-14400},\"post\":{\"timezone\":\"EDT\",\"start\":1726516800,\"end\":1726531200,\"gmtoffset\":-14400}},\"dataGranularity\":\"1d\",\"range\":\"\",\"validRanges\":[\"1d\",\"5d\",\"1mo\",\"3mo\",\"6mo\",\"1y\",\"2y\",\"5y\",\"10y\",\"ytd\",\"max\"]},\"timestamp\":[1577975400],\"indicators\":{\"quote\":[{\"open\":[67.07749938964844],\"close\":[68.36849975585938],\"high\":[68.40699768066406],\"low\":[67.07749938964844],\"volume\":[28132000]}],\"adjclose\":[{\"adjclose\":[68.20101165771484]}]}}],\"error\":null}}"
+  }
+}
