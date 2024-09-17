@@ -155,8 +155,8 @@ const DailyGainersResultSchema = Type.Object(
   { title: "DailyGainersResult" },
 );
 
-type DailyGainersResult = Static<typeof DailyGainersResultSchema>;
-type DailyGainersOptions = Static<typeof DailyGainersOptionsSchema>;
+export type DailyGainersResult = Static<typeof DailyGainersResultSchema>;
+export type DailyGainersOptions = Static<typeof DailyGainersOptionsSchema>;
 
 const queryOptionsDefaults = {
   lang: "en-US",

@@ -236,8 +236,8 @@ const InsightsResultSchema = Type.Object(
   },
 );
 
-type InsightsResult = Static<typeof InsightsResultSchema>;
-type InsightsOutlook = Static<typeof InsightsOutlookSchema>;
+export type InsightsResult = Static<typeof InsightsResultSchema>;
+export type InsightsOutlook = Static<typeof InsightsOutlookSchema>;
 
 export interface InsightsInstrumentInfo {
   [key: string]: any;
@@ -298,7 +298,7 @@ const InsightsOptionsSchema = Type.Object(
   { title: "InsightsOptions" },
 );
 
-type InsightsOptions = Static<typeof InsightsOptionsSchema>;
+export type InsightsOptions = Static<typeof InsightsOptionsSchema>;
 
 const queryOptionsDefaults = {
   lang: "en-US",

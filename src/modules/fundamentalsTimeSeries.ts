@@ -47,7 +47,7 @@ const FundamentalsTimeSeriesOptionsSchema = Type.Object(
   },
 );
 
-type FundamentalsTimeSeriesOptions = Static<
+export type FundamentalsTimeSeriesOptions = Static<
   typeof FundamentalsTimeSeriesOptionsSchema
 >;
 
@@ -55,7 +55,7 @@ const FundamentalsTimeSeriesResultsSchema = Type.Array(
   FundamentalsTimeSeriesResultSchema,
 );
 
-type FundamentalsTimeSeriesResult = Static<
+export type FundamentalsTimeSeriesResult = Static<
   typeof FundamentalsTimeSeriesResultSchema
 >;
 

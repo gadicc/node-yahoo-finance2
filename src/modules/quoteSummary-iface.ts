@@ -1,4 +1,4 @@
-import { Type } from "@sinclair/typebox";
+import { Static, Type } from "@sinclair/typebox";
 import {
   NullableYahooFinanceDate,
   NullableYahooNumber,
@@ -93,7 +93,7 @@ enum Action {
 const Grade = Type.Enum(EnumGrade, { title: "QuoteSummaryEnumGrade" });
 const ActionSchema = Type.Enum(Action, { title: "QuoteSummaryAction" });
 
-const UpgradeDowngradeHistoryHistory = Type.Object(
+const UpgradeDowngradeHistoryHistorySchema = Type.Object(
   {
     epochGradeDate: YahooFinanceDate,
     firm: Type.String(),
@@ -106,10 +106,13 @@ const UpgradeDowngradeHistoryHistory = Type.Object(
     title: "QuoteSummaryUpgradeDowngradeHistoryHistory",
   },
 );
+export type UpgradeDowngradeHistoryHistory = Static<
+  typeof UpgradeDowngradeHistoryHistorySchema
+>;
 
-const UpgradeDowngradeHistory = Type.Object(
+const UpgradeDowngradeHistorySchema = Type.Object(
   {
-    history: Type.Array(UpgradeDowngradeHistoryHistory),
+    history: Type.Array(UpgradeDowngradeHistoryHistorySchema),
     maxAge: YahooNumber,
   },
   {
@@ -117,8 +120,11 @@ const UpgradeDowngradeHistory = Type.Object(
     title: "QuoteSummaryUpgradeDowngradeHistory",
   },
 );
+export type UpgradeDowngradeHistory = Static<
+  typeof UpgradeDowngradeHistorySchema
+>;
 
-const TopHoldingsSectorWeighting = Type.Object(
+const TopHoldingsSectorWeightingSchema = Type.Object(
   {
     realestate: Type.Optional(YahooNumber),
     consumer_cyclical: Type.Optional(YahooNumber),
@@ -137,8 +143,11 @@ const TopHoldingsSectorWeighting = Type.Object(
     title: "QuoteSummaryTopHoldingsSectorWeighting",
   },
 );
+export type TopHoldingsSectorWeighting = Static<
+  typeof TopHoldingsSectorWeightingSchema
+>;
 
-const TopHoldingsBondRating = Type.Object(
+const TopHoldingsBondRatingSchema = Type.Object(
   {
     a: Type.Optional(YahooNumber),
     aa: Type.Optional(YahooNumber),
@@ -155,8 +164,9 @@ const TopHoldingsBondRating = Type.Object(
     title: "QuoteSummaryTopHoldingsBondRating",
   },
 );
+export type TopHoldingsBondRating = Static<typeof TopHoldingsBondRatingSchema>;
 
-const TopHoldingsEquityHoldings = Type.Object(
+const TopHoldingsEquityHoldingsSchema = Type.Object(
   {
     medianMarketCap: Type.Optional(YahooNumber),
     medianMarketCapCat: Type.Optional(YahooNumber),
@@ -176,8 +186,11 @@ const TopHoldingsEquityHoldings = Type.Object(
     title: "QuoteSummaryTopHoldingsEquityHoldings",
   },
 );
+export type TopHoldingsEquityHoldings = Static<
+  typeof TopHoldingsEquityHoldingsSchema
+>;
 
-const TopHoldingsHolding = Type.Object(
+const TopHoldingsHoldingSchema = Type.Object(
   {
     symbol: Type.String(),
     holdingName: Type.String(),
@@ -188,17 +201,18 @@ const TopHoldingsHolding = Type.Object(
     title: "QuoteSummaryTopHoldingsHolding",
   },
 );
+export type TopHoldingsHolding = Static<typeof TopHoldingsHoldingSchema>;
 
-const TopHoldings = Type.Object(
+const TopHoldingsSchema = Type.Object(
   {
     maxAge: YahooNumber,
     stockPosition: Type.Optional(YahooNumber),
     bondPosition: Type.Optional(YahooNumber),
-    holdings: Type.Array(TopHoldingsHolding),
-    equityHoldings: TopHoldingsEquityHoldings,
+    holdings: Type.Array(TopHoldingsHoldingSchema),
+    equityHoldings: TopHoldingsEquityHoldingsSchema,
     bondHoldings: Type.Object({}),
-    bondRatings: Type.Array(TopHoldingsBondRating),
-    sectorWeightings: Type.Array(TopHoldingsSectorWeighting),
+    bondRatings: Type.Array(TopHoldingsBondRatingSchema),
+    sectorWeightings: Type.Array(TopHoldingsSectorWeightingSchema),
     cashPosition: Type.Optional(YahooNumber),
     otherPosition: Type.Optional(YahooNumber),
     preferredPosition: Type.Optional(YahooNumber),
@@ -209,8 +223,9 @@ const TopHoldings = Type.Object(
     title: "QuoteSummaryTopHoldings",
   },
 );
+export type TopHoldings = Static<typeof TopHoldingsSchema>;
 
-const SummaryProfile = Type.Object(
+const SummaryProfileSchema = Type.Object(
   {
     address1: Type.Optional(Type.String()),
     address2: Type.Optional(Type.String()),
@@ -244,8 +259,9 @@ const SummaryProfile = Type.Object(
     title: "QuoteSummarySummaryProfile",
   },
 );
+export type SummaryProfile = Static<typeof SummaryProfileSchema>;
 
-const SummaryDetail = Type.Object(
+const SummaryDetailSchema = Type.Object(
   {
     maxAge: YahooNumber,
     priceHint: YahooNumber,
@@ -311,6 +327,7 @@ const SummaryDetail = Type.Object(
     title: "QuoteSummarySummaryDetail",
   },
 );
+export type SummaryDetail = Static<typeof SummaryDetailSchema>;
 
 // May consider switching this to string, as we keep finding more and more.
 const FilingType = Type.Union(
@@ -343,7 +360,7 @@ const FilingType = Type.Union(
   },
 );
 
-const Filing = Type.Object(
+const FilingSchema = Type.Object(
   {
     date: Type.String(),
     epochDate: YahooFinanceDate,
@@ -367,10 +384,11 @@ const Filing = Type.Object(
     title: "QuoteSummaryFiling",
   },
 );
+export type Filing = Static<typeof FilingSchema>;
 
-const SECFilings = Type.Object(
+const SECFilingsSchema = Type.Object(
   {
-    filings: Type.Array(Filing),
+    filings: Type.Array(FilingSchema),
     maxAge: YahooNumber,
   },
   {
@@ -378,8 +396,9 @@ const SECFilings = Type.Object(
     title: "QuoteSummarySECFilings",
   },
 );
+export type SECFilings = Static<typeof SECFilingsSchema>;
 
-const RecommendationTrendTrend = Type.Object(
+const RecommendationTrendTrendSchema = Type.Object(
   {
     period: Type.String(),
     strongBuy: YahooNumber,
@@ -393,10 +412,13 @@ const RecommendationTrendTrend = Type.Object(
     title: "QuoteSummaryRecommendationTrendTrend",
   },
 );
+export type RecommendationTrendTrend = Static<
+  typeof RecommendationTrendTrendSchema
+>;
 
-const RecommendationTrend = Type.Object(
+const RecommendationTrendSchema = Type.Object(
   {
-    trend: Type.Array(RecommendationTrendTrend),
+    trend: Type.Array(RecommendationTrendTrendSchema),
     maxAge: YahooNumber,
   },
   {
@@ -404,8 +426,9 @@ const RecommendationTrend = Type.Object(
     title: "QuoteSummaryRecommendationTrend",
   },
 );
+export type RecommendationTrend = Static<typeof RecommendationTrendSchema>;
 
-const QuoteType = Type.Object(
+const QuoteTypeSchema = Type.Object(
   {
     exchange: Type.String(),
     quoteType: Type.String(),
@@ -426,8 +449,9 @@ const QuoteType = Type.Object(
     title: "QuoteSummaryQuoteType",
   },
 );
+export type QuoteType = Static<typeof QuoteTypeSchema>;
 
-const Price = Type.Object(
+const PriceSchema = Type.Object(
   {
     averageDailyVolume10Day: Type.Optional(YahooNumber),
     averageDailyVolume3Month: Type.Optional(YahooNumber),
@@ -480,8 +504,9 @@ const Price = Type.Object(
     title: "QuoteSummaryPrice",
   },
 );
+export type Price = Static<typeof PriceSchema>;
 
-const NetSharePurchaseActivity = Type.Object(
+const NetSharePurchaseActivitySchema = Type.Object(
   {
     maxAge: YahooNumber,
     period: Type.String(),
@@ -501,8 +526,11 @@ const NetSharePurchaseActivity = Type.Object(
     title: "QuoteSummaryNetSharePurchaseActivity",
   },
 );
+export type NetSharePurchaseActivity = Static<
+  typeof NetSharePurchaseActivitySchema
+>;
 
-const MajorHoldersBreakdown = Type.Object(
+const MajorHoldersBreakdownSchema = Type.Object(
   {
     maxAge: YahooNumber,
     insidersPercentHeld: Type.Optional(YahooNumber),
@@ -515,6 +543,7 @@ const MajorHoldersBreakdown = Type.Object(
     title: "QuoteSummaryMajorHoldersBreakdown",
   },
 );
+export type MajorHoldersBreakdown = Static<typeof MajorHoldersBreakdownSchema>;
 
 enum EnumOwnership {
   D = "D",
@@ -538,11 +567,12 @@ enum EnumRelation {
 
 const Relation = Type.Enum(EnumRelation, { title: "QuoteSummaryRelation" });
 
-const OwnershipSchema = Type.Enum(EnumOwnership, {
-  title: "QuoteSummaryOwnership",
+const OwnershipEnumSchema = Type.Enum(EnumOwnership, {
+  title: "QuoteSummaryOwnershipEnum",
 });
+export type OwnershipEnum = Static<typeof OwnershipSchema>;
 
-const Transaction = Type.Object(
+const TransactionSchema = Type.Object(
   {
     maxAge: YahooNumber,
     shares: YahooNumber,
@@ -552,7 +582,7 @@ const Transaction = Type.Object(
     filerRelation: Type.Union([Relation, Type.String()]),
     moneyText: Type.String(),
     startDate: YahooFinanceDate,
-    ownership: Type.Union([OwnershipSchema, Type.String()]),
+    ownership: Type.Union([OwnershipEnumSchema, Type.String()]),
     value: Type.Optional(YahooNumber),
   },
   {
@@ -560,10 +590,11 @@ const Transaction = Type.Object(
     title: "QuoteSummaryTransaction",
   },
 );
+export type Transaction = Static<typeof TransactionSchema>;
 
-const InsiderTransactions = Type.Object(
+const InsiderTransactionsSchema = Type.Object(
   {
-    transactions: Type.Array(Transaction),
+    transactions: Type.Array(TransactionSchema),
     maxAge: YahooNumber,
   },
   {
@@ -571,8 +602,9 @@ const InsiderTransactions = Type.Object(
     title: "QuoteSummaryInsiderTransactions",
   },
 );
+export type InsiderTransactions = Static<typeof InsiderTransactionsSchema>;
 
-const Holder = Type.Object(
+const HolderSchema = Type.Object(
   {
     maxAge: YahooNumber,
     name: Type.String(),
@@ -591,10 +623,11 @@ const Holder = Type.Object(
     title: "QuoteSummaryHolder",
   },
 );
+export type Holder = Static<typeof HolderSchema>;
 
-const Holders = Type.Object(
+const HoldersSchema = Type.Object(
   {
-    holders: Type.Array(Holder),
+    holders: Type.Array(HolderSchema),
     maxAge: YahooNumber,
   },
   {
@@ -602,8 +635,9 @@ const Holders = Type.Object(
     title: "QuoteSummaryHolders",
   },
 );
+export type Holders = Static<typeof HoldersSchema>;
 
-const Trend = Type.Object(
+const TrendSchema = Type.Object(
   {
     maxAge: YahooNumber,
     symbol: Type.Null(),
@@ -614,8 +648,9 @@ const Trend = Type.Object(
     title: "QuoteSummaryTrend",
   },
 );
+export type Trend = Static<typeof TrendSchema>;
 
-const Estimate = Type.Object(
+const EstimateSchema = Type.Object(
   {
     period: Type.String(),
     growth: Type.Optional(YahooNumber),
@@ -625,22 +660,24 @@ const Estimate = Type.Object(
     title: "QuoteSummaryEstimate",
   },
 );
+export type Estimate = Static<typeof EstimateSchema>;
 
-const IndexTrend = Type.Object(
+const IndexTrendSchema = Type.Object(
   {
     maxAge: YahooNumber,
     symbol: Type.String(),
     peRatio: YahooNumber,
     pegRatio: YahooNumber,
-    estimates: Type.Array(Estimate),
+    estimates: Type.Array(EstimateSchema),
   },
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryIndexTrend",
   },
 );
+export type IndexTrend = Static<typeof IndexTrendSchema>;
 
-const IncomeStatementHistoryElement = Type.Object(
+const IncomeStatementHistoryElementSchema = Type.Object(
   {
     maxAge: NullableYahooNumber,
     endDate: YahooFinanceDate,
@@ -672,10 +709,13 @@ const IncomeStatementHistoryElement = Type.Object(
     title: "QuoteSummaryIncomeStatementHistoryElement",
   },
 );
+export type IncomeStatementHistoryElement = Static<
+  typeof IncomeStatementHistoryElementSchema
+>;
 
-const IncomeStatementHistory = Type.Object(
+const IncomeStatementHistorySchema = Type.Object(
   {
-    incomeStatementHistory: Type.Array(IncomeStatementHistoryElement),
+    incomeStatementHistory: Type.Array(IncomeStatementHistoryElementSchema),
     maxAge: YahooNumber,
   },
   {
@@ -683,15 +723,19 @@ const IncomeStatementHistory = Type.Object(
     title: "QuoteSummaryIncomeStatementHistory",
   },
 );
+export type IncomeStatementHistory = Static<
+  typeof IncomeStatementHistorySchema
+>;
 
-const FundProfileBrokerage = Type.Object(
+const FundProfileBrokerageSchema = Type.Object(
   {},
   {
     title: "QuoteSummaryFundProfileBrokerage",
   },
 );
+export type FundProfileBrokerage = Static<typeof FundProfileBrokerageSchema>;
 
-const FundProfileFeesExpensesInvestment = Type.Object(
+const FundProfileFeesExpensesInvestmentSchema = Type.Object(
   {
     annualHoldingsTurnover: Type.Optional(YahooNumber),
     annualReportExpenseRatio: Type.Optional(YahooNumber),
@@ -705,10 +749,13 @@ const FundProfileFeesExpensesInvestment = Type.Object(
     title: "QuoteSummaryFundProfileFeesExpensesInvestment",
   },
 );
+export type FundProfileFeesExpensesInvestment = Static<
+  typeof FundProfileFeesExpensesInvestmentSchema
+>;
 
-const FundProfileFeesExpensesInvestmentCat = Type.Composite(
+const FundProfileFeesExpensesInvestmentCatSchema = Type.Composite(
   [
-    Type.Omit(FundProfileFeesExpensesInvestment, ["projectionValues"]),
+    Type.Omit(FundProfileFeesExpensesInvestmentSchema, ["projectionValues"]),
     Type.Object({
       projectionValuesCat: Type.Object({}),
     }),
@@ -718,8 +765,11 @@ const FundProfileFeesExpensesInvestmentCat = Type.Composite(
     additionalProperties: Type.Any(),
   },
 );
+export type FundProfileFeesExpensesInvestmentCat = Static<
+  typeof FundProfileFeesExpensesInvestmentCatSchema
+>;
 
-const FundProfileManagementInfo = Type.Object(
+const FundProfileManagementInfoSchema = Type.Object(
   {
     managerName: Type.Union([Type.Null(), Type.String()]),
     managerBio: Type.Union([Type.Null(), Type.String()]),
@@ -730,20 +780,25 @@ const FundProfileManagementInfo = Type.Object(
     title: "QuoteSummaryFundProfileManagementInfo",
   },
 );
+export type FundProfileManagementInfo = Static<
+  typeof FundProfileManagementInfoSchema
+>;
 
-const FundProfile = Type.Object(
+const FundProfileSchema = Type.Object(
   {
     maxAge: YahooNumber,
     styleBoxUrl: Type.Optional(Type.Union([Type.Null(), Type.String()])),
     family: Type.Union([Type.Null(), Type.String()]),
     categoryName: Type.Union([Type.Null(), Type.String()]),
     legalType: Type.Union([Type.Null(), Type.String()]),
-    managementInfo: Type.Optional(FundProfileManagementInfo),
-    feesExpensesInvestment: Type.Optional(FundProfileFeesExpensesInvestment),
-    feesExpensesInvestmentCat: Type.Optional(
-      FundProfileFeesExpensesInvestmentCat,
+    managementInfo: Type.Optional(FundProfileManagementInfoSchema),
+    feesExpensesInvestment: Type.Optional(
+      FundProfileFeesExpensesInvestmentSchema,
     ),
-    brokerages: Type.Optional(Type.Array(FundProfileBrokerage)),
+    feesExpensesInvestmentCat: Type.Optional(
+      FundProfileFeesExpensesInvestmentCatSchema,
+    ),
+    brokerages: Type.Optional(Type.Array(FundProfileBrokerageSchema)),
     initInvestment: Type.Optional(YahooNumber),
     initIraInvestment: Type.Optional(YahooNumber),
     initAipInvestment: Type.Optional(YahooNumber),
@@ -756,8 +811,9 @@ const FundProfile = Type.Object(
     title: "QuoteSummaryFundProfile",
   },
 );
+export type FundProfile = Static<typeof FundProfileSchema>;
 
-const FundPerformanceRiskOverviewStatsRow = Type.Object(
+const FundPerformanceRiskOverviewStatsRowSchema = Type.Object(
   {
     year: Type.String(), // "5y" | "3y" | "10y" | anything else?
     alpha: YahooNumber, // 7.76
@@ -773,20 +829,26 @@ const FundPerformanceRiskOverviewStatsRow = Type.Object(
     title: "QuoteSummaryFundPerformanceRiskOverviewStatsRow",
   },
 );
+export type FundPerformanceRiskOverviewStatsRow = Static<
+  typeof FundPerformanceRiskOverviewStatsRowSchema
+>;
 
-const FundPerformanceRiskOverviewStatsCat = Type.Object(
+const FundPerformanceRiskOverviewStatsCatSchema = Type.Object(
   {
-    riskStatisticsCat: Type.Array(FundPerformanceRiskOverviewStatsRow),
+    riskStatisticsCat: Type.Array(FundPerformanceRiskOverviewStatsRowSchema),
   },
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundPerformanceRiskOverviewStatsCat",
   },
 );
+export type FundPerformanceRiskOverviewStatsCat = Static<
+  typeof FundPerformanceRiskOverviewStatsCatSchema
+>;
 
-const FundPerformanceRiskOverviewStats = Type.Object(
+const FundPerformanceRiskOverviewStatsSchema = Type.Object(
   {
-    riskStatistics: Type.Array(FundPerformanceRiskOverviewStatsRow),
+    riskStatistics: Type.Array(FundPerformanceRiskOverviewStatsRowSchema),
     riskRating: Type.Optional(YahooNumber),
   },
   {
@@ -794,8 +856,11 @@ const FundPerformanceRiskOverviewStats = Type.Object(
     title: "QuoteSummaryFundPerformanceRiskOverviewStats",
   },
 );
+export type FundPerformanceRiskOverviewStats = Static<
+  typeof FundPerformanceRiskOverviewStatsSchema
+>;
 
-const FundPerformanceReturnsRow = Type.Object(
+const FundPerformanceReturnsRowSchema = Type.Object(
   {
     year: YahooFinanceDate,
     annualValue: Type.Optional(YahooNumber),
@@ -809,19 +874,25 @@ const FundPerformanceReturnsRow = Type.Object(
     title: "QuoteSummaryFundPerformanceReturnsRow",
   },
 );
+export type FundPerformanceReturnsRow = Static<
+  typeof FundPerformanceReturnsRowSchema
+>;
 
-const FundPerformanceReturns = Type.Object(
+const FundPerformanceReturnsSchema = Type.Object(
   {
-    returns: Type.Array(FundPerformanceReturnsRow),
-    returnsCat: Type.Optional(Type.Array(FundPerformanceReturnsRow)),
+    returns: Type.Array(FundPerformanceReturnsRowSchema),
+    returnsCat: Type.Optional(Type.Array(FundPerformanceReturnsRowSchema)),
   },
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundPerformanceReturns",
   },
 );
+export type FundPerformanceReturns = Static<
+  typeof FundPerformanceReturnsSchema
+>;
 
-const FundPerformancePerformanceOverviewCat = Type.Object(
+const FundPerformancePerformanceOverviewCatSchema = Type.Object(
   {
     ytdReturnPct: Type.Optional(YahooNumber),
     fiveYrAvgReturnPct: Type.Optional(YahooNumber),
@@ -831,8 +902,11 @@ const FundPerformancePerformanceOverviewCat = Type.Object(
     title: "QuoteSummaryFundPerformancePerformanceOverviewCat",
   },
 );
+export type FundPerformancePerformanceOverviewCat = Static<
+  typeof FundPerformancePerformanceOverviewCatSchema
+>;
 
-const FundPerformancePerformanceOverview = Type.Object(
+const FundPerformancePerformanceOverviewSchema = Type.Object(
   {
     asOfDate: Type.Optional(YahooFinanceDate),
     ytdReturnPct: Type.Optional(YahooNumber),
@@ -852,8 +926,11 @@ const FundPerformancePerformanceOverview = Type.Object(
     title: "QuoteSummaryFundPerformancePerformanceOverview",
   },
 );
+export type FundPerformancePerformanceOverview = Static<
+  typeof FundPerformancePerformanceOverviewSchema
+>;
 
-const PeriodRange = Type.Object(
+const PeriodRangeSchema = Type.Object(
   {
     asOfDate: Type.Optional(YahooFinanceDate),
     ytd: Type.Optional(YahooNumber),
@@ -869,10 +946,11 @@ const PeriodRange = Type.Object(
     title: "QuoteSummaryPeriodRange",
   },
 );
+export type PeriodRange = Static<typeof PeriodRangeSchema>;
 
-const FundPerformanceTrailingReturns = Type.Composite(
+const FundPerformanceTrailingReturnsSchema = Type.Composite(
   [
-    PeriodRange,
+    PeriodRangeSchema,
     Type.Object(
       {
         lastBullMkt: Type.Optional(YahooNumber),
@@ -887,29 +965,33 @@ const FundPerformanceTrailingReturns = Type.Composite(
     title: "QuoteSummaryFundPerformanceTrailingReturns",
   },
 );
+export type FundPerformanceTrailingReturns = Static<
+  typeof FundPerformanceTrailingReturnsSchema
+>;
 
-const FundPerformance = Type.Object(
+const FundPerformanceSchema = Type.Object(
   {
     maxAge: YahooNumber,
-    loadAdjustedReturns: Type.Optional(PeriodRange),
-    rankInCategory: Type.Optional(PeriodRange),
-    performanceOverview: FundPerformancePerformanceOverview,
-    performanceOverviewCat: FundPerformancePerformanceOverviewCat,
-    trailingReturns: FundPerformanceTrailingReturns,
-    trailingReturnsNav: FundPerformanceTrailingReturns,
-    trailingReturnsCat: FundPerformanceTrailingReturns,
-    annualTotalReturns: FundPerformanceReturns,
-    pastQuarterlyReturns: FundPerformanceReturns,
-    riskOverviewStatistics: FundPerformanceRiskOverviewStats,
-    riskOverviewStatisticsCat: FundPerformanceRiskOverviewStatsCat,
+    loadAdjustedReturns: Type.Optional(PeriodRangeSchema),
+    rankInCategory: Type.Optional(PeriodRangeSchema),
+    performanceOverview: FundPerformancePerformanceOverviewSchema,
+    performanceOverviewCat: FundPerformancePerformanceOverviewCatSchema,
+    trailingReturns: FundPerformanceTrailingReturnsSchema,
+    trailingReturnsNav: FundPerformanceTrailingReturnsSchema,
+    trailingReturnsCat: FundPerformanceTrailingReturnsSchema,
+    annualTotalReturns: FundPerformanceReturnsSchema,
+    pastQuarterlyReturns: FundPerformanceReturnsSchema,
+    riskOverviewStatistics: FundPerformanceRiskOverviewStatsSchema,
+    riskOverviewStatisticsCat: FundPerformanceRiskOverviewStatsCatSchema,
   },
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFundPerformance",
   },
 );
+export type FundPerformance = Static<typeof FundPerformanceSchema>;
 
-const OwnershipList = Type.Object(
+const OwnershipListSchema = Type.Object(
   {
     maxAge: YahooNumber,
     reportDate: YahooFinanceDate,
@@ -924,19 +1006,21 @@ const OwnershipList = Type.Object(
     title: "QuoteSummaryOwnershipList",
   },
 );
+export type OwnershipList = Static<typeof OwnershipListSchema>;
 
-const Ownership = Type.Object(
+const OwnershipSchema = Type.Object(
   {
     maxAge: YahooNumber,
-    ownershipList: Type.Array(OwnershipList),
+    ownershipList: Type.Array(OwnershipListSchema),
   },
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryOwnership",
   },
 );
+export type Ownership = Static<typeof OwnershipSchema>;
 
-const FinancialData = Type.Object(
+const FinancialDataSchema = Type.Object(
   {
     maxAge: YahooNumber,
     currentPrice: Type.Optional(YahooNumber),
@@ -974,8 +1058,9 @@ const FinancialData = Type.Object(
     title: "QuoteSummaryFinancialData",
   },
 );
+export type FinancialData = Static<typeof FinancialDataSchema>;
 
-const RevenueEstimate = Type.Object(
+const RevenueEstimateSchema = Type.Object(
   {
     avg: NullableYahooNumber,
     low: NullableYahooNumber,
@@ -989,8 +1074,9 @@ const RevenueEstimate = Type.Object(
     title: "QuoteSummaryRevenueEstimate",
   },
 );
+export type RevenueEstimate = Static<typeof RevenueEstimateSchema>;
 
-const EpsTrend = Type.Object(
+const EpsTrendSchema = Type.Object(
   {
     current: NullableYahooNumber,
     "7daysAgo": NullableYahooNumber,
@@ -1003,8 +1089,9 @@ const EpsTrend = Type.Object(
     title: "QuoteSummaryEpsTrend",
   },
 );
+export type EpsTrend = Static<typeof EpsTrendSchema>;
 
-const EpsRevisions = Type.Object(
+const EpsRevisionsSchema = Type.Object(
   {
     upLast7days: NullableYahooNumber,
     upLast30days: NullableYahooNumber,
@@ -1016,8 +1103,9 @@ const EpsRevisions = Type.Object(
     title: "QuoteSummaryEpsRevisions",
   },
 );
+export type EpsRevisions = Static<typeof EpsRevisionsSchema>;
 
-const EarningsEstimate = Type.Object(
+const EarningsEstimateSchema = Type.Object(
   {
     avg: NullableYahooNumber,
     low: NullableYahooNumber,
@@ -1031,27 +1119,29 @@ const EarningsEstimate = Type.Object(
     title: "QuoteSummaryEarningsEstimate",
   },
 );
+export type EarningsEstimate = Static<typeof EarningsEstimateSchema>;
 
-const EarningsTrendTrend = Type.Object(
+const EarningsTrendTrendSchema = Type.Object(
   {
     maxAge: YahooNumber,
     period: Type.String(),
     endDate: NullableYahooFinanceDate,
     growth: NullableYahooNumber,
-    earningsEstimate: EarningsEstimate,
-    revenueEstimate: RevenueEstimate,
-    epsTrend: EpsTrend,
-    epsRevisions: EpsRevisions,
+    earningsEstimate: EarningsEstimateSchema,
+    revenueEstimate: RevenueEstimateSchema,
+    epsTrend: EpsTrendSchema,
+    epsRevisions: EpsRevisionsSchema,
   },
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryEarningsTrendTrend",
   },
 );
+export type EarningsTrendTrend = Static<typeof EarningsTrendTrendSchema>;
 
-const EarningsTrend = Type.Object(
+const EarningsTrendSchema = Type.Object(
   {
-    trend: Type.Array(EarningsTrendTrend),
+    trend: Type.Array(EarningsTrendTrendSchema),
     maxAge: YahooNumber,
   },
   {
@@ -1059,8 +1149,9 @@ const EarningsTrend = Type.Object(
     title: "QuoteSummaryEarningsTrend",
   },
 );
+export type EarningsTrend = Static<typeof EarningsTrendSchema>;
 
-const EarningsHistoryHistory = Type.Object(
+const EarningsHistoryHistorySchema = Type.Object(
   {
     maxAge: YahooNumber,
     epsActual: NullableYahooNumber,
@@ -1075,10 +1166,13 @@ const EarningsHistoryHistory = Type.Object(
     title: "QuoteSummaryEarningsHistoryHistory",
   },
 );
+export type EarningsHistoryHistory = Static<
+  typeof EarningsHistoryHistorySchema
+>;
 
-const EarningsHistory = Type.Object(
+const EarningsHistorySchema = Type.Object(
   {
-    history: Type.Array(EarningsHistoryHistory),
+    history: Type.Array(EarningsHistoryHistorySchema),
     maxAge: YahooNumber,
   },
   {
@@ -1086,8 +1180,9 @@ const EarningsHistory = Type.Object(
     title: "QuoteSummaryEarningsHistory",
   },
 );
+export type EarningsHistory = Static<typeof EarningsHistorySchema>;
 
-const Yearly = Type.Object(
+const YearlySchema = Type.Object(
   {
     date: YahooNumber,
     revenue: YahooNumber,
@@ -1098,8 +1193,9 @@ const Yearly = Type.Object(
     title: "QuoteSummaryYearly",
   },
 );
+export type Yearly = Static<typeof YearlySchema>;
 
-const FinancialsChartQuarterly = Type.Object(
+const FinancialsChartQuarterlySchema = Type.Object(
   {
     date: Type.String(),
     revenue: YahooNumber,
@@ -1110,19 +1206,23 @@ const FinancialsChartQuarterly = Type.Object(
     title: "QuoteSummaryFinancialsChartQuarterly",
   },
 );
+export type FinancialsChartQuarterly = Static<
+  typeof FinancialsChartQuarterlySchema
+>;
 
-const FinancialsChart = Type.Object(
+const FinancialsChartSchema = Type.Object(
   {
-    yearly: Type.Array(Yearly),
-    quarterly: Type.Array(FinancialsChartQuarterly),
+    yearly: Type.Array(YearlySchema),
+    quarterly: Type.Array(FinancialsChartQuarterlySchema),
   },
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryFinancialsChart",
   },
 );
+export type FinancialsChart = Static<typeof FinancialsChartSchema>;
 
-const EarningsChartQuarterly = Type.Object(
+const EarningsChartQuarterlySchema = Type.Object(
   {
     date: Type.String(),
     actual: YahooNumber,
@@ -1133,10 +1233,13 @@ const EarningsChartQuarterly = Type.Object(
     title: "QuoteSummaryEarningsChartQuarterly",
   },
 );
+export type EarningsChartQuarterly = Static<
+  typeof EarningsChartQuarterlySchema
+>;
 
-const EarningsChart = Type.Object(
+const EarningsChartSchema = Type.Object(
   {
-    quarterly: Type.Array(EarningsChartQuarterly),
+    quarterly: Type.Array(EarningsChartQuarterlySchema),
     currentQuarterEstimate: Type.Optional(YahooNumber),
     currentQuarterEstimateDate: Type.Optional(Type.String()),
     currentQuarterEstimateYear: Type.Optional(YahooNumber),
@@ -1147,12 +1250,13 @@ const EarningsChart = Type.Object(
     title: "QuoteSummaryEarningsChart",
   },
 );
+export type EarningsChart = Static<typeof EarningsChartSchema>;
 
-const QuoteSummaryEarnings = Type.Object(
+const QuoteSummaryEarningsSchema = Type.Object(
   {
     maxAge: YahooNumber,
-    earningsChart: EarningsChart,
-    financialsChart: FinancialsChart,
+    earningsChart: EarningsChartSchema,
+    financialsChart: FinancialsChartSchema,
     financialCurrency: Type.Optional(Type.String()),
   },
   {
@@ -1160,8 +1264,9 @@ const QuoteSummaryEarnings = Type.Object(
     title: "QuoteSummaryEarnings",
   },
 );
+export type QuoteSummaryEarnings = Static<typeof QuoteSummaryEarningsSchema>;
 
-const DefaultKeyStatistics = Type.Object(
+const DefaultKeyStatisticsSchema = Type.Object(
   {
     maxAge: YahooNumber,
     priceHint: YahooNumber,
@@ -1220,8 +1325,9 @@ const DefaultKeyStatistics = Type.Object(
     title: "QuoteSummaryDefaultKeyStatistics",
   },
 );
+export type DefaultKeyStatistics = Static<typeof DefaultKeyStatisticsSchema>;
 
-const CashflowStatement = Type.Object(
+const CashflowStatementSchema = Type.Object(
   {
     maxAge: YahooNumber,
     endDate: YahooFinanceDate,
@@ -1251,9 +1357,11 @@ const CashflowStatement = Type.Object(
     title: "QuoteSummaryCashflowStatement",
   },
 );
-const CashflowStatementHistory = Type.Object(
+export type CashflowStatement = Static<typeof CashflowStatementSchema>;
+
+const CashflowStatementHistorySchema = Type.Object(
   {
-    cashflowStatements: Type.Array(CashflowStatement),
+    cashflowStatements: Type.Array(CashflowStatementSchema),
     maxAge: YahooNumber,
   },
   {
@@ -1261,8 +1369,11 @@ const CashflowStatementHistory = Type.Object(
     title: "QuoteSummaryCashflowStatementHistory",
   },
 );
+export type CashflowStatementHistory = Static<
+  typeof CashflowStatementHistorySchema
+>;
 
-const CalendarEventsEarnings = Type.Object(
+const CalendarEventsEarningsSchema = Type.Object(
   {
     earningsDate: Type.Array(YahooFinanceDate),
     earningsAverage: Type.Optional(YahooNumber),
@@ -1277,11 +1388,14 @@ const CalendarEventsEarnings = Type.Object(
     title: "QuoteSumamryCalendarEventsEarnings",
   },
 );
+export type CalendarEventsEarnings = Static<
+  typeof CalendarEventsEarningsSchema
+>;
 
-const CalendarEvents = Type.Object(
+const CalendarEventsSchema = Type.Object(
   {
     maxAge: YahooNumber,
-    earnings: CalendarEventsEarnings,
+    earnings: CalendarEventsEarningsSchema,
     exDividendDate: Type.Optional(YahooFinanceDate),
     dividendDate: Type.Optional(YahooFinanceDate),
   },
@@ -1290,8 +1404,9 @@ const CalendarEvents = Type.Object(
     title: "QuoteSummaryCalendarEvents",
   },
 );
+export type CalendarEvents = Static<typeof CalendarEventsSchema>;
 
-const BalanceSheetStatement = Type.Object(
+const BalanceSheetStatementSchema = Type.Object(
   {
     maxAge: YahooNumber,
     endDate: YahooFinanceDate,
@@ -1330,10 +1445,11 @@ const BalanceSheetStatement = Type.Object(
     title: "QuoteSummaryBalanceSheetStatement",
   },
 );
+export type BalanceSheetStatement = Static<typeof BalanceSheetStatementSchema>;
 
-const BalanceSheetHistory = Type.Object(
+const BalanceSheetHistorySchema = Type.Object(
   {
-    balanceSheetStatements: Type.Array(BalanceSheetStatement),
+    balanceSheetStatements: Type.Array(BalanceSheetStatementSchema),
     maxAge: YahooNumber,
   },
   {
@@ -1341,8 +1457,9 @@ const BalanceSheetHistory = Type.Object(
     title: "QuoteSummaryBalanceSheetHistory",
   },
 );
+export type BalanceSheetHistory = Static<typeof BalanceSheetHistorySchema>;
 
-const CompanyOfficer = Type.Object(
+const CompanyOfficerSchema = Type.Object(
   {
     maxAge: YahooNumber,
     name: Type.String(),
@@ -1359,8 +1476,9 @@ const CompanyOfficer = Type.Object(
     title: "QuoteSummaryCompanyOfficer",
   },
 );
+export type CompanyOfficer = Static<typeof CompanyOfficerSchema>;
 
-const AssetProfile = Type.Object(
+const AssetProfileSchema = Type.Object(
   {
     maxAge: YahooNumber,
     address1: Type.Optional(Type.String()),
@@ -1382,7 +1500,7 @@ const AssetProfile = Type.Object(
     sectorKey: Type.Optional(Type.String()),
     longBusinessSummary: Type.Optional(Type.String()),
     fullTimeEmployees: Type.Optional(YahooNumber),
-    companyOfficers: Type.Array(CompanyOfficer),
+    companyOfficers: Type.Array(CompanyOfficerSchema),
     auditRisk: Type.Optional(YahooNumber),
     boardRisk: Type.Optional(YahooNumber),
     compensationRisk: Type.Optional(YahooNumber),
@@ -1401,39 +1519,43 @@ const AssetProfile = Type.Object(
     title: "QuoteSummaryAssetProfile",
   },
 );
+export type AssetProfile = Static<typeof AssetProfileSchema>;
 
-export const QuoteSummaryResult = Type.Object(
+export const QuoteSummaryResultSchema = Type.Object(
   {
-    assetProfile: Type.Optional(AssetProfile),
-    balanceSheetHistory: Type.Optional(BalanceSheetHistory),
-    balanceSheetHistoryQuarterly: Type.Optional(BalanceSheetHistory),
-    calendarEvents: Type.Optional(CalendarEvents),
-    cashflowStatementHistory: Type.Optional(CashflowStatementHistory),
-    cashflowStatementHistoryQuarterly: Type.Optional(CashflowStatementHistory),
-    defaultKeyStatistics: Type.Optional(DefaultKeyStatistics),
-    earnings: Type.Optional(QuoteSummaryEarnings),
-    earningsHistory: Type.Optional(EarningsHistory),
-    earningsTrend: Type.Optional(EarningsTrend),
-    financialData: Type.Optional(FinancialData),
-    fundOwnership: Type.Optional(Ownership),
-    fundPerformance: Type.Optional(FundPerformance),
-    fundProfile: Type.Optional(FundProfile),
-    institutionOwnership: Type.Optional(Ownership),
-    majorDirectHolders: Type.Optional(Holders),
-    majorHoldersBreakdown: Type.Optional(MajorHoldersBreakdown),
-    netSharePurchaseActivity: Type.Optional(NetSharePurchaseActivity),
-    price: Type.Optional(Price),
-    quoteType: Type.Optional(QuoteType),
-    recommendationTrend: Type.Optional(RecommendationTrend),
-    secFilings: Type.Optional(SECFilings),
-    sectorTrend: Type.Optional(Trend),
-    summaryDetail: Type.Optional(SummaryDetail),
-    summaryProfile: Type.Optional(SummaryProfile),
-    topHoldings: Type.Optional(TopHoldings),
-    upgradeDowngradeHistory: Type.Optional(UpgradeDowngradeHistory),
+    assetProfile: Type.Optional(AssetProfileSchema),
+    balanceSheetHistory: Type.Optional(BalanceSheetHistorySchema),
+    balanceSheetHistoryQuarterly: Type.Optional(BalanceSheetHistorySchema),
+    calendarEvents: Type.Optional(CalendarEventsSchema),
+    cashflowStatementHistory: Type.Optional(CashflowStatementHistorySchema),
+    cashflowStatementHistoryQuarterly: Type.Optional(
+      CashflowStatementHistorySchema,
+    ),
+    defaultKeyStatistics: Type.Optional(DefaultKeyStatisticsSchema),
+    earnings: Type.Optional(QuoteSummaryEarningsSchema),
+    earningsHistory: Type.Optional(EarningsHistorySchema),
+    earningsTrend: Type.Optional(EarningsTrendSchema),
+    financialData: Type.Optional(FinancialDataSchema),
+    fundOwnership: Type.Optional(OwnershipSchema),
+    fundPerformance: Type.Optional(FundPerformanceSchema),
+    fundProfile: Type.Optional(FundProfileSchema),
+    institutionOwnership: Type.Optional(OwnershipSchema),
+    majorDirectHolders: Type.Optional(HoldersSchema),
+    majorHoldersBreakdown: Type.Optional(MajorHoldersBreakdownSchema),
+    netSharePurchaseActivity: Type.Optional(NetSharePurchaseActivitySchema),
+    price: Type.Optional(PriceSchema),
+    quoteType: Type.Optional(QuoteTypeSchema),
+    recommendationTrend: Type.Optional(RecommendationTrendSchema),
+    secFilings: Type.Optional(SECFilingsSchema),
+    sectorTrend: Type.Optional(TrendSchema),
+    summaryDetail: Type.Optional(SummaryDetailSchema),
+    summaryProfile: Type.Optional(SummaryProfileSchema),
+    topHoldings: Type.Optional(TopHoldingsSchema),
+    upgradeDowngradeHistory: Type.Optional(UpgradeDowngradeHistorySchema),
   },
   {
     additionalProperties: Type.Any(),
     title: "QuoteSummaryResult",
   },
 );
+export type QuoteSummaryResult = Static<typeof QuoteSummaryResultSchema>;

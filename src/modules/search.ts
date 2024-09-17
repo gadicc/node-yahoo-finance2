@@ -174,7 +174,7 @@ const SearchNews = Type.Object(
   },
 );
 
-type SearchResult = Static<typeof SearchResultSchema>;
+export type SearchResult = Static<typeof SearchResultSchema>;
 const SearchResultSchema = Type.Object(
   {
     explains: Type.Array(Type.Any()),
@@ -247,7 +247,7 @@ const SearchOptionsSchema = Type.Object(
   },
 );
 
-type SearchOptions = Static<typeof SearchOptionsSchema>;
+export type SearchOptions = Static<typeof SearchOptionsSchema>;
 
 const queryOptionsDefaults: SearchOptions = {
   lang: "en-US",

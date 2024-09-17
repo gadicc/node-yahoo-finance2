@@ -212,8 +212,8 @@ const OptionsOptionsSchema = Type.Object(
   },
 );
 
-type OptionsOptions = Static<typeof OptionsOptionsSchema>;
-type OptionsResult = Static<typeof OptionsResultSchema>;
+export type OptionsOptions = Static<typeof OptionsOptionsSchema>;
+export type OptionsResult = Static<typeof OptionsResultSchema>;
 
 const queryOptionsDefaults: OptionsOptions = {
   formatted: false,

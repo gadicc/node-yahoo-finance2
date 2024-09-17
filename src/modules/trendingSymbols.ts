@@ -42,8 +42,8 @@ const TrendingSymbolsOptions = Type.Optional(
   ),
 );
 
-type TrendingSymbolsResult = Static<typeof TrendingSymbolsResult>;
-type TrendingSymbolsOptions = Static<typeof TrendingSymbolsOptions>;
+export type TrendingSymbolsResult = Static<typeof TrendingSymbolsResult>;
+export type TrendingSymbolsOptions = Static<typeof TrendingSymbolsOptions>;
 
 const queryOptionsDefaults: TrendingSymbolsOptions = {
   lang: "en-US",

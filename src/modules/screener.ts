@@ -189,9 +189,9 @@ const PredefinedScreenerModules = Type.Union(
   },
 );
 
-type ScreenerResult = Static<typeof ScreenerResult>;
+export type ScreenerResult = Static<typeof ScreenerResult>;
 
-type ScreenerOptions = Static<typeof ScreenerOptions>;
+export type ScreenerOptions = Static<typeof ScreenerOptions>;
 
 const queryOptionsDefaults: ScreenerOptions = {
   lang: "en-US",

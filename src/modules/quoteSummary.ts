@@ -5,7 +5,10 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.js";
 import { Static, Type } from "@sinclair/typebox";
-import { QuoteSummaryResult } from "./quoteSummary-iface.js";
+import {
+  QuoteSummaryResult,
+  QuoteSummaryResultSchema,
+} from "./quoteSummary-iface.js";
 
 const QuoteSummaryModules = Type.Union([
   Type.Literal("assetProfile"),
@@ -43,7 +46,7 @@ const QuoteSummaryModules = Type.Union([
   Type.Literal("upgradeDowngradeHistory"),
 ]);
 
-type QuoteSummaryModulesLiteral = Static<typeof QuoteSummaryModules>;
+export type QuoteSummaryModulesLiteral = Static<typeof QuoteSummaryModules>;
 
 const quoteSummaryModules = [
   "assetProfile",
@@ -81,10 +84,9 @@ const quoteSummaryModules = [
   "upgradeDowngradeHistory",
 ];
 
-type QuoteSummaryOptions = Static<typeof QuoteSummaryOptions>;
-type QuoteSummaryResult = Static<typeof QuoteSummaryResult>;
+export type QuoteSummaryOptions = Static<typeof QuoteSummaryOptionsSchema>;
 
-const QuoteSummaryOptions = Type.Object({
+const QuoteSummaryOptionsSchema = Type.Object({
   formatted: Type.Optional(Type.Boolean()),
   modules: Type.Optional(
     Type.Union([Type.Array(QuoteSummaryModules), Type.Literal("all")]),
@@ -122,7 +124,7 @@ export default function quoteSummary(
       assertSymbol: symbol,
       url: "https://${YF_QUERY_HOST}/v10/finance/quoteSummary/" + symbol,
       needsCrumb: true,
-      schema: QuoteSummaryOptions,
+      schema: QuoteSummaryOptionsSchema,
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       transformWith(options: unknown) {
@@ -139,7 +141,7 @@ export default function quoteSummary(
     },
 
     result: {
-      schema: QuoteSummaryResult,
+      schema: QuoteSummaryResultSchema,
       transformWith(result: any) {
         if (!result.quoteSummary)
           throw new Error("Unexpected result: " + JSON.stringify(result));

@@ -241,9 +241,9 @@ const ResultType = Type.Union([
 
 const QuoteResponseArraySchema = Type.Array(QuoteSchema);
 
-type QuoteResponseArray = Quote[];
-type QuoteResponseMap = Map<string, Quote>;
-type QuoteResponseObject = { [key: string]: Quote };
+export type QuoteResponseArray = Quote[];
+export type QuoteResponseMap = Map<string, Quote>;
+export type QuoteResponseObject = { [key: string]: Quote };
 
 export const QuoteOptionsSchema = Type.Object({
   fields: Type.Optional(Type.Array(QuoteField)),
@@ -270,13 +270,15 @@ const QuoteOptionsWithReturnObjectSchema = Type.Composite([
   }),
 ]);
 
-type QuoteOptionsWithReturnArray = Static<
+export type QuoteOptionsWithReturnArray = Static<
   typeof QuoteOptionsWithReturnArraySchema
 >;
 
-type QuoteOptionsWithReturnMap = Static<typeof QuoteOptionsWithReturnMapSchema>;
+export type QuoteOptionsWithReturnMap = Static<
+  typeof QuoteOptionsWithReturnMapSchema
+>;
 
-type QuoteOptionsWithReturnObject = Static<
+export type QuoteOptionsWithReturnObject = Static<
   typeof QuoteOptionsWithReturnObjectSchema
 >;
 

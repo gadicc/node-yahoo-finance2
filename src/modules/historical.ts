@@ -109,20 +109,24 @@ const HistoricalStockSplitsResultSchema = Type.Array(HistoricalRowStockSplit, {
   title: "HistoricalRowStockSplit",
 });
 
-type HistoricalOptions = Static<typeof HistoricalOptionsSchema>;
-type HistoricalOptionsEventsHistory = Static<
+export type HistoricalOptions = Static<typeof HistoricalOptionsSchema>;
+export type HistoricalOptionsEventsHistory = Static<
   typeof HistoricalOptionsEventsHistorySchema
 >;
 
-type HistoricalHistoryResult = Static<typeof HistoricalHistoryResultSchema>;
-type HistoricalDividendsResult = Static<typeof HistoricalDividendsResultSchema>;
-type HistoricalOptionsEventsDividends = Static<
+export type HistoricalHistoryResult = Static<
+  typeof HistoricalHistoryResultSchema
+>;
+export type HistoricalDividendsResult = Static<
+  typeof HistoricalDividendsResultSchema
+>;
+export type HistoricalOptionsEventsDividends = Static<
   typeof HistoricalOptionsEventsDividendsSchema
 >;
-type HistoricalOptionsEventsSplit = Static<
+export type HistoricalOptionsEventsSplit = Static<
   typeof HistoricalOptionsEventsSplitSchema
 >;
-type HistoricalStockSplitsResult = Static<
+export type HistoricalStockSplitsResult = Static<
   typeof HistoricalStockSplitsResultSchema
 >;
 

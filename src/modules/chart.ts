@@ -262,15 +262,15 @@ const ChartOptionsWithReturnObjectSchema = Type.Composite(
   },
 );
 
-type ChartOptions = Static<typeof ChartOptionsSchema>;
-type ChartOptionsWithReturnObject = Static<
+export type ChartOptions = Static<typeof ChartOptionsSchema>;
+export type ChartOptionsWithReturnObject = Static<
   typeof ChartOptionsWithReturnObjectSchema
 >;
-type ChartResultObject = Static<typeof ChartResultObjectSchema>;
-type ChartOptionsWithReturnArray = Static<
+export type ChartResultObject = Static<typeof ChartResultObjectSchema>;
+export type ChartOptionsWithReturnArray = Static<
   typeof ChartOptionsWithReturnArraySchema
 >;
-type ChartResultArray = Static<typeof ChartResultArraySchema>;
+export type ChartResultArray = Static<typeof ChartResultArraySchema>;
 
 const queryOptionsDefaults: Omit<ChartOptions, "period1"> = {
   useYfid: true,

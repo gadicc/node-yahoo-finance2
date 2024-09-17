@@ -33,15 +33,15 @@ const RecommendationsBySymbolResponseArray = Type.Array(
 
 const RecommendationsBySymbolOptions = Type.Object({});
 
-type RecommendationsBySymbolResponse = Static<
+export type RecommendationsBySymbolResponse = Static<
   typeof RecommendationsBySymbolResponse
 >;
 
-type RecommendationsBySymbolOptions = Static<
+export type RecommendationsBySymbolOptions = Static<
   typeof RecommendationsBySymbolOptions
 >;
 
-type RecommendationsBySymbolResponseArray = Static<
+export type RecommendationsBySymbolResponseArray = Static<
   typeof RecommendationsBySymbolResponseArray
 >;
 
