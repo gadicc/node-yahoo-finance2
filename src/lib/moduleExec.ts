@@ -193,7 +193,7 @@ async function moduleExec<TOpts = unknown, TResult = unknown>(
    * database, etc.  Otherwise you'll receive an error.
    */
   try {
-    validateAndCoerceTypebox({
+    return validateAndCoerceTypebox({
       type: "result",
       data: result,
       schema: resultOpts.schema,
