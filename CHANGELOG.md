@@ -1,3 +1,11 @@
+## [2.12.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.1...v2.12.2) (2024-09-17)
+
+
+### Bug Fixes
+
+* **moduleExec:** actually return coerced values :) ([94430d8](https://github.com/gadicc/node-yahoo-finance2/commit/94430d82d139880fabfa72ba42dc4f61129d7960))
+* **modules:** re-export types, conform to *Schema convention ([#795](https://github.com/gadicc/node-yahoo-finance2/issues/795)) ([4269556](https://github.com/gadicc/node-yahoo-finance2/commit/42695567c721f04b2bb9bd3f9804129ca8c5d6b4))
+
 ## [2.12.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.0...v2.12.1) (2024-09-16)
 
 
