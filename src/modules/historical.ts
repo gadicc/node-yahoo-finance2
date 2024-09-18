@@ -11,7 +11,7 @@ import _chart, { ChartOptionsSchema } from "./chart.js";
 import validateAndCoerceTypebox from "../lib/validateAndCoerceTypes.js";
 import { showNotice } from "../lib/notices.js";
 
-const HistoricalRowHistory = Type.Object(
+const HistoricalRowHistorySchema = Type.Object(
   {
     date: YahooFinanceDate,
     open: YahooNumber,
@@ -26,22 +26,27 @@ const HistoricalRowHistory = Type.Object(
     title: "HistoricalRowHistory",
   },
 );
+export type HistoricalRowHistory = Static<typeof HistoricalRowHistorySchema>;
 
-const HistoricalRowDividend = Type.Object(
+const HistoricalRowDividendSchema = Type.Object(
   {
     date: YahooFinanceDate,
     dividends: YahooNumber,
   },
   { title: "HistoricalRowDividend" },
 );
+export type HistoricalRowDividend = Static<typeof HistoricalRowDividendSchema>;
 
-const HistoricalRowStockSplit = Type.Object(
+const HistoricalRowStockSplitSchema = Type.Object(
   {
     date: YahooFinanceDate,
     stockSplits: Type.String(),
   },
   { title: "HistoricalRowStockSplit" },
 );
+export type HistoricalRowStockSplit = Static<
+  typeof HistoricalRowStockSplitSchema
+>;
 
 const HistoricalOptionsSchema = Type.Object(
   {
@@ -68,6 +73,7 @@ const HistoricalOptionsSchema = Type.Object(
   },
   { title: "HistoricalOptions" },
 );
+export type HistoricalOptions = Static<typeof HistoricalOptionsSchema>;
 
 const HistoricalOptionsEventsHistorySchema = Type.Composite(
   [
@@ -78,6 +84,9 @@ const HistoricalOptionsEventsHistorySchema = Type.Composite(
   ],
   { title: "HistoricalOptionsEventsHistory" },
 );
+export type HistoricalOptionsEventsHistory = Static<
+  typeof HistoricalOptionsEventsHistorySchema
+>;
 
 const HistoricalOptionsEventsDividendsSchema = Type.Composite(
   [
@@ -88,6 +97,9 @@ const HistoricalOptionsEventsDividendsSchema = Type.Composite(
   ],
   { title: "HistoricalOptionsEventsDividends" },
 );
+export type HistoricalOptionsEventsDividends = Static<
+  typeof HistoricalOptionsEventsDividendsSchema
+>;
 
 const HistoricalOptionsEventsSplitSchema = Type.Composite(
   [
@@ -98,34 +110,33 @@ const HistoricalOptionsEventsSplitSchema = Type.Composite(
   ],
   { title: "HistoricalOptionsEventsSplit" },
 );
-
-const HistoricalHistoryResultSchema = Type.Array(HistoricalRowHistory, {
-  title: "HistoricalHistoryResult",
-});
-const HistoricalDividendsResultSchema = Type.Array(HistoricalRowDividend, {
-  title: "HistoricalDividendsResult",
-});
-const HistoricalStockSplitsResultSchema = Type.Array(HistoricalRowStockSplit, {
-  title: "HistoricalRowStockSplit",
-});
-
-export type HistoricalOptions = Static<typeof HistoricalOptionsSchema>;
-export type HistoricalOptionsEventsHistory = Static<
-  typeof HistoricalOptionsEventsHistorySchema
->;
-
-export type HistoricalHistoryResult = Static<
-  typeof HistoricalHistoryResultSchema
->;
-export type HistoricalDividendsResult = Static<
-  typeof HistoricalDividendsResultSchema
->;
-export type HistoricalOptionsEventsDividends = Static<
-  typeof HistoricalOptionsEventsDividendsSchema
->;
 export type HistoricalOptionsEventsSplit = Static<
   typeof HistoricalOptionsEventsSplitSchema
 >;
+
+const HistoricalHistoryResultSchema = Type.Array(HistoricalRowHistorySchema, {
+  title: "HistoricalHistoryResult",
+});
+export type HistoricalHistoryResult = Static<
+  typeof HistoricalHistoryResultSchema
+>;
+
+const HistoricalDividendsResultSchema = Type.Array(
+  HistoricalRowDividendSchema,
+  {
+    title: "HistoricalDividendsResult",
+  },
+);
+export type HistoricalDividendsResult = Static<
+  typeof HistoricalDividendsResultSchema
+>;
+
+const HistoricalStockSplitsResultSchema = Type.Array(
+  HistoricalRowStockSplitSchema,
+  {
+    title: "HistoricalRowStockSplit",
+  },
+);
 export type HistoricalStockSplitsResult = Static<
   typeof HistoricalStockSplitsResultSchema
 >;
