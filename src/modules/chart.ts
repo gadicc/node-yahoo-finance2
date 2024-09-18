@@ -1,6 +1,6 @@
 // Co-authored by @gadicc, @PythonCreator27 and @huned.
 
-import { Static, Type } from "@sinclair/typebox";
+import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
@@ -262,15 +262,15 @@ const ChartOptionsWithReturnObjectSchema = Type.Composite(
   },
 );
 
-export type ChartOptions = Static<typeof ChartOptionsSchema>;
-export type ChartOptionsWithReturnObject = Static<
+export type ChartOptions = StaticDecode<typeof ChartOptionsSchema>;
+export type ChartOptionsWithReturnObject = StaticDecode<
   typeof ChartOptionsWithReturnObjectSchema
 >;
-export type ChartResultObject = Static<typeof ChartResultObjectSchema>;
-export type ChartOptionsWithReturnArray = Static<
+export type ChartResultObject = StaticDecode<typeof ChartResultObjectSchema>;
+export type ChartOptionsWithReturnArray = StaticDecode<
   typeof ChartOptionsWithReturnArraySchema
 >;
-export type ChartResultArray = Static<typeof ChartResultArraySchema>;
+export type ChartResultArray = StaticDecode<typeof ChartResultArraySchema>;
 
 const queryOptionsDefaults: Omit<ChartOptions, "period1"> = {
   useYfid: true,

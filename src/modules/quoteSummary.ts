@@ -4,7 +4,7 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import { Static, Type } from "@sinclair/typebox";
+import { StaticDecode, Type } from "@sinclair/typebox";
 import {
   QuoteSummaryResult,
   QuoteSummaryResultSchema,
@@ -46,7 +46,9 @@ const QuoteSummaryModules = Type.Union([
   Type.Literal("upgradeDowngradeHistory"),
 ]);
 
-export type QuoteSummaryModulesLiteral = Static<typeof QuoteSummaryModules>;
+export type QuoteSummaryModulesLiteral = StaticDecode<
+  typeof QuoteSummaryModules
+>;
 
 const quoteSummaryModules = [
   "assetProfile",
@@ -84,7 +86,9 @@ const quoteSummaryModules = [
   "upgradeDowngradeHistory",
 ];
 
-export type QuoteSummaryOptions = Static<typeof QuoteSummaryOptionsSchema>;
+export type QuoteSummaryOptions = StaticDecode<
+  typeof QuoteSummaryOptionsSchema
+>;
 
 const QuoteSummaryOptionsSchema = Type.Object({
   formatted: Type.Optional(Type.Boolean()),

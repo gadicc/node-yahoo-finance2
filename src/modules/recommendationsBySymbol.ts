@@ -1,4 +1,4 @@
-import { Static, Type } from "@sinclair/typebox";
+import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateFalse,
@@ -33,15 +33,15 @@ const RecommendationsBySymbolResponseArray = Type.Array(
 
 const RecommendationsBySymbolOptions = Type.Object({});
 
-export type RecommendationsBySymbolResponse = Static<
+export type RecommendationsBySymbolResponse = StaticDecode<
   typeof RecommendationsBySymbolResponse
 >;
 
-export type RecommendationsBySymbolOptions = Static<
+export type RecommendationsBySymbolOptions = StaticDecode<
   typeof RecommendationsBySymbolOptions
 >;
 
-export type RecommendationsBySymbolResponseArray = Static<
+export type RecommendationsBySymbolResponseArray = StaticDecode<
   typeof RecommendationsBySymbolResponseArray
 >;
 

@@ -1,4 +1,4 @@
-import { Static, Type } from "@sinclair/typebox";
+import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
@@ -42,8 +42,10 @@ const TrendingSymbolsOptions = Type.Optional(
   ),
 );
 
-export type TrendingSymbolsResult = Static<typeof TrendingSymbolsResult>;
-export type TrendingSymbolsOptions = Static<typeof TrendingSymbolsOptions>;
+export type TrendingSymbolsResult = StaticDecode<typeof TrendingSymbolsResult>;
+export type TrendingSymbolsOptions = StaticDecode<
+  typeof TrendingSymbolsOptions
+>;
 
 const queryOptionsDefaults: TrendingSymbolsOptions = {
   lang: "en-US",

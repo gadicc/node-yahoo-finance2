@@ -1,4 +1,4 @@
-import { Static, Type } from "@sinclair/typebox";
+import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
@@ -47,7 +47,7 @@ const FundamentalsTimeSeriesOptionsSchema = Type.Object(
   },
 );
 
-export type FundamentalsTimeSeriesOptions = Static<
+export type FundamentalsTimeSeriesOptions = StaticDecode<
   typeof FundamentalsTimeSeriesOptionsSchema
 >;
 
@@ -55,7 +55,7 @@ const FundamentalsTimeSeriesResultsSchema = Type.Array(
   FundamentalsTimeSeriesResultSchema,
 );
 
-export type FundamentalsTimeSeriesResult = Static<
+export type FundamentalsTimeSeriesResult = StaticDecode<
   typeof FundamentalsTimeSeriesResultSchema
 >;
 

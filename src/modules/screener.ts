@@ -1,4 +1,4 @@
-import { Static, Type } from "@sinclair/typebox";
+import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
@@ -189,9 +189,9 @@ const PredefinedScreenerModules = Type.Union(
   },
 );
 
-export type ScreenerResult = Static<typeof ScreenerResult>;
+export type ScreenerResult = StaticDecode<typeof ScreenerResult>;
 
-export type ScreenerOptions = Static<typeof ScreenerOptions>;
+export type ScreenerOptions = StaticDecode<typeof ScreenerOptions>;
 
 const queryOptionsDefaults: ScreenerOptions = {
   lang: "en-US",

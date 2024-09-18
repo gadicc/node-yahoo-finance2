@@ -4,7 +4,7 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import { Type, Static } from "@sinclair/typebox";
+import { Type, StaticDecode } from "@sinclair/typebox";
 
 import {
   YahooDateInMs,
@@ -236,8 +236,8 @@ const InsightsResultSchema = Type.Object(
   },
 );
 
-export type InsightsResult = Static<typeof InsightsResultSchema>;
-export type InsightsOutlook = Static<typeof InsightsOutlookSchema>;
+export type InsightsResult = StaticDecode<typeof InsightsResultSchema>;
+export type InsightsOutlook = StaticDecode<typeof InsightsOutlookSchema>;
 
 export interface InsightsInstrumentInfo {
   [key: string]: any;
@@ -298,7 +298,7 @@ const InsightsOptionsSchema = Type.Object(
   { title: "InsightsOptions" },
 );
 
-export type InsightsOptions = Static<typeof InsightsOptionsSchema>;
+export type InsightsOptions = StaticDecode<typeof InsightsOptionsSchema>;
 
 const queryOptionsDefaults = {
   lang: "en-US",

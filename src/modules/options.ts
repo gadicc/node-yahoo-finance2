@@ -4,7 +4,7 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import { Type, Static } from "@sinclair/typebox";
+import { Type, StaticDecode } from "@sinclair/typebox";
 
 import { YahooFinanceDate, YahooNumber } from "../lib/yahooFinanceTypes.js";
 import { QuoteBase } from "./quote.js";
@@ -212,8 +212,8 @@ const OptionsOptionsSchema = Type.Object(
   },
 );
 
-export type OptionsOptions = Static<typeof OptionsOptionsSchema>;
-export type OptionsResult = Static<typeof OptionsResultSchema>;
+export type OptionsOptions = StaticDecode<typeof OptionsOptionsSchema>;
+export type OptionsResult = StaticDecode<typeof OptionsResultSchema>;
 
 const queryOptionsDefaults: OptionsOptions = {
   formatted: false,

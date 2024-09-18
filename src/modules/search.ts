@@ -1,4 +1,4 @@
-import { Static, Type } from "@sinclair/typebox";
+import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
@@ -174,7 +174,7 @@ const SearchNews = Type.Object(
   },
 );
 
-export type SearchResult = Static<typeof SearchResultSchema>;
+export type SearchResult = StaticDecode<typeof SearchResultSchema>;
 const SearchResultSchema = Type.Object(
   {
     explains: Type.Array(Type.Any()),
@@ -247,7 +247,7 @@ const SearchOptionsSchema = Type.Object(
   },
 );
 
-export type SearchOptions = Static<typeof SearchOptionsSchema>;
+export type SearchOptions = StaticDecode<typeof SearchOptionsSchema>;
 
 const queryOptionsDefaults: SearchOptions = {
   lang: "en-US",

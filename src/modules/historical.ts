@@ -1,4 +1,4 @@
-import { Static, Type } from "@sinclair/typebox";
+import { StaticDecode, Type } from "@sinclair/typebox";
 import { Value } from "@sinclair/typebox/value";
 import type {
   ModuleOptions,
@@ -26,7 +26,9 @@ const HistoricalRowHistorySchema = Type.Object(
     title: "HistoricalRowHistory",
   },
 );
-export type HistoricalRowHistory = Static<typeof HistoricalRowHistorySchema>;
+export type HistoricalRowHistory = StaticDecode<
+  typeof HistoricalRowHistorySchema
+>;
 
 const HistoricalRowDividendSchema = Type.Object(
   {
@@ -35,7 +37,9 @@ const HistoricalRowDividendSchema = Type.Object(
   },
   { title: "HistoricalRowDividend" },
 );
-export type HistoricalRowDividend = Static<typeof HistoricalRowDividendSchema>;
+export type HistoricalRowDividend = StaticDecode<
+  typeof HistoricalRowDividendSchema
+>;
 
 const HistoricalRowStockSplitSchema = Type.Object(
   {
@@ -44,7 +48,7 @@ const HistoricalRowStockSplitSchema = Type.Object(
   },
   { title: "HistoricalRowStockSplit" },
 );
-export type HistoricalRowStockSplit = Static<
+export type HistoricalRowStockSplit = StaticDecode<
   typeof HistoricalRowStockSplitSchema
 >;
 
@@ -73,7 +77,7 @@ const HistoricalOptionsSchema = Type.Object(
   },
   { title: "HistoricalOptions" },
 );
-export type HistoricalOptions = Static<typeof HistoricalOptionsSchema>;
+export type HistoricalOptions = StaticDecode<typeof HistoricalOptionsSchema>;
 
 const HistoricalOptionsEventsHistorySchema = Type.Composite(
   [
@@ -84,7 +88,7 @@ const HistoricalOptionsEventsHistorySchema = Type.Composite(
   ],
   { title: "HistoricalOptionsEventsHistory" },
 );
-export type HistoricalOptionsEventsHistory = Static<
+export type HistoricalOptionsEventsHistory = StaticDecode<
   typeof HistoricalOptionsEventsHistorySchema
 >;
 
@@ -97,7 +101,7 @@ const HistoricalOptionsEventsDividendsSchema = Type.Composite(
   ],
   { title: "HistoricalOptionsEventsDividends" },
 );
-export type HistoricalOptionsEventsDividends = Static<
+export type HistoricalOptionsEventsDividends = StaticDecode<
   typeof HistoricalOptionsEventsDividendsSchema
 >;
 
@@ -110,14 +114,14 @@ const HistoricalOptionsEventsSplitSchema = Type.Composite(
   ],
   { title: "HistoricalOptionsEventsSplit" },
 );
-export type HistoricalOptionsEventsSplit = Static<
+export type HistoricalOptionsEventsSplit = StaticDecode<
   typeof HistoricalOptionsEventsSplitSchema
 >;
 
 const HistoricalHistoryResultSchema = Type.Array(HistoricalRowHistorySchema, {
   title: "HistoricalHistoryResult",
 });
-export type HistoricalHistoryResult = Static<
+export type HistoricalHistoryResult = StaticDecode<
   typeof HistoricalHistoryResultSchema
 >;
 
@@ -127,7 +131,7 @@ const HistoricalDividendsResultSchema = Type.Array(
     title: "HistoricalDividendsResult",
   },
 );
-export type HistoricalDividendsResult = Static<
+export type HistoricalDividendsResult = StaticDecode<
   typeof HistoricalDividendsResultSchema
 >;
 
@@ -137,7 +141,7 @@ const HistoricalStockSplitsResultSchema = Type.Array(
     title: "HistoricalRowStockSplit",
   },
 );
-export type HistoricalStockSplitsResult = Static<
+export type HistoricalStockSplitsResult = StaticDecode<
   typeof HistoricalStockSplitsResultSchema
 >;
 

@@ -1,4 +1,4 @@
-import { Static, Type } from "@sinclair/typebox";
+import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
@@ -155,8 +155,10 @@ const DailyGainersResultSchema = Type.Object(
   { title: "DailyGainersResult" },
 );
 
-export type DailyGainersResult = Static<typeof DailyGainersResultSchema>;
-export type DailyGainersOptions = Static<typeof DailyGainersOptionsSchema>;
+export type DailyGainersResult = StaticDecode<typeof DailyGainersResultSchema>;
+export type DailyGainersOptions = StaticDecode<
+  typeof DailyGainersOptionsSchema
+>;
 
 const queryOptionsDefaults = {
   lang: "en-US",

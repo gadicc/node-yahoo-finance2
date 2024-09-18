@@ -5,7 +5,7 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.js";
 
-import { Static, Type } from "@sinclair/typebox";
+import { StaticDecode, Type } from "@sinclair/typebox";
 import {
   YahooDateInMs,
   YahooFinanceDate,
@@ -229,7 +229,7 @@ const QuoteSchema = Type.Union([
   QuoteOption,
 ]);
 
-export type Quote = Static<typeof QuoteSchema>;
+export type Quote = StaticDecode<typeof QuoteSchema>;
 
 const QuoteField = Type.KeyOf(QuoteSchema);
 
@@ -270,19 +270,19 @@ const QuoteOptionsWithReturnObjectSchema = Type.Composite([
   }),
 ]);
 
-export type QuoteOptionsWithReturnArray = Static<
+export type QuoteOptionsWithReturnArray = StaticDecode<
   typeof QuoteOptionsWithReturnArraySchema
 >;
 
-export type QuoteOptionsWithReturnMap = Static<
+export type QuoteOptionsWithReturnMap = StaticDecode<
   typeof QuoteOptionsWithReturnMapSchema
 >;
 
-export type QuoteOptionsWithReturnObject = Static<
+export type QuoteOptionsWithReturnObject = StaticDecode<
   typeof QuoteOptionsWithReturnObjectSchema
 >;
 
-export type QuoteOptions = Static<typeof QuoteOptionsSchema>;
+export type QuoteOptions = StaticDecode<typeof QuoteOptionsSchema>;
 
 const queryOptionsDefaults = {};
 

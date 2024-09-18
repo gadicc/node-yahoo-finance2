@@ -1,4 +1,4 @@
-import { Static, Type } from "@sinclair/typebox";
+import { StaticDecode, Type } from "@sinclair/typebox";
 import {
   NullableYahooFinanceDate,
   NullableYahooNumber,
@@ -106,7 +106,7 @@ const UpgradeDowngradeHistoryHistorySchema = Type.Object(
     title: "QuoteSummaryUpgradeDowngradeHistoryHistory",
   },
 );
-export type UpgradeDowngradeHistoryHistory = Static<
+export type UpgradeDowngradeHistoryHistory = StaticDecode<
   typeof UpgradeDowngradeHistoryHistorySchema
 >;
 
@@ -120,7 +120,7 @@ const UpgradeDowngradeHistorySchema = Type.Object(
     title: "QuoteSummaryUpgradeDowngradeHistory",
   },
 );
-export type UpgradeDowngradeHistory = Static<
+export type UpgradeDowngradeHistory = StaticDecode<
   typeof UpgradeDowngradeHistorySchema
 >;
 
@@ -143,7 +143,7 @@ const TopHoldingsSectorWeightingSchema = Type.Object(
     title: "QuoteSummaryTopHoldingsSectorWeighting",
   },
 );
-export type TopHoldingsSectorWeighting = Static<
+export type TopHoldingsSectorWeighting = StaticDecode<
   typeof TopHoldingsSectorWeightingSchema
 >;
 
@@ -164,7 +164,9 @@ const TopHoldingsBondRatingSchema = Type.Object(
     title: "QuoteSummaryTopHoldingsBondRating",
   },
 );
-export type TopHoldingsBondRating = Static<typeof TopHoldingsBondRatingSchema>;
+export type TopHoldingsBondRating = StaticDecode<
+  typeof TopHoldingsBondRatingSchema
+>;
 
 const TopHoldingsEquityHoldingsSchema = Type.Object(
   {
@@ -186,7 +188,7 @@ const TopHoldingsEquityHoldingsSchema = Type.Object(
     title: "QuoteSummaryTopHoldingsEquityHoldings",
   },
 );
-export type TopHoldingsEquityHoldings = Static<
+export type TopHoldingsEquityHoldings = StaticDecode<
   typeof TopHoldingsEquityHoldingsSchema
 >;
 
@@ -201,7 +203,7 @@ const TopHoldingsHoldingSchema = Type.Object(
     title: "QuoteSummaryTopHoldingsHolding",
   },
 );
-export type TopHoldingsHolding = Static<typeof TopHoldingsHoldingSchema>;
+export type TopHoldingsHolding = StaticDecode<typeof TopHoldingsHoldingSchema>;
 
 const TopHoldingsSchema = Type.Object(
   {
@@ -223,7 +225,7 @@ const TopHoldingsSchema = Type.Object(
     title: "QuoteSummaryTopHoldings",
   },
 );
-export type TopHoldings = Static<typeof TopHoldingsSchema>;
+export type TopHoldings = StaticDecode<typeof TopHoldingsSchema>;
 
 const SummaryProfileSchema = Type.Object(
   {
@@ -259,7 +261,7 @@ const SummaryProfileSchema = Type.Object(
     title: "QuoteSummarySummaryProfile",
   },
 );
-export type SummaryProfile = Static<typeof SummaryProfileSchema>;
+export type SummaryProfile = StaticDecode<typeof SummaryProfileSchema>;
 
 const SummaryDetailSchema = Type.Object(
   {
@@ -327,7 +329,7 @@ const SummaryDetailSchema = Type.Object(
     title: "QuoteSummarySummaryDetail",
   },
 );
-export type SummaryDetail = Static<typeof SummaryDetailSchema>;
+export type SummaryDetail = StaticDecode<typeof SummaryDetailSchema>;
 
 // May consider switching this to string, as we keep finding more and more.
 const FilingType = Type.Union(
@@ -384,7 +386,7 @@ const FilingSchema = Type.Object(
     title: "QuoteSummaryFiling",
   },
 );
-export type Filing = Static<typeof FilingSchema>;
+export type Filing = StaticDecode<typeof FilingSchema>;
 
 const SECFilingsSchema = Type.Object(
   {
@@ -396,7 +398,7 @@ const SECFilingsSchema = Type.Object(
     title: "QuoteSummarySECFilings",
   },
 );
-export type SECFilings = Static<typeof SECFilingsSchema>;
+export type SECFilings = StaticDecode<typeof SECFilingsSchema>;
 
 const RecommendationTrendTrendSchema = Type.Object(
   {
@@ -412,7 +414,7 @@ const RecommendationTrendTrendSchema = Type.Object(
     title: "QuoteSummaryRecommendationTrendTrend",
   },
 );
-export type RecommendationTrendTrend = Static<
+export type RecommendationTrendTrend = StaticDecode<
   typeof RecommendationTrendTrendSchema
 >;
 
@@ -426,7 +428,9 @@ const RecommendationTrendSchema = Type.Object(
     title: "QuoteSummaryRecommendationTrend",
   },
 );
-export type RecommendationTrend = Static<typeof RecommendationTrendSchema>;
+export type RecommendationTrend = StaticDecode<
+  typeof RecommendationTrendSchema
+>;
 
 const QuoteTypeSchema = Type.Object(
   {
@@ -449,7 +453,7 @@ const QuoteTypeSchema = Type.Object(
     title: "QuoteSummaryQuoteType",
   },
 );
-export type QuoteType = Static<typeof QuoteTypeSchema>;
+export type QuoteType = StaticDecode<typeof QuoteTypeSchema>;
 
 const PriceSchema = Type.Object(
   {
@@ -504,7 +508,7 @@ const PriceSchema = Type.Object(
     title: "QuoteSummaryPrice",
   },
 );
-export type Price = Static<typeof PriceSchema>;
+export type Price = StaticDecode<typeof PriceSchema>;
 
 const NetSharePurchaseActivitySchema = Type.Object(
   {
@@ -526,7 +530,7 @@ const NetSharePurchaseActivitySchema = Type.Object(
     title: "QuoteSummaryNetSharePurchaseActivity",
   },
 );
-export type NetSharePurchaseActivity = Static<
+export type NetSharePurchaseActivity = StaticDecode<
   typeof NetSharePurchaseActivitySchema
 >;
 
@@ -543,7 +547,9 @@ const MajorHoldersBreakdownSchema = Type.Object(
     title: "QuoteSummaryMajorHoldersBreakdown",
   },
 );
-export type MajorHoldersBreakdown = Static<typeof MajorHoldersBreakdownSchema>;
+export type MajorHoldersBreakdown = StaticDecode<
+  typeof MajorHoldersBreakdownSchema
+>;
 
 enum EnumOwnership {
   D = "D",
@@ -570,7 +576,7 @@ const Relation = Type.Enum(EnumRelation, { title: "QuoteSummaryRelation" });
 const OwnershipEnumSchema = Type.Enum(EnumOwnership, {
   title: "QuoteSummaryOwnershipEnum",
 });
-export type OwnershipEnum = Static<typeof OwnershipSchema>;
+export type OwnershipEnum = StaticDecode<typeof OwnershipSchema>;
 
 const TransactionSchema = Type.Object(
   {
@@ -590,7 +596,7 @@ const TransactionSchema = Type.Object(
     title: "QuoteSummaryTransaction",
   },
 );
-export type Transaction = Static<typeof TransactionSchema>;
+export type Transaction = StaticDecode<typeof TransactionSchema>;
 
 const InsiderTransactionsSchema = Type.Object(
   {
@@ -602,7 +608,9 @@ const InsiderTransactionsSchema = Type.Object(
     title: "QuoteSummaryInsiderTransactions",
   },
 );
-export type InsiderTransactions = Static<typeof InsiderTransactionsSchema>;
+export type InsiderTransactions = StaticDecode<
+  typeof InsiderTransactionsSchema
+>;
 
 const HolderSchema = Type.Object(
   {
@@ -623,7 +631,7 @@ const HolderSchema = Type.Object(
     title: "QuoteSummaryHolder",
   },
 );
-export type Holder = Static<typeof HolderSchema>;
+export type Holder = StaticDecode<typeof HolderSchema>;
 
 const HoldersSchema = Type.Object(
   {
@@ -635,7 +643,7 @@ const HoldersSchema = Type.Object(
     title: "QuoteSummaryHolders",
   },
 );
-export type Holders = Static<typeof HoldersSchema>;
+export type Holders = StaticDecode<typeof HoldersSchema>;
 
 const TrendSchema = Type.Object(
   {
@@ -648,7 +656,7 @@ const TrendSchema = Type.Object(
     title: "QuoteSummaryTrend",
   },
 );
-export type Trend = Static<typeof TrendSchema>;
+export type Trend = StaticDecode<typeof TrendSchema>;
 
 const EstimateSchema = Type.Object(
   {
@@ -660,7 +668,7 @@ const EstimateSchema = Type.Object(
     title: "QuoteSummaryEstimate",
   },
 );
-export type Estimate = Static<typeof EstimateSchema>;
+export type Estimate = StaticDecode<typeof EstimateSchema>;
 
 const IndexTrendSchema = Type.Object(
   {
@@ -675,7 +683,7 @@ const IndexTrendSchema = Type.Object(
     title: "QuoteSummaryIndexTrend",
   },
 );
-export type IndexTrend = Static<typeof IndexTrendSchema>;
+export type IndexTrend = StaticDecode<typeof IndexTrendSchema>;
 
 const IncomeStatementHistoryElementSchema = Type.Object(
   {
@@ -709,7 +717,7 @@ const IncomeStatementHistoryElementSchema = Type.Object(
     title: "QuoteSummaryIncomeStatementHistoryElement",
   },
 );
-export type IncomeStatementHistoryElement = Static<
+export type IncomeStatementHistoryElement = StaticDecode<
   typeof IncomeStatementHistoryElementSchema
 >;
 
@@ -723,7 +731,7 @@ const IncomeStatementHistorySchema = Type.Object(
     title: "QuoteSummaryIncomeStatementHistory",
   },
 );
-export type IncomeStatementHistory = Static<
+export type IncomeStatementHistory = StaticDecode<
   typeof IncomeStatementHistorySchema
 >;
 
@@ -733,7 +741,9 @@ const FundProfileBrokerageSchema = Type.Object(
     title: "QuoteSummaryFundProfileBrokerage",
   },
 );
-export type FundProfileBrokerage = Static<typeof FundProfileBrokerageSchema>;
+export type FundProfileBrokerage = StaticDecode<
+  typeof FundProfileBrokerageSchema
+>;
 
 const FundProfileFeesExpensesInvestmentSchema = Type.Object(
   {
@@ -749,7 +759,7 @@ const FundProfileFeesExpensesInvestmentSchema = Type.Object(
     title: "QuoteSummaryFundProfileFeesExpensesInvestment",
   },
 );
-export type FundProfileFeesExpensesInvestment = Static<
+export type FundProfileFeesExpensesInvestment = StaticDecode<
   typeof FundProfileFeesExpensesInvestmentSchema
 >;
 
@@ -765,7 +775,7 @@ const FundProfileFeesExpensesInvestmentCatSchema = Type.Composite(
     additionalProperties: Type.Any(),
   },
 );
-export type FundProfileFeesExpensesInvestmentCat = Static<
+export type FundProfileFeesExpensesInvestmentCat = StaticDecode<
   typeof FundProfileFeesExpensesInvestmentCatSchema
 >;
 
@@ -780,7 +790,7 @@ const FundProfileManagementInfoSchema = Type.Object(
     title: "QuoteSummaryFundProfileManagementInfo",
   },
 );
-export type FundProfileManagementInfo = Static<
+export type FundProfileManagementInfo = StaticDecode<
   typeof FundProfileManagementInfoSchema
 >;
 
@@ -811,7 +821,7 @@ const FundProfileSchema = Type.Object(
     title: "QuoteSummaryFundProfile",
   },
 );
-export type FundProfile = Static<typeof FundProfileSchema>;
+export type FundProfile = StaticDecode<typeof FundProfileSchema>;
 
 const FundPerformanceRiskOverviewStatsRowSchema = Type.Object(
   {
@@ -829,7 +839,7 @@ const FundPerformanceRiskOverviewStatsRowSchema = Type.Object(
     title: "QuoteSummaryFundPerformanceRiskOverviewStatsRow",
   },
 );
-export type FundPerformanceRiskOverviewStatsRow = Static<
+export type FundPerformanceRiskOverviewStatsRow = StaticDecode<
   typeof FundPerformanceRiskOverviewStatsRowSchema
 >;
 
@@ -842,7 +852,7 @@ const FundPerformanceRiskOverviewStatsCatSchema = Type.Object(
     title: "QuoteSummaryFundPerformanceRiskOverviewStatsCat",
   },
 );
-export type FundPerformanceRiskOverviewStatsCat = Static<
+export type FundPerformanceRiskOverviewStatsCat = StaticDecode<
   typeof FundPerformanceRiskOverviewStatsCatSchema
 >;
 
@@ -856,7 +866,7 @@ const FundPerformanceRiskOverviewStatsSchema = Type.Object(
     title: "QuoteSummaryFundPerformanceRiskOverviewStats",
   },
 );
-export type FundPerformanceRiskOverviewStats = Static<
+export type FundPerformanceRiskOverviewStats = StaticDecode<
   typeof FundPerformanceRiskOverviewStatsSchema
 >;
 
@@ -874,7 +884,7 @@ const FundPerformanceReturnsRowSchema = Type.Object(
     title: "QuoteSummaryFundPerformanceReturnsRow",
   },
 );
-export type FundPerformanceReturnsRow = Static<
+export type FundPerformanceReturnsRow = StaticDecode<
   typeof FundPerformanceReturnsRowSchema
 >;
 
@@ -888,7 +898,7 @@ const FundPerformanceReturnsSchema = Type.Object(
     title: "QuoteSummaryFundPerformanceReturns",
   },
 );
-export type FundPerformanceReturns = Static<
+export type FundPerformanceReturns = StaticDecode<
   typeof FundPerformanceReturnsSchema
 >;
 
@@ -902,7 +912,7 @@ const FundPerformancePerformanceOverviewCatSchema = Type.Object(
     title: "QuoteSummaryFundPerformancePerformanceOverviewCat",
   },
 );
-export type FundPerformancePerformanceOverviewCat = Static<
+export type FundPerformancePerformanceOverviewCat = StaticDecode<
   typeof FundPerformancePerformanceOverviewCatSchema
 >;
 
@@ -926,7 +936,7 @@ const FundPerformancePerformanceOverviewSchema = Type.Object(
     title: "QuoteSummaryFundPerformancePerformanceOverview",
   },
 );
-export type FundPerformancePerformanceOverview = Static<
+export type FundPerformancePerformanceOverview = StaticDecode<
   typeof FundPerformancePerformanceOverviewSchema
 >;
 
@@ -946,7 +956,7 @@ const PeriodRangeSchema = Type.Object(
     title: "QuoteSummaryPeriodRange",
   },
 );
-export type PeriodRange = Static<typeof PeriodRangeSchema>;
+export type PeriodRange = StaticDecode<typeof PeriodRangeSchema>;
 
 const FundPerformanceTrailingReturnsSchema = Type.Composite(
   [
@@ -965,7 +975,7 @@ const FundPerformanceTrailingReturnsSchema = Type.Composite(
     title: "QuoteSummaryFundPerformanceTrailingReturns",
   },
 );
-export type FundPerformanceTrailingReturns = Static<
+export type FundPerformanceTrailingReturns = StaticDecode<
   typeof FundPerformanceTrailingReturnsSchema
 >;
 
@@ -989,7 +999,7 @@ const FundPerformanceSchema = Type.Object(
     title: "QuoteSummaryFundPerformance",
   },
 );
-export type FundPerformance = Static<typeof FundPerformanceSchema>;
+export type FundPerformance = StaticDecode<typeof FundPerformanceSchema>;
 
 const OwnershipListSchema = Type.Object(
   {
@@ -1006,7 +1016,7 @@ const OwnershipListSchema = Type.Object(
     title: "QuoteSummaryOwnershipList",
   },
 );
-export type OwnershipList = Static<typeof OwnershipListSchema>;
+export type OwnershipList = StaticDecode<typeof OwnershipListSchema>;
 
 const OwnershipSchema = Type.Object(
   {
@@ -1018,7 +1028,7 @@ const OwnershipSchema = Type.Object(
     title: "QuoteSummaryOwnership",
   },
 );
-export type Ownership = Static<typeof OwnershipSchema>;
+export type Ownership = StaticDecode<typeof OwnershipSchema>;
 
 const FinancialDataSchema = Type.Object(
   {
@@ -1058,7 +1068,7 @@ const FinancialDataSchema = Type.Object(
     title: "QuoteSummaryFinancialData",
   },
 );
-export type FinancialData = Static<typeof FinancialDataSchema>;
+export type FinancialData = StaticDecode<typeof FinancialDataSchema>;
 
 const RevenueEstimateSchema = Type.Object(
   {
@@ -1074,7 +1084,7 @@ const RevenueEstimateSchema = Type.Object(
     title: "QuoteSummaryRevenueEstimate",
   },
 );
-export type RevenueEstimate = Static<typeof RevenueEstimateSchema>;
+export type RevenueEstimate = StaticDecode<typeof RevenueEstimateSchema>;
 
 const EpsTrendSchema = Type.Object(
   {
@@ -1089,7 +1099,7 @@ const EpsTrendSchema = Type.Object(
     title: "QuoteSummaryEpsTrend",
   },
 );
-export type EpsTrend = Static<typeof EpsTrendSchema>;
+export type EpsTrend = StaticDecode<typeof EpsTrendSchema>;
 
 const EpsRevisionsSchema = Type.Object(
   {
@@ -1103,7 +1113,7 @@ const EpsRevisionsSchema = Type.Object(
     title: "QuoteSummaryEpsRevisions",
   },
 );
-export type EpsRevisions = Static<typeof EpsRevisionsSchema>;
+export type EpsRevisions = StaticDecode<typeof EpsRevisionsSchema>;
 
 const EarningsEstimateSchema = Type.Object(
   {
@@ -1119,7 +1129,7 @@ const EarningsEstimateSchema = Type.Object(
     title: "QuoteSummaryEarningsEstimate",
   },
 );
-export type EarningsEstimate = Static<typeof EarningsEstimateSchema>;
+export type EarningsEstimate = StaticDecode<typeof EarningsEstimateSchema>;
 
 const EarningsTrendTrendSchema = Type.Object(
   {
@@ -1137,7 +1147,7 @@ const EarningsTrendTrendSchema = Type.Object(
     title: "QuoteSummaryEarningsTrendTrend",
   },
 );
-export type EarningsTrendTrend = Static<typeof EarningsTrendTrendSchema>;
+export type EarningsTrendTrend = StaticDecode<typeof EarningsTrendTrendSchema>;
 
 const EarningsTrendSchema = Type.Object(
   {
@@ -1149,7 +1159,7 @@ const EarningsTrendSchema = Type.Object(
     title: "QuoteSummaryEarningsTrend",
   },
 );
-export type EarningsTrend = Static<typeof EarningsTrendSchema>;
+export type EarningsTrend = StaticDecode<typeof EarningsTrendSchema>;
 
 const EarningsHistoryHistorySchema = Type.Object(
   {
@@ -1166,7 +1176,7 @@ const EarningsHistoryHistorySchema = Type.Object(
     title: "QuoteSummaryEarningsHistoryHistory",
   },
 );
-export type EarningsHistoryHistory = Static<
+export type EarningsHistoryHistory = StaticDecode<
   typeof EarningsHistoryHistorySchema
 >;
 
@@ -1180,7 +1190,7 @@ const EarningsHistorySchema = Type.Object(
     title: "QuoteSummaryEarningsHistory",
   },
 );
-export type EarningsHistory = Static<typeof EarningsHistorySchema>;
+export type EarningsHistory = StaticDecode<typeof EarningsHistorySchema>;
 
 const YearlySchema = Type.Object(
   {
@@ -1193,7 +1203,7 @@ const YearlySchema = Type.Object(
     title: "QuoteSummaryYearly",
   },
 );
-export type Yearly = Static<typeof YearlySchema>;
+export type Yearly = StaticDecode<typeof YearlySchema>;
 
 const FinancialsChartQuarterlySchema = Type.Object(
   {
@@ -1206,7 +1216,7 @@ const FinancialsChartQuarterlySchema = Type.Object(
     title: "QuoteSummaryFinancialsChartQuarterly",
   },
 );
-export type FinancialsChartQuarterly = Static<
+export type FinancialsChartQuarterly = StaticDecode<
   typeof FinancialsChartQuarterlySchema
 >;
 
@@ -1220,7 +1230,7 @@ const FinancialsChartSchema = Type.Object(
     title: "QuoteSummaryFinancialsChart",
   },
 );
-export type FinancialsChart = Static<typeof FinancialsChartSchema>;
+export type FinancialsChart = StaticDecode<typeof FinancialsChartSchema>;
 
 const EarningsChartQuarterlySchema = Type.Object(
   {
@@ -1233,7 +1243,7 @@ const EarningsChartQuarterlySchema = Type.Object(
     title: "QuoteSummaryEarningsChartQuarterly",
   },
 );
-export type EarningsChartQuarterly = Static<
+export type EarningsChartQuarterly = StaticDecode<
   typeof EarningsChartQuarterlySchema
 >;
 
@@ -1250,7 +1260,7 @@ const EarningsChartSchema = Type.Object(
     title: "QuoteSummaryEarningsChart",
   },
 );
-export type EarningsChart = Static<typeof EarningsChartSchema>;
+export type EarningsChart = StaticDecode<typeof EarningsChartSchema>;
 
 const QuoteSummaryEarningsSchema = Type.Object(
   {
@@ -1264,7 +1274,9 @@ const QuoteSummaryEarningsSchema = Type.Object(
     title: "QuoteSummaryEarnings",
   },
 );
-export type QuoteSummaryEarnings = Static<typeof QuoteSummaryEarningsSchema>;
+export type QuoteSummaryEarnings = StaticDecode<
+  typeof QuoteSummaryEarningsSchema
+>;
 
 const DefaultKeyStatisticsSchema = Type.Object(
   {
@@ -1325,7 +1337,9 @@ const DefaultKeyStatisticsSchema = Type.Object(
     title: "QuoteSummaryDefaultKeyStatistics",
   },
 );
-export type DefaultKeyStatistics = Static<typeof DefaultKeyStatisticsSchema>;
+export type DefaultKeyStatistics = StaticDecode<
+  typeof DefaultKeyStatisticsSchema
+>;
 
 const CashflowStatementSchema = Type.Object(
   {
@@ -1357,7 +1371,7 @@ const CashflowStatementSchema = Type.Object(
     title: "QuoteSummaryCashflowStatement",
   },
 );
-export type CashflowStatement = Static<typeof CashflowStatementSchema>;
+export type CashflowStatement = StaticDecode<typeof CashflowStatementSchema>;
 
 const CashflowStatementHistorySchema = Type.Object(
   {
@@ -1369,7 +1383,7 @@ const CashflowStatementHistorySchema = Type.Object(
     title: "QuoteSummaryCashflowStatementHistory",
   },
 );
-export type CashflowStatementHistory = Static<
+export type CashflowStatementHistory = StaticDecode<
   typeof CashflowStatementHistorySchema
 >;
 
@@ -1388,7 +1402,7 @@ const CalendarEventsEarningsSchema = Type.Object(
     title: "QuoteSumamryCalendarEventsEarnings",
   },
 );
-export type CalendarEventsEarnings = Static<
+export type CalendarEventsEarnings = StaticDecode<
   typeof CalendarEventsEarningsSchema
 >;
 
@@ -1404,7 +1418,7 @@ const CalendarEventsSchema = Type.Object(
     title: "QuoteSummaryCalendarEvents",
   },
 );
-export type CalendarEvents = Static<typeof CalendarEventsSchema>;
+export type CalendarEvents = StaticDecode<typeof CalendarEventsSchema>;
 
 const BalanceSheetStatementSchema = Type.Object(
   {
@@ -1445,7 +1459,9 @@ const BalanceSheetStatementSchema = Type.Object(
     title: "QuoteSummaryBalanceSheetStatement",
   },
 );
-export type BalanceSheetStatement = Static<typeof BalanceSheetStatementSchema>;
+export type BalanceSheetStatement = StaticDecode<
+  typeof BalanceSheetStatementSchema
+>;
 
 const BalanceSheetHistorySchema = Type.Object(
   {
@@ -1457,7 +1473,9 @@ const BalanceSheetHistorySchema = Type.Object(
     title: "QuoteSummaryBalanceSheetHistory",
   },
 );
-export type BalanceSheetHistory = Static<typeof BalanceSheetHistorySchema>;
+export type BalanceSheetHistory = StaticDecode<
+  typeof BalanceSheetHistorySchema
+>;
 
 const CompanyOfficerSchema = Type.Object(
   {
@@ -1476,7 +1494,7 @@ const CompanyOfficerSchema = Type.Object(
     title: "QuoteSummaryCompanyOfficer",
   },
 );
-export type CompanyOfficer = Static<typeof CompanyOfficerSchema>;
+export type CompanyOfficer = StaticDecode<typeof CompanyOfficerSchema>;
 
 const AssetProfileSchema = Type.Object(
   {
@@ -1519,7 +1537,7 @@ const AssetProfileSchema = Type.Object(
     title: "QuoteSummaryAssetProfile",
   },
 );
-export type AssetProfile = Static<typeof AssetProfileSchema>;
+export type AssetProfile = StaticDecode<typeof AssetProfileSchema>;
 
 export const QuoteSummaryResultSchema = Type.Object(
   {
@@ -1558,4 +1576,4 @@ export const QuoteSummaryResultSchema = Type.Object(
     title: "QuoteSummaryResult",
   },
 );
-export type QuoteSummaryResult = Static<typeof QuoteSummaryResultSchema>;
+export type QuoteSummaryResult = StaticDecode<typeof QuoteSummaryResultSchema>;
