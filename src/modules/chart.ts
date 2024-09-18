@@ -436,7 +436,6 @@ export default async function chart(
     if (timestamp)
       for (let i = 0; i < timestamp.length; i++) {
         result2.quotes[i] = {
-          // @ts-expect-error (eatkinson): clean this up with type in followup
           date: new Date(timestamp[i] * 1000),
           high: result.indicators.quote[0].high[i],
           volume: result.indicators.quote[0].volume[i],

@@ -254,11 +254,14 @@ export default function options(
       transformWith(queryOptions: OptionsOptions) {
         // This is honestly the easiest way to coerce the date properly
         const parsed = Value.Decode(OptionsOptionsSchema, queryOptions);
+        const transformed = parsed.date
+          ? {
+              ...parsed,
+              date: Math.floor(parsed.date.getTime() / 1000),
+            }
+          : parsed;
 
-        if (parsed.date) {
-          queryOptions.date = Math.floor(parsed.date.getTime() / 1000);
-        }
-        return queryOptions;
+        return transformed;
       },
     },
 
