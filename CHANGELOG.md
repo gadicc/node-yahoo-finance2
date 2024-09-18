@@ -1,3 +1,12 @@
+## [2.12.3](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.2...v2.12.3) (2024-09-18)
+
+
+### Bug Fixes
+
+* **chart,options:** fix types after last commit ([#797](https://github.com/gadicc/node-yahoo-finance2/issues/797)) ([27150e6](https://github.com/gadicc/node-yahoo-finance2/commit/27150e62c99389809ce8670841f9d61faef33bf9))
+* **historical:** add missing types, colocate types with schema ([#797](https://github.com/gadicc/node-yahoo-finance2/issues/797)) ([5ca349e](https://github.com/gadicc/node-yahoo-finance2/commit/5ca349e4cb924eae5b042641358232f699085095))
+* **types:** use StaticDecode vs Static to infer types ([#797](https://github.com/gadicc/node-yahoo-finance2/issues/797)) ([696baf6](https://github.com/gadicc/node-yahoo-finance2/commit/696baf6acd0c83adcac5a48a868c91e128f14bbc))
+
 ## [2.12.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.1...v2.12.2) (2024-09-17)
 
 
