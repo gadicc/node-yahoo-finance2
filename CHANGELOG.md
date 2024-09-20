@@ -1,3 +1,11 @@
+## [2.12.4](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.3...v2.12.4) (2024-09-20)
+
+
+### Bug Fixes
+
+* **historical:** correctly map adjclose -> adjClose ([#795](https://github.com/gadicc/node-yahoo-finance2/issues/795)) ([d8851ec](https://github.com/gadicc/node-yahoo-finance2/commit/d8851ecc8169c7f6d7c1283109e60dc55ee989e6))
+* **historical:** return coerced values ([#797](https://github.com/gadicc/node-yahoo-finance2/issues/797)) ([386bf82](https://github.com/gadicc/node-yahoo-finance2/commit/386bf8222a43f3dc58fafac876925cb0446efba8))
+
 ## [2.12.3](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.2...v2.12.3) (2024-09-18)
 
 
