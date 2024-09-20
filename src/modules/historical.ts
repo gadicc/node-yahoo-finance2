@@ -292,7 +292,7 @@ export default async function historical(
   };
 
   try {
-    validateAndCoerceTypebox({
+    return validateAndCoerceTypebox({
       type: "result",
       data: out,
       schema,
