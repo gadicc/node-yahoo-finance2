@@ -257,27 +257,33 @@ export default async function historical(
       stockSplits: s.splitRatio,
     }));
   } else {
-    out = (result.quotes ?? []).filter((quote) => {
-      const fieldCount = Object.keys(quote).length;
-      const nullCount = nullFieldCount(quote);
+    out = (result.quotes ?? [])
+      .filter((quote) => {
+        const fieldCount = Object.keys(quote).length;
+        const nullCount = nullFieldCount(quote);
 
-      if (nullCount === 0) {
-        // No nulls is a legit (regular) result
-        return true;
-      } else if (nullCount !== fieldCount - 1 /* skip "date" */) {
-        // Unhandled case: some but not all values are null.
-        // Note: no need to check for null "date", validation does it for us
-        console.error(nullCount, quote);
-        throw new Error(
-          "Historical returned a result with SOME (but not " +
-            "all) null values.  Please report this, and provide the " +
-            "query that caused it.",
-        );
-      } else {
-        // All fields (except "date") are null
-        return false;
-      }
-    });
+        if (nullCount === 0) {
+          // No nulls is a legit (regular) result
+          return true;
+        } else if (nullCount !== fieldCount - 1 /* skip "date" */) {
+          // Unhandled case: some but not all values are null.
+          // Note: no need to check for null "date", validation does it for us
+          console.error(nullCount, quote);
+          throw new Error(
+            "Historical returned a result with SOME (but not " +
+              "all) null values.  Please report this, and provide the " +
+              "query that caused it.",
+          );
+        } else {
+          // All fields (except "date") are null
+          return false;
+        }
+      })
+      .map((quote) => {
+        if (!quote.adjclose) return quote;
+        const { adjclose, ...rest } = quote;
+        return { ...rest, adjClose: adjclose };
+      });
   }
 
   const validateResult =
