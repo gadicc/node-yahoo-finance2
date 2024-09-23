@@ -10,13 +10,20 @@ import {
 } from "@sinclair/typebox/value";
 import { ValidationOptions } from "./options";
 
+function logRelevantErrorInfo(
+  e: TransformDecodeError | TransformDecodeCheckError,
+) {
+  const { /* schema, */ error /* , value */ } = e;
+  console.log(JSON.stringify(error, null, 2));
+}
+
 const handleResultError = (
   e: TransformDecodeError | TransformDecodeCheckError,
   options: ValidationOptions,
 ) => {
   const title = e.schema.title;
   if (options.logErrors) {
-    console.log(JSON.stringify(e, null, 2));
+    logRelevantErrorInfo(e);
     console.log(`
     This may happen intermittently and you should catch errors appropriately.
     However:  1) if this recently started happening on every request for a symbol
