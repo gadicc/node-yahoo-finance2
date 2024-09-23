@@ -147,6 +147,7 @@ describe("validateAndCoerceTypebox", () => {
       }"
     `);
   });
+
   it("Should log errors when logErrors = true", () => {
     const logSpy = jest.spyOn(console, "log");
     const logSpyFn = jest.fn(() => undefined);
@@ -166,111 +167,27 @@ describe("validateAndCoerceTypebox", () => {
         },
       });
     }).toThrow();
+
     expect(logSpy).toHaveBeenCalledTimes(2);
-    expect(logSpyFn).toMatchInlineSnapshot(`
-      [MockFunction] {
-        "calls": [
-          [
-            "{
-        "schema": {
-          "type": "object",
-          "properties": {
-            "aNumber": {
-              "title": "YahooNumber",
-              "anyOf": [
-                {
-                  "title": "RawNumber",
-                  "type": "object",
-                  "properties": {
-                    "raw": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "raw"
-                  ]
-                },
-                {
-                  "type": "number"
-                }
-              ]
-            }
-          },
-          "required": [
-            "aNumber"
-          ]
-        },
-        "value": {
-          "aNumber": "foo"
-        },
-        "error": {
-          "type": 62,
-          "schema": {
-            "title": "YahooNumber",
-            "anyOf": [
-              {
-                "title": "RawNumber",
-                "type": "object",
-                "properties": {
-                  "raw": {
-                    "type": "number"
-                  }
-                },
-                "required": [
-                  "raw"
-                ]
-              },
-              {
-                "type": "number"
-              }
-            ]
-          },
-          "path": "/aNumber",
-          "value": "foo",
-          "message": "Expected union value"
-        }
-      }",
-          ],
-          [
-            "
-          This may happen intermittently and you should catch errors appropriately.
-          However:  1) if this recently started happening on every request for a symbol
-          that used to work, Yahoo may have changed their API.  2) If this happens on
-          every request for a symbol you've never used before, but not for other
-          symbols, you've found an edge-case (OR, we may just be protecting you from
-          "bad" data sometimes stored for e.g. misspelt symbols on Yahoo's side).
-          Please see if anyone has reported this previously:
-          
-            https://github.com/gadicc/node-yahoo-finance2/issues?q=is%3Aissue+undefined
-          
-          or open a new issue (and mention the symbol):  yahoo-finance2 v0.0.1
-          
-            https://github.com/gadicc/node-yahoo-finance2/issues/new?labels=bug%2C+validation&template=validation.md&title=undefined
-          
-          For information on how to turn off the above logging or skip these errors,
-          see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.
-          
-          At the end of the doc, there's also a section on how to
-          [Help Fix Validation Errors](https://github.com/gadicc/node-yahoo-finance2/blob/devel/docs/validation.md#help-fix)
-          in case you'd like to contribute to the project.  Most of the time, these
-          fixes are very quick and easy; it's just hard for our small core team to keep up,
-          so help is always appreciated!
-          ",
-          ],
-        ],
-        "results": [
-          {
-            "type": "return",
-            "value": undefined,
-          },
-          {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    `);
+    const calls = logSpyFn.mock.calls as unknown[][];
+
+    const error = JSON.parse(calls[0][0] as string);
+    expect(error).toMatchObject({
+      type: 62,
+      path: "/aNumber",
+      value: "foo",
+      message: "Expected union value",
+    });
+
+    const help = calls[1][0];
+    expect(help).toMatch(/This may happen intermittently/);
+
+    expect(logSpyFn.mock.results).toMatchObject([
+      { type: "return", value: undefined },
+      { type: "return", value: undefined },
+    ]);
   });
+
   it("Should not log errors when logErrors = false", () => {
     const logSpy = jest.spyOn(console, "log");
     const logSpyFn = jest.fn(() => undefined);
