@@ -7,7 +7,7 @@ import addFormats from "ajv-formats";
 import schema from "../../schema.json" assert { type: "json" };
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: we have to ignore this for csm output.
-import pkg from "../../package.json" assert { type: "json" };
+import pkg from "../../package.json" with { type: "json" };
 import { InvalidOptionsError, FailedYahooValidationError } from "./errors.js";
 
 // https://ajv.js.org/docs/api.html#options
