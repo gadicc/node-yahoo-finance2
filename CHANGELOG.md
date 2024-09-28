@@ -1,3 +1,13 @@
+## [2.12.5](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.4...v2.12.5) (2024-09-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency tough-cookie to v4.1.4 ([a5f8ed4](https://github.com/gadicc/node-yahoo-finance2/commit/a5f8ed403ed2d741dc67ef552455c4897381d1cd))
+* **json:** keep assertions; use "with"; up min node ver (closes [#800](https://github.com/gadicc/node-yahoo-finance2/issues/800)) ([45cc33a](https://github.com/gadicc/node-yahoo-finance2/commit/45cc33aaf2e797a7c1452c9c9f324e5bc370dec6))
+* **json:** revert keepImportAssertions=false (just for swc/jest) ([0a3e98d](https://github.com/gadicc/node-yahoo-finance2/commit/0a3e98d3370d6f8a96863a720cf16a2925018377))
+* **validation:** only log error part of errror (w/o schema, value) ([859a0fb](https://github.com/gadicc/node-yahoo-finance2/commit/859a0fbd826d85f94d2905f304fda63be0d12a9e))
+
 ## [2.12.4](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.3...v2.12.4) (2024-09-20)
 
 
