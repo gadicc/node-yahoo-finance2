@@ -5,7 +5,7 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.js";
 
-import { StaticDecode, Type } from "@sinclair/typebox";
+import { Static, StaticDecode, Type } from "@sinclair/typebox";
 import {
   YahooDateInMs,
   YahooFinanceDate,
@@ -231,7 +231,8 @@ const QuoteSchema = Type.Union([
 
 export type Quote = StaticDecode<typeof QuoteSchema>;
 
-const QuoteField = Type.KeyOf(QuoteSchema);
+const QuoteFieldSchema = Type.KeyOf(QuoteSchema);
+export type QuoteField = Static<typeof QuoteFieldSchema>;
 
 const ResultType = Type.Union([
   Type.Literal("array"),
@@ -246,7 +247,7 @@ export type QuoteResponseMap = Map<string, Quote>;
 export type QuoteResponseObject = { [key: string]: Quote };
 
 export const QuoteOptionsSchema = Type.Object({
-  fields: Type.Optional(Type.Array(QuoteField)),
+  fields: Type.Optional(Type.Array(QuoteFieldSchema)),
   return: Type.Optional(ResultType),
 });
 
