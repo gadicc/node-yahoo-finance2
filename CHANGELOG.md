@@ -1,3 +1,16 @@
+# [2.13.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.5...v2.13.0) (2024-09-29)
+
+
+### Bug Fixes
+
+* **options:** re-export missing types ([#797](https://github.com/gadicc/node-yahoo-finance2/issues/797)) ([e96395f](https://github.com/gadicc/node-yahoo-finance2/commit/e96395f5ad21a92c53d068fdcf248e4465aecfed))
+* **setGlobalConfig:** cookieJar prop should be optional (fixes [#809](https://github.com/gadicc/node-yahoo-finance2/issues/809)) ([7e524fc](https://github.com/gadicc/node-yahoo-finance2/commit/7e524fceba6cf2b2042bee7e913e4b04388643fc))
+
+
+### Features
+
+* **quote:** export `QuoteField` type ([#808](https://github.com/gadicc/node-yahoo-finance2/issues/808)) ([a1f07d7](https://github.com/gadicc/node-yahoo-finance2/commit/a1f07d70171fa9b19ac26d58aefdbda6373a3ba0))
+
 ## [2.12.5](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.4...v2.12.5) (2024-09-28)
 
 
