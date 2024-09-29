@@ -48,7 +48,7 @@ in the case of the `cookieJar`, and for functions with variadic params in the ca
 of the `logger` (ref: https://github.com/sinclairzx81/typebox/issues/931)
 */
 export type YahooFinanceOptions = Static<typeof YahooFinanceOptionsSchema> & {
-  cookieJar: ExtendedCookieJar;
+  cookieJar?: ExtendedCookieJar;
   logger?: Logger;
 };
 
