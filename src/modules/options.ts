@@ -27,7 +27,7 @@ import { Value } from "@sinclair/typebox/value";
 /*
  * Guaranteed fields, even we don't ask for them
  */
-const QuoteCryptoCurrency = Type.Composite(
+const QuoteCryptoCurrencySchema = Type.Composite(
   [
     QuoteBase,
     Type.Object({
@@ -44,8 +44,11 @@ const QuoteCryptoCurrency = Type.Composite(
   ],
   { title: "QuoteCryptoCurrency" },
 );
+export type QuoteCryptoCurrency = StaticDecode<
+  typeof QuoteCryptoCurrencySchema
+>;
 
-const QuoteCurrency = Type.Composite(
+const QuoteCurrencySchema = Type.Composite(
   [
     QuoteBase,
     Type.Object({
@@ -54,15 +57,17 @@ const QuoteCurrency = Type.Composite(
   ],
   { title: "QuoteCurrency" },
 );
+export type QuoteCurrency = StaticDecode<typeof QuoteCurrencySchema>;
 
-const QuoteEtf = Type.Composite([
+const QuoteEtfSchema = Type.Composite([
   QuoteBase,
   Type.Object({
     quoteType: Type.Literal("ETF"),
   }),
 ]);
+export type QuoteEtf = StaticDecode<typeof QuoteEtfSchema>;
 
-const QuoteEquity = Type.Composite(
+const QuoteEquitySchema = Type.Composite(
   [
     QuoteBase,
     Type.Object({
@@ -73,8 +78,9 @@ const QuoteEquity = Type.Composite(
   ],
   { title: "QuoteEquity" },
 );
+export type QuoteEquity = StaticDecode<typeof QuoteEquitySchema>;
 
-const QuoteFuture = Type.Composite(
+const QuoteFutureSchema = Type.Composite(
   [
     QuoteBase,
     Type.Object({
@@ -90,8 +96,9 @@ const QuoteFuture = Type.Composite(
     title: "QuoteFuture",
   },
 );
+export type QuoteFuture = StaticDecode<typeof QuoteFutureSchema>;
 
-const QuoteIndex = Type.Composite(
+const QuoteIndexSchema = Type.Composite(
   [
     QuoteBase,
     Type.Object({
@@ -102,8 +109,9 @@ const QuoteIndex = Type.Composite(
     title: "QuoteIndex",
   },
 );
+export type QuoteIndex = StaticDecode<typeof QuoteIndexSchema>;
 
-const QuoteOption = Type.Composite(
+const QuoteOptionSchema = Type.Composite(
   [
     QuoteBase,
     Type.Object({
@@ -119,8 +127,9 @@ const QuoteOption = Type.Composite(
     title: "QuoteOption",
   },
 );
+export type QuoteOption = StaticDecode<typeof QuoteOptionSchema>;
 
-const QuoteMutualfund = Type.Composite(
+const QuoteMutualfundSchema = Type.Composite(
   [
     QuoteBase,
     Type.Object({
@@ -131,24 +140,26 @@ const QuoteMutualfund = Type.Composite(
     title: "QuoteMutualFund",
   },
 );
+export type QuoteMutualfund = StaticDecode<typeof QuoteMutualfundSchema>;
 
 const QuoteSchema = Type.Union(
   [
-    QuoteCryptoCurrency,
-    QuoteCurrency,
-    QuoteEtf,
-    QuoteEquity,
-    QuoteFuture,
-    QuoteIndex,
-    QuoteMutualfund,
-    QuoteOption,
+    QuoteCryptoCurrencySchema,
+    QuoteCurrencySchema,
+    QuoteEtfSchema,
+    QuoteEquitySchema,
+    QuoteFutureSchema,
+    QuoteIndexSchema,
+    QuoteMutualfundSchema,
+    QuoteOptionSchema,
   ],
   {
     title: "Quote",
   },
 );
+export type Quote = StaticDecode<typeof QuoteSchema>;
 
-const CallOrPut = Type.Object(
+const CallOrPutSchema = Type.Object(
   {
     contractSymbol: Type.String(),
     strike: YahooNumber,
@@ -171,19 +182,21 @@ const CallOrPut = Type.Object(
     title: "CallOrPut",
   },
 );
+export type CallOrPut = StaticDecode<typeof CallOrPutSchema>;
 
-const Option = Type.Object(
+const OptionSchema = Type.Object(
   {
     expirationDate: YahooFinanceDate,
     hasMiniOptions: Type.Boolean(),
-    calls: Type.Array(CallOrPut),
-    puts: Type.Array(CallOrPut),
+    calls: Type.Array(CallOrPutSchema),
+    puts: Type.Array(CallOrPutSchema),
   },
   {
     additionalProperties: Type.Any(),
     title: "Option",
   },
 );
+export type Option = StaticDecode<typeof OptionSchema>;
 
 const OptionsResultSchema = Type.Object(
   {
@@ -192,7 +205,7 @@ const OptionsResultSchema = Type.Object(
     strikes: Type.Array(YahooNumber),
     hasMiniOptions: Type.Boolean(),
     quote: QuoteSchema,
-    options: Type.Array(Option),
+    options: Type.Array(OptionSchema),
   },
   {
     additionalProperties: Type.Any(),
