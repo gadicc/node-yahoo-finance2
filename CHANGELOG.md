@@ -1,3 +1,10 @@
+## [2.13.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.13.0...v2.13.1) (2024-10-02)
+
+
+### Bug Fixes
+
+* **quoteSummary:** re-add missing modules except insiderHolders ([#797](https://github.com/gadicc/node-yahoo-finance2/issues/797)) ([d862806](https://github.com/gadicc/node-yahoo-finance2/commit/d862806c89b44336fbbd63630a5b903279a08393))
+
 # [2.13.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.5...v2.13.0) (2024-09-29)
 
 
