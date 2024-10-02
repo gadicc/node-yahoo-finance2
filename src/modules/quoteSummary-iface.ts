@@ -1557,6 +1557,13 @@ export const QuoteSummaryResultSchema = Type.Object(
     fundOwnership: Type.Optional(OwnershipSchema),
     fundPerformance: Type.Optional(FundPerformanceSchema),
     fundProfile: Type.Optional(FundProfileSchema),
+    incomeStatementHistory: Type.Optional(IncomeStatementHistorySchema),
+    incomeStatementHistoryQuarterly: Type.Optional(
+      IncomeStatementHistorySchema,
+    ),
+    indexTrend: Type.Optional(IndexTrendSchema),
+    industryTrend: Type.Optional(TrendSchema),
+    // insiderHolders: Type.Optional(InsiderTransactionsSchema), // <--
     institutionOwnership: Type.Optional(OwnershipSchema),
     majorDirectHolders: Type.Optional(HoldersSchema),
     majorHoldersBreakdown: Type.Optional(MajorHoldersBreakdownSchema),
