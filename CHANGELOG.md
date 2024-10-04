@@ -1,3 +1,16 @@
+## [2.13.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.13.1...v2.13.2) (2024-10-04)
+
+
+### Bug Fixes
+
+* **chart:** validate includePrePost:false, interval:1m (fixes [#812](https://github.com/gadicc/node-yahoo-finance2/issues/812)) ([b272c48](https://github.com/gadicc/node-yahoo-finance2/commit/b272c485d677b1394f9610e3978ea9861b4ad50b))
+
+
+### Reverts
+
+* Revert "chore(tests): temporarily disable getCrumb tests on CI" ([a234d60](https://github.com/gadicc/node-yahoo-finance2/commit/a234d60b7cb54c75bf9cd0be7808b8183280a65e))
+* Revert "chore(tests): different approach for weird CI getCrumb test issue" ([d0fea98](https://github.com/gadicc/node-yahoo-finance2/commit/d0fea98eb29bd6f86abb309edc5d80b86c529db6))
+
 ## [2.13.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.13.0...v2.13.1) (2024-10-02)
 
 
