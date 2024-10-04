@@ -117,7 +117,14 @@ const ChartMeta = Type.Object(
         additionalProperties: Type.Any(),
       },
     ),
-    tradingPeriods: Type.Optional(ChartMetaTradingPeriods),
+    tradingPeriods: Type.Optional(
+      // TODO, would be great to use correct type as a generic based on
+      // `includePrePost` and `interval`, see #812.
+      Type.Union([
+        ChartMetaTradingPeriods,
+        Type.Array(Type.Array(ChartMetaTradingPeriod)),
+      ]),
+    ),
     dataGranularity: Type.String(), // "1d",
     range: Type.String(), // ""
     validRanges: Type.Array(Type.String()), // ["1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"]

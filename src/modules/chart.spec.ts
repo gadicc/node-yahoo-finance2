@@ -54,6 +54,21 @@ describe("chart", () => {
     ).rejects.toThrow(/cannot share the same value/);
   });
 
+  it("validates when includePrePost=false interval=1m", async () => {
+    await yf.chart(
+      "AAPL",
+      {
+        period1: "2024-10-02",
+        period2: "2024-10-03",
+        interval: "1m",
+        includePrePost: false,
+      },
+      {
+        devel: `chart-AAPL-2024-10-02-to-2024-10-03-includePrePost-false-interval-1m.json`,
+      },
+    );
+  });
+
   describe("specific cases", () => {
     it("optional fields, empty arrays", async () => {
       /*
