@@ -1,3 +1,36 @@
+## [2.13.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.13.1...v2.13.2) (2024-10-04)
+
+
+### Bug Fixes
+
+* **chart:** validate includePrePost:false, interval:1m (fixes [#812](https://github.com/gadicc/node-yahoo-finance2/issues/812)) ([b272c48](https://github.com/gadicc/node-yahoo-finance2/commit/b272c485d677b1394f9610e3978ea9861b4ad50b))
+
+
+### Reverts
+
+* Revert "chore(tests): temporarily disable getCrumb tests on CI" ([a234d60](https://github.com/gadicc/node-yahoo-finance2/commit/a234d60b7cb54c75bf9cd0be7808b8183280a65e))
+* Revert "chore(tests): different approach for weird CI getCrumb test issue" ([d0fea98](https://github.com/gadicc/node-yahoo-finance2/commit/d0fea98eb29bd6f86abb309edc5d80b86c529db6))
+
+## [2.13.1](https://github.com/gadicc/node-yahoo-finance2/compare/v2.13.0...v2.13.1) (2024-10-02)
+
+
+### Bug Fixes
+
+* **quoteSummary:** re-add missing modules except insiderHolders ([#797](https://github.com/gadicc/node-yahoo-finance2/issues/797)) ([d862806](https://github.com/gadicc/node-yahoo-finance2/commit/d862806c89b44336fbbd63630a5b903279a08393))
+
+# [2.13.0](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.5...v2.13.0) (2024-09-29)
+
+
+### Bug Fixes
+
+* **options:** re-export missing types ([#797](https://github.com/gadicc/node-yahoo-finance2/issues/797)) ([e96395f](https://github.com/gadicc/node-yahoo-finance2/commit/e96395f5ad21a92c53d068fdcf248e4465aecfed))
+* **setGlobalConfig:** cookieJar prop should be optional (fixes [#809](https://github.com/gadicc/node-yahoo-finance2/issues/809)) ([7e524fc](https://github.com/gadicc/node-yahoo-finance2/commit/7e524fceba6cf2b2042bee7e913e4b04388643fc))
+
+
+### Features
+
+* **quote:** export `QuoteField` type ([#808](https://github.com/gadicc/node-yahoo-finance2/issues/808)) ([a1f07d7](https://github.com/gadicc/node-yahoo-finance2/commit/a1f07d70171fa9b19ac26d58aefdbda6373a3ba0))
+
 ## [2.12.5](https://github.com/gadicc/node-yahoo-finance2/compare/v2.12.4...v2.12.5) (2024-09-28)
 
 
