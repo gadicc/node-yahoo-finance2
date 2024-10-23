@@ -1,4 +1,3 @@
-import type { RequestInfo, RequestInit, Response } from "node-fetch";
 import Queue from "./queue.js";
 
 import type { YahooFinanceOptions } from "./options.js";
@@ -134,7 +133,7 @@ async function yahooFinanceFetch(
 
   const response = (await queue.add(() => fetchFunc(url, fetchOptions))) as any;
 
-  const setCookieHeaders = response.headers.raw()["set-cookie"];
+  const setCookieHeaders = response.headers.getSetCookie();
   if (setCookieHeaders) {
     if (!this._opts.cookieJar) throw new Error("No cookieJar set");
     this._opts.cookieJar.setFromSetCookieHeaders(setCookieHeaders, url);
