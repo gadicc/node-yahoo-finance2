@@ -70,6 +70,11 @@ async function fetchDevel(url, fetchOptions) {
     if (error.code === "ENOENT") {
       const res = await fetch(origUrl, fetchOptions);
 
+      const responseHeaders = Object.fromEntries(res.headers.entries());
+      if (responseHeaders["set-cookie"]) {
+        responseHeaders["set-cookie"] = responseHeaders.getSetCookie();
+      }
+
       contentObj = {
         request: {
           url: url,
@@ -78,7 +83,7 @@ async function fetchDevel(url, fetchOptions) {
           ok: res.ok,
           status: res.status,
           statusText: res.statusText,
-          headers: res.headers.raw(),
+          headers: responseHeaders,
           // body: await res.text(),
         },
       };
