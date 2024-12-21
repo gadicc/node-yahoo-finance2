@@ -40,7 +40,7 @@ export function showNotice(id: keyof typeof notices) {
   const text =
     n.text +
     (n.onceOnly ? "  This will only be shown once, but you" : "You") +
-    " can supress this message in future with `yahooFinance.supressNotices(['" +
+    " can suppress this message in future with `yahooFinance.suppressNotices(['" +
     id +
     "'])`.";
   const level = n.level || "info";
