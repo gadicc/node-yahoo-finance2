@@ -1,3 +1,19 @@
+## [2.13.3](https://github.com/gadicc/node-yahoo-finance2/compare/v2.13.2...v2.13.3) (2024-12-21)
+
+
+### Bug Fixes
+
+* **chart:** validate includePrePost:false, interval:1m (fixes [#812](https://github.com/gadicc/node-yahoo-finance2/issues/812)) ([5ca811d](https://github.com/gadicc/node-yahoo-finance2/commit/5ca811d601341d2b81d1d5fb495c88eac08e2dcb))
+* **fetchDevel:** fix application/json detection ([cc0390a](https://github.com/gadicc/node-yahoo-finance2/commit/cc0390a15ff2e40cffab79e3a67fd7d2d4186dac))
+* **fetchDevel:** use std Headers methods in contentObj ([#826](https://github.com/gadicc/node-yahoo-finance2/issues/826)) ([46273db](https://github.com/gadicc/node-yahoo-finance2/commit/46273db88a8efbe5779d69a31aabce061b270c09))
+* **notices:** fix typo in log: s/supress/suppress/ (fixes [#845](https://github.com/gadicc/node-yahoo-finance2/issues/845)) ([0e47049](https://github.com/gadicc/node-yahoo-finance2/commit/0e470497e55b781f8890065c7268e5a9c2eafebe))
+
+
+### Reverts
+
+* Revert "chore(tests): temporarily disable getCrumb tests on CI" ([6f48387](https://github.com/gadicc/node-yahoo-finance2/commit/6f48387e54c6a6eec3e16a3093f9cc6b631ee334))
+* Revert "chore(tests): different approach for weird CI getCrumb test issue" ([d595714](https://github.com/gadicc/node-yahoo-finance2/commit/d59571472b00ebeeb5c647579409b4ab5087d1ee))
+
 ## [2.13.2](https://github.com/gadicc/node-yahoo-finance2/compare/v2.13.1...v2.13.2) (2024-10-04)
 
 
