@@ -12,15 +12,15 @@ describe("screener", () => {
         { scrIds: predefined_screener },
         {
           devel: `screener-${predefined_screener}.json`,
-        }
+        },
       );
-    }
+    },
   );
   if (process.env.FETCH_DEVEL !== "nocache")
     it("throws on weird result", () => {
       const devel = "weirdJsonResult.fake.json";
       return expect(
-        yf.screener({ scrIds: "aggressive_small_caps" }, { devel })
+        yf.screener({ scrIds: "aggressive_small_caps" }, { devel }),
       ).rejects.toThrow(/^Unexpected result/);
     });
 });

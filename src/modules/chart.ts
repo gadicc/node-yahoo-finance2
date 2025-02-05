@@ -178,28 +178,28 @@ export default function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptionsWithReturnObject,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<ChartResultObject>;
 
 export default function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptionsWithReturnArray,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<ChartResultArray>;
 
 export default function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default async function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   const returnAs = queryOptionsOverrides?.return || "array";
 
@@ -222,14 +222,14 @@ export default async function chart(
             queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
           else typeof value === "string";
           queryOptions[fieldName] = Math.floor(
-            new Date(value as string).getTime() / 1000
+            new Date(value as string).getTime() / 1000,
           );
         }
 
         if (queryOptions.period1 === queryOptions.period2) {
           throw new Error(
             "yahooFinance.chart() options `period1` and `period2` " +
-              "cannot share the same value."
+              "cannot share the same value.",
           );
         }
 
@@ -254,13 +254,13 @@ export default async function chart(
         if (!chart.timestamp) {
           if (chart.indicators.quote.length !== 1)
             throw new Error(
-              "No timestamp with quotes.length !== 1, please report with your query"
+              "No timestamp with quotes.length !== 1, please report with your query",
             );
           if (Object.keys(chart.indicators.quote[0]).length !== 0)
             // i.e. {}
             throw new Error(
               "No timestamp with unexpected quote, please report with your query" +
-                JSON.stringify(chart.indicators.quote[0])
+                JSON.stringify(chart.indicators.quote[0]),
             );
           chart.indicators.quote.pop();
         }
@@ -301,7 +301,7 @@ export default async function chart(
         quoteSize: result.indicators.quote[0].high.length,
       });
       throw new Error(
-        "Timestamp count mismatch, please report this with the query you used"
+        "Timestamp count mismatch, please report this with the query you used",
       );
     }
 

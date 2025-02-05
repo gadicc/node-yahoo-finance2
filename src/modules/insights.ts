@@ -169,21 +169,21 @@ export default function trendingSymbols(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: InsightsOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<InsightsResult>;
 
 export default function trendingSymbols(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: InsightsOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function trendingSymbols(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: InsightsOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "insights",

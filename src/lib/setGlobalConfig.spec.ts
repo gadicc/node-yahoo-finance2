@@ -29,7 +29,7 @@ describe("setGlobalConfig", () => {
     consoleSilent();
 
     expect(() => yf.setGlobalConfig({ queue: { abc: "" } })).toThrow(
-      /yahooFinance.setGlobalConfig called with invalid options\./
+      /yahooFinance.setGlobalConfig called with invalid options\./,
     );
 
     consoleRestore();

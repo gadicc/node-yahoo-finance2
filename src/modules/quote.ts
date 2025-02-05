@@ -219,21 +219,21 @@ export default function quote(
   this: ModuleThis,
   query: string[],
   queryOptionsOverrides?: QuoteOptionsWithReturnArray,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<QuoteResponseArray>;
 
 export default function quote(
   this: ModuleThis,
   query: string[],
   queryOptionsOverrides?: QuoteOptionsWithReturnMap,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<QuoteResponseMap>;
 
 export default function quote(
   this: ModuleThis,
   query: string[],
   queryOptionsOverrides?: QuoteOptionsWithReturnObject,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<QuoteResponseObject>;
 
 /* --- everything else --- */
@@ -242,21 +242,21 @@ export default function quote(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: QuoteOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<Quote>;
 
 export default function quote(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: QuoteOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default async function quote(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: QuoteOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   const symbols = typeof query === "string" ? query : query.join(",");
   const returnAs = queryOptionsOverrides && queryOptionsOverrides.return;

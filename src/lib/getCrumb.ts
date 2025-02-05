@@ -11,7 +11,7 @@ let crumb: string | null = null;
 
 const parseHtmlEntities = (str: string) =>
   str.replace(/&#x([0-9A-Fa-f]{1,3});/gi, (_, numStr) =>
-    String.fromCharCode(parseInt(numStr, 16))
+    String.fromCharCode(parseInt(numStr, 16)),
   );
 
 type CrumbOptions = RequestInit & { devel?: boolean | string };
@@ -22,7 +22,7 @@ export async function _getCrumb(
   logger: Logger,
   url = "https://finance.yahoo.com/quote/AAPL",
   develOverride = "getCrumb-quote-AAPL.json",
-  noCache = false
+  noCache = false,
 ): Promise<string | null> {
   if (!crumb) {
     const cookies = await cookieJar.getCookies(CONFIG_FAKE_URL);
@@ -43,7 +43,7 @@ export async function _getCrumb(
 
   async function processSetCookieHeader(
     header: string[] | undefined,
-    url: string
+    url: string,
   ) {
     if (header) {
       await cookieJar.setFromSetCookieHeaders(header, url);
@@ -104,24 +104,24 @@ export async function _getCrumb(
         };
         logger.debug(
           "fetch",
-          consentLocation /*, collectConsentFetchOptions */
+          consentLocation /*, collectConsentFetchOptions */,
         );
 
         const collectConsentResponse = await fetch(
           consentLocation,
-          collectConsentFetchOptions
+          collectConsentFetchOptions,
         );
         const collectConsentBody = await collectConsentResponse.text();
 
         const collectConsentResponseParams =
           [
             ...collectConsentBody.matchAll(
-              /<input type="hidden" name="([^"]+)" value="([^"]+)">/g
+              /<input type="hidden" name="([^"]+)" value="([^"]+)">/g,
             ),
           ]
             .map(
               ([, name, value]) =>
-                `${name}=${encodeURIComponent(parseHtmlEntities(value))}&`
+                `${name}=${encodeURIComponent(parseHtmlEntities(value))}&`,
             )
             .join("") + "agree=agree&agree=agree";
 
@@ -139,22 +139,22 @@ export async function _getCrumb(
         };
         logger.debug(
           "fetch",
-          consentLocation /*, collectConsentSubmitFetchOptions */
+          consentLocation /*, collectConsentSubmitFetchOptions */,
         );
         const collectConsentSubmitResponse = await fetch(
           consentLocation,
-          collectConsentSubmitFetchOptions
+          collectConsentSubmitFetchOptions,
         );
 
         // Set-Cookie: CFC=AQABCAFkWkdkjEMdLwQ9&s=AQAAAClxdtC-&g=ZFj24w; Expires=Wed, 8 May 2024 01:18:54 GMT; Domain=consent.yahoo.com; Path=/; Secure
         if (
           !(await processSetCookieHeader(
             collectConsentSubmitResponse.headers.raw()["set-cookie"],
-            consentLocation
+            consentLocation,
           ))
         )
           throw new Error(
-            "No set-cookie header on collectConsentSubmitResponse, please report."
+            "No set-cookie header on collectConsentSubmitResponse, please report.",
           );
 
         // https://guce.yahoo.com/copyConsent?sessionId=3_cc-session_04da10ea-1025-4676-8175-60d2508bfc6c&lang=en-GB
@@ -162,7 +162,7 @@ export async function _getCrumb(
           collectConsentSubmitResponse.headers.get("location");
         if (!collectConsentSubmitResponseLocation)
           throw new Error(
-            "collectConsentSubmitResponse unexpectedly did not return a Location header, please report."
+            "collectConsentSubmitResponse unexpectedly did not return a Location header, please report.",
           );
 
         const copyConsentFetchOptions: typeof fetchOptions = {
@@ -170,7 +170,7 @@ export async function _getCrumb(
           headers: {
             ...fetchOptions.headers,
             cookie: await cookieJar.getCookieString(
-              collectConsentSubmitResponseLocation
+              collectConsentSubmitResponseLocation,
             ),
           },
           devel: "getCrumb-quote-AAPL-copyConsent",
@@ -178,28 +178,28 @@ export async function _getCrumb(
 
         logger.debug(
           "fetch",
-          collectConsentSubmitResponseLocation /*, copyConsentFetchOptions */
+          collectConsentSubmitResponseLocation /*, copyConsentFetchOptions */,
         );
         const copyConsentResponse = await fetch(
           collectConsentSubmitResponseLocation,
-          copyConsentFetchOptions
+          copyConsentFetchOptions,
         );
 
         if (
           !(await processSetCookieHeader(
             copyConsentResponse.headers.raw()["set-cookie"],
-            collectConsentSubmitResponseLocation
+            collectConsentSubmitResponseLocation,
           ))
         )
           throw new Error(
-            "No set-cookie header on copyConsentResponse, please report."
+            "No set-cookie header on copyConsentResponse, please report.",
           );
 
         const copyConsentResponseLocation =
           copyConsentResponse.headers.get("location");
         if (!copyConsentResponseLocation)
           throw new Error(
-            "collectConsentSubmitResponse unexpectedly did not return a Location header, please report."
+            "collectConsentSubmitResponse unexpectedly did not return a Location header, please report.",
           );
 
         const finalResponseFetchOptions: typeof fetchOptions = {
@@ -207,7 +207,7 @@ export async function _getCrumb(
           headers: {
             ...fetchOptions.headers,
             cookie: await cookieJar.getCookieString(
-              collectConsentSubmitResponseLocation
+              collectConsentSubmitResponseLocation,
             ),
           },
           devel: "getCrumb-quote-AAPL-consent-final-redirect.html",
@@ -220,15 +220,15 @@ export async function _getCrumb(
           logger,
           copyConsentResponseLocation,
           "getCrumb-quote-AAPL-consent-final-redirect.html",
-          noCache
+          noCache,
         );
       }
     } else {
       console.error(
-        "We expected a redirect to guce.yahoo.com, but got " + location
+        "We expected a redirect to guce.yahoo.com, but got " + location,
       );
       console.error(
-        "We'll try to continue anyway - you can safely ignore this if the request succeeds"
+        "We'll try to continue anyway - you can safely ignore this if the request succeeds",
       );
       // throw new Error(
       // "Unsupported redirect to " + location + ", please report.");
@@ -247,7 +247,7 @@ export async function _getCrumb(
     );
     */
     throw new Error(
-      "No set-cookie header present in Yahoo's response.  Something must have changed, please report."
+      "No set-cookie header present in Yahoo's response.  Something must have changed, please report.",
     );
   }
 
@@ -311,7 +311,7 @@ export async function _getCrumb(
       "Failed to get crumb, status " +
         getCrumbResponse.status +
         ", statusText: " +
-        getCrumbResponse.statusText
+        getCrumbResponse.statusText,
     );
   }
 
@@ -319,7 +319,7 @@ export async function _getCrumb(
   crumb = crumbFromGetCrumb;
   if (!crumb)
     throw new Error(
-      "Could not find crumb.  Yahoo's API may have changed; please report."
+      "Could not find crumb.  Yahoo's API may have changed; please report.",
     );
 
   logger.debug("New crumb: " + crumb);
@@ -328,7 +328,7 @@ export async function _getCrumb(
       key: "crumb",
       value: crumb,
     }),
-    CONFIG_FAKE_URL
+    CONFIG_FAKE_URL,
   );
 
   promise = null;
@@ -349,7 +349,7 @@ export default function getCrumb(
   fetchOptionsBase: CrumbOptions,
   logger: Logger,
   url = "https://finance.yahoo.com/quote/AAPL",
-  __getCrumb = _getCrumb
+  __getCrumb = _getCrumb,
 ) {
   showNotice("yahooSurvey");
 

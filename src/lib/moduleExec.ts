@@ -117,7 +117,7 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
     if (typeof symbol !== "string")
       throw new Error(
         `yahooFinance.${moduleName}() expects a single string symbol as its ` +
-          `query, not a(n) ${typeof symbol}: ${JSON.stringify(symbol)}`
+          `query, not a(n) ${typeof symbol}: ${JSON.stringify(symbol)}`,
       );
   }
 
@@ -150,7 +150,7 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
     queryOptions,
     moduleOpts,
     queryOpts.fetchType,
-    queryOpts.needsCrumb
+    queryOpts.needsCrumb,
   );
 
   if (queryOpts.fetchType === "csv") result = csv2json(result);

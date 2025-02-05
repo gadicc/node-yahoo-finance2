@@ -33,21 +33,21 @@ export default function trendingSymbols(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: TrendingSymbolsOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<TrendingSymbolsResult>;
 
 export default function trendingSymbols(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: TrendingSymbolsOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function trendingSymbols(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: TrendingSymbolsOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "trendingSymbols",

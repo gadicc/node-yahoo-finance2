@@ -25,6 +25,6 @@ describe("search", () => {
     async (testSearch) => {
       const devel = `search-${testSearch}.json`;
       await yf.search(testSearch, {}, { devel });
-    }
+    },
   );
 });

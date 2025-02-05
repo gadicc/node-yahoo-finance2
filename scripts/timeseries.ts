@@ -44,10 +44,10 @@ async function main() {
   for (const entry of har.log.entries) {
     const json = await getTimeseriesJSON();
     const refererHeader = entry.request.headers.find(
-      (header) => header.name === "Referer"
+      (header) => header.name === "Referer",
     );
     const typeParam = entry.request.queryString.find(
-      (header) => header.name === "type"
+      (header) => header.name === "type",
     );
 
     if (!refererHeader) {

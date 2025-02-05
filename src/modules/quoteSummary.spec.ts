@@ -12,7 +12,7 @@ interface itValidatesOpts {
 
 function itValidates(
   name: QuoteSummaryModules | "all",
-  opts: itValidatesOpts = {}
+  opts: itValidatesOpts = {},
 ) {
   let symbols = testSymbols({
     add: [
@@ -57,7 +57,7 @@ describe("quoteSummary", () => {
     if (process.env.FETCH_DEVEL !== "nocache")
       it("throws on invalid result", async () => {
         await expect(
-          yf.quoteSummary("AAPL", {}, { devel: "weirdJsonResult.fake.json" })
+          yf.quoteSummary("AAPL", {}, { devel: "weirdJsonResult.fake.json" }),
         ).rejects.toThrow(/Unexpected result/);
       });
   });
@@ -172,7 +172,7 @@ describe("quoteSummary", () => {
           {
             modules: ["secFilings"],
           },
-          { devel: "quoteSummary-secFilings-AAPL-new.json" }
+          { devel: "quoteSummary-secFilings-AAPL-new.json" },
         );
       });
     });
@@ -222,7 +222,7 @@ describe("quoteSummary", () => {
             "summaryProfile",
           ],
         },
-        { devel: "quoteSummary-other-BMW.DE.json" }
+        { devel: "quoteSummary-other-BMW.DE.json" },
       );
     });
   });

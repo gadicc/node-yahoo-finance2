@@ -25,7 +25,7 @@ describe("insights", () => {
     it("throws on weird result", () => {
       const devel = "weirdJsonResult.fake.json";
       return expect(yf.insights("A", {}, { devel })).rejects.toThrow(
-        /^Unexpected result/
+        /^Unexpected result/,
       );
     });
 });

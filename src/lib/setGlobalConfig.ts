@@ -5,7 +5,7 @@ import { ExtendedCookieJar } from "./cookieJar.js";
 
 export default function setGlobalConfig(
   this: ModuleThis,
-  _config: YahooFinanceOptions
+  _config: YahooFinanceOptions,
 ): void {
   // Instances (e.g. cookieJar) don't validate well :)
   const { cookieJar, logger, ...config } = _config;
@@ -40,7 +40,7 @@ export default function setGlobalConfig(
 type Obj = Record<string, any>;
 function mergeObjects(original: Obj, objToMerge: Obj) {
   const ownKeys: (keyof typeof objToMerge)[] = Reflect.ownKeys(
-    objToMerge
+    objToMerge,
   ) as string[];
   for (const key of ownKeys) {
     if (typeof objToMerge[key] === "object") {

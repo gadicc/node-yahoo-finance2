@@ -148,19 +148,19 @@ export interface DailyGainersOptions {
 export default function dailyGainers(
   this: ModuleThis,
   queryOptionsOverrides?: DailyGainersOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<DailyGainersResult>;
 
 export default function dailyGainers(
   this: ModuleThis,
   queryOptionsOverrides?: DailyGainersOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function dailyGainers(
   this: ModuleThis,
   queryOptionsOverrides?: DailyGainersOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "dailyGainers",

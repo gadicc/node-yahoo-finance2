@@ -160,21 +160,21 @@ export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<SearchResult>;
 
 export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "search",

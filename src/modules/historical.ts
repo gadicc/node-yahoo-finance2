@@ -64,35 +64,35 @@ export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptionsEventsHistory,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<HistoricalHistoryResult>;
 
 export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptionsEventsDividends,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<HistoricalDividendsResult>;
 
 export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptionsEventsSplit,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<HistoricalStockSplitsResult>;
 
 export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function historical(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   let schemaKey;
   if (
@@ -133,7 +133,7 @@ export default function historical(
                   fieldName +
                   "' invalid date provided: '" +
                   value +
-                  "'"
+                  "'",
               );
 
             queryOptions[fieldName] = Math.floor(timestamp / 1000);
@@ -143,7 +143,7 @@ export default function historical(
         if (queryOptions.period1 === queryOptions.period2) {
           throw new Error(
             "yahooFinance.historical() options `period1` and `period2` " +
-              "cannot share the same value."
+              "cannot share the same value.",
           );
         }
 
@@ -180,7 +180,7 @@ export default function historical(
             throw new Error(
               "Historical returned a result with SOME (but not " +
                 "all) null values.  Please report this, and provide the " +
-                "query that caused it."
+                "query that caused it.",
             );
           } else {
             // All fields (except "date") are null: silently skip (no-op)

@@ -61,21 +61,21 @@ export default function options(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: OptionsOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<OptionsResult>;
 
 export default function options(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: OptionsOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function options(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: OptionsOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "options",

@@ -130,7 +130,7 @@ ajv.addKeyword({
           if (
             data.match(/^\d{4,4}-\d{2,2}-\d{2,2}$/) ||
             data.match(
-              /^\d{4,4}-\d{2,2}-\d{2,2}T\d{2,2}:\d{2,2}:\d{2,2}(\.\d{3,3})?Z$/
+              /^\d{4,4}-\d{2,2}-\d{2,2}T\d{2,2}:\d{2,2}:\d{2,2}(\.\d{3,3})?Z$/,
             )
           )
             return set(new Date(data));
@@ -220,7 +220,7 @@ function disallowAdditionalProps(show = false) {
   /* istanbul ignore next */
   if (show)
     console.log(
-      "Disallowed additional props in " + Array.from(disallowed).join(", ")
+      "Disallowed additional props in " + Array.from(disallowed).join(", "),
     );
 }
 
@@ -315,7 +315,7 @@ function validate({
     if (options.logErrors === true) {
       const title = encodeURIComponent("Failed validation: " + schemaKey);
       console.log(
-        "The following result did not validate with schema: " + schemaKey
+        "The following result did not validate with schema: " + schemaKey,
       );
       logObj(validator.errors);
       // logObj(object);
@@ -352,12 +352,12 @@ so help is always appreciated!
   } /* if (type === 'options') */ else {
     if (options.logOptionsErrors === true) {
       console.error(
-        `[yahooFinance.${source}] Invalid options ("${schemaKey}")`
+        `[yahooFinance.${source}] Invalid options ("${schemaKey}")`,
       );
       logObj({ errors: validator.errors, input: object });
     }
     throw new InvalidOptionsError(
-      `yahooFinance.${source} called with invalid options.`
+      `yahooFinance.${source} called with invalid options.`,
     );
   }
 }

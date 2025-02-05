@@ -17,7 +17,7 @@ describe("moduleExec", () => {
 
     it("accepts a string", async () => {
       await expect(
-        yf.chart("AAPL", periodOpts, { devel: "chart-AAPL.json" })
+        yf.chart("AAPL", periodOpts, { devel: "chart-AAPL.json" }),
       ).resolves.toBeDefined();
     });
 
@@ -35,7 +35,7 @@ describe("moduleExec", () => {
 
     it("accepts empty queryOptions", async () => {
       await expect(
-        yf.search("AAPL", undefined, { devel: "search-AAPL.json" })
+        yf.search("AAPL", undefined, { devel: "search-AAPL.json" }),
       ).resolves.toBeDefined();
     });
 
@@ -53,7 +53,7 @@ describe("moduleExec", () => {
       expect(
         fakeConsole.log.mock.calls.length +
           fakeConsole.error.mock.calls.length +
-          fakeConsole.dir.mock.calls.length
+          fakeConsole.dir.mock.calls.length,
       ).toBeGreaterThan(1);
       yf._opts.validation.logOptionsErrors = false;
     });
@@ -72,7 +72,7 @@ describe("moduleExec", () => {
       expect(
         fakeConsole.log.mock.calls.length +
           fakeConsole.error.mock.calls.length +
-          fakeConsole.dir.mock.calls.length
+          fakeConsole.dir.mock.calls.length,
       ).toBe(0);
     });
   });
@@ -82,7 +82,7 @@ describe("moduleExec", () => {
       it("throws on unexpected input", async () => {
         yf._opts.validation.logErrors = false;
         await expect(
-          yf.search("AAPL", {}, { devel: "search-badResult.fake.json" })
+          yf.search("AAPL", {}, { devel: "search-badResult.fake.json" }),
         ).rejects.toThrow(/Failed Yahoo Schema/);
         yf._opts.validation.logErrors = true;
       });
@@ -102,8 +102,8 @@ describe("moduleExec", () => {
             {
               devel: "search-badResult.fake.json",
               validateResult: false,
-            }
-          )
+            },
+          ),
         ).resolves.toBeDefined();
       console = realConsole;
 

@@ -32,12 +32,12 @@ const formatter = createFormatter(
       .addTypeFormatter(
         new yfReferenceTypeFormatter(
           circularReferenceTypeFormatter,
-          config.encodeRefs ?? true
-        )
+          config.encodeRefs ?? true,
+        ),
       )
       .addTypeFormatter(new yfNumberTypeFormatter())
       .addTypeFormatter(new yfFunctionIgnorer());
-  }
+  },
 );
 
 const program = createProgram(config);

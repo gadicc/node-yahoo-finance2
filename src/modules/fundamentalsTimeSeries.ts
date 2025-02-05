@@ -48,21 +48,21 @@ export default function fundamentalsTimeSeries(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: FundamentalsTimeSeriesOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<FundamentalsTimeSeriesResult>;
 
 export default function fundamentalsTimeSeries(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: FundamentalsTimeSeriesOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function fundamentalsTimeSeries(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: FundamentalsTimeSeriesOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "options",
@@ -100,7 +100,7 @@ export default function fundamentalsTimeSeries(
  * @returns Query parameters.
  */
 export const processQuery = function (
-  queryOptions: FundamentalsTimeSeriesOptions
+  queryOptions: FundamentalsTimeSeriesOptions,
 ): Partial<FundamentalsTimeSeriesOptions> {
   // Convert dates
   if (!queryOptions.period2) queryOptions.period2 = new Date();
@@ -119,7 +119,7 @@ export const processQuery = function (
             fieldName +
             "' invalid date provided: '" +
             value +
-            "'"
+            "'",
         );
 
       queryOptions[fieldName] = Math.floor(timestamp / 1000);
@@ -130,17 +130,17 @@ export const processQuery = function (
   if (queryOptions.period1 === queryOptions.period2) {
     throw new Error(
       "yahooFinance.fundamentalsTimeSeries() options `period1` and `period2` " +
-        "cannot share the same value."
+        "cannot share the same value.",
     );
   } else if (!FundamentalsTimeSeries_Types.includes(queryOptions.type || "")) {
     throw new Error(
-      "yahooFinance.fundamentalsTimeSeries() option type invalid."
+      "yahooFinance.fundamentalsTimeSeries() option type invalid.",
     );
   } else if (
     !FundamentalsTimeSeries_Modules.includes(queryOptions.module || "")
   ) {
     throw new Error(
-      "yahooFinance.fundamentalsTimeSeries() option module invalid."
+      "yahooFinance.fundamentalsTimeSeries() option module invalid.",
     );
   }
 
@@ -153,7 +153,7 @@ export const processQuery = function (
         return previous.concat(keys);
       } else return previous;
     },
-    [] as Array<string>
+    [] as Array<string>,
   );
   const queryType = queryOptions.type + keys.join(`,${queryOptions.type}`);
 

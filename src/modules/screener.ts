@@ -174,19 +174,19 @@ export interface ScreenerOptions {
 export default function screener(
   this: ModuleThis,
   queryOptionsOverrides?: ScreenerOptions,
-  moduleOptions?: ModuleOptionsWithValidateTrue
+  moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<ScreenerResult>;
 
 export default function screener(
   this: ModuleThis,
   queryOptionsOverrides?: ScreenerOptions,
-  moduleOptions?: ModuleOptionsWithValidateFalse
+  moduleOptions?: ModuleOptionsWithValidateFalse,
 ): Promise<any>;
 
 export default function screener(
   this: ModuleThis,
   queryOptionsOverrides?: ScreenerOptions,
-  moduleOptions?: ModuleOptions
+  moduleOptions?: ModuleOptions,
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "screener",

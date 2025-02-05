@@ -34,7 +34,7 @@ describe("recommendationsBySymbol", () => {
     const results = await yf.recommendationsBySymbol(
       ["AAPL", "BMW.DE"],
       {},
-      { devel }
+      { devel },
     );
     expect(results.length).toBe(2);
     expect(results[0].symbol).toBe("AAPL");
@@ -52,7 +52,7 @@ describe("recommendationsBySymbol", () => {
     it("throws on weird result", () => {
       const devel = "weirdJsonResult.fake.json";
       return expect(
-        yf.recommendationsBySymbol("AAPL", {}, { devel })
+        yf.recommendationsBySymbol("AAPL", {}, { devel }),
       ).rejects.toThrow(/^Unexpected result/);
     });
 });

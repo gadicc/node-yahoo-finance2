@@ -30,7 +30,7 @@ describe("chart", () => {
       },
       {
         devel: `chart-${symbol}-2020-01-01-to-2020-01-03.json`,
-      }
+      },
     );
   });
 
@@ -44,13 +44,13 @@ describe("chart", () => {
       },
       {
         devel: `chart-WSU.DE-2023-08-04-to-2023-08-09.json`,
-      }
+      },
     );
   });
 
   it("throws if period1,period2 are the same", async () => {
     await expect(
-      yf.chart("TSLA", { period1: "2022-02-22", period2: "2022-02-22" })
+      yf.chart("TSLA", { period1: "2022-02-22", period2: "2022-02-22" }),
     ).rejects.toThrow(/cannot share the same value/);
   });
 
@@ -70,7 +70,7 @@ describe("chart", () => {
         // it leads to these kind of results).  Nevertheless, let's be prepared.
         // So the .fake.json result is from query period1=period2="2021-11-23".
         { period1: "2021-11-23", period2: "2021-11-24", interval: "1h" },
-        { devel: "chart-TSLA-2021-11-23-to-2021-11-23-interval-1h.fake.json" }
+        { devel: "chart-TSLA-2021-11-23-to-2021-11-23-interval-1h.fake.json" },
       );
     });
 
@@ -83,7 +83,7 @@ describe("chart", () => {
         await yf.chart(
           "TSLA",
           { period1: "2021-11-22", period2: "2021-11-23", interval: "30m" },
-          { devel: "chart-TSLA-2021-11-22-to-2021-11-23-interval-30m.json" }
+          { devel: "chart-TSLA-2021-11-22-to-2021-11-23-interval-30m.json" },
         );
       });
   });
@@ -94,8 +94,8 @@ describe("chart", () => {
         yf.chart(
           "FAKE",
           { period1: "2021-11-23" },
-          { devel: "chart-notimestamp-quotes-length.fake.json" }
-        )
+          { devel: "chart-notimestamp-quotes-length.fake.json" },
+        ),
       ).rejects.toMatchObject({
         message: /No timestamp with quotes.length !== 1/,
       });
@@ -106,8 +106,8 @@ describe("chart", () => {
         yf.chart(
           "FAKE",
           { period1: "2021-11-23" },
-          { devel: "chart-notimestamp-weird-quote.fake.json" }
-        )
+          { devel: "chart-notimestamp-weird-quote.fake.json" },
+        ),
       ).rejects.toMatchObject({
         message: /No timestamp with unexpected quote/,
       });
@@ -122,7 +122,7 @@ describe("chart", () => {
           .chart(
             "AAPL",
             { period1: "2020-01-01" },
-            { devel: `weirdJsonResult.fake.json` }
+            { devel: `weirdJsonResult.fake.json` },
           )
           .finally(consoleRestore);
       }).rejects.toMatchObject({ message: /Unexpected/ });
@@ -166,7 +166,7 @@ describe("chart", () => {
       const result = await yf.chart(
         symbol,
         { ...queryOpts /* default, i.e. return: "array" */ },
-        fetchOpts
+        fetchOpts,
       );
 
       // More comprehensive tests below.
@@ -177,7 +177,7 @@ describe("chart", () => {
       const result = await yf.chart(
         symbol,
         { ...queryOpts, return: "array" },
-        fetchOpts
+        fetchOpts,
       );
 
       expect(result.timestamp).not.toBeDefined();
@@ -210,7 +210,7 @@ describe("chart", () => {
       const result = await yf.chart(
         symbol,
         { ...queryOpts, return: "object" },
-        fetchOpts
+        fetchOpts,
       );
 
       // @ts-ignore
