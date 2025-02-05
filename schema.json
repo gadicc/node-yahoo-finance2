@@ -115,14 +115,26 @@
         "instrumentType": {
           "type": "string"
         },
+        "fiftyTwoWeekHigh": {
+          "yahooFinanceType": "number"
+        },
+        "fiftyTwoWeekLow": {
+          "yahooFinanceType": "number"
+        },
         "firstTradeDate": {
           "yahooFinanceType": "date|null"
+        },
+        "fullExchangeName": {
+          "type": "string"
         },
         "regularMarketTime": {
           "yahooFinanceType": "date"
         },
         "gmtoffset": {
           "yahooFinanceType": "number"
+        },
+        "hasPrePostMarketData": {
+          "type": "boolean"
         },
         "timezone": {
           "type": "string"
@@ -138,6 +150,21 @@
         },
         "previousClose": {
           "yahooFinanceType": "number"
+        },
+        "regularMarketDayHigh": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketDayLow": {
+          "yahooFinanceType": "number"
+        },
+        "regularMarketVolume": {
+          "yahooFinanceType": "number"
+        },
+        "longName": {
+          "type": "string"
+        },
+        "shortName": {
+          "type": "string"
         },
         "scale": {
           "yahooFinanceType": "number"
@@ -165,7 +192,20 @@
           ]
         },
         "tradingPeriods": {
-          "$ref": "#/definitions/ChartMetaTradingPeriods"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ChartMetaTradingPeriods"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/ChartMetaTradingPeriod"
+                }
+              }
+            }
+          ]
         },
         "dataGranularity": {
           "type": "string"
@@ -1487,7 +1527,12 @@
           ]
         },
         "events": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "history",
+            "dividends",
+            "split"
+          ]
         },
         "includeAdjustedClose": {
           "type": "boolean"
@@ -1647,6 +1692,16 @@
       "required": [
         "events",
         "period1"
+      ],
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof nullFieldCount>": {
+      "type": "object",
+      "properties": {
+        "object": {}
+      },
+      "required": [
+        "object"
       ],
       "additionalProperties": false
     },

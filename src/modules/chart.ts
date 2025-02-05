@@ -38,14 +38,23 @@ export interface ChartMeta {
   symbol: string; // "AAPL",
   exchangeName: string; // "NMS",
   instrumentType: string; // "EQUITY",
+  fiftyTwoWeekHigh?: number; // 226.8
+  fiftyTwoWeekLow?: number; // 223.324
   firstTradeDate: Date | null; // new Date(345479400 * 1000); null in e.g. "APS.AX"
+  fullExchangeName?: string; // "NasdaqGS",
   regularMarketTime: Date; // new Date(1637355602 * 1000),
   gmtoffset: number; // -18000,
+  hasPrePostMarketData?: boolean;
   timezone: string; /// "EST",
   exchangeTimezoneName: string; // "America/New_York",
   regularMarketPrice: number; // 160.55,
   chartPreviousClose?: number; // 79.75; missing in e.g. "APS.AX"
   previousClose?: number; // 1137.06
+  regularMarketDayHigh?: number; // 226.8
+  regularMarketDayLow?: number; // 223.324
+  regularMarketVolume?: number; // 33638504
+  longName?: string; // "Apple Inc.",
+  shortName?: string; // "Apple Inc."
   scale?: number; // 3,
   priceHint: number; // 2,
   currentTradingPeriod: {
@@ -54,7 +63,7 @@ export interface ChartMeta {
     regular: ChartMetaTradingPeriod;
     post: ChartMetaTradingPeriod;
   };
-  tradingPeriods?: ChartMetaTradingPeriods;
+  tradingPeriods?: ChartMetaTradingPeriods | ChartMetaTradingPeriod[][];
   dataGranularity: string; // "1d",
   range: string; // "",
   validRanges: Array<string>; // ["1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"]
