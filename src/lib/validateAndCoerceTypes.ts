@@ -1,184 +1,13 @@
-import Ajv from "ajv";
-import type { SchemaValidateFunction } from "ajv/dist/types";
-import addFormats from "ajv-formats";
-
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: we have to ignore this for csm output.
 import schema from "../../schema.json" assert { type: "json" };
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: we have to ignore this for csm output.
 import pkg from "../../package.json" with { type: "json" };
 import { InvalidOptionsError, FailedYahooValidationError } from "./errors.js";
 
-// https://ajv.js.org/docs/api.html#options
-export const ajv = new Ajv({
-  // All rules, all errors.  Don't end early after first error.
-  allErrors: true,
-  // Allow multiple non-null types, like in TypeSript.
-  allowUnionTypes: true,
-});
-addFormats(ajv);
-
-ajv.addKeyword({
-  keyword: "yahooFinanceType",
-  modifying: true,
-  errors: true,
-  schema: true,
-  compile(schema /*, parentSchema, it */) {
-    const validate: SchemaValidateFunction = (data, dataCtx) => {
-      const { parentData, parentDataProperty } = dataCtx;
-
-      function set(value: any) {
-        parentData[parentDataProperty] = value;
-        return true;
-      }
-
-      if (schema === "number" || schema === "number|null") {
-        if (typeof data === "number") return true;
-
-        if (typeof data === "string") {
-          let float = Number.parseFloat(data);
-          if (Number.isNaN(float)) {
-            validate.errors = validate.errors || [];
-            validate.errors.push({
-              keyword: "yahooFinanceType",
-              message: "Number.parseFloat returned NaN",
-              params: { schema, data },
-            });
-            return false;
-          }
-          return set(float);
-        }
-
-        if (data === null) {
-          if (schema === "number|null") {
-            return true;
-          } else {
-            validate.errors = validate.errors || [];
-            validate.errors.push({
-              keyword: "yahooFinanceType",
-              message: "Expecting number'ish but got null",
-              params: { schema, data },
-            });
-            return false;
-          }
-        }
-
-        if (typeof data === "object") {
-          if (Object.keys(data).length === 0) {
-            // Value of {} becomes null
-            // Note, TypeScript types should be "number | null"
-            if (schema === "number|null") {
-              return set(null);
-            } else {
-              validate.errors = validate.errors || [];
-              validate.errors.push({
-                keyword: "yahooFinanceType",
-                message:
-                  "Got {}->null for 'number', did you want 'number | null' ?",
-                params: { schema, data },
-              });
-              return false;
-            }
-          }
-          if (typeof data.raw === "number") return set(data.raw);
-        }
-      } else if (schema === "date" || schema === "date|null") {
-        if (data instanceof Date) {
-          // Validate existing date objects.
-          // Generally we receive JSON but in the case of "historical", the
-          // csv parser does the date conversion, and we want to validate
-          // afterwards.
-          return true;
-        }
-
-        if (typeof data === "number") return set(new Date(data * 1000));
-
-        if (data === null) {
-          if (schema === "date|null") {
-            return true;
-          } else {
-            validate.errors = validate.errors || [];
-            validate.errors.push({
-              keyword: "yahooFinanceType",
-              message: "Expecting date'ish but got null",
-              params: { schema, data },
-            });
-            return false;
-          }
-        }
-
-        if (typeof data === "object") {
-          if (Object.keys(data).length === 0) {
-            // Value of {} becomes null
-            // Note, TypeScript types should be "data | null"
-            if (schema === "date|null") {
-              return set(null);
-            } else {
-              validate.errors = validate.errors || [];
-              validate.errors.push({
-                keyword: "yahooFinanceType",
-                message:
-                  "Got {}->null for 'date', did you want 'date | null' ?",
-                params: { schema, data },
-              });
-              return false;
-            }
-          }
-          if (typeof data.raw === "number")
-            return set(new Date(data.raw * 1000));
-        }
-
-        if (typeof data === "string") {
-          if (
-            data.match(/^\d{4,4}-\d{2,2}-\d{2,2}$/) ||
-            data.match(
-              /^\d{4,4}-\d{2,2}-\d{2,2}T\d{2,2}:\d{2,2}:\d{2,2}(\.\d{3,3})?Z$/,
-            )
-          )
-            return set(new Date(data));
-        }
-      } else if (schema === "DateInMs") {
-        return set(new Date(data));
-      } else if (schema === "TwoNumberRange") {
-        if (
-          typeof data === "object" &&
-          typeof data.low === "number" &&
-          typeof data.high === "number"
-        )
-          return true;
-        if (typeof data === "string") {
-          const parts = data.split("-").map(parseFloat);
-          if (Number.isNaN(parts[0]) || Number.isNaN(parts[1])) {
-            validate.errors = validate.errors || [];
-            validate.errors.push({
-              keyword: "yahooFinanceType",
-              message:
-                "Number.parseFloat returned NaN: [" + parts.join(",") + "]",
-              params: { schema, data },
-            });
-            return false;
-          }
-          return set({ low: parts[0], high: parts[1] });
-        }
-      } else {
-        throw new Error("No such yahooFinanceType: " + schema);
-      }
-
-      validate.errors = validate.errors || [];
-      validate.errors.push({
-        keyword: "yahooFinanceType",
-        message: "No matching type",
-        params: { schema, data },
-      });
-      return false;
-    };
-
-    return validate;
-  },
-});
-
-ajv.addSchema(schema);
+import _validate from "../../validate_schema.cjs";
 
 /* istanbul ignore next */
 const logObj =
@@ -236,18 +65,21 @@ function validate({
   schemaKey,
   options,
 }: ValidateParams): void {
-  const validator = ajv.getSchema(schemaKey);
-  if (!validator) throw new Error("No such schema with key: " + schemaKey);
+  // const validator = ajv.getSchema(schemaKey);
+  // if (!validator) throw new Error("No such schema with key: " + schemaKey);
 
-  const valid = validator(object);
+  const definition = schemaKey.match(/^#\/definitions\/(.+)$/)?.[1] as string;
+  const valid = _validate({ type: definition, data: object });
   if (valid) return;
+
+  const errors = _validate.errors;
 
   if (type === "result") {
     /* istanbul ignore else */
-    if (validator.errors) {
+    if (errors) {
       let origData: any = false;
 
-      validator.errors.forEach((error) => {
+      errors.forEach((error) => {
         // For now let's ignore the base object which could be huge.
         /* istanbul ignore else */
         if (error.instancePath !== "")
@@ -265,7 +97,7 @@ function validate({
 
       // Becaue of the "anyOf" in quote, errors are huuuuge and mostly
       // irrelevant... so let's filter out (some of) the latter
-      validator.errors = validator.errors.filter((error) => {
+      errors = errors.filter((error) => {
         if (error.schemaPath.startsWith("#/definitions/Quote")) {
           const schemaQuoteType = error.schemaPath
             .substring(19)
@@ -308,11 +140,8 @@ function validate({
       });
 
       // In the case of there being NO match in #anyOf, bring back the data
-      if (
-        validator.errors.length === 1 &&
-        validator.errors[0].schemaPath === "#/anyOf"
-      )
-        validator.errors[0].data = origData;
+      if (errors.length === 1 && errors[0].schemaPath === "#/anyOf")
+        errors[0].data = origData;
     }
 
     if (options.logErrors === true) {
@@ -320,7 +149,7 @@ function validate({
       console.log(
         "The following result did not validate with schema: " + schemaKey,
       );
-      logObj(validator.errors);
+      logObj(errors);
       // logObj(object);
       console.log(`
 This may happen intermittently and you should catch errors appropriately.
@@ -350,14 +179,14 @@ so help is always appreciated!
 
     throw new FailedYahooValidationError("Failed Yahoo Schema validation", {
       result: object,
-      errors: validator.errors,
+      errors: errors,
     });
   } /* if (type === 'options') */ else {
     if (options.logOptionsErrors === true) {
       console.error(
         `[yahooFinance.${source}] Invalid options ("${schemaKey}")`,
       );
-      logObj({ errors: validator.errors, input: object });
+      logObj({ errors, input: object });
     }
     throw new InvalidOptionsError(
       `yahooFinance.${source} called with invalid options.`,

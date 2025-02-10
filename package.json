@@ -38,7 +38,9 @@
     "coverage": "yarn test --coverage",
     "lint": "eslint . --ext .js,.ts",
     "//schema": "ts-json-schema-generator -f tsconfig.json -p 'src/{modules/**/*.ts,lib/options.ts}' -t '*' | node bin/schema-tweak.js > schema.json",
-    "schema": "node --loader ts-node/esm scripts/schema.js > schema.json",
+    "schema": "yarn schema:generate && yarn schema:compile",
+    "schema:generate": "node --loader ts-node/esm scripts/schema.js > schema.json",
+    "schema:compile": "tsx scripts/schema-compile.ts > validate_schema.cjs",
     "timeseries": "node --loader ts-node/esm scripts/timeseries.js",
     "build": "yarn run build:esm && yarn run build:cjs && yarn run build:post",
     "build:esm": "tsc --module esnext --target es2019 --outDir dist/esm",
@@ -88,6 +90,7 @@
     "semantic-release": "19.0.5",
     "ts-json-schema-generator": "1.5.0",
     "ts-node": "10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "5.7.3"
   }
 }
