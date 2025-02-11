@@ -7,7 +7,7 @@ import schema from "../../schema.json" assert { type: "json" };
 import pkg from "../../package.json" with { type: "json" };
 import { InvalidOptionsError, FailedYahooValidationError } from "./errors.js";
 
-import _validate from "../../validate_schema.cjs";
+import validateAndCoerce from "./validate";
 
 /* istanbul ignore next */
 const logObj =
@@ -65,23 +65,18 @@ function validate({
   schemaKey,
   options,
 }: ValidateParams): void {
-  // const validator = ajv.getSchema(schemaKey);
-  // if (!validator) throw new Error("No such schema with key: " + schemaKey);
-
-  const definition = schemaKey.match(/^#\/definitions\/(.+)$/)?.[1] as string;
-  const valid = _validate({ type: definition, data: object });
-  if (valid) return;
-
-  const errors = _validate.errors;
+  const errors = validateAndCoerce(object, schemaKey);
+  if (errors === false || !errors.length) return;
 
   if (type === "result") {
     /* istanbul ignore else */
+    /*
     if (errors) {
       let origData: any = false;
 
       errors.forEach((error) => {
         // For now let's ignore the base object which could be huge.
-        /* istanbul ignore else */
+        /* istanbul ignore else */ /*
         if (error.instancePath !== "")
           // Note, not the regular ajv data value from verbose:true
           error.data = resolvePath(object, error.instancePath);
@@ -112,7 +107,7 @@ function validate({
            *     quoteType: "EQUITY"
            *   }
            * }
-           */
+           */ /*
           if (
             typeof error.data === "object" &&
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -129,7 +124,7 @@ function validate({
            *   params: { allowedValue: "CRYPTOCURRENCY"}},
            *   data: "EQUITY"
            * }
-           */
+           */ /*
           if (
             typeof error.data === "string" &&
             error.params?.allowedValue === schemaQuoteType
@@ -143,6 +138,7 @@ function validate({
       if (errors.length === 1 && errors[0].schemaPath === "#/anyOf")
         errors[0].data = origData;
     }
+    */
 
     if (options.logErrors === true) {
       const title = encodeURIComponent("Failed validation: " + schemaKey);
@@ -179,6 +175,7 @@ so help is always appreciated!
 
     throw new FailedYahooValidationError("Failed Yahoo Schema validation", {
       result: object,
+      // @ts-expect-error: TODO
       errors: errors,
     });
   } /* if (type === 'options') */ else {

@@ -44,7 +44,8 @@ describe("historical", () => {
 
   it("throws if period{1,2} gets an invalid string for new Date()", async () => {
     await expect(yf.historical("TSLA", { period1: "invalid" })).rejects.toThrow(
-      /invalid date provided/,
+      // /invalid date provided/,
+      /yahooFinance.historical called with invalid options/,
     );
 
     await expect(

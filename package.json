@@ -38,9 +38,7 @@
     "coverage": "yarn test --coverage",
     "lint": "eslint . --ext .js,.ts",
     "//schema": "ts-json-schema-generator -f tsconfig.json -p 'src/{modules/**/*.ts,lib/options.ts}' -t '*' | node bin/schema-tweak.js > schema.json",
-    "schema": "yarn schema:generate && yarn schema:compile",
-    "schema:generate": "node --loader ts-node/esm scripts/schema.js > schema.json",
-    "schema:compile": "tsx scripts/schema-compile.ts > validate_schema.cjs",
+    "schema": "node --loader ts-node/esm scripts/schema.js > schema.json",
     "timeseries": "node --loader ts-node/esm scripts/timeseries.js",
     "build": "yarn run build:esm && yarn run build:cjs && yarn run build:post",
     "build:esm": "tsc --module esnext --target es2019 --outDir dist/esm",
@@ -61,8 +59,6 @@
   ],
   "dependencies": {
     "@types/tough-cookie": "^4.0.2",
-    "ajv": "^8.17.1",
-    "ajv-formats": "^3.0.1",
     "tough-cookie": "^4.1.2",
     "tough-cookie-file-store": "^2.0.3"
   },
@@ -79,6 +75,7 @@
     "@tsconfig/node12": "12.1.4",
     "@types/har-format": "^1.2.15",
     "@types/jest": "^29.5.13",
+    "@types/json-schema": "^7.0.15",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "eslint": "8.57.1",
