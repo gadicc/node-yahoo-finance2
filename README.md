@@ -78,7 +78,8 @@ symbol, topHoldings, upgradeDowngradeHistory),
 [`trendingSymbols`](./docs/modules/trendingSymbols.md),
 [`options`](./docs/modules/options.md),
 [`insights`](./docs/modules/insights.md), 
-[`dailyGainers`](./docs/modules/dailyGainers.md), with more
+[`dailyGainers`](./docs/modules/dailyGainers.md),
+[`dailyLosers`](./docs/modules/dailyLosers.md), with more
 [coming soon](https://github.com/gadicc/node-yahoo-finance2/issues/8).
 
 Extras: [`quoteCombine`](./docs/other/quoteCombine.md).
