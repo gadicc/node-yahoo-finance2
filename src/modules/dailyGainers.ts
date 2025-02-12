@@ -57,8 +57,6 @@ const DailyGainersQuote = Type.Object(
     earningsCallTimestampStart: Type.Optional(YahooNumber),
     earningsCallTimestampEnd: Type.Optional(YahooNumber),
     isEarningsDateEstimate: Type.Optional(Type.Boolean()),
-    trailingPE: Type.Optional(YahooNumber),
-    dividendRate: Type.Optional(YahooNumber),
     market: Type.String(),
     messageBoardId: Type.String(),
     fullExchangeName: Type.String(),
