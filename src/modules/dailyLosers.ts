@@ -111,7 +111,7 @@ const DailyLosersQuote = Type.Object(
     displayName: Type.Optional(Type.String()),
     trailingPE: Type.Optional(YahooNumber),
     prevName: Type.Optional(Type.String()),
-    nameChangeDate: Type.Optional(YahooNumber),
+    nameChangeDate: Type.Optional(YahooFinanceDate),
     ipoExpectedDate: Type.Optional(YahooFinanceDate),
     dividendYield: Type.Optional(YahooNumber),
     dividendRate: Type.Optional(YahooNumber),
