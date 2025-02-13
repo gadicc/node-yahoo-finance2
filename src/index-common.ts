@@ -19,6 +19,7 @@ import recommendationsBySymbol from "./modules/recommendationsBySymbol.js";
 import search from "./modules/search.js";
 import trendingSymbols from "./modules/trendingSymbols.js";
 import dailyGainers from "./modules/dailyGainers.js";
+import dailyLosers from "./modules/dailyLosers.js";
 import screener from "./modules/screener.js";
 
 // other
@@ -50,6 +51,7 @@ export default {
   search,
   trendingSymbols,
   dailyGainers,
+  dailyLosers,
   screener,
 
   // other

@@ -37,6 +37,7 @@ const result = await yahooFinance.module(query, queryOpts, moduleOpts);
 1. [quote](./modules/quote.md) - essential symbol info.
 1. [quoteSummary](./modules/quoteSummary.md) - comprehensive symbol info.
 1. [search](./modules/search.md) - symbol lookup, news and articles.
+1. [dailyLosers](./modules/dailyLosers.md) - greatest losses in the trading day.
 1. [dailyGainers](./modules/dailyGainers.md) - greatest gains in the trading day.
 1. [recommendationsBySymbol](./modules/recommendationsBySymbol.md) - similar symbols.
 1. [trendingSymbols](./modules/trendingSymbols.md) - symbols trending in a country.
