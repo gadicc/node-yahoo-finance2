@@ -5,7 +5,7 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import { YahooNumber } from "../lib/yahooFinanceTypes.js";
+import { YahooNumber, YahooFinanceDate } from "../lib/yahooFinanceTypes.js";
 
 const DailyGainersCriterum = Type.Object(
   {
@@ -48,6 +48,15 @@ const DailyGainersQuote = Type.Object(
     ask: Type.Optional(YahooNumber),
     bidSize: Type.Optional(YahooNumber),
     askSize: Type.Optional(YahooNumber),
+    preMarketChange: Type.Optional(YahooNumber),
+    preMarketTime: Type.Optional(YahooNumber),
+    preMarketPrice: Type.Optional(YahooNumber),
+    preMarketChangePercent: Type.Optional(YahooNumber),
+    hasPrePostMarketData: Type.Optional(Type.Boolean()),
+    corporateActions: Type.Array(Type.Any()),
+    earningsCallTimestampStart: Type.Optional(YahooNumber),
+    earningsCallTimestampEnd: Type.Optional(YahooNumber),
+    isEarningsDateEstimate: Type.Optional(Type.Boolean()),
     market: Type.String(),
     messageBoardId: Type.String(),
     fullExchangeName: Type.String(),
@@ -102,8 +111,8 @@ const DailyGainersQuote = Type.Object(
     displayName: Type.Optional(Type.String()),
     trailingPE: Type.Optional(YahooNumber),
     prevName: Type.Optional(Type.String()),
-    nameChangeDate: Type.Optional(YahooNumber),
-    ipoExpectedDate: Type.Optional(YahooNumber),
+    nameChangeDate: Type.Optional(YahooFinanceDate),
+    ipoExpectedDate: Type.Optional(YahooFinanceDate),
     dividendYield: Type.Optional(YahooNumber),
     dividendRate: Type.Optional(YahooNumber),
   },
