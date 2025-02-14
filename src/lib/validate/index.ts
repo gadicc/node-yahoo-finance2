@@ -1,4 +1,4 @@
-import fullSchema from "../../../schema.json" with { type: "JSON" };
+import fullSchema from "../../../schema.json" with { type: "json" };
 import type { JSONSchema7 } from "json-schema";
 
 type JSONSchema = JSONSchema7 & { yahooFinanceType?: string };

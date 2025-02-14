@@ -4,8 +4,6 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: we have to ignore this for csm output.
 import Timeseries_Keys from "../lib/timeseries.json" with { type: "json" };
 
 export const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];

@@ -1,6 +1,4 @@
-import type { ExtendedCookieJar } from "./cookieJar";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: we have to ignore this for csm output.
+import type { ExtendedCookieJar } from "./cookieJar.js";
 import pkg from "../../package.json" with { type: "json" };
 import { Logger } from "./options.js";
 import { Cookie } from "tough-cookie";

@@ -4,8 +4,6 @@ import type { YahooFinanceOptions } from "./options.js";
 import type { QueueOptions } from "./queue.js";
 
 import errors from "./errors.js";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: we have to ignore this for csm output.assert
 import pkg from "../../package.json" with { type: "json" };
 import getCrumb from "./getCrumb.js";
 

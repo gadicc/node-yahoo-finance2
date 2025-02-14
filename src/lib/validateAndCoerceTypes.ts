@@ -1,9 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: we have to ignore this for csm output.
 import schema from "../../schema.json" assert { type: "json" };
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: we have to ignore this for csm output.
 import pkg from "../../package.json" with { type: "json" };
 import { InvalidOptionsError, FailedYahooValidationError } from "./errors.js";
 
