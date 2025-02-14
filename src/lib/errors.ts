@@ -1,4 +1,4 @@
-import type { ErrorObject } from "ajv/dist/types";
+import { ValidationError } from "./validate/index.js";
 
 // Yahoo's servers returned an HTTP 400 for this request.
 export class BadRequestError extends Error {
@@ -24,11 +24,11 @@ export class NoEnvironmentError extends Error {
 export class FailedYahooValidationError extends Error {
   name = "FailedYahooValidationError";
   result: any;
-  errors?: null | ErrorObject[];
+  errors?: null | ValidationError[];
 
   constructor(
     message: string,
-    { result, errors }: { result: any; errors?: null | ErrorObject[] },
+    { result, errors }: { result: any; errors?: null | ValidationError[] },
   ) {
     super(message);
     this.result = result;

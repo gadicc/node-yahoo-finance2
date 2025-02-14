@@ -175,7 +175,6 @@ so help is always appreciated!
 
     throw new FailedYahooValidationError("Failed Yahoo Schema validation", {
       result: object,
-      // @ts-expect-error: TODO
       errors: errors,
     });
   } /* if (type === 'options') */ else {

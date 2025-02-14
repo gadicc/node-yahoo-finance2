@@ -7,7 +7,7 @@ const definitions = (fullSchema as any).definitions as Record<
   JSONSchema
 >;
 
-type ValidationError = {
+export type ValidationError = {
   keyword?: string;
   instancePath?: string;
   schemaPath?: string;
