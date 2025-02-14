@@ -37,11 +37,15 @@
   "scripts": {
     "coverage": "yarn test --coverage",
     "lint": "eslint . --ext .js,.ts",
+    "//schema": "ts-json-schema-generator -f tsconfig.json -p 'src/{modules/**/*.ts,lib/options.ts}' -t '*' | node bin/schema-tweak.js > schema.json",
+    "schema": "node --loader ts-node/esm scripts/schema.js > schema.json",
     "timeseries": "node --loader ts-node/esm scripts/timeseries.js",
-    "build": "yarn run build:esm && yarn run build:cjs",
+    "build": "yarn run build:esm && yarn run build:cjs && yarn run build:post",
     "build:esm": "tsc --module esnext --target es2019 --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --target es2015 --outDir dist/cjs && sed 's/\"type\": \"module\",/\"type:\": \"commonjs\",/' dist/cjs/package.json > dist/cjs/package-changed.json && mv dist/cjs/package-changed.json dist/cjs/package.json",
-    "prepublishOnly": "yarn build",
+    "build:post": "scripts/json-transform.sh",
+    "generateSchema": "yarn schema",
+    "prepublishOnly": "yarn build && yarn generateSchema && yarn build:post",
     "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
     "test:ts": "tsc --noEmit",
     "test:esm": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js -c tests-modules/esm/jest.config.js tests-modules/esm/tests/*",
@@ -50,10 +54,10 @@
     "test:build": "yarn test:modules"
   },
   "files": [
-    "dist"
+    "dist",
+    "schema.json"
   ],
   "dependencies": {
-    "@sinclair/typebox": "^0.32.27",
     "@types/tough-cookie": "^4.0.2",
     "tough-cookie": "^4.1.2",
     "tough-cookie-file-store": "^2.0.3"
@@ -71,15 +75,19 @@
     "@tsconfig/node12": "12.1.4",
     "@types/har-format": "^1.2.15",
     "@types/jest": "^29.5.13",
+    "@types/json-schema": "^7.0.15",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "eslint": "8.57.1",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-prettier": "^10.0.1",
     "jest": "^29.7.0",
     "jest-tobetype": "1.2.3",
-    "prettier": "^3.3.3",
+    "oas-schema-walker": "1.1.5",
+    "prettier": "^3.4.2",
     "semantic-release": "19.0.5",
+    "ts-json-schema-generator": "1.5.0",
     "ts-node": "10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "5.7.3"
   }
 }

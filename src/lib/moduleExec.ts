@@ -15,17 +15,18 @@
  * Further info below, inline.
  */
 
-import { validateAndCoerceTypebox } from "./validateAndCoerceTypes.js";
+import validateAndCoerceTypes from "./validateAndCoerceTypes.js";
 import csv2json from "./csv2json.js";
-import { TSchema } from "@sinclair/typebox";
 
+// The consuming module itself will have a stricter return type.
+type TransformFunc = (arg: any) => any;
 /*
 interface TransformFunc {
   (result: { [key: string]: any }): { [key: string]: any };
 }
 */
 
-interface ModuleExecOptions<TOpts, TResult> {
+interface ModuleExecOptions {
   /**
    * Name of the module, e.g. "search", "quoteSummary", etc.  Used in error
    * reporting.
@@ -43,9 +44,10 @@ interface ModuleExecOptions<TOpts, TResult> {
      */
     url: string;
     /**
-     * The schema to use to validate the options overrides
+     * Key of schema used to validate user-provider query options.
+     * e.g. yf.search('AAPL', { isThisAValidOption: "maybe" })
      */
-    schema: TSchema;
+    schemaKey: string;
     /**
      * Defaults for this query, e.g. { period: '1d' } in history,
      * and other required options that aren't often changed { locale: 'en' }.
@@ -67,7 +69,7 @@ interface ModuleExecOptions<TOpts, TResult> {
      * the query.  Useful to transform options we allow but not Yahoo, e.g.
      * allow a "2020-01-01" date but transform this to a UNIX epoch.
      */
-    transformWith?: (opts: TOpts) => unknown;
+    transformWith?: TransformFunc;
     /**
      * Default: 'json'.  Can be 'text' or 'csv' (augments fetch's "text").
      */
@@ -75,19 +77,19 @@ interface ModuleExecOptions<TOpts, TResult> {
     /**
      * Default: false.  This request requires Yahoo cookies & crumb.
      */
-    needsCrumb?: boolean;
+    needsCrumb: boolean;
   };
 
   result: {
     /**
-     * The schema to validate (and coerce) the retruned result from Yahoo.
+     * Key of schema to validate (and coerce) the retruned result from Yahoo.
      */
-    schema: TSchema;
+    schemaKey: string;
     /**
      * Mutate the Yahoo result *before* validating and coercion.  Mostly used
      * to e.g. throw if no (resault.returnField) and return result.returnField.
      */
-    transformWith?: (result: unknown) => TResult;
+    transformWith?: TransformFunc;
   };
 
   moduleOptions?: {
@@ -102,10 +104,9 @@ interface ModuleExecOptions<TOpts, TResult> {
   };
 }
 
-async function moduleExec<TOpts = unknown, TResult = unknown>(
-  this: { [key: string]: any },
-  opts: ModuleExecOptions<TOpts, TResult>,
-) {
+type ThisWithModExec = { [key: string]: any; _moduleExec: typeof moduleExec };
+
+async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
   const queryOpts = opts.query;
   const moduleOpts = opts.moduleOptions;
   const moduleName = opts.moduleName;
@@ -121,10 +122,11 @@ async function moduleExec<TOpts = unknown, TResult = unknown>(
   }
 
   // Check that query options passed by the user are valid for this module
-  validateAndCoerceTypebox({
+  validateAndCoerceTypes({
+    source: moduleName,
     type: "options",
-    data: queryOpts.overrides ?? {},
-    schema: queryOpts.schema,
+    object: queryOpts.overrides ?? {},
+    schemaKey: queryOpts.schemaKey,
     options: this._opts.validation,
   });
 
@@ -139,9 +141,8 @@ async function moduleExec<TOpts = unknown, TResult = unknown>(
    * the query.  Useful to transform options we allow but not Yahoo, e.g.
    * allow a "2020-01-01" date but transform this to a UNIX epoch.
    */
-  if (queryOpts.transformWith) {
+  if (queryOpts.transformWith)
     queryOptions = queryOpts.transformWith(queryOptions);
-  }
 
   // this._fetch is lib/yahooFinanceFetch
   let result = await this._fetch(
@@ -149,20 +150,16 @@ async function moduleExec<TOpts = unknown, TResult = unknown>(
     queryOptions,
     moduleOpts,
     queryOpts.fetchType,
-    queryOpts.needsCrumb ?? false,
+    queryOpts.needsCrumb,
   );
 
-  if (queryOpts.fetchType === "csv") {
-    result = csv2json(result);
-  }
+  if (queryOpts.fetchType === "csv") result = csv2json(result);
 
   /*
    * Mutate the Yahoo result *before* validating and coercion.  Mostly used
-   * to e.g. throw if no (result.returnField) and return result.returnField.
+   * to e.g. throw if no (resault.returnField) and return result.returnField.
    */
-  if (resultOpts.transformWith) {
-    result = resultOpts.transformWith(result);
-  }
+  if (opts.result.transformWith) result = opts.result.transformWith(result);
 
   const validateResult =
     !moduleOpts ||
@@ -193,10 +190,11 @@ async function moduleExec<TOpts = unknown, TResult = unknown>(
    * database, etc.  Otherwise you'll receive an error.
    */
   try {
-    return validateAndCoerceTypebox({
+    validateAndCoerceTypes({
+      source: moduleName,
       type: "result",
-      data: result,
-      schema: resultOpts.schema,
+      object: result,
+      schemaKey: resultOpts.schemaKey,
       options: validationOpts,
     });
   } catch (error) {

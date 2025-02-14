@@ -1,7 +1,4 @@
-import {
-  YahooFinanceOptionsSchema,
-  type YahooFinanceOptions,
-} from "./options.js";
+import type { YahooFinanceOptions } from "./options.js";
 import type { ModuleThis } from "./moduleCommon.js";
 import validateAndCoerceTypes from "./validateAndCoerceTypes.js";
 import { ExtendedCookieJar } from "./cookieJar.js";
@@ -10,22 +7,33 @@ export default function setGlobalConfig(
   this: ModuleThis,
   _config: YahooFinanceOptions,
 ): void {
-  const parsed = validateAndCoerceTypes({
-    data: _config,
+  // Instances (e.g. cookieJar) don't validate well :)
+  const { cookieJar, logger, ...config } = _config;
+
+  validateAndCoerceTypes({
+    object: config,
+    source: "setGlobalConfig",
     type: "options",
     options: this._opts.validation,
-    schema: YahooFinanceOptionsSchema,
+    schemaKey: "#/definitions/YahooFinanceOptions",
   });
-
-  // Instances (e.g. cookieJar) don't validate well :)
-  const { cookieJar, ...config } = parsed;
-
   mergeObjects(this._opts, config);
 
   if (cookieJar) {
     if (!(cookieJar instanceof ExtendedCookieJar))
       throw new Error("cookieJar must be an instance of ExtendedCookieJar");
     this._opts.cookieJar = cookieJar;
+  }
+  if (logger) {
+    if (typeof logger.info !== "function")
+      throw new Error("logger.info must be a function");
+    if (typeof logger.warn !== "function")
+      throw new Error("logger.warn must be a function");
+    if (typeof logger.error !== "function")
+      throw new Error("logger.error must be a function");
+    if (typeof logger.debug !== "function")
+      throw new Error("logger.debug must be a function");
+    this._opts.logger = logger;
   }
 }
 

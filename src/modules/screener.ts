@@ -1,211 +1,175 @@
-import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import {
-  YahooFinanceDate,
-  YahooNumber,
-  YahooTwoNumberRange,
-} from "../lib/yahooFinanceTypes.js";
 
-const ScreenerCriterum = Type.Object(
-  {
-    field: Type.String(),
-    operators: Type.Array(Type.String()),
-    values: Type.Array(YahooNumber),
-    labelsSelected: Type.Array(YahooNumber),
-    dependentValues: Type.Array(Type.Any()),
-  },
-  {
-    title: "ScreenerCriterum",
-  },
-);
+export interface ScreenerResult {
+  id: string;
+  title: string;
+  description: string;
+  canonicalName: string;
+  criteriaMeta: ScreenerCriteriaMeta;
+  rawCriteria: string;
+  start: number;
+  count: number;
+  total: number;
+  quotes: ScreenerQuote[];
+  useRecords: boolean;
+  predefinedScr: boolean;
+  versionId: number;
+  creationDate: number;
+  lastUpdated: number;
+  isPremium: boolean;
+  iconUrl: string;
+}
 
-const ScreenerCriteriaMeta = Type.Object(
-  {
-    size: YahooNumber,
-    offset: YahooNumber,
-    sortField: Type.String(),
-    sortType: Type.String(),
-    quoteType: Type.String(),
-    criteria: Type.Array(ScreenerCriterum),
-    topOperator: Type.String(),
-  },
-  {
-    title: "ScreenerCriteriaMeta",
-  },
-);
+export interface ScreenerCriteriaMeta {
+  size: number;
+  offset: number;
+  sortField: string;
+  sortType: string;
+  quoteType: string;
+  criteria: ScreenerCriterum[];
+  topOperator: string;
+}
 
-const ScreenerQuote = Type.Object(
-  {
-    language: Type.String(),
-    region: Type.String(),
-    quoteType: Type.String(),
-    typeDisp: Type.String(),
-    quoteSourceName: Type.String(),
-    triggerable: Type.Boolean(),
-    customPriceAlertConfidence: Type.String(),
-    lastCloseTevEbitLtm: Type.Optional(YahooNumber),
-    lastClosePriceToNNWCPerShare: Type.Optional(YahooNumber),
-    firstTradeDateMilliseconds: YahooNumber,
-    priceHint: YahooNumber,
-    postMarketChangePercent: Type.Optional(YahooNumber),
-    postMarketTime: Type.Optional(YahooNumber),
-    postMarketPrice: Type.Optional(YahooNumber),
-    postMarketChange: Type.Optional(YahooNumber),
-    regularMarketChange: YahooNumber,
-    regularMarketTime: YahooNumber,
-    regularMarketPrice: YahooNumber,
-    regularMarketDayHigh: Type.Optional(YahooNumber),
-    regularMarketDayRange: YahooTwoNumberRange,
-    currency: Type.String(),
-    regularMarketDayLow: Type.Optional(YahooNumber),
-    regularMarketVolume: Type.Optional(YahooNumber),
-    regularMarketPreviousClose: YahooNumber,
-    bid: Type.Optional(YahooNumber),
-    ask: Type.Optional(YahooNumber),
-    bidSize: Type.Optional(YahooNumber),
-    askSize: Type.Optional(YahooNumber),
-    market: Type.String(),
-    messageBoardId: Type.String(),
-    fullExchangeName: Type.String(),
-    longName: Type.String(),
-    financialCurrency: Type.Optional(Type.String()),
-    regularMarketOpen: Type.Optional(YahooNumber),
-    averageDailyVolume3Month: YahooNumber,
-    averageDailyVolume10Day: YahooNumber,
-    fiftyTwoWeekLowChange: YahooNumber,
-    fiftyTwoWeekLowChangePercent: YahooNumber,
-    fiftyTwoWeekRange: YahooTwoNumberRange,
-    fiftyTwoWeekHighChange: YahooNumber,
-    fiftyTwoWeekHighChangePercent: YahooNumber,
-    fiftyTwoWeekChangePercent: YahooNumber,
-    earningsTimestamp: Type.Optional(YahooNumber),
-    earningsTimestampStart: Type.Optional(YahooNumber),
-    earningsTimestampEnd: Type.Optional(YahooNumber),
-    trailingAnnualDividendRate: Type.Optional(YahooNumber),
-    trailingAnnualDividendYield: Type.Optional(YahooNumber),
-    marketState: Type.String(),
-    epsTrailingTwelveMonths: Type.Optional(YahooNumber),
-    epsForward: Type.Optional(YahooNumber),
-    epsCurrentYear: Type.Optional(YahooNumber),
-    priceEpsCurrentYear: Type.Optional(YahooNumber),
-    sharesOutstanding: Type.Optional(YahooNumber),
-    bookValue: Type.Optional(YahooNumber),
-    fiftyDayAverage: YahooNumber,
-    fiftyDayAverageChange: YahooNumber,
-    fiftyDayAverageChangePercent: YahooNumber,
-    twoHundredDayAverage: YahooNumber,
-    twoHundredDayAverageChange: YahooNumber,
-    twoHundredDayAverageChangePercent: YahooNumber,
-    marketCap: Type.Optional(YahooNumber),
-    forwardPE: Type.Optional(YahooNumber),
-    priceToBook: Type.Optional(YahooNumber),
-    sourceInterval: YahooNumber,
-    exchangeDataDelayedBy: YahooNumber,
-    exchangeTimezoneName: Type.String(),
-    exchangeTimezoneShortName: Type.String(),
-    gmtOffSetMilliseconds: YahooNumber,
-    esgPopulated: Type.Boolean(),
-    tradeable: Type.Boolean(),
-    cryptoTradeable: Type.Boolean(),
-    exchange: Type.String(),
-    fiftyTwoWeekLow: YahooNumber,
-    fiftyTwoWeekHigh: YahooNumber,
-    shortName: Type.String(),
-    averageAnalystRating: Type.Optional(Type.String()),
-    regularMarketChangePercent: YahooNumber,
-    symbol: Type.String(),
-    dividendDate: Type.Optional(YahooFinanceDate),
-    displayName: Type.Optional(Type.String()),
-    trailingPE: Type.Optional(YahooNumber),
-    prevName: Type.Optional(Type.String()),
-    nameChangeDate: Type.Optional(YahooFinanceDate),
-    ipoExpectedDate: Type.Optional(YahooFinanceDate),
-    dividendYield: Type.Optional(YahooNumber),
-    dividendRate: Type.Optional(YahooNumber),
-    yieldTTM: Type.Optional(YahooNumber),
-    peTTM: Type.Optional(YahooNumber),
-    annualReturnNavY3: Type.Optional(YahooNumber),
-    annualReturnNavY5: Type.Optional(YahooNumber),
-    ytdReturn: Type.Optional(YahooNumber),
-    trailingThreeMonthReturns: Type.Optional(YahooNumber),
-    netAssets: Type.Optional(YahooNumber),
-    netExpenseRatio: Type.Optional(YahooNumber),
-  },
-  {
-    title: "ScreenerQuote",
-  },
-);
+export interface ScreenerCriterum {
+  field: string;
+  operators: string[];
+  values: number[];
+  labelsSelected: number[];
+  dependentValues: any[];
+}
 
-const ScreenerResult = Type.Object(
-  {
-    id: Type.String(),
-    title: Type.String(),
-    description: Type.String(),
-    canonicalName: Type.String(),
-    criteriaMeta: ScreenerCriteriaMeta,
-    rawCriteria: Type.String(),
-    start: YahooNumber,
-    count: YahooNumber,
-    total: YahooNumber,
-    quotes: Type.Array(ScreenerQuote),
-    useRecords: Type.Boolean(),
-    predefinedScr: Type.Boolean(),
-    versionId: YahooNumber,
-    creationDate: YahooFinanceDate,
-    lastUpdated: YahooFinanceDate,
-    isPremium: Type.Boolean(),
-    iconUrl: Type.String(),
-  },
-  {
-    title: "ScreenerResult",
-  },
-);
+export interface ScreenerQuote {
+  language: string;
+  region: string;
+  quoteType: string;
+  typeDisp: string;
+  quoteSourceName: string;
+  triggerable: boolean;
+  customPriceAlertConfidence: string;
+  lastCloseTevEbitLtm?: number;
+  lastClosePriceToNNWCPerShare?: number;
+  firstTradeDateMilliseconds: number;
+  priceHint: number;
+  postMarketChangePercent?: number;
+  postMarketTime?: number;
+  postMarketPrice?: number;
+  postMarketChange?: number;
+  regularMarketChange: number;
+  regularMarketTime: number;
+  regularMarketPrice: number;
+  regularMarketDayHigh?: number;
+  regularMarketDayRange?: string;
+  currency: string;
+  regularMarketDayLow?: number;
+  regularMarketVolume?: number;
+  regularMarketPreviousClose: number;
+  bid?: number;
+  ask?: number;
+  bidSize?: number;
+  askSize?: number;
+  market: string;
+  messageBoardId: string;
+  fullExchangeName: string;
+  longName: string;
+  financialCurrency?: string;
+  regularMarketOpen?: number;
+  averageDailyVolume3Month: number;
+  averageDailyVolume10Day: number;
+  fiftyTwoWeekLowChange: number;
+  fiftyTwoWeekLowChangePercent: number;
+  fiftyTwoWeekRange: string;
+  fiftyTwoWeekHighChange: number;
+  fiftyTwoWeekHighChangePercent: number;
+  fiftyTwoWeekChangePercent: number;
+  earningsTimestamp?: number;
+  earningsTimestampStart?: number;
+  earningsTimestampEnd?: number;
+  trailingAnnualDividendRate?: number;
+  trailingAnnualDividendYield?: number;
+  marketState: string;
+  epsTrailingTwelveMonths?: number;
+  epsForward?: number;
+  epsCurrentYear?: number;
+  priceEpsCurrentYear?: number;
+  sharesOutstanding?: number;
+  bookValue?: number;
+  fiftyDayAverage: number;
+  fiftyDayAverageChange: number;
+  fiftyDayAverageChangePercent: number;
+  twoHundredDayAverage: number;
+  twoHundredDayAverageChange: number;
+  twoHundredDayAverageChangePercent: number;
+  marketCap?: number;
+  forwardPE?: number;
+  priceToBook?: number;
+  sourceInterval: number;
+  exchangeDataDelayedBy: number;
+  exchangeTimezoneName: string;
+  exchangeTimezoneShortName: string;
+  gmtOffSetMilliseconds: number;
+  esgPopulated: boolean;
+  tradeable: boolean;
+  cryptoTradeable: boolean;
+  exchange: string;
+  fiftyTwoWeekLow: number;
+  fiftyTwoWeekHigh: number;
+  shortName: string;
+  averageAnalystRating?: string;
+  regularMarketChangePercent: number;
+  symbol: string;
+  dividendDate?: number;
+  displayName?: string;
+  trailingPE?: number;
+  prevName?: string;
+  nameChangeDate?: number;
+  ipoExpectedDate?: number;
+  dividendYield?: number;
+  dividendRate?: number;
+  yieldTTM?: number;
+  peTTM?: number;
+  annualReturnNavY3?: number;
+  annualReturnNavY5?: number;
+  ytdReturn?: number;
+  trailingThreeMonthReturns?: number;
+  netAssets?: number;
+  netExpenseRatio?: number;
+}
 
-const PredefinedScreenerModules = Type.Union(
-  [
-    Type.Literal("aggressive_small_caps"),
-    Type.Literal("conservative_foreign_funds"),
-    Type.Literal("day_gainers"),
-    Type.Literal("day_losers"),
-    Type.Literal("growth_technology_stocks"),
-    Type.Literal("high_yield_bond"),
-    Type.Literal("most_actives"),
-    Type.Literal("most_shorted_stocks"),
-    Type.Literal("portfolio_anchors"),
-    Type.Literal("small_cap_gainers"),
-    Type.Literal("solid_large_growth_funds"),
-    Type.Literal("solid_midcap_growth_funds"),
-    Type.Literal("top_mutual_funds"),
-    Type.Literal("undervalued_growth_stocks"),
-    Type.Literal("undervalued_large_caps"),
-  ],
-  {
-    title: "ScreenerPredefinedScreenerModules",
-  },
-);
+export type PredefinedScreenerModules =
+  | "aggressive_small_caps"
+  | "conservative_foreign_funds"
+  | "day_gainers"
+  | "day_losers"
+  | "growth_technology_stocks"
+  | "high_yield_bond"
+  | "most_actives"
+  | "most_shorted_stocks"
+  | "portfolio_anchors"
+  | "small_cap_gainers"
+  | "solid_large_growth_funds"
+  | "solid_midcap_growth_funds"
+  | "top_mutual_funds"
+  | "undervalued_growth_stocks"
+  | "undervalued_large_caps";
 
-export type ScreenerResult = StaticDecode<typeof ScreenerResult>;
-
-export type ScreenerOptions = StaticDecode<typeof ScreenerOptions>;
-
-const queryOptionsDefaults: ScreenerOptions = {
+const queryOptionsDefaults = {
   lang: "en-US",
   region: "US",
   scrIds: "day_gainers",
   count: 5,
 };
 
-const ScreenerOptions = Type.Object({
-  lang: Type.Optional(Type.String()),
-  region: Type.Optional(Type.String()),
-  scrIds: PredefinedScreenerModules,
-  count: Type.Optional(Type.Number()),
-});
+export interface ScreenerOptions {
+  lang?: string;
+  region?: string;
+  scrIds: PredefinedScreenerModules;
+  count?: number;
+}
 
 export default function screener(
   this: ModuleThis,
@@ -228,13 +192,13 @@ export default function screener(
     moduleName: "screener",
     query: {
       url: "https://${YF_QUERY_HOST}/v1/finance/screener/predefined/saved",
-      schema: ScreenerOptions,
+      schemaKey: "#/definitions/ScreenerOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       needsCrumb: true,
     },
     result: {
-      schema: ScreenerResult,
+      schemaKey: "#/definitions/ScreenerResult",
       transformWith(result: any) {
         // console.log(result);
         if (!result.finance)
@@ -245,3 +209,19 @@ export default function screener(
     moduleOptions,
   });
 }
+
+// aggressive_small_caps
+// conservative_foreign_funds
+// day_gainers
+// day_losers
+// growth_technology_stocks
+// high_yield_bond
+// most_actives
+// most_shorted_stocks
+// portfolio_anchors
+// small_cap_gainers
+// solid_large_growth_funds
+// solid_midcap_growth_funds
+// top_mutual_funds
+// undervalued_growth_stocks
+// undervalued_large_caps

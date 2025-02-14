@@ -1,283 +1,166 @@
 // Co-authored by @gadicc, @PythonCreator27 and @huned.
 
-import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import { YahooFinanceDate, YahooNumber } from "../lib/yahooFinanceTypes.js";
 
-const ChartMetaTradingPeriod = Type.Object(
-  {
-    timezone: Type.String(), // "EST",
-    start: YahooFinanceDate, // new Date(1637355600 * 1000),
-    end: YahooFinanceDate, // new Date(1637370000 * 10000),
-    gmtoffset: YahooNumber, // -18000
-  },
-  {
-    additionalProperties: Type.Any(),
-    title: "ChartMetaTradingPeriod",
-  },
-);
+export interface ChartResultObject {
+  [key: string]: any;
+  meta: ChartMeta;
+  timestamp?: Array<number>;
+  events?: ChartEventsObject;
+  indicators: ChartIndicatorsObject;
+}
 
-const ChartMetaTradingPeriods = Type.Object(
-  {
-    pre: Type.Optional(Type.Array(Type.Array(ChartMetaTradingPeriod))),
-    post: Type.Optional(Type.Array(Type.Array(ChartMetaTradingPeriod))),
-    regular: Type.Optional(Type.Array(Type.Array(ChartMetaTradingPeriod))),
-  },
-  {
-    additionalProperties: Type.Any(),
-    title: "ChartMetaTradingPeriods",
-  },
-);
+export interface ChartResultArray {
+  meta: ChartMeta;
+  events?: ChartEventsArray;
+  quotes: Array<ChartResultArrayQuote>;
+}
 
-const ChartResultArrayQuote = Type.Object(
-  {
-    date: YahooFinanceDate,
-    high: Type.Union([YahooNumber, Type.Null()]),
-    low: Type.Union([YahooNumber, Type.Null()]),
-    open: Type.Union([YahooNumber, Type.Null()]),
-    close: Type.Union([YahooNumber, Type.Null()]),
-    volume: Type.Union([YahooNumber, Type.Null()]),
-    adjclose: Type.Optional(Type.Union([YahooNumber, Type.Null()])),
-  },
-  {
-    additionalProperties: Type.Any(),
-    title: "ChartResultArrayQuote",
-  },
-);
+export interface ChartResultArrayQuote {
+  [key: string]: any;
+  date: Date;
+  high: number | null;
+  low: number | null;
+  open: number | null;
+  close: number | null;
+  volume: number | null;
+  adjclose?: number | null;
+}
 
-const ChartEventDividend = Type.Object(
-  {
-    amount: YahooNumber,
-    date: YahooFinanceDate,
-  },
-  {
-    additionalProperties: Type.Any(),
-    title: "ChartEventDividend",
-  },
-);
+export interface ChartMeta {
+  [key: string]: any;
+  currency: string; // "USD"
+  symbol: string; // "AAPL",
+  exchangeName: string; // "NMS",
+  instrumentType: string; // "EQUITY",
+  fiftyTwoWeekHigh?: number; // 226.8
+  fiftyTwoWeekLow?: number; // 223.324
+  firstTradeDate: Date | null; // new Date(345479400 * 1000); null in e.g. "APS.AX"
+  fullExchangeName?: string; // "NasdaqGS",
+  regularMarketTime: Date; // new Date(1637355602 * 1000),
+  gmtoffset: number; // -18000,
+  hasPrePostMarketData?: boolean;
+  timezone: string; /// "EST",
+  exchangeTimezoneName: string; // "America/New_York",
+  regularMarketPrice: number; // 160.55,
+  chartPreviousClose?: number; // 79.75; missing in e.g. "APS.AX"
+  previousClose?: number; // 1137.06
+  regularMarketDayHigh?: number; // 226.8
+  regularMarketDayLow?: number; // 223.324
+  regularMarketVolume?: number; // 33638504
+  longName?: string; // "Apple Inc.",
+  shortName?: string; // "Apple Inc."
+  scale?: number; // 3,
+  priceHint: number; // 2,
+  currentTradingPeriod: {
+    [key: string]: any;
+    pre: ChartMetaTradingPeriod;
+    regular: ChartMetaTradingPeriod;
+    post: ChartMetaTradingPeriod;
+  };
+  tradingPeriods?: ChartMetaTradingPeriods | ChartMetaTradingPeriod[][];
+  dataGranularity: string; // "1d",
+  range: string; // "",
+  validRanges: Array<string>; // ["1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"]
+}
 
-const ChartEventDividends = Type.Object(
-  {},
-  {
-    additionalProperties: ChartEventDividend,
-    title: "ChartEventDividends",
-  },
-);
+export interface ChartMetaTradingPeriod {
+  [key: string]: any;
+  timezone: string; // "EST",
+  start: Date; // new Date(1637355600 * 1000),
+  end: Date; // new Date(1637370000 * 10000),
+  gmtoffset: number; // -18000
+}
 
-const ChartEventSplit = Type.Object(
-  {
-    date: YahooFinanceDate, // new Date(1598880600 * 1000)
-    numerator: YahooNumber, // 4
-    denominator: YahooNumber, // 1
-    splitRatio: Type.String(), // "4:1"
-  },
-  {
-    additionalProperties: Type.Any(),
-  },
-);
-const ChartEventsArray = Type.Object(
-  {
-    dividends: Type.Optional(Type.Array(ChartEventDividend)),
-    splits: Type.Optional(Type.Array(ChartEventSplit)),
-  },
-  {
-    additionalProperties: Type.Any(),
-    title: "ChartEventsArray",
-  },
-);
+export interface ChartMetaTradingPeriods {
+  [key: string]: any;
+  pre?: Array<Array<ChartMetaTradingPeriod>>;
+  post?: Array<Array<ChartMetaTradingPeriod>>;
+  regular?: Array<Array<ChartMetaTradingPeriod>>;
+}
 
-const ChartMeta = Type.Object(
-  {
-    currency: Type.String(), // "USD"
-    symbol: Type.String(), // "AAPL",
-    exchangeName: Type.String(), // "NMS",
-    instrumentType: Type.String(), // "EQUITY",
-    firstTradeDate: Type.Union([YahooFinanceDate, Type.Null()]), // new Date(345479400 * 1000); null in e.g. "APS.AX"
-    regularMarketTime: YahooFinanceDate, // new Date(1637355602 * 1000),
-    gmtoffset: YahooNumber, // -18000,
-    timezone: Type.String(), /// "EST",
-    exchangeTimezoneName: Type.String(), // "America/New_York",
-    regularMarketPrice: YahooNumber, // 160.55,
-    chartPreviousClose: Type.Optional(YahooNumber), // 79.75; missing in e.g. "APS.AX"
-    previousClose: Type.Optional(YahooNumber), // 1137.06
-    scale: Type.Optional(YahooNumber), // 3,
-    priceHint: YahooNumber, // 2,
-    currentTradingPeriod: Type.Object(
-      {
-        pre: ChartMetaTradingPeriod,
-        regular: ChartMetaTradingPeriod,
-        post: ChartMetaTradingPeriod,
-      },
-      {
-        additionalProperties: Type.Any(),
-      },
-    ),
-    tradingPeriods: Type.Optional(
-      // TODO, would be great to use correct type as a generic based on
-      // `includePrePost` and `interval`, see #812.
-      Type.Union([
-        ChartMetaTradingPeriods,
-        Type.Array(Type.Array(ChartMetaTradingPeriod)),
-      ]),
-    ),
-    dataGranularity: Type.String(), // "1d",
-    range: Type.String(), // ""
-    validRanges: Type.Array(Type.String()), // ["1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"]
-  },
-  {
-    additionalProperties: Type.Any(),
-    title: "ChartMeta",
-  },
-);
+export interface ChartEventsObject {
+  [key: string]: any;
+  dividends?: ChartEventDividends;
+  splits?: ChartEventSplits;
+}
 
-const ChartResultArraySchema = Type.Object(
-  {
-    meta: ChartMeta,
-    events: Type.Optional(ChartEventsArray),
-    quotes: Type.Array(ChartResultArrayQuote),
-  },
-  { title: "ChartResultArray" },
-);
+export interface ChartEventsArray {
+  [key: string]: any;
+  dividends?: Array<ChartEventDividend>;
+  splits?: Array<ChartEventSplit>;
+}
 
-const ChartEventSplits = Type.Object(
-  {},
-  {
-    additionalProperties: ChartEventSplit,
-    title: "ChartEventSplits",
-  },
-);
+export interface ChartEventDividends {
+  [key: string]: ChartEventDividend;
+}
 
-const ChartIndicatorQuote = Type.Object(
-  {
-    high: Type.Array(Type.Union([YahooNumber, Type.Null()])),
-    low: Type.Array(Type.Union([YahooNumber, Type.Null()])),
-    open: Type.Array(Type.Union([YahooNumber, Type.Null()])),
-    close: Type.Array(Type.Union([YahooNumber, Type.Null()])),
-    volume: Type.Array(Type.Union([YahooNumber, Type.Null()])),
-  },
-  {
-    additionalProperties: Type.Any(),
-    title: "ChartIndicatorQuote",
-  },
-);
+export interface ChartEventDividend {
+  [key: string]: any;
+  amount: number;
+  date: Date;
+}
 
-const ChartIndicatorAdjclose = Type.Object(
-  {
-    adjclose: Type.Optional(Type.Array(Type.Union([YahooNumber, Type.Null()]))), // Missing in e.g. "APS.AX"
-  },
-  {
-    additionalProperties: Type.Any(),
-    title: "ChartIndicatorAdjClose",
-  },
-);
+export interface ChartEventSplits {
+  [key: string]: ChartEventSplit;
+}
 
-const ChartEventsObject = Type.Object(
-  {
-    dividends: Type.Optional(ChartEventDividends),
-    splits: Type.Optional(ChartEventSplits),
-  },
-  {
-    additionalProperties: Type.Any(),
-  },
-);
+export interface ChartEventSplit {
+  [key: string]: any;
+  date: Date; // new Date(1598880600 * 1000)
+  numerator: number; // 4
+  denominator: number; // 1
+  splitRatio: string; // "4:1"
+}
 
-const ChartIndicatorsObject = Type.Object(
-  {
-    quote: Type.Array(ChartIndicatorQuote),
-    adjclose: Type.Optional(Type.Array(ChartIndicatorAdjclose)),
-  },
-  {
-    additionalProperties: Type.Any(),
-    title: "ChartIndicatorObject",
-  },
-);
-const ChartResultObjectSchema = Type.Object(
-  {
-    meta: ChartMeta,
-    timestamp: Type.Optional(Type.Array(YahooNumber)),
-    events: Type.Optional(ChartEventsObject),
-    indicators: ChartIndicatorsObject,
-  },
-  {
-    additionalProperties: Type.Any(),
-    title: "ChartResultObject",
-  },
-);
+export interface ChartIndicatorsObject {
+  [key: string]: any;
+  quote: Array<ChartIndicatorQuote>;
+  adjclose?: Array<ChartIndicatorAdjclose>;
+}
 
-export const ChartOptionsSchema = Type.Object(
-  {
-    period1: Type.Union([Type.Date(), Type.String(), YahooNumber]),
-    period2: Type.Optional(
-      Type.Union([Type.Date(), Type.String(), YahooNumber]),
-    ),
-    useYfid: Type.Optional(Type.Boolean()), // true
-    interval: Type.Optional(
-      Type.Union([
-        Type.Literal("1m"),
-        Type.Literal("2m"),
-        Type.Literal("5m"),
-        Type.Literal("15m"),
-        Type.Literal("30m"),
-        Type.Literal("60m"),
-        Type.Literal("90m"),
-        Type.Literal("1h"),
-        Type.Literal("1d"),
-        Type.Literal("5d"),
-        Type.Literal("1wk"),
-        Type.Literal("1mo"),
-        Type.Literal("3mo"),
-      ]),
-    ),
-    includePrePost: Type.Optional(Type.Boolean()), // true
-    events: Type.Optional(Type.String()), // 'history',
-    lang: Type.Optional(Type.String()), // "en-US"
-    return: Type.Optional(
-      Type.Union([Type.Literal("array"), Type.Literal("object")]),
-    ),
-  },
-  {
-    title: "ChartOptions",
-  },
-);
+export interface ChartIndicatorQuote {
+  [key: string]: any;
+  high: Array<number | null>;
+  low: Array<number | null>;
+  open: Array<number | null>;
+  close: Array<number | null>;
+  volume: Array<number | null>;
+}
 
-const ChartOptionsWithReturnArraySchema = Type.Composite(
-  [
-    ChartOptionsSchema,
-    Type.Object({
-      return: Type.Optional(Type.Literal("array")),
-    }),
-  ],
-  {
-    title: "ChartOptionsWithReturnArray",
-  },
-);
+export interface ChartIndicatorAdjclose {
+  [key: string]: any;
+  adjclose?: Array<number | null>; // Missing in e.g. "APS.AX"
+}
 
-const ChartOptionsWithReturnObjectSchema = Type.Composite(
-  [
-    ChartOptionsSchema,
-    Type.Object({
-      return: Type.Literal("object"),
-    }),
-  ],
-  {
-    title: "ChartOptionsWithReturnObject",
-  },
-);
-
-export type ChartOptions = StaticDecode<typeof ChartOptionsSchema>;
-export type ChartOptionsWithReturnObject = StaticDecode<
-  typeof ChartOptionsWithReturnObjectSchema
->;
-export type ChartResultObject = StaticDecode<typeof ChartResultObjectSchema>;
-export type ChartOptionsWithReturnArray = StaticDecode<
-  typeof ChartOptionsWithReturnArraySchema
->;
-export type ChartResultArray = StaticDecode<typeof ChartResultArraySchema>;
+export interface ChartOptions {
+  period1: Date | string | number;
+  period2?: Date | string | number;
+  useYfid?: boolean; // true
+  interval?:
+    | "1m"
+    | "2m"
+    | "5m"
+    | "15m"
+    | "30m"
+    | "60m"
+    | "90m"
+    | "1h"
+    | "1d"
+    | "5d"
+    | "1wk"
+    | "1mo"
+    | "3mo";
+  includePrePost?: boolean; // true
+  events?: string; // 'history',
+  lang?: string; // "en-US"
+  return?: "array" | "object";
+}
 
 const queryOptionsDefaults: Omit<ChartOptions, "period1"> = {
   useYfid: true,
@@ -287,6 +170,14 @@ const queryOptionsDefaults: Omit<ChartOptions, "period1"> = {
   lang: "en-US",
   return: "array",
 };
+
+export interface ChartOptionsWithReturnArray extends ChartOptions {
+  return?: "array";
+}
+export interface ChartOptionsWithReturnObject extends ChartOptions {
+  return: "object";
+}
+
 /* --- array input, typed output, honor "return" param --- */
 
 // TODO: make this a deprecration passthrough
@@ -321,13 +212,13 @@ export default async function chart(
 ): Promise<any> {
   const returnAs = queryOptionsOverrides?.return || "array";
 
-  const result = (await this._moduleExec<ChartOptions>({
+  const result = (await this._moduleExec({
     moduleName: "chart",
 
     query: {
       assertSymbol: symbol,
       url: "https://${YF_QUERY_HOST}/v8/finance/chart/" + symbol,
-      schema: ChartOptionsSchema,
+      schemaKey: "#/definitions/ChartOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       transformWith(queryOptions: ChartOptions) {
@@ -369,7 +260,7 @@ export default async function chart(
     },
 
     result: {
-      schema: ChartResultObjectSchema,
+      schemaKey: "#/definitions/ChartResultObject",
       transformWith(result: any) {
         if (!result.chart)
           throw new Error("Unexpected result: " + JSON.stringify(result));
@@ -457,9 +348,7 @@ export default async function chart(
       result2.events = {};
 
       for (const event of ["dividends", "splits"]) {
-        // @ts-expect-error (eatkinson): Fix up type in follow up
         if (result.events[event])
-          // @ts-expect-error (eatkinson): Fix up type in follow up
           result2.events[event] = Object.values(result.events[event]);
       }
     }

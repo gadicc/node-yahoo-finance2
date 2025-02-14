@@ -1,4 +1,4 @@
-import moduleExec from "./moduleExec";
+//import ModuleExec from "./moduleExec.js";
 
 export interface ModuleOptions {
   validateResult?: boolean;
@@ -16,5 +16,7 @@ export interface ModuleOptionsWithValidateTrue extends ModuleOptions {
 
 export interface ModuleThis {
   [key: string]: any;
-  _moduleExec: typeof moduleExec;
+  // TODO: should be ModuleExec function but requiring functions breaks
+  // schema generation because json-schema does not support functions.
+  _moduleExec: any;
 }

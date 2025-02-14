@@ -1,9 +1,10 @@
 // libs
 import yahooFinanceFetch from "./lib/yahooFinanceFetch.js";
+import moduleExec from "./lib/moduleExec.js";
 import options from "./lib/options.js";
 import errors from "./lib/errors.js";
 import setGlobalConfig from "./lib/setGlobalConfig.js";
-import moduleExec from "./lib/moduleExec.js";
+import { disallowAdditionalProps } from "./lib/validateAndCoerceTypes.js";
 import { suppressNotices } from "./lib/notices.js";
 
 // modules
@@ -31,6 +32,7 @@ export default {
   _fetch: yahooFinanceFetch,
   _moduleExec: moduleExec,
   _opts: options,
+  _disallowAdditionalProps: disallowAdditionalProps,
 
   // common
   errors,

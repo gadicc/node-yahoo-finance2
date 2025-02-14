@@ -1,173 +1,146 @@
-import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import { YahooNumber, YahooFinanceDate } from "../lib/yahooFinanceTypes.js";
 
-const DailyGainersCriterum = Type.Object(
-  {
-    field: Type.String(),
-    operators: Type.Array(Type.String()),
-    values: Type.Array(YahooNumber),
-    labelsSelected: Type.Array(YahooNumber),
-    dependentValues: Type.Array(Type.Any()),
-  },
-  { title: "DailyGainersCriterium" },
-);
+export interface DailyGainersResult {
+  id: string;
+  title: string;
+  description: string;
+  canonicalName: string;
+  criteriaMeta: DailyGainersCriteriaMeta;
+  rawCriteria: string;
+  start: number;
+  count: number;
+  total: number;
+  quotes: DailyGainersQuote[];
+  useRecords: boolean;
+  predefinedScr: boolean;
+  versionId: number;
+  creationDate: number;
+  lastUpdated: number;
+  isPremium: boolean;
+  iconUrl: string;
+}
 
-const DailyGainersQuote = Type.Object(
-  {
-    language: Type.String(),
-    region: Type.String(),
-    quoteType: Type.String(),
-    typeDisp: Type.String(),
-    quoteSourceName: Type.String(),
-    triggerable: Type.Boolean(),
-    customPriceAlertConfidence: Type.String(),
-    lastCloseTevEbitLtm: Type.Optional(YahooNumber),
-    lastClosePriceToNNWCPerShare: Type.Optional(YahooNumber),
-    firstTradeDateMilliseconds: YahooNumber,
-    priceHint: YahooNumber,
-    postMarketChangePercent: Type.Optional(YahooNumber),
-    postMarketTime: Type.Optional(YahooNumber),
-    postMarketPrice: Type.Optional(YahooNumber),
-    postMarketChange: Type.Optional(YahooNumber),
-    regularMarketChange: YahooNumber,
-    regularMarketTime: YahooNumber,
-    regularMarketPrice: YahooNumber,
-    regularMarketDayHigh: YahooNumber,
-    regularMarketDayRange: Type.String(),
-    currency: Type.String(),
-    regularMarketDayLow: YahooNumber,
-    regularMarketVolume: YahooNumber,
-    regularMarketPreviousClose: YahooNumber,
-    bid: Type.Optional(YahooNumber),
-    ask: Type.Optional(YahooNumber),
-    bidSize: Type.Optional(YahooNumber),
-    askSize: Type.Optional(YahooNumber),
-    preMarketChange: Type.Optional(YahooNumber),
-    preMarketTime: Type.Optional(YahooNumber),
-    preMarketPrice: Type.Optional(YahooNumber),
-    preMarketChangePercent: Type.Optional(YahooNumber),
-    hasPrePostMarketData: Type.Optional(Type.Boolean()),
-    corporateActions: Type.Array(Type.Any()),
-    earningsCallTimestampStart: Type.Optional(YahooNumber),
-    earningsCallTimestampEnd: Type.Optional(YahooNumber),
-    isEarningsDateEstimate: Type.Optional(Type.Boolean()),
-    market: Type.String(),
-    messageBoardId: Type.String(),
-    fullExchangeName: Type.String(),
-    longName: Type.String(),
-    financialCurrency: Type.Optional(Type.String()),
-    regularMarketOpen: YahooNumber,
-    averageDailyVolume3Month: YahooNumber,
-    averageDailyVolume10Day: YahooNumber,
-    fiftyTwoWeekLowChange: YahooNumber,
-    fiftyTwoWeekLowChangePercent: YahooNumber,
-    fiftyTwoWeekRange: Type.String(),
-    fiftyTwoWeekHighChange: YahooNumber,
-    fiftyTwoWeekHighChangePercent: YahooNumber,
-    fiftyTwoWeekChangePercent: YahooNumber,
-    earningsTimestamp: Type.Optional(YahooNumber),
-    earningsTimestampStart: Type.Optional(YahooNumber),
-    earningsTimestampEnd: Type.Optional(YahooNumber),
-    trailingAnnualDividendRate: YahooNumber,
-    trailingAnnualDividendYield: YahooNumber,
-    marketState: Type.String(),
-    epsTrailingTwelveMonths: Type.Optional(YahooNumber),
-    epsForward: Type.Optional(YahooNumber),
-    epsCurrentYear: Type.Optional(YahooNumber),
-    priceEpsCurrentYear: Type.Optional(YahooNumber),
-    sharesOutstanding: YahooNumber,
-    bookValue: Type.Optional(YahooNumber),
-    fiftyDayAverage: YahooNumber,
-    fiftyDayAverageChange: YahooNumber,
-    fiftyDayAverageChangePercent: YahooNumber,
-    twoHundredDayAverage: YahooNumber,
-    twoHundredDayAverageChange: YahooNumber,
-    twoHundredDayAverageChangePercent: YahooNumber,
-    marketCap: YahooNumber,
-    forwardPE: Type.Optional(YahooNumber),
-    priceToBook: Type.Optional(YahooNumber),
-    sourceInterval: YahooNumber,
-    exchangeDataDelayedBy: YahooNumber,
-    exchangeTimezoneName: Type.String(),
-    exchangeTimezoneShortName: Type.String(),
-    gmtOffSetMilliseconds: YahooNumber,
-    esgPopulated: Type.Boolean(),
-    tradeable: Type.Boolean(),
-    cryptoTradeable: Type.Boolean(),
-    exchange: Type.String(),
-    fiftyTwoWeekLow: YahooNumber,
-    fiftyTwoWeekHigh: YahooNumber,
-    shortName: Type.String(),
-    averageAnalystRating: Type.Optional(Type.String()),
-    regularMarketChangePercent: YahooNumber,
-    symbol: Type.String(),
-    dividendDate: Type.Optional(YahooNumber),
-    displayName: Type.Optional(Type.String()),
-    trailingPE: Type.Optional(YahooNumber),
-    prevName: Type.Optional(Type.String()),
-    nameChangeDate: Type.Optional(YahooFinanceDate),
-    ipoExpectedDate: Type.Optional(YahooFinanceDate),
-    dividendYield: Type.Optional(YahooNumber),
-    dividendRate: Type.Optional(YahooNumber),
-  },
-  { title: "DailyGainersQuote" },
-);
+export interface DailyGainersCriteriaMeta {
+  size: number;
+  offset: number;
+  sortField: string;
+  sortType: string;
+  quoteType: string;
+  criteria: DailyGainersCriterum[];
+  topOperator: string;
+}
 
-const DailyGainersOptionsSchema = Type.Object(
-  {
-    lang: Type.Optional(Type.String()),
-    region: Type.Optional(Type.String()),
-    count: Type.Optional(YahooNumber),
-  },
-  { title: "DailyGainersOptions" },
-);
+export interface DailyGainersCriterum {
+  field: string;
+  subField: null;
+  operators: string[];
+  values: number[];
+  labelsSelected: number[];
+  dependentValues: any[];
+}
 
-const DailyGainersCriteriaMeta = Type.Object(
-  {
-    size: YahooNumber,
-    offset: YahooNumber,
-    sortField: Type.String(),
-    sortType: Type.String(),
-    quoteType: Type.String(),
-    criteria: Type.Array(DailyGainersCriterum),
-    topOperator: Type.String(),
-  },
-  { title: "DailyGainersCriteriaMeta" },
-);
-
-const DailyGainersResultSchema = Type.Object(
-  {
-    id: Type.String(),
-    title: Type.String(),
-    description: Type.String(),
-    canonicalName: Type.String(),
-    criteriaMeta: DailyGainersCriteriaMeta,
-    rawCriteria: Type.String(),
-    start: YahooNumber,
-    count: YahooNumber,
-    total: YahooNumber,
-    quotes: Type.Array(DailyGainersQuote),
-    useRecords: Type.Boolean(),
-    predefinedScr: Type.Boolean(),
-    versionId: YahooNumber,
-    creationDate: YahooNumber,
-    lastUpdated: YahooNumber,
-    isPremium: Type.Boolean(),
-    iconUrl: Type.String(),
-  },
-  { title: "DailyGainersResult" },
-);
-
-export type DailyGainersResult = StaticDecode<typeof DailyGainersResultSchema>;
-export type DailyGainersOptions = StaticDecode<
-  typeof DailyGainersOptionsSchema
->;
+export interface DailyGainersQuote {
+  language: string;
+  region: string;
+  quoteType: string;
+  typeDisp: string;
+  quoteSourceName: string;
+  triggerable: boolean;
+  customPriceAlertConfidence: string;
+  lastCloseTevEbitLtm?: number;
+  lastClosePriceToNNWCPerShare?: number;
+  firstTradeDateMilliseconds: number;
+  priceHint: number;
+  postMarketChangePercent?: number;
+  postMarketTime?: number;
+  postMarketPrice?: number;
+  postMarketChange?: number;
+  regularMarketChange: number;
+  regularMarketTime: number;
+  regularMarketPrice: number;
+  regularMarketDayHigh: number;
+  regularMarketDayRange: string;
+  currency: string;
+  regularMarketDayLow: number;
+  regularMarketVolume: number;
+  regularMarketPreviousClose: number;
+  bid?: number;
+  ask?: number;
+  bidSize?: number;
+  askSize?: number;
+  preMarketChange: number;
+  preMarketTime: number;
+  preMarketPrice: number;
+  preMarketChangePercent: number;
+  hasPrePostMarketData: boolean;
+  corporateActions: any;
+  earningsCallTimestampStart?: number;
+  earningsCallTimestampEnd?: number;
+  isEarningsDateEstimate?: boolean;
+  market: string;
+  messageBoardId: string;
+  fullExchangeName: string;
+  longName: string;
+  financialCurrency?: string;
+  regularMarketOpen: number;
+  averageDailyVolume3Month: number;
+  averageDailyVolume10Day: number;
+  fiftyTwoWeekLowChange: number;
+  fiftyTwoWeekLowChangePercent: number;
+  fiftyTwoWeekRange: string;
+  fiftyTwoWeekHighChange: number;
+  fiftyTwoWeekHighChangePercent: number;
+  fiftyTwoWeekChangePercent: number;
+  earningsTimestamp?: number;
+  earningsTimestampStart?: number;
+  earningsTimestampEnd?: number;
+  trailingAnnualDividendRate: number;
+  trailingAnnualDividendYield: number;
+  marketState: string;
+  epsTrailingTwelveMonths?: number;
+  epsForward?: number;
+  epsCurrentYear?: number;
+  priceEpsCurrentYear?: number;
+  sharesOutstanding: number;
+  bookValue?: number;
+  fiftyDayAverage: number;
+  fiftyDayAverageChange: number;
+  fiftyDayAverageChangePercent: number;
+  twoHundredDayAverage: number;
+  twoHundredDayAverageChange: number;
+  twoHundredDayAverageChangePercent: number;
+  marketCap: number;
+  forwardPE?: number;
+  priceToBook?: number;
+  sourceInterval: number;
+  exchangeDataDelayedBy: number;
+  exchangeTimezoneName: string;
+  exchangeTimezoneShortName: string;
+  gmtOffSetMilliseconds: number;
+  esgPopulated: boolean;
+  tradeable: boolean;
+  cryptoTradeable: boolean;
+  exchange: string;
+  fiftyTwoWeekLow: number;
+  fiftyTwoWeekHigh: number;
+  shortName: string;
+  averageAnalystRating?: string;
+  regularMarketChangePercent: number;
+  symbol: string;
+  dividendDate?: number;
+  displayName?: string;
+  trailingPE?: number;
+  prevName?: string;
+  nameChangeDate?: Date;
+  ipoExpectedDate?: Date;
+  dividendYield?: number;
+  dividendRate?: number;
+}
 
 const queryOptionsDefaults = {
   lang: "en-US",
@@ -175,6 +148,12 @@ const queryOptionsDefaults = {
   scrIds: "day_gainers",
   count: 5,
 };
+
+export interface DailyGainersOptions {
+  lang?: string;
+  region?: string;
+  count?: number;
+}
 
 export default function dailyGainers(
   this: ModuleThis,
@@ -197,14 +176,15 @@ export default function dailyGainers(
     moduleName: "dailyGainers",
     query: {
       url: "https://${YF_QUERY_HOST}/v1/finance/screener/predefined/saved",
-      schema: DailyGainersOptionsSchema,
+      schemaKey: "#/definitions/DailyGainersOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       needsCrumb: true,
     },
     result: {
-      schema: DailyGainersResultSchema,
+      schemaKey: "#/definitions/DailyGainersResult",
       transformWith(result: any) {
+        // console.log(result);
         if (!result.finance)
           throw new Error("Unexpected result: " + JSON.stringify(result));
         return result.finance.result[0];

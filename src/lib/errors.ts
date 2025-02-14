@@ -1,14 +1,9 @@
-import {
-  TransformDecodeError,
-  TransformDecodeCheckError,
-} from "@sinclair/typebox/build/cjs/value";
+import type { ErrorObject } from "ajv/dist/types";
 
 // Yahoo's servers returned an HTTP 400 for this request.
 export class BadRequestError extends Error {
   name = "BadRequestError";
 }
-
-type ValidationError = TransformDecodeError | TransformDecodeCheckError;
 
 // Yahoo's servers returned a 'not-ok' status for this request.
 // https://developer.mozilla.org/en-US/docs/Web/API/Response/ok
@@ -29,11 +24,11 @@ export class NoEnvironmentError extends Error {
 export class FailedYahooValidationError extends Error {
   name = "FailedYahooValidationError";
   result: any;
-  errors?: null | ValidationError[];
+  errors?: null | ErrorObject[];
 
   constructor(
     message: string,
-    { result, errors }: { result: any; errors?: null | ValidationError[] },
+    { result, errors }: { result: any; errors?: null | ErrorObject[] },
   ) {
     super(message);
     this.result = result;

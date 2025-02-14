@@ -4,10 +4,11 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import { validateAndCoerceTypebox } from "../lib/validateAndCoerceTypes.js";
 
 import type { QuoteOptions, Quote } from "../modules/quote.js";
-import quote, { QuoteOptionsSchema } from "../modules/quote.js";
+import quote from "../modules/quote.js";
+
+import validateAndCoerceTypes from "../lib/validateAndCoerceTypes.js";
 
 const DEBOUNCE_TIME = 50;
 
@@ -41,10 +42,11 @@ export default function quoteCombine(
         JSON.stringify(symbol, null, 2),
     );
 
-  validateAndCoerceTypebox({
+  validateAndCoerceTypes({
+    source: "quoteCombine",
     type: "options",
-    data: queryOptionsOverrides,
-    schema: QuoteOptionsSchema,
+    object: queryOptionsOverrides,
+    schemaKey: "#/definitions/QuoteOptions",
     options: this._opts.validation,
   });
 
@@ -82,17 +84,17 @@ export default function quoteCombine(
       // @ts-ignore
       thisQuote(symbols, queryOptionsOverrides, moduleOptions)
         .then((results) => {
-          for (const result of results) {
-            for (const promise of entry.symbols.get(result.symbol)) {
+          for (let result of results) {
+            for (let promise of entry.symbols.get(result.symbol)) {
               promise.resolve(result);
               promise.resolved = true;
             }
           }
 
           // Check for symbols we asked for and didn't get back,
-          // e.g. non-existent symbols (#150)
-          for (const [_, promises] of entry.symbols) {
-            for (const promise of promises) {
+          // e.g. non-existant symbols (#150)
+          for (let [symbol, promises] of entry.symbols) {
+            for (let promise of promises) {
               if (!promise.resolved) {
                 promise.resolve(undefined);
               }
@@ -100,8 +102,8 @@ export default function quoteCombine(
           }
         })
         .catch((error) => {
-          for (const symbolPromiseCallbacks of entry.symbols.values())
-            for (const promise of symbolPromiseCallbacks) promise.reject(error);
+          for (let symbolPromiseCallbacks of entry.symbols.values())
+            for (let promise of symbolPromiseCallbacks) promise.reject(error);
         });
     }, DEBOUNCE_TIME);
   });

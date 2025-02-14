@@ -1,56 +1,15 @@
+// /// <reference path="quoteSummary-iface.ts"/>
+// import QuoteSummaryResult from "QuoteSummaryIfaces";
+import { QuoteSummaryResult } from "./quoteSummary-iface.js";
+
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import { StaticDecode, Type } from "@sinclair/typebox";
-import {
-  QuoteSummaryResult,
-  QuoteSummaryResultSchema,
-} from "./quoteSummary-iface.js";
 
-const QuoteSummaryModules = Type.Union([
-  Type.Literal("assetProfile"),
-  Type.Literal("balanceSheetHistory"),
-  Type.Literal("balanceSheetHistoryQuarterly"),
-  Type.Literal("calendarEvents"),
-  Type.Literal("cashflowStatementHistory"),
-  Type.Literal("cashflowStatementHistoryQuarterly"),
-  Type.Literal("defaultKeyStatistics"),
-  Type.Literal("earnings"),
-  Type.Literal("earningsHistory"),
-  Type.Literal("earningsTrend"),
-  Type.Literal("financialData"),
-  Type.Literal("fundOwnership"),
-  Type.Literal("fundPerformance"),
-  Type.Literal("fundProfile"),
-  Type.Literal("incomeStatementHistory"),
-  Type.Literal("incomeStatementHistoryQuarterly"),
-  Type.Literal("indexTrend"),
-  Type.Literal("industryTrend"),
-  Type.Literal("insiderHolders"),
-  Type.Literal("insiderTransactions"),
-  Type.Literal("institutionOwnership"),
-  Type.Literal("majorDirectHolders"),
-  Type.Literal("majorHoldersBreakdown"),
-  Type.Literal("netSharePurchaseActivity"),
-  Type.Literal("price"),
-  Type.Literal("quoteType"),
-  Type.Literal("recommendationTrend"),
-  Type.Literal("secFilings"),
-  Type.Literal("sectorTrend"),
-  Type.Literal("summaryDetail"),
-  Type.Literal("summaryProfile"),
-  Type.Literal("topHoldings"),
-  Type.Literal("upgradeDowngradeHistory"),
-]);
-
-export type QuoteSummaryModulesLiteral = StaticDecode<
-  typeof QuoteSummaryModules
->;
-
-const quoteSummaryModules = [
+export const quoteSummary_modules = [
   "assetProfile",
   "balanceSheetHistory",
   "balanceSheetHistoryQuarterly",
@@ -86,18 +45,47 @@ const quoteSummaryModules = [
   "upgradeDowngradeHistory",
 ];
 
-export type QuoteSummaryOptions = StaticDecode<
-  typeof QuoteSummaryOptionsSchema
->;
+export type QuoteSummaryModules =
+  | "assetProfile"
+  | "balanceSheetHistory"
+  | "balanceSheetHistoryQuarterly"
+  | "calendarEvents"
+  | "cashflowStatementHistory"
+  | "cashflowStatementHistoryQuarterly"
+  | "defaultKeyStatistics"
+  | "earnings"
+  | "earningsHistory"
+  | "earningsTrend"
+  | "financialData"
+  | "fundOwnership"
+  | "fundPerformance"
+  | "fundProfile"
+  | "incomeStatementHistory"
+  | "incomeStatementHistoryQuarterly"
+  | "indexTrend"
+  | "industryTrend"
+  | "insiderHolders"
+  | "insiderTransactions"
+  | "institutionOwnership"
+  | "majorDirectHolders"
+  | "majorHoldersBreakdown"
+  | "netSharePurchaseActivity"
+  | "price"
+  | "quoteType"
+  | "recommendationTrend"
+  | "secFilings"
+  | "sectorTrend"
+  | "summaryDetail"
+  | "summaryProfile"
+  | "topHoldings"
+  | "upgradeDowngradeHistory";
 
-const QuoteSummaryOptionsSchema = Type.Object({
-  formatted: Type.Optional(Type.Boolean()),
-  modules: Type.Optional(
-    Type.Union([Type.Array(QuoteSummaryModules), Type.Literal("all")]),
-  ),
-});
+export interface QuoteSummaryOptions {
+  formatted?: boolean;
+  modules?: Array<QuoteSummaryModules> | "all";
+}
 
-const queryOptionsDefaults: QuoteSummaryOptions = {
+const queryOptionsDefaults = {
   formatted: false,
   modules: ["price", "summaryDetail"],
 };
@@ -124,28 +112,23 @@ export default function quoteSummary(
 ): Promise<QuoteSummaryResult> {
   return this._moduleExec({
     moduleName: "quoteSummary",
+
     query: {
       assertSymbol: symbol,
       url: "https://${YF_QUERY_HOST}/v10/finance/quoteSummary/" + symbol,
       needsCrumb: true,
-      schema: QuoteSummaryOptionsSchema,
+      schemaKey: "#/definitions/QuoteSummaryOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
-      transformWith(options: unknown) {
-        if (
-          typeof options === "object" &&
-          options != null &&
-          "modules" in options &&
-          options.modules === "all"
-        )
-          options.modules =
-            quoteSummaryModules as Array<QuoteSummaryModulesLiteral>;
+      transformWith(options: QuoteSummaryOptions) {
+        if (options.modules === "all")
+          options.modules = quoteSummary_modules as Array<QuoteSummaryModules>;
         return options;
       },
     },
 
     result: {
-      schema: QuoteSummaryResultSchema,
+      schemaKey: "#/definitions/QuoteSummaryResult",
       transformWith(result: any) {
         if (!result.quoteSummary)
           throw new Error("Unexpected result: " + JSON.stringify(result));

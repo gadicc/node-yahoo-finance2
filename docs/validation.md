@@ -146,16 +146,15 @@ receive back, we'll no longer throw a new error on new unknown keys.
 This is important because Yahoo constantly add new fields, and this would
 break all existing deployments.
 
-You can revert to the old behaviour by passing the `_internalThrowOnAdditionalProperties` to the global configuration like so: 
+You can revert to the old behaviour with:
 
 ```js
-yahooFinance.setGlobalConfig({ validation: { _internalThrowOnAdditionalProperties: true} });
+yahooFinance._disallowAdditionalProps();
 ```
 
 which is the default when `NODE_ENV==="test"`.  This means that during our
 development of the library itself, we make sure that we're testing against
 all types.
-
 
 <a name="help-fix"></a>
 ## Help Fix Validation Errors

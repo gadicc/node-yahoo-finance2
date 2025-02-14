@@ -57,7 +57,7 @@ describe("options", () => {
     it("throws on invalid", () => {
       return expect(
         yf.options("AAPL", { date: "something yfDate can't parse" }),
-      ).rejects.toThrow("Validation called with invalid options");
+      ).rejects.toThrow(/^Unsupported date type/);
     });
   });
 });

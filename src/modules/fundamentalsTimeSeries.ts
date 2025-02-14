@@ -1,4 +1,3 @@
-import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateTrue,
@@ -8,56 +7,33 @@ import type {
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: we have to ignore this for csm output.
 import Timeseries_Keys from "../lib/timeseries.json" with { type: "json" };
-import { YahooFinanceDate, YahooNumber } from "../lib/yahooFinanceTypes.js";
 
-const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
+export const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
 
-const FundamentalsTimeSeries_Modules = [
+export const FundamentalsTimeSeries_Modules = [
   "financials",
   "balance-sheet",
   "cash-flow",
   "all",
 ];
 
-const FundamentalsTimeSeriesResultSchema = Type.Object(
-  {
-    date: YahooFinanceDate,
-  },
-  {
-    additionalProperties: Type.Unknown(),
-    title: "FundamentalsTimeSeriesResult",
-  },
-);
+export type FundamentalsTimeSeriesResults = Array<FundamentalsTimeSeriesResult>;
 
-const FundamentalsTimeSeriesOptionsSchema = Type.Object(
-  {
-    period1: Type.Union([YahooFinanceDate, YahooNumber, Type.String()]),
-    period2: Type.Optional(
-      Type.Union([YahooFinanceDate, YahooNumber, Type.String()]),
-    ),
-    type: Type.Optional(Type.String()),
-    merge: Type.Optional(Type.Boolean()), // This returns a completely different format that will break the transformer
-    padTimeSeries: Type.Optional(Type.Boolean()), // Not exactly sure what this does, assume it pads p1 and p2???
-    lang: Type.Optional(Type.String()),
-    region: Type.Optional(Type.String()),
-    module: Type.String(),
-  },
-  {
-    title: "FundamentalsTimeSeriesOptions",
-  },
-);
+export interface FundamentalsTimeSeriesResult {
+  [key: string]: unknown;
+  date: Date;
+}
 
-export type FundamentalsTimeSeriesOptions = StaticDecode<
-  typeof FundamentalsTimeSeriesOptionsSchema
->;
-
-const FundamentalsTimeSeriesResultsSchema = Type.Array(
-  FundamentalsTimeSeriesResultSchema,
-);
-
-export type FundamentalsTimeSeriesResult = StaticDecode<
-  typeof FundamentalsTimeSeriesResultSchema
->;
+export interface FundamentalsTimeSeriesOptions {
+  period1: Date | number | string;
+  period2?: Date | number | string;
+  type?: string;
+  merge?: boolean; // This returns a completely different format that will break the transformer
+  padTimeSeries?: boolean; // Not exactly sure what this does, assume it pads p1 and p2???
+  lang?: string;
+  region?: string;
+  module: string;
+}
 
 const queryOptionsDefaults: Omit<
   FundamentalsTimeSeriesOptions,
@@ -97,14 +73,14 @@ export default function fundamentalsTimeSeries(
       assertSymbol: symbol,
       url: `https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/${symbol}`,
       needsCrumb: false,
-      schema: FundamentalsTimeSeriesOptionsSchema,
+      schemaKey: "#/definitions/FundamentalsTimeSeriesOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       transformWith: processQuery,
     },
 
     result: {
-      schema: FundamentalsTimeSeriesResultsSchema,
+      schemaKey: "#/definitions/FundamentalsTimeSeriesResults",
       transformWith(response: any) {
         if (!response || !response.timeseries)
           throw new Error(`Unexpected result: ${JSON.stringify(response)}`);

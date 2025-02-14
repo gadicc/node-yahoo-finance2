@@ -1,51 +1,26 @@
-import { StaticDecode, Type } from "@sinclair/typebox";
 import type {
   ModuleOptions,
   ModuleOptionsWithValidateFalse,
   ModuleOptionsWithValidateTrue,
   ModuleThis,
 } from "../lib/moduleCommon.js";
-import { YahooNumber } from "../lib/yahooFinanceTypes.js";
 
-const RecommendationsBySymbolResponse = Type.Object(
-  {
-    recommendedSymbols: Type.Array(
-      Type.Object(
-        {
-          score: YahooNumber, // 0.1927
-          symbol: Type.String(), // "BMW.DE"
-        },
-        {
-          additionalProperties: Type.Any(),
-        },
-      ),
-    ),
-    symbol: Type.String(),
-  },
-  {
-    additionalProperties: Type.Any(),
-  },
-);
+export interface RecommendationsBySymbolResponse {
+  [key: string]: any;
+  recommendedSymbols: Array<{
+    [key: string]: any;
+    score: number; // 0.1927
+    symbol: string; // "BMW.DE"
+  }>;
+  symbol: string;
+}
 
-const RecommendationsBySymbolResponseArray = Type.Array(
-  RecommendationsBySymbolResponse,
-);
+export type RecommendationsBySymbolResponseArray =
+  RecommendationsBySymbolResponse[];
 
-const RecommendationsBySymbolOptions = Type.Object({});
+export interface RecommendationsBySymbolOptions {}
 
-export type RecommendationsBySymbolResponse = StaticDecode<
-  typeof RecommendationsBySymbolResponse
->;
-
-export type RecommendationsBySymbolOptions = StaticDecode<
-  typeof RecommendationsBySymbolOptions
->;
-
-export type RecommendationsBySymbolResponseArray = StaticDecode<
-  typeof RecommendationsBySymbolResponseArray
->;
-
-const queryOptionsDefaults: RecommendationsBySymbolOptions = {};
+const queryOptionsDefaults = {};
 
 export default function recommendationsBySymbol(
   this: ModuleThis,
@@ -83,13 +58,13 @@ export default function recommendationsBySymbol(
       url:
         "https://${YF_QUERY_HOST}/v6/finance/recommendationsbysymbol/" +
         symbols,
-      schema: RecommendationsBySymbolOptions,
+      schemaKey: "#/definitions/RecommendationsBySymbolOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
     },
 
     result: {
-      schema: RecommendationsBySymbolResponseArray,
+      schemaKey: "#/definitions/RecommendationsBySymbolResponseArray",
       transformWith(result: any) {
         if (!result.finance)
           throw new Error("Unexpected result: " + JSON.stringify(result));

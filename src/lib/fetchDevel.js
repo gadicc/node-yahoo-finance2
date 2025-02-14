@@ -59,7 +59,8 @@ async function fetchDevel(url, fetchOptions) {
 
   const filename = destUrl.toString();
 
-  if (cache[filename]) return cache[filename];
+  // TODO XXX.  Because validation code mutates.  But AJV handled this case.  Why?
+  // if (cache[filename]) return cache[filename];
 
   let contentJson, contentObj;
 
