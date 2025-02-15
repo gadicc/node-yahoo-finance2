@@ -120,10 +120,11 @@ describe("yahooFinanceFetch", () => {
     });
 
     it("yahooFinanceFetch branch check for alternate queue", async () => {
+      const url = "http://example.com";
       const promises = [
-        yahooFinanceFetch("", {}),
-        yahooFinanceFetch("", {}, {}),
-        yahooFinanceFetch("", {}, { queue: {} }),
+        yahooFinanceFetch(url, {}),
+        yahooFinanceFetch(url, {}, {}),
+        yahooFinanceFetch(url, {}, { queue: {} }),
       ];
 
       await immediate();
@@ -136,33 +137,36 @@ describe("yahooFinanceFetch", () => {
     });
 
     it("assert defualts to {} for empty queue opts", async () => {
+      const url = "http://example.com";
       moduleOpts.queue.concurrency = 1;
       const opts = { ..._opts };
       // @ts-ignore: intentional to test runtime failures
       delete opts.queue;
       const yahooFinanceFetch = _yahooFinanceFetch.bind({ _env: env, _opts });
 
-      const promise = yahooFinanceFetch("", {}, moduleOpts);
+      const promise = yahooFinanceFetch(url, {}, moduleOpts);
       await immediate();
       env.fetch.fetches[0].resolveWith({ ok: true });
       await expect(promise).resolves.toMatchObject({ ok: true });
     });
 
     it("single item in queue", async () => {
+      const url = "http://example.com";
       moduleOpts.queue.concurrency = 1;
 
-      const promise = yahooFinanceFetch("", {}, moduleOpts);
+      const promise = yahooFinanceFetch(url, {}, moduleOpts);
       await immediate();
       env.fetch.fetches[0].resolveWith({ ok: true });
       await expect(promise).resolves.toMatchObject({ ok: true });
     });
 
     it("waits if exceeding concurrency max", async () => {
+      const url = "http://example.com";
       moduleOpts.queue.concurrency = 1;
 
       const promises = [
-        yahooFinanceFetch("", {}, moduleOpts),
-        yahooFinanceFetch("", {}, moduleOpts),
+        yahooFinanceFetch(url, {}, moduleOpts),
+        yahooFinanceFetch(url, {}, moduleOpts),
       ];
       await immediate();
 
