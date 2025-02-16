@@ -16,6 +16,7 @@ export type ValidationError = {
   schema?: unknown;
   message: string;
   params?: { [key: string]: unknown };
+  subErrors?: ValidationError[];
 };
 
 const byType = {
@@ -141,7 +142,7 @@ const byType = {
         if (!(key in input)) {
           errors.push({
             instancePath,
-            schemaPath,
+            schemaPath: schemaPath + "/required",
             message: "Missing required property",
             data: key,
           });
@@ -166,8 +167,8 @@ const byType = {
         if (schema.additionalProperties === false) {
           errors.push({
             instancePath,
-            schemaPath,
-            message: "Unexpected property",
+            schemaPath: schemaPath + "/additionalProperties",
+            message: "should NOT have additional properties",
             params: {
               additionalProperty: key,
             },
@@ -180,7 +181,7 @@ const byType = {
             errors,
             instancePath + "/" + key,
             dataCtx,
-            schemaPath,
+            schemaPath + "/additionalProperties",
           );
         }
       }
@@ -504,8 +505,10 @@ export default function validateAndCoerce(
     let _errors: ValidationError[] = [];
     /// Since yahooFinanceType can mutute, we need to save unmodified state.
     const serializedInput = JSON.stringify(input);
+    let i = 0;
     for (const subSchema of schema.anyOf as JSONSchema[]) {
-      const subSchemaPath = schemaPath + "/anyOf";
+      const subSchemaPath = subSchema.$ref ||
+        schemaPath + "/anyOf/" + (i++).toString();
 
       _errors = [];
       validateAndCoerce(
@@ -535,7 +538,7 @@ export default function validateAndCoerce(
         message: "should match some schema in anyOf",
         data: input,
         // schema,
-        schema: allErrors,
+        subErrors: allErrors,
       });
       return false;
     }

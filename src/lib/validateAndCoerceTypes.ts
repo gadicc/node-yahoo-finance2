@@ -4,6 +4,7 @@ import { FailedYahooValidationError, InvalidOptionsError } from "./errors.ts";
 
 import validateAndCoerce from "./validate/index.ts";
 import { repository } from "../consts.ts";
+import type { ValidationError } from "./validate/index.ts";
 
 const logObj = Deno.stdout.isTerminal()
   // deno-lint-ignore no-explicit-any
@@ -62,6 +63,77 @@ function disallowAdditionalProps(show = false) {
 // if (process.env.NODE_ENV === "test")
 disallowAdditionalProps();
 
+function aggregateErrors(inputErrors: ValidationError[]) {
+  const missingMap = new Map<string, ValidationError[]>();
+  const additionalMap = new Map<string, ValidationError[]>();
+
+  const errors = inputErrors.filter((error) => {
+    if (error.subErrors) {
+      error.subErrors = aggregateErrors(error.subErrors);
+    }
+
+    if (error.schemaPath) {
+      const key = error.schemaPath + "|" + error.instancePath;
+
+      if (error.message === "Missing required property") {
+        let arr: ValidationError[];
+        if (missingMap.has(key)) {
+          arr = missingMap.get(key)!;
+        } else {
+          arr = [];
+          missingMap.set(key, arr);
+        }
+        arr.push(error);
+        return false;
+      } else if (error.message === "should NOT have additional properties") {
+        let arr: ValidationError[];
+        if (additionalMap.has(key)) {
+          arr = additionalMap.get(key)!;
+        } else {
+          arr = [];
+          additionalMap.set(key, arr);
+        }
+        arr.push(error);
+        return false;
+      }
+    }
+
+    return true;
+  });
+
+  for (const arr of missingMap.values()) {
+    const missing: string[] = [];
+    for (const error of arr) {
+      missing.push(error.data as string || "somethingWentWrong(tm)");
+    }
+    errors.push({
+      schemaPath: arr[0].schemaPath,
+      instancePath: arr[0].instancePath,
+      message: "Missing required properties",
+      params: { missing },
+    });
+  }
+
+  for (const arr of additionalMap.values()) {
+    const additionalProperties: Record<string, unknown> = {};
+    for (const error of arr) {
+      const additionalProperty = error.params?.additionalProperty as string ||
+        "somethingWentWrong(tm)";
+      additionalProperties[
+        additionalProperty
+      ] = (error.data as Record<string, unknown>)[additionalProperty];
+    }
+    errors.push({
+      schemaPath: arr[0].schemaPath,
+      instancePath: arr[0].instancePath,
+      message: "should NOT have additional properties",
+      params: { additionalProperties },
+    });
+  }
+
+  return errors;
+}
+
 function validate({
   source,
   type,
@@ -69,8 +141,10 @@ function validate({
   schemaKey,
   options,
 }: ValidateParams): void {
-  const errors = validateAndCoerce(object, schemaKey);
-  if (errors === false || !errors.length) return;
+  const _errors = validateAndCoerce(object, schemaKey);
+  if (_errors === false || !_errors.length) return;
+
+  const errors = aggregateErrors(_errors);
 
   if (type === "result") {
     /* istanbul ignore else */
