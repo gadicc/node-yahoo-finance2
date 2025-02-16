@@ -45,6 +45,9 @@ export interface QuoteBase {
   earningsTimestamp?: Date; // 1614200400,
   earningsTimestampStart?: Date; // 1614200400,
   earningsTimestampEnd?: Date; // 1614200400,
+  earningsCallTimestampStart?: Date; // 1738274400,
+  earningsCallTimestampEnd?: Date; // 1738274400,
+  isEarningsDateEstimate?: boolean; // true
   trailingAnnualDividendRate?: number; // 0.64,
   trailingPE?: number; // 88.873634,
   trailingAnnualDividendYield?: number; // 0.0011709387,
@@ -71,6 +74,7 @@ export interface QuoteBase {
   postMarketTime?: Date; // 1612573179 -> new Date()
   postMarketPrice?: number; // 544.15,
   postMarketChange?: number; // 0.51000977,
+  hasPrePostMarketData?: boolean; // true,
   regularMarketChange?: number; // -2.9299927,
   regularMarketChangePercent?: number; // -0.53606904,
   regularMarketTime?: Date; // 1612558802 -> new Date()
