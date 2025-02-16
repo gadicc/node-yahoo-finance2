@@ -1,12 +1,16 @@
 // TODO, keep defaults there too?
-import type { ValidationOptions } from "./validateAndCoerceTypes.js";
-import type { QueueOptions } from "./queue.js";
-import { ExtendedCookieJar } from "./cookieJar.js";
+import type { ValidationOptions } from "./validateAndCoerceTypes.ts";
+import type { QueueOptions } from "./queue.ts";
+import { ExtendedCookieJar } from "./cookieJar.ts";
 
 export interface Logger {
+  // deno-lint-ignore no-explicit-any
   info: (...args: any[]) => void;
+  // deno-lint-ignore no-explicit-any
   warn: (...args: any[]) => void;
+  // deno-lint-ignore no-explicit-any
   error: (...args: any[]) => void;
+  // deno-lint-ignore no-explicit-any
   debug: (...args: any[]) => void;
 }
 
@@ -19,7 +23,7 @@ export interface YahooFinanceOptions {
 }
 
 const options: YahooFinanceOptions = {
-  YF_QUERY_HOST: process.env.YF_QUERY_HOST || "query2.finance.yahoo.com",
+  YF_QUERY_HOST: "query2.finance.yahoo.com",
   cookieJar: new ExtendedCookieJar(),
   queue: {
     concurrency: 4, // Min: 1, Max: Infinity
@@ -30,9 +34,13 @@ const options: YahooFinanceOptions = {
     logOptionsErrors: true,
   },
   logger: {
+    // deno-lint-ignore no-explicit-any
     info: (...args: any[]) => console.log(...args),
+    // deno-lint-ignore no-explicit-any
     warn: (...args: any[]) => console.warn(...args),
+    // deno-lint-ignore no-explicit-any
     error: (...args: any[]) => console.error(...args),
+    // deno-lint-ignore no-explicit-any
     debug: (...args: any[]) => console.log(...args),
   },
 };

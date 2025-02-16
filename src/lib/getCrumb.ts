@@ -1,16 +1,17 @@
-import type { ExtendedCookieJar } from "./cookieJar.js";
-import pkg from "../../package.json" with { type: "json" };
-import { Logger } from "./options.js";
+import type { ExtendedCookieJar } from "./cookieJar.ts";
+import pkg from "../../deno.json" with { type: "json" };
+import type { Logger } from "./options.ts";
 import { Cookie } from "tough-cookie";
-import { showNotice } from "./notices.js";
+import { showNotice } from "./notices.ts";
 
 const CONFIG_FAKE_URL = "http://config.yf2/";
 
 let crumb: string | null = null;
 
 const parseHtmlEntities = (str: string) =>
-  str.replace(/&#x([0-9A-Fa-f]{1,3});/gi, (_, numStr) =>
-    String.fromCharCode(parseInt(numStr, 16)),
+  str.replace(
+    /&#x([0-9A-Fa-f]{1,3});/gi,
+    (_, numStr) => String.fromCharCode(parseInt(numStr, 16)),
   );
 
 type CrumbOptions = RequestInit & { devel?: boolean | string };
@@ -90,8 +91,9 @@ export async function _getCrumb(
       const consentLocation = consentResponse.headers.get("location");
 
       if (consentLocation) {
-        if (!consentLocation.match(/collectConsent/))
+        if (!consentLocation.match(/collectConsent/)) {
           throw new Error("Unexpected redirect to " + consentLocation);
+        }
 
         const collectConsentFetchOptions: typeof fetchOptions = {
           ...consentFetchOptions,
@@ -103,7 +105,7 @@ export async function _getCrumb(
         };
         logger.debug(
           "fetch",
-          consentLocation /*, collectConsentFetchOptions */,
+          consentLocation, /*, collectConsentFetchOptions */
         );
 
         const collectConsentResponse = await fetch(
@@ -112,17 +114,16 @@ export async function _getCrumb(
         );
         const collectConsentBody = await collectConsentResponse.text();
 
-        const collectConsentResponseParams =
-          [
-            ...collectConsentBody.matchAll(
-              /<input type="hidden" name="([^"]+)" value="([^"]+)">/g,
-            ),
-          ]
-            .map(
-              ([, name, value]) =>
-                `${name}=${encodeURIComponent(parseHtmlEntities(value))}&`,
-            )
-            .join("") + "agree=agree&agree=agree";
+        const collectConsentResponseParams = [
+          ...collectConsentBody.matchAll(
+            /<input type="hidden" name="([^"]+)" value="([^"]+)">/g,
+          ),
+        ]
+          .map(
+            ([, name, value]) =>
+              `${name}=${encodeURIComponent(parseHtmlEntities(value))}&`,
+          )
+          .join("") + "agree=agree&agree=agree";
 
         const collectConsentSubmitFetchOptions: typeof fetchOptions = {
           ...consentFetchOptions,
@@ -138,7 +139,7 @@ export async function _getCrumb(
         };
         logger.debug(
           "fetch",
-          consentLocation /*, collectConsentSubmitFetchOptions */,
+          consentLocation, /*, collectConsentSubmitFetchOptions */
         );
         const collectConsentSubmitResponse = await fetch(
           consentLocation,
@@ -151,18 +152,20 @@ export async function _getCrumb(
             collectConsentSubmitResponse.headers.getSetCookie(),
             consentLocation,
           ))
-        )
+        ) {
           throw new Error(
             "No set-cookie header on collectConsentSubmitResponse, please report.",
           );
+        }
 
         // https://guce.yahoo.com/copyConsent?sessionId=3_cc-session_04da10ea-1025-4676-8175-60d2508bfc6c&lang=en-GB
         const collectConsentSubmitResponseLocation =
           collectConsentSubmitResponse.headers.get("location");
-        if (!collectConsentSubmitResponseLocation)
+        if (!collectConsentSubmitResponseLocation) {
           throw new Error(
             "collectConsentSubmitResponse unexpectedly did not return a Location header, please report.",
           );
+        }
 
         const copyConsentFetchOptions: typeof fetchOptions = {
           ...consentFetchOptions,
@@ -177,7 +180,7 @@ export async function _getCrumb(
 
         logger.debug(
           "fetch",
-          collectConsentSubmitResponseLocation /*, copyConsentFetchOptions */,
+          collectConsentSubmitResponseLocation, /*, copyConsentFetchOptions */
         );
         const copyConsentResponse = await fetch(
           collectConsentSubmitResponseLocation,
@@ -189,17 +192,20 @@ export async function _getCrumb(
             copyConsentResponse.headers.getSetCookie(),
             collectConsentSubmitResponseLocation,
           ))
-        )
+        ) {
           throw new Error(
             "No set-cookie header on copyConsentResponse, please report.",
           );
+        }
 
-        const copyConsentResponseLocation =
-          copyConsentResponse.headers.get("location");
-        if (!copyConsentResponseLocation)
+        const copyConsentResponseLocation = copyConsentResponse.headers.get(
+          "location",
+        );
+        if (!copyConsentResponseLocation) {
           throw new Error(
             "collectConsentSubmitResponse unexpectedly did not return a Location header, please report.",
           );
+        }
 
         const finalResponseFetchOptions: typeof fetchOptions = {
           ...fetchOptions,
@@ -258,7 +264,8 @@ export async function _getCrumb(
 
   const source = await response.text();
 
-  // Could also match on window.YAHOO.context = { /* multi-line JSON */ /* }
+  // Could also match on window.YAHOO.context = { /* multi-line JSON */
+  /* }
   const match = source.match(/\nwindow.YAHOO.context = ({[\s\S]+\n});\n/);
   if (!match) {
     throw new Error(
@@ -316,10 +323,11 @@ export async function _getCrumb(
 
   const crumbFromGetCrumb = await getCrumbResponse.text();
   crumb = crumbFromGetCrumb;
-  if (!crumb)
+  if (!crumb) {
     throw new Error(
       "Could not find crumb.  Yahoo's API may have changed; please report.",
     );
+  }
 
   logger.debug("New crumb: " + crumb);
   await cookieJar.setCookie(
@@ -352,8 +360,9 @@ export default function getCrumb(
 ) {
   showNotice("yahooSurvey");
 
-  if (!promise)
+  if (!promise) {
     promise = __getCrumb(cookieJar, fetch, fetchOptionsBase, logger, url);
+  }
 
   return promise;
 }

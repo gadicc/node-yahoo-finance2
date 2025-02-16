@@ -1,16 +1,19 @@
-import Queue from "./queue.js";
+import Queue from "./queue.ts";
 
-import type { YahooFinanceOptions } from "./options.js";
-import type { QueueOptions } from "./queue.js";
+import type { YahooFinanceOptions } from "./options.ts";
+import type { QueueOptions } from "./queue.ts";
 
-import errors from "./errors.js";
-import pkg from "../../package.json" with { type: "json" };
-import getCrumb from "./getCrumb.js";
+import errors from "./errors.ts";
+import pkg from "../../deno.json" with { type: "json" };
+import getCrumb from "./getCrumb.ts";
+import { repository } from "../consts.ts";
 
-const userAgent = `${pkg.name}/${pkg.version} (+${pkg.repository})`;
+const userAgent = `${pkg.name}/${pkg.version} (+${repository})`;
 
 interface YahooFinanceFetchThisEnv {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
+  // deno-lint-ignore no-explicit-any
   URLSearchParams: (init?: any) => any;
   fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>;
   fetchDevel: () => Promise<
@@ -19,6 +22,7 @@ interface YahooFinanceFetchThisEnv {
 }
 
 interface YahooFinanceFetchThis {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   _env: YahooFinanceFetchThisEnv;
   _opts: YahooFinanceOptions;
@@ -32,16 +36,19 @@ interface YahooFinanceFetchModuleOptions {
 
 const _queue = new Queue();
 
+// deno-lint-ignore no-explicit-any
 function assertQueueOptions(queue: any, opts: any) {
   opts; //?
   if (
     typeof opts.concurrency === "number" &&
     queue.concurrency !== opts.concurrency
-  )
+  ) {
     queue.concurrency = opts.concurrency;
+  }
 
-  if (typeof opts.timeout === "number" && queue.timeout !== opts.timeout)
+  if (typeof opts.timeout === "number" && queue.timeout !== opts.timeout) {
     queue.timeout = opts.timeout;
+  }
 }
 
 function substituteVariables(this: YahooFinanceFetchThis, urlBase: string) {
@@ -65,10 +72,11 @@ async function yahooFinanceFetch(
   func = "json",
   needsCrumb = false,
 ) {
-  if (!(this && this._env))
+  if (!(this && this._env)) {
     throw new errors.NoEnvironmentError(
       "yahooFinanceFetch called without this._env set",
     );
+  }
 
   // TODO: adds func type to json schema which is not supported
   //const queue = moduleOpts.queue?._queue || _queue;
@@ -106,8 +114,8 @@ async function yahooFinanceFetch(
 
   // @ts-expect-error: TODO copy interface? @types lib?
   const urlSearchParams = new URLSearchParams(params);
-  const url =
-    substituteVariables.call(this, urlBase) + "?" + urlSearchParams.toString();
+  const url = substituteVariables.call(this, urlBase) + "?" +
+    urlSearchParams.toString();
   // console.log(url);
 
   // console.log(cookieJar.serializeSync());
@@ -129,6 +137,7 @@ async function yahooFinanceFetch(
   // used in moduleExec.ts
   if (func === "csv") func = "text";
 
+  // deno-lint-ignore no-explicit-any
   const response = (await queue.add(() => fetchFunc(url, fetchOptions))) as any;
 
   const setCookieHeaders = response.headers.getSetCookie();
