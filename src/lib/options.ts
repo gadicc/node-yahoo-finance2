@@ -41,7 +41,10 @@ const options: YahooFinanceOptions = {
     // deno-lint-ignore no-explicit-any
     error: (...args: any[]) => console.error(...args),
     // deno-lint-ignore no-explicit-any
-    debug: (...args: any[]) => console.log(...args),
+    debug: (...args: any[]) => {
+      // XXX TODO ability to easily toggle this.
+      // console.log(...args)
+    },
   },
 };
 
