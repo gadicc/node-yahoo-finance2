@@ -1,19 +1,25 @@
-import schema from "../../schema.json" assert { type: "json" };
-import pkg from "../../package.json" with { type: "json" };
-import { InvalidOptionsError, FailedYahooValidationError } from "./errors.js";
+import schema from "../../schema.json" with { type: "json" };
+import pkg from "../../deno.json" with { type: "json" };
+import { FailedYahooValidationError, InvalidOptionsError } from "./errors.ts";
 
-import validateAndCoerce from "./validate/index.js";
+import validateAndCoerce from "./validate/index.ts";
+import { repository } from "../consts.ts";
 
-/* istanbul ignore next */
-const logObj =
-  typeof process !== "undefined" && process?.stdout?.isTTY
-    ? (obj: any) => console.dir(obj, { depth: 4, colors: true })
-    : (obj: any) => console.log(JSON.stringify(obj, null, 2));
+const logObj = Deno.stdout.isTerminal()
+  // deno-lint-ignore no-explicit-any
+  ? (obj: any) => console.dir(obj, { depth: 4, colors: true })
+  // deno-lint-ignore no-explicit-any
+  : (obj: any) => console.log(JSON.stringify(obj, null, 2));
 
-export function resolvePath(obj: any, instancePath: string) {
+export function resolvePath(
+  obj: Record<string, unknown>,
+  instancePath: string,
+) {
   const path = instancePath.split("/");
   let ref = obj;
-  for (let i = 1; i < path.length; i++) ref = ref[path[i]];
+  for (let i = 1; i < path.length; i++) {
+    ref = ref[path[i]] as Record<string, unknown>;
+  }
   return ref;
 }
 
@@ -33,11 +39,11 @@ export interface ValidateParams {
 function disallowAdditionalProps(show = false) {
   const disallowed = new Set();
   // @ts-ignore: this can cause a breaking catch-22 on schema generation
-  for (let key of Object.keys(schema.definitions)) {
+  for (const key of Object.keys(schema.definitions)) {
     if (key.match(/Options$/)) {
       continue;
     }
-    // @ts-ignore
+    // @ts-ignore: TODO
     const def = schema.definitions[key];
     if (def.type === "object" && def.additionalProperties === undefined) {
       def.additionalProperties = false;
@@ -45,13 +51,16 @@ function disallowAdditionalProps(show = false) {
     }
   }
   /* istanbul ignore next */
-  if (show)
+  if (show) {
     console.log(
       "Disallowed additional props in " + Array.from(disallowed).join(", "),
     );
+  }
 }
 
-if (process.env.NODE_ENV === "test") disallowAdditionalProps();
+// XXX TODO
+// if (process.env.NODE_ENV === "test")
+disallowAdditionalProps();
 
 function validate({
   source,
@@ -71,7 +80,8 @@ function validate({
 
       errors.forEach((error) => {
         // For now let's ignore the base object which could be huge.
-        /* istanbul ignore else */ /*
+        /* istanbul ignore else */
+    /*
         if (error.instancePath !== "")
           // Note, not the regular ajv data value from verbose:true
           error.data = resolvePath(object, error.instancePath);
@@ -102,7 +112,8 @@ function validate({
            *     quoteType: "EQUITY"
            *   }
            * }
-           */ /*
+           */
+    /*
           if (
             typeof error.data === "object" &&
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -119,7 +130,8 @@ function validate({
            *   params: { allowedValue: "CRYPTOCURRENCY"}},
            *   data: "EQUITY"
            * }
-           */ /*
+           */
+    /*
           if (
             typeof error.data === "string" &&
             error.params?.allowedValue === schemaQuoteType
@@ -151,11 +163,11 @@ symbols, you've found an edge-case (OR, we may just be protecting you from
 "bad" data sometimes stored for e.g. misspelt symbols on Yahoo's side).
 Please see if anyone has reported this previously:
 
-  ${pkg.repository}/issues?q=is%3Aissue+${title}
+  ${repository}/issues?q=is%3Aissue+${title}
 
 or open a new issue (and mention the symbol):  ${pkg.name} v${pkg.version}
 
-  ${pkg.repository}/issues/new?labels=bug%2C+validation&template=validation.md&title=${title}
+  ${repository}/issues/new?labels=bug%2C+validation&template=validation.md&title=${title}
 
 For information on how to turn off the above logging or skip these errors,
 see https://github.com/gadicc/node-yahoo-finance2/tree/devel/docs/validation.md.

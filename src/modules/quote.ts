@@ -1,13 +1,14 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 
-import type { DateInMs, TwoNumberRange } from "../lib/commonTypes.js";
+import type { DateInMs, TwoNumberRange } from "../lib/commonTypes.ts";
 
 export interface QuoteBase {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   language: string; // "en-US",
   region: string; // "US",
@@ -21,6 +22,7 @@ export interface QuoteBase {
   marketState: "REGULAR" | "CLOSED" | "PRE" | "PREPRE" | "POST" | "POSTPOST";
   tradeable: boolean; // false,
   cryptoTradeable?: boolean; // false
+  corporateActions?: unknown[]; // [],  XXX TODO
   exchange: string; // "NMS",
   shortName?: string; // "NVIDIA Corporation",
   longName?: string; // "NVIDIA Corporation",
@@ -176,6 +178,7 @@ export interface QuoteOption extends QuoteBase {
 
 export interface QuoteMutualfund extends QuoteBase {
   quoteType: "MUTUALFUND";
+  hasPrePostMarketData?: boolean; // false
 }
 
 export type Quote =
@@ -250,6 +253,7 @@ export default function quote(
   query: string | string[],
   queryOptionsOverrides?: QuoteOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any>;
 
 export default async function quote(
@@ -257,6 +261,7 @@ export default async function quote(
   query: string | string[],
   queryOptionsOverrides?: QuoteOptions,
   moduleOptions?: ModuleOptions,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any> {
   const symbols = typeof query === "string" ? query : query.join(",");
   const returnAs = queryOptionsOverrides && queryOptionsOverrides.return;
@@ -284,14 +289,17 @@ export default async function quote(
 
     result: {
       schemaKey: "#/definitions/QuoteResponseArray",
+      // deno-lint-ignore no-explicit-any
       transformWith(rawResult: any) {
         let results = rawResult?.quoteResponse?.result;
 
-        if (!results || !Array.isArray(results))
+        if (!results || !Array.isArray(results)) {
           throw new Error("Unexpected result: " + JSON.stringify(rawResult));
+        }
 
         // Filter out quoteType==='NONE'
         // So that delisted stocks will be undefined just like symbol-not-found
+        // deno-lint-ignore no-explicit-any
         results = results.filter((quote: any) => quote?.quoteType !== "NONE");
 
         return results;
@@ -305,14 +313,17 @@ export default async function quote(
     switch (returnAs) {
       case "array":
         return results as Quote[];
-      case "object":
+      case "object": {
+        // deno-lint-ignore no-explicit-any
         const object = {} as any;
-        for (let result of results) object[result.symbol] = result;
+        for (const result of results) object[result.symbol] = result;
         return object; // TODO: type
-      case "map":
+      }
+      case "map": {
         const map = new Map();
-        for (let result of results) map.set(result.symbol, result);
+        for (const result of results) map.set(result.symbol, result);
         return map; // TODO: type
+      }
     }
   } else {
     // By default, match the query input shape (string or string[]).

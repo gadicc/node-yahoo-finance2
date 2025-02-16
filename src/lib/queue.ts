@@ -1,6 +1,8 @@
 interface Job {
   func: () => Promise<void>;
+  // deno-lint-ignore no-explicit-any
   resolve: (arg: any) => void;
+  // deno-lint-ignore no-explicit-any
   reject: (arg: any) => void;
 }
 
@@ -28,7 +30,9 @@ export default class Queue {
     this._running++;
     job
       .func()
+      // deno-lint-ignore no-explicit-any
       .then((result: any) => job.resolve(result))
+      // deno-lint-ignore no-explicit-any
       .catch((error: any) => job.reject(error))
       .finally(() => {
         this._running--;
@@ -40,6 +44,7 @@ export default class Queue {
     if (this._running < this.concurrency) this.runNext();
   }
 
+  // deno-lint-ignore no-explicit-any
   add(func: () => Promise<any>) {
     return new Promise((resolve, reject) => {
       this._queue.push({ func, resolve, reject });

@@ -1,4 +1,4 @@
-import options from "./options.js";
+import options from "./options.ts";
 const logger = options.logger || console;
 
 type Notice = {
@@ -37,8 +37,7 @@ export function showNotice(id: keyof typeof notices) {
   if (n.suppress) return;
   if (n.onceOnly) n.suppress = true;
 
-  const text =
-    n.text +
+  const text = n.text +
     (n.onceOnly ? "  This will only be shown once, but you" : "You") +
     " can suppress this message in future with `yahooFinance.suppressNotices(['" +
     id +

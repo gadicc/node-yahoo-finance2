@@ -1,11 +1,18 @@
 {
+  "name": "@gadicc/yahoo-finance2",
+  "version": "0.0.1",
   "tasks": {
+    "schema": "deno run --allow-read --allow-write --allow-env scripts/schema.ts > schema.json",
     "devTODO": "deno run --watch main.ts"
   },
+  "exports": "./src/index.ts",
   "imports": {
     "@std/expect": "jsr:@std/expect@^1.0.13",
     "@std/testing": "jsr:@std/testing@^1.0.9",
+    "json-schema": "npm:json-schema@^0.4.0",
+    "oas-schema-walker": "npm:oas-schema-walker@^1.1.5",
     "tough-cookie": "npm:tough-cookie@^5.1.1",
-    "tough-cookie-file-store": "npm:tough-cookie-file-store@^2.0.3"
+    "tough-cookie-file-store": "npm:tough-cookie-file-store@^2.0.3",
+    "ts-json-schema-generator": "npm:ts-json-schema-generator@1.5.1"
   }
 }

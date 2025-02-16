@@ -15,10 +15,11 @@
  * Further info below, inline.
  */
 
-import validateAndCoerceTypes from "./validateAndCoerceTypes.js";
-import csv2json from "./csv2json.js";
+import validateAndCoerceTypes from "./validateAndCoerceTypes.ts";
+import csv2json from "./csv2json.ts";
 
 // The consuming module itself will have a stricter return type.
+// deno-lint-ignore no-explicit-any
 type TransformFunc = (arg: any) => any;
 /*
 interface TransformFunc {
@@ -52,17 +53,20 @@ interface ModuleExecOptions {
      * Defaults for this query, e.g. { period: '1d' } in history,
      * and other required options that aren't often changed { locale: 'en' }.
      */
+    // deno-lint-ignore no-explicit-any
     defaults: any;
     /**
      * Query parameters generated inside the module, most commonly something
      * like { q: query } to take e.g. yf.search(query) and pass it how Yahoo
      * expects it.
      */
+    // deno-lint-ignore no-explicit-any
     runtime?: any;
     /**
      * Query options passed by the user that will override the default and
      * runtime params.  Will be validated with schemaKey.
      */
+    // deno-lint-ignore no-explicit-any
     overrides: any;
     /**
      * Called with the merged (defaults,runtime,overrides) before running
@@ -100,10 +104,12 @@ interface ModuleExecOptions {
     /**
      * Any options to pass to fetch() just for this request.
      */
+    // deno-lint-ignore no-explicit-any
     fetchOptions?: any;
   };
 }
 
+// deno-lint-ignore no-explicit-any
 type ThisWithModExec = { [key: string]: any; _moduleExec: typeof moduleExec };
 
 async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
@@ -114,11 +120,12 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
 
   if (queryOpts.assertSymbol) {
     const symbol = queryOpts.assertSymbol;
-    if (typeof symbol !== "string")
+    if (typeof symbol !== "string") {
       throw new Error(
         `yahooFinance.${moduleName}() expects a single string symbol as its ` +
           `query, not a(n) ${typeof symbol}: ${JSON.stringify(symbol)}`,
       );
+    }
   }
 
   // Check that query options passed by the user are valid for this module
@@ -141,8 +148,9 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
    * the query.  Useful to transform options we allow but not Yahoo, e.g.
    * allow a "2020-01-01" date but transform this to a UNIX epoch.
    */
-  if (queryOpts.transformWith)
+  if (queryOpts.transformWith) {
     queryOptions = queryOpts.transformWith(queryOptions);
+  }
 
   // this._fetch is lib/yahooFinanceFetch
   let result = await this._fetch(
@@ -161,8 +169,7 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
    */
   if (opts.result.transformWith) result = opts.result.transformWith(result);
 
-  const validateResult =
-    !moduleOpts ||
+  const validateResult = !moduleOpts ||
     moduleOpts.validateResult === undefined ||
     moduleOpts.validateResult === true;
 
@@ -201,6 +208,8 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
     if (validateResult) throw error;
   }
 
+  // XXX TODO unknown shoudl be ok
+  // deno-lint-ignore no-explicit-any
   return result as any;
 }
 

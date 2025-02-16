@@ -1,33 +1,35 @@
-import { ValidationError } from "./validate/index.js";
+import type { ValidationError } from "./validate/index.ts";
 
 // Yahoo's servers returned an HTTP 400 for this request.
 export class BadRequestError extends Error {
-  name = "BadRequestError";
+  override name = "BadRequestError";
 }
 
 // Yahoo's servers returned a 'not-ok' status for this request.
 // https://developer.mozilla.org/en-US/docs/Web/API/Response/ok
 export class HTTPError extends Error {
-  name = "HTTPError";
+  override name = "HTTPError";
 }
 
 // A YahooFinance method was called with invalid options.
 export class InvalidOptionsError extends Error {
-  name = "InvalidOptionsError";
+  override name = "InvalidOptionsError";
 }
 
 // An internal method yahooFinanceFetch() was called without this._env set.
 export class NoEnvironmentError extends Error {
-  name = "NoEnvironmentError";
+  override name = "NoEnvironmentError";
 }
 
 export class FailedYahooValidationError extends Error {
-  name = "FailedYahooValidationError";
+  override name = "FailedYahooValidationError";
+  // deno-lint-ignore no-explicit-any
   result: any;
   errors?: null | ValidationError[];
 
   constructor(
     message: string,
+    // deno-lint-ignore no-explicit-any
     { result, errors }: { result: any; errors?: null | ValidationError[] },
   ) {
     super(message);
@@ -38,6 +40,7 @@ export class FailedYahooValidationError extends Error {
 
 // Index necessary to allow things like: const ErrorClass = errors[errorName];
 type ErrorsIndex = {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
 };
 
