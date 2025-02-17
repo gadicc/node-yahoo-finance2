@@ -142,6 +142,8 @@ export interface QuoteCryptoCurrency extends QuoteBase {
   volume24Hr?: number; // 62631043072
   volumeAllCurrencies?: number; // 62631043072
   startDate?: Date; // new Date(1367103600 * 1000)
+  coinMarketCapLink?: string; // "https://coinmarketcap.com/currencies/bitcoin",
+  logoUrl?: string; // "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
 }
 
 export interface QuoteCurrency extends QuoteBase {
@@ -150,6 +152,9 @@ export interface QuoteCurrency extends QuoteBase {
 
 export interface QuoteEtf extends QuoteBase {
   quoteType: "ETF";
+  dividendYield: number; // 0.54
+  netAssets: number; // 328302690000
+  netExpenseRatio: number; // 0.2
 }
 
 export interface QuoteEquity extends QuoteBase {
