@@ -1,0 +1,102 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/quote?symbols=ZRC-USD&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-length": "1956",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 17 Feb 2025 10:54:53 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-quote-api--mtls-production-use1.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "4",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "49sp4epjr65bt"
+    },
+    "bodyJson": {
+      "quoteResponse": {
+        "result": [
+          {
+            "language": "en-US",
+            "region": "US",
+            "quoteType": "CRYPTOCURRENCY",
+            "typeDisp": "Cryptocurrency",
+            "quoteSourceName": "CoinMarketCap",
+            "triggerable": true,
+            "customPriceAlertConfidence": "HIGH",
+            "currency": "USD",
+            "regularMarketChangePercent": 0,
+            "regularMarketPrice": 0.076522574,
+            "shortName": "ZrCoin USD",
+            "corporateActions": [],
+            "regularMarketTime": 1644085740,
+            "messageBoardId": "finmb_ZRC_CCC",
+            "market": "ccc_market",
+            "exchangeTimezoneName": "UTC",
+            "exchangeTimezoneShortName": "UTC",
+            "gmtOffSetMilliseconds": 0,
+            "esgPopulated": false,
+            "exchange": "CCC",
+            "hasPrePostMarketData": false,
+            "firstTradeDateMilliseconds": 1497571200000,
+            "fiftyDayAverage": 0.08974824,
+            "fiftyDayAverageChange": -0.013225667,
+            "fiftyDayAverageChangePercent": -0.14736408,
+            "twoHundredDayAverage": 0.1775316,
+            "twoHundredDayAverageChange": -0.101009026,
+            "twoHundredDayAverageChangePercent": -0.56896365,
+            "marketCap": 381762,
+            "sourceInterval": 15,
+            "exchangeDataDelayedBy": 0,
+            "tradeable": false,
+            "cryptoTradeable": false,
+            "priceHint": 6,
+            "circulatingSupply": 4988893,
+            "lastMarket": "CoinMarketCap",
+            "fromCurrency": "ZRC",
+            "toCurrency": "USD=X",
+            "coinMarketCapLink": "https://coinmarketcap.com/",
+            "regularMarketChange": 0,
+            "regularMarketDayHigh": 0.08392516,
+            "regularMarketDayRange": "0.016863955 - 0.08392516",
+            "regularMarketDayLow": 0.016863955,
+            "regularMarketPreviousClose": 0.024663875,
+            "fullExchangeName": "CCC",
+            "regularMarketOpen": 0.024663875,
+            "averageDailyVolume3Month": 0,
+            "averageDailyVolume10Day": 0,
+            "startDate": 1497571200,
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1726.png",
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1726.png",
+            "fiftyTwoWeekLowChange": 0.059658617,
+            "fiftyTwoWeekLowChangePercent": 3.5376408,
+            "fiftyTwoWeekRange": "0.016863955 - 0.337085",
+            "fiftyTwoWeekHighChange": -0.26056242,
+            "fiftyTwoWeekHighChangePercent": -0.77298725,
+            "fiftyTwoWeekLow": 0.016863955,
+            "fiftyTwoWeekHigh": 0.337085,
+            "fiftyTwoWeekChangePercent": -62.03124,
+            "marketState": "REGULAR",
+            "symbol": "ZRC-USD"
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

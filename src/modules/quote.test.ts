@@ -1,11 +1,19 @@
-import { describe, it } from "@std/testing/bdd";
-import { expect } from "@std/expect";
-import { fcSetup } from "../../tests/fetchCache.ts";
+import {
+  describe,
+  expect,
+  it,
+  setupCache,
+  testSymbols,
+} from "../../tests/common.ts";
 
 import quote from "./quote.ts";
 import createYahooFinance from "../createYahooFinance.ts";
 
-const _marketStates = [
+const YahooFinance = createYahooFinance({ modules: { quote } });
+const yf = new YahooFinance();
+
+/*
+const marketStates = [
   "PREPRE",
   "CLOSED",
   "PRE",
@@ -13,20 +21,11 @@ const _marketStates = [
   "POSTPOST",
   //"POST" -- missing test!
 ];
-
-const YahooFinance = createYahooFinance({ modules: { quote } });
-const yf = new YahooFinance();
+*/
 
 describe("quote", () => {
-  fcSetup();
+  setupCache();
 
-  it("basic", async () => {
-    const devel = "quote-AAPL.json";
-    const result = await yf.quote("AAPL", {}, { devel });
-    expect(result.symbol).toBe("AAPL");
-  });
-
-  /*
   const symbols = testSymbols({
     add: [
       "AZT.OL", // Far less properties than other symbols (#42)
@@ -37,23 +36,29 @@ describe("quote", () => {
     ],
   });
 
+  /*
+  const ticker = "ZRC-USD";
+  it(`single test for ticker ${ticker}`, async () => {
+    const devel = `quote-${ticker}.json`;
+    const result = await yf.quote(ticker, {}, { devel });
+    expect(result.symbol).toBe(ticker);
+  });
+  */
+
   describe("passes validation", () => {
     it.each(symbols)("for symbol '%s'", async (symbol) => {
       const devel = `quote-${symbol}.json`;
       await yf.quote(symbol, {}, { devel });
     });
 
-    if (0) {
-      it.each(symbols)("for symbol %s (for 10AM data)", async (symbol) => {
-        const devel = `old/quote-${symbol}-10am.json`;
-        await yf.quote(symbol, {}, { devel });
-      });
-    }
-
+    // TODO, what was this test? `:)  need to find original commmit for it.
+    // Doesn't look like it does anything at all?
+    /*
     it.each(marketStates)("for marketState %s", async (state) => {
       const devel = `quote-marketState-${state}.fake.json`;
       await yf.quote("fake", {}, { devel });
     });
+    */
   });
 
   it("allows blank options", async () => {
@@ -77,6 +82,8 @@ describe("quote", () => {
     expect(result.symbol).toBe("AAPL");
   });
 
+  /// XXX TODO
+  /*
   if (process.env.FETCH_DEVEL !== "nocache") {
     it("throws on unexpected result", async () => {
       await expect(
@@ -84,6 +91,7 @@ describe("quote", () => {
       ).rejects.toThrow(/Unexpected result/);
     });
   }
+  */
 
   it("passes through single ?fields", async () => {
     const devel = "quote-TSLA-fields-symbol.json";
@@ -134,8 +142,8 @@ describe("quote", () => {
         { devel },
       );
       expect(results.size).toBe(2);
-      expect(results.get("AAPL").symbol).toBe("AAPL");
-      expect(results.get("BABA").symbol).toBe("BABA");
+      expect(results.get("AAPL")?.symbol).toBe("AAPL");
+      expect(results.get("BABA")?.symbol).toBe("BABA");
     });
   });
 
@@ -153,5 +161,4 @@ describe("quote", () => {
     expect(result.symbol).toBe("MSFT");
     expect(result.beta).toBeDefined();
   });
-  */
 });
