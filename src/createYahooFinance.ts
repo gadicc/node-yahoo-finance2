@@ -34,7 +34,11 @@ class YahooFinance {
           const { devel, ..._init } = init || {};
           // console.log({ devel });
           if (typeof devel === "string") {
-            fetchCache._once({ id: devel });
+            fetchCache._once({ id: devel.replace(/\.json$/, "") });
+          } else {
+            throw new Error(
+              "unexpected fetchDevel value: " + JSON.stringify(devel),
+            );
           }
 
           return fetch(input, init);

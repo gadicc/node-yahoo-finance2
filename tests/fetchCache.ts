@@ -11,7 +11,7 @@ import Store from "@gadicc/fetch-mock-cache/stores/fs.ts";
 const fetchCache = createFetchCache({ Store });
 const originalFetch = globalThis.fetch;
 
-function fcSetup() {
+function fetchCacheSetup() {
   beforeAll(() => {
     globalThis.fetch = spy(fetchCache);
   });
@@ -20,5 +20,5 @@ function fcSetup() {
   });
 }
 
-export { fcSetup };
+export { fetchCacheSetup };
 export default fetchCache;
