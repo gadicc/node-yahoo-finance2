@@ -684,6 +684,12 @@
         },
         "startDate": {
           "yahooFinanceType": "date"
+        },
+        "coinMarketCapLink": {
+          "type": "string"
+        },
+        "logoUrl": {
+          "type": "string"
         }
       },
       "required": [
@@ -1350,9 +1356,19 @@
         },
         "beta": {
           "yahooFinanceType": "number"
+        },
+        "dividendYield": {
+          "yahooFinanceType": "number"
+        },
+        "netAssets": {
+          "yahooFinanceType": "number"
+        },
+        "netExpenseRatio": {
+          "yahooFinanceType": "number"
         }
       },
       "required": [
+        "dividendYield",
         "esgPopulated",
         "exchange",
         "exchangeDataDelayedBy",
@@ -1363,6 +1379,8 @@
         "language",
         "market",
         "marketState",
+        "netAssets",
+        "netExpenseRatio",
         "priceHint",
         "quoteType",
         "region",
@@ -3107,6 +3125,8 @@
         "volume24Hr",
         "volumeAllCurrencies",
         "startDate",
+        "coinMarketCapLink",
+        "logoUrl",
         "language",
         "region",
         "typeDisp",
@@ -3205,8 +3225,10 @@
         "pageViewGrowthWeekly",
         "openInterest",
         "beta",
-        "dividendRate",
         "dividendYield",
+        "netAssets",
+        "netExpenseRatio",
+        "dividendRate",
         "headSymbolAsString",
         "contractSymbol",
         "underlyingExchangeSymbol",
