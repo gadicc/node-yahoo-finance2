@@ -1,4 +1,5 @@
 import {
+  createYahooFinance,
   describe,
   expect,
   it,
@@ -7,7 +8,6 @@ import {
 } from "../../tests/common.ts";
 
 import quote from "./quote.ts";
-import createYahooFinance from "../createYahooFinance.ts";
 
 const YahooFinance = createYahooFinance({ modules: { quote } });
 const yf = new YahooFinance();
