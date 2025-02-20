@@ -1,22 +1,22 @@
-#!/usr/bin/env -S node --experimental-json-modules --experimental-vm-modules
-
-import os from "os";
-import path from "path";
+import * as path from "jsr:@std/path";
 import { FileCookieStore } from "tough-cookie-file-store";
-import yahooFinance from "../dist/esm/src/index-node.js";
-import { ExtendedCookieJar } from "../dist/esm/src/lib/cookieJar.js";
 
-const cookiePath = path.join(os.homedir(), ".yf2-cookies.json");
+import YahooFinance from "../src/index.ts";
+import { ExtendedCookieJar } from "../src/lib/cookieJar.ts";
+
+const cookiePath = path.join(Deno.env.get("HOME")!, ".yf2-cookies.json");
 const cookieJar = new ExtendedCookieJar(new FileCookieStore(cookiePath));
-yahooFinance.setGlobalConfig({ cookieJar });
 
-const moduleNames = Object.keys(yahooFinance).filter((n) => !n.startsWith("_"));
+const yahooFinance = new YahooFinance({
+  cookieJar,
+  // suppressNotices: ['yahooSurvey'] TODO
+});
+
+const moduleNames = Object.getOwnPropertyNames(YahooFinance.prototype)
+  .filter((n) => !n.startsWith("_"));
 // moduleNames.push("_chart"); // modules in development
 
-const node = process.argv[0];
-const script = process.argv[1];
-const moduleName = process.argv[2];
-const argsAsStrings = process.argv.slice(3);
+const [moduleName, ...argsAsStrings] = Deno.args;
 
 if (moduleName === "--help" || moduleName === "-h") {
   console.log();
@@ -32,18 +32,18 @@ if (moduleName === "--help" || moduleName === "-h") {
   console.log();
   console.log("Available modules:");
   console.log(moduleNames.join(", "));
-  process.exit();
+  Deno.exit();
 }
 
 if (!moduleNames.includes(moduleName)) {
   console.log("No such module: " + moduleName);
   console.log("Available modules: " + moduleNames.join(", "));
-  process.exit();
+  Deno.exit();
 }
 
 console.log("Storing cookies in " + cookiePath);
 
-function decodeArgs(stringArgs) {
+function decodeArgs(stringArgs: string[]) {
   return stringArgs.map((arg) => {
     if (arg[0] === "{") return JSON.parse(arg);
 
@@ -58,13 +58,19 @@ function decodeArgs(stringArgs) {
 
   let result;
   try {
+    // @ts-expect-error: yes, string is a bad index.
     result = await yahooFinance[moduleName](...args);
   } catch (error) {
-    // No need for full stack trace for CLI scripts
-    console.error("Exiting with " + error.name + ": " + error.message);
-    process.exit(1);
+    if (error instanceof Error) {
+      // No need for full stack trace for CLI scripts
+      console.error("Exiting with " + error.name + ": " + error.message);
+    } else {
+      console.error("Exiting with error: " + error);
+    }
+    Deno.exit(1);
   }
 
-  if (process.stdout.isTTY) console.dir(result, { depth: null, colors: true });
-  else console.log(JSON.stringify(result, null, 2));
+  if (Deno.stdout.isTerminal()) {
+    console.dir(result, { depth: null, colors: true });
+  } else console.log(JSON.stringify(result, null, 2));
 })();
