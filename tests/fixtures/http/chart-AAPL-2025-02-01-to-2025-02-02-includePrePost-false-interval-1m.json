@@ -1,0 +1,106 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/AAPL?useYfid=true&interval=1m&includePrePost=false&events=div%7Csplit%7Cearn&lang=en-US&period1=1738368000&period2=1738454400",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=10, stale-while-revalidate=20",
+      "content-length": "1020",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Thu, 20 Feb 2025 11:47:42 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-chart-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "7",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "6gu66hpjre5iu"
+    },
+    "bodyJson": {
+      "chart": {
+        "result": [
+          {
+            "meta": {
+              "currency": "USD",
+              "symbol": "AAPL",
+              "exchangeName": "NMS",
+              "fullExchangeName": "NasdaqGS",
+              "instrumentType": "EQUITY",
+              "firstTradeDate": 345479400,
+              "regularMarketTime": 1739998801,
+              "hasPrePostMarketData": true,
+              "gmtoffset": -18000,
+              "timezone": "EST",
+              "exchangeTimezoneName": "America/New_York",
+              "regularMarketPrice": 244.87,
+              "fiftyTwoWeekHigh": 260.1,
+              "fiftyTwoWeekLow": 164.08,
+              "regularMarketDayHigh": 246.01,
+              "regularMarketDayLow": 243.16,
+              "regularMarketVolume": 32129951,
+              "longName": "Apple Inc.",
+              "shortName": "Apple Inc.",
+              "chartPreviousClose": 236,
+              "previousClose": 244.47,
+              "scale": 3,
+              "priceHint": 2,
+              "currentTradingPeriod": {
+                "pre": {
+                  "timezone": "EST",
+                  "start": 1740042000,
+                  "end": 1740061800,
+                  "gmtoffset": -18000
+                },
+                "regular": {
+                  "timezone": "EST",
+                  "start": 1740061800,
+                  "end": 1740085200,
+                  "gmtoffset": -18000
+                },
+                "post": {
+                  "timezone": "EST",
+                  "start": 1740085200,
+                  "end": 1740099600,
+                  "gmtoffset": -18000
+                }
+              },
+              "dataGranularity": "1m",
+              "range": "",
+              "validRanges": [
+                "1d",
+                "5d",
+                "1mo",
+                "3mo",
+                "6mo",
+                "1y",
+                "2y",
+                "5y",
+                "10y",
+                "ytd",
+                "max"
+              ]
+            },
+            "indicators": {
+              "quote": [
+                {}
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

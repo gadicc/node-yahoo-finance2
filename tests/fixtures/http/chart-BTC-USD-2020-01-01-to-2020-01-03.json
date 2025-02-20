@@ -1,69 +1,32 @@
 {
   "request": {
-    "url": "https://query2.finance.yahoo.com/v8/finance/chart/BTC-USD?useYfid=true&interval=1d&includePrePost=true&events=div%7Csplit%7Cearn&lang=en-US&period1=1577836800&period2=1578009600"
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/BTC-USD?useYfid=true&interval=1d&includePrePost=true&events=div%7Csplit%7Cearn&lang=en-US&period1=1577836800&period2=1578009600",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
   },
   "response": {
     "ok": true,
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json;charset=utf-8"
-      ],
-      "vary": [
-        "Origin,Accept-Encoding"
-      ],
-      "cache-control": [
-        "public, max-age=10, stale-while-revalidate=20"
-      ],
-      "y-rid": [
-        "a3png8hgpkj5a"
-      ],
-      "x-yahoo-request-id": [
-        "a3png8hgpkj5a"
-      ],
-      "x-request-id": [
-        "b4472786-236e-4ee4-bf22-65b14f4f5c50"
-      ],
-      "content-length": [
-        "1131"
-      ],
-      "x-envoy-upstream-service-time": [
-        "5"
-      ],
-      "date": [
-        "Sun, 21 Nov 2021 13:42:01 GMT"
-      ],
-      "server": [
-        "ATS"
-      ],
-      "x-envoy-decorator-operation": [
-        "finance-chart-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
-      ],
-      "age": [
-        "1"
-      ],
-      "strict-transport-security": [
-        "max-age=15552000"
-      ],
-      "referrer-policy": [
-        "no-referrer-when-downgrade"
-      ],
-      "x-frame-options": [
-        "SAMEORIGIN"
-      ],
-      "connection": [
-        "close"
-      ],
-      "expect-ct": [
-        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
-      ],
-      "x-xss-protection": [
-        "1; mode=block"
-      ],
-      "x-content-type-options": [
-        "nosniff"
-      ]
+      "age": "2",
+      "cache-control": "public, max-age=10, stale-while-revalidate=20",
+      "content-length": "1388",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Thu, 20 Feb 2025 11:47:41 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-chart-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "3",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "79ils2hjre5it"
     },
     "bodyJson": {
       "chart": {
@@ -73,32 +36,41 @@
               "currency": "USD",
               "symbol": "BTC-USD",
               "exchangeName": "CCC",
+              "fullExchangeName": "CCC",
               "instrumentType": "CRYPTOCURRENCY",
               "firstTradeDate": 1410912000,
-              "regularMarketTime": 1637502002,
+              "regularMarketTime": 1740051840,
+              "hasPrePostMarketData": false,
               "gmtoffset": 0,
               "timezone": "UTC",
               "exchangeTimezoneName": "UTC",
-              "regularMarketPrice": 58941.695,
+              "regularMarketPrice": 97208.17,
+              "fiftyTwoWeekHigh": 109114.88,
+              "fiftyTwoWeekLow": 49121.24,
+              "regularMarketDayHigh": 97372.1,
+              "regularMarketDayLow": 96481.414,
+              "regularMarketVolume": 27909466112,
+              "longName": "Bitcoin USD",
+              "shortName": "Bitcoin USD",
               "chartPreviousClose": 7200.174,
               "priceHint": 2,
               "currentTradingPeriod": {
                 "pre": {
                   "timezone": "UTC",
-                  "start": 1637452800,
-                  "end": 1637452800,
+                  "start": 1740009600,
+                  "end": 1740009600,
                   "gmtoffset": 0
                 },
                 "regular": {
                   "timezone": "UTC",
-                  "start": 1637452800,
-                  "end": 1637539140,
+                  "start": 1740009600,
+                  "end": 1740095940,
                   "gmtoffset": 0
                 },
                 "post": {
                   "timezone": "UTC",
-                  "start": 1637539140,
-                  "end": 1637539140,
+                  "start": 1740095940,
+                  "end": 1740095940,
                   "gmtoffset": 0
                 }
               },
@@ -126,10 +98,15 @@
             "indicators": {
               "quote": [
                 {
-                  "high": [
-                    7254.33056640625,
-                    7212.1552734375,
-                    7413.71533203125
+                  "low": [
+                    7174.9443359375,
+                    6935.27001953125,
+                    6914.99609375
+                  ],
+                  "close": [
+                    7200.17431640625,
+                    6985.47021484375,
+                    7344.88427734375
                   ],
                   "volume": [
                     18565664997,
@@ -141,15 +118,10 @@
                     7202.55126953125,
                     6984.4287109375
                   ],
-                  "low": [
-                    7174.9443359375,
-                    6935.27001953125,
-                    6914.99609375
-                  ],
-                  "close": [
-                    7200.17431640625,
-                    6985.47021484375,
-                    7344.88427734375
+                  "high": [
+                    7254.33056640625,
+                    7212.1552734375,
+                    7413.71533203125
                   ]
                 }
               ],

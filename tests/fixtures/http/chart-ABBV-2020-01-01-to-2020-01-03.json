@@ -1,0 +1,130 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/ABBV?useYfid=true&interval=1d&includePrePost=true&events=div%7Csplit%7Cearn&lang=en-US&period1=1577836800&period2=1578009600",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=10, stale-while-revalidate=20",
+      "content-length": "1183",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Thu, 20 Feb 2025 11:47:41 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-chart-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "18",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "2mgpvn1jre5it"
+    },
+    "bodyJson": {
+      "chart": {
+        "result": [
+          {
+            "meta": {
+              "currency": "USD",
+              "symbol": "ABBV",
+              "exchangeName": "NYQ",
+              "fullExchangeName": "NYSE",
+              "instrumentType": "EQUITY",
+              "firstTradeDate": 1357137000,
+              "regularMarketTime": 1739998802,
+              "hasPrePostMarketData": true,
+              "gmtoffset": -18000,
+              "timezone": "EST",
+              "exchangeTimezoneName": "America/New_York",
+              "regularMarketPrice": 197.35,
+              "fiftyTwoWeekHigh": 207.32,
+              "fiftyTwoWeekLow": 153.58,
+              "regularMarketDayHigh": 198.11,
+              "regularMarketDayLow": 196.01,
+              "regularMarketVolume": 2949550,
+              "longName": "AbbVie Inc.",
+              "shortName": "AbbVie Inc.",
+              "chartPreviousClose": 88.54,
+              "priceHint": 2,
+              "currentTradingPeriod": {
+                "pre": {
+                  "timezone": "EST",
+                  "start": 1740042000,
+                  "end": 1740061800,
+                  "gmtoffset": -18000
+                },
+                "regular": {
+                  "timezone": "EST",
+                  "start": 1740061800,
+                  "end": 1740085200,
+                  "gmtoffset": -18000
+                },
+                "post": {
+                  "timezone": "EST",
+                  "start": 1740085200,
+                  "end": 1740099600,
+                  "gmtoffset": -18000
+                }
+              },
+              "dataGranularity": "1d",
+              "range": "",
+              "validRanges": [
+                "1d",
+                "5d",
+                "1mo",
+                "3mo",
+                "6mo",
+                "1y",
+                "2y",
+                "5y",
+                "10y",
+                "ytd",
+                "max"
+              ]
+            },
+            "timestamp": [
+              1577975400
+            ],
+            "indicators": {
+              "quote": [
+                {
+                  "low": [
+                    88.51000213623047
+                  ],
+                  "close": [
+                    89.55000305175781
+                  ],
+                  "volume": [
+                    5639200
+                  ],
+                  "open": [
+                    89.08000183105469
+                  ],
+                  "high": [
+                    89.56999969482422
+                  ]
+                }
+              ],
+              "adjclose": [
+                {
+                  "adjclose": [
+                    71.58977508544922
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

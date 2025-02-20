@@ -24,7 +24,7 @@ const OUTPUT_PATH = Deno.stdout;
 const config: Config = {
   // path: "src/{modules/**/!(*spec.ts),lib/options.ts}",
   // XXX TODO
-  path: "src/modules/quote.ts",
+  path: "src/modules/{quote,chart}.ts",
   tsconfig: "scripts/schema-tsconfig.json",
   type: "*",
 };

@@ -1,0 +1,144 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/WSU.DE?useYfid=true&interval=1d&includePrePost=true&events=div%7Csplit%7Cearn&lang=en-US&period1=1691107200&period2=1691539200",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=10, stale-while-revalidate=20",
+      "content-length": "1354",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Thu, 20 Feb 2025 11:47:41 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-chart-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "33",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "6pigon1jre5iu"
+    },
+    "bodyJson": {
+      "chart": {
+        "result": [
+          {
+            "meta": {
+              "currency": "EUR",
+              "symbol": "WSU.DE",
+              "exchangeName": "GER",
+              "fullExchangeName": "XETRA",
+              "instrumentType": "EQUITY",
+              "firstTradeDate": 910598400,
+              "regularMarketTime": 1740049420,
+              "hasPrePostMarketData": false,
+              "gmtoffset": 3600,
+              "timezone": "CET",
+              "exchangeTimezoneName": "Europe/Berlin",
+              "regularMarketPrice": 38.9,
+              "fiftyTwoWeekHigh": 43,
+              "fiftyTwoWeekLow": 33.3,
+              "regularMarketDayHigh": 39.3,
+              "regularMarketDayLow": 38.8,
+              "regularMarketVolume": 45,
+              "longName": "WashTec AG",
+              "shortName": "WASHTEC AG                    I",
+              "chartPreviousClose": 34.25,
+              "priceHint": 2,
+              "currentTradingPeriod": {
+                "pre": {
+                  "timezone": "CET",
+                  "end": 1740038400,
+                  "start": 1740031200,
+                  "gmtoffset": 3600
+                },
+                "regular": {
+                  "timezone": "CET",
+                  "end": 1740069000,
+                  "start": 1740038400,
+                  "gmtoffset": 3600
+                },
+                "post": {
+                  "timezone": "CET",
+                  "end": 1740079800,
+                  "start": 1740069000,
+                  "gmtoffset": 3600
+                }
+              },
+              "dataGranularity": "1d",
+              "range": "",
+              "validRanges": [
+                "1d",
+                "5d",
+                "1mo",
+                "3mo",
+                "6mo",
+                "1y",
+                "2y",
+                "5y",
+                "10y",
+                "ytd",
+                "max"
+              ]
+            },
+            "timestamp": [
+              1691132400,
+              1691391600,
+              1691478000
+            ],
+            "indicators": {
+              "quote": [
+                {
+                  "low": [
+                    34.099998474121094,
+                    34,
+                    32.900001525878906
+                  ],
+                  "high": [
+                    34.54999923706055,
+                    34.79999923706055,
+                    34.20000076293945
+                  ],
+                  "close": [
+                    34.45000076293945,
+                    34,
+                    33.20000076293945
+                  ],
+                  "open": [
+                    34.25,
+                    34.79999923706055,
+                    34.04999923706055
+                  ],
+                  "volume": [
+                    1251,
+                    336,
+                    10846
+                  ]
+                }
+              ],
+              "adjclose": [
+                {
+                  "adjclose": [
+                    32.63249588012695,
+                    32.206233978271484,
+                    31.448442459106445
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

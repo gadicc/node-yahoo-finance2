@@ -2,12 +2,13 @@
 
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 
 export interface ChartResultObject {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   meta: ChartMeta;
   timestamp?: Array<number>;
@@ -22,6 +23,7 @@ export interface ChartResultArray {
 }
 
 export interface ChartResultArrayQuote {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   date: Date;
   high: number | null;
@@ -33,6 +35,7 @@ export interface ChartResultArrayQuote {
 }
 
 export interface ChartMeta {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   currency: string; // "USD"
   symbol: string; // "AAPL",
@@ -58,6 +61,7 @@ export interface ChartMeta {
   scale?: number; // 3,
   priceHint: number; // 2,
   currentTradingPeriod: {
+    // deno-lint-ignore no-explicit-any
     [key: string]: any;
     pre: ChartMetaTradingPeriod;
     regular: ChartMetaTradingPeriod;
@@ -70,6 +74,7 @@ export interface ChartMeta {
 }
 
 export interface ChartMetaTradingPeriod {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   timezone: string; // "EST",
   start: Date; // new Date(1637355600 * 1000),
@@ -78,6 +83,7 @@ export interface ChartMetaTradingPeriod {
 }
 
 export interface ChartMetaTradingPeriods {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   pre?: Array<Array<ChartMetaTradingPeriod>>;
   post?: Array<Array<ChartMetaTradingPeriod>>;
@@ -85,12 +91,14 @@ export interface ChartMetaTradingPeriods {
 }
 
 export interface ChartEventsObject {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   dividends?: ChartEventDividends;
   splits?: ChartEventSplits;
 }
 
 export interface ChartEventsArray {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   dividends?: Array<ChartEventDividend>;
   splits?: Array<ChartEventSplit>;
@@ -101,6 +109,7 @@ export interface ChartEventDividends {
 }
 
 export interface ChartEventDividend {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   amount: number;
   date: Date;
@@ -111,6 +120,7 @@ export interface ChartEventSplits {
 }
 
 export interface ChartEventSplit {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   date: Date; // new Date(1598880600 * 1000)
   numerator: number; // 4
@@ -119,12 +129,14 @@ export interface ChartEventSplit {
 }
 
 export interface ChartIndicatorsObject {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   quote: Array<ChartIndicatorQuote>;
   adjclose?: Array<ChartIndicatorAdjclose>;
 }
 
 export interface ChartIndicatorQuote {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   high: Array<number | null>;
   low: Array<number | null>;
@@ -134,6 +146,7 @@ export interface ChartIndicatorQuote {
 }
 
 export interface ChartIndicatorAdjclose {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   adjclose?: Array<number | null>; // Missing in e.g. "APS.AX"
 }
@@ -202,6 +215,7 @@ export default function chart(
   symbol: string,
   queryOptionsOverrides: ChartOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any>;
 
 export default async function chart(
@@ -209,6 +223,7 @@ export default async function chart(
   symbol: string,
   queryOptionsOverrides: ChartOptions,
   moduleOptions?: ModuleOptions,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any> {
   const returnAs = queryOptionsOverrides?.return || "array";
 
@@ -232,7 +247,7 @@ export default async function chart(
           } else if (typeof value === "string") {
             const timestamp = new Date(value as string).getTime();
 
-            if (isNaN(timestamp))
+            if (isNaN(timestamp)) {
               throw new Error(
                 "yahooFinance.chart() option '" +
                   fieldName +
@@ -240,6 +255,7 @@ export default async function chart(
                   value +
                   "'",
               );
+            }
 
             queryOptions[fieldName] = Math.floor(timestamp / 1000);
           }
@@ -261,9 +277,11 @@ export default async function chart(
 
     result: {
       schemaKey: "#/definitions/ChartResultObject",
+      // deno-lint-ignore no-explicit-any
       transformWith(result: any) {
-        if (!result.chart)
+        if (!result.chart) {
           throw new Error("Unexpected result: " + JSON.stringify(result));
+        }
 
         const chart = result.chart.result[0];
 
@@ -271,16 +289,18 @@ export default async function chart(
         // gives us chart.indicators.quotes = [{}].  Let's clean that up and
         // deliver an empty array rather than an invalid ChartIndicatorQuote/
         if (!chart.timestamp) {
-          if (chart.indicators.quote.length !== 1)
+          if (chart.indicators.quote.length !== 1) {
             throw new Error(
               "No timestamp with quotes.length !== 1, please report with your query",
             );
-          if (Object.keys(chart.indicators.quote[0]).length !== 0)
+          }
+          if (Object.keys(chart.indicators.quote[0]).length !== 0) {
             // i.e. {}
             throw new Error(
               "No timestamp with unexpected quote, please report with your query" +
                 JSON.stringify(chart.indicators.quote[0]),
             );
+          }
           chart.indicators.quote.pop();
         }
 
@@ -331,7 +351,7 @@ export default async function chart(
 
     const adjclose = result?.indicators?.adjclose?.[0].adjclose;
 
-    if (timestamp)
+    if (timestamp) {
       for (let i = 0; i < timestamp.length; i++) {
         result2.quotes[i] = {
           date: new Date(timestamp[i] * 1000),
@@ -343,13 +363,15 @@ export default async function chart(
         };
         if (adjclose) result2.quotes[i].adjclose = adjclose[i];
       }
+    }
 
     if (result.events) {
       result2.events = {};
 
       for (const event of ["dividends", "splits"]) {
-        if (result.events[event])
+        if (result.events[event]) {
           result2.events[event] = Object.values(result.events[event]);
+        }
       }
     }
 

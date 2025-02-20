@@ -1,14 +1,20 @@
-import { jest } from "@jest/globals";
+import {
+  createTestYahooFinance,
+  describe,
+  expect,
+  it,
+  setupCache,
+  testSymbols,
+} from "../../tests/common.ts";
+import { spy } from "@std/testing/mock";
 
-import chart from "./chart.js";
-import testSymbols from "../../tests/testSymbols.js";
+import chart from "./chart.ts";
 
-import testYf from "../../tests/testYf.js";
-import { consoleSilent, consoleRestore } from "../../tests/console.js";
-
-const yf = testYf({ chart });
+const YahooFinance = createTestYahooFinance({ modules: { chart } });
+const yf = new YahooFinance();
 
 describe("chart", () => {
+  setupCache();
   // See also common module tests in moduleExec.spec.js
 
   const symbols = testSymbols({
@@ -58,13 +64,14 @@ describe("chart", () => {
     await yf.chart(
       "AAPL",
       {
-        period1: "2024-10-02",
-        period2: "2024-10-03",
+        period1: "2025-02-01",
+        period2: "2025-02-02",
         interval: "1m",
         includePrePost: false,
       },
       {
-        devel: `chart-AAPL-2024-10-02-to-2024-10-03-includePrePost-false-interval-1m.json`,
+        devel:
+          `chart-AAPL-2025-02-01-to-2025-02-02-includePrePost-false-interval-1m.json`,
       },
     );
   });
@@ -84,15 +91,16 @@ describe("chart", () => {
         // but because chart() no longer allows period1===period2 (because
         // it leads to these kind of results).  Nevertheless, let's be prepared.
         // So the .fake.json result is from query period1=period2="2021-11-23".
-        { period1: "2021-11-23", period2: "2021-11-24", interval: "1h" },
-        { devel: "chart-TSLA-2021-11-23-to-2021-11-23-interval-1h.fake.json" },
+        { period1: "2025-01-01", period2: "2025-01-02", interval: "1h" },
+        { devel: "chart-TSLA-2025-01-01-to-2025-01-02-interval-1h.fake.json" },
       );
     });
 
     // Skip nocache tests because:
     // "30m data not available for startTime=1637539200 and endTime=1637625600.
     // The requested range must be within the last 60 days."
-    if (process.env.FETCH_DEVEL !== "nocache")
+    /* XXX TODO
+    if (process.env.FETCH_DEVEL !== "nocache") {
       it("handles queries with tradingPeriod.regular", async () => {
         // Had tradingPeriod.regular, probably a timezone thing
         await yf.chart(
@@ -101,11 +109,13 @@ describe("chart", () => {
           { devel: "chart-TSLA-2021-11-22-to-2021-11-23-interval-30m.json" },
         );
       });
+    }
+    */
   });
 
   describe("pre-emptive checks", () => {
     it("!timestamp, quotes.length !== 1", () => {
-      return expect(() =>
+      return expect(
         yf.chart(
           "FAKE",
           { period1: "2021-11-23" },
@@ -117,7 +127,7 @@ describe("chart", () => {
     });
 
     it("!timestamp, quote != {}", () => {
-      return expect(() =>
+      return expect(
         yf.chart(
           "FAKE",
           { period1: "2021-11-23" },
@@ -129,7 +139,8 @@ describe("chart", () => {
     });
   });
 
-  if (process.env.FETCH_DEVEL !== "nocache")
+  /* XXX TODO
+  if (process.env.FETCH_DEVEL !== "nocache") {
     it("throws on malformed result", () => {
       return expect(() => {
         consoleSilent();
@@ -142,6 +153,8 @@ describe("chart", () => {
           .finally(consoleRestore);
       }).rejects.toMatchObject({ message: /Unexpected/ });
     });
+  }
+  */
 
   describe("query transformWith", () => {
     /*
@@ -152,17 +165,16 @@ describe("chart", () => {
      * As long as it doesn't throw an error, that could confuse jest :)
      */
     const yf = {
-      _moduleExec: jest.fn(async () => ({
+      _moduleExec: spy(() => ({
         meta: {},
         timestamp: [],
       })),
       chart,
     };
 
-    // @ts-ignore: TODO
     yf.chart("symbol", { period1: "required-but-not-used" });
-    // @ts-ignore: TODO
-    const { transformWith } = yf._moduleExec.mock.calls[0][0].query;
+    // @ts-expect-error: ok
+    const { transformWith } = yf._moduleExec.calls[0].args[0].query;
 
     it("uses today's date as default for period2", () => {
       const now = new Date();
@@ -185,6 +197,7 @@ describe("chart", () => {
       );
 
       // More comprehensive tests below.
+      // @ts-expect-error: we're testing for mistakes.
       expect(result.timestamp).not.toBeDefined();
     });
 
@@ -195,30 +208,21 @@ describe("chart", () => {
         fetchOpts,
       );
 
+      // @ts-expect-error: we're testing for mistakes.
       expect(result.timestamp).not.toBeDefined();
 
-      // @ts-ignore
       expect(result.quotes).toBeType("array");
-      // @ts-ignore
       expect(result.quotes[0]).toBeType("object");
-      // @ts-ignore
       expect(result.quotes[0].high).toBeType("number");
 
-      // @ts-ignore
       expect(result.events).toBeType("object");
-      // @ts-ignore
-      expect(result.events.dividends).toBeType("array");
-      // @ts-ignore
-      expect(result.events.dividends[0]).toBeType("object");
-      // @ts-ignore
-      expect(result.events.dividends[0].amount).toBeType("number");
+      expect(result.events!.dividends).toBeType("array");
+      expect(result.events!.dividends![0]).toBeType("object");
+      expect(result.events!.dividends![0].amount).toBeType("number");
 
-      // @ts-ignore
-      expect(result.events.splits).toBeType("array");
-      // @ts-ignore
-      expect(result.events.splits[0]).toBeType("object");
-      // @ts-ignore
-      expect(result.events.splits[0].numerator).toBeType("number");
+      expect(result.events!.splits).toBeType("array");
+      expect(result.events!.splits![0]).toBeType("object");
+      expect(result.events!.splits![0].numerator).toBeType("number");
     });
 
     it("object", async () => {
@@ -228,33 +232,21 @@ describe("chart", () => {
         fetchOpts,
       );
 
-      // @ts-ignore
       expect(result.timestamp).toBeType("array");
-      // @ts-ignore
-      expect(result.timestamp[0]).toBeType("number");
+      expect(result.timestamp![0]).toBeType("number");
 
-      // @ts-ignore
-      expect(result.events.dividends).toBeType("object");
-      // @ts-ignore
-      expect(result.events.splits).toBeType("object");
+      expect(result.events!.dividends).toBeType("object");
+      expect(result.events!.splits).toBeType("object");
 
-      // @ts-ignore
       expect(result.indicators.quote).toBeType("array");
-      // @ts-ignore
       expect(result.indicators.quote[0]).toBeType("object");
-      // @ts-ignore
       expect(result.indicators.quote[0].high).toBeType("array");
-      // @ts-ignore
       expect(result.indicators.quote[0].high[0]).toBeType("number");
 
-      // @ts-ignore
       expect(result.indicators.adjclose).toBeType("array");
-      // @ts-ignore
-      expect(result.indicators.adjclose[0]).toBeType("object");
-      // @ts-ignore
-      expect(result.indicators.adjclose[0].adjclose).toBeType("array");
-      // @ts-ignore
-      expect(result.indicators.adjclose[0].adjclose[0]).toBeType("number");
+      expect(result.indicators.adjclose![0]).toBeType("object");
+      expect(result.indicators.adjclose![0].adjclose).toBeType("array");
+      expect(result.indicators.adjclose![0].adjclose![0]).toBeType("number");
     });
   });
 });

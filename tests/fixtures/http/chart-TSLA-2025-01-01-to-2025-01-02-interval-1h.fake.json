@@ -1,0 +1,138 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/TSLA?useYfid=true&interval=1h&includePrePost=true&events=div%7Csplit%7Cearn&lang=en-US&period1=1735689600&period2=1735776000",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=10, stale-while-revalidate=20",
+      "content-length": "1301",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Thu, 20 Feb 2025 11:47:42 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-chart-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "3",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "15aip71jre5iu"
+    },
+    "bodyJson": {
+      "chart": {
+        "result": [
+          {
+            "meta": {
+              "currency": "USD",
+              "symbol": "TSLA",
+              "exchangeName": "NMS",
+              "fullExchangeName": "NasdaqGS",
+              "instrumentType": "EQUITY",
+              "firstTradeDate": 1277818200,
+              "regularMarketTime": 1739998800,
+              "hasPrePostMarketData": true,
+              "gmtoffset": -18000,
+              "timezone": "EST",
+              "exchangeTimezoneName": "America/New_York",
+              "regularMarketPrice": 360.56,
+              "fiftyTwoWeekHigh": 488.54,
+              "fiftyTwoWeekLow": 138.8,
+              "regularMarketDayHigh": 367.34,
+              "regularMarketDayLow": 353.735,
+              "regularMarketVolume": 66494369,
+              "longName": "Tesla, Inc.",
+              "shortName": "Tesla, Inc.",
+              "chartPreviousClose": 403.84,
+              "previousClose": 354.11,
+              "scale": 3,
+              "priceHint": 2,
+              "currentTradingPeriod": {
+                "pre": {
+                  "timezone": "EST",
+                  "start": 1740042000,
+                  "end": 1740061800,
+                  "gmtoffset": -18000
+                },
+                "regular": {
+                  "timezone": "EST",
+                  "start": 1740061800,
+                  "end": 1740085200,
+                  "gmtoffset": -18000
+                },
+                "post": {
+                  "timezone": "EST",
+                  "start": 1740085200,
+                  "end": 1740099600,
+                  "gmtoffset": -18000
+                }
+              },
+              "tradingPeriods": {
+                "pre": [
+                  [
+                    {
+                      "timezone": "EST",
+                      "start": 1735635600,
+                      "end": 1735655400,
+                      "gmtoffset": -18000
+                    }
+                  ]
+                ],
+                "post": [
+                  [
+                    {
+                      "timezone": "EST",
+                      "start": 1735678800,
+                      "end": 1735693200,
+                      "gmtoffset": -18000
+                    }
+                  ]
+                ],
+                "regular": [
+                  [
+                    {
+                      "timezone": "EST",
+                      "start": 1735655400,
+                      "end": 1735678800,
+                      "gmtoffset": -18000
+                    }
+                  ]
+                ]
+              },
+              "dataGranularity": "1h",
+              "range": "",
+              "validRanges": [
+                "1d",
+                "5d",
+                "1mo",
+                "3mo",
+                "6mo",
+                "1y",
+                "2y",
+                "5y",
+                "10y",
+                "ytd",
+                "max"
+              ]
+            },
+            "indicators": {
+              "quote": [
+                {}
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
