@@ -1,69 +1,32 @@
 {
   "request": {
-    "url": "https://query2.finance.yahoo.com/v8/finance/chart/AZT.OL?useYfid=true&interval=1d&includePrePost=true&events=div%7Csplit%7Cearn&lang=en-US&period1=1577836800&period2=1578009600"
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/AZT.OL?useYfid=true&interval=1d&includePrePost=true&events=div%7Csplit%7Cearn&lang=en-US&period1=1577836800&period2=1578009600",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
   },
   "response": {
     "ok": true,
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "content-type": [
-        "application/json;charset=utf-8"
-      ],
-      "vary": [
-        "Origin,Accept-Encoding"
-      ],
-      "cache-control": [
-        "public, max-age=10, stale-while-revalidate=20"
-      ],
-      "y-rid": [
-        "9cddbuhgpkj56"
-      ],
-      "x-yahoo-request-id": [
-        "9cddbuhgpkj56"
-      ],
-      "x-request-id": [
-        "7e685131-d20e-448f-96eb-8fd06f77fc86"
-      ],
-      "content-length": [
-        "923"
-      ],
-      "x-envoy-upstream-service-time": [
-        "4"
-      ],
-      "date": [
-        "Sun, 21 Nov 2021 13:41:58 GMT"
-      ],
-      "server": [
-        "ATS"
-      ],
-      "x-envoy-decorator-operation": [
-        "finance-chart-api--mtls-production-ir2.finance-k8s.svc.yahoo.local:4080/*"
-      ],
-      "age": [
-        "0"
-      ],
-      "strict-transport-security": [
-        "max-age=15552000"
-      ],
-      "referrer-policy": [
-        "no-referrer-when-downgrade"
-      ],
-      "x-frame-options": [
-        "SAMEORIGIN"
-      ],
-      "connection": [
-        "close"
-      ],
-      "expect-ct": [
-        "max-age=31536000, report-uri=\"http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only\""
-      ],
-      "x-xss-protection": [
-        "1; mode=block"
-      ],
-      "x-content-type-options": [
-        "nosniff"
-      ]
+      "age": "0",
+      "cache-control": "public, max-age=10, stale-while-revalidate=20",
+      "content-length": "1192",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Thu, 20 Feb 2025 11:47:41 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-chart-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "4",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "1vatf8hjre5it"
     },
     "bodyJson": {
       "chart": {
@@ -73,32 +36,41 @@
               "currency": "NOK",
               "symbol": "AZT.OL",
               "exchangeName": "OSL",
+              "fullExchangeName": "Oslo",
               "instrumentType": "EQUITY",
               "firstTradeDate": 1131091200,
-              "regularMarketTime": 1637335529,
+              "regularMarketTime": 1740051119,
+              "hasPrePostMarketData": false,
               "gmtoffset": 3600,
               "timezone": "CET",
               "exchangeTimezoneName": "Europe/Oslo",
-              "regularMarketPrice": 93.9,
+              "regularMarketPrice": 19.1,
+              "fiftyTwoWeekHigh": 31.75,
+              "fiftyTwoWeekLow": 12.34,
+              "regularMarketDayHigh": 19.8,
+              "regularMarketDayLow": 18.64,
+              "regularMarketVolume": 24201,
+              "longName": "ArcticZymes Technologies ASA",
+              "shortName": "ARCTICZYMES TECHNOLOGIES",
               "chartPreviousClose": 4.75,
               "priceHint": 2,
               "currentTradingPeriod": {
                 "pre": {
                   "timezone": "CET",
-                  "start": 1637308800,
-                  "end": 1637308800,
+                  "start": 1740038400,
+                  "end": 1740038400,
                   "gmtoffset": 3600
                 },
                 "regular": {
                   "timezone": "CET",
-                  "start": 1637308800,
-                  "end": 1637335200,
+                  "start": 1740038400,
+                  "end": 1740064800,
                   "gmtoffset": 3600
                 },
                 "post": {
                   "timezone": "CET",
-                  "start": 1637335200,
-                  "end": 1637335200,
+                  "start": 1740064800,
+                  "end": 1740064800,
                   "gmtoffset": 3600
                 }
               },
@@ -124,14 +96,14 @@
             "indicators": {
               "quote": [
                 {
+                  "low": [
+                    4.880000114440918
+                  ],
                   "open": [
                     4.940000057220459
                   ],
                   "close": [
                     4.989999771118164
-                  ],
-                  "low": [
-                    4.880000114440918
                   ],
                   "high": [
                     5.360000133514404
