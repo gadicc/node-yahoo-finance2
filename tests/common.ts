@@ -4,6 +4,7 @@ import { expect } from "@std/expect";
 import type { Global } from "@jest/types";
 import fetchCache, { fetchCacheSetup } from "./fetchCache.ts";
 import testSymbols from "./testSymbols.ts";
+import createYahooFinance from "../src/createYahooFinance.ts";
 
 function each(table: Global.EachTable) {
   const _table = table.map((item) => Array.isArray(item) ? item : [item]);
@@ -27,6 +28,7 @@ Object.assign(it, { each });
 
 const setupCache = fetchCacheSetup;
 
+export { createYahooFinance };
 export { testSymbols };
 export { fetchCache, fetchCacheSetup, setupCache };
 export { describe, expect, it };
