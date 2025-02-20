@@ -59,10 +59,6 @@ function disallowAdditionalProps(show = false) {
   }
 }
 
-// XXX TODO
-// if (process.env.NODE_ENV === "test")
-disallowAdditionalProps();
-
 function aggregateErrors(inputErrors: ValidationError[]) {
   const missingMap = new Map<string, ValidationError[]>();
   const additionalMap = new Map<string, ValidationError[]>();

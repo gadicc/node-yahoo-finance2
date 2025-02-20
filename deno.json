@@ -5,6 +5,7 @@
     "cli": "deno run -A bin/yahoo-finance.ts",
     "install-cli": "deno install -A --global -n yahoo-finance npm:yahoo-finance/bin/yahoo-finance.ts",
     "schema": "deno run --allow-read --allow-write --allow-env scripts/schema.ts > schema.json",
+    "test": "deno test -A",
     "devTODO": "deno run --watch main.ts"
   },
   "exports": "./src/index.ts",
@@ -15,6 +16,7 @@
     "@std/fmt": "jsr:@std/fmt@^1.0.5",
     "@std/testing": "jsr:@std/testing@^1.0.9",
     "fetch-mock-cache": "npm:fetch-mock-cache@^2.1.0",
+    "jest-get-type": "npm:jest-get-type@^29.6.3",
     "json-schema": "npm:json-schema@^0.4.0",
     "oas-schema-walker": "npm:oas-schema-walker@^1.1.5",
     "tough-cookie": "npm:tough-cookie@^5.1.1",
