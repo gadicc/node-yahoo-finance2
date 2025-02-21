@@ -1,9 +1,9 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 
 export interface DailyGainersResult {
   id: string;
@@ -41,6 +41,7 @@ export interface DailyGainersCriterum {
   operators: string[];
   values: number[];
   labelsSelected: number[];
+  // deno-lint-ignore no-explicit-any
   dependentValues: any[];
 }
 
@@ -78,6 +79,7 @@ export interface DailyGainersQuote {
   preMarketPrice: number;
   preMarketChangePercent: number;
   hasPrePostMarketData: boolean;
+  // deno-lint-ignore no-explicit-any
   corporateActions: any;
   earningsCallTimestampStart?: number;
   earningsCallTimestampEnd?: number;
@@ -165,12 +167,14 @@ export default function dailyGainers(
   this: ModuleThis,
   queryOptionsOverrides?: DailyGainersOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any>;
 
 export default function dailyGainers(
   this: ModuleThis,
   queryOptionsOverrides?: DailyGainersOptions,
   moduleOptions?: ModuleOptions,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "dailyGainers",
@@ -183,10 +187,12 @@ export default function dailyGainers(
     },
     result: {
       schemaKey: "#/definitions/DailyGainersResult",
+      // deno-lint-ignore no-explicit-any
       transformWith(result: any) {
         // console.log(result);
-        if (!result.finance)
+        if (!result.finance) {
           throw new Error("Unexpected result: " + JSON.stringify(result));
+        }
         return result.finance.result[0];
       },
     },

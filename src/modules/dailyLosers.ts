@@ -1,11 +1,14 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 
-import { DailyGainersOptions, DailyGainersResult } from "./dailyGainers.js";
+import type {
+  DailyGainersOptions,
+  DailyGainersResult,
+} from "./dailyGainers.ts";
 
 const queryOptionsDefaults = {
   lang: "en-US",
@@ -24,12 +27,14 @@ export default function dailyLosers(
   this: ModuleThis,
   queryOptionsOverrides?: DailyGainersOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any>;
 
 export default function dailyLosers(
   this: ModuleThis,
   queryOptionsOverrides?: DailyGainersOptions,
   moduleOptions?: ModuleOptions,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "dailyLosers",
@@ -42,9 +47,11 @@ export default function dailyLosers(
     },
     result: {
       schemaKey: "#/definitions/DailyGainersResult",
+      // deno-lint-ignore no-explicit-any
       transformWith(result: any) {
-        if (!result.finance)
+        if (!result.finance) {
           throw new Error("Unexpected result: " + JSON.stringify(result));
+        }
         return result.finance.result[0];
       },
     },
