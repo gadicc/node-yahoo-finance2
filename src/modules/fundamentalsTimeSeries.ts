@@ -1,9 +1,9 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 import Timeseries_Keys from "../lib/timeseries.json" with { type: "json" };
 
 export const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
@@ -56,6 +56,7 @@ export default function fundamentalsTimeSeries(
   symbol: string,
   queryOptionsOverrides: FundamentalsTimeSeriesOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any>;
 
 export default function fundamentalsTimeSeries(
@@ -63,13 +64,15 @@ export default function fundamentalsTimeSeries(
   symbol: string,
   queryOptionsOverrides: FundamentalsTimeSeriesOptions,
   moduleOptions?: ModuleOptions,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any> {
   return this._moduleExec({
     moduleName: "options",
 
     query: {
       assertSymbol: symbol,
-      url: `https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/${symbol}`,
+      url:
+        `https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/${symbol}`,
       needsCrumb: false,
       schemaKey: "#/definitions/FundamentalsTimeSeriesOptions",
       defaults: queryOptionsDefaults,
@@ -79,9 +82,11 @@ export default function fundamentalsTimeSeries(
 
     result: {
       schemaKey: "#/definitions/FundamentalsTimeSeriesResults",
+      // deno-lint-ignore no-explicit-any
       transformWith(response: any) {
-        if (!response || !response.timeseries)
+        if (!response || !response.timeseries) {
           throw new Error(`Unexpected result: ${JSON.stringify(response)}`);
+        }
 
         return processResponse(response);
       },
@@ -108,12 +113,12 @@ export const processQuery = function (
 
   for (const fieldName of dates) {
     const value = queryOptions[fieldName];
-    if (value instanceof Date)
+    if (value instanceof Date) {
       queryOptions[fieldName] = Math.floor(value.getTime() / 1000);
-    else if (typeof value === "string") {
+    } else if (typeof value === "string") {
       const timestamp = new Date(value as string).getTime();
 
-      if (isNaN(timestamp))
+      if (isNaN(timestamp)) {
         throw new Error(
           "yahooFinance.fundamentalsTimeSeries() option '" +
             fieldName +
@@ -121,6 +126,7 @@ export const processQuery = function (
             value +
             "'",
         );
+      }
 
       queryOptions[fieldName] = Math.floor(timestamp / 1000);
     }
@@ -174,7 +180,9 @@ export const processQuery = function (
  * @param response Query response.
  * @returns Formatted response.
  */
+// deno-lint-ignore no-explicit-any
 export const processResponse = function (response: any): any {
+  // deno-lint-ignore no-explicit-any
   const keyedByTimestamp: Record<string, any> = {};
   const replace = new RegExp(FundamentalsTimeSeries_Types.join("|"));
 
@@ -199,10 +207,9 @@ export const processResponse = function (response: any): any {
       }
 
       const short = dataKey.replace(replace, "");
-      const key =
-        short == short.toUpperCase()
-          ? short
-          : short[0].toLowerCase() + short.slice(1);
+      const key = short == short.toUpperCase()
+        ? short
+        : short[0].toLowerCase() + short.slice(1);
       keyedByTimestamp[timestamp][key] = result[dataKey][ct].reportedValue.raw;
     }
   }

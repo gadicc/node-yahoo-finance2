@@ -1251,6 +1251,126 @@
       ],
       "additionalProperties": false
     },
+    "FundamentalsTimeSeriesResults": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/FundamentalsTimeSeriesResult"
+      }
+    },
+    "FundamentalsTimeSeriesResult": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "yahooFinanceType": "date"
+        }
+      },
+      "required": [
+        "date"
+      ],
+      "additionalProperties": {}
+    },
+    "FundamentalsTimeSeriesOptions": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "yahooFinanceType": "number"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "yahooFinanceType": "number"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "type": {
+          "type": "string"
+        },
+        "merge": {
+          "type": "boolean"
+        },
+        "padTimeSeries": {
+          "type": "boolean"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "module": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "period1",
+        "module"
+      ],
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof fundamentalsTimeSeries>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/FundamentalsTimeSeriesOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "symbol",
+        "queryOptionsOverrides"
+      ],
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof processQuery>": {
+      "type": "object",
+      "properties": {
+        "queryOptions": {
+          "$ref": "#/definitions/FundamentalsTimeSeriesOptions",
+          "description": "Input query options."
+        }
+      },
+      "required": [
+        "queryOptions"
+      ],
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof processResponse>": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "description": "Query response."
+        }
+      },
+      "required": [
+        "response"
+      ],
+      "additionalProperties": false
+    },
     "QuoteBase": {
       "type": "object",
       "properties": {
