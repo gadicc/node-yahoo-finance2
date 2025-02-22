@@ -47,9 +47,15 @@ function disallowAdditionalProps(show = false) {
     }
     // @ts-ignore: TODO
     const def = schema.definitions[key];
-    if (def.type === "object" && def.additionalProperties === undefined) {
-      def.additionalProperties = false;
-      disallowed.add(key);
+    if (def.type === "object") {
+      if (
+        def.additionalProperties === undefined ||
+        typeof def.additionalProperties === "object" &&
+          Object.keys(def.additionalProperties).length === 0
+      ) {
+        def.additionalProperties = false;
+        disallowed.add(key);
+      }
     }
   }
   /* istanbul ignore next */
