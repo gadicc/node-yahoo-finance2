@@ -24,7 +24,8 @@
       "required": [
         "meta",
         "indicators"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "ChartMeta": {
       "type": "object",
@@ -115,7 +116,8 @@
             "pre",
             "regular",
             "post"
-          ]
+          ],
+          "additionalProperties": {}
         },
         "tradingPeriods": {
           "anyOf": [
@@ -162,7 +164,8 @@
         "dataGranularity",
         "range",
         "validRanges"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "ChartMetaTradingPeriod": {
       "type": "object",
@@ -185,7 +188,8 @@
         "start",
         "end",
         "gmtoffset"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "ChartMetaTradingPeriods": {
       "type": "object",
@@ -217,7 +221,8 @@
             }
           }
         }
-      }
+      },
+      "additionalProperties": {}
     },
     "ChartEventsObject": {
       "type": "object",
@@ -228,7 +233,8 @@
         "splits": {
           "$ref": "#/definitions/ChartEventSplits"
         }
-      }
+      },
+      "additionalProperties": {}
     },
     "ChartEventDividends": {
       "type": "object",
@@ -249,7 +255,8 @@
       "required": [
         "amount",
         "date"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "ChartEventSplits": {
       "type": "object",
@@ -278,7 +285,8 @@
         "numerator",
         "denominator",
         "splitRatio"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "ChartIndicatorsObject": {
       "type": "object",
@@ -298,7 +306,8 @@
       },
       "required": [
         "quote"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "ChartIndicatorQuote": {
       "type": "object",
@@ -340,7 +349,8 @@
         "open",
         "close",
         "volume"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "ChartIndicatorAdjclose": {
       "type": "object",
@@ -351,7 +361,8 @@
             "yahooFinanceType": "number|null"
           }
         }
-      }
+      },
+      "additionalProperties": {}
     },
     "ChartResultArray": {
       "type": "object",
@@ -390,14 +401,12 @@
             "$ref": "#/definitions/ChartEventSplit"
           }
         }
-      }
+      },
+      "additionalProperties": {}
     },
     "ChartResultArrayQuote": {
       "type": "object",
       "properties": {
-        "date": {
-          "yahooFinanceType": "date"
-        },
         "high": {
           "yahooFinanceType": "number|null"
         },
@@ -418,13 +427,13 @@
         }
       },
       "required": [
-        "date",
         "high",
         "low",
         "open",
         "close",
         "volume"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "ChartOptions": {
       "type": "object",
