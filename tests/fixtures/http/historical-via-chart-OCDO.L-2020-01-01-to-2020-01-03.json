@@ -1,0 +1,130 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/OCDO.L?useYfid=true&interval=1d&includePrePost=true&events=&lang=en-US&period1=1577836800&period2=1578009600",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=10, stale-while-revalidate=20",
+      "content-length": "1131",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Sat, 22 Feb 2025 10:01:30 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-chart-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "3",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "3lk57ntjrj83r"
+    },
+    "bodyJson": {
+      "chart": {
+        "result": [
+          {
+            "meta": {
+              "currency": "GBp",
+              "symbol": "OCDO.L",
+              "exchangeName": "LSE",
+              "fullExchangeName": "LSE",
+              "instrumentType": "EQUITY",
+              "firstTradeDate": 1279695600,
+              "regularMarketTime": 1740159019,
+              "hasPrePostMarketData": false,
+              "gmtoffset": 0,
+              "timezone": "GMT",
+              "exchangeTimezoneName": "Europe/London",
+              "regularMarketPrice": 309.3,
+              "fiftyTwoWeekHigh": 541.346,
+              "fiftyTwoWeekLow": 270,
+              "regularMarketDayHigh": 314.3,
+              "regularMarketDayLow": 303,
+              "regularMarketVolume": 1463723,
+              "longName": "Ocado Group plc",
+              "shortName": "OCADO GROUP PLC ORD 2P",
+              "chartPreviousClose": 1279,
+              "priceHint": 2,
+              "currentTradingPeriod": {
+                "pre": {
+                  "timezone": "GMT",
+                  "start": 1740122100,
+                  "end": 1740124800,
+                  "gmtoffset": 0
+                },
+                "regular": {
+                  "timezone": "GMT",
+                  "start": 1740124800,
+                  "end": 1740155400,
+                  "gmtoffset": 0
+                },
+                "post": {
+                  "timezone": "GMT",
+                  "start": 1740155400,
+                  "end": 1740158100,
+                  "gmtoffset": 0
+                }
+              },
+              "dataGranularity": "1d",
+              "range": "",
+              "validRanges": [
+                "1d",
+                "5d",
+                "1mo",
+                "3mo",
+                "6mo",
+                "1y",
+                "2y",
+                "5y",
+                "10y",
+                "ytd",
+                "max"
+              ]
+            },
+            "timestamp": [
+              1577952000
+            ],
+            "indicators": {
+              "quote": [
+                {
+                  "high": [
+                    1286.5699462890625
+                  ],
+                  "low": [
+                    1258
+                  ],
+                  "open": [
+                    1279.5
+                  ],
+                  "volume": [
+                    728520
+                  ],
+                  "close": [
+                    1259.5
+                  ]
+                }
+              ],
+              "adjclose": [
+                {
+                  "adjclose": [
+                    1259.5
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

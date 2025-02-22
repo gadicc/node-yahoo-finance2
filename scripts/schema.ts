@@ -25,7 +25,7 @@ const config: Config = {
   // path: "src/{modules/**/!(*spec.ts),lib/options.ts}",
   // XXX TODO
   path:
-    "src/modules/{quote,chart,dailyGainers,dailyLosers,fundamentalsTimeSeries}.ts",
+    "src/modules/{quote,chart,dailyGainers,dailyLosers,fundamentalsTimeSeries,historical}.ts",
   tsconfig: "scripts/schema-tsconfig.json",
   type: "*",
 };

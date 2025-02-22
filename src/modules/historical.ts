@@ -1,12 +1,12 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
-import _chart from "./chart.js";
-import validateAndCoerceTypes from "../lib/validateAndCoerceTypes.js";
-import { showNotice } from "../lib/notices.js";
+} from "../lib/moduleCommon.ts";
+import type _chart from "./chart.ts";
+import validateAndCoerceTypes from "../lib/validateAndCoerceTypes.ts";
+import { showNotice } from "../lib/notices.ts";
 
 export type HistoricalHistoryResult = Array<HistoricalRowHistory>;
 export type HistoricalDividendsResult = Array<HistoricalRowDividend>;
@@ -17,7 +17,7 @@ export type HistoricalResult =
   | HistoricalStockSplitsResult;
 
 export interface HistoricalRowHistory {
-  [key: string]: any;
+  [key: string]: unknown;
   date: Date;
   open: number;
   high: number;
@@ -99,6 +99,7 @@ export default function historical(
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any>;
 
 export default async function historical(
@@ -106,6 +107,7 @@ export default async function historical(
   symbol: string,
   queryOptionsOverrides: HistoricalOptions,
   moduleOptions?: ModuleOptions,
+  // deno-lint-ignore no-explicit-any
 ): Promise<any> {
   let schemaKey;
   showNotice("ripHistorical");
@@ -113,13 +115,13 @@ export default async function historical(
   if (
     !queryOptionsOverrides.events ||
     queryOptionsOverrides.events === "history"
-  )
+  ) {
     schemaKey = "#/definitions/HistoricalHistoryResult";
-  else if (queryOptionsOverrides.events === "dividends")
+  } else if (queryOptionsOverrides.events === "dividends") {
     schemaKey = "#/definitions/HistoricalDividendsResult";
-  else if (queryOptionsOverrides.events === "split")
+  } else if (queryOptionsOverrides.events === "split") {
     schemaKey = "#/definitions/HistoricalStockSplitsResult";
-  else throw new Error("No such event type:" + queryOptionsOverrides.events);
+  } else throw new Error("No such event type:" + queryOptionsOverrides.events);
 
   const queryOpts = { ...queryOptionsDefaults, ...queryOptionsOverrides };
   validateAndCoerceTypes({
@@ -203,8 +205,7 @@ export default async function historical(
       });
   }
 
-  const validateResult =
-    !moduleOptions ||
+  const validateResult = !moduleOptions ||
     moduleOptions.validateResult === undefined ||
     moduleOptions.validateResult === true;
 
@@ -293,7 +294,8 @@ export default async function historical(
           if (nullCount === 0) {
             // No nulls is a legit (regular) result
             filteredResults.push(row);
-          } else if (nullCount !== fieldCount - 1 /* skip "date" */ /*) {
+          } else if (nullCount !== fieldCount - 1 /* skip "date" */
+  /*) {
             // Unhandled case: some but not all values are null.
             // Note: no need to check for null "date", validation does it for us
             console.error(nullCount, row);
@@ -311,7 +313,8 @@ export default async function historical(
          * We may consider, for future optimization, to count rows and create
          * new array in advance, and skip consecutive blocks of null results.
          * Of doubtful utility.
-         */ /*
+         */
+  /*
         return filteredResults;
       },
     },
