@@ -473,7 +473,7 @@ function schemaFromSchemaOrSchemaKey(
     if (schema.$id) path = schema.$id;
   }
 
-  if (schema.$ref) {
+  while (schema.$ref) {
     schema = definitions[
       schema.$ref.replace("#/definitions/", "")
     ] as JSONSchema;
