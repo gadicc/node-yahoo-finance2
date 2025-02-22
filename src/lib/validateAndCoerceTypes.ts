@@ -6,6 +6,7 @@ import validateAndCoerce from "./validate/index.ts";
 import { repository } from "../consts.ts";
 import type { ValidationError } from "./validate/index.ts";
 
+// @ts-ignore: relevant for ts-json-schema-generator
 const logObj = Deno.stdout.isTerminal()
   // deno-lint-ignore no-explicit-any
   ? (obj: any) => console.dir(obj, { depth: 4, colors: true })

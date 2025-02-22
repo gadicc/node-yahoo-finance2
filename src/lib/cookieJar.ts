@@ -1,3 +1,6 @@
+// The following is for ts-json-schema-generator, which can't find the
+// module installed by Deno, but isn't ussed in the exported schema.
+// @ts-ignore: as above
 import { Cookie, CookieJar } from "tough-cookie";
 
 export class ExtendedCookieJar extends CookieJar {
@@ -16,11 +19,14 @@ export class ExtendedCookieJar extends CookieJar {
       cookies = [Cookie.parse(setCookieHeader)];
     }
 
-    if (cookies)
-      for (const cookie of cookies)
+    if (cookies) {
+      for (const cookie of cookies) {
         if (cookie instanceof Cookie) {
           // console.log("setCookieSync", cookie, url);
+          // @ts-ignore: relevant for ts-json-schema-generator
           await this.setCookie(cookie, url);
         }
+      }
+    }
   }
 }
