@@ -1,0 +1,41 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=ADH",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=300, stale-while-revalidate=120",
+      "content-length": "65",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Sat, 22 Feb 2025 10:07:13 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-market-analytics-api--mtls-canary-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "16",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "24hdhmdjrj8ei"
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "ADH",
+          "sigDevs": []
+        },
+        "error": null
+      }
+    }
+  }
+}

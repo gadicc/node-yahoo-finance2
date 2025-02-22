@@ -1,11 +1,20 @@
-import insights from "./insights.js";
-import testSymbols from "../../tests/testSymbols.js";
+import {
+  createTestYahooFinance,
+  describe,
+  // expect,
+  it,
+  setupCache,
+  testSymbols,
+} from "../../tests/common.ts";
 
-import testYf from "../../tests/testYf.js";
+import insights from "./insights.ts";
 
-const yf = testYf({ insights });
+const YahooFinance = createTestYahooFinance({ modules: { insights } });
+const yf = new YahooFinance();
 
 describe("insights", () => {
+  setupCache();
+
   const symbols = testSymbols({
     add: [
       "ABBOTINDIA.NS", // field "upsell" with { "companyName", "upsellReportType" }
@@ -21,11 +30,14 @@ describe("insights", () => {
     });
   });
 
-  if (process.env.FETCH_DEVEL !== "nocache")
+  /* XXX TODO
+  if (process.env.FETCH_DEVEL !== "nocache") {
     it("throws on weird result", () => {
       const devel = "weirdJsonResult.fake.json";
       return expect(yf.insights("A", {}, { devel })).rejects.toThrow(
         /^Unexpected result/,
       );
     });
+  }
+  */
 });

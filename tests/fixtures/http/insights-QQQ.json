@@ -1,0 +1,177 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=QQQ",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=300, stale-while-revalidate=120",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Sat, 22 Feb 2025 10:07:15 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-market-analytics-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "72",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "3ved13ljrj8ej"
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "QQQ",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "shortTermOutlook": {
+                "stateDescription": "Bullish events outweigh bearish events.",
+                "direction": "Bullish",
+                "score": 2,
+                "scoreDescription": "Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bullish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "Bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 2,
+                "scoreDescription": "Bearish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bullish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "There are no events.",
+                "direction": "Neutral",
+                "score": 0,
+                "scoreDescription": "No Evidence",
+                "indexDirection": "Neutral",
+                "indexScore": 0,
+                "indexScoreDescription": "No Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 370.26,
+              "resistance": 538.17,
+              "stopLoss": 519.301441
+            },
+            "valuation": {
+              "provider": "Trading Central"
+            }
+          },
+          "events": [
+            {
+              "eventType": "Commodity Channel Index",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "U",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1740061800,
+              "endDate": 1740061800
+            }
+          ],
+          "reports": [
+            {
+              "id": "MS_0P00013K81_AnalystReport_1740041145000",
+              "headHtml": "Analyst Report: Alibaba Group Holding Limited",
+              "provider": "Morningstar",
+              "reportDate": "2025-02-20T08:45:45Z",
+              "reportTitle": "Alibaba is the world’s largest online and mobile commerce company as measured by gross merchandise volume. It operates China’s online marketplaces, including Taobao (consumer-to-consumer) and Tmall (business-to-consumer). The China commerce retail division is the most valuable cash flow-generating business at Alibaba. Additional revenue sources include China commerce wholesale, international commerce retail/wholesale, local consumer services, cloud computing, digital media and entertainment platforms, Cainiao logistics services, and innovation initiatives/other.  ",
+              "reportType": "Analyst Report",
+              "targetPrice": 128,
+              "targetPriceStatus": "Increased",
+              "investmentRating": "Neutral",
+              "tickers": [
+                "BABA"
+              ],
+              "title": "Alibaba: Fair Value Estimate Up by 28% Due to Higher AI Adoption and Capital Returns to Shareholders"
+            },
+            {
+              "id": "ARGUS_42685_MarketOutlook_1739882097000",
+              "headHtml": "Daily Spotlight: Understanding AI Growth Opportunities",
+              "provider": "Argus Research",
+              "reportDate": "2025-02-18T12:34:57Z",
+              "reportTitle": "We expect S&P 500 earnings to grow 12% this year and like companies that increase their dividends at a 10%-plus rate. How does the AI marketplace stack up against those metrics? Pretty well. Argus has derived a model of the size and scope of the global AI industry, based on our coverage of major publicly traded players and most mid-tier players, along with our industry knowledge of private players. We estimate that global AI industry annual revenue amounted to $250 billion in 2024, and expect that to grow at a 40% CAGR through 2030, when total revenue is forecast to reach $1.8 trillion. The emergence of China's DeepSeek, which caused a broad selloff in AI stocks, is a reminder that this space is dynamic and unpredictable. DeepSeek is reportedly inexpensive and powerful in achieving certain AI tasks. While pricing is important, companies in the AI space prioritize relationships, continuity, security, and reliability. The top priority for companies using AI delivered as-a-service across cloud is to ensure that delivery is secure, fast, and reliable -- and adding new vendors entails risk. U.S. government policy is highly likely to prevent wide dissemination of Chinese AI models in enterprise technology implementations in the U.S., given risks of \"back doors\" to Chinese military and intelligence. Non-U.S. nations are largely following similar policies, which should inhibit acceptance of Chinese AI models worldwide. Finally, AI hardware leaders such as Nvidia and AMD also offer GPU software libraries, model training, and inference services tailored to specific enterprise AI applications. The AI market is large and growing, and new entrants are expected to continue to disrupt the market.",
+              "reportType": "Market Outlook",
+              "tickers": [
+                "NVDA"
+              ],
+              "title": "Understanding AI Growth Opportunities"
+            }
+          ],
+          "sigDevs": [],
+          "secReports": [
+            {
+              "id": "0001193125-25-013448_1067839",
+              "type": "Periodic Reports",
+              "title": "485BPOS : Periodic Reports",
+              "description": "Post-effective amendment filed pursuant to Securities Act Rule 485(b) (this filing cannot be submitted as a 1940 Act only filing)",
+              "filingDate": 1737936000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001067839/000119312525013448/thumbnail.png",
+              "formType": "485BPOS"
+            },
+            {
+              "id": "0001193125-24-285734_1067839",
+              "type": "Periodic Reports",
+              "title": "N-30B-2 : Periodic Reports",
+              "description": "Periodic and interim reports mailed to investment company shareholders (other than annual and semi- annual reports mailed to shareholders pursuant to Rule 30e-1)",
+              "filingDate": 1735257600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001067839/000119312524285734/thumbnail.png",
+              "formType": "N-30B-2"
+            },
+            {
+              "id": "0001193125-24-016662_1067839",
+              "type": "Periodic Reports",
+              "title": "485BPOS : Periodic Reports",
+              "description": "Post-effective amendment filed pursuant to Securities Act Rule 485(b) (this filing cannot be submitted as a 1940 Act only filing)",
+              "filingDate": 1706227200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001067839/000119312524016662/thumbnail.png",
+              "formType": "485BPOS"
+            },
+            {
+              "id": "0001193125-23-304771_1067839",
+              "type": "Periodic Reports",
+              "title": "N-30B-2 : Periodic Reports",
+              "description": "Periodic and interim reports mailed to investment company shareholders (other than annual and semi- annual reports mailed to shareholders pursuant to Rule 30e-1)",
+              "filingDate": 1703721600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001067839/000119312523304771/thumbnail.png",
+              "formType": "N-30B-2"
+            },
+            {
+              "id": "0001193125-23-017732_1067839",
+              "type": "Periodic Reports",
+              "title": "485BPOS : Periodic Reports",
+              "description": "Post-effective amendment filed pursuant to Securities Act Rule 485(b) (this filing cannot be submitted as a 1940 Act only filing)",
+              "filingDate": 1674777600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001067839/000119312523017732/thumbnail.png",
+              "formType": "485BPOS"
+            },
+            {
+              "id": "0001193125-22-019964_1067839",
+              "type": "Periodic Reports",
+              "title": "485BPOS : Periodic Reports",
+              "description": "Post-effective amendment filed pursuant to Securities Act Rule 485(b) (this filing cannot be submitted as a 1940 Act only filing)",
+              "filingDate": 1643241600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001067839/000119312522019964/thumbnail.png",
+              "formType": "485BPOS"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}
