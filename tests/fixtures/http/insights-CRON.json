@@ -1,0 +1,598 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=CRON",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=300, stale-while-revalidate=120",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Sat, 22 Feb 2025 10:07:16 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-market-analytics-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "176",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "3it2hmpjrj8ek"
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "CRON",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Healthcare",
+              "shortTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 1,
+                "scoreDescription": "Weak Bearish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 2,
+                "sectorScoreDescription": "Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bullish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "Recent bullish events outweigh bearish events.",
+                "direction": "Bullish",
+                "score": 3,
+                "scoreDescription": "Strong Bullish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bullish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "There is one bearish event.",
+                "direction": "Bearish",
+                "score": 1,
+                "scoreDescription": "Weak Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Neutral",
+                "indexScore": 0,
+                "indexScoreDescription": "No Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 1.8994,
+              "resistance": 1.9499,
+              "stopLoss": 1.805962
+            },
+            "valuation": {
+              "color": 0,
+              "description": "Overvalued",
+              "discount": "-65%",
+              "relativeValue": "Premium",
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Healthcare",
+            "company": {
+              "innovativeness": 0.1545,
+              "sustainability": 0.9973000000000001,
+              "insiderSentiments": 0.7182,
+              "earningsReports": 0.091
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "upsell": {
+            "companyName": "Cronos Group Inc. Common Share"
+          },
+          "upsellSearchDD": {
+            "researchReports": {
+              "reportId": "MS_0P00018572_AnalystReport_1733358660000",
+              "provider": "Morningstar",
+              "title": "Cronos Group: Dropping Coverage",
+              "reportDate": "2024-12-05T00:31:00Z",
+              "summary": "Cronos Group, headquartered in Toronto, Canada, cultivates and sells medicinal and recreational cannabis through its medicinal brand, Peace Naturals, and its two recreational brands, Cove and Spinach. Although it primarily operates in Canada, Cronos exports medical cannabis primarily to Israel. In the US, the company has an option to acquire 5.9% of US multistate operator PharmaCann on a fully diluted basis upon easing of federal prohibition. ",
+              "investmentRating": "Neutral"
+            }
+          },
+          "events": [
+            {
+              "eventType": "Price Crosses Moving Average",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "S",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1740061800,
+              "endDate": 1740061800
+            }
+          ],
+          "reports": [
+            {
+              "id": "MS_0P00018572_AnalystReport_1733358660000",
+              "headHtml": "Analyst Report: Cronos Group Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2024-12-05T00:31:00Z",
+              "reportTitle": "Cronos Group, headquartered in Toronto, Canada, cultivates and sells medicinal and recreational cannabis through its medicinal brand, Peace Naturals, and its two recreational brands, Cove and Spinach. Although it primarily operates in Canada, Cronos exports medical cannabis primarily to Israel. In the US, the company has an option to acquire 5.9% of US multistate operator PharmaCann on a fully diluted basis upon easing of federal prohibition. ",
+              "reportType": "Analyst Report",
+              "targetPrice": 2.1,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Neutral",
+              "tickers": [
+                "CRON"
+              ],
+              "title": "Cronos Group: Dropping Coverage"
+            },
+            {
+              "id": "MS_0P00018572_AnalystReport_1731463319000",
+              "headHtml": "Analyst Report: Cronos Group Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2024-11-13T02:01:59Z",
+              "reportTitle": "Cronos Group, headquartered in Toronto, Canada, cultivates and sells medicinal and recreational cannabis through its medicinal brand, Peace Naturals, and its two recreational brands, Cove and Spinach. Although it primarily operates in Canada, Cronos exports medical cannabis primarily to Israel. In the US, the company has an option to acquire 5.9% of US multistate operator PharmaCann on a fully diluted basis upon easing of federal prohibition. ",
+              "reportType": "Analyst Report",
+              "targetPrice": 2.1,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Neutral",
+              "tickers": [
+                "CRON"
+              ],
+              "title": "Cronos Earnings: Shares Rally on Improved Results but We Don't Think the Stock Offers Much Upside"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Cronos Group Q3 Revenue USD 4.268 Million",
+              "date": "2024-11-12"
+            }
+          ],
+          "secReports": [
+            {
+              "id": "0001656472-24-000102_1656472",
+              "type": "Periodic Financial Reports",
+              "title": "10-Q : Periodic Financial Reports",
+              "description": "Quarterly report pursuant to Section 13 or 15(d)",
+              "filingDate": 1731369600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000102/thumbnail.png",
+              "formType": "10-Q"
+            },
+            {
+              "id": "0001656472-24-000101_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1731369600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000101/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-24-000089_1656472",
+              "type": "Periodic Financial Reports",
+              "title": "10-Q : Periodic Financial Reports",
+              "description": "Quarterly report pursuant to Section 13 or 15(d)",
+              "filingDate": 1723075200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000089/thumbnail.png",
+              "formType": "10-Q"
+            },
+            {
+              "id": "0001656472-24-000088_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1723075200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000088/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-24-000080_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K/A : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1721606400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000080/thumbnail.png",
+              "formType": "8-K/A"
+            },
+            {
+              "id": "0001656472-24-000079_1656472",
+              "type": "Proxy Statements",
+              "title": "DEFA14A : Proxy Statements",
+              "description": "Definitive additional proxy soliciting materials including Rule 14(a)(12) material. Note: Submission type DEFA14A can be filed as part of Form 8-K. For filers subject to 8-K filing requirements we recommend the use of the 8-K combined form type as the easiest method for fulfilling your filing requirement for both forms",
+              "filingDate": 1720137600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000079/thumbnail.png",
+              "formType": "DEFA14A"
+            },
+            {
+              "id": "0001656472-24-000078_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1719273600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000078/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-24-000076_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1718928000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000076/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-24-000071_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1716854400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000071/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-24-000062_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1715212800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000062/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-24-000063_1656472",
+              "type": "Periodic Financial Reports",
+              "title": "10-Q : Periodic Financial Reports",
+              "description": "Quarterly report pursuant to Section 13 or 15(d)",
+              "filingDate": 1715212800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000063/thumbnail.png",
+              "formType": "10-Q"
+            },
+            {
+              "id": "0001656472-24-000055_1656472",
+              "type": "Proxy Statements",
+              "title": "DEF 14A : Proxy Statements",
+              "description": "Definitive proxy statements",
+              "filingDate": 1714089600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000055/thumbnail.png",
+              "formType": "DEF 14A"
+            },
+            {
+              "id": "0001656472-24-000056_1656472",
+              "type": "Proxy Statements",
+              "title": "DEFA14A : Proxy Statements",
+              "description": "Definitive additional proxy soliciting materials including Rule 14(a)(12) material. Note: Submission type DEFA14A can be filed as part of Form 8-K. For filers subject to 8-K filing requirements we recommend the use of the 8-K combined form type as the easiest method for fulfilling your filing requirement for both forms",
+              "filingDate": 1714089600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000056/thumbnail.png",
+              "formType": "DEFA14A"
+            },
+            {
+              "id": "0001656472-24-000054_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1714003200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000054/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-24-000052_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1713312000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000052/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-24-000045_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1712102400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000045/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-24-000017_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1709164800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000017/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-24-000021_1656472",
+              "type": "Periodic Financial Reports",
+              "title": "10-K : Periodic Financial Reports",
+              "description": "Annual report pursuant to Section 13 and 15(d)",
+              "filingDate": 1709164800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647224000021/thumbnail.png",
+              "formType": "10-K"
+            },
+            {
+              "id": "0001656472-23-000149_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1701043200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000149/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-23-000145_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1699401600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000145/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-23-000147_1656472",
+              "type": "Periodic Financial Reports",
+              "title": "10-Q : Periodic Financial Reports",
+              "description": "Quarterly report pursuant to Section 13 or 15(d)",
+              "filingDate": 1699401600000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000147/thumbnail.png",
+              "formType": "10-Q"
+            },
+            {
+              "id": "0001656472-23-000124_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1691452800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000124/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-23-000125_1656472",
+              "type": "Periodic Financial Reports",
+              "title": "10-Q : Periodic Financial Reports",
+              "description": "Quarterly report pursuant to Section 13 or 15(d)",
+              "filingDate": 1691452800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000125/thumbnail.png",
+              "formType": "10-Q"
+            },
+            {
+              "id": "0001656472-23-000106_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1687478400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000106/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-23-000099_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1685491200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000099/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-23-000081_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1684454400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000081/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-23-000065_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1683590400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000065/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-23-000067_1656472",
+              "type": "Periodic Financial Reports",
+              "title": "10-Q : Periodic Financial Reports",
+              "description": "Quarterly report pursuant to Section 13 or 15(d)",
+              "filingDate": 1683590400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000067/thumbnail.png",
+              "formType": "10-Q"
+            },
+            {
+              "id": "0001140361-23-021479_1656472",
+              "type": "Proxy Statements",
+              "title": "DEF 14A : Proxy Statements",
+              "description": "Definitive proxy statements",
+              "filingDate": 1682640000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000114036123021479/thumbnail.png",
+              "formType": "DEF 14A"
+            },
+            {
+              "id": "0001656472-23-000015_1656472",
+              "type": "Periodic Financial Reports",
+              "title": "10-K : Periodic Financial Reports",
+              "description": "Annual report pursuant to Section 13 and 15(d)",
+              "filingDate": 1677542400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000015/thumbnail.png",
+              "formType": "10-K"
+            },
+            {
+              "id": "0001656472-23-000014_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1677542400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000014/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-23-000008_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K/A : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1676246400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647223000008/thumbnail.png",
+              "formType": "8-K/A"
+            },
+            {
+              "id": "0001656472-22-000201_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1671408000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000201/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001193125-22-307938_1656472",
+              "type": "Tender Offer/Acquisition Reports",
+              "title": "SC 13D/A : Tender Offer/Acquisition Reports",
+              "description": "Schedule filed to report acquisition of beneficial ownership of 5% or more of a class of equity securities",
+              "filingDate": 1671408000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000119312522307938/thumbnail.png",
+              "formType": "SC 13D/A"
+            },
+            {
+              "id": "0001656472-22-000170_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1668384000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000170/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-22-000161_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1667779200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000161/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-22-000162_1656472",
+              "type": "Periodic Financial Reports",
+              "title": "10-Q : Periodic Financial Reports",
+              "description": "Quarterly report pursuant to Section 13 or 15(d)",
+              "filingDate": 1667779200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000162/thumbnail.png",
+              "formType": "10-Q"
+            },
+            {
+              "id": "0001656472-22-000146_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1666656000000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000146/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-22-000139_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1666051200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000139/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-22-000112_1656472",
+              "type": "Periodic Financial Reports",
+              "title": "10-Q : Periodic Financial Reports",
+              "description": "Quarterly report pursuant to Section 13 or 15(d)",
+              "filingDate": 1660003200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000112/thumbnail.png",
+              "formType": "10-Q"
+            },
+            {
+              "id": "0001656472-22-000111_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1660003200000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000111/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-22-000104_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1656028800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000104/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-22-000093_1656472",
+              "type": "Periodic Financial Reports",
+              "title": "10-Q : Periodic Financial Reports",
+              "description": "Quarterly report pursuant to Section 13 or 15(d)",
+              "filingDate": 1652140800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000093/thumbnail.png",
+              "formType": "10-Q"
+            },
+            {
+              "id": "0001656472-22-000092_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1652140800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000092/thumbnail.png",
+              "formType": "8-K"
+            },
+            {
+              "id": "0001656472-22-000083_1656472",
+              "type": "Proxy Statements",
+              "title": "DEF 14A : Proxy Statements",
+              "description": "Definitive proxy statements",
+              "filingDate": 1651190400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000083/thumbnail.png",
+              "formType": "DEF 14A"
+            },
+            {
+              "id": "0001656472-22-000085_1656472",
+              "type": "Proxy Statements",
+              "title": "DEFA14A : Proxy Statements",
+              "description": "Definitive additional proxy soliciting materials including Rule 14(a)(12) material. Note: Submission type DEFA14A can be filed as part of Form 8-K. For filers subject to 8-K filing requirements we recommend the use of the 8-K combined form type as the easiest method for fulfilling your filing requirement for both forms",
+              "filingDate": 1651190400000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000085/thumbnail.png",
+              "formType": "DEFA14A"
+            },
+            {
+              "id": "0001656472-22-000065_1656472",
+              "type": "Corporate Changes & Voting Matters",
+              "title": "8-K : Corporate Changes & Voting Matters",
+              "description": "Current report filing",
+              "filingDate": 1647820800000,
+              "snapshotUrl": "https://cdn.yahoofinance.com/prod/sec-reports-thumbnails/0001656472/000165647222000065/thumbnail.png",
+              "formType": "8-K"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

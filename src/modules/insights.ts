@@ -1,14 +1,14 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 
-import type { DateInMs } from "../lib/commonTypes.js";
+import type { DateInMs } from "../lib/commonTypes.ts";
 
 export interface InsightsResult {
-  [key: string]: any;
+  [key: string]: unknown;
   symbol: string;
   instrumentInfo?: InsightsInstrumentInfo;
   companySnapshot?: InsightsCompanySnapshot;
@@ -28,14 +28,15 @@ export interface InsightsResult {
 }
 
 export interface InsightsSigDev {
-  [key: string]: any;
+  [key: string]: unknown;
   headline: string;
   date: Date;
 }
 
 export interface InsightsReport {
-  [key: string]: any;
+  [key: string]: unknown;
   id: string;
+  title?: string;
   headHtml: string;
   provider: string;
   reportDate: Date;
@@ -67,7 +68,7 @@ export interface InsightsSecReport {
 }
 
 export interface InsightsEvent {
-  [key: string]: any;
+  [key: string]: unknown;
   eventType: string;
   pricePeriod: string;
   tradingHorizon: string;
@@ -78,16 +79,16 @@ export interface InsightsEvent {
 }
 
 export interface InsightsInstrumentInfo {
-  [key: string]: any;
+  [key: string]: unknown;
   keyTechnicals: {
-    [key: string]: any;
+    [key: string]: unknown;
     provider: string;
     support?: number;
     resistance?: number;
     stopLoss?: number;
   };
   technicalEvents: {
-    [key: string]: any;
+    [key: string]: unknown;
     provider: string;
     sector?: string;
     shortTermOutlook: InsightsOutlook;
@@ -95,7 +96,7 @@ export interface InsightsInstrumentInfo {
     longTermOutlook: InsightsOutlook;
   };
   valuation: {
-    [key: string]: any;
+    [key: string]: unknown;
     color?: number;
     description?: string;
     discount?: string;
@@ -105,10 +106,10 @@ export interface InsightsInstrumentInfo {
 }
 
 export interface InsightsCompanySnapshot {
-  [key: string]: any;
+  [key: string]: unknown;
   sectorInfo?: string;
   company: {
-    [key: string]: any;
+    [key: string]: unknown;
     innovativeness?: number;
     hiring?: number;
     sustainability?: number;
@@ -117,7 +118,7 @@ export interface InsightsCompanySnapshot {
     dividends?: number;
   };
   sector: {
-    [key: string]: any;
+    [key: string]: unknown;
     innovativeness: number;
     hiring: number;
     sustainability?: number;
@@ -130,7 +131,7 @@ export interface InsightsCompanySnapshot {
 export type InsightsDirection = "Bearish" | "Bullish" | "Neutral";
 
 export interface InsightsOutlook {
-  [key: string]: any;
+  [key: string]: unknown;
   stateDescription: string;
   direction: InsightsDirection;
   score: number;
@@ -144,7 +145,7 @@ export interface InsightsOutlook {
 }
 
 export interface InsightsUpsell {
-  [key: string]: any;
+  [key: string]: unknown;
   msBullishSummary?: Array<string>;
   msBearishSummary?: Array<string>;
   msBullishBearishSummariesPublishDate?: DateInMs;
@@ -177,14 +178,14 @@ export default function trendingSymbols(
   symbol: string,
   queryOptionsOverrides?: InsightsOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
-): Promise<any>;
+): Promise<unknown>;
 
 export default function trendingSymbols(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides?: InsightsOptions,
   moduleOptions?: ModuleOptions,
-): Promise<any> {
+): Promise<unknown> {
   return this._moduleExec({
     moduleName: "insights",
     query: {
@@ -197,9 +198,10 @@ export default function trendingSymbols(
     },
     result: {
       schemaKey: "#/definitions/InsightsResult",
-      transformWith(result: any) {
-        if (!result.finance)
+      transformWith(result: Record<string, Record<string, unknown>>) {
+        if (!result.finance) {
           throw new Error("Unexpected result: " + JSON.stringify(result));
+        }
         return result.finance.result;
       },
     },

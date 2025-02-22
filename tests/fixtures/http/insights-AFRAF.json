@@ -1,0 +1,94 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=AFRAF",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=300, stale-while-revalidate=120",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Sat, 22 Feb 2025 10:07:13 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-market-analytics-api--mtls-canary-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "16",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "6uqbh2ljrj8ei"
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "AFRAF",
+          "companySnapshot": {
+            "sectorInfo": "Industrials",
+            "company": {
+              "sustainability": 0.44189999999999996
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "upsell": {
+            "companyName": "Air France-KLM"
+          },
+          "reports": [
+            {
+              "id": "MS_0P00008O9A_AnalystReport_1604964481000",
+              "headHtml": "Analyst Report: Delta Air Lines, Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2020-11-09T23:28:01Z",
+              "reportTitle": "Atlanta-based Delta Air Lines is one of the world's largest airlines, with a network of over 300 destinations in more than 50 countries. Delta operates a hub-and-spoke system network, where it gathers and distributes passengers across the globe through key locations in Atlanta, New York, Salt Lake City, Detroit, Seattle, and Minneapolis-St. Paul. Delta’s sale of frequent flyer miles, particularly to American Express, is a major driver of the firm’s profits. ",
+              "reportType": "Analyst Report",
+              "targetPrice": 43,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Neutral",
+              "tickers": [
+                "DAL"
+              ],
+              "title": "We Still Think Delta's Frequent Flier Program Makes the Firm the Highest-Quality Legacy Airline"
+            },
+            {
+              "id": "MS_0P00008O9A_AnalystReport_1604092423000",
+              "headHtml": "Analyst Report: Delta Air Lines, Inc.",
+              "provider": "Morningstar",
+              "reportDate": "2020-10-30T21:13:43Z",
+              "reportTitle": "Atlanta-based Delta Air Lines is one of the world's largest airlines, with a network of over 300 destinations in more than 50 countries. Delta operates a hub-and-spoke system network, where it gathers and distributes passengers across the globe through key locations in Atlanta, New York, Salt Lake City, Detroit, Seattle, and Minneapolis-St. Paul. Delta’s sale of frequent flyer miles, particularly to American Express, is a major driver of the firm’s profits. ",
+              "reportType": "Analyst Report",
+              "targetPrice": 43,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Bullish",
+              "tickers": [
+                "DAL"
+              ],
+              "title": "We Still Think Delta's Frequent Flier Program Makes the Firm the Highest-Quality Legacy Airline"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "KLM To Cut 250 Office Jobs",
+              "date": "2025-01-29"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}

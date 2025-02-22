@@ -1,0 +1,125 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=HIDV",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=300, stale-while-revalidate=120",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Sat, 22 Feb 2025 10:07:16 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-market-analytics-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "14",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "7nflgjljrj8ek"
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "HIDV",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "shortTermOutlook": {
+                "stateDescription": "Bullish events outweigh bearish events.",
+                "direction": "Bullish",
+                "score": 3,
+                "scoreDescription": "Strong Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bullish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "Recent bullish events outweigh bearish events.",
+                "direction": "Bullish",
+                "score": 2,
+                "scoreDescription": "Bullish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bullish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "There are no events.",
+                "direction": "Neutral",
+                "score": 0,
+                "scoreDescription": "No Evidence",
+                "indexDirection": "Neutral",
+                "indexScore": 0,
+                "indexScoreDescription": "No Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 70.57,
+              "resistance": 74.8499,
+              "stopLoss": 72.573866
+            },
+            "valuation": {
+              "provider": "Trading Central"
+            }
+          },
+          "upsell": {},
+          "events": [
+            {
+              "eventType": "Commodity Channel Index",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "L",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1739543400,
+              "endDate": 1739543400
+            }
+          ],
+          "reports": [
+            {
+              "id": "ARGUS_3859_QuantitativeReport_1739923200000",
+              "headHtml": "RAMP: What does Argus have to say about RAMP?",
+              "provider": "Argus Research",
+              "reportDate": "2025-02-19T00:00:00Z",
+              "reportTitle": "LIVERAMP HOLDINGS INC has an Investment Rating of HOLD; a target price of $36.000000; an Industry Subrating of High; a Management Subrating of Medium; a Safety Subrating of Medium; a Financial Strength Subrating of Low; a Growth Subrating of Medium; and a Value Subrating of Low.",
+              "reportType": "Quantitative Report",
+              "targetPrice": 36,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Neutral",
+              "tickers": [
+                "RAMP"
+              ],
+              "title": "What does Argus have to say about RAMP?"
+            },
+            {
+              "id": "ARGUS_6037_QuantitativeReport_1739923200000",
+              "headHtml": "GDEN: Raising target price to $27.00",
+              "provider": "Argus Research",
+              "reportDate": "2025-02-19T00:00:00Z",
+              "reportTitle": "GOLDEN ENTERTAINMENT INC has an Investment Rating of SELL; a target price of $27.000000; an Industry Subrating of Low; a Management Subrating of Low; a Safety Subrating of Low; a Financial Strength Subrating of Low; a Growth Subrating of Medium; and a Value Subrating of Low.",
+              "reportType": "Quantitative Report",
+              "targetPrice": 27,
+              "targetPriceStatus": "Increased",
+              "investmentRating": "Bearish",
+              "tickers": [
+                "GDEN"
+              ],
+              "title": "Raising target price to $27.00"
+            }
+          ],
+          "sigDevs": []
+        },
+        "error": null
+      }
+    }
+  }
+}

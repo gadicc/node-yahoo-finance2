@@ -1,0 +1,179 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/ws/insights/v2/finance/insights?lang=en-US&region=US&getAllResearchReports=true&reportsCount=2&symbol=RUSHA",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "3",
+      "cache-control": "public, max-age=300, stale-while-revalidate=120",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Sat, 22 Feb 2025 10:07:16 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-market-analytics-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "15",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "599tbmtjrj8ek"
+    },
+    "bodyJson": {
+      "finance": {
+        "result": {
+          "symbol": "RUSHA",
+          "instrumentInfo": {
+            "technicalEvents": {
+              "provider": "Trading Central",
+              "sector": "Consumer Cyclical",
+              "shortTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bearish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bullish Evidence"
+              },
+              "intermediateTermOutlook": {
+                "stateDescription": "Recent bearish events outweigh bullish events.",
+                "direction": "Bearish",
+                "score": 3,
+                "scoreDescription": "Strong Bearish Evidence",
+                "sectorDirection": "Bearish",
+                "sectorScore": 3,
+                "sectorScoreDescription": "Strong Bearish Evidence",
+                "indexDirection": "Bullish",
+                "indexScore": 2,
+                "indexScoreDescription": "Bullish Evidence"
+              },
+              "longTermOutlook": {
+                "stateDescription": "All events are bullish.",
+                "direction": "Bullish",
+                "score": 2,
+                "scoreDescription": "Bullish Evidence",
+                "sectorDirection": "Bullish",
+                "sectorScore": 1,
+                "sectorScoreDescription": "Weak Bullish Evidence",
+                "indexDirection": "Neutral",
+                "indexScore": 0,
+                "indexScoreDescription": "No Evidence"
+              }
+            },
+            "keyTechnicals": {
+              "provider": "Trading Central",
+              "support": 51.74,
+              "resistance": 60.55,
+              "stopLoss": 53.063942
+            },
+            "valuation": {
+              "color": 1,
+              "description": "Undervalued",
+              "discount": "58%",
+              "relativeValue": "Discount",
+              "provider": "Trading Central"
+            }
+          },
+          "companySnapshot": {
+            "sectorInfo": "Consumer Cyclical",
+            "company": {
+              "innovativeness": 0.27699999999999997,
+              "hiring": 0.7386,
+              "sustainability": 0.5233,
+              "insiderSentiments": 0.2562,
+              "earningsReports": 0.7434999999999999,
+              "dividends": 0.1261
+            },
+            "sector": {
+              "innovativeness": 0.5,
+              "hiring": 0.5,
+              "sustainability": 0.5,
+              "insiderSentiments": 0.5,
+              "earningsReports": 0.5,
+              "dividends": 0.5
+            }
+          },
+          "recommendation": {
+            "targetPrice": 64,
+            "provider": "Argus Research",
+            "rating": "HOLD"
+          },
+          "upsell": {
+            "companyName": "Rush Enterprises, Inc."
+          },
+          "upsellSearchDD": {
+            "researchReports": {
+              "reportId": "MS_0P000004QQ_AnalystReport_1603736082000",
+              "provider": "Morningstar",
+              "title": "Dropping Coverage of Rush Enterprises",
+              "reportDate": "2020-10-26T18:14:42Z",
+              "summary": "Rush Enterprises is the only publicly traded, standalone commercial truck dealer in North America. With 120 locations, it sells 5.6% of new class 8 trucks as the largest truck dealer on the continent. Vehicle sales include class 4-8 new trucks as well as range of used commercial vehicles. Aftermarket parts and service are key drivers of profitability as they generate approximately 30% of revenue and 65% of gross profit. Rush’s class 8 customers include large fleets (32%), mid-size fleets (16%), vocational customers (40%), and owner-operators (12%). In 2019, Rush generated $5.8 billion in revenue."
+            }
+          },
+          "events": [
+            {
+              "eventType": "Momentum",
+              "pricePeriod": "D",
+              "tradingHorizon": "S",
+              "tradeType": "S",
+              "imageUrl": "https://s.yimg.com/uc/fin/img/assets/generic.svg",
+              "startDate": 1740061800,
+              "endDate": 1740061800
+            }
+          ],
+          "reports": [
+            {
+              "id": "ARGUS_6185_QuantitativeReport_1739923200000",
+              "headHtml": "RUSHA: Raising target price to $64.00",
+              "provider": "Argus Research",
+              "reportDate": "2025-02-19T00:00:00Z",
+              "reportTitle": "RUSH ENTERPRISES INC-CL A has an Investment Rating of HOLD; a target price of $64.000000; an Industry Subrating of Low; a Management Subrating of Medium; a Safety Subrating of Medium; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of Low.",
+              "reportType": "Quantitative Report",
+              "targetPrice": 64,
+              "targetPriceStatus": "Increased",
+              "investmentRating": "Neutral",
+              "tickers": [
+                "RUSHA"
+              ],
+              "title": "Raising target price to $64.00"
+            },
+            {
+              "id": "ARGUS_6185_QuantitativeReport_1739318400000",
+              "headHtml": "RUSHA: What does Argus have to say about RUSHA?",
+              "provider": "Argus Research",
+              "reportDate": "2025-02-12T00:00:00Z",
+              "reportTitle": "RUSH ENTERPRISES INC-CL A has an Investment Rating of HOLD; a target price of $63.000000; an Industry Subrating of Low; a Management Subrating of Medium; a Safety Subrating of Medium; a Financial Strength Subrating of Medium; a Growth Subrating of Medium; and a Value Subrating of Low.",
+              "reportType": "Quantitative Report",
+              "targetPrice": 63,
+              "targetPriceStatus": "Maintained",
+              "investmentRating": "Neutral",
+              "tickers": [
+                "RUSHA"
+              ],
+              "title": "What does Argus have to say about RUSHA?"
+            }
+          ],
+          "sigDevs": [
+            {
+              "headline": "Rush Enterprises Currently Monitoring Proposed Tariffs",
+              "date": "2025-02-18"
+            }
+          ]
+        },
+        "error": null
+      }
+    }
+  }
+}
