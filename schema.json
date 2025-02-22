@@ -1371,6 +1371,343 @@
       ],
       "additionalProperties": false
     },
+    "HistoricalHistoryResult": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/HistoricalRowHistory"
+      }
+    },
+    "HistoricalRowHistory": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "yahooFinanceType": "date"
+        },
+        "open": {
+          "yahooFinanceType": "number"
+        },
+        "high": {
+          "yahooFinanceType": "number"
+        },
+        "low": {
+          "yahooFinanceType": "number"
+        },
+        "close": {
+          "yahooFinanceType": "number"
+        },
+        "adjClose": {
+          "yahooFinanceType": "number"
+        },
+        "volume": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "additionalProperties": {}
+    },
+    "HistoricalDividendsResult": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/HistoricalRowDividend"
+      }
+    },
+    "HistoricalRowDividend": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "yahooFinanceType": "date"
+        },
+        "dividends": {
+          "yahooFinanceType": "number"
+        }
+      },
+      "required": [
+        "date",
+        "dividends"
+      ],
+      "additionalProperties": false
+    },
+    "HistoricalStockSplitsResult": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/HistoricalRowStockSplit"
+      }
+    },
+    "HistoricalRowStockSplit": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "yahooFinanceType": "date"
+        },
+        "stockSplits": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "stockSplits"
+      ],
+      "additionalProperties": false
+    },
+    "HistoricalResult": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/HistoricalHistoryResult"
+        },
+        {
+          "$ref": "#/definitions/HistoricalDividendsResult"
+        },
+        {
+          "$ref": "#/definitions/HistoricalStockSplitsResult"
+        }
+      ]
+    },
+    "HistoricalOptions": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "interval": {
+          "type": "string",
+          "enum": [
+            "1d",
+            "1wk",
+            "1mo"
+          ]
+        },
+        "events": {
+          "type": "string",
+          "enum": [
+            "history",
+            "dividends",
+            "split"
+          ]
+        },
+        "includeAdjustedClose": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "period1"
+      ],
+      "additionalProperties": false
+    },
+    "HistoricalOptionsEventsHistory": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "interval": {
+          "type": "string",
+          "enum": [
+            "1d",
+            "1wk",
+            "1mo"
+          ]
+        },
+        "events": {
+          "type": "string",
+          "const": "history"
+        },
+        "includeAdjustedClose": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "period1"
+      ]
+    },
+    "HistoricalOptionsEventsDividends": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "interval": {
+          "type": "string",
+          "enum": [
+            "1d",
+            "1wk",
+            "1mo"
+          ]
+        },
+        "events": {
+          "type": "string",
+          "const": "dividends"
+        },
+        "includeAdjustedClose": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "events",
+        "period1"
+      ],
+      "additionalProperties": false
+    },
+    "HistoricalOptionsEventsSplit": {
+      "type": "object",
+      "properties": {
+        "period1": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "period2": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "yahooFinanceType": "number"
+            }
+          ]
+        },
+        "interval": {
+          "type": "string",
+          "enum": [
+            "1d",
+            "1wk",
+            "1mo"
+          ]
+        },
+        "events": {
+          "type": "string",
+          "const": "split"
+        },
+        "includeAdjustedClose": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "events",
+        "period1"
+      ],
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof nullFieldCount>": {
+      "type": "object",
+      "properties": {
+        "object": {}
+      },
+      "required": [
+        "object"
+      ],
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof historical>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/HistoricalOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "symbol",
+        "queryOptionsOverrides"
+      ],
+      "additionalProperties": false
+    },
     "QuoteBase": {
       "type": "object",
       "properties": {

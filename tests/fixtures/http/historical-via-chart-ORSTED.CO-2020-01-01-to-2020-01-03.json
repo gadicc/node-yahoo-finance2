@@ -1,0 +1,130 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/ORSTED.CO?useYfid=true&interval=1d&includePrePost=true&events=&lang=en-US&period1=1577836800&period2=1578009600",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=10, stale-while-revalidate=20",
+      "content-length": "1168",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Sat, 22 Feb 2025 10:01:31 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-chart-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "13",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "4n15irljrj83r"
+    },
+    "bodyJson": {
+      "chart": {
+        "result": [
+          {
+            "meta": {
+              "currency": "DKK",
+              "symbol": "ORSTED.CO",
+              "exchangeName": "CPH",
+              "fullExchangeName": "Copenhagen",
+              "instrumentType": "EQUITY",
+              "firstTradeDate": 1465455600,
+              "regularMarketTime": 1740153572,
+              "hasPrePostMarketData": false,
+              "gmtoffset": 3600,
+              "timezone": "CET",
+              "exchangeTimezoneName": "Europe/Copenhagen",
+              "regularMarketPrice": 301.2,
+              "fiftyTwoWeekHigh": 458.3,
+              "fiftyTwoWeekLow": 253.2,
+              "regularMarketDayHigh": 306.1,
+              "regularMarketDayLow": 299.2,
+              "regularMarketVolume": 289705,
+              "longName": "Ørsted A/S",
+              "shortName": "ORSTED A/S",
+              "chartPreviousClose": 689,
+              "priceHint": 2,
+              "currentTradingPeriod": {
+                "pre": {
+                  "timezone": "CET",
+                  "start": 1740124800,
+                  "end": 1740124800,
+                  "gmtoffset": 3600
+                },
+                "regular": {
+                  "timezone": "CET",
+                  "start": 1740124800,
+                  "end": 1740153600,
+                  "gmtoffset": 3600
+                },
+                "post": {
+                  "timezone": "CET",
+                  "start": 1740153600,
+                  "end": 1740153600,
+                  "gmtoffset": 3600
+                }
+              },
+              "dataGranularity": "1d",
+              "range": "",
+              "validRanges": [
+                "1d",
+                "5d",
+                "1mo",
+                "3mo",
+                "6mo",
+                "1y",
+                "2y",
+                "5y",
+                "10y",
+                "ytd",
+                "max"
+              ]
+            },
+            "timestamp": [
+              1577952000
+            ],
+            "indicators": {
+              "quote": [
+                {
+                  "volume": [
+                    340491
+                  ],
+                  "close": [
+                    681
+                  ],
+                  "open": [
+                    685.7999877929688
+                  ],
+                  "high": [
+                    688.4000244140625
+                  ],
+                  "low": [
+                    677.2000122070312
+                  ]
+                }
+              ],
+              "adjclose": [
+                {
+                  "adjclose": [
+                    639.1755981445312
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
