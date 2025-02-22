@@ -8,8 +8,7 @@ import type {
 } from "../lib/moduleCommon.ts";
 
 export interface ChartResultObject {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
+  [key: string]: unknown;
   meta: ChartMeta;
   timestamp?: Array<number>;
   events?: ChartEventsObject;
@@ -23,9 +22,8 @@ export interface ChartResultArray {
 }
 
 export interface ChartResultArrayQuote {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
-  date: Date;
+  [key: string]: unknown;
+  // date: Date;
   high: number | null;
   low: number | null;
   open: number | null;
@@ -35,8 +33,7 @@ export interface ChartResultArrayQuote {
 }
 
 export interface ChartMeta {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
+  [key: string]: unknown;
   currency: string; // "USD"
   symbol: string; // "AAPL",
   exchangeName: string; // "NMS",
@@ -61,8 +58,7 @@ export interface ChartMeta {
   scale?: number; // 3,
   priceHint: number; // 2,
   currentTradingPeriod: {
-    // deno-lint-ignore no-explicit-any
-    [key: string]: any;
+    [key: string]: unknown;
     pre: ChartMetaTradingPeriod;
     regular: ChartMetaTradingPeriod;
     post: ChartMetaTradingPeriod;
@@ -74,8 +70,7 @@ export interface ChartMeta {
 }
 
 export interface ChartMetaTradingPeriod {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
+  [key: string]: unknown;
   timezone: string; // "EST",
   start: Date; // new Date(1637355600 * 1000),
   end: Date; // new Date(1637370000 * 10000),
@@ -83,23 +78,20 @@ export interface ChartMetaTradingPeriod {
 }
 
 export interface ChartMetaTradingPeriods {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
+  [key: string]: unknown;
   pre?: Array<Array<ChartMetaTradingPeriod>>;
   post?: Array<Array<ChartMetaTradingPeriod>>;
   regular?: Array<Array<ChartMetaTradingPeriod>>;
 }
 
 export interface ChartEventsObject {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
+  [key: string]: unknown;
   dividends?: ChartEventDividends;
   splits?: ChartEventSplits;
 }
 
 export interface ChartEventsArray {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
+  [key: string]: unknown;
   dividends?: Array<ChartEventDividend>;
   splits?: Array<ChartEventSplit>;
 }
@@ -109,8 +101,7 @@ export interface ChartEventDividends {
 }
 
 export interface ChartEventDividend {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
+  [key: string]: unknown;
   amount: number;
   date: Date;
 }
@@ -120,8 +111,7 @@ export interface ChartEventSplits {
 }
 
 export interface ChartEventSplit {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
+  [key: string]: unknown;
   date: Date; // new Date(1598880600 * 1000)
   numerator: number; // 4
   denominator: number; // 1
@@ -129,15 +119,13 @@ export interface ChartEventSplit {
 }
 
 export interface ChartIndicatorsObject {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
+  [key: string]: unknown;
   quote: Array<ChartIndicatorQuote>;
   adjclose?: Array<ChartIndicatorAdjclose>;
 }
 
 export interface ChartIndicatorQuote {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
+  [key: string]: unknown;
   high: Array<number | null>;
   low: Array<number | null>;
   open: Array<number | null>;
@@ -146,8 +134,7 @@ export interface ChartIndicatorQuote {
 }
 
 export interface ChartIndicatorAdjclose {
-  // deno-lint-ignore no-explicit-any
-  [key: string]: any;
+  [key: string]: unknown;
   adjclose?: Array<number | null>; // Missing in e.g. "APS.AX"
 }
 
@@ -215,16 +202,14 @@ export default function chart(
   symbol: string,
   queryOptionsOverrides: ChartOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
-  // deno-lint-ignore no-explicit-any
-): Promise<any>;
+): Promise<unknown>;
 
 export default async function chart(
   this: ModuleThis,
   symbol: string,
   queryOptionsOverrides: ChartOptions,
   moduleOptions?: ModuleOptions,
-  // deno-lint-ignore no-explicit-any
-): Promise<any> {
+): Promise<unknown> {
   const returnAs = queryOptionsOverrides?.return || "array";
 
   const result = (await this._moduleExec({
