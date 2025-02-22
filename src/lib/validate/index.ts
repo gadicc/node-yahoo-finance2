@@ -1,4 +1,5 @@
 import fullSchema from "../../../schema.json" with { type: "json" };
+// @ts-ignore: relevant for ts-json-schema-generator
 import type { JSONSchema7 } from "json-schema";
 
 type JSONSchema = JSONSchema7 & { yahooFinanceType?: string };
@@ -224,7 +225,7 @@ function set(
   instancePath: string,
 ) {
   if (dataCtx && dataCtx.parentData && dataCtx.parentDataProperty !== "") {
-    // @ts-expect-error: later
+    // @ts-ignore: later
     dataCtx.parentData[dataCtx.parentDataProperty] = value;
   } else {
     throw new Error(
@@ -476,10 +477,10 @@ function schemaFromSchemaOrSchemaKey(
     schema = definitions[
       schema.$ref.replace("#/definitions/", "")
     ] as JSONSchema;
-    path = schema.$ref;
+    path = schema.$ref!;
   }
 
-  return [schema, path];
+  return [schema as JSONSchema, path];
 }
 
 interface DataCtx {
@@ -527,7 +528,7 @@ export default function validateAndCoerce(
         input = serializedInput === undefined
           ? undefined
           : JSON.parse(serializedInput);
-        // @ts-expect-error: it's ok
+        // @ts-ignore: it's ok
         dataCtx.parentData[dataCtx.parentDataProperty] = input;
       }
     }
@@ -567,7 +568,7 @@ export default function validateAndCoerce(
       let _errors: ValidationError[] = [];
       for (const type of schema.type) {
         _errors = [];
-        // @ts-expect-error: ok
+        // @ts-ignore: another day
         const validator = byType[type];
         if (!validator) {
           throw new Error(
@@ -586,7 +587,7 @@ export default function validateAndCoerce(
         return false;
       }
     } else {
-      // @ts-expect-error: ok
+      // @ts-ignore: another day
       const validator = byType[schema.type];
       if (!validator) {
         throw new Error(
