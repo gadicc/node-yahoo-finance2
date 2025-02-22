@@ -23,7 +23,7 @@ export type ValidationError = {
 const byType = {
   string(
     input: unknown,
-    _schema: JSONSchema,
+    schema: JSONSchema,
     errors: ValidationError[],
     instancePath: string,
     _dataCtx: DataCtx | undefined,
@@ -35,6 +35,16 @@ const byType = {
         schemaPath,
         message: "Expected a string",
         data: input,
+      });
+      return false;
+    }
+    if (schema.enum && !schema.enum.includes(input)) {
+      errors.push({
+        instancePath,
+        schemaPath,
+        message: "Invalid enum value",
+        data: input,
+        params: { enum: schema.enum },
       });
       return false;
     }
