@@ -1,0 +1,59 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SPOT?formatted=false&modules=summaryProfile&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-length": "1365",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:28 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "2",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "4b4rlodjrofb0"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "33 Boulevard Prince Henri",
+              "city": "Luxembourg City",
+              "zip": "1724",
+              "country": "Luxembourg",
+              "website": "https://www.spotify.com",
+              "industry": "Internet Content & Information",
+              "industryKey": "internet-content-information",
+              "industryDisp": "Internet Content & Information",
+              "sector": "Communication Services",
+              "sectorKey": "communication-services",
+              "sectorDisp": "Communication Services",
+              "longBusinessSummary": "Spotify Technology S.A., together with its subsidiaries, provides audio streaming subscription services worldwide. It operates through two segments, Premium and Ad-Supported. The Premium segment offers unlimited online and offline streaming access to its catalog of music and podcasts without commercial breaks to its subscribers. This segment sells directly to the end users. The Ad-Supported segment provides on-demand online access to its catalog of music and unlimited online access to the catalog of podcasts to its users on their computers, tablets, and compatible mobile devices. The company also offers sales, distribution and marketing, contract research and development, and customer and other support services. Spotify Technology S.A. was incorporated in 2006 and is based in Luxembourg City, Luxembourg.",
+              "fullTimeEmployees": 7691,
+              "companyOfficers": [],
+              "executiveTeam": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

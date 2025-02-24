@@ -1,0 +1,305 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ARMK?formatted=false&modules=fundOwnership&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:08 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "2",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "27b5kd9jrofac"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "American Balanced Fund",
+                  "pctHeld": {
+                    "raw": 0.0542,
+                    "fmt": "5.42%"
+                  },
+                  "position": {
+                    "raw": 14370578,
+                    "fmt": "14.37M",
+                    "longFmt": "14,370,578"
+                  },
+                  "value": {
+                    "raw": 516334871,
+                    "fmt": "516.33M",
+                    "longFmt": "516,334,871"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Janus Henderson Enterprise Fund",
+                  "pctHeld": {
+                    "raw": 0.0346,
+                    "fmt": "3.46%"
+                  },
+                  "position": {
+                    "raw": 9159786,
+                    "fmt": "9.16M",
+                    "longFmt": "9,159,786"
+                  },
+                  "value": {
+                    "raw": 329111113,
+                    "fmt": "329.11M",
+                    "longFmt": "329,111,113"
+                  },
+                  "pctChange": {
+                    "raw": 0.0738,
+                    "fmt": "7.38%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Eaton Vance Atlanta Capital SMID-Cap Fd",
+                  "pctHeld": {
+                    "raw": 0.0334,
+                    "fmt": "3.34%"
+                  },
+                  "position": {
+                    "raw": 8859522,
+                    "fmt": "8.86M",
+                    "longFmt": "8,859,522"
+                  },
+                  "value": {
+                    "raw": 318322628,
+                    "fmt": "318.32M",
+                    "longFmt": "318,322,628"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "iShares Core S&P Midcap ETF",
+                  "pctHeld": {
+                    "raw": 0.0319,
+                    "fmt": "3.19%"
+                  },
+                  "position": {
+                    "raw": 8460975,
+                    "fmt": "8.46M",
+                    "longFmt": "8,460,975"
+                  },
+                  "value": {
+                    "raw": 304002834,
+                    "fmt": "304M",
+                    "longFmt": "304,002,834"
+                  },
+                  "pctChange": {
+                    "raw": 0.02,
+                    "fmt": "2.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Total Stock Market Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0313,
+                    "fmt": "3.13%"
+                  },
+                  "position": {
+                    "raw": 8306231,
+                    "fmt": "8.31M",
+                    "longFmt": "8,306,231"
+                  },
+                  "value": {
+                    "raw": 298442882,
+                    "fmt": "298.44M",
+                    "longFmt": "298,442,882"
+                  },
+                  "pctChange": {
+                    "raw": 0.0017,
+                    "fmt": "0.17%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Small-Cap Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0249,
+                    "fmt": "2.49%"
+                  },
+                  "position": {
+                    "raw": 6595340,
+                    "fmt": "6.6M",
+                    "longFmt": "6,595,340"
+                  },
+                  "value": {
+                    "raw": 236970568,
+                    "fmt": "236.97M",
+                    "longFmt": "236,970,568"
+                  },
+                  "pctChange": {
+                    "raw": -0.0031,
+                    "fmt": "-0.31%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Small Cap Value Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0168,
+                    "fmt": "1.68%"
+                  },
+                  "position": {
+                    "raw": 4464288,
+                    "fmt": "4.46M",
+                    "longFmt": "4,464,288"
+                  },
+                  "value": {
+                    "raw": 160401869,
+                    "fmt": "160.4M",
+                    "longFmt": "160,401,869"
+                  },
+                  "pctChange": {
+                    "raw": 0.0023,
+                    "fmt": "0.23%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Extended Market Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0149,
+                    "fmt": "1.49%"
+                  },
+                  "position": {
+                    "raw": 3938817,
+                    "fmt": "3.94M",
+                    "longFmt": "3,938,817"
+                  },
+                  "value": {
+                    "raw": 141521696,
+                    "fmt": "141.52M",
+                    "longFmt": "141,521,696"
+                  },
+                  "pctChange": {
+                    "raw": -0.0101,
+                    "fmt": "-1.01%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "Templeton Growth Fund, Inc.",
+                  "pctHeld": {
+                    "raw": 0.0139999995,
+                    "fmt": "1.40%"
+                  },
+                  "position": {
+                    "raw": 3721591,
+                    "fmt": "3.72M",
+                    "longFmt": "3,721,591"
+                  },
+                  "value": {
+                    "raw": 133716765,
+                    "fmt": "133.72M",
+                    "longFmt": "133,716,765"
+                  },
+                  "pctChange": {
+                    "raw": 0.3482,
+                    "fmt": "34.82%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "MFS Series Trust XI-MFS Mid Cap Value Fund",
+                  "pctHeld": {
+                    "raw": 0.0123000005,
+                    "fmt": "1.23%"
+                  },
+                  "position": {
+                    "raw": 3259518,
+                    "fmt": "3.26M",
+                    "longFmt": "3,259,518"
+                  },
+                  "value": {
+                    "raw": 117114482,
+                    "fmt": "117.11M",
+                    "longFmt": "117,114,482"
+                  },
+                  "pctChange": {
+                    "raw": -0.1278,
+                    "fmt": "-12.78%"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

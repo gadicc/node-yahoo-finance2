@@ -1,0 +1,305 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CRM?formatted=false&modules=institutionOwnership&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:16 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "2",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "2b1d8khjrofal"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "institutionOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Vanguard Group Inc",
+                  "pctHeld": {
+                    "raw": 0.0904,
+                    "fmt": "9.04%"
+                  },
+                  "position": {
+                    "raw": 86529686,
+                    "fmt": "86.53M",
+                    "longFmt": "86,529,686"
+                  },
+                  "value": {
+                    "raw": 26806895666,
+                    "fmt": "26.81B",
+                    "longFmt": "26,806,895,666"
+                  },
+                  "pctChange": {
+                    "raw": -0.0042,
+                    "fmt": "-0.42%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Blackrock Inc.",
+                  "pctHeld": {
+                    "raw": 0.0801,
+                    "fmt": "8.01%"
+                  },
+                  "position": {
+                    "raw": 76687503,
+                    "fmt": "76.69M",
+                    "longFmt": "76,687,503"
+                  },
+                  "value": {
+                    "raw": 23757787493,
+                    "fmt": "23.76B",
+                    "longFmt": "23,757,787,493"
+                  },
+                  "pctChange": {
+                    "raw": 0.0425,
+                    "fmt": "4.25%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "State Street Corporation",
+                  "pctHeld": {
+                    "raw": 0.0511,
+                    "fmt": "5.11%"
+                  },
+                  "position": {
+                    "raw": 48948185,
+                    "fmt": "48.95M",
+                    "longFmt": "48,948,185"
+                  },
+                  "value": {
+                    "raw": 15164147115,
+                    "fmt": "15.16B",
+                    "longFmt": "15,164,147,115"
+                  },
+                  "pctChange": {
+                    "raw": -0.0011999999,
+                    "fmt": "-0.12%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Capital Research Global Investors",
+                  "pctHeld": {
+                    "raw": 0.0252,
+                    "fmt": "2.52%"
+                  },
+                  "position": {
+                    "raw": 24116635,
+                    "fmt": "24.12M",
+                    "longFmt": "24,116,635"
+                  },
+                  "value": {
+                    "raw": 7471333228,
+                    "fmt": "7.47B",
+                    "longFmt": "7,471,333,228"
+                  },
+                  "pctChange": {
+                    "raw": -0.0095999995,
+                    "fmt": "-0.96%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "FMR, LLC",
+                  "pctHeld": {
+                    "raw": 0.0242,
+                    "fmt": "2.42%"
+                  },
+                  "position": {
+                    "raw": 23197304,
+                    "fmt": "23.2M",
+                    "longFmt": "23,197,304"
+                  },
+                  "value": {
+                    "raw": 7186524496,
+                    "fmt": "7.19B",
+                    "longFmt": "7,186,524,496"
+                  },
+                  "pctChange": {
+                    "raw": -0.11270001,
+                    "fmt": "-11.27%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Geode Capital Management, LLC",
+                  "pctHeld": {
+                    "raw": 0.0209,
+                    "fmt": "2.09%"
+                  },
+                  "position": {
+                    "raw": 19955353,
+                    "fmt": "19.96M",
+                    "longFmt": "19,955,353"
+                  },
+                  "value": {
+                    "raw": 6182168115,
+                    "fmt": "6.18B",
+                    "longFmt": "6,182,168,115"
+                  },
+                  "pctChange": {
+                    "raw": 0.0088,
+                    "fmt": "0.88%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "JP Morgan Chase & Company",
+                  "pctHeld": {
+                    "raw": 0.0201,
+                    "fmt": "2.01%"
+                  },
+                  "position": {
+                    "raw": 19247776,
+                    "fmt": "19.25M",
+                    "longFmt": "19,247,776"
+                  },
+                  "value": {
+                    "raw": 5962960769,
+                    "fmt": "5.96B",
+                    "longFmt": "5,962,960,769"
+                  },
+                  "pctChange": {
+                    "raw": 0.3105,
+                    "fmt": "31.05%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Morgan Stanley",
+                  "pctHeld": {
+                    "raw": 0.02,
+                    "fmt": "2.00%"
+                  },
+                  "position": {
+                    "raw": 19177547,
+                    "fmt": "19.18M",
+                    "longFmt": "19,177,547"
+                  },
+                  "value": {
+                    "raw": 5941203826,
+                    "fmt": "5.94B",
+                    "longFmt": "5,941,203,826"
+                  },
+                  "pctChange": {
+                    "raw": -0.0027,
+                    "fmt": "-0.27%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Capital International Investors",
+                  "pctHeld": {
+                    "raw": 0.0174,
+                    "fmt": "1.74%"
+                  },
+                  "position": {
+                    "raw": 16635883,
+                    "fmt": "16.64M",
+                    "longFmt": "16,635,883"
+                  },
+                  "value": {
+                    "raw": 5153796350,
+                    "fmt": "5.15B",
+                    "longFmt": "5,153,796,350"
+                  },
+                  "pctChange": {
+                    "raw": -0.1224,
+                    "fmt": "-12.24%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Fisher Asset Management, LLC",
+                  "pctHeld": {
+                    "raw": 0.012999999,
+                    "fmt": "1.30%"
+                  },
+                  "position": {
+                    "raw": 12453872,
+                    "fmt": "12.45M",
+                    "longFmt": "12,453,872"
+                  },
+                  "value": {
+                    "raw": 3858209393,
+                    "fmt": "3.86B",
+                    "longFmt": "3,858,209,393"
+                  },
+                  "pctChange": {
+                    "raw": 0.014400001,
+                    "fmt": "1.44%"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BEKE?formatted=false&modules=upgradeDowngradeHistory&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:29 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "3",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "6s73l81jrofb1"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "upgradeDowngradeHistory": {
+              "history": [
+                {
+                  "epochGradeDate": 1732545326,
+                  "firm": "Barclays",
+                  "toGrade": "Overweight",
+                  "fromGrade": "Overweight",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1730289739,
+                  "firm": "B of A Securities",
+                  "toGrade": "Buy",
+                  "fromGrade": "Neutral",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1728495970,
+                  "firm": "B of A Securities",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Neutral",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1716985819,
+                  "firm": "Barclays",
+                  "toGrade": "Overweight",
+                  "fromGrade": "Overweight",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1710862176,
+                  "firm": "Citigroup",
+                  "toGrade": "Buy",
+                  "fromGrade": "Buy",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1710530363,
+                  "firm": "HSBC",
+                  "toGrade": "Buy",
+                  "fromGrade": "Buy",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1683644204,
+                  "firm": "New Street Research",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1681129961,
+                  "firm": "JP Morgan",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1680170122,
+                  "firm": "Barclays",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1673516609,
+                  "firm": "JP Morgan",
+                  "toGrade": "Overweight",
+                  "fromGrade": "Neutral",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1670340461,
+                  "firm": "JP Morgan",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1666960866,
+                  "firm": "Barclays",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1661428226,
+                  "firm": "Barclays",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1655990395,
+                  "firm": "HSBC",
+                  "toGrade": "Buy",
+                  "fromGrade": "Hold",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1655808281,
+                  "firm": "Citigroup",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1652696517,
+                  "firm": "JP Morgan",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Underweight",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1647437839,
+                  "firm": "Morgan Stanley",
+                  "toGrade": "Overweight",
+                  "fromGrade": "Equal-Weight",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1647267044,
+                  "firm": "JP Morgan",
+                  "toGrade": "Underweight",
+                  "fromGrade": "Overweight",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1647000143,
+                  "firm": "Barclays",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "main"
+                },
+                {
+                  "epochGradeDate": 1645179375,
+                  "firm": "Goldman Sachs",
+                  "toGrade": "Buy",
+                  "fromGrade": "Neutral",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1643631986,
+                  "firm": "HSBC",
+                  "toGrade": "Hold",
+                  "fromGrade": "Reduce",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1635930382,
+                  "firm": "Barclays",
+                  "toGrade": "Overweight",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1629129345,
+                  "firm": "Goldman Sachs",
+                  "toGrade": "Neutral",
+                  "fromGrade": "Buy",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1628847290,
+                  "firm": "HSBC",
+                  "toGrade": "Hold",
+                  "fromGrade": "Buy",
+                  "action": "down"
+                },
+                {
+                  "epochGradeDate": 1621525846,
+                  "firm": "86 Research",
+                  "toGrade": "Hold",
+                  "fromGrade": "Sell",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1619193448,
+                  "firm": "China Renaissance",
+                  "toGrade": "Buy",
+                  "fromGrade": "Hold",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1616069905,
+                  "firm": "B of A Securities",
+                  "toGrade": "Buy",
+                  "fromGrade": "Neutral",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1615470197,
+                  "firm": "Goldman Sachs",
+                  "toGrade": "Buy",
+                  "fromGrade": "Neutral",
+                  "action": "up"
+                },
+                {
+                  "epochGradeDate": 1614709638,
+                  "firm": "HSBC",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1609859606,
+                  "firm": "Jefferies",
+                  "toGrade": "Buy",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1600686755,
+                  "firm": "B of A Securities",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1599650910,
+                  "firm": "China Renaissance",
+                  "toGrade": "Hold",
+                  "fromGrade": "",
+                  "action": "init"
+                },
+                {
+                  "epochGradeDate": 1599561991,
+                  "firm": "Goldman Sachs",
+                  "toGrade": "Neutral",
+                  "fromGrade": "",
+                  "action": "init"
+                }
+              ],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

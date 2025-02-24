@@ -12,7 +12,7 @@
  */
 
 export interface QuoteSummaryResult {
-  [key: string]: any;
+  [key: string]: unknown;
   assetProfile?: AssetProfile;
   balanceSheetHistory?: BalanceSheetHistory;
   balanceSheetHistoryQuarterly?: BalanceSheetHistory;
@@ -49,7 +49,7 @@ export interface QuoteSummaryResult {
 }
 
 export interface AssetProfile {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   address1?: string;
   address2?: string;
@@ -82,10 +82,12 @@ export interface AssetProfile {
   startDate?: Date; // new Date('2013-04-28')
   description?: string; // 'Bitcoin (BTC) is a cryptocurrency...'
   twitter?: string; // in e.g. "ADA-USD" (#418)
+  irWebsite?: string; // "http://investor.apple.com/"
+  executiveTeam?: unknown[];
 }
 
 export interface CompanyOfficer {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   name: string;
   age?: number;
@@ -98,13 +100,13 @@ export interface CompanyOfficer {
 }
 
 export interface BalanceSheetHistory {
-  [key: string]: any;
+  [key: string]: unknown;
   balanceSheetStatements: BalanceSheetStatement[];
   maxAge: number;
 }
 
 export interface BalanceSheetStatement {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   endDate: Date;
   cash?: number;
@@ -139,7 +141,7 @@ export interface BalanceSheetStatement {
 }
 
 export interface CalendarEvents {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   earnings: CalendarEventsEarnings;
   exDividendDate?: Date;
@@ -147,7 +149,9 @@ export interface CalendarEvents {
 }
 
 export interface CalendarEventsEarnings {
-  [key: string]: any;
+  [key: string]: unknown;
+  earningsCallDate: Date[];
+  isEarningsDateEstimate?: boolean;
   earningsDate: Date[];
   earningsAverage?: number;
   earningsLow?: number;
@@ -158,13 +162,13 @@ export interface CalendarEventsEarnings {
 }
 
 export interface CashflowStatementHistory {
-  [key: string]: any;
+  [key: string]: unknown;
   cashflowStatements: CashflowStatement[];
   maxAge: number;
 }
 
 export interface CashflowStatement {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   endDate: Date;
   netIncome: number;
@@ -190,7 +194,7 @@ export interface CashflowStatement {
 }
 
 export interface DefaultKeyStatistics {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   priceHint: number;
   enterpriseValue?: number;
@@ -242,10 +246,12 @@ export interface DefaultKeyStatistics {
   annualReportExpenseRatio?: number;
   lastCapGain?: number;
   annualHoldingsTurnover?: number;
+  latestShareClass?: unknown;
+  leadInvestor?: unknown;
 }
 
 export interface QuoteSummaryEarnings {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   earningsChart: EarningsChart;
   financialsChart: FinancialsChart;
@@ -253,49 +259,50 @@ export interface QuoteSummaryEarnings {
 }
 
 export interface EarningsChart {
-  [key: string]: any;
+  [key: string]: unknown;
   quarterly: EarningsChartQuarterly[];
   currentQuarterEstimate?: number;
   currentQuarterEstimateDate?: string;
   currentQuarterEstimateYear?: number;
   earningsDate: Date[];
+  isEarningsDateEstimate?: boolean;
 }
 
 export interface EarningsChartQuarterly {
-  [key: string]: any;
+  [key: string]: unknown;
   date: string;
-  actual: number;
+  actual?: number;
   estimate: number;
 }
 
 export interface FinancialsChart {
-  [key: string]: any;
+  [key: string]: unknown;
   yearly: Yearly[];
   quarterly: FinancialsChartQuarterly[];
 }
 
 export interface FinancialsChartQuarterly {
-  [key: string]: any;
+  [key: string]: unknown;
   date: string;
   revenue: number;
   earnings: number;
 }
 
 export interface Yearly {
-  [key: string]: any;
+  [key: string]: unknown;
   date: number;
   revenue: number;
   earnings: number;
 }
 
 export interface EarningsHistory {
-  [key: string]: any;
+  [key: string]: unknown;
   history: EarningsHistoryHistory[];
   maxAge: number;
 }
 
 export interface EarningsHistoryHistory {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   epsActual: number | null;
   epsEstimate: number | null;
@@ -303,16 +310,17 @@ export interface EarningsHistoryHistory {
   surprisePercent: number | null;
   quarter: Date | null;
   period: string;
+  currency?: string;
 }
 
 export interface EarningsTrend {
-  [key: string]: any;
+  [key: string]: unknown;
   trend: EarningsTrendTrend[];
   maxAge: number;
 }
 
 export interface EarningsTrendTrend {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   period: string;
   endDate: Date | null;
@@ -324,44 +332,50 @@ export interface EarningsTrendTrend {
 }
 
 export interface EarningsEstimate {
-  [key: string]: any;
+  [key: string]: unknown;
   avg: number | null;
   low: number | null;
   high: number | null;
   yearAgoEps: number | null;
   numberOfAnalysts: number | null;
   growth: number | null;
+  earningsCurrency?: string | null;
 }
 
 export interface EpsRevisions {
-  [key: string]: any;
-  upLast7days: number | null;
-  upLast30days: number | null;
-  downLast30days: number | null;
-  downLast90days: number | null;
+  [key: string]: unknown;
+  upLast7days?: number | null;
+  upLast30days?: number | null;
+  upLast90days?: number | null;
+  downLast7Days?: number | null;
+  downLast30days?: number | null;
+  downLast90days?: number | null;
+  epsRevisionsCurrency?: string | null;
 }
 
 export interface EpsTrend {
-  [key: string]: any;
+  [key: string]: unknown;
   current: number | null;
   "7daysAgo": number | null;
   "30daysAgo": number | null;
   "60daysAgo": number | null;
   "90daysAgo": number | null;
+  epsTrendCurrency?: string | null;
 }
 
 export interface RevenueEstimate {
-  [key: string]: any;
+  [key: string]: unknown;
   avg: number | null;
   low: number | null;
   high: number | null;
   numberOfAnalysts: number | null;
   yearAgoRevenue: number | null;
   growth: number | null;
+  revenueCurrency?: string | null;
 }
 
 export interface FinancialData {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   currentPrice?: number;
   targetHighPrice?: number;
@@ -395,13 +409,13 @@ export interface FinancialData {
 }
 
 export interface Ownership {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   ownershipList: OwnershipList[];
 }
 
 export interface OwnershipList {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   reportDate: Date;
   organization: string;
@@ -412,7 +426,7 @@ export interface OwnershipList {
 }
 
 export interface FundPerformance {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   loadAdjustedReturns?: PeriodRange;
   rankInCategory?: PeriodRange;
@@ -425,10 +439,11 @@ export interface FundPerformance {
   pastQuarterlyReturns: FundPerformanceReturns;
   riskOverviewStatistics: FundPerformanceRiskOverviewStats;
   riskOverviewStatisticsCat: FundPerformanceRiskOverviewStatsCat;
+  fundCategoryName?: string; // "Large Growth"
 }
 
 export interface PeriodRange {
-  [key: string]: any;
+  [key: string]: unknown;
   asOfDate?: Date;
   ytd?: number;
   oneMonth?: number;
@@ -440,13 +455,13 @@ export interface PeriodRange {
 }
 
 export interface FundPerformanceTrailingReturns extends PeriodRange {
-  [key: string]: any;
+  [key: string]: unknown;
   lastBullMkt?: number;
   lastBearMkt?: number;
 }
 
 export interface FundPerformancePerformanceOverview {
-  [key: string]: any;
+  [key: string]: unknown;
   asOfDate?: Date;
   ytdReturnPct?: number;
   oneYearTotalReturn?: number;
@@ -462,19 +477,21 @@ export interface FundPerformancePerformanceOverview {
 }
 
 export interface FundPerformancePerformanceOverviewCat {
-  [key: string]: any;
+  [key: string]: unknown;
   ytdReturnPct?: number;
   fiveYrAvgReturnPct?: number;
+  oneYearTotalReturn?: number; // 0.29811978,
+  threeYearTotalReturn?: number; // 0.117706604
 }
 
 export interface FundPerformanceReturns {
-  [key: string]: any;
+  [key: string]: unknown;
   returns: FundPerformanceReturnsRow[];
   returnsCat?: FundPerformanceReturnsRow[];
 }
 
 export interface FundPerformanceReturnsRow {
-  [key: string]: any;
+  [key: string]: unknown;
   year: number; // coerce to number from string "2020"
   annualValue?: number;
   q1?: number;
@@ -484,18 +501,18 @@ export interface FundPerformanceReturnsRow {
 }
 
 export interface FundPerformanceRiskOverviewStats {
-  [key: string]: any;
+  [key: string]: unknown;
   riskStatistics: FundPerformanceRiskOverviewStatsRow[];
   riskRating?: number;
 }
 
 export interface FundPerformanceRiskOverviewStatsCat {
-  [key: string]: any;
+  [key: string]: unknown;
   riskStatisticsCat: FundPerformanceRiskOverviewStatsRow[];
 }
 
 export interface FundPerformanceRiskOverviewStatsRow {
-  [key: string]: any;
+  [key: string]: unknown;
   year: string; // "5y" | "3y" | "10y" | anything else?
   alpha: number; // 7.76
   beta: number; // 1.04
@@ -507,7 +524,7 @@ export interface FundPerformanceRiskOverviewStatsRow {
 }
 
 export interface FundProfile {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   styleBoxUrl?: null | string;
   family: null | string;
@@ -526,14 +543,14 @@ export interface FundProfile {
 }
 
 export interface FundProfileManagementInfo {
-  [key: string]: any;
+  [key: string]: unknown;
   managerName: null | string;
   managerBio: null | string;
   startdate?: Date;
 }
 
 export interface FundProfileFeesExpensesInvestment {
-  [key: string]: any;
+  [key: string]: unknown;
   annualHoldingsTurnover?: number;
   annualReportExpenseRatio?: number;
   grossExpRatio?: number;
@@ -544,20 +561,22 @@ export interface FundProfileFeesExpensesInvestment {
 
 export interface FundProfileFeesExpensesInvestmentCat
   extends Omit<FundProfileFeesExpensesInvestment, "projectionValues"> {
-  [key: string]: any;
+  [key: string]: unknown;
   projectionValuesCat: object;
 }
 
-export interface FundProfileBrokerage {}
+export interface FundProfileBrokerage {
+  [key: string]: unknown;
+}
 
 export interface IncomeStatementHistory {
-  [key: string]: any;
+  [key: string]: unknown;
   incomeStatementHistory: IncomeStatementHistoryElement[];
   maxAge: number;
 }
 
 export interface IncomeStatementHistoryElement {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   endDate: Date;
   totalRevenue: number;
@@ -585,35 +604,35 @@ export interface IncomeStatementHistoryElement {
 }
 
 export interface IndexTrend {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   symbol: string;
-  peRatio: number;
-  pegRatio: number;
+  peRatio?: number;
+  pegRatio?: number;
   estimates: Estimate[];
 }
 
 export interface Estimate {
-  [key: string]: any;
+  [key: string]: unknown;
   period: string;
   growth?: number;
 }
 
 export interface Trend {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   symbol: null;
-  estimates: any[];
+  estimates: unknown[];
 }
 
 export interface Holders {
-  [key: string]: any;
+  [key: string]: unknown;
   holders: Holder[];
   maxAge: number;
 }
 
 export interface Holder {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   name: string;
   relation: Relation | string;
@@ -643,13 +662,13 @@ export enum Relation {
 }
 
 export interface InsiderTransactions {
-  [key: string]: any;
+  [key: string]: unknown;
   transactions: Transaction[];
   maxAge: number;
 }
 
 export interface Transaction {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   shares: number;
   filerUrl: string;
@@ -668,7 +687,7 @@ export enum OwnershipEnum {
 }
 
 export interface MajorHoldersBreakdown {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   insidersPercentHeld?: number;
   institutionsPercentHeld?: number;
@@ -676,7 +695,7 @@ export interface MajorHoldersBreakdown {
   institutionsCount?: number;
 }
 export interface NetSharePurchaseActivity {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   period: string;
   buyInfoCount: number;
@@ -696,7 +715,7 @@ export interface NetSharePurchaseActivity {
  * result to include an ISODate.
  */
 export interface Price {
-  [key: string]: any;
+  [key: string]: unknown;
   averageDailyVolume10Day?: number;
   averageDailyVolume3Month?: number;
   exchange?: string;
@@ -752,14 +771,14 @@ export interface Price {
 }
 
 export interface QuoteType {
-  [key: string]: any;
+  [key: string]: unknown;
   exchange: string;
   quoteType: string;
   symbol: string;
   underlyingSymbol: string;
   shortName: null | string;
-  longName: null | string;
-  firstTradeDateEpochUtc: null | Date;
+  longName?: null | string;
+  firstTradeDateEpochUtc?: null | Date;
   timeZoneFullName: string;
   timeZoneShortName: string;
   uuid: string;
@@ -769,13 +788,13 @@ export interface QuoteType {
 }
 
 export interface RecommendationTrend {
-  [key: string]: any;
+  [key: string]: unknown;
   trend: RecommendationTrendTrend[];
   maxAge: number;
 }
 
 export interface RecommendationTrendTrend {
-  [key: string]: any;
+  [key: string]: unknown;
   period: string;
   strongBuy: number;
   buy: number;
@@ -785,13 +804,13 @@ export interface RecommendationTrendTrend {
 }
 
 export interface SECFilings {
-  [key: string]: any;
+  [key: string]: unknown;
   filings: Filing[];
   maxAge: number;
 }
 
 export interface Filing {
-  [key: string]: any;
+  [key: string]: unknown;
   date: string; // TODO: check the format
   epochDate: Date;
   type: FilingType;
@@ -825,10 +844,24 @@ type FilingType =
   | "SC 13G"
   | "S-8"
   | "DEF 14A"
-  | "F-10";
+  | "F-10"
+  | "S-3ASR"
+  | "CORRESP"
+  | "PX14A6N"
+  | "N-PX"
+  | "ARS"
+  | "PRE 14A"
+  | "F-6EF"
+  | "S-3/A"
+  | "S-3"
+  | "POS AM"
+  | "IRANNOTICE"
+  | "20-F/A"
+  | "11-K"
+  | "DEFR14A";
 
 export interface SummaryDetail {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   priceHint: number;
   previousClose?: number; // missing in e.g. "APS.AX"
@@ -889,7 +922,7 @@ export interface SummaryDetail {
 }
 
 export interface SummaryProfile {
-  [key: string]: any;
+  [key: string]: unknown;
   address1?: string;
   address2?: string;
   address3?: string;
@@ -906,9 +939,14 @@ export interface SummaryProfile {
   sectorDisp?: string;
   longBusinessSummary?: string;
   fullTimeEmployees?: number;
-  companyOfficers: any[];
+  companyOfficers: unknown[];
   maxAge: number;
   twitter?: string; // in e.g. "ADA-USD" (#418)
+
+  industryKey?: string; // "consumer-electronics",
+  sectorKey?: string; // "technology",
+  irWebsite?: string; // "http://investor.apple.com/"
+  executiveTeam?: unknown[]; // []
 
   // seems like for cryptocurency only
   // TODO: how does this relate to Quote type.  Common base?
@@ -918,7 +956,7 @@ export interface SummaryProfile {
 }
 
 export interface TopHoldings {
-  [key: string]: any;
+  [key: string]: unknown;
   maxAge: number;
   stockPosition?: number;
   bondPosition?: number;
@@ -934,14 +972,14 @@ export interface TopHoldings {
 }
 
 export interface TopHoldingsHolding {
-  [key: string]: any;
+  [key: string]: unknown;
   symbol: string;
   holdingName: string;
   holdingPercent: number;
 }
 
 export interface TopHoldingsEquityHoldings {
-  [key: string]: any;
+  [key: string]: unknown;
   medianMarketCap?: number;
   medianMarketCapCat?: number;
   priceToBook: number;
@@ -957,7 +995,7 @@ export interface TopHoldingsEquityHoldings {
 }
 
 export interface TopHoldingsBondRating {
-  [key: string]: any;
+  [key: string]: unknown;
   a?: number;
   aa?: number;
   aaa?: number;
@@ -970,7 +1008,7 @@ export interface TopHoldingsBondRating {
 }
 
 export interface TopHoldingsSectorWeighting {
-  [key: string]: any;
+  [key: string]: unknown;
   realestate?: number;
   consumer_cyclical?: number;
   basic_materials?: number;
@@ -985,13 +1023,13 @@ export interface TopHoldingsSectorWeighting {
 }
 
 export interface UpgradeDowngradeHistory {
-  [key: string]: any;
+  [key: string]: unknown;
   history: UpgradeDowngradeHistoryHistory[];
   maxAge: number;
 }
 
 export interface UpgradeDowngradeHistoryHistory {
-  [key: string]: any;
+  [key: string]: unknown;
   epochGradeDate: Date;
   firm: string;
   toGrade: Grade;

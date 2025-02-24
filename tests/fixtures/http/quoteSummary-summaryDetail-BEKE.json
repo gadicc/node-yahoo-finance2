@@ -1,0 +1,84 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BEKE?formatted=false&modules=summaryDetail&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-length": "994",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:26 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "3",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "16mlti5jrofav"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 20.22,
+              "open": 20.8,
+              "dayLow": 20.65,
+              "dayHigh": 21.385,
+              "regularMarketPreviousClose": 20.22,
+              "regularMarketOpen": 20.8,
+              "regularMarketDayLow": 20.65,
+              "regularMarketDayHigh": 21.385,
+              "dividendRate": 0.35,
+              "dividendYield": 0.0168,
+              "exDividendDate": 1712188800,
+              "payoutRatio": 0.70559996,
+              "beta": -0.757,
+              "trailingPE": 42.65306,
+              "forwardPE": 18.017242,
+              "volume": 8170011,
+              "regularMarketVolume": 8170011,
+              "averageVolume": 7257554,
+              "averageVolume10days": 10364980,
+              "averageDailyVolume10Day": 10364980,
+              "bid": 21.2,
+              "ask": 21.39,
+              "bidSize": 1100,
+              "askSize": 4000,
+              "marketCap": 25049903104,
+              "fiftyTwoWeekLow": 12.44,
+              "fiftyTwoWeekHigh": 26.045,
+              "priceToSalesTrailing12Months": 0.30350047,
+              "fiftyDayAverage": 18.3,
+              "twoHundredDayAverage": 17.5304,
+              "trailingAnnualDividendRate": 2.489,
+              "trailingAnnualDividendYield": 0.12309595,
+              "currency": "USD",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "coinMarketCapLink": null,
+              "algorithm": null,
+              "tradeable": false
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

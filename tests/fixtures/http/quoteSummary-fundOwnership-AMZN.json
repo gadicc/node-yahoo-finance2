@@ -1,0 +1,305 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AMZN?formatted=false&modules=fundOwnership&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:06 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "2",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "05f1gmhjrofab"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Total Stock Market Index Fund",
+                  "pctHeld": {
+                    "raw": 0.028299998,
+                    "fmt": "2.83%"
+                  },
+                  "position": {
+                    "raw": 299426250,
+                    "fmt": "299.43M",
+                    "longFmt": "299,426,250"
+                  },
+                  "value": {
+                    "raw": 64849737773,
+                    "fmt": "64.85B",
+                    "longFmt": "64,849,737,773"
+                  },
+                  "pctChange": {
+                    "raw": 0.012,
+                    "fmt": "1.20%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard 500 Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0231,
+                    "fmt": "2.31%"
+                  },
+                  "position": {
+                    "raw": 244617059,
+                    "fmt": "244.62M",
+                    "longFmt": "244,617,059"
+                  },
+                  "value": {
+                    "raw": 52979163086,
+                    "fmt": "52.98B",
+                    "longFmt": "52,979,163,086"
+                  },
+                  "pctChange": {
+                    "raw": 0.040700004,
+                    "fmt": "4.07%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Fidelity 500 Index Fund",
+                  "pctHeld": {
+                    "raw": 0.011,
+                    "fmt": "1.10%"
+                  },
+                  "position": {
+                    "raw": 116170834,
+                    "fmt": "116.17M",
+                    "longFmt": "116,170,834"
+                  },
+                  "value": {
+                    "raw": 25160279440,
+                    "fmt": "25.16B",
+                    "longFmt": "25,160,279,440"
+                  },
+                  "pctChange": {
+                    "raw": 0.0064999997,
+                    "fmt": "0.65%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "SPDR S&P 500 ETF Trust",
+                  "pctHeld": {
+                    "raw": 0.0109,
+                    "fmt": "1.09%"
+                  },
+                  "position": {
+                    "raw": 115323667,
+                    "fmt": "115.32M",
+                    "longFmt": "115,323,667"
+                  },
+                  "value": {
+                    "raw": 24976800010,
+                    "fmt": "24.98B",
+                    "longFmt": "24,976,800,010"
+                  },
+                  "pctChange": {
+                    "raw": 0.013200001,
+                    "fmt": "1.32%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "iShares Core S&P 500 ETF",
+                  "pctHeld": {
+                    "raw": 0.01,
+                    "fmt": "1.00%"
+                  },
+                  "position": {
+                    "raw": 105572932,
+                    "fmt": "105.57M",
+                    "longFmt": "105,572,932"
+                  },
+                  "value": {
+                    "raw": 22864985805,
+                    "fmt": "22.86B",
+                    "longFmt": "22,864,985,805"
+                  },
+                  "pctChange": {
+                    "raw": 0.0152,
+                    "fmt": "1.52%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Growth Index Fund",
+                  "pctHeld": {
+                    "raw": 0.007900001,
+                    "fmt": "0.79%"
+                  },
+                  "position": {
+                    "raw": 84026878,
+                    "fmt": "84.03M",
+                    "longFmt": "84,026,878"
+                  },
+                  "value": {
+                    "raw": 18198541391,
+                    "fmt": "18.2B",
+                    "longFmt": "18,198,541,391"
+                  },
+                  "pctChange": {
+                    "raw": 0.3017,
+                    "fmt": "30.17%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "Invesco ETF Tr-Invesco QQQ Tr, Series 1 ETF",
+                  "pctHeld": {
+                    "raw": 0.0076,
+                    "fmt": "0.76%"
+                  },
+                  "position": {
+                    "raw": 80768273,
+                    "fmt": "80.77M",
+                    "longFmt": "80,768,273"
+                  },
+                  "value": {
+                    "raw": 17492792714,
+                    "fmt": "17.49B",
+                    "longFmt": "17,492,792,714"
+                  },
+                  "pctChange": {
+                    "raw": 0.0241,
+                    "fmt": "2.41%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Growth Fund of America Inc",
+                  "pctHeld": {
+                    "raw": 0.0057,
+                    "fmt": "0.57%"
+                  },
+                  "position": {
+                    "raw": 60443054,
+                    "fmt": "60.44M",
+                    "longFmt": "60,443,054"
+                  },
+                  "value": {
+                    "raw": 13090756745,
+                    "fmt": "13.09B",
+                    "longFmt": "13,090,756,745"
+                  },
+                  "pctChange": {
+                    "raw": 0.0349,
+                    "fmt": "3.49%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Institutional Index Fund-Institutional Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0056,
+                    "fmt": "0.56%"
+                  },
+                  "position": {
+                    "raw": 59410230,
+                    "fmt": "59.41M",
+                    "longFmt": "59,410,230"
+                  },
+                  "value": {
+                    "raw": 12867067722,
+                    "fmt": "12.87B",
+                    "longFmt": "12,867,067,722"
+                  },
+                  "pctChange": {
+                    "raw": -0.0019,
+                    "fmt": "-0.19%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Fidelity Contrafund Inc",
+                  "pctHeld": {
+                    "raw": 0.0044,
+                    "fmt": "0.44%"
+                  },
+                  "position": {
+                    "raw": 47111720,
+                    "fmt": "47.11M",
+                    "longFmt": "47,111,720"
+                  },
+                  "value": {
+                    "raw": 10203456403,
+                    "fmt": "10.2B",
+                    "longFmt": "10,203,456,403"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

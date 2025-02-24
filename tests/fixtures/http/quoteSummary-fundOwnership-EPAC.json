@@ -1,0 +1,305 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/EPAC?formatted=false&modules=fundOwnership&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:07 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "2",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "6iafl1hjrofab"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Smallcap World Fund",
+                  "pctHeld": {
+                    "raw": 0.0799,
+                    "fmt": "7.99%"
+                  },
+                  "position": {
+                    "raw": 4347380,
+                    "fmt": "4.35M",
+                    "longFmt": "4,347,380"
+                  },
+                  "value": {
+                    "raw": 197631890,
+                    "fmt": "197.63M",
+                    "longFmt": "197,631,890"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "iShares Core S&P Smallcap ETF",
+                  "pctHeld": {
+                    "raw": 0.0646,
+                    "fmt": "6.46%"
+                  },
+                  "position": {
+                    "raw": 3512728,
+                    "fmt": "3.51M",
+                    "longFmt": "3,512,728"
+                  },
+                  "value": {
+                    "raw": 159688611,
+                    "fmt": "159.69M",
+                    "longFmt": "159,688,611"
+                  },
+                  "pctChange": {
+                    "raw": 0.0153,
+                    "fmt": "1.53%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Virtus Equity Tr-Virtus KAR Small Cap Growth Fd",
+                  "pctHeld": {
+                    "raw": 0.060300004,
+                    "fmt": "6.03%"
+                  },
+                  "position": {
+                    "raw": 3281438,
+                    "fmt": "3.28M",
+                    "longFmt": "3,281,438"
+                  },
+                  "value": {
+                    "raw": 149174168,
+                    "fmt": "149.17M",
+                    "longFmt": "149,174,168"
+                  },
+                  "pctChange": {
+                    "raw": 0.044299997,
+                    "fmt": "4.43%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Total Stock Market Index Fund",
+                  "pctHeld": {
+                    "raw": 0.031,
+                    "fmt": "3.10%"
+                  },
+                  "position": {
+                    "raw": 1688611,
+                    "fmt": "1.69M",
+                    "longFmt": "1,688,611"
+                  },
+                  "value": {
+                    "raw": 76764254,
+                    "fmt": "76.76M",
+                    "longFmt": "76,764,254"
+                  },
+                  "pctChange": {
+                    "raw": 0.0016,
+                    "fmt": "0.16%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "iShares Russell 2000 ETF",
+                  "pctHeld": {
+                    "raw": 0.027999999,
+                    "fmt": "2.80%"
+                  },
+                  "position": {
+                    "raw": 1524326,
+                    "fmt": "1.52M",
+                    "longFmt": "1,524,326"
+                  },
+                  "value": {
+                    "raw": 69295858,
+                    "fmt": "69.3M",
+                    "longFmt": "69,295,858"
+                  },
+                  "pctChange": {
+                    "raw": 0.099300005,
+                    "fmt": "9.93%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Small-Cap Index Fund",
+                  "pctHeld": {
+                    "raw": 0.025,
+                    "fmt": "2.50%"
+                  },
+                  "position": {
+                    "raw": 1357686,
+                    "fmt": "1.36M",
+                    "longFmt": "1,357,686"
+                  },
+                  "value": {
+                    "raw": 61720404,
+                    "fmt": "61.72M",
+                    "longFmt": "61,720,404"
+                  },
+                  "pctChange": {
+                    "raw": -0.0052,
+                    "fmt": "-0.52%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "Neuberger & Berman Genesis Fund",
+                  "pctHeld": {
+                    "raw": 0.0219,
+                    "fmt": "2.19%"
+                  },
+                  "position": {
+                    "raw": 1189220,
+                    "fmt": "1.19M",
+                    "longFmt": "1,189,220"
+                  },
+                  "value": {
+                    "raw": 54061940,
+                    "fmt": "54.06M",
+                    "longFmt": "54,061,940"
+                  },
+                  "pctChange": {
+                    "raw": 0.0066000004,
+                    "fmt": "0.66%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1730332800,
+                    "fmt": "2024-10-31"
+                  },
+                  "organization": "American Beacon Small Cap Value Fd",
+                  "pctHeld": {
+                    "raw": 0.0175,
+                    "fmt": "1.75%"
+                  },
+                  "position": {
+                    "raw": 951500,
+                    "fmt": "951.5k",
+                    "longFmt": "951,500"
+                  },
+                  "value": {
+                    "raw": 43255189,
+                    "fmt": "43.26M",
+                    "longFmt": "43,255,189"
+                  },
+                  "pctChange": {
+                    "raw": -0.014099999,
+                    "fmt": "-1.41%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "PGIM Jennison Small Company Fd",
+                  "pctHeld": {
+                    "raw": 0.0173,
+                    "fmt": "1.73%"
+                  },
+                  "position": {
+                    "raw": 943552,
+                    "fmt": "943.55k",
+                    "longFmt": "943,552"
+                  },
+                  "value": {
+                    "raw": 42893873,
+                    "fmt": "42.89M",
+                    "longFmt": "42,893,873"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Price (T.Rowe) Small Cap Stock Fund",
+                  "pctHeld": {
+                    "raw": 0.0166,
+                    "fmt": "1.66%"
+                  },
+                  "position": {
+                    "raw": 900872,
+                    "fmt": "900.87k",
+                    "longFmt": "900,872"
+                  },
+                  "value": {
+                    "raw": 40953640,
+                    "fmt": "40.95M",
+                    "longFmt": "40,953,640"
+                  },
+                  "pctChange": {
+                    "raw": -0.0275,
+                    "fmt": "-2.75%"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

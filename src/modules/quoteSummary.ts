@@ -1,13 +1,11 @@
-// /// <reference path="quoteSummary-iface.ts"/>
-// import QuoteSummaryResult from "QuoteSummaryIfaces";
-import { QuoteSummaryResult } from "./quoteSummary-iface.js";
+import type { QuoteSummaryResult } from "./quoteSummary-iface.ts";
 
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 
 export const quoteSummary_modules = [
   "assetProfile",
@@ -102,7 +100,7 @@ export default function quoteSummary(
   symbol: string,
   queryOptionsOverrides?: QuoteSummaryOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
-): Promise<any>;
+): Promise<unknown>;
 
 export default function quoteSummary(
   this: ModuleThis,
@@ -121,17 +119,20 @@ export default function quoteSummary(
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       transformWith(options: QuoteSummaryOptions) {
-        if (options.modules === "all")
+        if (options.modules === "all") {
           options.modules = quoteSummary_modules as Array<QuoteSummaryModules>;
+        }
         return options;
       },
     },
 
     result: {
       schemaKey: "#/definitions/QuoteSummaryResult",
+      // deno-lint-ignore no-explicit-any
       transformWith(result: any) {
-        if (!result.quoteSummary)
+        if (!result.quoteSummary) {
           throw new Error("Unexpected result: " + JSON.stringify(result));
+        }
 
         return result.quoteSummary.result[0];
       },

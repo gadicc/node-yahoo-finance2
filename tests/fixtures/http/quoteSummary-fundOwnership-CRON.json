@@ -1,0 +1,305 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CRON?formatted=false&modules=fundOwnership&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:07 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "2",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "0bovka1jrofab"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Amplify ETF Tr-Amplify Alternative Harvest ETF",
+                  "pctHeld": {
+                    "raw": 0.013099999,
+                    "fmt": "1.31%"
+                  },
+                  "position": {
+                    "raw": 5026489,
+                    "fmt": "5.03M",
+                    "longFmt": "5,026,489"
+                  },
+                  "value": {
+                    "raw": 9902183,
+                    "fmt": "9.9M",
+                    "longFmt": "9,902,183"
+                  },
+                  "pctChange": {
+                    "raw": 0.0437,
+                    "fmt": "4.37%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1730332800,
+                    "fmt": "2024-10-31"
+                  },
+                  "organization": "Vanguard International Stock Index-Total Intl Stock Indx",
+                  "pctHeld": {
+                    "raw": 0.0072000003,
+                    "fmt": "0.72%"
+                  },
+                  "position": {
+                    "raw": 2750743,
+                    "fmt": "2.75M",
+                    "longFmt": "2,750,743"
+                  },
+                  "value": {
+                    "raw": 5418963,
+                    "fmt": "5.42M",
+                    "longFmt": "5,418,963"
+                  },
+                  "pctChange": {
+                    "raw": 0.0458,
+                    "fmt": "4.58%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Tax Managed Fund-Vanguard Developed Markets Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0045,
+                    "fmt": "0.45%"
+                  },
+                  "position": {
+                    "raw": 1709086,
+                    "fmt": "1.71M",
+                    "longFmt": "1,709,086"
+                  },
+                  "value": {
+                    "raw": 3366899,
+                    "fmt": "3.37M",
+                    "longFmt": "3,366,899"
+                  },
+                  "pctChange": {
+                    "raw": 0.0535,
+                    "fmt": "5.35%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1730332800,
+                    "fmt": "2024-10-31"
+                  },
+                  "organization": "DFA Investment Dimensions-Canadian Small Company Series",
+                  "pctHeld": {
+                    "raw": 0.0022,
+                    "fmt": "0.22%"
+                  },
+                  "position": {
+                    "raw": 855587,
+                    "fmt": "855.59k",
+                    "longFmt": "855,587"
+                  },
+                  "value": {
+                    "raw": 1685506,
+                    "fmt": "1.69M",
+                    "longFmt": "1,685,506"
+                  },
+                  "pctChange": {
+                    "raw": 0.098000005,
+                    "fmt": "9.80%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1730332800,
+                    "fmt": "2024-10-31"
+                  },
+                  "organization": "Vanguard Intl Equity Index Fds-FTSE All World ex U.S.Small Cap Index",
+                  "pctHeld": {
+                    "raw": 0.0019,
+                    "fmt": "0.19%"
+                  },
+                  "position": {
+                    "raw": 709666,
+                    "fmt": "709.67k",
+                    "longFmt": "709,666"
+                  },
+                  "value": {
+                    "raw": 1398042,
+                    "fmt": "1.4M",
+                    "longFmt": "1,398,042"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "AdvisorShares Trust-AdvisorShares Pure Cannabis ETF",
+                  "pctHeld": {
+                    "raw": 0.0018000001,
+                    "fmt": "0.18%"
+                  },
+                  "position": {
+                    "raw": 670613,
+                    "fmt": "670.61k",
+                    "longFmt": "670,613"
+                  },
+                  "value": {
+                    "raw": 1321107,
+                    "fmt": "1.32M",
+                    "longFmt": "1,321,107"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1730332800,
+                    "fmt": "2024-10-31"
+                  },
+                  "organization": "DFA International Core Equity Portfolio",
+                  "pctHeld": {
+                    "raw": 0.0017,
+                    "fmt": "0.17%"
+                  },
+                  "position": {
+                    "raw": 662429,
+                    "fmt": "662.43k",
+                    "longFmt": "662,429"
+                  },
+                  "value": {
+                    "raw": 1304985,
+                    "fmt": "1.3M",
+                    "longFmt": "1,304,985"
+                  },
+                  "pctChange": {
+                    "raw": 0.0139,
+                    "fmt": "1.39%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "USA Mutuals Vice Fund",
+                  "pctHeld": {
+                    "raw": 0.0013,
+                    "fmt": "0.13%"
+                  },
+                  "position": {
+                    "raw": 480000,
+                    "fmt": "480k",
+                    "longFmt": "480,000"
+                  },
+                  "value": {
+                    "raw": 945600,
+                    "fmt": "945.6k",
+                    "longFmt": "945,600"
+                  },
+                  "pctChange": {
+                    "raw": 0.7143,
+                    "fmt": "71.43%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Amplify Seymour Cannabis ETF",
+                  "pctHeld": {
+                    "raw": 0.0013,
+                    "fmt": "0.13%"
+                  },
+                  "position": {
+                    "raw": 507917,
+                    "fmt": "507.92k",
+                    "longFmt": "507,917"
+                  },
+                  "value": {
+                    "raw": 1000596,
+                    "fmt": "1M",
+                    "longFmt": "1,000,596"
+                  },
+                  "pctChange": {
+                    "raw": -0.0672,
+                    "fmt": "-6.72%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "iShares Core MSCI Total International Stock ETF",
+                  "pctHeld": {
+                    "raw": 0.001,
+                    "fmt": "0.10%"
+                  },
+                  "position": {
+                    "raw": 386122,
+                    "fmt": "386.12k",
+                    "longFmt": "386,122"
+                  },
+                  "value": {
+                    "raw": 760660,
+                    "fmt": "760.66k",
+                    "longFmt": "760,660"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

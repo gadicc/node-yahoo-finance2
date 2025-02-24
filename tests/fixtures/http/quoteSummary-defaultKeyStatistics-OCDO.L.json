@@ -1,0 +1,71 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/OCDO.L?formatted=false&modules=defaultKeyStatistics&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-length": "753",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:34:51 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "6",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "1h5hrv5jrof9r"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "defaultKeyStatistics": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "enterpriseValue": 3761557760,
+              "forwardPE": -860.1971,
+              "profitMargins": -0.07226,
+              "floatShares": 472128606,
+              "sharesOutstanding": 823350016,
+              "heldPercentInsiders": 0.29381,
+              "heldPercentInstitutions": 0.55537,
+              "beta": 1.847,
+              "impliedSharesOutstanding": 823350016,
+              "category": null,
+              "bookValue": 1.668,
+              "priceToBook": 185.2518,
+              "fundFamily": null,
+              "legalType": null,
+              "lastFiscalYearEnd": 1701561600,
+              "nextFiscalYearEnd": 1733184000,
+              "mostRecentQuarter": 1717286400,
+              "netIncomeToCommon": -216600000,
+              "trailingEps": -0.26,
+              "lastSplitFactor": null,
+              "enterpriseToRevenue": 1.255,
+              "enterpriseToEbitda": 71.242,
+              "52WeekChange": -0.3707019,
+              "SandP52WeekChange": 0.1861316,
+              "latestShareClass": null,
+              "leadInvestor": null
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

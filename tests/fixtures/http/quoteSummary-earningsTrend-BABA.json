@@ -1,0 +1,509 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BABA?formatted=false&modules=earningsTrend&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:02 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "87",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "3inre8djrofa7"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earningsTrend": {
+              "trend": [
+                {
+                  "maxAge": 1,
+                  "period": "0q",
+                  "endDate": "2025-03-31",
+                  "growth": {
+                    "raw": 0.2531,
+                    "fmt": "25.31%"
+                  },
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 12.70652,
+                      "fmt": "12.71"
+                    },
+                    "low": {
+                      "raw": 9.45,
+                      "fmt": "9.45"
+                    },
+                    "high": {
+                      "raw": 15.91,
+                      "fmt": "15.91"
+                    },
+                    "yearAgoEps": {
+                      "raw": 10.14,
+                      "fmt": "10.14"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 16,
+                      "fmt": "16",
+                      "longFmt": "16"
+                    },
+                    "growth": {
+                      "raw": 0.2531,
+                      "fmt": "25.31%"
+                    },
+                    "earningsCurrency": "CNY"
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 236980257980,
+                      "fmt": "236.98B",
+                      "longFmt": "236,980,257,980"
+                    },
+                    "low": {
+                      "raw": 196901000000,
+                      "fmt": "196.9B",
+                      "longFmt": "196,901,000,000"
+                    },
+                    "high": {
+                      "raw": 249651300000,
+                      "fmt": "249.65B",
+                      "longFmt": "249,651,300,000"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 19,
+                      "fmt": "19",
+                      "longFmt": "19"
+                    },
+                    "yearAgoRevenue": {
+                      "raw": 221874000000,
+                      "fmt": "221.87B",
+                      "longFmt": "221,874,000,000"
+                    },
+                    "growth": {
+                      "raw": 0.0681,
+                      "fmt": "6.81%"
+                    },
+                    "revenueCurrency": "CNY"
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 12.70652,
+                      "fmt": "12.71"
+                    },
+                    "7daysAgo": {
+                      "raw": 12.21937,
+                      "fmt": "12.22"
+                    },
+                    "30daysAgo": {
+                      "raw": 12.21937,
+                      "fmt": "12.22"
+                    },
+                    "60daysAgo": {
+                      "raw": 12.64419,
+                      "fmt": "12.64"
+                    },
+                    "90daysAgo": {
+                      "raw": 12.64419,
+                      "fmt": "12.64"
+                    },
+                    "epsTrendCurrency": "CNY"
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 3,
+                      "fmt": "3",
+                      "longFmt": "3"
+                    },
+                    "upLast30days": {
+                      "raw": 3,
+                      "fmt": "3",
+                      "longFmt": "3"
+                    },
+                    "downLast30days": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "downLast7Days": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": "CNY"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "+1q",
+                  "endDate": "2025-06-30",
+                  "growth": {
+                    "raw": 0.108100004,
+                    "fmt": "10.81%"
+                  },
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 18.21686,
+                      "fmt": "18.22"
+                    },
+                    "low": {
+                      "raw": 15.87,
+                      "fmt": "15.87"
+                    },
+                    "high": {
+                      "raw": 19.2,
+                      "fmt": "19.2"
+                    },
+                    "yearAgoEps": {
+                      "raw": 16.44,
+                      "fmt": "16.44"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 6,
+                      "fmt": "6",
+                      "longFmt": "6"
+                    },
+                    "growth": {
+                      "raw": 0.108100004,
+                      "fmt": "10.81%"
+                    },
+                    "earningsCurrency": "CNY"
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 259674733620,
+                      "fmt": "259.67B",
+                      "longFmt": "259,674,733,620"
+                    },
+                    "low": {
+                      "raw": 251876000000,
+                      "fmt": "251.88B",
+                      "longFmt": "251,876,000,000"
+                    },
+                    "high": {
+                      "raw": 266524327340,
+                      "fmt": "266.52B",
+                      "longFmt": "266,524,327,340"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 5,
+                      "fmt": "5",
+                      "longFmt": "5"
+                    },
+                    "yearAgoRevenue": {
+                      "raw": 243236000000,
+                      "fmt": "243.24B",
+                      "longFmt": "243,236,000,000"
+                    },
+                    "growth": {
+                      "raw": 0.067600004,
+                      "fmt": "6.76%"
+                    },
+                    "revenueCurrency": "CNY"
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 18.21686,
+                      "fmt": "18.22"
+                    },
+                    "7daysAgo": {
+                      "raw": 17.37119,
+                      "fmt": "17.37"
+                    },
+                    "30daysAgo": {
+                      "raw": 17.37119,
+                      "fmt": "17.37"
+                    },
+                    "60daysAgo": {
+                      "raw": 17.46774,
+                      "fmt": "17.47"
+                    },
+                    "90daysAgo": {
+                      "raw": 17.46774,
+                      "fmt": "17.47"
+                    },
+                    "epsTrendCurrency": "CNY"
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "upLast30days": {
+                      "raw": 3,
+                      "fmt": "3",
+                      "longFmt": "3"
+                    },
+                    "downLast30days": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "downLast7Days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": "CNY"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "0y",
+                  "endDate": "2025-03-31",
+                  "growth": {
+                    "raw": 0.0421,
+                    "fmt": "4.21%"
+                  },
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 64.85275,
+                      "fmt": "64.85"
+                    },
+                    "low": {
+                      "raw": 58.2905,
+                      "fmt": "58.29"
+                    },
+                    "high": {
+                      "raw": 67.59157,
+                      "fmt": "67.59"
+                    },
+                    "yearAgoEps": {
+                      "raw": 62.23,
+                      "fmt": "62.23"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 28,
+                      "fmt": "28",
+                      "longFmt": "28"
+                    },
+                    "growth": {
+                      "raw": 0.0421,
+                      "fmt": "4.21%"
+                    },
+                    "earningsCurrency": "CNY"
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 999368564460,
+                      "fmt": "999.37B",
+                      "longFmt": "999,368,564,460"
+                    },
+                    "low": {
+                      "raw": 956794000000,
+                      "fmt": "956.79B",
+                      "longFmt": "956,794,000,000"
+                    },
+                    "high": {
+                      "raw": 1025804000000,
+                      "fmt": "1.03T",
+                      "longFmt": "1,025,804,000,000"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 48,
+                      "fmt": "48",
+                      "longFmt": "48"
+                    },
+                    "yearAgoRevenue": {
+                      "raw": 941168000000,
+                      "fmt": "941.17B",
+                      "longFmt": "941,168,000,000"
+                    },
+                    "growth": {
+                      "raw": 0.0618,
+                      "fmt": "6.18%"
+                    },
+                    "revenueCurrency": "CNY"
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 64.85275,
+                      "fmt": "64.85"
+                    },
+                    "7daysAgo": {
+                      "raw": 62.96842,
+                      "fmt": "62.97"
+                    },
+                    "30daysAgo": {
+                      "raw": 62.96901,
+                      "fmt": "62.97"
+                    },
+                    "60daysAgo": {
+                      "raw": 63.47006,
+                      "fmt": "63.47"
+                    },
+                    "90daysAgo": {
+                      "raw": 63.69452,
+                      "fmt": "63.69"
+                    },
+                    "epsTrendCurrency": "CNY"
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 18,
+                      "fmt": "18",
+                      "longFmt": "18"
+                    },
+                    "upLast30days": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "downLast30days": {
+                      "raw": 3,
+                      "fmt": "3",
+                      "longFmt": "3"
+                    },
+                    "downLast7Days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": "CNY"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "+1y",
+                  "endDate": "2026-03-31",
+                  "growth": {
+                    "raw": 0.1337,
+                    "fmt": "13.37%"
+                  },
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 73.52281,
+                      "fmt": "73.52"
+                    },
+                    "low": {
+                      "raw": 62.61,
+                      "fmt": "62.61"
+                    },
+                    "high": {
+                      "raw": 81.116,
+                      "fmt": "81.12"
+                    },
+                    "yearAgoEps": {
+                      "raw": 64.85275,
+                      "fmt": "64.85"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 30,
+                      "fmt": "30",
+                      "longFmt": "30"
+                    },
+                    "growth": {
+                      "raw": 0.1337,
+                      "fmt": "13.37%"
+                    },
+                    "earningsCurrency": "CNY"
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 1076225612460,
+                      "fmt": "1.08T",
+                      "longFmt": "1,076,225,612,460"
+                    },
+                    "low": {
+                      "raw": 942653000000,
+                      "fmt": "942.65B",
+                      "longFmt": "942,653,000,000"
+                    },
+                    "high": {
+                      "raw": 1132400000000,
+                      "fmt": "1.13T",
+                      "longFmt": "1,132,400,000,000"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 50,
+                      "fmt": "50",
+                      "longFmt": "50"
+                    },
+                    "yearAgoRevenue": {
+                      "raw": 999368564460,
+                      "fmt": "999.37B",
+                      "longFmt": "999,368,564,460"
+                    },
+                    "growth": {
+                      "raw": 0.0769,
+                      "fmt": "7.69%"
+                    },
+                    "revenueCurrency": "CNY"
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 73.52281,
+                      "fmt": "73.52"
+                    },
+                    "7daysAgo": {
+                      "raw": 70.88222,
+                      "fmt": "70.88"
+                    },
+                    "30daysAgo": {
+                      "raw": 70.88284,
+                      "fmt": "70.88"
+                    },
+                    "60daysAgo": {
+                      "raw": 70.77244,
+                      "fmt": "70.77"
+                    },
+                    "90daysAgo": {
+                      "raw": 70.60436,
+                      "fmt": "70.6"
+                    },
+                    "epsTrendCurrency": "CNY"
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 7,
+                      "fmt": "7",
+                      "longFmt": "7"
+                    },
+                    "downLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast7Days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": "CNY"
+                  }
+                }
+              ],
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

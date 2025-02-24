@@ -1,0 +1,61 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AZT.OL?formatted=false&modules=summaryProfile&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-length": "1760",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:27 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "3",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "4r0mk5ljrofb0"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "SIVA Innovation Centre",
+              "address2": "Sykehusveien 23",
+              "city": "Tromsø",
+              "zip": "9294",
+              "country": "Norway",
+              "phone": "47 77 64 89 00",
+              "website": "https://www.arcticzymes.com",
+              "industry": "Biotechnology",
+              "industryKey": "biotechnology",
+              "industryDisp": "Biotechnology",
+              "sector": "Healthcare",
+              "sectorKey": "healthcare",
+              "sectorDisp": "Healthcare",
+              "longBusinessSummary": "ArcticZymes Technologies ASA, a life sciences company, develops, manufactures, and commercializes recombinant enzymes for use in molecular research, in vitro diagnostics, and biomanufacturing in Norway, Germany, Lithuania, France, Italy, rest of Europe, the United States, and internationally. The company offers shrimp alkaline phosphatase for cleanup prior to Sanger sequencing and next generation sequencing processes; cod UNG for use in viral and other molecular diagnostic assays; salt active nuclease for the removal of nucleic acids during manufacturing of viral vectors, recombinant proteins, and other reagents; double-strand specific DNases and derived kits for the removal of double stranded DNA; DNA/RNA polymerases for technology development for life science, molecular diagnostics, NGS, and synthetic biology; proteinase for microbiological diagnostics and liquid biopsies; and ligases for joining nucleic acids. It serves the molecular tools research and diagnostics, and biomanufacturing markets. The company was formerly known as Biotec Pharmacon ASA and changed its name to ArcticZymes Technologies ASA in June 2020. ArcticZymes Technologies ASA was founded in 1990 and is headquartered in Tromsø, Norway.",
+              "companyOfficers": [],
+              "irWebsite": "http://www.biotec.no/en/investors.html",
+              "executiveTeam": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

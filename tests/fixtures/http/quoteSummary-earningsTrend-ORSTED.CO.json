@@ -1,0 +1,509 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ORSTED.CO?formatted=false&modules=earningsTrend&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:04 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "88",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "0g594m9jrofa8"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earningsTrend": {
+              "trend": [
+                {
+                  "maxAge": 1,
+                  "period": "0q",
+                  "endDate": "2025-03-31",
+                  "growth": {
+                    "raw": 0.8851,
+                    "fmt": "88.51%"
+                  },
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 9.695,
+                      "fmt": "9.69"
+                    },
+                    "low": {
+                      "raw": 9.52,
+                      "fmt": "9.52"
+                    },
+                    "high": {
+                      "raw": 9.87,
+                      "fmt": "9.87"
+                    },
+                    "yearAgoEps": {
+                      "raw": 5.143,
+                      "fmt": "5.14"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "growth": {
+                      "raw": 0.8851,
+                      "fmt": "88.51%"
+                    },
+                    "earningsCurrency": "DKK"
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 24769000000,
+                      "fmt": "24.77B",
+                      "longFmt": "24,769,000,000"
+                    },
+                    "low": {
+                      "raw": 22812000000,
+                      "fmt": "22.81B",
+                      "longFmt": "22,812,000,000"
+                    },
+                    "high": {
+                      "raw": 26726000000,
+                      "fmt": "26.73B",
+                      "longFmt": "26,726,000,000"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "yearAgoRevenue": {
+                      "raw": 19168000000,
+                      "fmt": "19.17B",
+                      "longFmt": "19,168,000,000"
+                    },
+                    "growth": {
+                      "raw": 0.2922,
+                      "fmt": "29.22%"
+                    },
+                    "revenueCurrency": "DKK"
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 9.695,
+                      "fmt": "9.69"
+                    },
+                    "7daysAgo": {
+                      "raw": 9.87,
+                      "fmt": "9.87"
+                    },
+                    "30daysAgo": {
+                      "raw": 9.08,
+                      "fmt": "9.08"
+                    },
+                    "60daysAgo": {
+                      "raw": 8.455,
+                      "fmt": "8.45"
+                    },
+                    "90daysAgo": {
+                      "raw": 8.455,
+                      "fmt": "8.45"
+                    },
+                    "epsTrendCurrency": "DKK"
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast30days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast7Days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": "DKK"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "+1q",
+                  "endDate": "2025-06-30",
+                  "growth": {
+                    "raw": -0.01,
+                    "fmt": "-1.00%"
+                  },
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 2.11,
+                      "fmt": "2.11"
+                    },
+                    "low": {
+                      "raw": 0.79,
+                      "fmt": "0.79"
+                    },
+                    "high": {
+                      "raw": 3.43,
+                      "fmt": "3.43"
+                    },
+                    "yearAgoEps": {
+                      "raw": 2.1314,
+                      "fmt": "2.13"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "growth": {
+                      "raw": -0.01,
+                      "fmt": "-1.00%"
+                    },
+                    "earningsCurrency": "DKK"
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 18042500000,
+                      "fmt": "18.04B",
+                      "longFmt": "18,042,500,000"
+                    },
+                    "low": {
+                      "raw": 16731000000,
+                      "fmt": "16.73B",
+                      "longFmt": "16,731,000,000"
+                    },
+                    "high": {
+                      "raw": 19354000000,
+                      "fmt": "19.35B",
+                      "longFmt": "19,354,000,000"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "yearAgoRevenue": {
+                      "raw": 15023000000,
+                      "fmt": "15.02B",
+                      "longFmt": "15,023,000,000"
+                    },
+                    "growth": {
+                      "raw": 0.201,
+                      "fmt": "20.10%"
+                    },
+                    "revenueCurrency": "DKK"
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 2.11,
+                      "fmt": "2.11"
+                    },
+                    "7daysAgo": {
+                      "raw": 0.79,
+                      "fmt": "0.79"
+                    },
+                    "30daysAgo": {
+                      "raw": 2.38,
+                      "fmt": "2.38"
+                    },
+                    "60daysAgo": {
+                      "raw": 2.295,
+                      "fmt": "2.3"
+                    },
+                    "90daysAgo": {
+                      "raw": 2.295,
+                      "fmt": "2.3"
+                    },
+                    "epsTrendCurrency": "DKK"
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast30days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast7Days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": "DKK"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "0y",
+                  "endDate": "2025-12-31",
+                  "growth": {
+                    "raw": 0.2035,
+                    "fmt": "20.35%"
+                  },
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 20.9017,
+                      "fmt": "20.9"
+                    },
+                    "low": {
+                      "raw": 13.9,
+                      "fmt": "13.9"
+                    },
+                    "high": {
+                      "raw": 27.83,
+                      "fmt": "27.83"
+                    },
+                    "yearAgoEps": {
+                      "raw": 17.36681,
+                      "fmt": "17.37"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 11,
+                      "fmt": "11",
+                      "longFmt": "11"
+                    },
+                    "growth": {
+                      "raw": 0.2035,
+                      "fmt": "20.35%"
+                    },
+                    "earningsCurrency": "DKK"
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 79227932080,
+                      "fmt": "79.23B",
+                      "longFmt": "79,227,932,080"
+                    },
+                    "low": {
+                      "raw": 62389000000,
+                      "fmt": "62.39B",
+                      "longFmt": "62,389,000,000"
+                    },
+                    "high": {
+                      "raw": 109870000000,
+                      "fmt": "109.87B",
+                      "longFmt": "109,870,000,000"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 18,
+                      "fmt": "18",
+                      "longFmt": "18"
+                    },
+                    "yearAgoRevenue": {
+                      "raw": 71034000000,
+                      "fmt": "71.03B",
+                      "longFmt": "71,034,000,000"
+                    },
+                    "growth": {
+                      "raw": 0.1154,
+                      "fmt": "11.54%"
+                    },
+                    "revenueCurrency": "DKK"
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 20.9017,
+                      "fmt": "20.9"
+                    },
+                    "7daysAgo": {
+                      "raw": 21.82261,
+                      "fmt": "21.82"
+                    },
+                    "30daysAgo": {
+                      "raw": 22.81045,
+                      "fmt": "22.81"
+                    },
+                    "60daysAgo": {
+                      "raw": 23.17797,
+                      "fmt": "23.18"
+                    },
+                    "90daysAgo": {
+                      "raw": 23.79547,
+                      "fmt": "23.8"
+                    },
+                    "epsTrendCurrency": "DKK"
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 4,
+                      "fmt": "4",
+                      "longFmt": "4"
+                    },
+                    "downLast30days": {
+                      "raw": 5,
+                      "fmt": "5",
+                      "longFmt": "5"
+                    },
+                    "downLast7Days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": "DKK"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "+1y",
+                  "endDate": "2026-12-31",
+                  "growth": {
+                    "raw": 0.2346,
+                    "fmt": "23.46%"
+                  },
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 25.805,
+                      "fmt": "25.81"
+                    },
+                    "low": {
+                      "raw": 17.05,
+                      "fmt": "17.05"
+                    },
+                    "high": {
+                      "raw": 35.25,
+                      "fmt": "35.25"
+                    },
+                    "yearAgoEps": {
+                      "raw": 20.9017,
+                      "fmt": "20.9"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 12,
+                      "fmt": "12",
+                      "longFmt": "12"
+                    },
+                    "growth": {
+                      "raw": 0.2346,
+                      "fmt": "23.46%"
+                    },
+                    "earningsCurrency": "DKK"
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 90506431710,
+                      "fmt": "90.51B",
+                      "longFmt": "90,506,431,710"
+                    },
+                    "low": {
+                      "raw": 69731419340,
+                      "fmt": "69.73B",
+                      "longFmt": "69,731,419,340"
+                    },
+                    "high": {
+                      "raw": 140615000000,
+                      "fmt": "140.62B",
+                      "longFmt": "140,615,000,000"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 19,
+                      "fmt": "19",
+                      "longFmt": "19"
+                    },
+                    "yearAgoRevenue": {
+                      "raw": 79227932080,
+                      "fmt": "79.23B",
+                      "longFmt": "79,227,932,080"
+                    },
+                    "growth": {
+                      "raw": 0.1424,
+                      "fmt": "14.24%"
+                    },
+                    "revenueCurrency": "DKK"
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 25.805,
+                      "fmt": "25.81"
+                    },
+                    "7daysAgo": {
+                      "raw": 24.97769,
+                      "fmt": "24.98"
+                    },
+                    "30daysAgo": {
+                      "raw": 25.29131,
+                      "fmt": "25.29"
+                    },
+                    "60daysAgo": {
+                      "raw": 25.19848,
+                      "fmt": "25.2"
+                    },
+                    "90daysAgo": {
+                      "raw": 25.02835,
+                      "fmt": "25.03"
+                    },
+                    "epsTrendCurrency": "DKK"
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "upLast30days": {
+                      "raw": 5,
+                      "fmt": "5",
+                      "longFmt": "5"
+                    },
+                    "downLast30days": {
+                      "raw": 4,
+                      "fmt": "4",
+                      "longFmt": "4"
+                    },
+                    "downLast7Days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": "DKK"
+                  }
+                }
+              ],
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

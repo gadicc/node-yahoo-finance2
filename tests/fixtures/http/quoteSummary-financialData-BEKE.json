@@ -1,0 +1,73 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BEKE?formatted=false&modules=financialData&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-length": "819",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:05 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "2",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "0qcfn6pjrofa9"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "financialData": {
+              "maxAge": 86400,
+              "currentPrice": 20.9,
+              "targetHighPrice": 32.973648,
+              "targetLowPrice": 17.99801,
+              "targetMeanPrice": 24.725784,
+              "targetMedianPrice": 24.038208,
+              "recommendationMean": 1.38095,
+              "recommendationKey": "strong_buy",
+              "numberOfAnalystOpinions": 20,
+              "totalCash": 53230981120,
+              "totalCashPerShare": 15.196,
+              "ebitda": 3763308032,
+              "totalDebt": 21680267264,
+              "quickRatio": 1.337,
+              "currentRatio": 1.615,
+              "totalRevenue": 82536620032,
+              "debtToEquity": 30.581,
+              "revenuePerShare": 72.149,
+              "returnOnAssets": 0.01385,
+              "returnOnEquity": 0.058390003,
+              "grossProfits": 20917915648,
+              "freeCashflow": 3884733696,
+              "operatingCashflow": 6075853824,
+              "earningsGrowth": 0.031,
+              "revenueGrowth": 0.268,
+              "grossMargins": 0.25344,
+              "ebitdaMargins": 0.0456,
+              "operatingMargins": 0.032190003,
+              "profitMargins": 0.05046,
+              "financialCurrency": "CNY"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

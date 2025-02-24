@@ -1,0 +1,3240 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AMZN?formatted=false&modules=insiderTransactions&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:14 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "4",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "5ijd1f1jrofaj"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "insiderTransactions": {
+              "transactions": [
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5501,
+                    "fmt": "5.5k",
+                    "longFmt": "5,501"
+                  },
+                  "value": {
+                    "raw": 1256672,
+                    "fmt": "1.26M",
+                    "longFmt": "1,256,672"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 228.32 - 228.90 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1739836800,
+                    "fmt": "2025-02-18"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 51750,
+                    "fmt": "51.75k",
+                    "longFmt": "51,750"
+                  },
+                  "value": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Stock Gift at price 0.00 per share.",
+                  "filerName": "GORELICK JAMIE S",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1739836800,
+                    "fmt": "2025-02-18"
+                  },
+                  "ownership": "I"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 13752,
+                    "fmt": "13.75k",
+                    "longFmt": "13,752"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1739491200,
+                    "fmt": "2025-02-14"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2677,
+                    "fmt": "2.68k",
+                    "longFmt": "2,677"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "GORELICK JAMIE S",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1739491200,
+                    "fmt": "2025-02-14"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1900,
+                    "fmt": "1.9k",
+                    "longFmt": "1,900"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "WEEKS WENDELL P.",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1739491200,
+                    "fmt": "2025-02-14"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 27500,
+                    "fmt": "27.5k",
+                    "longFmt": "27,500"
+                  },
+                  "value": {
+                    "raw": 6332368,
+                    "fmt": "6.33M",
+                    "longFmt": "6,332,368"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 228.74 - 230.68 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1739318400,
+                    "fmt": "2025-02-12"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 4351,
+                    "fmt": "4.35k",
+                    "longFmt": "4,351"
+                  },
+                  "value": {
+                    "raw": 1000077,
+                    "fmt": "1M",
+                    "longFmt": "1,000,077"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 229.85 per share.",
+                  "filerName": "RUBINSTEIN JONATHAN J",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1733702400,
+                    "fmt": "2024-12-09"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 4549,
+                    "fmt": "4.55k",
+                    "longFmt": "4,549"
+                  },
+                  "value": {
+                    "raw": 1000098,
+                    "fmt": "1M",
+                    "longFmt": "1,000,098"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 219.85 per share.",
+                  "filerName": "RUBINSTEIN JONATHAN J",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1733270400,
+                    "fmt": "2024-12-04"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3500,
+                    "fmt": "3.5k",
+                    "longFmt": "3,500"
+                  },
+                  "value": {
+                    "raw": 735000,
+                    "fmt": "735k",
+                    "longFmt": "735,000"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 210.00 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1733097600,
+                    "fmt": "2024-12-02"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 20784,
+                    "fmt": "20.78k",
+                    "longFmt": "20,784"
+                  },
+                  "value": {
+                    "raw": 4160373,
+                    "fmt": "4.16M",
+                    "longFmt": "4,160,373"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 196.46 - 202.74 per share.",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3791,
+                    "fmt": "3.79k",
+                    "longFmt": "3,791"
+                  },
+                  "value": {
+                    "raw": 759090,
+                    "fmt": "759.09k",
+                    "longFmt": "759,090"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 198.74 - 202.40 per share.",
+                  "filerName": "REYNOLDS SHELLEY L",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 11680,
+                    "fmt": "11.68k",
+                    "longFmt": "11,680"
+                  },
+                  "value": {
+                    "raw": 2338661,
+                    "fmt": "2.34M",
+                    "longFmt": "2,338,661"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 196.46 - 203.06 per share.",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 14600,
+                    "fmt": "14.6k",
+                    "longFmt": "14,600"
+                  },
+                  "value": {
+                    "raw": 2962048,
+                    "fmt": "2.96M",
+                    "longFmt": "2,962,048"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 202.88 per share.",
+                  "filerName": "OLSAVSKY BRIAN T.",
+                  "filerRelation": "Chief Financial Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 6104,
+                    "fmt": "6.1k",
+                    "longFmt": "6,104"
+                  },
+                  "value": {
+                    "raw": 1221989,
+                    "fmt": "1.22M",
+                    "longFmt": "1,221,989"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 198.69 - 202.80 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 15260,
+                    "fmt": "15.26k",
+                    "longFmt": "15,260"
+                  },
+                  "value": {
+                    "raw": 3054828,
+                    "fmt": "3.05M",
+                    "longFmt": "3,054,828"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 196.31 - 202.87 per share.",
+                  "filerName": "GARMAN MATTHEW S",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 14600,
+                    "fmt": "14.6k",
+                    "longFmt": "14,600"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "OLSAVSKY BRIAN T.",
+                  "filerRelation": "Chief Financial Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 15260,
+                    "fmt": "15.26k",
+                    "longFmt": "15,260"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 51960,
+                    "fmt": "51.96k",
+                    "longFmt": "51,960"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5472,
+                    "fmt": "5.47k",
+                    "longFmt": "5,472"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "REYNOLDS SHELLEY L",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 14600,
+                    "fmt": "14.6k",
+                    "longFmt": "14,600"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1409999,
+                    "fmt": "1.41M",
+                    "longFmt": "1,409,999"
+                  },
+                  "value": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Stock Gift at price 0.00 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer and Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1732060800,
+                    "fmt": "2024-11-20"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1237,
+                    "fmt": "1.24k",
+                    "longFmt": "1,237"
+                  },
+                  "value": {
+                    "raw": 246237,
+                    "fmt": "246.24k",
+                    "longFmt": "246,237"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 199.06 per share.",
+                  "filerName": "HUTTENLOCHER DANIEL P",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731974400,
+                    "fmt": "2024-11-19"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5502,
+                    "fmt": "5.5k",
+                    "longFmt": "5,502"
+                  },
+                  "value": {
+                    "raw": 1132355,
+                    "fmt": "1.13M",
+                    "longFmt": "1,132,355"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 204.99 - 206.78 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731628800,
+                    "fmt": "2024-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2605,
+                    "fmt": "2.6k",
+                    "longFmt": "2,605"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "ALEXANDER KEITH BRIAN",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731628800,
+                    "fmt": "2024-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 13753,
+                    "fmt": "13.75k",
+                    "longFmt": "13,753"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731628800,
+                    "fmt": "2024-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1900,
+                    "fmt": "1.9k",
+                    "longFmt": "1,900"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "COOPER EDITH W.",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731628800,
+                    "fmt": "2024-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2473,
+                    "fmt": "2.47k",
+                    "longFmt": "2,473"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HUTTENLOCHER DANIEL P",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731628800,
+                    "fmt": "2024-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 4950,
+                    "fmt": "4.95k",
+                    "longFmt": "4,950"
+                  },
+                  "value": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Stock Gift at price 0.00 per share.",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731628800,
+                    "fmt": "2024-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2473,
+                    "fmt": "2.47k",
+                    "longFmt": "2,473"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "STONESIFER PATRICIA Q",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731628800,
+                    "fmt": "2024-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2473,
+                    "fmt": "2.47k",
+                    "longFmt": "2,473"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "RUBINSTEIN JONATHAN J",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731628800,
+                    "fmt": "2024-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2605,
+                    "fmt": "2.6k",
+                    "longFmt": "2,605"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "SMITH BRAD D",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731628800,
+                    "fmt": "2024-11-15"
+                  },
+                  "ownership": "I"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3300720,
+                    "fmt": "3.3M",
+                    "longFmt": "3,300,720"
+                  },
+                  "value": {
+                    "raw": 686521413,
+                    "fmt": "686.52M",
+                    "longFmt": "686,521,413"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 206.50 - 212.71 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer and Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731456000,
+                    "fmt": "2024-11-13"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5992724,
+                    "fmt": "5.99M",
+                    "longFmt": "5,992,724"
+                  },
+                  "value": {
+                    "raw": 1245279944,
+                    "fmt": "1.25B",
+                    "longFmt": "1,245,279,944"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 206.28 - 209.65 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1731283200,
+                    "fmt": "2024-11-11"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5992724,
+                    "fmt": "5.99M",
+                    "longFmt": "5,992,724"
+                  },
+                  "value": {
+                    "raw": 1231381630,
+                    "fmt": "1.23B",
+                    "longFmt": "1,231,381,630"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 200.39 - 211.56 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1730937600,
+                    "fmt": "2024-11-07"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 4766,
+                    "fmt": "4.77k",
+                    "longFmt": "4,766"
+                  },
+                  "value": {
+                    "raw": 1000145,
+                    "fmt": "1M",
+                    "longFmt": "1,000,145"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 209.85 per share.",
+                  "filerName": "RUBINSTEIN JONATHAN J",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1730937600,
+                    "fmt": "2024-11-07"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 900,
+                    "fmt": "900",
+                    "longFmt": "900"
+                  },
+                  "value": {
+                    "raw": 176733,
+                    "fmt": "176.73k",
+                    "longFmt": "176,733"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 196.37 per share.",
+                  "filerName": "ALEXANDER KEITH BRIAN",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1730678400,
+                    "fmt": "2024-11-04"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1068452,
+                    "fmt": "1.07M",
+                    "longFmt": "1,068,452"
+                  },
+                  "value": {
+                    "raw": 213760597,
+                    "fmt": "213.76M",
+                    "longFmt": "213,760,597"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 200.07 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1730419200,
+                    "fmt": "2024-11-01"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5004,
+                    "fmt": "5k",
+                    "longFmt": "5,004"
+                  },
+                  "value": {
+                    "raw": 1000049,
+                    "fmt": "1M",
+                    "longFmt": "1,000,049"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 199.85 per share.",
+                  "filerName": "RUBINSTEIN JONATHAN J",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1730419200,
+                    "fmt": "2024-11-01"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3500,
+                    "fmt": "3.5k",
+                    "longFmt": "3,500"
+                  },
+                  "value": {
+                    "raw": 696360,
+                    "fmt": "696.36k",
+                    "longFmt": "696,360"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 198.96 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1730419200,
+                    "fmt": "2024-11-01"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3500,
+                    "fmt": "3.5k",
+                    "longFmt": "3,500"
+                  },
+                  "value": {
+                    "raw": 646800,
+                    "fmt": "646.8k",
+                    "longFmt": "646,800"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 184.80 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1727740800,
+                    "fmt": "2024-10-01"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2190,
+                    "fmt": "2.19k",
+                    "longFmt": "2,190"
+                  },
+                  "value": {
+                    "raw": 427050,
+                    "fmt": "427.05k",
+                    "longFmt": "427,050"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 195.00 per share.",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1727136000,
+                    "fmt": "2024-09-24"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3500,
+                    "fmt": "3.5k",
+                    "longFmt": "3,500"
+                  },
+                  "value": {
+                    "raw": 622545,
+                    "fmt": "622.54k",
+                    "longFmt": "622,545"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 177.87 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1725321600,
+                    "fmt": "2024-09-03"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 555385,
+                    "fmt": "555.38k",
+                    "longFmt": "555,385"
+                  },
+                  "value": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Stock Gift at price 0.00 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724889600,
+                    "fmt": "2024-08-29"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 20784,
+                    "fmt": "20.78k",
+                    "longFmt": "20,784"
+                  },
+                  "value": {
+                    "raw": 3757109,
+                    "fmt": "3.76M",
+                    "longFmt": "3,757,109"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 179.57 - 182.11 per share.",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724198400,
+                    "fmt": "2024-08-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3791,
+                    "fmt": "3.79k",
+                    "longFmt": "3,791"
+                  },
+                  "value": {
+                    "raw": 686331,
+                    "fmt": "686.33k",
+                    "longFmt": "686,331"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 180.29 - 182.20 per share.",
+                  "filerName": "REYNOLDS SHELLEY L",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724198400,
+                    "fmt": "2024-08-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 9490,
+                    "fmt": "9.49k",
+                    "longFmt": "9,490"
+                  },
+                  "value": {
+                    "raw": 1716563,
+                    "fmt": "1.72M",
+                    "longFmt": "1,716,563"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 180.26 - 182.07 per share.",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724198400,
+                    "fmt": "2024-08-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 14600,
+                    "fmt": "14.6k",
+                    "longFmt": "14,600"
+                  },
+                  "value": {
+                    "raw": 2628000,
+                    "fmt": "2.63M",
+                    "longFmt": "2,628,000"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 180.00 per share.",
+                  "filerName": "OLSAVSKY BRIAN T.",
+                  "filerRelation": "Chief Financial Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724198400,
+                    "fmt": "2024-08-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 6104,
+                    "fmt": "6.1k",
+                    "longFmt": "6,104"
+                  },
+                  "value": {
+                    "raw": 1106048,
+                    "fmt": "1.11M",
+                    "longFmt": "1,106,048"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 180.57 - 182.18 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724198400,
+                    "fmt": "2024-08-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 15260,
+                    "fmt": "15.26k",
+                    "longFmt": "15,260"
+                  },
+                  "value": {
+                    "raw": 2758409,
+                    "fmt": "2.76M",
+                    "longFmt": "2,758,409"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 179.58 - 182.22 per share.",
+                  "filerName": "GARMAN MATTHEW S",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724198400,
+                    "fmt": "2024-08-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 14600,
+                    "fmt": "14.6k",
+                    "longFmt": "14,600"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "OLSAVSKY BRIAN T.",
+                  "filerRelation": "Chief Financial Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724198400,
+                    "fmt": "2024-08-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 15260,
+                    "fmt": "15.26k",
+                    "longFmt": "15,260"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724198400,
+                    "fmt": "2024-08-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 51960,
+                    "fmt": "51.96k",
+                    "longFmt": "51,960"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724198400,
+                    "fmt": "2024-08-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5472,
+                    "fmt": "5.47k",
+                    "longFmt": "5,472"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "REYNOLDS SHELLEY L",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724198400,
+                    "fmt": "2024-08-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 14600,
+                    "fmt": "14.6k",
+                    "longFmt": "14,600"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1724198400,
+                    "fmt": "2024-08-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5502,
+                    "fmt": "5.5k",
+                    "longFmt": "5,502"
+                  },
+                  "value": {
+                    "raw": 964456,
+                    "fmt": "964.46k",
+                    "longFmt": "964,456"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 174.73 - 176.18 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1723680000,
+                    "fmt": "2024-08-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 13753,
+                    "fmt": "13.75k",
+                    "longFmt": "13,753"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1723680000,
+                    "fmt": "2024-08-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3500,
+                    "fmt": "3.5k",
+                    "longFmt": "3,500"
+                  },
+                  "value": {
+                    "raw": 662375,
+                    "fmt": "662.38k",
+                    "longFmt": "662,375"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 189.25 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1722470400,
+                    "fmt": "2024-08-01"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 403974,
+                    "fmt": "403.97k",
+                    "longFmt": "403,974"
+                  },
+                  "value": {
+                    "raw": 80806192,
+                    "fmt": "80.81M",
+                    "longFmt": "80,806,192"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 200.03 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1720656000,
+                    "fmt": "2024-07-11"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2262411,
+                    "fmt": "2.26M",
+                    "longFmt": "2,262,411"
+                  },
+                  "value": {
+                    "raw": 452723161,
+                    "fmt": "452.72M",
+                    "longFmt": "452,723,161"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 200.01 - 200.12 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1720569600,
+                    "fmt": "2024-07-10"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 4314109,
+                    "fmt": "4.31M",
+                    "longFmt": "4,314,109"
+                  },
+                  "value": {
+                    "raw": 863487543,
+                    "fmt": "863.49M",
+                    "longFmt": "863,487,543"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 200.07 - 201.05 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1720396800,
+                    "fmt": "2024-07-08"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1664886,
+                    "fmt": "1.66M",
+                    "longFmt": "1,664,886"
+                  },
+                  "value": {
+                    "raw": 333097736,
+                    "fmt": "333.1M",
+                    "longFmt": "333,097,736"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 200.00 - 200.08 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1719964800,
+                    "fmt": "2024-07-03"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 16000,
+                    "fmt": "16k",
+                    "longFmt": "16,000"
+                  },
+                  "value": {
+                    "raw": 3185965,
+                    "fmt": "3.19M",
+                    "longFmt": "3,185,965"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 194.01 - 200.00 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1719878400,
+                    "fmt": "2024-07-02"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 4710,
+                    "fmt": "4.71k",
+                    "longFmt": "4,710"
+                  },
+                  "value": {
+                    "raw": 918450,
+                    "fmt": "918.45k",
+                    "longFmt": "918,450"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 195.00 per share.",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1719446400,
+                    "fmt": "2024-06-27"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3500,
+                    "fmt": "3.5k",
+                    "longFmt": "3,500"
+                  },
+                  "value": {
+                    "raw": 620524,
+                    "fmt": "620.52k",
+                    "longFmt": "620,524"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 176.96 - 177.73 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1717372800,
+                    "fmt": "2024-06-03"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1098686,
+                    "fmt": "1.1M",
+                    "longFmt": "1,098,686"
+                  },
+                  "value": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Stock Gift at price 0.00 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1717027200,
+                    "fmt": "2024-05-30"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 4600,
+                    "fmt": "4.6k",
+                    "longFmt": "4,600"
+                  },
+                  "value": {
+                    "raw": 836337,
+                    "fmt": "836.34k",
+                    "longFmt": "836,337"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 181.34 - 183.85 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716336000,
+                    "fmt": "2024-05-22"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 20784,
+                    "fmt": "20.78k",
+                    "longFmt": "20,784"
+                  },
+                  "value": {
+                    "raw": 3770948,
+                    "fmt": "3.77M",
+                    "longFmt": "3,770,948"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 181.34 - 182.13 per share.",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716249600,
+                    "fmt": "2024-05-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2700,
+                    "fmt": "2.7k",
+                    "longFmt": "2,700"
+                  },
+                  "value": {
+                    "raw": 489750,
+                    "fmt": "489.75k",
+                    "longFmt": "489,750"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 181.29 - 182.19 per share.",
+                  "filerName": "REYNOLDS SHELLEY L",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716249600,
+                    "fmt": "2024-05-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 9490,
+                    "fmt": "9.49k",
+                    "longFmt": "9,490"
+                  },
+                  "value": {
+                    "raw": 1721603,
+                    "fmt": "1.72M",
+                    "longFmt": "1,721,603"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 181.23 - 182.14 per share.",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716249600,
+                    "fmt": "2024-05-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 14600,
+                    "fmt": "14.6k",
+                    "longFmt": "14,600"
+                  },
+                  "value": {
+                    "raw": 2658806,
+                    "fmt": "2.66M",
+                    "longFmt": "2,658,806"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 182.11 per share.",
+                  "filerName": "OLSAVSKY BRIAN T.",
+                  "filerRelation": "Chief Financial Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716249600,
+                    "fmt": "2024-05-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 6096,
+                    "fmt": "6.1k",
+                    "longFmt": "6,096"
+                  },
+                  "value": {
+                    "raw": 1105838,
+                    "fmt": "1.11M",
+                    "longFmt": "1,105,838"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 181.25 - 182.11 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716249600,
+                    "fmt": "2024-05-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 14600,
+                    "fmt": "14.6k",
+                    "longFmt": "14,600"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "OLSAVSKY BRIAN T.",
+                  "filerRelation": "Chief Financial Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716249600,
+                    "fmt": "2024-05-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 9000,
+                    "fmt": "9k",
+                    "longFmt": "9,000"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716249600,
+                    "fmt": "2024-05-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 15240,
+                    "fmt": "15.24k",
+                    "longFmt": "15,240"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716249600,
+                    "fmt": "2024-05-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 51960,
+                    "fmt": "51.96k",
+                    "longFmt": "51,960"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716249600,
+                    "fmt": "2024-05-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2700,
+                    "fmt": "2.7k",
+                    "longFmt": "2,700"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "REYNOLDS SHELLEY L",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716249600,
+                    "fmt": "2024-05-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 14600,
+                    "fmt": "14.6k",
+                    "longFmt": "14,600"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1716249600,
+                    "fmt": "2024-05-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 9016,
+                    "fmt": "9.02k",
+                    "longFmt": "9,016"
+                  },
+                  "value": {
+                    "raw": 1665456,
+                    "fmt": "1.67M",
+                    "longFmt": "1,665,456"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 183.50 - 186.18 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1715817600,
+                    "fmt": "2024-05-16"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5502,
+                    "fmt": "5.5k",
+                    "longFmt": "5,502"
+                  },
+                  "value": {
+                    "raw": 1014160,
+                    "fmt": "1.01M",
+                    "longFmt": "1,014,160"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 183.48 - 186.16 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1715731200,
+                    "fmt": "2024-05-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 13753,
+                    "fmt": "13.75k",
+                    "longFmt": "13,753"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1715731200,
+                    "fmt": "2024-05-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 20040,
+                    "fmt": "20.04k",
+                    "longFmt": "20,040"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1715731200,
+                    "fmt": "2024-05-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2120,
+                    "fmt": "2.12k",
+                    "longFmt": "2,120"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "NOOYI INDRA K",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1715731200,
+                    "fmt": "2024-05-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5264,
+                    "fmt": "5.26k",
+                    "longFmt": "5,264"
+                  },
+                  "value": {
+                    "raw": 1000160,
+                    "fmt": "1M",
+                    "longFmt": "1,000,160"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 190.00 per share.",
+                  "filerName": "RUBINSTEIN JONATHAN J",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1715212800,
+                    "fmt": "2024-05-09"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1000,
+                    "fmt": "1k",
+                    "longFmt": "1,000"
+                  },
+                  "value": {
+                    "raw": 186220,
+                    "fmt": "186.22k",
+                    "longFmt": "186,220"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 186.22 per share.",
+                  "filerName": "ALEXANDER KEITH BRIAN",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1714953600,
+                    "fmt": "2024-05-06"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3500,
+                    "fmt": "3.5k",
+                    "longFmt": "3,500"
+                  },
+                  "value": {
+                    "raw": 631012,
+                    "fmt": "631.01k",
+                    "longFmt": "631,012"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 177.79 - 184.80 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1714521600,
+                    "fmt": "2024-05-01"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1000,
+                    "fmt": "1k",
+                    "longFmt": "1,000"
+                  },
+                  "value": {
+                    "raw": 180190,
+                    "fmt": "180.19k",
+                    "longFmt": "180,190"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 179.00 - 181.38 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1713484800,
+                    "fmt": "2024-04-19"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1000,
+                    "fmt": "1k",
+                    "longFmt": "1,000"
+                  },
+                  "value": {
+                    "raw": 183265,
+                    "fmt": "183.26k",
+                    "longFmt": "183,265"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 182.53 - 184.00 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1712275200,
+                    "fmt": "2024-04-05"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3500,
+                    "fmt": "3.5k",
+                    "longFmt": "3,500"
+                  },
+                  "value": {
+                    "raw": 632555,
+                    "fmt": "632.55k",
+                    "longFmt": "632,555"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 180.73 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1711929600,
+                    "fmt": "2024-04-01"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1000,
+                    "fmt": "1k",
+                    "longFmt": "1,000"
+                  },
+                  "value": {
+                    "raw": 178790,
+                    "fmt": "178.79k",
+                    "longFmt": "178,790"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 177.58 - 180.00 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1711065600,
+                    "fmt": "2024-03-22"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1000,
+                    "fmt": "1k",
+                    "longFmt": "1,000"
+                  },
+                  "value": {
+                    "raw": 175560,
+                    "fmt": "175.56k",
+                    "longFmt": "175,560"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 174.81 - 176.31 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1709856000,
+                    "fmt": "2024-03-08"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5556,
+                    "fmt": "5.56k",
+                    "longFmt": "5,556"
+                  },
+                  "value": {
+                    "raw": 1000080,
+                    "fmt": "1M",
+                    "longFmt": "1,000,080"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 180.00 per share.",
+                  "filerName": "RUBINSTEIN JONATHAN J",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1709510400,
+                    "fmt": "2024-03-04"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 50000,
+                    "fmt": "50k",
+                    "longFmt": "50,000"
+                  },
+                  "value": {
+                    "raw": 9000000,
+                    "fmt": "9M",
+                    "longFmt": "9,000,000"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 180.00 per share.",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1709510400,
+                    "fmt": "2024-03-04"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 477852,
+                    "fmt": "477.85k",
+                    "longFmt": "477,852"
+                  },
+                  "value": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Stock Gift at price 0.00 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1709510400,
+                    "fmt": "2024-03-04"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 5760,
+                    "fmt": "5.76k",
+                    "longFmt": "5,760"
+                  },
+                  "value": {
+                    "raw": 1007050,
+                    "fmt": "1.01M",
+                    "longFmt": "1,007,050"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 173.00 - 176.67 per share.",
+                  "filerName": "MCGRATH JUDITH A",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1709251200,
+                    "fmt": "2024-03-01"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3500,
+                    "fmt": "3.5k",
+                    "longFmt": "3,500"
+                  },
+                  "value": {
+                    "raw": 618345,
+                    "fmt": "618.35k",
+                    "longFmt": "618,345"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 176.67 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1709251200,
+                    "fmt": "2024-03-01"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 4104,
+                    "fmt": "4.1k",
+                    "longFmt": "4,104"
+                  },
+                  "value": {
+                    "raw": 694940,
+                    "fmt": "694.94k",
+                    "longFmt": "694,940"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 168.16 - 173.00 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708560000,
+                    "fmt": "2024-02-22"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 22048,
+                    "fmt": "22.05k",
+                    "longFmt": "22,048"
+                  },
+                  "value": {
+                    "raw": 3721405,
+                    "fmt": "3.72M",
+                    "longFmt": "3,721,405"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 168.16 - 169.82 per share.",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708473600,
+                    "fmt": "2024-02-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3100,
+                    "fmt": "3.1k",
+                    "longFmt": "3,100"
+                  },
+                  "value": {
+                    "raw": 523807,
+                    "fmt": "523.81k",
+                    "longFmt": "523,807"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 168.97 per share.",
+                  "filerName": "REYNOLDS SHELLEY L",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708473600,
+                    "fmt": "2024-02-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 10920,
+                    "fmt": "10.92k",
+                    "longFmt": "10,920"
+                  },
+                  "value": {
+                    "raw": 1847748,
+                    "fmt": "1.85M",
+                    "longFmt": "1,847,748"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 168.97 - 170.00 per share.",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708473600,
+                    "fmt": "2024-02-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 16800,
+                    "fmt": "16.8k",
+                    "longFmt": "16,800"
+                  },
+                  "value": {
+                    "raw": 2838696,
+                    "fmt": "2.84M",
+                    "longFmt": "2,838,696"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 168.97 per share.",
+                  "filerName": "OLSAVSKY BRIAN T.",
+                  "filerRelation": "Chief Financial Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708473600,
+                    "fmt": "2024-02-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 9488,
+                    "fmt": "9.49k",
+                    "longFmt": "9,488"
+                  },
+                  "value": {
+                    "raw": 1603187,
+                    "fmt": "1.6M",
+                    "longFmt": "1,603,187"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 168.97 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708473600,
+                    "fmt": "2024-02-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 16800,
+                    "fmt": "16.8k",
+                    "longFmt": "16,800"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "OLSAVSKY BRIAN T.",
+                  "filerRelation": "Chief Financial Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708473600,
+                    "fmt": "2024-02-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 23720,
+                    "fmt": "23.72k",
+                    "longFmt": "23,720"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708473600,
+                    "fmt": "2024-02-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 7760,
+                    "fmt": "7.76k",
+                    "longFmt": "7,760"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708473600,
+                    "fmt": "2024-02-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 55120,
+                    "fmt": "55.12k",
+                    "longFmt": "55,120"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708473600,
+                    "fmt": "2024-02-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3100,
+                    "fmt": "3.1k",
+                    "longFmt": "3,100"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "REYNOLDS SHELLEY L",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708473600,
+                    "fmt": "2024-02-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 16800,
+                    "fmt": "16.8k",
+                    "longFmt": "16,800"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708473600,
+                    "fmt": "2024-02-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 14006906,
+                    "fmt": "14.01M",
+                    "longFmt": "14,006,906"
+                  },
+                  "value": {
+                    "raw": 2366427695,
+                    "fmt": "2.37B",
+                    "longFmt": "2,366,427,695"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 166.41 - 170.90 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708387200,
+                    "fmt": "2024-02-20"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 50000,
+                    "fmt": "50k",
+                    "longFmt": "50,000"
+                  },
+                  "value": {
+                    "raw": 8432500,
+                    "fmt": "8.43M",
+                    "longFmt": "8,432,500"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 168.65 per share.",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708041600,
+                    "fmt": "2024-02-16"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 11256,
+                    "fmt": "11.26k",
+                    "longFmt": "11,256"
+                  },
+                  "value": {
+                    "raw": 1906782,
+                    "fmt": "1.91M",
+                    "longFmt": "1,906,782"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 168.27 - 170.97 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708041600,
+                    "fmt": "2024-02-16"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2945,
+                    "fmt": "2.94k",
+                    "longFmt": "2,945"
+                  },
+                  "value": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Stock Gift at price 0.00 per share.",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1708041600,
+                    "fmt": "2024-02-16"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3864,
+                    "fmt": "3.86k",
+                    "longFmt": "3,864"
+                  },
+                  "value": {
+                    "raw": 659005,
+                    "fmt": "659k",
+                    "longFmt": "659,005"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 170.55 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1707955200,
+                    "fmt": "2024-02-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 9659,
+                    "fmt": "9.66k",
+                    "longFmt": "9,659"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1707955200,
+                    "fmt": "2024-02-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 25640,
+                    "fmt": "25.64k",
+                    "longFmt": "25,640"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1707955200,
+                    "fmt": "2024-02-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1960,
+                    "fmt": "1.96k",
+                    "longFmt": "1,960"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "GORELICK JAMIE S",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1707955200,
+                    "fmt": "2024-02-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1900,
+                    "fmt": "1.9k",
+                    "longFmt": "1,900"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "WEEKS WENDELL P.",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1707955200,
+                    "fmt": "2024-02-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 11997698,
+                    "fmt": "12M",
+                    "longFmt": "11,997,698"
+                  },
+                  "value": {
+                    "raw": 2033604145,
+                    "fmt": "2.03B",
+                    "longFmt": "2,033,604,145"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 166.50 - 170.92 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1707868800,
+                    "fmt": "2024-02-14"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 11997698,
+                    "fmt": "12M",
+                    "longFmt": "11,997,698"
+                  },
+                  "value": {
+                    "raw": 2079210214,
+                    "fmt": "2.08B",
+                    "longFmt": "2,079,210,214"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 170.99 - 174.79 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1707696000,
+                    "fmt": "2024-02-12"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 14300,
+                    "fmt": "14.3k",
+                    "longFmt": "14,300"
+                  },
+                  "value": {
+                    "raw": 2502500,
+                    "fmt": "2.5M",
+                    "longFmt": "2,502,500"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 175.00 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1707696000,
+                    "fmt": "2024-02-12"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 12133,
+                    "fmt": "12.13k",
+                    "longFmt": "12,133"
+                  },
+                  "value": {
+                    "raw": 2074743,
+                    "fmt": "2.07M",
+                    "longFmt": "2,074,743"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 171.00 per share.",
+                  "filerName": "RUBINSTEIN JONATHAN J",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1707436800,
+                    "fmt": "2024-02-09"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 11997698,
+                    "fmt": "12M",
+                    "longFmt": "11,997,698"
+                  },
+                  "value": {
+                    "raw": 2042160939,
+                    "fmt": "2.04B",
+                    "longFmt": "2,042,160,939"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 169.71 - 171.02 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1707350400,
+                    "fmt": "2024-02-08"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 20200,
+                    "fmt": "20.2k",
+                    "longFmt": "20,200"
+                  },
+                  "value": {
+                    "raw": 3433752,
+                    "fmt": "3.43M",
+                    "longFmt": "3,433,752"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 169.77 - 170.51 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1707264000,
+                    "fmt": "2024-02-07"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1000,
+                    "fmt": "1k",
+                    "longFmt": "1,000"
+                  },
+                  "value": {
+                    "raw": 162360,
+                    "fmt": "162.36k",
+                    "longFmt": "162,360"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 155.72 - 169.00 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1706832000,
+                    "fmt": "2024-02-02"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1000,
+                    "fmt": "1k",
+                    "longFmt": "1,000"
+                  },
+                  "value": {
+                    "raw": 153320,
+                    "fmt": "153.32k",
+                    "longFmt": "153,320"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 152.78 - 153.86 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1705622400,
+                    "fmt": "2024-01-19"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1000,
+                    "fmt": "1k",
+                    "longFmt": "1,000"
+                  },
+                  "value": {
+                    "raw": 145120,
+                    "fmt": "145.12k",
+                    "longFmt": "145,120"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 144.61 - 145.63 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1704412800,
+                    "fmt": "2024-01-05"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1000,
+                    "fmt": "1k",
+                    "longFmt": "1,000"
+                  },
+                  "value": {
+                    "raw": 153515,
+                    "fmt": "153.51k",
+                    "longFmt": "153,515"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 153.20 - 153.83 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1703203200,
+                    "fmt": "2023-12-22"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1000,
+                    "fmt": "1k",
+                    "longFmt": "1,000"
+                  },
+                  "value": {
+                    "raw": 146925,
+                    "fmt": "146.93k",
+                    "longFmt": "146,925"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 146.09 - 147.76 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1701907200,
+                    "fmt": "2023-12-07"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 4000,
+                    "fmt": "4k",
+                    "longFmt": "4,000"
+                  },
+                  "value": {
+                    "raw": 584000,
+                    "fmt": "584k",
+                    "longFmt": "584,000"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 146.00 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1701388800,
+                    "fmt": "2023-12-01"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 25160,
+                    "fmt": "25.16k",
+                    "longFmt": "25,160"
+                  },
+                  "value": {
+                    "raw": 3635785,
+                    "fmt": "3.64M",
+                    "longFmt": "3,635,785"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 143.08 - 145.00 per share.",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700611200,
+                    "fmt": "2023-11-22"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 4104,
+                    "fmt": "4.1k",
+                    "longFmt": "4,104"
+                  },
+                  "value": {
+                    "raw": 586954,
+                    "fmt": "586.95k",
+                    "longFmt": "586,954"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 142.26 - 144.68 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700611200,
+                    "fmt": "2023-11-22"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 6843,
+                    "fmt": "6.84k",
+                    "longFmt": "6,843"
+                  },
+                  "value": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Stock Gift at price 0.00 per share.",
+                  "filerName": "GORELICK JAMIE S",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700611200,
+                    "fmt": "2023-11-22"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 21933,
+                    "fmt": "21.93k",
+                    "longFmt": "21,933"
+                  },
+                  "value": {
+                    "raw": 3129008,
+                    "fmt": "3.13M",
+                    "longFmt": "3,129,008"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 142.10 - 143.80 per share.",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700524800,
+                    "fmt": "2023-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3120,
+                    "fmt": "3.12k",
+                    "longFmt": "3,120"
+                  },
+                  "value": {
+                    "raw": 446745,
+                    "fmt": "446.75k",
+                    "longFmt": "446,745"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 143.13 - 143.77 per share.",
+                  "filerName": "REYNOLDS SHELLEY L",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700524800,
+                    "fmt": "2023-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 16800,
+                    "fmt": "16.8k",
+                    "longFmt": "16,800"
+                  },
+                  "value": {
+                    "raw": 2415168,
+                    "fmt": "2.42M",
+                    "longFmt": "2,415,168"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 143.76 per share.",
+                  "filerName": "OLSAVSKY BRIAN T.",
+                  "filerRelation": "Chief Financial Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700524800,
+                    "fmt": "2023-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 9480,
+                    "fmt": "9.48k",
+                    "longFmt": "9,480"
+                  },
+                  "value": {
+                    "raw": 1357019,
+                    "fmt": "1.36M",
+                    "longFmt": "1,357,019"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 143.08 - 143.74 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700524800,
+                    "fmt": "2023-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 16800,
+                    "fmt": "16.8k",
+                    "longFmt": "16,800"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "OLSAVSKY BRIAN T.",
+                  "filerRelation": "Chief Financial Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700524800,
+                    "fmt": "2023-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 23700,
+                    "fmt": "23.7k",
+                    "longFmt": "23,700"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700524800,
+                    "fmt": "2023-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 7760,
+                    "fmt": "7.76k",
+                    "longFmt": "7,760"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700524800,
+                    "fmt": "2023-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 55120,
+                    "fmt": "55.12k",
+                    "longFmt": "55,120"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "JASSY ANDREW R.",
+                  "filerRelation": "Chief Executive Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700524800,
+                    "fmt": "2023-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3120,
+                    "fmt": "3.12k",
+                    "longFmt": "3,120"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "REYNOLDS SHELLEY L",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700524800,
+                    "fmt": "2023-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 16800,
+                    "fmt": "16.8k",
+                    "longFmt": "16,800"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "ZAPOLSKY DAVID A.",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700524800,
+                    "fmt": "2023-11-21"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1237,
+                    "fmt": "1.24k",
+                    "longFmt": "1,237"
+                  },
+                  "value": {
+                    "raw": 176681,
+                    "fmt": "176.68k",
+                    "longFmt": "176,681"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 142.83 per share.",
+                  "filerName": "HUTTENLOCHER DANIEL P",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700179200,
+                    "fmt": "2023-11-17"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 11256,
+                    "fmt": "11.26k",
+                    "longFmt": "11,256"
+                  },
+                  "value": {
+                    "raw": 1625753,
+                    "fmt": "1.63M",
+                    "longFmt": "1,625,753"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 140.96 - 146.87 per share.",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700092800,
+                    "fmt": "2023-11-16"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1673916,
+                    "fmt": "1.67M",
+                    "longFmt": "1,673,916"
+                  },
+                  "value": {
+                    "raw": 0,
+                    "fmt": null,
+                    "longFmt": "0"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Stock Gift at price 0.00 per share.",
+                  "filerName": "BEZOS JEFFREY P",
+                  "filerRelation": "Officer, Director and Beneficial Owner",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700092800,
+                    "fmt": "2023-11-16"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 3864,
+                    "fmt": "3.86k",
+                    "longFmt": "3,864"
+                  },
+                  "value": {
+                    "raw": 568240,
+                    "fmt": "568.24k",
+                    "longFmt": "568,240"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "Sale at price 147.06 per share.",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700006400,
+                    "fmt": "2023-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1920,
+                    "fmt": "1.92k",
+                    "longFmt": "1,920"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "ALEXANDER KEITH BRIAN",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700006400,
+                    "fmt": "2023-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 9659,
+                    "fmt": "9.66k",
+                    "longFmt": "9,659"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HERRINGTON DOUGLAS J",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700006400,
+                    "fmt": "2023-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 25640,
+                    "fmt": "25.64k",
+                    "longFmt": "25,640"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "SELIPSKY ADAM N",
+                  "filerRelation": "Officer",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700006400,
+                    "fmt": "2023-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 1900,
+                    "fmt": "1.9k",
+                    "longFmt": "1,900"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "COOPER EDITH W.",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700006400,
+                    "fmt": "2023-11-15"
+                  },
+                  "ownership": "D"
+                },
+                {
+                  "maxAge": 1,
+                  "shares": {
+                    "raw": 2473,
+                    "fmt": "2.47k",
+                    "longFmt": "2,473"
+                  },
+                  "filerUrl": "",
+                  "transactionText": "",
+                  "filerName": "HUTTENLOCHER DANIEL P",
+                  "filerRelation": "Director",
+                  "moneyText": "",
+                  "startDate": {
+                    "raw": 1700006400,
+                    "fmt": "2023-11-15"
+                  },
+                  "ownership": "D"
+                }
+              ],
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

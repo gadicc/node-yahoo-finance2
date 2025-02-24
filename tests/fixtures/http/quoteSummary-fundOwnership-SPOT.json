@@ -1,0 +1,305 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/SPOT?formatted=false&modules=fundOwnership&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:07 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "4",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "4uqtjotjrofab"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "Vanguard International Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.0225,
+                    "fmt": "2.25%"
+                  },
+                  "position": {
+                    "raw": 4488161,
+                    "fmt": "4.49M",
+                    "longFmt": "4,488,161"
+                  },
+                  "value": {
+                    "raw": 2726019250,
+                    "fmt": "2.73B",
+                    "longFmt": "2,726,019,250"
+                  },
+                  "pctChange": {
+                    "raw": -0.14899999,
+                    "fmt": "-14.90%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "JP Morgan Large Cap Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.0134000005,
+                    "fmt": "1.34%"
+                  },
+                  "position": {
+                    "raw": 2668063,
+                    "fmt": "2.67M",
+                    "longFmt": "2,668,063"
+                  },
+                  "value": {
+                    "raw": 1620528117,
+                    "fmt": "1.62B",
+                    "longFmt": "1,620,528,117"
+                  },
+                  "pctChange": {
+                    "raw": 0.0525,
+                    "fmt": "5.25%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Investment Managers Ser Tr-WCM Focused International Growth Fd",
+                  "pctHeld": {
+                    "raw": 0.0073,
+                    "fmt": "0.73%"
+                  },
+                  "position": {
+                    "raw": 1443366,
+                    "fmt": "1.44M",
+                    "longFmt": "1,443,366"
+                  },
+                  "value": {
+                    "raw": 876671648,
+                    "fmt": "876.67M",
+                    "longFmt": "876,671,648"
+                  },
+                  "pctChange": {
+                    "raw": -0.0726,
+                    "fmt": "-7.26%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "MFS Series Trust II-MFS Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.0068,
+                    "fmt": "0.68%"
+                  },
+                  "position": {
+                    "raw": 1357408,
+                    "fmt": "1.36M",
+                    "longFmt": "1,357,408"
+                  },
+                  "value": {
+                    "raw": 824462477,
+                    "fmt": "824.46M",
+                    "longFmt": "824,462,477"
+                  },
+                  "pctChange": {
+                    "raw": -0.0135,
+                    "fmt": "-1.35%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1730332800,
+                    "fmt": "2024-10-31"
+                  },
+                  "organization": "NYLI Winslow Large Cap Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.0050999997,
+                    "fmt": "0.51%"
+                  },
+                  "position": {
+                    "raw": 1005600,
+                    "fmt": "1.01M",
+                    "longFmt": "1,005,600"
+                  },
+                  "value": {
+                    "raw": 610781332,
+                    "fmt": "610.78M",
+                    "longFmt": "610,781,332"
+                  },
+                  "pctChange": {
+                    "raw": -0.060599998,
+                    "fmt": "-6.06%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "iShares Core MSCI EAFE ETF",
+                  "pctHeld": {
+                    "raw": 0.0047999998,
+                    "fmt": "0.48%"
+                  },
+                  "position": {
+                    "raw": 960970,
+                    "fmt": "960.97k",
+                    "longFmt": "960,970"
+                  },
+                  "value": {
+                    "raw": 583673963,
+                    "fmt": "583.67M",
+                    "longFmt": "583,673,963"
+                  },
+                  "pctChange": {
+                    "raw": 1,
+                    "fmt": "100.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "MFS Mid Cap Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.0047,
+                    "fmt": "0.47%"
+                  },
+                  "position": {
+                    "raw": 926052,
+                    "fmt": "926.05k",
+                    "longFmt": "926,052"
+                  },
+                  "value": {
+                    "raw": 562465468,
+                    "fmt": "562.47M",
+                    "longFmt": "562,465,468"
+                  },
+                  "pctChange": {
+                    "raw": 0.0098,
+                    "fmt": "0.98%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Price (T.Rowe) Growth Stock Fund Inc.",
+                  "pctHeld": {
+                    "raw": 0.0046,
+                    "fmt": "0.46%"
+                  },
+                  "position": {
+                    "raw": 921543,
+                    "fmt": "921.54k",
+                    "longFmt": "921,543"
+                  },
+                  "value": {
+                    "raw": 559726791,
+                    "fmt": "559.73M",
+                    "longFmt": "559,726,791"
+                  },
+                  "pctChange": {
+                    "raw": -0.1041,
+                    "fmt": "-10.41%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "Vanguard U.S. Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.0042,
+                    "fmt": "0.42%"
+                  },
+                  "position": {
+                    "raw": 839225,
+                    "fmt": "839.23k",
+                    "longFmt": "839,225"
+                  },
+                  "value": {
+                    "raw": 509728484,
+                    "fmt": "509.73M",
+                    "longFmt": "509,728,484"
+                  },
+                  "pctChange": {
+                    "raw": 0.205,
+                    "fmt": "20.50%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Price (T.Rowe) Mid Cap Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.0031,
+                    "fmt": "0.31%"
+                  },
+                  "position": {
+                    "raw": 625000,
+                    "fmt": "625k",
+                    "longFmt": "625,000"
+                  },
+                  "value": {
+                    "raw": 379612503,
+                    "fmt": "379.61M",
+                    "longFmt": "379,612,503"
+                  },
+                  "pctChange": {
+                    "raw": -0.4447,
+                    "fmt": "-44.47%"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
