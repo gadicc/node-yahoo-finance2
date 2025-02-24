@@ -1,0 +1,305 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BFLY?formatted=false&modules=fundOwnership&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:07 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "4",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "0pfdn8djrofab"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "ARK ETF Tr-ARK Genomic Revolution ETF",
+                  "pctHeld": {
+                    "raw": 0.0318,
+                    "fmt": "3.18%"
+                  },
+                  "position": {
+                    "raw": 5926600,
+                    "fmt": "5.93M",
+                    "longFmt": "5,926,600"
+                  },
+                  "value": {
+                    "raw": 25484381,
+                    "fmt": "25.48M",
+                    "longFmt": "25,484,381"
+                  },
+                  "pctChange": {
+                    "raw": -0.21180001,
+                    "fmt": "-21.18%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Total Stock Market Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0235,
+                    "fmt": "2.35%"
+                  },
+                  "position": {
+                    "raw": 4381447,
+                    "fmt": "4.38M",
+                    "longFmt": "4,381,447"
+                  },
+                  "value": {
+                    "raw": 18840222,
+                    "fmt": "18.84M",
+                    "longFmt": "18,840,222"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Extended Market Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0117999995,
+                    "fmt": "1.18%"
+                  },
+                  "position": {
+                    "raw": 2210949,
+                    "fmt": "2.21M",
+                    "longFmt": "2,210,949"
+                  },
+                  "value": {
+                    "raw": 9507081,
+                    "fmt": "9.51M",
+                    "longFmt": "9,507,081"
+                  },
+                  "pctChange": {
+                    "raw": 0.0211,
+                    "fmt": "2.11%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Fidelity Extended Market Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0047,
+                    "fmt": "0.47%"
+                  },
+                  "position": {
+                    "raw": 881078,
+                    "fmt": "881.08k",
+                    "longFmt": "881,078"
+                  },
+                  "value": {
+                    "raw": 3788635,
+                    "fmt": "3.79M",
+                    "longFmt": "3,788,635"
+                  },
+                  "pctChange": {
+                    "raw": 0.0023,
+                    "fmt": "0.23%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "Schwab Strategic Tr-Schwab U.S. Small Cap ETF",
+                  "pctHeld": {
+                    "raw": 0.0041,
+                    "fmt": "0.41%"
+                  },
+                  "position": {
+                    "raw": 759762,
+                    "fmt": "759.76k",
+                    "longFmt": "759,762"
+                  },
+                  "value": {
+                    "raw": 3266976,
+                    "fmt": "3.27M",
+                    "longFmt": "3,266,976"
+                  },
+                  "pctChange": {
+                    "raw": 0.049000002,
+                    "fmt": "4.90%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "Vanguard Health Care Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0025,
+                    "fmt": "0.25%"
+                  },
+                  "position": {
+                    "raw": 458935,
+                    "fmt": "458.94k",
+                    "longFmt": "458,935"
+                  },
+                  "value": {
+                    "raw": 1973420,
+                    "fmt": "1.97M",
+                    "longFmt": "1,973,420"
+                  },
+                  "pctChange": {
+                    "raw": -0.103599995,
+                    "fmt": "-10.36%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Bridgeway Funds Inc-Ultra Small Company Market Fund",
+                  "pctHeld": {
+                    "raw": 0.0021,
+                    "fmt": "0.21%"
+                  },
+                  "position": {
+                    "raw": 398000,
+                    "fmt": "398k",
+                    "longFmt": "398,000"
+                  },
+                  "value": {
+                    "raw": 1711400,
+                    "fmt": "1.71M",
+                    "longFmt": "1,711,400"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Fidelity Total Market Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0016,
+                    "fmt": "0.16%"
+                  },
+                  "position": {
+                    "raw": 294482,
+                    "fmt": "294.48k",
+                    "longFmt": "294,482"
+                  },
+                  "value": {
+                    "raw": 1266272,
+                    "fmt": "1.27M",
+                    "longFmt": "1,266,272"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "iShares Core S&P Total U.S. Stock Market ETF",
+                  "pctHeld": {
+                    "raw": 0.0011,
+                    "fmt": "0.11%"
+                  },
+                  "position": {
+                    "raw": 201083,
+                    "fmt": "201.08k",
+                    "longFmt": "201,083"
+                  },
+                  "value": {
+                    "raw": 864656,
+                    "fmt": "864.66k",
+                    "longFmt": "864,656"
+                  },
+                  "pctChange": {
+                    "raw": 1,
+                    "fmt": "100.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Fidelity Series Total Market Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0011,
+                    "fmt": "0.11%"
+                  },
+                  "position": {
+                    "raw": 205550,
+                    "fmt": "205.55k",
+                    "longFmt": "205,550"
+                  },
+                  "value": {
+                    "raw": 883865,
+                    "fmt": "883.87k",
+                    "longFmt": "883,865"
+                  },
+                  "pctChange": {
+                    "raw": -0.0293,
+                    "fmt": "-2.93%"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

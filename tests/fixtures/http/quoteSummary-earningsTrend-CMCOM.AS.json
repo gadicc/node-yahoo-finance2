@@ -1,0 +1,477 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CMCOM.AS?formatted=false&modules=earningsTrend&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:04 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "87",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "5nv4roljrofa8"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earningsTrend": {
+              "trend": [
+                {
+                  "maxAge": 1,
+                  "period": "0q",
+                  "endDate": null,
+                  "growth": {},
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "yearAgoEps": {},
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "growth": {},
+                    "earningsCurrency": null
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "yearAgoRevenue": {},
+                    "growth": {},
+                    "revenueCurrency": null
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "7daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "30daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "60daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "90daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "epsTrendCurrency": null
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast7Days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": null
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "+1q",
+                  "endDate": null,
+                  "growth": {},
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "yearAgoEps": {},
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "growth": {},
+                    "earningsCurrency": null
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "low": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "high": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "yearAgoRevenue": {},
+                    "growth": {},
+                    "revenueCurrency": null
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "7daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "30daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "60daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "90daysAgo": {
+                      "raw": 0,
+                      "fmt": "0"
+                    },
+                    "epsTrendCurrency": null
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast7Days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": null
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "0y",
+                  "endDate": "2025-12-31",
+                  "growth": {
+                    "raw": 1.1919999,
+                    "fmt": "119.20%"
+                  },
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 0.12,
+                      "fmt": "0.12"
+                    },
+                    "low": {
+                      "raw": 0.12,
+                      "fmt": "0.12"
+                    },
+                    "high": {
+                      "raw": 0.12,
+                      "fmt": "0.12"
+                    },
+                    "yearAgoEps": {
+                      "raw": -0.6251,
+                      "fmt": "-0.63"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "growth": {
+                      "raw": 1.1919999,
+                      "fmt": "119.20%"
+                    },
+                    "earningsCurrency": "EUR"
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 308920000,
+                      "fmt": "308.92M",
+                      "longFmt": "308,920,000"
+                    },
+                    "low": {
+                      "raw": 297840000,
+                      "fmt": "297.84M",
+                      "longFmt": "297,840,000"
+                    },
+                    "high": {
+                      "raw": 320000000,
+                      "fmt": "320M",
+                      "longFmt": "320,000,000"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "yearAgoRevenue": {
+                      "raw": 274249000,
+                      "fmt": "274.25M",
+                      "longFmt": "274,249,000"
+                    },
+                    "growth": {
+                      "raw": 0.12640001,
+                      "fmt": "12.64%"
+                    },
+                    "revenueCurrency": "EUR"
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 0.12,
+                      "fmt": "0.12"
+                    },
+                    "7daysAgo": {
+                      "raw": 0.13,
+                      "fmt": "0.13"
+                    },
+                    "30daysAgo": {
+                      "raw": 0.13,
+                      "fmt": "0.13"
+                    },
+                    "60daysAgo": {
+                      "raw": 0.1,
+                      "fmt": "0.1"
+                    },
+                    "90daysAgo": {
+                      "raw": 0.1,
+                      "fmt": "0.1"
+                    },
+                    "epsTrendCurrency": "EUR"
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast30days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast7Days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": "EUR"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "period": "+1y",
+                  "endDate": "2026-12-31",
+                  "growth": {
+                    "raw": 2.5832999,
+                    "fmt": "258.33%"
+                  },
+                  "earningsEstimate": {
+                    "avg": {
+                      "raw": 0.43,
+                      "fmt": "0.43"
+                    },
+                    "low": {
+                      "raw": 0.43,
+                      "fmt": "0.43"
+                    },
+                    "high": {
+                      "raw": 0.43,
+                      "fmt": "0.43"
+                    },
+                    "yearAgoEps": {
+                      "raw": 0.12,
+                      "fmt": "0.12"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "growth": {
+                      "raw": 2.5832999,
+                      "fmt": "258.33%"
+                    },
+                    "earningsCurrency": "EUR"
+                  },
+                  "revenueEstimate": {
+                    "avg": {
+                      "raw": 346935000,
+                      "fmt": "346.94M",
+                      "longFmt": "346,935,000"
+                    },
+                    "low": {
+                      "raw": 327870000,
+                      "fmt": "327.87M",
+                      "longFmt": "327,870,000"
+                    },
+                    "high": {
+                      "raw": 366000000,
+                      "fmt": "366M",
+                      "longFmt": "366,000,000"
+                    },
+                    "numberOfAnalysts": {
+                      "raw": 2,
+                      "fmt": "2",
+                      "longFmt": "2"
+                    },
+                    "yearAgoRevenue": {
+                      "raw": 308920000,
+                      "fmt": "308.92M",
+                      "longFmt": "308,920,000"
+                    },
+                    "growth": {
+                      "raw": 0.123100005,
+                      "fmt": "12.31%"
+                    },
+                    "revenueCurrency": "EUR"
+                  },
+                  "epsTrend": {
+                    "current": {
+                      "raw": 0.43,
+                      "fmt": "0.43"
+                    },
+                    "7daysAgo": {
+                      "raw": 0.45,
+                      "fmt": "0.45"
+                    },
+                    "30daysAgo": {
+                      "raw": 0.45,
+                      "fmt": "0.45"
+                    },
+                    "60daysAgo": {
+                      "raw": 0.305,
+                      "fmt": "0.31"
+                    },
+                    "90daysAgo": {
+                      "raw": 0.305,
+                      "fmt": "0.31"
+                    },
+                    "epsTrendCurrency": "EUR"
+                  },
+                  "epsRevisions": {
+                    "upLast7days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "upLast30days": {
+                      "raw": 0,
+                      "fmt": null,
+                      "longFmt": "0"
+                    },
+                    "downLast30days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast7Days": {
+                      "raw": 1,
+                      "fmt": "1",
+                      "longFmt": "1"
+                    },
+                    "downLast90days": {},
+                    "epsRevisionsCurrency": "EUR"
+                  }
+                }
+              ],
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

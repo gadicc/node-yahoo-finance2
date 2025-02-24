@@ -1,0 +1,63 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ORSTED.CO?formatted=false&modules=summaryProfile&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-length": "1602",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:28 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "2",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "25h25edjrofb1"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "Kraftvaerksvej 53",
+              "address2": "Skaerbaek",
+              "city": "Fredericia",
+              "zip": "7000",
+              "country": "Denmark",
+              "phone": "45 99 55 11 11",
+              "fax": "45 99 55 00 11",
+              "website": "https://www.orsted.com",
+              "industry": "Utilities - Renewable",
+              "industryKey": "utilities-renewable",
+              "industryDisp": "Utilities - Renewable",
+              "sector": "Utilities",
+              "sectorKey": "utilities",
+              "sectorDisp": "Utilities",
+              "longBusinessSummary": "Ørsted A/S, together with its subsidiaries, owns, develops, constructs, and operates offshore and onshore wind farms, solar farms, energy storage and renewable hydrogen facilities, and bioenergy plants. It operates through Offshore, Onshore, and Bioenergy & Other segments. The Offshore segment owns, develops, constructs, and operates offshore wind farms in Europe, the United States, and the Asia Pacific, as well as develops renewable hydrogen in selected core market. The Onshore segment owns, develops, constructs, and operates onshore wind and solar farms in the United States and Europe, including integrated storage. The Bioenergy & Other segments generates heat and power and delivery of ancillary services from CHP plants in Denmark; and optimizes its gas portfolio, as well as manages its Danish and Swedish B2B business. The company was formerly known as DONG Energy A/S and changed its name to Ørsted A/S in November 2017. Ørsted A/S was incorporated in 1972 and is based in Fredericia, Denmark.",
+              "fullTimeEmployees": 8278,
+              "companyOfficers": [],
+              "irWebsite": "http://www.dongenergy.com/en/investors",
+              "executiveTeam": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

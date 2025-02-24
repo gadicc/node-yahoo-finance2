@@ -1,0 +1,245 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/CRM?formatted=false&modules=insiderHolders&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:14 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "2",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "54pae59jrofai"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "insiderHolders": {
+              "holders": [
+                {
+                  "maxAge": 1,
+                  "name": "BENIOFF MARC RUSSELL",
+                  "relation": "Chief Executive Officer",
+                  "url": "",
+                  "transactionDescription": "Stock Gift",
+                  "latestTransDate": {
+                    "raw": 1734998400,
+                    "fmt": "2024-12-24"
+                  },
+                  "positionIndirect": {
+                    "raw": 21969500,
+                    "fmt": "21.97M",
+                    "longFmt": "21,969,500"
+                  },
+                  "positionIndirectDate": {
+                    "raw": 1734998400,
+                    "fmt": "2024-12-24"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "HARRIS G PARKER",
+                  "relation": "Officer and Director",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1737590400,
+                    "fmt": "2025-01-23"
+                  },
+                  "positionDirect": {
+                    "raw": 1929940,
+                    "fmt": "1.93M",
+                    "longFmt": "1,929,940"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1737590400,
+                    "fmt": "2025-01-23"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "MILANO MIGUEL",
+                  "relation": "President",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1732492800,
+                    "fmt": "2024-11-25"
+                  },
+                  "positionDirect": {
+                    "raw": 4659,
+                    "fmt": "4.66k",
+                    "longFmt": "4,659"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1732492800,
+                    "fmt": "2024-11-25"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "MILLHAM BRIAN",
+                  "relation": "President",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1737590400,
+                    "fmt": "2025-01-23"
+                  },
+                  "positionDirect": {
+                    "raw": 1239,
+                    "fmt": "1.24k",
+                    "longFmt": "1,239"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1737590400,
+                    "fmt": "2025-01-23"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "MORFIT G MASON",
+                  "relation": "Director",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1734652800,
+                    "fmt": "2024-12-20"
+                  },
+                  "positionIndirect": {
+                    "raw": 2898510,
+                    "fmt": "2.9M",
+                    "longFmt": "2,898,510"
+                  },
+                  "positionIndirectDate": {
+                    "raw": 1734652800,
+                    "fmt": "2024-12-20"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "NILES SABASTIAN",
+                  "relation": "President",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1732579200,
+                    "fmt": "2024-11-26"
+                  },
+                  "positionDirect": {
+                    "raw": 1011,
+                    "fmt": "1.01k",
+                    "longFmt": "1,011"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1732579200,
+                    "fmt": "2024-11-26"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "REDDY SUNDEEP G",
+                  "relation": "Officer",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1738540800,
+                    "fmt": "2025-02-03"
+                  },
+                  "positionDirect": {
+                    "raw": 6557,
+                    "fmt": "6.56k",
+                    "longFmt": "6,557"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1738540800,
+                    "fmt": "2025-02-03"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "SCHMAIER DAVID ROBERT",
+                  "relation": "President",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1737590400,
+                    "fmt": "2025-01-23"
+                  },
+                  "positionDirect": {
+                    "raw": 20237,
+                    "fmt": "20.24k",
+                    "longFmt": "20,237"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1737590400,
+                    "fmt": "2025-01-23"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "TALLAPRAGADA SRINIVAS",
+                  "relation": "President",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1737590400,
+                    "fmt": "2025-01-23"
+                  },
+                  "positionDirect": {
+                    "raw": 26907,
+                    "fmt": "26.91k",
+                    "longFmt": "26,907"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1737590400,
+                    "fmt": "2025-01-23"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "WEAVER AMY E",
+                  "relation": "President",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1739836800,
+                    "fmt": "2025-02-18"
+                  },
+                  "positionDirect": {
+                    "raw": 46750,
+                    "fmt": "46.75k",
+                    "longFmt": "46,750"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1739836800,
+                    "fmt": "2025-02-18"
+                  }
+                }
+              ],
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

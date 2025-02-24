@@ -1,0 +1,305 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/OCDO.L?formatted=false&modules=fundOwnership&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:07 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "3",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "1oveklpjrofab"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "Capital World Growth and Income Fund",
+                  "pctHeld": {
+                    "raw": 0.0633,
+                    "fmt": "6.33%"
+                  },
+                  "position": {
+                    "raw": 52787085,
+                    "fmt": "52.79M",
+                    "longFmt": "52,787,085"
+                  },
+                  "value": {
+                    "raw": 16311209265,
+                    "fmt": "16.31B",
+                    "longFmt": "16,311,209,265"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "Vanguard International Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.042,
+                    "fmt": "4.20%"
+                  },
+                  "position": {
+                    "raw": 35044929,
+                    "fmt": "35.04M",
+                    "longFmt": "35,044,929"
+                  },
+                  "value": {
+                    "raw": 10828883061,
+                    "fmt": "10.83B",
+                    "longFmt": "10,828,883,061"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Smallcap World Fund",
+                  "pctHeld": {
+                    "raw": 0.0119,
+                    "fmt": "1.19%"
+                  },
+                  "position": {
+                    "raw": 9881291,
+                    "fmt": "9.88M",
+                    "longFmt": "9,881,291"
+                  },
+                  "value": {
+                    "raw": 3053318919,
+                    "fmt": "3.05B",
+                    "longFmt": "3,053,318,919"
+                  },
+                  "pctChange": {
+                    "raw": 0.2394,
+                    "fmt": "23.94%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1730332800,
+                    "fmt": "2024-10-31"
+                  },
+                  "organization": "Vanguard International Stock Index-Total Intl Stock Indx",
+                  "pctHeld": {
+                    "raw": 0.01,
+                    "fmt": "1.00%"
+                  },
+                  "position": {
+                    "raw": 8301544,
+                    "fmt": "8.3M",
+                    "longFmt": "8,301,544"
+                  },
+                  "value": {
+                    "raw": 2565177096,
+                    "fmt": "2.57B",
+                    "longFmt": "2,565,177,096"
+                  },
+                  "pctChange": {
+                    "raw": -0.0018000001,
+                    "fmt": "-0.18%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "MFS Series Trust X-MFS International Intrinsic Value Fund",
+                  "pctHeld": {
+                    "raw": 0.0092,
+                    "fmt": "0.92%"
+                  },
+                  "position": {
+                    "raw": 7664989,
+                    "fmt": "7.66M",
+                    "longFmt": "7,664,989"
+                  },
+                  "value": {
+                    "raw": 2368481601,
+                    "fmt": "2.37B",
+                    "longFmt": "2,368,481,601"
+                  },
+                  "pctChange": {
+                    "raw": -0.0726,
+                    "fmt": "-7.26%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "American Fds International Growth & Income Fd",
+                  "pctHeld": {
+                    "raw": 0.0092,
+                    "fmt": "0.92%"
+                  },
+                  "position": {
+                    "raw": 7691977,
+                    "fmt": "7.69M",
+                    "longFmt": "7,691,977"
+                  },
+                  "value": {
+                    "raw": 2376820893,
+                    "fmt": "2.38B",
+                    "longFmt": "2,376,820,893"
+                  },
+                  "pctChange": {
+                    "raw": -0.1555,
+                    "fmt": "-15.55%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "organization": "New Economy Fund (The)",
+                  "pctHeld": {
+                    "raw": 0.008,
+                    "fmt": "0.80%"
+                  },
+                  "position": {
+                    "raw": 6695495,
+                    "fmt": "6.7M",
+                    "longFmt": "6,695,495"
+                  },
+                  "value": {
+                    "raw": 2068907955,
+                    "fmt": "2.07B",
+                    "longFmt": "2,068,907,955"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Baillie Gifford International Growth Fund",
+                  "pctHeld": {
+                    "raw": 0.0063,
+                    "fmt": "0.63%"
+                  },
+                  "position": {
+                    "raw": 5227773,
+                    "fmt": "5.23M",
+                    "longFmt": "5,227,773"
+                  },
+                  "value": {
+                    "raw": 1615381857,
+                    "fmt": "1.62B",
+                    "longFmt": "1,615,381,857"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Tax Managed Fund-Vanguard Developed Markets Index Fund",
+                  "pctHeld": {
+                    "raw": 0.0061000003,
+                    "fmt": "0.61%"
+                  },
+                  "position": {
+                    "raw": 5093439,
+                    "fmt": "5.09M",
+                    "longFmt": "5,093,439"
+                  },
+                  "value": {
+                    "raw": 1573872651,
+                    "fmt": "1.57B",
+                    "longFmt": "1,573,872,651"
+                  },
+                  "pctChange": {
+                    "raw": 0.0001,
+                    "fmt": "0.01%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "iShares Core MSCI EAFE ETF",
+                  "pctHeld": {
+                    "raw": 0.0043,
+                    "fmt": "0.43%"
+                  },
+                  "position": {
+                    "raw": 3559218,
+                    "fmt": "3.56M",
+                    "longFmt": "3,559,218"
+                  },
+                  "value": {
+                    "raw": 1099798362,
+                    "fmt": "1.1B",
+                    "longFmt": "1,099,798,362"
+                  },
+                  "pctChange": {
+                    "raw": 0.0005,
+                    "fmt": "0.05%"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/GOOG?formatted=false&modules=earningsHistory&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-length": "1147",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:34:58 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "173",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "7mldgq1jrofa2"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earningsHistory": {
+              "history": [
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": 1.89,
+                    "fmt": "1.89"
+                  },
+                  "epsEstimate": {
+                    "raw": 1.50465,
+                    "fmt": "1.5"
+                  },
+                  "epsDifference": {
+                    "raw": 0.39,
+                    "fmt": "0.39"
+                  },
+                  "surprisePercent": {
+                    "raw": 0.2561,
+                    "fmt": "25.61%"
+                  },
+                  "quarter": {
+                    "raw": 1711843200,
+                    "fmt": "2024-03-31"
+                  },
+                  "currency": "USD",
+                  "period": "-4q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": 1.89,
+                    "fmt": "1.89"
+                  },
+                  "epsEstimate": {
+                    "raw": 1.84326,
+                    "fmt": "1.84"
+                  },
+                  "epsDifference": {
+                    "raw": 0.05,
+                    "fmt": "0.05"
+                  },
+                  "surprisePercent": {
+                    "raw": 0.0254,
+                    "fmt": "2.54%"
+                  },
+                  "quarter": {
+                    "raw": 1719705600,
+                    "fmt": "2024-06-30"
+                  },
+                  "currency": "USD",
+                  "period": "-3q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": 2.12,
+                    "fmt": "2.12"
+                  },
+                  "epsEstimate": {
+                    "raw": 1.8477,
+                    "fmt": "1.85"
+                  },
+                  "epsDifference": {
+                    "raw": 0.27,
+                    "fmt": "0.27"
+                  },
+                  "surprisePercent": {
+                    "raw": 0.14739999,
+                    "fmt": "14.74%"
+                  },
+                  "quarter": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "currency": "USD",
+                  "period": "-2q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": 2.15,
+                    "fmt": "2.15"
+                  },
+                  "epsEstimate": {
+                    "raw": 2.12733,
+                    "fmt": "2.13"
+                  },
+                  "epsDifference": {
+                    "raw": 0.02,
+                    "fmt": "0.02"
+                  },
+                  "surprisePercent": {
+                    "raw": 0.0107,
+                    "fmt": "1.07%"
+                  },
+                  "quarter": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "currency": "USD",
+                  "period": "-1q"
+                }
+              ],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

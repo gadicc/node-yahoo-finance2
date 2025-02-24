@@ -1,0 +1,122 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AZT.OL?formatted=false&modules=earnings&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-length": "978",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:34:53 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-canary-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "85",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "0pesrgtjrof9t"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earnings": {
+              "maxAge": 86400,
+              "earningsChart": {
+                "quarterly": [
+                  {
+                    "date": "1Q2024",
+                    "actual": 0.06,
+                    "estimate": 0.07216
+                  },
+                  {
+                    "date": "2Q2024",
+                    "actual": 0.07,
+                    "estimate": 0.04477
+                  },
+                  {
+                    "date": "3Q2024",
+                    "actual": -0.03,
+                    "estimate": 0.073
+                  },
+                  {
+                    "date": "4Q2024",
+                    "actual": 0.06,
+                    "estimate": -0.0034
+                  }
+                ],
+                "currentQuarterEstimate": 0.03665,
+                "currentQuarterEstimateDate": "1Q",
+                "currentQuarterEstimateYear": 2025,
+                "earningsDate": [
+                  1746680400
+                ],
+                "isEarningsDateEstimate": false
+              },
+              "financialsChart": {
+                "yearly": [
+                  {
+                    "date": 2021,
+                    "revenue": 128000000,
+                    "earnings": 46380000
+                  },
+                  {
+                    "date": 2022,
+                    "revenue": 136971000,
+                    "earnings": 33112000
+                  },
+                  {
+                    "date": 2023,
+                    "revenue": 118939000,
+                    "earnings": 18724000
+                  },
+                  {
+                    "date": 2024,
+                    "revenue": 108100000,
+                    "earnings": 7572000
+                  }
+                ],
+                "quarterly": [
+                  {
+                    "date": "1Q2024",
+                    "revenue": 30013000,
+                    "earnings": 3169000
+                  },
+                  {
+                    "date": "2Q2024",
+                    "revenue": 27500000,
+                    "earnings": 2671000
+                  },
+                  {
+                    "date": "3Q2024",
+                    "revenue": 24111000,
+                    "earnings": -1558000
+                  },
+                  {
+                    "date": "4Q2024",
+                    "revenue": 26400000,
+                    "earnings": 3290000
+                  }
+                ]
+              },
+              "financialCurrency": "NOK"
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/AMZN?formatted=false&modules=insiderHolders&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:13 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "15",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "3ts3q9djrofah"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "insiderHolders": {
+              "holders": [
+                {
+                  "maxAge": 1,
+                  "name": "BEZOS JEFFREY P",
+                  "relation": "Officer and Director",
+                  "url": "",
+                  "transactionDescription": "Stock Gift",
+                  "latestTransDate": {
+                    "raw": 1732060800,
+                    "fmt": "2024-11-20"
+                  },
+                  "positionDirect": {
+                    "raw": 909710000,
+                    "fmt": "909.71M",
+                    "longFmt": "909,710,000"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1732060800,
+                    "fmt": "2024-11-20"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "GARMAN MATTHEW S",
+                  "relation": "Chief Executive Officer",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "positionDirect": {
+                    "raw": 350149,
+                    "fmt": "350.15k",
+                    "longFmt": "350,149"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "GORELICK JAMIE S",
+                  "relation": "Director",
+                  "url": "",
+                  "transactionDescription": "Stock Gift",
+                  "latestTransDate": {
+                    "raw": 1739836800,
+                    "fmt": "2025-02-18"
+                  },
+                  "positionIndirect": {
+                    "raw": 56018,
+                    "fmt": "56.02k",
+                    "longFmt": "56,018"
+                  },
+                  "positionIndirectDate": {
+                    "raw": 1739836800,
+                    "fmt": "2025-02-18"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "HERRINGTON DOUGLAS J",
+                  "relation": "Officer",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1739836800,
+                    "fmt": "2025-02-18"
+                  },
+                  "positionDirect": {
+                    "raw": 511901,
+                    "fmt": "511.9k",
+                    "longFmt": "511,901"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1739836800,
+                    "fmt": "2025-02-18"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "JASSY ANDREW R.",
+                  "relation": "Chief Executive Officer",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "positionDirect": {
+                    "raw": 2163110,
+                    "fmt": "2.16M",
+                    "longFmt": "2,163,110"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "OLSAVSKY BRIAN T.",
+                  "relation": "Chief Financial Officer",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "positionDirect": {
+                    "raw": 50561,
+                    "fmt": "50.56k",
+                    "longFmt": "50,561"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "REYNOLDS SHELLEY L",
+                  "relation": "Officer",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "positionDirect": {
+                    "raw": 125798,
+                    "fmt": "125.8k",
+                    "longFmt": "125,798"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "RUBINSTEIN JONATHAN J",
+                  "relation": "Director",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1733702400,
+                    "fmt": "2024-12-09"
+                  },
+                  "positionDirect": {
+                    "raw": 88203,
+                    "fmt": "88.2k",
+                    "longFmt": "88,203"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1733702400,
+                    "fmt": "2024-12-09"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "WEEKS WENDELL P.",
+                  "relation": "Director",
+                  "url": "",
+                  "transactionDescription": "Conversion of Exercise of derivative security",
+                  "latestTransDate": {
+                    "raw": 1739491200,
+                    "fmt": "2025-02-14"
+                  },
+                  "positionDirect": {
+                    "raw": 44400,
+                    "fmt": "44.4k",
+                    "longFmt": "44,400"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1739491200,
+                    "fmt": "2025-02-14"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "name": "ZAPOLSKY DAVID A.",
+                  "relation": "Officer",
+                  "url": "",
+                  "transactionDescription": "Sale",
+                  "latestTransDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  },
+                  "positionDirect": {
+                    "raw": 60390,
+                    "fmt": "60.39k",
+                    "longFmt": "60,390"
+                  },
+                  "positionDirectDate": {
+                    "raw": 1732147200,
+                    "fmt": "2024-11-21"
+                  }
+                }
+              ],
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

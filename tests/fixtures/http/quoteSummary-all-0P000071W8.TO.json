@@ -1,0 +1,666 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/0P000071W8.TO?formatted=false&modules=assetProfile%2CbalanceSheetHistory%2CbalanceSheetHistoryQuarterly%2CcalendarEvents%2CcashflowStatementHistory%2CcashflowStatementHistoryQuarterly%2CdefaultKeyStatistics%2Cearnings%2CearningsHistory%2CearningsTrend%2CfinancialData%2CfundOwnership%2CfundPerformance%2CfundProfile%2CincomeStatementHistory%2CincomeStatementHistoryQuarterly%2CindexTrend%2CindustryTrend%2CinsiderHolders%2CinsiderTransactions%2CinstitutionOwnership%2CmajorDirectHolders%2CmajorHoldersBreakdown%2CnetSharePurchaseActivity%2Cprice%2CquoteType%2CrecommendationTrend%2CsecFilings%2CsectorTrend%2CsummaryDetail%2CsummaryProfile%2CtopHoldings%2CupgradeDowngradeHistory&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:33 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "103",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "69km2bhjrofb5"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "assetProfile": {
+              "address1": "TD Bank Tower",
+              "address2": "66 Wellington Street West",
+              "address3": "P.O. Box 100",
+              "phone": "1-800-588-8054",
+              "companyOfficers": [],
+              "executiveTeam": [],
+              "maxAge": 86400
+            },
+            "fundProfile": {
+              "maxAge": 1,
+              "styleBoxUrl": "https://s.yimg.com/lq/i/fi/3_0stylelargeeq3.gif",
+              "family": "TD Asset Management Inc",
+              "categoryName": null,
+              "legalType": null,
+              "managementInfo": {
+                "managerName": "",
+                "managerBio": "Uzair is Portfolio Manager on the Quantitative Team supporting Passive Equity products and Equity Exchange Traded Funds. He completed a co-op term as an Analyst on the Investment Risk Team, responsible for fund performance/risk analytics and attribution reporting. Uzair holds a B. Math. from the University of Waterloo.",
+                "startdate": 1556668800
+              },
+              "feesExpensesInvestment": {
+                "annualReportExpenseRatio": 0,
+                "netExpRatio": 0,
+                "grossExpRatio": 0,
+                "projectionValues": {
+                  "5y": 0,
+                  "3y": 0,
+                  "10y": 0
+                }
+              },
+              "feesExpensesInvestmentCat": {
+                "projectionValuesCat": {}
+              },
+              "initInvestment": 100,
+              "initIraInvestment": 1,
+              "initAipInvestment": 1,
+              "subseqInvestment": 100,
+              "subseqIraInvestment": 1,
+              "subseqAipInvestment": 0.25,
+              "brokerages": []
+            },
+            "summaryDetail": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "previousClose": 153.9,
+              "regularMarketPreviousClose": 153.9,
+              "averageVolume": 0,
+              "averageVolume10days": 0,
+              "averageDailyVolume10Day": 0,
+              "yield": 0.0073,
+              "ytdReturn": 0.0403182,
+              "fiftyTwoWeekLow": 119.58,
+              "fiftyTwoWeekHigh": 154.69,
+              "fiftyDayAverage": 151.4626,
+              "twoHundredDayAverage": 139.29234,
+              "currency": "CAD",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null,
+              "coinMarketCapLink": null,
+              "algorithm": null,
+              "tradeable": false
+            },
+            "price": {
+              "maxAge": 1,
+              "regularMarketChangePercent": -0.022092229,
+              "regularMarketChange": -3.399994,
+              "regularMarketTime": 1740168000,
+              "priceHint": 2,
+              "regularMarketPrice": 150.5,
+              "averageDailyVolume10Day": 0,
+              "averageDailyVolume3Month": 0,
+              "regularMarketPreviousClose": 153.9,
+              "regularMarketSource": "FREE_REALTIME",
+              "exchange": "TOR",
+              "exchangeName": "Toronto",
+              "exchangeDataDelayedBy": 15,
+              "marketState": "PREPRE",
+              "quoteType": "MUTUALFUND",
+              "symbol": "0P000071W8.TO",
+              "underlyingSymbol": null,
+              "shortName": "TD U.S. Index Fund - e\",",
+              "longName": "TD US Index e",
+              "currency": "CAD",
+              "quoteSourceName": "Delayed Quote",
+              "currencySymbol": "$",
+              "fromCurrency": null,
+              "toCurrency": null,
+              "lastMarket": null
+            },
+            "defaultKeyStatistics": {
+              "maxAge": 1,
+              "priceHint": 2,
+              "morningStarOverallRating": 4,
+              "morningStarRiskRating": 3,
+              "category": null,
+              "annualReportExpenseRatio": 0,
+              "ytdReturn": 0.3548577,
+              "beta3Year": 0.96,
+              "fundFamily": null,
+              "fundInceptionDate": 1726531200,
+              "legalType": null,
+              "lastSplitFactor": null,
+              "lastDividendValue": 1.12158,
+              "annualHoldingsTurnover": 0.0442,
+              "latestShareClass": null,
+              "leadInvestor": null
+            },
+            "summaryProfile": {
+              "address1": "TD Bank Tower",
+              "address2": "66 Wellington Street West",
+              "address3": "P.O. Box 100",
+              "phone": "1-800-588-8054",
+              "companyOfficers": [],
+              "executiveTeam": [],
+              "maxAge": 86400
+            },
+            "topHoldings": {
+              "maxAge": 1,
+              "cashPosition": 0.0011999999,
+              "stockPosition": 0.9967,
+              "bondPosition": 0,
+              "otherPosition": 0.0021,
+              "preferredPosition": 0,
+              "convertiblePosition": 0,
+              "holdings": [
+                {
+                  "symbol": "TPU",
+                  "holdingName": "TD U.S. Equity Index ETF",
+                  "holdingPercent": 0.36499402
+                },
+                {
+                  "symbol": "MSFT",
+                  "holdingName": "Microsoft Corp",
+                  "holdingPercent": 0.044868797
+                },
+                {
+                  "symbol": "AAPL",
+                  "holdingName": "Apple Inc",
+                  "holdingPercent": 0.041964002
+                },
+                {
+                  "symbol": "NVDA",
+                  "holdingName": "NVIDIA Corp",
+                  "holdingPercent": 0.040637497
+                },
+                {
+                  "symbol": "AMZN",
+                  "holdingName": "Amazon.com Inc",
+                  "holdingPercent": 0.0241469
+                },
+                {
+                  "symbol": "META",
+                  "holdingName": "Meta Platforms Inc Class A",
+                  "holdingPercent": 0.0151175
+                },
+                {
+                  "symbol": "GOOGL",
+                  "holdingName": "Alphabet Inc Class A",
+                  "holdingPercent": 0.014704401
+                },
+                {
+                  "symbol": "GOOG",
+                  "holdingName": "Alphabet Inc Class C",
+                  "holdingPercent": 0.012334201
+                },
+                {
+                  "symbol": "LLY",
+                  "holdingName": "Eli Lilly and Co",
+                  "holdingPercent": 0.010504
+                },
+                {
+                  "symbol": "AVGO",
+                  "holdingName": "Broadcom Inc",
+                  "holdingPercent": 0.0099956
+                }
+              ],
+              "equityHoldings": {
+                "priceToEarnings": 0.03759,
+                "priceToBook": 0.2132,
+                "priceToSales": 0.32803,
+                "priceToCashflow": 0.05483,
+                "medianMarketCap": 307045,
+                "threeYearEarningsGrowth": 22.96
+              },
+              "bondHoldings": {},
+              "bondRatings": [
+                {
+                  "us_government": 0
+                }
+              ],
+              "sectorWeightings": [
+                {
+                  "realestate": 0.020499999
+                },
+                {
+                  "consumer_cyclical": 0.096099995
+                },
+                {
+                  "basic_materials": 0.021300001
+                },
+                {
+                  "consumer_defensive": 0.056900002
+                },
+                {
+                  "technology": 0.3325
+                },
+                {
+                  "communication_services": 0.0933
+                },
+                {
+                  "financial_services": 0.119399995
+                },
+                {
+                  "utilities": 0.0238
+                },
+                {
+                  "industrials": 0.0797
+                },
+                {
+                  "energy": 0.038399998
+                },
+                {
+                  "healthcare": 0.1178
+                }
+              ]
+            },
+            "fundPerformance": {
+              "maxAge": 1,
+              "performanceOverview": {
+                "asOfDate": 1740009600,
+                "morningStarReturnRating": 0,
+                "ytdReturnPct": 0.0289914,
+                "fiveYrAvgReturnPct": 0.1535278,
+                "numYearsUp": 19,
+                "numYearsDown": 6,
+                "bestOneYrTotalReturn": 0.40330002,
+                "bestThreeYrTotalReturn": 0.40330002,
+                "worstThreeYrTotalReturn": 0.0789,
+                "oneYearTotalReturn": 0.3061373,
+                "threeYearTotalReturn": 0.1733604
+              },
+              "performanceOverviewCat": {},
+              "loadAdjustedReturns": {
+                "oneYear": 0.3661259,
+                "threeYear": 0.1639579,
+                "fiveYear": 0.16753072,
+                "tenYear": 0.1466896
+              },
+              "trailingReturns": {
+                "asOfDate": 1740009600,
+                "ytd": 0.0403182,
+                "oneMonth": 0.0403182,
+                "threeMonth": 0.1109048,
+                "oneYear": 0.3661259,
+                "threeYear": 0.1639579,
+                "fiveYear": 0.1675308,
+                "tenYear": 0.1466896,
+                "lastBullMkt": 0,
+                "lastBearMkt": 0
+              },
+              "trailingReturnsNav": {
+                "ytd": 0,
+                "oneMonth": 0,
+                "threeMonth": 0,
+                "oneYear": 0,
+                "threeYear": 0,
+                "fiveYear": 0,
+                "tenYear": 0
+              },
+              "trailingReturnsCat": {
+                "ytd": 0,
+                "oneMonth": 0,
+                "threeMonth": 0,
+                "oneYear": 0,
+                "threeYear": 0,
+                "fiveYear": 0,
+                "tenYear": 0,
+                "lastBullMkt": 0,
+                "lastBearMkt": 0
+              },
+              "annualTotalReturns": {
+                "returns": [
+                  {
+                    "year": "2024",
+                    "annualValue": 0.3548577
+                  },
+                  {
+                    "year": "2023",
+                    "annualValue": 0.23959261
+                  },
+                  {
+                    "year": "2022",
+                    "annualValue": -0.1450968
+                  },
+                  {
+                    "year": "2021",
+                    "annualValue": 0.2566633
+                  },
+                  {
+                    "year": "2020",
+                    "annualValue": 0.18122709
+                  },
+                  {
+                    "year": "2019",
+                    "annualValue": 0.2432753
+                  },
+                  {
+                    "year": "2018",
+                    "annualValue": 0.0314163
+                  },
+                  {
+                    "year": "2017",
+                    "annualValue": 0.1330329
+                  },
+                  {
+                    "year": "2016",
+                    "annualValue": 0.074718
+                  },
+                  {
+                    "year": "2015",
+                    "annualValue": 0.2072873
+                  },
+                  {
+                    "year": "2014",
+                    "annualValue": 0.23082411
+                  },
+                  {
+                    "year": "2013",
+                    "annualValue": 0.4033195
+                  },
+                  {
+                    "year": "2012",
+                    "annualValue": 0.1263637
+                  },
+                  {
+                    "year": "2011",
+                    "annualValue": 0.0408386
+                  },
+                  {
+                    "year": "2010",
+                    "annualValue": 0.0834984
+                  },
+                  {
+                    "year": "2009",
+                    "annualValue": 0.0673761
+                  },
+                  {
+                    "year": "2008",
+                    "annualValue": -0.2166408
+                  },
+                  {
+                    "year": "2007",
+                    "annualValue": -0.1104956
+                  },
+                  {
+                    "year": "2006",
+                    "annualValue": 0.1467499
+                  },
+                  {
+                    "year": "2005",
+                    "annualValue": 0.016750999
+                  },
+                  {
+                    "year": "2004",
+                    "annualValue": 0.0215395
+                  },
+                  {
+                    "year": "2003",
+                    "annualValue": 0.045463
+                  },
+                  {
+                    "year": "2002",
+                    "annualValue": -0.23160431
+                  },
+                  {
+                    "year": "2001",
+                    "annualValue": -0.0671638
+                  },
+                  {
+                    "year": "2000",
+                    "annualValue": -0.059047
+                  }
+                ],
+                "returnsCat": []
+              },
+              "pastQuarterlyReturns": {
+                "returns": [
+                  {
+                    "year": "2024",
+                    "q1": 0.1293979,
+                    "q2": 0.0523485,
+                    "q3": 0.0448615,
+                    "q4": 0.0910092
+                  },
+                  {
+                    "year": "2023",
+                    "q1": 0.073653795,
+                    "q2": 0.0662176,
+                    "q3": -0.0069006,
+                    "q4": 0.0903756
+                  },
+                  {
+                    "year": "2022",
+                    "q1": -0.0660644,
+                    "q2": -0.1456066,
+                    "q3": 0.022762101,
+                    "q4": 0.047532402
+                  },
+                  {
+                    "year": "2021",
+                    "q1": 0.0399953,
+                    "q2": 0.0739822,
+                    "q3": 0.0253072,
+                    "q4": 0.0973281
+                  },
+                  {
+                    "year": "2020",
+                    "q1": -0.124144495,
+                    "q2": 0.1683075,
+                    "q3": 0.0728999,
+                    "q4": 0.0759313
+                  },
+                  {
+                    "year": "2019",
+                    "q1": 0.1103077,
+                    "q2": 0.020748101,
+                    "q3": 0.0272997,
+                    "q4": 0.0678449
+                  },
+                  {
+                    "year": "2018",
+                    "q1": 0.0155715,
+                    "q2": 0.053411998,
+                    "q3": 0.0564619,
+                    "q4": -0.0874191
+                  },
+                  {
+                    "year": "2017",
+                    "q1": 0.0484489,
+                    "q2": 0.0038356,
+                    "q3": 0.003639,
+                    "q4": 0.072642796
+                  },
+                  {
+                    "year": "2016",
+                    "q1": -0.0539116,
+                    "q2": 0.016923701,
+                    "q3": 0.0530862,
+                    "q4": 0.0607439
+                  },
+                  {
+                    "year": "2015",
+                    "q1": 0.1017358,
+                    "q2": -0.012910301,
+                    "q3": -0.0017734,
+                    "q4": 0.11210921
+                  },
+                  {
+                    "year": "2014",
+                    "q1": 0.057360303,
+                    "q2": 0.0138389,
+                    "q3": 0.059787102,
+                    "q4": 0.0833915
+                  },
+                  {
+                    "year": "2013",
+                    "q1": 0.126572,
+                    "q2": 0.063737795,
+                    "q3": 0.029113099,
+                    "q4": 0.137889
+                  },
+                  {
+                    "year": "2012",
+                    "q1": 0.100810096,
+                    "q2": -0.0085854,
+                    "q3": 0.0251546,
+                    "q4": 0.0067498
+                  },
+                  {
+                    "year": "2011",
+                    "q1": 0.0323176,
+                    "q2": -0.0062611997,
+                    "q3": -0.0648065,
+                    "q4": 0.0849164
+                  },
+                  {
+                    "year": "2010",
+                    "q1": 0.0197531,
+                    "q2": -0.0726392,
+                    "q3": 0.0736292,
+                    "q4": 0.0671616
+                  },
+                  {
+                    "year": "2009",
+                    "q1": -0.0913811,
+                    "q2": 0.0674286,
+                    "q3": 0.0620985,
+                    "q4": 0.036172498
+                  },
+                  {
+                    "year": "2008",
+                    "q1": -0.0596421,
+                    "q2": -0.0397463,
+                    "q3": -0.041391503,
+                    "q4": -0.09501681
+                  },
+                  {
+                    "year": "2007",
+                    "q1": -0.0038049,
+                    "q2": -0.021875,
+                    "q3": -0.0482783,
+                    "q4": -0.0408216
+                  },
+                  {
+                    "year": "2006",
+                    "q1": 0.0390778,
+                    "q2": -0.0616773,
+                    "q3": 0.058516998,
+                    "q4": 0.1111446
+                  },
+                  {
+                    "year": "2005",
+                    "q1": -0.0127512,
+                    "q2": 0.0242661,
+                    "q3": -0.0198701,
+                    "q4": 0.025868101
+                  },
+                  {
+                    "year": "2004",
+                    "q1": 0.0330611,
+                    "q2": 0.0361446,
+                    "q3": -0.0748547,
+                    "q4": 0.0315703
+                  },
+                  {
+                    "year": "2003",
+                    "q1": -0.099316396,
+                    "q2": 0.0633929,
+                    "q3": 0.0180521,
+                    "q4": 0.072192304
+                  },
+                  {
+                    "year": "2002",
+                    "q1": 0.00090960006,
+                    "q2": -0.1750985,
+                    "q3": -0.1369813,
+                    "q4": 0.0783698
+                  },
+                  {
+                    "year": "2001",
+                    "q1": -0.0737779,
+                    "q2": 0.0169646,
+                    "q3": -0.112898394,
+                    "q4": 0.116377495
+                  },
+                  {
+                    "year": "2000",
+                    "q1": 0.028835699,
+                    "q2": -0.009582399,
+                    "q3": 0.0024316,
+                    "q4": -0.0788108
+                  }
+                ]
+              },
+              "rankInCategory": {
+                "ytd": 45,
+                "oneMonth": 45,
+                "threeMonth": 25,
+                "oneYear": 18,
+                "threeYear": 24,
+                "fiveYear": 20
+              },
+              "riskOverviewStatistics": {
+                "riskRating": 3,
+                "riskStatistics": [
+                  {
+                    "year": "5y",
+                    "alpha": 0.17,
+                    "beta": 0.99,
+                    "meanAnnualReturn": 1.38,
+                    "rSquared": 98.97,
+                    "stdDev": 14.45,
+                    "sharpeRatio": 0.99,
+                    "treynorRatio": 14.58
+                  },
+                  {
+                    "year": "3y",
+                    "alpha": 0.43,
+                    "beta": 0.96,
+                    "meanAnnualReturn": 1.35,
+                    "rSquared": 99,
+                    "stdDev": 13.45,
+                    "sharpeRatio": 0.93,
+                    "treynorRatio": 13.11
+                  },
+                  {
+                    "year": "10y",
+                    "alpha": -0.07,
+                    "beta": 0.99,
+                    "meanAnnualReturn": 1.22,
+                    "rSquared": 98.6,
+                    "stdDev": 12.91,
+                    "sharpeRatio": 1,
+                    "treynorRatio": 13.08
+                  }
+                ]
+              },
+              "riskOverviewStatisticsCat": {
+                "riskStatisticsCat": []
+              }
+            },
+            "quoteType": {
+              "exchange": "TOR",
+              "quoteType": "MUTUALFUND",
+              "symbol": "0P000071W8.TO",
+              "underlyingSymbol": "0P000071W8.TO",
+              "shortName": "TD U.S. Index Fund - e\",",
+              "longName": "TD US Index e",
+              "firstTradeDateEpochUtc": 1514903400,
+              "timeZoneFullName": "America/Toronto",
+              "timeZoneShortName": "EST",
+              "uuid": "a2c8ac30-c262-365b-be7e-ce1466e923da",
+              "gmtOffSetMilliseconds": -18000000,
+              "maxAge": 1
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

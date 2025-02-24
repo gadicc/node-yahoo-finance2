@@ -1,0 +1,60 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ABBV?formatted=false&modules=summaryProfile&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:28 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "2",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "0smsq4pjrofb0"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "summaryProfile": {
+              "address1": "1 North Waukegan Road",
+              "city": "North Chicago",
+              "state": "IL",
+              "zip": "60064-6400",
+              "country": "United States",
+              "phone": "847 932 7900",
+              "website": "https://www.abbvie.com",
+              "industry": "Drug Manufacturers - General",
+              "industryKey": "drug-manufacturers-general",
+              "industryDisp": "Drug Manufacturers - General",
+              "sector": "Healthcare",
+              "sectorKey": "healthcare",
+              "sectorDisp": "Healthcare",
+              "longBusinessSummary": "AbbVie Inc., a research-based biopharmaceutical company, engages in the research and development, manufacture, commercialization, and sale of medicines and therapies worldwide. The company offers Humira, an injection for autoimmune and intestinal Behçet's diseases, generalized pustular psoriasis, and pyoderma gangrenosum; Skyrizi to treat autoimmune diseases, erythrodermic psoriasis, generalized pustular psoriasis, and palmoplantar pustulosis; Rinvoq to treat inflammatory diseases; Imbruvica for the treatment of adult patients with blood cancers; Venclexta/Venclyxto to treat blood cancers; Elahere to treat various cancer; and Epkinly to treat lymphoma. It also provides facial injectables, plastics and regenerative medicine, body contouring, and skincare products; botox therapeutic to treat neurologic diseases; Vraylar to treat schizophrenia, bipolar disorder, and depressive disorder; Duopa and Duodopa to treat Parkinson's disease; Ubrelvy to treat migraine; and Qulipta for episodic and chronic migraine, as well as other neuroscience products. In addition, the company offers Ozurdex for eye diseases; Lumigan/Ganfort and Alphagan/Combigan for the reduction of elevated intraocular pressure in patients with open angle glaucoma or ocular hypertension; Restasis to increase tear production; and other eye care products. Further, it provides Mavyret/Maviret to treat chronic hepatitis C virus genotype 1-6 infection; Creon, a pancreatic enzyme therapy; and Linzess/Constella to treat irritable bowel syndrome with constipation and chronic idiopathic constipation. The company was incorporated in 2012 and is headquartered in North Chicago, Illinois.",
+              "fullTimeEmployees": 55000,
+              "companyOfficers": [],
+              "executiveTeam": [],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

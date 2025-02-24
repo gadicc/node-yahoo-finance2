@@ -1,0 +1,305 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/BABA?formatted=false&modules=fundOwnership&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:35:07 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "3",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "0g66sspjrofab"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "fundOwnership": {
+              "maxAge": 1,
+              "ownershipList": [
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard/Primecap Fund",
+                  "pctHeld": {
+                    "raw": 0.0050999997,
+                    "fmt": "0.51%"
+                  },
+                  "position": {
+                    "raw": 12169717,
+                    "fmt": "12.17M",
+                    "longFmt": "12,169,717"
+                  },
+                  "value": {
+                    "raw": 1749396818,
+                    "fmt": "1.75B",
+                    "longFmt": "1,749,396,818"
+                  },
+                  "pctChange": {
+                    "raw": -0.0064,
+                    "fmt": "-0.64%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Dodge & Cox International Stock Fund",
+                  "pctHeld": {
+                    "raw": 0.0050999997,
+                    "fmt": "0.51%"
+                  },
+                  "position": {
+                    "raw": 12050800,
+                    "fmt": "12.05M",
+                    "longFmt": "12,050,800"
+                  },
+                  "value": {
+                    "raw": 1732302500,
+                    "fmt": "1.73B",
+                    "longFmt": "1,732,302,500"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1730332800,
+                    "fmt": "2024-10-31"
+                  },
+                  "organization": "Invesco Developing Markets Fund",
+                  "pctHeld": {
+                    "raw": 0.0025,
+                    "fmt": "0.25%"
+                  },
+                  "position": {
+                    "raw": 5953158,
+                    "fmt": "5.95M",
+                    "longFmt": "5,953,158"
+                  },
+                  "value": {
+                    "raw": 855766462,
+                    "fmt": "855.77M",
+                    "longFmt": "855,766,462"
+                  },
+                  "pctChange": {
+                    "raw": 1,
+                    "fmt": "100.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Vanguard Horizon Fund-Capital Opportunity Fund",
+                  "pctHeld": {
+                    "raw": 0.0017,
+                    "fmt": "0.17%"
+                  },
+                  "position": {
+                    "raw": 3944500,
+                    "fmt": "3.94M",
+                    "longFmt": "3,944,500"
+                  },
+                  "value": {
+                    "raw": 567021875,
+                    "fmt": "567.02M",
+                    "longFmt": "567,021,875"
+                  },
+                  "pctChange": {
+                    "raw": 0.0106,
+                    "fmt": "1.06%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Dodge & Cox Global Stock Fund",
+                  "pctHeld": {
+                    "raw": 0.001,
+                    "fmt": "0.10%"
+                  },
+                  "position": {
+                    "raw": 2335100,
+                    "fmt": "2.34M",
+                    "longFmt": "2,335,100"
+                  },
+                  "value": {
+                    "raw": 335670625,
+                    "fmt": "335.67M",
+                    "longFmt": "335,670,625"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1732924800,
+                    "fmt": "2024-11-30"
+                  },
+                  "organization": "Delaware Group Global & International Funds-Emerging Markets Fd",
+                  "pctHeld": {
+                    "raw": 0.0008,
+                    "fmt": "0.08%"
+                  },
+                  "position": {
+                    "raw": 1940000,
+                    "fmt": "1.94M",
+                    "longFmt": "1,940,000"
+                  },
+                  "value": {
+                    "raw": 278875000,
+                    "fmt": "278.88M",
+                    "longFmt": "278,875,000"
+                  },
+                  "pctChange": {
+                    "raw": 0,
+                    "fmt": "0.00%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Price (T.Rowe) Emerging Markets Equity Trust",
+                  "pctHeld": {
+                    "raw": 0.0007,
+                    "fmt": "0.07%"
+                  },
+                  "position": {
+                    "raw": 1672317,
+                    "fmt": "1.67M",
+                    "longFmt": "1,672,317"
+                  },
+                  "value": {
+                    "raw": 240395568,
+                    "fmt": "240.4M",
+                    "longFmt": "240,395,568"
+                  },
+                  "pctChange": {
+                    "raw": 0.86480004,
+                    "fmt": "86.48%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Price (T.Rowe) International Growth Equity Trust",
+                  "pctHeld": {
+                    "raw": 0.00059999997,
+                    "fmt": "0.06%"
+                  },
+                  "position": {
+                    "raw": 1416788,
+                    "fmt": "1.42M",
+                    "longFmt": "1,416,788"
+                  },
+                  "value": {
+                    "raw": 203663275,
+                    "fmt": "203.66M",
+                    "longFmt": "203,663,275"
+                  },
+                  "pctChange": {
+                    "raw": 0.122200005,
+                    "fmt": "12.22%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "organization": "Price (T.Rowe) International Value Equity Trust",
+                  "pctHeld": {
+                    "raw": 0.00059999997,
+                    "fmt": "0.06%"
+                  },
+                  "position": {
+                    "raw": 1344244,
+                    "fmt": "1.34M",
+                    "longFmt": "1,344,244"
+                  },
+                  "value": {
+                    "raw": 193235075,
+                    "fmt": "193.24M",
+                    "longFmt": "193,235,075"
+                  },
+                  "pctChange": {
+                    "raw": 0.0098,
+                    "fmt": "0.98%"
+                  }
+                },
+                {
+                  "maxAge": 1,
+                  "reportDate": {
+                    "raw": 1730332800,
+                    "fmt": "2024-10-31"
+                  },
+                  "organization": "Price (T.Rowe) International Stock Fund",
+                  "pctHeld": {
+                    "raw": 0.00059999997,
+                    "fmt": "0.06%"
+                  },
+                  "position": {
+                    "raw": 1469313,
+                    "fmt": "1.47M",
+                    "longFmt": "1,469,313"
+                  },
+                  "value": {
+                    "raw": 211213743,
+                    "fmt": "211.21M",
+                    "longFmt": "211,213,743"
+                  },
+                  "pctChange": {
+                    "raw": -0.0139999995,
+                    "fmt": "-1.40%"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

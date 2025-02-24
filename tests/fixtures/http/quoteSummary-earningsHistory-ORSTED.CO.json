@@ -1,0 +1,146 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v10/finance/quoteSummary/ORSTED.CO?formatted=false&modules=earningsHistory&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-length": "1164",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:34:59 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-company-fundamentals-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "87",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "1t67s6hjrofa3"
+    },
+    "bodyJson": {
+      "quoteSummary": {
+        "result": [
+          {
+            "earningsHistory": {
+              "history": [
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": 5.143,
+                    "fmt": "5.14"
+                  },
+                  "epsEstimate": {
+                    "raw": 6.97,
+                    "fmt": "6.97"
+                  },
+                  "epsDifference": {
+                    "raw": -1.83,
+                    "fmt": "-1.83"
+                  },
+                  "surprisePercent": {
+                    "raw": -0.26209998,
+                    "fmt": "-26.21%"
+                  },
+                  "quarter": {
+                    "raw": 1711843200,
+                    "fmt": "2024-03-31"
+                  },
+                  "currency": "DKK",
+                  "period": "-4q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": 2.1314,
+                    "fmt": "2.13"
+                  },
+                  "epsEstimate": {
+                    "raw": 4.29,
+                    "fmt": "4.29"
+                  },
+                  "epsDifference": {
+                    "raw": -2.16,
+                    "fmt": "-2.16"
+                  },
+                  "surprisePercent": {
+                    "raw": -0.5032,
+                    "fmt": "-50.32%"
+                  },
+                  "quarter": {
+                    "raw": 1719705600,
+                    "fmt": "2024-06-30"
+                  },
+                  "currency": "DKK",
+                  "period": "-3q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": 1.2509,
+                    "fmt": "1.25"
+                  },
+                  "epsEstimate": {
+                    "raw": 3.80333,
+                    "fmt": "3.8"
+                  },
+                  "epsDifference": {
+                    "raw": -2.55,
+                    "fmt": "-2.55"
+                  },
+                  "surprisePercent": {
+                    "raw": -0.6711,
+                    "fmt": "-67.11%"
+                  },
+                  "quarter": {
+                    "raw": 1727654400,
+                    "fmt": "2024-09-30"
+                  },
+                  "currency": "DKK",
+                  "period": "-2q"
+                },
+                {
+                  "maxAge": 1,
+                  "epsActual": {
+                    "raw": 8.666,
+                    "fmt": "8.67"
+                  },
+                  "epsEstimate": {
+                    "raw": -6.69,
+                    "fmt": "-6.69"
+                  },
+                  "epsDifference": {
+                    "raw": 15.36,
+                    "fmt": "15.36"
+                  },
+                  "surprisePercent": {
+                    "raw": 2.2954,
+                    "fmt": "229.54%"
+                  },
+                  "quarter": {
+                    "raw": 1735603200,
+                    "fmt": "2024-12-31"
+                  },
+                  "currency": "DKK",
+                  "period": "-1q"
+                }
+              ],
+              "maxAge": 86400
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
