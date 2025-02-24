@@ -15,8 +15,10 @@ export interface ModuleOptionsWithValidateTrue extends ModuleOptions {
 }
 
 export interface ModuleThis {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any;
   // TODO: should be ModuleExec function but requiring functions breaks
   // schema generation because json-schema does not support functions.
+  // deno-lint-ignore no-explicit-any
   _moduleExec: any;
 }

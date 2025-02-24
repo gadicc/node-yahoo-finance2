@@ -1,14 +1,14 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 
-import { Quote } from "./quote.js";
+import type { Quote } from "./quote.ts";
 
 export interface OptionsResult {
-  [key: string]: any;
+  [key: string]: unknown;
   underlyingSymbol: string;
   expirationDates: Date[];
   strikes: number[];
@@ -18,7 +18,7 @@ export interface OptionsResult {
 }
 
 export interface Option {
-  [key: string]: any;
+  [key: string]: unknown;
   expirationDate: Date;
   hasMiniOptions: boolean;
   calls: CallOrPut[];
@@ -26,7 +26,7 @@ export interface Option {
 }
 
 export interface CallOrPut {
-  [key: string]: any;
+  [key: string]: unknown;
   contractSymbol: string;
   strike: number;
   currency?: string;
@@ -60,23 +60,23 @@ const queryOptionsDefaults: OptionsOptions = {
 export default function options(
   this: ModuleThis,
   symbol: string,
-  queryOptionsOverrides: OptionsOptions,
+  queryOptionsOverrides?: OptionsOptions,
   moduleOptions?: ModuleOptionsWithValidateTrue,
 ): Promise<OptionsResult>;
 
 export default function options(
   this: ModuleThis,
   symbol: string,
-  queryOptionsOverrides: OptionsOptions,
+  queryOptionsOverrides?: OptionsOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
-): Promise<any>;
+): Promise<unknown>;
 
 export default function options(
   this: ModuleThis,
   symbol: string,
-  queryOptionsOverrides: OptionsOptions,
+  queryOptionsOverrides?: OptionsOptions,
   moduleOptions?: ModuleOptions,
-): Promise<any> {
+): Promise<unknown> {
   return this._moduleExec({
     moduleName: "options",
 
@@ -105,9 +105,11 @@ export default function options(
 
     result: {
       schemaKey: "#/definitions/OptionsResult",
+      // deno-lint-ignore no-explicit-any
       transformWith(result: any) {
-        if (!result.optionChain)
+        if (!result.optionChain) {
           throw new Error("Unexpected result: " + JSON.stringify(result));
+        }
         return result.optionChain.result[0];
       },
     },
