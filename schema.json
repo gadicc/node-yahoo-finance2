@@ -7411,6 +7411,188 @@
         "query"
       ],
       "additionalProperties": false
+    },
+    "OptionsResult": {
+      "type": "object",
+      "properties": {
+        "underlyingSymbol": {
+          "type": "string"
+        },
+        "expirationDates": {
+          "type": "array",
+          "items": {
+            "yahooFinanceType": "date"
+          }
+        },
+        "strikes": {
+          "type": "array",
+          "items": {
+            "yahooFinanceType": "number"
+          }
+        },
+        "hasMiniOptions": {
+          "type": "boolean"
+        },
+        "quote": {
+          "$ref": "#/definitions/Quote"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Option"
+          }
+        }
+      },
+      "required": [
+        "underlyingSymbol",
+        "expirationDates",
+        "strikes",
+        "hasMiniOptions",
+        "quote",
+        "options"
+      ]
+    },
+    "Option": {
+      "type": "object",
+      "properties": {
+        "expirationDate": {
+          "yahooFinanceType": "date"
+        },
+        "hasMiniOptions": {
+          "type": "boolean"
+        },
+        "calls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CallOrPut"
+          }
+        },
+        "puts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CallOrPut"
+          }
+        }
+      },
+      "required": [
+        "expirationDate",
+        "hasMiniOptions",
+        "calls",
+        "puts"
+      ]
+    },
+    "CallOrPut": {
+      "type": "object",
+      "properties": {
+        "contractSymbol": {
+          "type": "string"
+        },
+        "strike": {
+          "yahooFinanceType": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "lastPrice": {
+          "yahooFinanceType": "number"
+        },
+        "change": {
+          "yahooFinanceType": "number"
+        },
+        "percentChange": {
+          "yahooFinanceType": "number"
+        },
+        "volume": {
+          "yahooFinanceType": "number"
+        },
+        "openInterest": {
+          "yahooFinanceType": "number"
+        },
+        "bid": {
+          "yahooFinanceType": "number"
+        },
+        "ask": {
+          "yahooFinanceType": "number"
+        },
+        "contractSize": {
+          "type": "string",
+          "const": "REGULAR"
+        },
+        "expiration": {
+          "yahooFinanceType": "date"
+        },
+        "lastTradeDate": {
+          "yahooFinanceType": "date"
+        },
+        "impliedVolatility": {
+          "yahooFinanceType": "number"
+        },
+        "inTheMoney": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "contractSymbol",
+        "strike",
+        "lastPrice",
+        "change",
+        "contractSize",
+        "expiration",
+        "lastTradeDate",
+        "impliedVolatility",
+        "inTheMoney"
+      ]
+    },
+    "OptionsOptions": {
+      "type": "object",
+      "properties": {
+        "formatted": {
+          "type": "boolean"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "date": {
+          "anyOf": [
+            {
+              "yahooFinanceType": "date"
+            },
+            {
+              "yahooFinanceType": "number"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "NamedParameters<typeof options>": {
+      "type": "object",
+      "properties": {
+        "this": {
+          "$ref": "#/definitions/ModuleThis"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "queryOptionsOverrides": {
+          "$ref": "#/definitions/OptionsOptions"
+        },
+        "moduleOptions": {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      },
+      "required": [
+        "this",
+        "symbol",
+        "queryOptionsOverrides"
+      ],
+      "additionalProperties": false
     }
   }
 }

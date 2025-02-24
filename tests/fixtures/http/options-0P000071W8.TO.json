@@ -1,0 +1,100 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/options/0P000071W8.TO?formatted=false&lang=en-US&region=US&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-length": "1679",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:24:46 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-quote-api--mtls-production-sg3.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "3",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "00tmg7tjroemu"
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "0P000071W8.TO",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "MUTUALFUND",
+              "typeDisp": "Fund",
+              "quoteSourceName": "Delayed Quote",
+              "triggerable": true,
+              "customPriceAlertConfidence": "HIGH",
+              "corporateActions": [],
+              "regularMarketTime": 1740168000,
+              "exchange": "TOR",
+              "exchangeTimezoneName": "America/Toronto",
+              "exchangeTimezoneShortName": "EST",
+              "gmtOffSetMilliseconds": -18000000,
+              "market": "ca_market",
+              "esgPopulated": false,
+              "currency": "CAD",
+              "shortName": "TD U.S. Index Fund - e\",",
+              "longName": "TD US Index e",
+              "regularMarketChangePercent": -2.2092228,
+              "regularMarketPrice": 150.5,
+              "marketState": "PREPRE",
+              "hasPrePostMarketData": false,
+              "firstTradeDateMilliseconds": 1514903400000,
+              "priceHint": 2,
+              "tradeable": false,
+              "cryptoTradeable": false,
+              "regularMarketChange": -3.399994,
+              "regularMarketPreviousClose": 153.9,
+              "fullExchangeName": "Toronto",
+              "averageDailyVolume3Month": 0,
+              "averageDailyVolume10Day": 0,
+              "fiftyTwoWeekLowChange": 30.919998,
+              "fiftyTwoWeekLowChangePercent": 0.25857165,
+              "fiftyTwoWeekRange": "119.58 - 154.69",
+              "fiftyTwoWeekHighChange": -4.1900024,
+              "fiftyTwoWeekHighChangePercent": -0.027086446,
+              "fiftyTwoWeekLow": 119.58,
+              "fiftyTwoWeekHigh": 154.69,
+              "fiftyTwoWeekChangePercent": 25.60507,
+              "dividendRate": 1.12158,
+              "dividendYield": 0.73,
+              "ytdReturn": 4.03182,
+              "trailingThreeMonthReturns": 11.09048,
+              "fiftyDayAverage": 151.4626,
+              "fiftyDayAverageChange": -0.9626007,
+              "fiftyDayAverageChangePercent": -0.006355369,
+              "twoHundredDayAverage": 139.29234,
+              "twoHundredDayAverageChange": 11.207657,
+              "twoHundredDayAverageChangePercent": 0.0804614,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 15,
+              "symbol": "0P000071W8.TO"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

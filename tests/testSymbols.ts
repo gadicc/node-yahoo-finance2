@@ -9,7 +9,7 @@ const commonSymbols = [
   "WSKT.JK", // JKT
   "SPOT", // NMS (Nasdaq)
   "GOOG", // NMS (Nasdaq)
-  "UNIR.MI", // FTSE MIB
+  // "UNIR.MI", // FTSE MIB // delisted.
   "OCDO.L", // LSE
   "BABA", // NYSE
   "QQQ", // ETF

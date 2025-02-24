@@ -1,0 +1,112 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v7/finance/options/BTC-USD?formatted=false&lang=en-US&region=US&crumb=haT3oykhHqZ",
+    "method": "GET",
+    "headers": {
+      "cookie": "GUCS=AV78X-IQ; GUC=AQABCAFnsytn2UIgTASn&s=AQAAAEKG89vA&g=Z7HctQ; A3=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; A1S=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4; EuConsent=CQM66kAQM66kAAOACBENBcFoAP_gAEPgACiQKptB9G7WTXFneXp2YPskOYUX0VBJ4MAwBgCBAcABzBIUIBwGVmAzJEyIICACGAIAIGBBIABtGAhAQEAAYIAFAABIAEgAIBAAIGAAACAAAABACAAAAAAAAAAQgEAXMBQgmAYEBFoIQUhAggAgAQAAAAAEAIgBCgQAEAAAQAAICAAIACgAAgAAAAAAAAAEAFAIEQAAIAECAotkdQAAAAAAAAAAAAQACAABAAAAAIKpgAkGpUQBFgSEhAIGEECAEQUBABQIAgAACBAAAATBAUIAwAVGAiAEAIAAAAAAAAACABAAABAAhAAEAAQIAAAAAIAAgAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAGIBAggAAABBAAQUAAAAAgAAAAAAAAAIgACAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAIAAAAIAAAAgBEFgAAAAAAAAAAAAAACAABAAAAAIAAA; A1=d=AQABBKvcsWcCEIGLkyl67hr2YX7XekV46j4FEgABCAErs2fZZ_bPb2UB9qMAAAcIq9yxZ63aZoI&S=AQAAAtFJa---IoVh8DRgGhGzVr4",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=1, stale-while-revalidate=9",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Feb 2025 09:24:47 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-quote-api--mtls-production-sg3.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "3",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "0o6iit5jroemv"
+    },
+    "bodyJson": {
+      "optionChain": {
+        "result": [
+          {
+            "underlyingSymbol": "BTC-USD",
+            "expirationDates": [],
+            "strikes": [],
+            "hasMiniOptions": false,
+            "quote": {
+              "language": "en-US",
+              "region": "US",
+              "quoteType": "CRYPTOCURRENCY",
+              "typeDisp": "Cryptocurrency",
+              "quoteSourceName": "CoinMarketCap",
+              "triggerable": true,
+              "customPriceAlertConfidence": "HIGH",
+              "currency": "USD",
+              "hasPrePostMarketData": false,
+              "firstTradeDateMilliseconds": 1410912000000,
+              "priceHint": 2,
+              "circulatingSupply": 19828390,
+              "lastMarket": "CoinMarketCap",
+              "exchange": "CCC",
+              "messageBoardId": "finmb_BTC_CCC",
+              "exchangeTimezoneName": "UTC",
+              "exchangeTimezoneShortName": "UTC",
+              "gmtOffSetMilliseconds": 0,
+              "market": "ccc_market",
+              "esgPopulated": false,
+              "regularMarketChangePercent": -0.589956,
+              "volume24Hr": 23758370816,
+              "volumeAllCurrencies": 23758370816,
+              "fromCurrency": "BTC",
+              "toCurrency": "USD=X",
+              "coinMarketCapLink": "https://coinmarketcap.com/currencies/bitcoin",
+              "regularMarketChange": -568.2031,
+              "regularMarketDayHigh": 96473.94,
+              "regularMarketDayRange": "95168.77 - 96473.94",
+              "regularMarketDayLow": 95168.77,
+              "regularMarketVolume": 23758370816,
+              "regularMarketPreviousClose": 96267.85,
+              "fullExchangeName": "CCC",
+              "regularMarketOpen": 96267.85,
+              "averageDailyVolume3Month": 55688726397,
+              "averageDailyVolume10Day": 29671298757,
+              "startDate": 1278979200,
+              "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+              "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+              "fiftyTwoWeekLowChange": 46623.09,
+              "fiftyTwoWeekLowChangePercent": 0.94914323,
+              "fiftyTwoWeekRange": "49121.24 - 109114.88",
+              "fiftyTwoWeekHighChange": -13370.555,
+              "fiftyTwoWeekHighChangePercent": -0.12253649,
+              "fiftyTwoWeekLow": 49121.24,
+              "fiftyTwoWeekHigh": 109114.88,
+              "fiftyTwoWeekChangePercent": 77.134094,
+              "fiftyDayAverage": 98973.03,
+              "fiftyDayAverageChange": -3228.7031,
+              "fiftyDayAverageChangePercent": -0.03262205,
+              "twoHundredDayAverage": 81130.1,
+              "twoHundredDayAverageChange": 14614.227,
+              "twoHundredDayAverageChangePercent": 0.18013322,
+              "marketCap": 1898455891968,
+              "sourceInterval": 15,
+              "exchangeDataDelayedBy": 0,
+              "regularMarketPrice": 95744.33,
+              "marketState": "REGULAR",
+              "tradeable": false,
+              "cryptoTradeable": true,
+              "corporateActions": [],
+              "regularMarketTime": 1740388920,
+              "shortName": "Bitcoin USD",
+              "longName": "Bitcoin USD",
+              "symbol": "BTC-USD"
+            },
+            "options": []
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

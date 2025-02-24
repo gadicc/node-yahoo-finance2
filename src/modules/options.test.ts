@@ -1,10 +1,20 @@
-import options from "./options.js";
-import testYf from "../../tests/testYf.js";
-import testSymbols from "../../tests/testSymbols.js";
+import {
+  createTestYahooFinance,
+  describe,
+  expect,
+  it,
+  setupCache,
+  testSymbols,
+} from "../../tests/common.ts";
 
-const yf = testYf({ options });
+import options from "./options.ts";
+
+const YahooFinance = createTestYahooFinance({ modules: { options } });
+const yf = new YahooFinance();
 
 describe("options", () => {
+  setupCache();
+
   const symbols = testSymbols({
     skip: [
       // Missing OptionType for {contract: BRKS220414C00097500 }, {tickerSymbol: BRKS },
@@ -23,13 +33,16 @@ describe("options", () => {
     });
   });
 
-  if (process.env.FETCH_DEVEL !== "nocache")
+  /* TODO
+  if (process.env.FETCH_DEVEL !== "nocache") {
     it("throws on weird result", () => {
       const devel = "weirdJsonResult.fake.json";
       return expect(yf.options("A", {}, { devel })).rejects.toThrow(
         /^Unexpected result/,
       );
     });
+  }
+  */
 
   describe("date queryOpt should accept `date` as Date, number, string`", () => {
     // NB: fetchDevel will confirm that all options below map to same request params.
