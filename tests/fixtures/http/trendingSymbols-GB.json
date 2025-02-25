@@ -1,0 +1,52 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/trending/GB?lang=en-US&count=5",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "3",
+      "cache-control": "public, max-age=300, stale-while-revalidate=30",
+      "content-length": "134",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 11:17:24 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-user-analytics-api--mtls-baseline-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "109",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "2s320g5jrr9m4"
+    },
+    "bodyJson": {
+      "finance": {
+        "result": [
+          {
+            "count": 2,
+            "quotes": [
+              {
+                "symbol": "BTC-USD"
+              },
+              {
+                "symbol": "PLTR"
+              }
+            ],
+            "jobTimestamp": 0,
+            "startInterval": 0
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

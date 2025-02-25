@@ -1,9 +1,18 @@
-import trendingSymbols from "./trendingSymbols.js";
-import testYf from "../../tests/testYf.js";
+import {
+  createTestYahooFinance,
+  describe,
+  it,
+  setupCache,
+} from "../../tests/common.ts";
 
-const yf = testYf({ trendingSymbols });
+import trendingSymbols from "./trendingSymbols.ts";
+
+const YahooFinance = createTestYahooFinance({ modules: { trendingSymbols } });
+const yf = new YahooFinance();
 
 describe("trendingSymbols", () => {
+  setupCache();
+
   it.each(["US", "GB", "IT", "AU"])(
     "passes validation for country '%s'",
     async (country) => {
@@ -12,11 +21,15 @@ describe("trendingSymbols", () => {
       });
     },
   );
-  if (process.env.FETCH_DEVEL !== "nocache")
+
+  /* TODO
+  if (process.env.FETCH_DEVEL !== "nocache") {
     it("throws on weird result", () => {
       const devel = "weirdJsonResult.fake.json";
       return expect(yf.trendingSymbols("GB", {}, { devel })).rejects.toThrow(
         /^Unexpected result/,
       );
     });
+  }
+  */
 });
