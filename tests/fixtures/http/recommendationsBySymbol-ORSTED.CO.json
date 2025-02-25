@@ -1,0 +1,64 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v6/finance/recommendationsbysymbol/ORSTED.CO?",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=60, stale-while-revalidate=15",
+      "content-length": "273",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 10:57:49 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-user-analytics-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "84",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "7cdbjthjrr8he"
+    },
+    "bodyJson": {
+      "finance": {
+        "result": [
+          {
+            "symbol": "ORSTED.CO",
+            "recommendedSymbols": [
+              {
+                "symbol": "VWS.CO",
+                "score": 0.185159
+              },
+              {
+                "symbol": "DSV.CO",
+                "score": 0.120336
+              },
+              {
+                "symbol": "DANSKE.CO",
+                "score": 0.117086
+              },
+              {
+                "symbol": "GMAB.CO",
+                "score": 0.10578
+              },
+              {
+                "symbol": "AMBU-B.CO",
+                "score": 0.10346
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

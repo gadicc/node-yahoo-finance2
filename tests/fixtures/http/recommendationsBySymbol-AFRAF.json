@@ -1,0 +1,64 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v6/finance/recommendationsbysymbol/AFRAF?",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=60, stale-while-revalidate=15",
+      "content-length": "259",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 10:57:47 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-user-analytics-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "84",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "7fi34lpjrr8hc"
+    },
+    "bodyJson": {
+      "finance": {
+        "result": [
+          {
+            "symbol": "AFRAF",
+            "recommendedSymbols": [
+              {
+                "symbol": "AFLYY",
+                "score": 0.027067
+              },
+              {
+                "symbol": "DLAKF",
+                "score": 0.021059
+              },
+              {
+                "symbol": "ALNPY",
+                "score": 0.017664
+              },
+              {
+                "symbol": "BABWF",
+                "score": 0.015999
+              },
+              {
+                "symbol": "EJTTF",
+                "score": 0.014108
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

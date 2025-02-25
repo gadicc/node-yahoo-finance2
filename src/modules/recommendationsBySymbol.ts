@@ -3,12 +3,12 @@ import type {
   ModuleOptionsWithValidateFalse,
   ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 
 export interface RecommendationsBySymbolResponse {
-  [key: string]: any;
+  [key: string]: unknown;
   recommendedSymbols: Array<{
-    [key: string]: any;
+    [key: string]: unknown;
     score: number; // 0.1927
     symbol: string; // "BMW.DE"
   }>;
@@ -18,7 +18,9 @@ export interface RecommendationsBySymbolResponse {
 export type RecommendationsBySymbolResponseArray =
   RecommendationsBySymbolResponse[];
 
-export interface RecommendationsBySymbolOptions {}
+export interface RecommendationsBySymbolOptions {
+  [key: string]: never;
+}
 
 const queryOptionsDefaults = {};
 
@@ -41,22 +43,21 @@ export default function recommendationsBySymbol(
   query: string | string[],
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
-): Promise<any>;
+): Promise<unknown>;
 
 export default function recommendationsBySymbol(
   this: ModuleThis,
   query: string | string[],
   queryOptionsOverrides?: RecommendationsBySymbolOptions,
   moduleOptions?: ModuleOptions,
-): Promise<any> {
+): Promise<unknown> {
   const symbols = typeof query === "string" ? query : query.join(",");
 
   return this._moduleExec({
     moduleName: "recommendationsBySymbol",
 
     query: {
-      url:
-        "https://${YF_QUERY_HOST}/v6/finance/recommendationsbysymbol/" +
+      url: "https://${YF_QUERY_HOST}/v6/finance/recommendationsbysymbol/" +
         symbols,
       schemaKey: "#/definitions/RecommendationsBySymbolOptions",
       defaults: queryOptionsDefaults,
@@ -65,9 +66,11 @@ export default function recommendationsBySymbol(
 
     result: {
       schemaKey: "#/definitions/RecommendationsBySymbolResponseArray",
+      // deno-lint-ignore no-explicit-any
       transformWith(result: any) {
-        if (!result.finance)
+        if (!result.finance) {
           throw new Error("Unexpected result: " + JSON.stringify(result));
+        }
         return result.finance.result;
       },
     },

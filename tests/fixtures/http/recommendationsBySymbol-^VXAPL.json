@@ -1,0 +1,64 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v6/finance/recommendationsbysymbol/^VXAPL?",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=60, stale-while-revalidate=15",
+      "content-length": "260",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 10:57:50 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-user-analytics-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "85",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "6mj01g5jrr8he"
+    },
+    "bodyJson": {
+      "finance": {
+        "result": [
+          {
+            "symbol": "^VXAPL",
+            "recommendedSymbols": [
+              {
+                "symbol": "^VXAZN",
+                "score": 0.040874
+              },
+              {
+                "symbol": "^GVZ",
+                "score": 0.029738
+              },
+              {
+                "symbol": "^OVX",
+                "score": 0.023926
+              },
+              {
+                "symbol": "^VXGOG",
+                "score": 0.023328
+              },
+              {
+                "symbol": "^VXGS",
+                "score": 0.018271
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
