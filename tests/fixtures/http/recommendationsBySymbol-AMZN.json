@@ -1,0 +1,64 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v6/finance/recommendationsbysymbol/AMZN?",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=60, stale-while-revalidate=15",
+      "content-length": "253",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 10:57:48 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-user-analytics-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "88",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "60u96mhjrr8hc"
+    },
+    "bodyJson": {
+      "finance": {
+        "result": [
+          {
+            "symbol": "AMZN",
+            "recommendedSymbols": [
+              {
+                "symbol": "AAPL",
+                "score": 0.297723
+              },
+              {
+                "symbol": "TSLA",
+                "score": 0.275665
+              },
+              {
+                "symbol": "GOOG",
+                "score": 0.272699
+              },
+              {
+                "symbol": "META",
+                "score": 0.270714
+              },
+              {
+                "symbol": "NFLX",
+                "score": 0.230465
+              }
+            ]
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
