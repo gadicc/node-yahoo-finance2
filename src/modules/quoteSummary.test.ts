@@ -40,8 +40,7 @@ function itValidates(
   });
 
   if (opts.skip) {
-    // @ts-ignore
-    symbols = symbols.filter((s) => !opts.skip.includes(s));
+    symbols = symbols.filter((s) => !opts.skip!.includes(s));
   }
 
   const modules = name === "all" ? "all" : [name];
@@ -209,7 +208,6 @@ describe("quoteSummary", () => {
 
   describe("all modules at once", () => {
     // Some modules change the output format of other modules!
-    // @ts-ignore
     itValidates("all");
   });
 
