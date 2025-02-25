@@ -1,17 +1,17 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 
 export interface TrendingSymbol {
-  [key: string]: any;
+  [key: string]: unknown;
   symbol: string;
 }
 
 export interface TrendingSymbolsResult {
-  [key: string]: any;
+  [key: string]: unknown;
   count: number;
   quotes: TrendingSymbol[];
   jobTimestamp: number;
@@ -41,14 +41,14 @@ export default function trendingSymbols(
   query: string,
   queryOptionsOverrides?: TrendingSymbolsOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
-): Promise<any>;
+): Promise<unknown>;
 
 export default function trendingSymbols(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: TrendingSymbolsOptions,
   moduleOptions?: ModuleOptions,
-): Promise<any> {
+): Promise<unknown> {
   return this._moduleExec({
     moduleName: "trendingSymbols",
     query: {
@@ -59,9 +59,11 @@ export default function trendingSymbols(
     },
     result: {
       schemaKey: "#/definitions/TrendingSymbolsResult",
+      // deno-lint-ignore no-explicit-any
       transformWith(result: any) {
-        if (!result.finance)
+        if (!result.finance) {
           throw new Error("Unexpected result: " + JSON.stringify(result));
+        }
         return result.finance.result[0];
       },
     },
