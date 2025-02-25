@@ -1,0 +1,230 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=GOOG",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=600, stale-while-revalidate=180",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 11:12:39 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-search--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "89",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "2pdf95tjrr9d7"
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 11,
+      "quotes": [
+        {
+          "exchange": "NMS",
+          "shortname": "Alphabet Inc.",
+          "quoteType": "EQUITY",
+          "symbol": "GOOG",
+          "index": "quotes",
+          "score": 2291600,
+          "typeDisp": "Equity",
+          "longname": "Alphabet Inc.",
+          "exchDisp": "NASDAQ",
+          "sector": "Communication Services",
+          "sectorDisp": "Communication Services",
+          "industry": "Internet Content & Information",
+          "industryDisp": "Internet Content & Information",
+          "dispSecIndFlag": true,
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NMS",
+          "shortname": "Alphabet Inc.",
+          "quoteType": "EQUITY",
+          "symbol": "GOOGL",
+          "index": "quotes",
+          "score": 21528,
+          "typeDisp": "Equity",
+          "longname": "Alphabet Inc.",
+          "exchDisp": "NASDAQ",
+          "sector": "Communication Services",
+          "sectorDisp": "Communication Services",
+          "industry": "Internet Content & Information",
+          "industryDisp": "Internet Content & Information",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NGM",
+          "shortname": "Direxion Daily GOOGL Bull 2X Sh",
+          "quoteType": "ETF",
+          "symbol": "GGLL",
+          "index": "quotes",
+          "score": 20013,
+          "typeDisp": "ETF",
+          "longname": "Direxion Daily GOOGL Bull 2X Shares",
+          "exchDisp": "NASDAQ",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "GOOGL Mar 2025 200.000 call",
+          "quoteType": "OPTION",
+          "symbol": "GOOGL250321C00200000",
+          "index": "quotes",
+          "score": 20007,
+          "typeDisp": "Option",
+          "longname": "GOOGL Mar 2025 200.000 call",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "GOOG Jan 2026 160.000 call",
+          "quoteType": "OPTION",
+          "symbol": "GOOG260116C00160000",
+          "index": "quotes",
+          "score": 20006,
+          "typeDisp": "Option",
+          "longname": "GOOG Jan 2026 160.000 call",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "index": "292d67c54be02255ededdee2f78d5a58",
+          "name": "Google.org",
+          "permalink": "google-org",
+          "isYahooFinance": false
+        },
+        {
+          "index": "5167b830a941ed08d275f74473d13e91",
+          "name": "Google for Startups",
+          "permalink": "google-for-entrepreneurs",
+          "isYahooFinance": false
+        }
+      ],
+      "news": [
+        {
+          "uuid": "6ab36b5b-5823-36b0-84be-b1105b65406e",
+          "title": "Alphabet Inc. (GOOG) Is a Trending Stock: Facts to Know Before Betting on It",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/news/alphabet-inc-goog-trending-stock-140015342.html",
+          "providerPublishTime": 1740405615,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/64vRzkiY9LXGPrpW4r2GRQ--~B/aD00Njc7dz05MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/zacks.com/b95cfdd8768bc3c4620e666dbcb0b248",
+                "width": 900,
+                "height": 467,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/K_VbSLl5PAgBcdM4TzmL5A--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/zacks.com/b95cfdd8768bc3c4620e666dbcb0b248",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "GOOG"
+          ]
+        },
+        {
+          "uuid": "55673502-33e9-3e3c-ae75-8ae8988e60cf",
+          "title": "Light & Wonder (LNW) To Report Earnings: Here Is What To Expect",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/news/light-wonder-lnw-report-earnings-092632069.html",
+          "providerPublishTime": 1740475592,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/KJpqfBkhpYVKQigiEL9lGw--~B/aD03MDA7dz0xNDAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/stockstory_922/d94e9112c7dbcd0449676ad2e6132626",
+                "width": 1400,
+                "height": 700,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/gX2pkLgf00gNBGQHHEm0aA--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/stockstory_922/d94e9112c7dbcd0449676ad2e6132626",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "LNW",
+            "DKNG"
+          ]
+        },
+        {
+          "uuid": "2d57386b-2f45-3b65-939b-8572e0b2489f",
+          "title": "Where to Invest? 2 AI Stocks to Consider in the Quantum Computing Boom",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/m/2d57386b-2f45-3b65-939b-8572e0b2489f/where-to-invest%3F-2-ai-stocks.html",
+          "providerPublishTime": 1740474900,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/CXisVX5dT1B2e4yQ9tEKew--~B/aD05NTA7dz0xNDAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/motleyfool.com/04f32a5d0adb6104e479a287e2050638",
+                "width": 1400,
+                "height": 950,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/C1XdmLMkG4zeCZlvXpl.kw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/motleyfool.com/04f32a5d0adb6104e479a287e2050638",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "MSFT",
+            "GOOG"
+          ]
+        },
+        {
+          "uuid": "3fa7a460-b8df-32a1-aa8b-8d9feaa06657",
+          "title": "Alphabet's Google, Meta Accused of Anti-Competitive Practices by South Africa's Competition Commission",
+          "publisher": "MT Newswires",
+          "link": "https://finance.yahoo.com/news/alphabet-apos-google-meta-accused-161106540.html",
+          "providerPublishTime": 1740413466,
+          "type": "STORY",
+          "relatedTickers": [
+            "GOOG",
+            "META"
+          ]
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 85,
+      "timeTakenForQuotes": 435,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0,
+      "timeTakenForSearchLists": 0
+    }
+  }
+}

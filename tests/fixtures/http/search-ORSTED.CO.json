@@ -1,0 +1,156 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=ORSTED.CO",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=600, stale-while-revalidate=180",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 11:12:40 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-search--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "29",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "2bks7ppjrr9d9"
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 5,
+      "quotes": [
+        {
+          "exchange": "CPH",
+          "shortname": "ORSTED A/S",
+          "quoteType": "EQUITY",
+          "symbol": "ORSTED.CO",
+          "index": "quotes",
+          "score": 2002200,
+          "typeDisp": "Equity",
+          "longname": "Ørsted A/S",
+          "exchDisp": "Copenhagen",
+          "sector": "Utilities",
+          "sectorDisp": "Utilities",
+          "industry": "Utilities—Renewable",
+          "industryDisp": "Utilities—Renewable",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [
+        {
+          "uuid": "b99aabd6-39b9-31a4-97a5-ac0de9ba9e1f",
+          "title": "Carter’s, Inc. Reports Fourth Quarter and Fiscal Year 2024 Results",
+          "publisher": "Business Wire",
+          "link": "https://finance.yahoo.com/news/carter-inc-reports-fourth-quarter-110900509.html",
+          "providerPublishTime": 1740481740,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/3E99Pp9qeggggXdrLshlDA--~B/aD01MTI7dz0xMDI0O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/business-wire.com/9c94b73d20964c188809a8dc1f57e1ea",
+                "width": 1024,
+                "height": 512,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/WnGUIRPOp6vr8np6qpkE3w--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/business-wire.com/9c94b73d20964c188809a8dc1f57e1ea",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "CRI"
+          ]
+        },
+        {
+          "uuid": "1070cee3-5d58-37ef-83db-87769b20f92e",
+          "title": "DeepSeek rushes to launch new AI model as China goes all in",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/deepseek-rushes-launch-ai-model-110809099.html",
+          "providerPublishTime": 1740481689,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/XYY7ObnkWyohMezew2K6_Q--~B/aD01MzM7dz04MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/reuters-finance.com/fe3ed15850e1ad6959fff5500c3ed42b",
+                "width": 800,
+                "height": 533,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/lXjBa8zboMTSpr4kXAFDZw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/reuters-finance.com/fe3ed15850e1ad6959fff5500c3ed42b",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          }
+        },
+        {
+          "uuid": "f2f9ad61-e30a-356d-80f2-eb79a39c996e",
+          "title": "Issue of Debt",
+          "publisher": "Business Wire",
+          "link": "https://finance.yahoo.com/news/issue-debt-110800636.html",
+          "providerPublishTime": 1740481680,
+          "type": "STORY"
+        },
+        {
+          "uuid": "073c959d-7595-34af-8217-c0099b1b0dab",
+          "title": "Home Depot forecasts annual same-store sales growth below estimates",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/home-depot-forecasts-annual-same-110623902.html",
+          "providerPublishTime": 1740481583,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/QhLG5v.RlqYnOEswPOvWNg--~B/aD01MzM7dz04MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/reuters-finance.com/f383ad268d63cdabe209506a77749185",
+                "width": 800,
+                "height": 533,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/CKDmmqMgjfYbONVg4Wpskw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/reuters-finance.com/f383ad268d63cdabe209506a77749185",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "HD"
+          ]
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 27,
+      "timeTakenForQuotes": 419,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0,
+      "timeTakenForSearchLists": 0
+    }
+  }
+}

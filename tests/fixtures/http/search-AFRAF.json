@@ -1,0 +1,192 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=AFRAF",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "3",
+      "cache-control": "public, max-age=600, stale-while-revalidate=180",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 11:12:38 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-search--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "108",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "3s6t0s9jrr9d6"
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 7,
+      "quotes": [
+        {
+          "exchange": "PNK",
+          "shortname": "Air France-KLM",
+          "quoteType": "EQUITY",
+          "symbol": "AFRAF",
+          "index": "quotes",
+          "score": 20001,
+          "typeDisp": "Equity",
+          "longname": "Air France-KLM SA",
+          "exchDisp": "OTC Markets",
+          "sector": "Industrials",
+          "sectorDisp": "Industrials",
+          "industry": "Airlines",
+          "industryDisp": "Airlines",
+          "isYahooFinance": true
+        },
+        {
+          "index": "881c0d49286e4593afa38cc9d135319c",
+          "name": "Afraflix.com",
+          "permalink": "afraflix-com",
+          "isYahooFinance": false
+        },
+        {
+          "index": "1ddcfd0a49d644d8afb7364b57efc3a4",
+          "name": "AfraFile",
+          "permalink": "afrafile",
+          "isYahooFinance": false
+        }
+      ],
+      "news": [
+        {
+          "uuid": "f2b5e6b7-5999-3f7c-bbad-691fba438c9f",
+          "title": "Portugal Said to Weigh Sale of at Least 49% in Airline TAP",
+          "publisher": "Bloomberg",
+          "link": "https://finance.yahoo.com/news/portugal-said-consider-sale-least-142650983.html",
+          "providerPublishTime": 1739285829,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/.aARaxtHrmh49ApShm4eCQ--~B/aD0xMzMzO3c9MjAwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/bloomberg_markets_842/1aa7acc83280b1dddf1b6260db55dbe8",
+                "width": 2000,
+                "height": 1333,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/ZfJloLRH9qnyFEgIQul.Fg--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/bloomberg_markets_842/1aa7acc83280b1dddf1b6260db55dbe8",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "AFLYY",
+            "BABWF"
+          ]
+        },
+        {
+          "uuid": "6f68be9c-7ee3-36de-9c14-01563650e73f",
+          "title": "Declaration of number of voting rights",
+          "publisher": "GlobeNewswire",
+          "link": "https://finance.yahoo.com/news/declaration-number-voting-rights-164500443.html",
+          "providerPublishTime": 1738860300,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/J_XeyE2jd8kGNnsEzD2Y9A--~B/aD0zMDg7dz0xMzI0O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/globenewswire.com/043990bfc7b9f295cdcbbd82ad10943d",
+                "width": 1324,
+                "height": 308,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/CD5jEqU5kQ4RPBqxYprCJA--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/globenewswire.com/043990bfc7b9f295cdcbbd82ad10943d",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "AFLYY",
+            "AFRAF"
+          ]
+        },
+        {
+          "uuid": "a02e2b7f-0571-3135-91a0-26dffa0dae18",
+          "title": "Delta Air Lines to soon launch its third-longest flight",
+          "publisher": "TheStreet",
+          "link": "https://finance.yahoo.com/m/a02e2b7f-0571-3135-91a0-26dffa0dae18/delta-air-lines-to-soon.html",
+          "providerPublishTime": 1738599962,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/aQAk6CQcxsnTkKnPRWDGqA--~B/aD02NzU7dz0xMjAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/thestreet_881/a2626b39643c88f3df72d91307f8b787",
+                "width": 1200,
+                "height": 675,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/waO7do.VadalkIjXty0Kzw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/thestreet_881/a2626b39643c88f3df72d91307f8b787",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "DAL"
+          ]
+        },
+        {
+          "uuid": "b591f908-57cc-33e0-a468-5a4df12512bc",
+          "title": "The 10 most luxurious airline perks for wealthy fliers",
+          "publisher": "Quartz",
+          "link": "https://finance.yahoo.com/m/b591f908-57cc-33e0-a468-5a4df12512bc/the-10-most-luxurious-airline.html",
+          "providerPublishTime": 1737712800,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/WRDVihutZTJvII2HQ8fVxQ--~B/aD00MjQ7dz02MzY7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/quartz.com/f6d73ce694832594b09978c41044e78b",
+                "width": 636,
+                "height": 424,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/nf6GZimAGVu0xuqMm47bKw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/quartz.com/f6d73ce694832594b09978c41044e78b",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "AFLYY"
+          ]
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 105,
+      "timeTakenForQuotes": 425,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0,
+      "timeTakenForSearchLists": 0
+    }
+  }
+}

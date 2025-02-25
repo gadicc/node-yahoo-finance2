@@ -1,0 +1,247 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=BFLY",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=600, stale-while-revalidate=180",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 11:12:39 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-search--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "100",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "54634hdjrr9d7"
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 11,
+      "quotes": [
+        {
+          "exchange": "NYQ",
+          "shortname": "Butterfly Network, Inc.",
+          "quoteType": "EQUITY",
+          "symbol": "BFLY",
+          "index": "quotes",
+          "score": 2004600,
+          "typeDisp": "Equity",
+          "longname": "Butterfly Network, Inc.",
+          "exchDisp": "NYSE",
+          "sector": "Healthcare",
+          "sectorDisp": "Healthcare",
+          "industry": "Medical Devices",
+          "industryDisp": "Medical Devices",
+          "dispSecIndFlag": true,
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "WCB",
+          "shortname": "CBOE S&P 500 Iron Butterfly Ind",
+          "quoteType": "INDEX",
+          "symbol": "^BFLY",
+          "index": "quotes",
+          "score": 20001,
+          "typeDisp": "Index",
+          "longname": "CBOE S&P 500 Iron Butterfly Ind",
+          "exchDisp": "Chicago Board Options Exchange",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NYQ",
+          "shortname": "Butterfly Network, Inc.",
+          "quoteType": "EQUITY",
+          "symbol": "BFLY-WT",
+          "index": "quotes",
+          "score": 20001,
+          "typeDisp": "Equity",
+          "longname": "Butterfly Network, Inc. WT",
+          "exchDisp": "NYSE",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BFLY Feb 2025 3.500 put",
+          "quoteType": "OPTION",
+          "symbol": "BFLY250221P00003500",
+          "index": "quotes",
+          "score": 20000,
+          "typeDisp": "Option",
+          "longname": "BFLY Feb 2025 3.500 put",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BFLY Feb 2025 5.500 call",
+          "quoteType": "OPTION",
+          "symbol": "BFLY250221C00005500",
+          "index": "quotes",
+          "score": 20000,
+          "typeDisp": "Option",
+          "longname": "BFLY Feb 2025 5.500 call",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BFLY Feb 2025 2.500 put",
+          "quoteType": "OPTION",
+          "symbol": "BFLY250221P00002500",
+          "index": "quotes",
+          "score": 20000,
+          "typeDisp": "Option",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "index": "59be0094afa444da8ddf5997d635d025",
+          "name": "Bflysoft",
+          "permalink": "bflysoft",
+          "isYahooFinance": false
+        }
+      ],
+      "news": [
+        {
+          "uuid": "79b04fab-d98c-3d23-bed2-a5a3b4a380d1",
+          "title": "Hims & Hers Health, Inc. (HIMS) Lags Q4 Earnings Estimates",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/news/hims-hers-health-inc-hims-222004821.html",
+          "providerPublishTime": 1740435604,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/UACuRym2G7Sc_7yqOtSLVQ--~B/aD0yMzUxO3c9MzAwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/zacks.com/c65fb4556b91b6c9dc83e4eff25fede0",
+                "width": 3000,
+                "height": 2351,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/4xltbIIZEXRptTswpC4cYw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/zacks.com/c65fb4556b91b6c9dc83e4eff25fede0",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "BFLY-WS"
+          ]
+        },
+        {
+          "uuid": "7a575102-35ca-3703-b11a-bf65a74d8a3e",
+          "title": "Butterfly Network, Inc. (BFLY): Among the Hot Penny Stocks to Buy Now",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/news/butterfly-network-inc-bfly-among-222711413.html",
+          "providerPublishTime": 1740263231,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/t2s7pCi6RD4zX8Cee7rOHQ--~B/aD04MTY7dz0xNDU2O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/insidermonkey.com/c9e8e6d98e92eedfbb0d9185e8c1707a",
+                "width": 1456,
+                "height": 816,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/5p2YBtS9A9q1SFgYIj5BSA--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/insidermonkey.com/c9e8e6d98e92eedfbb0d9185e8c1707a",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "BFLY-WS",
+            "^RUT"
+          ]
+        },
+        {
+          "uuid": "067d0ff6-fad1-3cd4-a453-344ca546c766",
+          "title": "Butterfly Network, Inc. (BFLY) May Report Negative Earnings: Know the Trend Ahead of Next Week's Release",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/news/butterfly-network-inc-bfly-may-150008739.html",
+          "providerPublishTime": 1740150008,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/QOfludHza1dTKV8R6Coeiw--~B/aD02MDE7dz05MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/zacks.com/48ad4265c55e3ba7a1fb9148d6e717d9",
+                "width": 900,
+                "height": 601,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/syGPuhdcxJrEtuZed80ilQ--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/zacks.com/48ad4265c55e3ba7a1fb9148d6e717d9",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "BFLY-WS",
+            "HCAT"
+          ]
+        },
+        {
+          "uuid": "99c0959b-6e2f-37ad-ac2e-d39b2333827e",
+          "title": "Butterfly Network to Participate at the TD Cowen 45th Annual Health Care Conference on March 3, 2025",
+          "publisher": "Business Wire",
+          "link": "https://finance.yahoo.com/news/butterfly-network-participate-td-cowen-130500425.html",
+          "providerPublishTime": 1740143100,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/rDE_qmWrqZ6.sAw9Mi1CQw--~B/aD01MTI7dz0xMDI0O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/business-wire.com/8a93302177bfcd565ca88af7b8f4fc77",
+                "width": 1024,
+                "height": 512,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/.z7gpYpR0uPT583fgQni6g--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/business-wire.com/8a93302177bfcd565ca88af7b8f4fc77",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "BFLY",
+            "BFLY-WS"
+          ]
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 97,
+      "timeTakenForQuotes": 454,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0,
+      "timeTakenForSearchLists": 0
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=QQQ",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=600, stale-while-revalidate=180",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 11:12:39 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-search--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "81",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "7j3jm8ljrr9d8"
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 10,
+      "quotes": [
+        {
+          "exchange": "NGM",
+          "shortname": "Invesco QQQ Trust, Series 1",
+          "quoteType": "ETF",
+          "symbol": "QQQ",
+          "index": "quotes",
+          "score": 2344900,
+          "typeDisp": "ETF",
+          "longname": "Invesco QQQ Trust",
+          "exchDisp": "NASDAQ",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NGM",
+          "shortname": "ProShares UltraPro QQQ",
+          "quoteType": "ETF",
+          "symbol": "TQQQ",
+          "index": "quotes",
+          "score": 22184,
+          "typeDisp": "ETF",
+          "longname": "ProShares UltraPro QQQ",
+          "exchDisp": "NASDAQ",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NGM",
+          "shortname": "ProShares UltraPro Short QQQ",
+          "quoteType": "ETF",
+          "symbol": "SQQQ",
+          "index": "quotes",
+          "score": 20565,
+          "typeDisp": "ETF",
+          "longname": "ProShares UltraPro Short QQQ",
+          "exchDisp": "NASDAQ",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NGM",
+          "shortname": "Invesco NASDAQ 100 ETF",
+          "quoteType": "ETF",
+          "symbol": "QQQM",
+          "index": "quotes",
+          "score": 20093,
+          "typeDisp": "ETF",
+          "longname": "Invesco NASDAQ 100 ETF",
+          "exchDisp": "NASDAQ",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "PCX",
+          "shortname": "ProShares Ultra QQQ",
+          "quoteType": "ETF",
+          "symbol": "QLD",
+          "index": "quotes",
+          "score": 20086,
+          "typeDisp": "ETF",
+          "longname": "ProShares Ultra QQQ",
+          "exchDisp": "NYSEArca",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "PCX",
+          "shortname": "ProShares UltraShort QQQ",
+          "quoteType": "ETF",
+          "symbol": "QID",
+          "index": "quotes",
+          "score": 20061,
+          "typeDisp": "ETF",
+          "longname": "ProShares UltraShort QQQ",
+          "exchDisp": "NYSEArca",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [
+        {
+          "uuid": "4c882e81-fddf-321a-9477-e896f35473dd",
+          "title": "Analyst who correctly predicted the S&P 500's rally revisits outlook",
+          "publisher": "TheStreet",
+          "link": "https://finance.yahoo.com/m/4c882e81-fddf-321a-9477-e896f35473dd/analyst-who-correctly.html",
+          "providerPublishTime": 1740443580,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/qzFkZBR.wBSb2UX0ccpBwg--~B/aD02NzU7dz0xMjAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/thestreet_881/1b08e4c8f22f2fa076db9051eb3e7035",
+                "width": 1200,
+                "height": 675,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/YD2XUM.yRlZAFsPnONShmg--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/thestreet_881/1b08e4c8f22f2fa076db9051eb3e7035",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "^GSPC"
+          ]
+        },
+        {
+          "uuid": "71c1c374-e4a9-3738-bc9b-30fe35b57bda",
+          "title": "GLD Pulls in $1.9B Amid Gold's Record Run",
+          "publisher": "etf.com",
+          "link": "https://finance.yahoo.com/m/71c1c374-e4a9-3738-bc9b-30fe35b57bda/gld-pulls-in-%241.9b-amid.html",
+          "providerPublishTime": 1740440067,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/pSDdfO9IbsjLeOp_lVCCWQ--~B/aD03NTY7dz0xMzg2O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/indexuniverse.com/7d6d2d1686380d868c3f93bede4d3c93",
+                "width": 1386,
+                "height": 756,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/7h_wiBcOP368c4e_sMvN_g--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/indexuniverse.com/7d6d2d1686380d868c3f93bede4d3c93",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          }
+        },
+        {
+          "uuid": "ec862861-f2b7-36d2-9afb-1a5fa8850895",
+          "title": "Exchange-Traded Funds Higher, US Equities Mixed After Midday",
+          "publisher": "MT Newswires",
+          "link": "https://finance.yahoo.com/news/exchange-traded-funds-higher-us-180825229.html",
+          "providerPublishTime": 1740420505,
+          "type": "STORY",
+          "relatedTickers": [
+            "SLV"
+          ]
+        },
+        {
+          "uuid": "9e0c8386-8226-35a5-b7cd-323a8c7f97f5",
+          "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday as Investors Focus on Inflation Data",
+          "publisher": "MT Newswires",
+          "link": "https://finance.yahoo.com/news/exchange-traded-funds-equity-futures-131659658.html",
+          "providerPublishTime": 1740403019,
+          "type": "STORY",
+          "relatedTickers": [
+            "SPY",
+            "SLV"
+          ]
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 79,
+      "timeTakenForQuotes": 435,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0,
+      "timeTakenForSearchLists": 0
+    }
+  }
+}

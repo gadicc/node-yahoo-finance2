@@ -1,0 +1,193 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=EURUSD%3DX",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=600, stale-while-revalidate=180",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 11:12:40 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-search--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "69",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "0do2p0djrr9d8"
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 5,
+      "quotes": [
+        {
+          "exchange": "CCY",
+          "shortname": "EUR/USD",
+          "quoteType": "CURRENCY",
+          "symbol": "EURUSD=X",
+          "index": "quotes",
+          "score": 3221700,
+          "typeDisp": "Currency",
+          "longname": "EUR/USD",
+          "exchDisp": "CCY",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [
+        {
+          "uuid": "84ec5521-72b7-339c-9571-172635ae5b17",
+          "title": "Is Germany’s election the game changer investors didn’t see coming?",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/germany-election-game-changer-investors-004000500.html",
+          "providerPublishTime": 1740444000,
+          "type": "VIDEO",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/iZOEQ.ifV2EREXHf5rnhtA--~B/aD0zMjY3O3c9NTgwMzthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2025-02/97706d30-f2fd-11ef-bf2e-1484452014ef",
+                "width": 5803,
+                "height": 3267,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/vuAaq7LueIlJSWHQDyrw9A--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/os/creatr-uploaded-images/2025-02/97706d30-f2fd-11ef-bf2e-1484452014ef",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "EURUSD=X",
+            "USD=X",
+            "EUR=X"
+          ]
+        },
+        {
+          "uuid": "c2acc256-ca13-3d35-8df8-77c8d0077a0d",
+          "title": "US dollar pressured as Wall Street weighs Trump's 'Mar-a-Lago Accord'",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/us-dollar-pressured-wall-street-180000598.html",
+          "providerPublishTime": 1740160800,
+          "type": "VIDEO",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/YuzusqZW_FockHjztysU0Q--~B/aD0yMjUyO3c9NDAwMDthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2025-02/474d69b0-f06a-11ef-b74d-892a0575cf43",
+                "width": 4000,
+                "height": 2252,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/98X7oLdSKOh69mPLrypuJg--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/os/creatr-uploaded-images/2025-02/474d69b0-f06a-11ef-b74d-892a0575cf43",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "^IXIC",
+            "DX-Y.NYB",
+            "EURUSD=X",
+            "USD=X",
+            "EUR=X",
+            "^GSPC",
+            "DX=F",
+            "^DJI"
+          ]
+        },
+        {
+          "uuid": "07f2ab7b-ed67-30c3-8f71-44bbe8a41448",
+          "title": "EU Sovereigns Face Multiple Risks to Credit Outlook from Shifts in US Policy",
+          "publisher": "FX Empire",
+          "link": "https://finance.yahoo.com/news/eu-sovereigns-face-multiple-risks-204139483.html",
+          "providerPublishTime": 1739911299,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/l5F8BgFFy0RDxZ5Ohie3zw--~B/aD00MTA7dz02MTU7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/fx_empire_176/2f38ed4192fef57bf385c29e4f2e322b",
+                "width": 615,
+                "height": 410,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/QL2ig8KJPpnAUrQ9H9.xRA--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/fx_empire_176/2f38ed4192fef57bf385c29e4f2e322b",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "CNY=X",
+            "CNYUSD=X",
+            "JPY=X",
+            "JPYUSD=X",
+            "MXN=X",
+            "MXNUSD=X",
+            "EURUSD=X",
+            "USD=X",
+            "EUR=X"
+          ]
+        },
+        {
+          "uuid": "e1c633dc-b3df-3269-ac33-96c8aafad062",
+          "title": "Belgium: Coalition Agreement Could Pave the Way for Gradual Reduction in Budget Deficit",
+          "publisher": "FX Empire",
+          "link": "https://finance.yahoo.com/news/belgium-coalition-agreement-could-pave-205829279.html",
+          "providerPublishTime": 1739566709,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/VaboyhibwJXVB86VnfVDyQ--~B/aD00MTA7dz02MTU7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/fx_empire_176/f27180e5c8aee9c226279beeabb75fad",
+                "width": 615,
+                "height": 410,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/0gfW1QezeOQ6x68V_7ZLNw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/fx_empire_176/f27180e5c8aee9c226279beeabb75fad",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "EURUSD=X",
+            "USD=X",
+            "EUR=X"
+          ]
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 66,
+      "timeTakenForQuotes": 419,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0,
+      "timeTakenForSearchLists": 0
+    }
+  }
+}

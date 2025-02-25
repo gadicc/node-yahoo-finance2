@@ -1,0 +1,211 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=EUR",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=600, stale-while-revalidate=180",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 11:12:41 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-search--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "113",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "7e2lo59jrr9d9"
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 11,
+      "quotes": [
+        {
+          "exchange": "CCY",
+          "shortname": "EUR/USD",
+          "quoteType": "CURRENCY",
+          "symbol": "EURUSD=X",
+          "index": "quotes",
+          "score": 32217,
+          "typeDisp": "Currency",
+          "longname": "EUR/USD",
+          "exchDisp": "CCY",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "CCY",
+          "shortname": "EUR/HUF",
+          "quoteType": "CURRENCY",
+          "symbol": "EURHUF=X",
+          "index": "quotes",
+          "score": 30198,
+          "typeDisp": "Currency",
+          "longname": "EUR/HUF",
+          "exchDisp": "CCY",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "CCY",
+          "shortname": "EUR/CHF",
+          "quoteType": "CURRENCY",
+          "symbol": "EURCHF=X",
+          "index": "quotes",
+          "score": 30169,
+          "typeDisp": "Currency",
+          "longname": "EUR/CHF",
+          "exchDisp": "CCY",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "CCY",
+          "shortname": "GBP/EUR",
+          "quoteType": "CURRENCY",
+          "symbol": "GBPEUR=X",
+          "index": "quotes",
+          "score": 30164,
+          "typeDisp": "Currency",
+          "longname": "GBP/EUR",
+          "exchDisp": "CCY",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "CCY",
+          "shortname": "EUR/RUB",
+          "quoteType": "CURRENCY",
+          "symbol": "EURRUB=X",
+          "index": "quotes",
+          "score": 30162,
+          "typeDisp": "Currency",
+          "longname": "EUR/RUB",
+          "exchDisp": "CCY",
+          "isYahooFinance": true
+        },
+        {
+          "index": "5cad316459461b9a9fa8815e10cf7db1",
+          "name": "European Investment Bank",
+          "permalink": "european-investment-bank",
+          "isYahooFinance": false
+        },
+        {
+          "index": "eee223d08c2e3195820cf9864460c548",
+          "name": "European Bank for Reconstruction and Development",
+          "permalink": "european-bank-for-reconstruction-and-development-ebrd",
+          "isYahooFinance": false
+        }
+      ],
+      "news": [
+        {
+          "uuid": "03f5d0ee-75ae-33fc-8d40-07cd0e98183d",
+          "title": "Orion Group Financial Statement Release January–December 2024",
+          "publisher": "GlobeNewswire",
+          "link": "https://finance.yahoo.com/news/orion-group-financial-statement-release-100000435.html",
+          "providerPublishTime": 1740477600,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/uM1TKcoTXesjvrzQzld48Q--~B/aD0wO3c9MDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/globenewswire.com/bc0869187e6054f96fdb024ed1394a59",
+                "width": 0,
+                "height": 0,
+                "tag": "original"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "ORINF",
+            "ORINY"
+          ]
+        },
+        {
+          "uuid": "99466f06-3fb0-3d22-ada9-5b93571617e0",
+          "title": "Municipality Finance issues EUR 15 million notes under its MTN programme",
+          "publisher": "GlobeNewswire",
+          "link": "https://finance.yahoo.com/news/municipality-finance-issues-eur-15-080000071.html",
+          "providerPublishTime": 1740470400,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/HGebLb8pdtVi_JQbkVgNVg--~B/aD0xNjg7dz03ODE7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/globenewswire.com/8066303f52c0c67dd2dbb7811c614787",
+                "width": 781,
+                "height": 168,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/mFq9hLNFIClOn5wF5zwZ6Q--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/globenewswire.com/8066303f52c0c67dd2dbb7811c614787",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          }
+        },
+        {
+          "uuid": "ca0363f3-da28-3316-987c-59e4154f598c",
+          "title": "Net Asset Value(s)",
+          "publisher": "GlobeNewswire",
+          "link": "https://finance.yahoo.com/news/net-asset-value-104700831.html",
+          "providerPublishTime": 1740480420,
+          "type": "STORY",
+          "relatedTickers": [
+            "WSDMF"
+          ]
+        },
+        {
+          "uuid": "b498a966-e73e-370a-aabf-dfccbb307ef0",
+          "title": "BUREAU VERITAS - 2024 annual results - Bureau Veritas' LEAP | 28 strategy delivers outstanding results in 2024 ; confident 2025 outlook",
+          "publisher": "GlobeNewswire",
+          "link": "https://finance.yahoo.com/news/bureau-veritas-2024-annual-results-063000786.html",
+          "providerPublishTime": 1740465000,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/j7ItUdm9l0aB6Z.cFYbQkQ--~B/aD0xMTY7dz05NDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/globenewswire.com/dd9f753f66506199aee80996b4d523d3",
+                "width": 94,
+                "height": 116,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/enFkricA73uVThnuue7ptA--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/globenewswire.com/dd9f753f66506199aee80996b4d523d3",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "BVRDF",
+            "BVVBY"
+          ]
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 107,
+      "timeTakenForQuotes": 455,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0,
+      "timeTakenForSearchLists": 0
+    }
+  }
+}
