@@ -1,6 +1,37 @@
-# Upgrading from yahoo-finance v1
+# MIGRATION GUIDE
 
-**THIS DOCUMENT IS A WORK IN PROGRESS**
+Please read this guide when upgrading MAJOR VERSIONS of the package, list the
+BREAKING CHANGES and required changes you'll need to make to your code.
+
+## Upgrading from v2 to v3
+
+Despite the major version change, and significant changes under-the-hood, most
+of the library retains a familiar API.
+
+The most impactful change is how to initialize the library, as explained in this
+diff:
+
+```diff
+- import yahooFinance from "yahoo-finance";
+- yahooFinance.setGlobalConfig(options); // optional
+
++ import YahooFinance from "yahoo-finance";
++ const yahooFinance = new YahooFinance(/* options */);
+```
+
+Other notable changes:
+
+- **Running directly in the browser** is no longer supported. You should perform
+  the request to Yahoo Finance from a server / serverless / edge environment and
+  send that data on to the client. XXX helper APIs XXX
+
+**Development**:
+
+There were significant changes to the development environment, please see the
+[CONTRIBUTING.md](../CONTRIBUTING.md) file for more details.
+
+````
+## Upgrading from yahoo-finance v1 to v2
 
 Table of Contents
 
@@ -51,14 +82,14 @@ yahooFinanceV2.quoteSummary(symbol, { modules });
   // The output should otherwise be identical.
   // Please open an issue if you find any edge-cases.
 }
-```
+````
 
 **Query**
 
-| Attribute     | v1                       | v2+                              |
-| ------------- | ------------------------ | -------------------------------- |
-| `symbol`      | As a `{ symbol }` option | First argument to quoteSummary()   |
-| `modules`     | Remains the same         | Remains the same
+| Attribute | v1                       | v2+                              |
+| --------- | ------------------------ | -------------------------------- |
+| `symbol`  | As a `{ symbol }` option | First argument to quoteSummary() |
+| `modules` | Remains the same         | Remains the same                 |
 
 Note: v1 could also accept a `symbols` key (note the "s" at the end for plural).
 In v2 we accept a single symbol only, which more closely aligns to a single
@@ -66,48 +97,61 @@ network request being made.
 
 **Results**
 
-| Attribute     | v1                       | v2+                              |
-| ------------- | ------------------------ | -------------------------------- |
-| `symbol`      | Was included in each result | Not included in each result   |
+| Attribute | v1                          | v2+                         |
+| --------- | --------------------------- | --------------------------- |
+| `symbol`  | Was included in each result | Not included in each result |
 
 <a name="historical"></a>
+
 ## historical()
 
-The function signature has changed slightly, to remain consistent with the
-rest of the library.
+The function signature has changed slightly, to remain consistent with the rest
+of the library.
 
 ```js
 // V1 took a single OPTIONS object as the only paramater
 yahooFinanceV1.historical({ symbol, from, to });
 [
   {
-    date, open, high, low, close, adjClose, volume,
-    symbol // was included
+    date,
+    open,
+    high,
+    low,
+    close,
+    adjClose,
+    volume,
+    symbol, // was included
   },
   // ...
-]
+];
 
 // V2 takes SYMBOL as 1st parameter, OPTIONS as 2nd.
 yahooFinanceV2.historical(symbol, { period1 });
 [
   {
-    date, open, high, low, close, adjClose, volume,
+    date,
+    open,
+    high,
+    low,
+    close,
+    adjClose,
+    volume,
     // symbol NOT included
   },
   // ...
-]
+];
 ```
 
 **Query**
 
-| Attribute     | v1                       | v2+                              |
-| ------------- | ------------------------ | -------------------------------- |
-| `symbol`      | As a `{ symbol }` option | First argument to historical()   |
-| `fields`      | `{ from, to }`           | `{ period1, period2 }`.  Period2 defaults to now().
-| dates         | "YYYY-MM-dd"             | JS Date object, or any format `new Date()` understands , so "YYYY-MM-dd" still works fine too.
+| Attribute | v1                       | v2+                                                                                            |
+| --------- | ------------------------ | ---------------------------------------------------------------------------------------------- |
+| `symbol`  | As a `{ symbol }` option | First argument to historical()                                                                 |
+| `fields`  | `{ from, to }`           | `{ period1, period2 }`. Period2 defaults to now().                                             |
+| dates     | "YYYY-MM-dd"             | JS Date object, or any format `new Date()` understands , so "YYYY-MM-dd" still works fine too. |
 
 **Results**
 
-| Attribute     | v1                       | v2+                              |
-| ------------- | ------------------------ | -------------------------------- |
-| `symbol`      | Was included in each result | Not included in each result   |
+| Attribute | v1                          | v2+                         |
+| --------- | --------------------------- | --------------------------- |
+| `symbol`  | Was included in each result | Not included in each result |
