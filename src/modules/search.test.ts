@@ -1,12 +1,19 @@
-import search from "./search.js";
-import { InvalidOptionsError } from "../lib/errors.js";
+import {
+  createTestYahooFinance,
+  describe,
+  it,
+  setupCache,
+  testSymbols,
+} from "../../tests/common.ts";
 
-import testSymbols from "../../tests/testSymbols.js";
-import testYf from "../../tests/testYf.js";
+import search from "./search.ts";
 
-const yf = testYf({ search });
+const YahooFinance = createTestYahooFinance({ modules: { search } });
+const yf = new YahooFinance();
 
 describe("search", () => {
+  setupCache();
+
   // See also common module tests in moduleExec.spec.js
 
   const testSearches = testSymbols({

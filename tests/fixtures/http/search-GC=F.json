@@ -1,0 +1,290 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=GC%3DF",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=600, stale-while-revalidate=180",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 11:12:41 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-search--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "130",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "2job8gtjrr9d9"
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 14,
+      "quotes": [
+        {
+          "exchange": "CMX",
+          "shortname": "Gold Apr 25",
+          "quoteType": "FUTURE",
+          "symbol": "GC=F",
+          "index": "quotes",
+          "score": 3186200,
+          "typeDisp": "Futures",
+          "exchDisp": "New York Commodity Exchange",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "SAO",
+          "shortname": "BB GC4 FUNDO DE INVESTIMENTO MU",
+          "quoteType": "MUTUALFUND",
+          "symbol": "0P00019HF1.SA",
+          "index": "quotes",
+          "score": 20001,
+          "typeDisp": "Fund",
+          "longname": "BB GC4 FIM C Priv LP",
+          "exchDisp": "São Paulo",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "SAO",
+          "shortname": "BB GCF MULTIMERCADO FUNDO DE IN",
+          "quoteType": "MUTUALFUND",
+          "symbol": "0P0000V2JN.SA",
+          "index": "quotes",
+          "score": 20001,
+          "typeDisp": "Fund",
+          "longname": "BB GCF FIC FIM C Priv",
+          "exchDisp": "São Paulo",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "SAO",
+          "shortname": "GC4 FUNDO DE INVESTIMENTO FINAN",
+          "quoteType": "MUTUALFUND",
+          "symbol": "0P0000V2MI.SA",
+          "index": "quotes",
+          "score": 20001,
+          "typeDisp": "Fund",
+          "longname": "BTG Gc4 Tim FIFM",
+          "exchDisp": "São Paulo",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "GCT Feb 2025 12.500 call",
+          "quoteType": "OPTION",
+          "symbol": "GCT250221C00012500",
+          "index": "quotes",
+          "score": 20000,
+          "typeDisp": "Option",
+          "longname": "GCT Feb 2025 12.500 call",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "GCI Feb 2025 4.000 put",
+          "quoteType": "OPTION",
+          "symbol": "GCI250221P00004000",
+          "index": "quotes",
+          "score": 20000,
+          "typeDisp": "Option",
+          "longname": "GCI Feb 2025 4.000 put",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        }
+      ],
+      "news": [
+        {
+          "uuid": "739c0f79-17f4-3e04-8262-c38e5ace8a34",
+          "title": "The 'structural shift' pushing gold higher in 2025",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/structural-shift-pushing-gold-higher-220821409.html",
+          "providerPublishTime": 1740175701,
+          "type": "VIDEO",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/z08Vi9FBti6oT7kH7f.jqw--~B/aD0zMzc3O3c9NjAwMDthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2025-02/e0fd9640-f09a-11ef-9fb7-558bf8232eb3",
+                "width": 6000,
+                "height": 3377,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/lj_0kpRK90qWSpcuoYZgFg--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/os/creatr-uploaded-images/2025-02/e0fd9640-f09a-11ef-9fb7-558bf8232eb3",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "GC=F"
+          ]
+        },
+        {
+          "uuid": "cebe0843-5605-4de3-89c6-3dd625af7048",
+          "title": "Gold heads for eighth weekly gain as precious metals shipments to US rise",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/news/gold-heads-for-eighth-weekly-gain-as-precious-metals-shipments-to-us-rise-195332488.html",
+          "providerPublishTime": 1740167612,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/e_Vc_TckTZTEVziV4lUMeA--~B/aD00NzAwO3c9NjgwMDthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2024-12/119ecf90-c52f-11ef-adef-990672b5696a",
+                "width": 6800,
+                "height": 4700,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/41VdSifkDNU11NRbL4fzQg--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/os/creatr-uploaded-images/2024-12/119ecf90-c52f-11ef-adef-990672b5696a",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "GC=F"
+          ]
+        },
+        {
+          "uuid": "afaffa9d-ebd0-3f24-bca1-97dd37967ecc",
+          "title": "Gold on pace to clock in eighth week of gains: What to know",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/gold-pace-clock-eighth-week-143806927.html",
+          "providerPublishTime": 1740148686,
+          "type": "VIDEO",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/Q0WGUWQaffL__z8kNPgTIw--~B/aD0zMzc4O3c9NjAxNjthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2025-02/7eb5b920-f060-11ef-aed7-aba80738486d",
+                "width": 6016,
+                "height": 3378,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/PBHrFBLs8aAoGz3K5r0qAQ--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/os/creatr-uploaded-images/2025-02/7eb5b920-f060-11ef-aed7-aba80738486d",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "GC=F"
+          ]
+        },
+        {
+          "uuid": "3ebf630a-eda1-4876-9aeb-4d011dd698ec",
+          "title": "Gold climbs to new high as buyers hedge against Trump tariff plans",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/news/gold-climbs-to-new-high-as-buyers-hedge-against-trump-tariff-plans-181323508.html",
+          "providerPublishTime": 1740075203,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/tI3QdhVWD0tCTwOiXmi2Nw--~B/aD0zMjgxO3c9NTY2MjthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2025-02/6e07f560-ef67-11ef-bffe-efb4225e0611",
+                "width": 5662,
+                "height": 3281,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/kJG8s6Fb1P3NqMKytGOPWw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/os/creatr-uploaded-images/2025-02/6e07f560-ef67-11ef-bffe-efb4225e0611",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "GC=F"
+          ]
+        }
+      ],
+      "nav": [],
+      "lists": [
+        {
+          "slug": "most-bought-by-activist-hedge-funds",
+          "name": "Most Bought By Activist Hedge Funds",
+          "index": "most-bought-by-activist-hedge-funds",
+          "score": 15.406042,
+          "type": "ALGO_WATCHLIST",
+          "brandSlug": "yahoo-finance",
+          "pfId": "most_bought_by_activist_hedge_funds",
+          "symbolCount": 23,
+          "dailyPercentGain": -0.4069127667796874,
+          "followerCount": 61333,
+          "iconUrl": "https://edgecast-img.yahoo.net/mysterio/api/110f1012357c7b3e87d14912e7023f819b61278e7f0e90a3825821d2ef3c427c/finance/resizefill_w96_h96/https://s.yimg.com/uc/fin/img/most-bought-activist.png",
+          "userId": "5SSSFLJVWAMDKUGZM5HLSSBNAY"
+        },
+        {
+          "slug": "most-bought-by-hedge-funds",
+          "name": "Most Bought By Hedge Funds",
+          "index": "most-bought-by-hedge-funds",
+          "score": 10.801012,
+          "type": "ALGO_WATCHLIST",
+          "brandSlug": "yahoo-finance",
+          "pfId": "most_bought_by_hedge_funds",
+          "symbolCount": 30,
+          "dailyPercentGain": -1.667306505920245,
+          "followerCount": 41843,
+          "iconUrl": "https://edgecast-img.yahoo.net/mysterio/api/f1b1a50dcfdddcf42a67d2da1bb1c341e6f65992b3d89154b9020ae8a9ffa004/finance/resizefill_w96_h96/https://s.yimg.com/uc/fin/img/mostboughtHedgeFunds.png",
+          "userId": "5SSSFLJVWAMDKUGZM5HLSSBNAY"
+        },
+        {
+          "slug": "most-watched",
+          "name": "Most Watched by Yahoo Finance Users",
+          "index": "most-watched",
+          "score": 7.4735622,
+          "type": "ALGO_WATCHLIST",
+          "brandSlug": "yahoo-finance",
+          "pfId": "most_watched",
+          "symbolCount": 30,
+          "dailyPercentGain": -0.8091754517690652,
+          "followerCount": 29753,
+          "iconUrl": "https://edgecast-img.yahoo.net/mysterio/api/9f2d41c327a5d20c8062b14f526038441141d5644b2b3a0efee2e12d9be1efe0/finance/resizefill_w96_h96/https://s.yimg.com/uc/finance/social/portfolio/most-watched.png",
+          "userId": "5SSSFLJVWAMDKUGZM5HLSSBNAY"
+        },
+        {
+          "slug": "the-fight-against-covid19",
+          "name": "The Fight Against COVID19",
+          "index": "the-fight-against-covid19",
+          "score": 6.3283176,
+          "type": "ALGO_WATCHLIST",
+          "brandSlug": "trea",
+          "pfId": "the_fight_against_covid19",
+          "symbolCount": 13,
+          "dailyPercentGain": -0.6620032505129281,
+          "followerCount": 23838,
+          "iconUrl": "https://edgecast-img.yahoo.net/mysterio/api/3c7c7b592c7aba2beee72abb1e520b85d6241aee639ea2e8033b96962ad2e126/finance/resizefill_w96_h96/https://s.yimg.com/uc/fin/img/iStock-476433472.png",
+          "userId": "X3NJ2A7VDSABUI4URBWME2PZNM"
+        }
+      ],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 127,
+      "timeTakenForQuotes": 465,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0,
+      "timeTakenForSearchLists": 0
+    }
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=AAPL",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=600, stale-while-revalidate=180",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 11:12:38 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-search--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "86",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "0bdb2tpjrr9d6"
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 11,
+      "quotes": [
+        {
+          "exchange": "NMS",
+          "shortname": "Apple Inc.",
+          "quoteType": "EQUITY",
+          "symbol": "AAPL",
+          "index": "quotes",
+          "score": 3804300,
+          "typeDisp": "Equity",
+          "longname": "Apple Inc.",
+          "exchDisp": "NASDAQ",
+          "sector": "Technology",
+          "sectorDisp": "Technology",
+          "industry": "Consumer Electronics",
+          "industryDisp": "Consumer Electronics",
+          "dispSecIndFlag": true,
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NGM",
+          "shortname": "Direxion Daily AAPL Bull 2X Sha",
+          "quoteType": "ETF",
+          "symbol": "AAPU",
+          "index": "quotes",
+          "score": 20015,
+          "typeDisp": "ETF",
+          "longname": "Direxion Daily AAPL Bull 2X Shares",
+          "exchDisp": "NASDAQ",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "AAPL Dec 2025 120.000 call",
+          "quoteType": "OPTION",
+          "symbol": "AAPL251219C00120000",
+          "index": "quotes",
+          "score": 20005,
+          "typeDisp": "Option",
+          "longname": "AAPL Dec 2025 120.000 call",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "AAPL Jun 2025 210.000 put",
+          "quoteType": "OPTION",
+          "symbol": "AAPL250620P00210000",
+          "index": "quotes",
+          "score": 20004,
+          "typeDisp": "Option",
+          "longname": "AAPL Jun 2025 210.000 put",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "AAPL Jan 2026 170.000 put",
+          "quoteType": "OPTION",
+          "symbol": "AAPL260116P00170000",
+          "index": "quotes",
+          "score": 20004,
+          "typeDisp": "Option",
+          "longname": "AAPL Jan 2026 170.000 put",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "AAPL Jun 2025 200.000 put",
+          "quoteType": "OPTION",
+          "symbol": "AAPL250620P00200000",
+          "index": "quotes",
+          "score": 20004,
+          "typeDisp": "Option",
+          "longname": "AAPL Jun 2025 200.000 put",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "index": "78ddc07626ff4bbcae663e88514c23a0",
+          "name": "AAPlasma",
+          "permalink": "aaplasma",
+          "isYahooFinance": false
+        }
+      ],
+      "news": [
+        {
+          "uuid": "57ea9c09-0c99-3adf-9062-fecfdbe472cc",
+          "title": "Why Trump could 'move fast' on Apple's $500B US investment plan",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/why-trump-could-move-fast-002000706.html",
+          "providerPublishTime": 1740442800,
+          "type": "VIDEO",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/yxtbZ7npnBJnfUiHWfr7KQ--~B/aD0xMjE4O3c9MjE2NzthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2025-02/c6ea6a30-f2f7-11ef-aebf-86e657f87666",
+                "width": 2167,
+                "height": 1218,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/AFYL_RXm8_SBBNxe5QBvUw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/os/creatr-uploaded-images/2025-02/c6ea6a30-f2f7-11ef-aebf-86e657f87666",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "AAPL"
+          ]
+        },
+        {
+          "uuid": "bfb8b663-081c-3c2b-84e3-df8fff2c37d8",
+          "title": "Indonesia and Apple said to agree on terms to lift iPhone 16 ban",
+          "publisher": "Bloomberg",
+          "link": "https://finance.yahoo.com/news/indonesia-apple-said-agree-terms-055447668.html",
+          "providerPublishTime": 1740462887,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/pnwIKUddxt5cHCUB10R4Gg--~B/aD0xNTAwO3c9MjAwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/bloomberg_technology_68/8b9ec615dbcd76b4e1e72720d89f2d3e",
+                "width": 2000,
+                "height": 1500,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/KReNY2pZZlE5YXukNI.Uzg--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/bloomberg_technology_68/8b9ec615dbcd76b4e1e72720d89f2d3e",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "AAPL"
+          ]
+        },
+        {
+          "uuid": "76679f48-d3d7-340b-b1b4-4a95a714b868",
+          "title": "Apple Inc: An Exploration into Its Intrinsic Value",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/news/apple-inc-exploration-intrinsic-value-060058478.html",
+          "providerPublishTime": 1740463258,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/IcEDHtzDwTA4hQbvBfYYrg--~B/aD00MDA7dz00MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/us.finance.gurufocus/40a12a1b7769c635ead36fab47a12566",
+                "width": 400,
+                "height": 400,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/vEdfVlwAwFQwSkiElMztoQ--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/us.finance.gurufocus/40a12a1b7769c635ead36fab47a12566",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "AAPL"
+          ]
+        },
+        {
+          "uuid": "3ecdf3fa-bbb7-3368-931d-5e17857d6684",
+          "title": "Warren Buffett Just Gave Investors 3 Big Warnings About the Stock Market",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/m/3ecdf3fa-bbb7-3368-931d-5e17857d6684/warren-buffett-just-gave.html",
+          "providerPublishTime": 1740477120,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/f5mQWwz4aajBwCdPDm5.ug--~B/aD0xMzY1O3c9MjA0ODthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/motleyfool.com/d23252fc030a795678af7c1c3a7d5fdc",
+                "width": 2048,
+                "height": 1365,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/wPQDJSoczgX21jgqdGu0RQ--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/motleyfool.com/d23252fc030a795678af7c1c3a7d5fdc",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "BRK-B"
+          ]
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 83,
+      "timeTakenForQuotes": 426,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0,
+      "timeTakenForSearchLists": 0
+    }
+  }
+}

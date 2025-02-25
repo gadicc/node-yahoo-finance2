@@ -1,12 +1,12 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 
 export interface SearchQuoteYahoo {
-  [key: string]: any;
+  [key: string]: unknown;
   symbol: string; // "BABA"
   isYahooFinance: true; // true
   exchange: string; // "NYQ"
@@ -25,6 +25,8 @@ export interface SearchQuoteYahoo {
 export interface SearchQuoteYahooEquity extends SearchQuoteYahoo {
   quoteType: "EQUITY";
   typeDisp: "Equity";
+  sectorDisp: string; // "Technology",
+  industryDisp: string; // "Consumer Electronics"
 }
 export interface SearchQuoteYahooOption extends SearchQuoteYahoo {
   quoteType: "OPTION";
@@ -57,7 +59,7 @@ export interface SearchQuoteYahooFuture extends SearchQuoteYahoo {
 }
 
 export interface SearchQuoteNonYahoo {
-  [key: string]: any;
+  [key: string]: unknown;
   index: string; // '78ddc07626ff4bbcae663e88514c23a0'
   name: string; // 'AAPlasma'
   permalink: string; // 'aaplasma',
@@ -65,7 +67,7 @@ export interface SearchQuoteNonYahoo {
 }
 
 export interface SearchNews {
-  [key: string]: any;
+  [key: string]: unknown;
   uuid: string; // "9aff624a-e84c-35f3-9c23-db39852006dc"
   title: string; // "Analyst Report: Alibaba Group Holding Limited"
   publisher: string; // "Morningstar Research"
@@ -84,8 +86,8 @@ export interface SearchNewsThumbnailResolution {
 }
 
 export interface SearchResult {
-  [key: string]: any;
-  explains: Array<any>;
+  [key: string]: unknown;
+  explains: Array<unknown>;
   count: number;
   quotes: Array<
     | SearchQuoteYahooEquity
@@ -99,20 +101,20 @@ export interface SearchResult {
     | SearchQuoteYahooFuture
   >;
   news: Array<SearchNews>;
-  nav: Array<any>;
-  lists: Array<any>;
-  researchReports: Array<any>;
+  nav: Array<unknown>;
+  lists: Array<unknown>;
+  researchReports: Array<unknown>;
   totalTime: number;
   // ALWAYS present, but TEMPORARILY marked optional ("?") since its
   // sudden appearance, let's make sure it doesn't get suddenly removed.
-  // Array<any> until we can find some examples of what it actually looks
+  // Array<unknown> until we can find some examples of what it actually looks
   // like (#255).
-  screenerFieldResults?: Array<any>;
+  screenerFieldResults?: Array<unknown>;
   // ALWAYS present, but TEMPORARILY marked optional ("?") since its
   // sudden appearance, let's make sure it doesn't get suddenly removed.
   // Array<any> until we can find some examples of what it actually looks
   // like (#399).
-  culturalAssets?: Array<any>;
+  culturalAssets?: Array<unknown>;
   timeTakenForQuotes: number; // 26
   timeTakenForNews: number; // 419
   timeTakenForAlgowatchlist: number; // 700
@@ -120,12 +122,9 @@ export interface SearchResult {
   timeTakenForCrunchbase: number; // 400
   timeTakenForNav: number; // 400
   timeTakenForResearchReports: number; // 0
-  // ALWAYS present, but TEMPORARILY marked optional ("?") since its
-  // sudden appearance, let's make sure it doesn't get suddenly removed.
-  timeTakenForScreenerField?: number;
-  // ALWAYS present, but TEMPORARILY marked optional ("?") since its
-  // sudden appearance, let's make sure it doesn't get suddenly removed.
-  timeTakenForCulturalAssets?: number;
+  timeTakenForScreenerField: number;
+  timeTakenForCulturalAssets: number;
+  timeTakenForSearchLists: number; // 0
 }
 
 export interface SearchOptions {
@@ -168,14 +167,14 @@ export default function search(
   query: string,
   queryOptionsOverrides?: SearchOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
-): Promise<any>;
+): Promise<unknown>;
 
 export default function search(
   this: ModuleThis,
   query: string,
   queryOptionsOverrides?: SearchOptions,
   moduleOptions?: ModuleOptions,
-): Promise<any> {
+): Promise<unknown> {
   return this._moduleExec({
     moduleName: "search",
 

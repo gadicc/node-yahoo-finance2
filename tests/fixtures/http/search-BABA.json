@@ -1,0 +1,247 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v1/finance/search?lang=en-US&region=US&quotesCount=6&newsCount=4&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_cie_vespa&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&q=BABA",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "3",
+      "cache-control": "public, max-age=600, stale-while-revalidate=180",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Tue, 25 Feb 2025 11:12:39 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-search--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "83",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "7h84m49jrr9d7"
+    },
+    "bodyJson": {
+      "explains": [],
+      "count": 11,
+      "quotes": [
+        {
+          "exchange": "NYQ",
+          "shortname": "Alibaba Group Holding Limited",
+          "quoteType": "EQUITY",
+          "symbol": "BABA",
+          "index": "quotes",
+          "score": 2583000,
+          "typeDisp": "Equity",
+          "longname": "Alibaba Group Holding Limited",
+          "exchDisp": "NYSE",
+          "sector": "Consumer Cyclical",
+          "sectorDisp": "Consumer Cyclical",
+          "industry": "Internet Retail",
+          "industryDisp": "Internet Retail",
+          "dispSecIndFlag": true,
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "HKG",
+          "shortname": "BABA-W",
+          "quoteType": "EQUITY",
+          "symbol": "9988.HK",
+          "index": "quotes",
+          "score": 20854,
+          "typeDisp": "Equity",
+          "longname": "Alibaba Group Holding Limited",
+          "exchDisp": "Hong Kong",
+          "sector": "Consumer Cyclical",
+          "sectorDisp": "Consumer Cyclical",
+          "industry": "Internet Retail",
+          "industryDisp": "Internet Retail",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "NGM",
+          "shortname": "GraniteShares 2x Long BABA Dail",
+          "quoteType": "ETF",
+          "symbol": "BABX",
+          "index": "quotes",
+          "score": 20014,
+          "typeDisp": "ETF",
+          "longname": "GraniteShares 2x Long BABA Daily ETF",
+          "exchDisp": "NASDAQ",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "PNK",
+          "shortname": "Alibaba Group Holding Limited",
+          "quoteType": "EQUITY",
+          "symbol": "BABAF",
+          "index": "quotes",
+          "score": 20010,
+          "typeDisp": "Equity",
+          "longname": "Alibaba Group Holding Limited",
+          "exchDisp": "OTC Markets",
+          "sector": "Consumer Cyclical",
+          "sectorDisp": "Consumer Cyclical",
+          "industry": "Internet Retail",
+          "industryDisp": "Internet Retail",
+          "isYahooFinance": true
+        },
+        {
+          "exchange": "OPR",
+          "shortname": "BABA Dec 2025 95.000 put",
+          "quoteType": "OPTION",
+          "symbol": "BABA251219P00095000",
+          "index": "quotes",
+          "score": 20005,
+          "typeDisp": "Option",
+          "longname": "BABA Dec 2025 95.000 put",
+          "exchDisp": "OPR",
+          "isYahooFinance": true
+        },
+        {
+          "index": "12fcd8d814e04599b3c03384f3d63371",
+          "name": "Bababos",
+          "permalink": "bababos",
+          "isYahooFinance": false
+        },
+        {
+          "index": "5831e4b6af074cd98a755e2d98197194",
+          "name": "Babaco Market",
+          "permalink": "babaco-market",
+          "isYahooFinance": false
+        }
+      ],
+      "news": [
+        {
+          "uuid": "7092be36-8951-3514-b6cf-6d3b19c36fcb",
+          "title": "Why Alibaba (BABA) Stock Is Retreating Today",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/news/why-alibaba-baba-stock-retreating-162618032.html",
+          "providerPublishTime": 1740414378,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/iO0gFv6.inQ3RHq7PgXUcA--~B/aD04MTY7dz0xNDU2O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/insidermonkey.com/a98c3ce156ec8bf9454fbf2a1aa175a9",
+                "width": 1456,
+                "height": 816,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/1.Q5cMcqy73_U1GTtKk2dQ--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/insidermonkey.com/a98c3ce156ec8bf9454fbf2a1aa175a9",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "BABA"
+          ]
+        },
+        {
+          "uuid": "b93947ae-9d1d-3eb4-a086-190a950f0ff7",
+          "title": "How to Play Alibaba Group Stock After Mixed Q3 Earnings Results",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/news/play-alibaba-group-stock-mixed-133400239.html",
+          "providerPublishTime": 1740404040,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/eTtzIoI2KG2S6UeptMANxA--~B/aD00MDA7dz02MzU7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/zacks.com/7908fc2e91430e89c9fb516c3ac4654c",
+                "width": 635,
+                "height": 400,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/WOKrsxA6HMcdgyOkGO0fzw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/zacks.com/7908fc2e91430e89c9fb516c3ac4654c",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "BABA"
+          ]
+        },
+        {
+          "uuid": "12b232f0-3179-3bfd-a728-5d892f9ba10b",
+          "title": "Alibaba Group Holding Limited (BABA): A High Growth Mega Cap Stock You Can Buy and Hold for the Next 5 Years",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/news/alibaba-group-holding-limited-baba-001321058.html",
+          "providerPublishTime": 1740442401,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/psAs0pGNqyrt8mJECiI5og--~B/aD04MTY7dz0xNDU2O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/insidermonkey.com/090170be12ef840f77e8d544392228a0",
+                "width": 1456,
+                "height": 816,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/rg0VO3IkgxVsgV0CTQS6qQ--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/insidermonkey.com/090170be12ef840f77e8d544392228a0",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "BABA"
+          ]
+        },
+        {
+          "uuid": "06c741fe-4d8d-392d-b00b-097054c3c72d",
+          "title": "Investors Heavily Search Alibaba Group Holding Limited (BABA): Here is What You Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/news/investors-heavily-search-alibaba-group-140017421.html",
+          "providerPublishTime": 1740405617,
+          "type": "STORY",
+          "thumbnail": {
+            "resolutions": [
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/0K2vxHTAGj_tGrBqjPJ8Cg--~B/aD02MDA7dz05MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/zacks.com/f889276f4a638f3c7a79c0e3e6b768c1",
+                "width": 900,
+                "height": 600,
+                "tag": "original"
+              },
+              {
+                "url": "https://s.yimg.com/uu/api/res/1.2/XoWe2u8bPKAKGhfRjcBBFA--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/zacks.com/f889276f4a638f3c7a79c0e3e6b768c1",
+                "width": 140,
+                "height": 140,
+                "tag": "140x140"
+              }
+            ]
+          },
+          "relatedTickers": [
+            "BABA"
+          ]
+        }
+      ],
+      "nav": [],
+      "lists": [],
+      "researchReports": [],
+      "screenerFieldResults": [],
+      "totalTime": 80,
+      "timeTakenForQuotes": 436,
+      "timeTakenForNews": 700,
+      "timeTakenForAlgowatchlist": 400,
+      "timeTakenForPredefinedScreener": 400,
+      "timeTakenForCrunchbase": 400,
+      "timeTakenForNav": 400,
+      "timeTakenForResearchReports": 0,
+      "timeTakenForScreenerField": 0,
+      "timeTakenForCulturalAssets": 0,
+      "timeTakenForSearchLists": 0
+    }
+  }
+}

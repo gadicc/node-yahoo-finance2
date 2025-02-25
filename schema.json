@@ -11585,7 +11585,8 @@
         "exchange",
         "index",
         "score"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "SearchQuoteYahooEquity": {
       "type": "object",
@@ -11641,17 +11642,26 @@
         "typeDisp": {
           "type": "string",
           "const": "Equity"
+        },
+        "sectorDisp": {
+          "type": "string"
+        },
+        "industryDisp": {
+          "type": "string"
         }
       },
       "required": [
         "exchange",
         "index",
+        "industryDisp",
         "isYahooFinance",
         "quoteType",
         "score",
+        "sectorDisp",
         "symbol",
         "typeDisp"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "SearchQuoteYahooOption": {
       "type": "object",
@@ -11717,7 +11727,8 @@
         "score",
         "symbol",
         "typeDisp"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "SearchQuoteYahooETF": {
       "type": "object",
@@ -11783,7 +11794,8 @@
         "score",
         "symbol",
         "typeDisp"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "SearchQuoteYahooFund": {
       "type": "object",
@@ -11849,7 +11861,8 @@
         "score",
         "symbol",
         "typeDisp"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "SearchQuoteYahooIndex": {
       "type": "object",
@@ -11915,7 +11928,8 @@
         "score",
         "symbol",
         "typeDisp"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "SearchQuoteYahooCurrency": {
       "type": "object",
@@ -11981,7 +11995,8 @@
         "score",
         "symbol",
         "typeDisp"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "SearchQuoteYahooCryptocurrency": {
       "type": "object",
@@ -12047,7 +12062,8 @@
         "score",
         "symbol",
         "typeDisp"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "SearchQuoteYahooFuture": {
       "type": "object",
@@ -12116,7 +12132,8 @@
         "score",
         "symbol",
         "typeDisp"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "SearchQuoteNonYahoo": {
       "type": "object",
@@ -12140,7 +12157,8 @@
         "name",
         "permalink",
         "isYahooFinance"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "SearchNews": {
       "type": "object",
@@ -12192,7 +12210,8 @@
         "link",
         "providerPublishTime",
         "type"
-      ]
+      ],
+      "additionalProperties": {}
     },
     "SearchNewsThumbnailResolution": {
       "type": "object",
@@ -12317,6 +12336,9 @@
         },
         "timeTakenForCulturalAssets": {
           "yahooFinanceType": "number"
+        },
+        "timeTakenForSearchLists": {
+          "yahooFinanceType": "number"
         }
       },
       "required": [
@@ -12334,8 +12356,12 @@
         "timeTakenForPredefinedScreener",
         "timeTakenForCrunchbase",
         "timeTakenForNav",
-        "timeTakenForResearchReports"
-      ]
+        "timeTakenForResearchReports",
+        "timeTakenForScreenerField",
+        "timeTakenForCulturalAssets",
+        "timeTakenForSearchLists"
+      ],
+      "additionalProperties": {}
     },
     "SearchOptions": {
       "type": "object",
