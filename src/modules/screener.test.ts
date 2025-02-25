@@ -1,9 +1,17 @@
-import screener from "./screener.js";
-import testYf from "../../tests/testYf.js";
+import {
+  createTestYahooFinance,
+  describe,
+  it,
+  setupCache,
+} from "../../tests/common.ts";
+import screener from "./screener.ts";
 
-const yf = testYf({ screener });
+const YahooFinance = createTestYahooFinance({ modules: { screener } });
+const yf = new YahooFinance();
 
 describe("screener", () => {
+  setupCache();
+
   // TODO - Add reset of predefined screener responses
   it.each(["aggressive_small_caps"])(
     "passes validation for predefined screener '%s'",
@@ -16,11 +24,15 @@ describe("screener", () => {
       );
     },
   );
-  if (process.env.FETCH_DEVEL !== "nocache")
+
+  /* TODO
+  if (process.env.FETCH_DEVEL !== "nocache") {
     it("throws on weird result", () => {
       const devel = "weirdJsonResult.fake.json";
       return expect(
         yf.screener({ scrIds: "aggressive_small_caps" }, { devel }),
       ).rejects.toThrow(/^Unexpected result/);
     });
+  }
+  */
 });

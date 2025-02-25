@@ -1,9 +1,9 @@
 import type {
   ModuleOptions,
-  ModuleOptionsWithValidateTrue,
   ModuleOptionsWithValidateFalse,
+  ModuleOptionsWithValidateTrue,
   ModuleThis,
-} from "../lib/moduleCommon.js";
+} from "../lib/moduleCommon.ts";
 
 export interface ScreenerResult {
   id: string;
@@ -40,7 +40,8 @@ export interface ScreenerCriterum {
   operators: string[];
   values: number[];
   labelsSelected: number[];
-  dependentValues: any[];
+  dependentValues: unknown[];
+  subField?: null;
 }
 
 export interface ScreenerQuote {
@@ -48,7 +49,7 @@ export interface ScreenerQuote {
   region: string;
   quoteType: string;
   typeDisp: string;
-  quoteSourceName: string;
+  quoteSourceName?: string;
   triggerable: boolean;
   customPriceAlertConfidence: string;
   lastCloseTevEbitLtm?: number;
@@ -138,6 +139,15 @@ export interface ScreenerQuote {
   trailingThreeMonthReturns?: number;
   netAssets?: number;
   netExpenseRatio?: number;
+  hasPrePostMarketData?: boolean; // true
+  corporateActions?: unknown[]; // []
+  earningsCallTimestampStart?: Date; // 1739453400
+  earningsCallTimestampEnd?: Date; //  1739453400
+  isEarningsDateEstimate?: boolean; // true
+  preMarketChange?: number; // -0.010000229,
+  preMarketChangePercent?: number; // -0.34723017
+  preMarketTime?: Date; // 1740480444
+  preMarketPrice?: number; // 2.87
 }
 
 export type PredefinedScreenerModules =
@@ -181,13 +191,13 @@ export default function screener(
   this: ModuleThis,
   queryOptionsOverrides?: ScreenerOptions,
   moduleOptions?: ModuleOptionsWithValidateFalse,
-): Promise<any>;
+): Promise<unknown>;
 
 export default function screener(
   this: ModuleThis,
   queryOptionsOverrides?: ScreenerOptions,
   moduleOptions?: ModuleOptions,
-): Promise<any> {
+): Promise<unknown> {
   return this._moduleExec({
     moduleName: "screener",
     query: {
@@ -199,10 +209,12 @@ export default function screener(
     },
     result: {
       schemaKey: "#/definitions/ScreenerResult",
+      // deno-lint-ignore no-explicit-any
       transformWith(result: any) {
         // console.log(result);
-        if (!result.finance)
+        if (!result.finance) {
           throw new Error("Unexpected result: " + JSON.stringify(result));
+        }
         return result.finance.result[0];
       },
     },
