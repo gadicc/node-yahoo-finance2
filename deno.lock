@@ -1,24 +1,41 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@gadicc/fetch-mock-cache@^2.1.0": "2.1.0",
+    "jsr:@david/code-block-writer@^13.0.2": "13.0.3",
+    "jsr:@deno/cache-dir@~0.10.3": "0.10.3",
+    "jsr:@deno/dnt@~0.41.3": "0.41.3",
+    "jsr:@gadicc/fetch-mock-cache@^2.1.3": "2.1.3",
+    "jsr:@std/assert@0.223": "0.223.0",
+    "jsr:@std/assert@0.226": "0.226.0",
     "jsr:@std/assert@^1.0.10": "1.0.11",
     "jsr:@std/assert@^1.0.11": "1.0.11",
+    "jsr:@std/bytes@0.223": "0.223.0",
     "jsr:@std/data-structures@^1.0.6": "1.0.6",
     "jsr:@std/expect@^1.0.13": "1.0.13",
+    "jsr:@std/fmt@0.223": "0.223.0",
+    "jsr:@std/fmt@1": "1.0.5",
     "jsr:@std/fmt@^1.0.5": "1.0.5",
+    "jsr:@std/fs@0.223": "0.223.0",
+    "jsr:@std/fs@1": "1.0.13",
     "jsr:@std/fs@^1.0.9": "1.0.13",
+    "jsr:@std/fs@~0.229.3": "0.229.3",
     "jsr:@std/internal@^1.0.5": "1.0.5",
+    "jsr:@std/io@0.223": "0.223.0",
     "jsr:@std/path@*": "1.0.8",
+    "jsr:@std/path@0.223": "0.223.0",
     "jsr:@std/path@1": "1.0.8",
+    "jsr:@std/path@1.0.0-rc.1": "1.0.0-rc.1",
     "jsr:@std/path@^1.0.8": "1.0.8",
+    "jsr:@std/path@~0.225.2": "0.225.2",
     "jsr:@std/testing@*": "1.0.9",
     "jsr:@std/testing@^1.0.9": "1.0.9",
+    "jsr:@ts-morph/bootstrap@0.24": "0.24.0",
+    "jsr:@ts-morph/common@0.24": "0.24.0",
     "npm:@jest/types@^29.6.3": "29.6.3",
     "npm:@types/json-schema@^7.0.15": "7.0.15",
     "npm:debug@^4.3.4": "4.4.0",
-    "npm:fetch-mock-cache@^2.1.0": "2.1.0",
-    "npm:filenamify-url@2.1.2": "2.1.2",
+    "npm:fetch-mock-cache@^2.1.3": "2.1.3",
+    "npm:filenamify-url@^2.1.2": "2.1.2",
     "npm:jest-get-type@^29.6.3": "29.6.3",
     "npm:json-schema@0.4": "0.4.0",
     "npm:oas-schema-walker@^1.1.5": "1.1.5",
@@ -27,19 +44,51 @@
     "npm:ts-json-schema-generator@1.5.1": "1.5.1"
   },
   "jsr": {
-    "@gadicc/fetch-mock-cache@2.1.0": {
-      "integrity": "6c20264dd21f3065907336ce73f1f4e979e406b62f2384f88976507c674a3a9d",
+    "@david/code-block-writer@13.0.3": {
+      "integrity": "f98c77d320f5957899a61bfb7a9bead7c6d83ad1515daee92dbacc861e13bb7f"
+    },
+    "@deno/cache-dir@0.10.3": {
+      "integrity": "eb022f84ecc49c91d9d98131c6e6b118ff63a29e343624d058646b9d50404776",
+      "dependencies": [
+        "jsr:@std/fmt@0.223",
+        "jsr:@std/fs@0.223",
+        "jsr:@std/io",
+        "jsr:@std/path@0.223"
+      ]
+    },
+    "@deno/dnt@0.41.3": {
+      "integrity": "b2ef2c8a5111eef86cb5bfcae103d6a2938e8e649e2461634a7befb7fc59d6d2",
+      "dependencies": [
+        "jsr:@david/code-block-writer",
+        "jsr:@deno/cache-dir",
+        "jsr:@std/fmt@1",
+        "jsr:@std/fs@1",
+        "jsr:@std/path@1",
+        "jsr:@ts-morph/bootstrap"
+      ]
+    },
+    "@gadicc/fetch-mock-cache@2.1.3": {
+      "integrity": "b59991232bf05378d45eda072b83cb1e9963964a7904161be227e1d0d230e212",
       "dependencies": [
         "jsr:@std/path@1",
         "npm:debug",
         "npm:filenamify-url"
       ]
     },
+    "@std/assert@0.223.0": {
+      "integrity": "eb8d6d879d76e1cc431205bd346ed4d88dc051c6366365b1af47034b0670be24"
+    },
+    "@std/assert@0.226.0": {
+      "integrity": "0dfb5f7c7723c18cec118e080fec76ce15b4c31154b15ad2bd74822603ef75b3"
+    },
     "@std/assert@1.0.11": {
       "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
       "dependencies": [
         "jsr:@std/internal"
       ]
+    },
+    "@std/bytes@0.223.0": {
+      "integrity": "84b75052cd8680942c397c2631318772b295019098f40aac5c36cead4cba51a8"
     },
     "@std/data-structures@1.0.6": {
       "integrity": "76a7fd8080c66604c0496220a791860492ab21a04a63a969c0b9a0609bbbb760"
@@ -51,8 +100,20 @@
         "jsr:@std/internal"
       ]
     },
+    "@std/fmt@0.223.0": {
+      "integrity": "6deb37794127dfc7d7bded2586b9fc6f5d50e62a8134846608baf71ffc1a5208"
+    },
     "@std/fmt@1.0.5": {
       "integrity": "0cfab43364bc36650d83c425cd6d99910fc20c4576631149f0f987eddede1a4d"
+    },
+    "@std/fs@0.223.0": {
+      "integrity": "3b4b0550b2c524cbaaa5a9170c90e96cbb7354e837ad1bdaf15fc9df1ae9c31c"
+    },
+    "@std/fs@0.229.3": {
+      "integrity": "783bca21f24da92e04c3893c9e79653227ab016c48e96b3078377ebd5222e6eb",
+      "dependencies": [
+        "jsr:@std/path@1.0.0-rc.1"
+      ]
     },
     "@std/fs@1.0.13": {
       "integrity": "756d3ff0ade91c9e72b228e8012b6ff00c3d4a4ac9c642c4dac083536bf6c605",
@@ -63,6 +124,28 @@
     "@std/internal@1.0.5": {
       "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
     },
+    "@std/io@0.223.0": {
+      "integrity": "2d8c3c2ab3a515619b90da2c6ff5ea7b75a94383259ef4d02116b228393f84f1",
+      "dependencies": [
+        "jsr:@std/assert@0.223",
+        "jsr:@std/bytes"
+      ]
+    },
+    "@std/path@0.223.0": {
+      "integrity": "593963402d7e6597f5a6e620931661053572c982fc014000459edc1f93cc3989",
+      "dependencies": [
+        "jsr:@std/assert@0.223"
+      ]
+    },
+    "@std/path@0.225.2": {
+      "integrity": "0f2db41d36b50ef048dcb0399aac720a5348638dd3cb5bf80685bf2a745aa506",
+      "dependencies": [
+        "jsr:@std/assert@0.226"
+      ]
+    },
+    "@std/path@1.0.0-rc.1": {
+      "integrity": "b8c00ae2f19106a6bb7cbf1ab9be52aa70de1605daeb2dbdc4f87a7cbaf10ff6"
+    },
     "@std/path@1.0.8": {
       "integrity": "548fa456bb6a04d3c1a1e7477986b6cffbce95102d0bb447c67c4ee70e0364be"
     },
@@ -71,9 +154,22 @@
       "dependencies": [
         "jsr:@std/assert@^1.0.10",
         "jsr:@std/data-structures",
-        "jsr:@std/fs",
+        "jsr:@std/fs@^1.0.9",
         "jsr:@std/internal",
         "jsr:@std/path@^1.0.8"
+      ]
+    },
+    "@ts-morph/bootstrap@0.24.0": {
+      "integrity": "a826a2ef7fa8a7c3f1042df2c034d20744d94da2ee32bf29275bcd4dffd3c060",
+      "dependencies": [
+        "jsr:@ts-morph/common"
+      ]
+    },
+    "@ts-morph/common@0.24.0": {
+      "integrity": "12b625b8e562446ba658cdbe9ad77774b4bd96b992ae8bd34c60dbf24d06c1f3",
+      "dependencies": [
+        "jsr:@std/fs@~0.229.3",
+        "jsr:@std/path@~0.225.2"
       ]
     }
   },
@@ -174,8 +270,8 @@
     "escape-string-regexp@1.0.5": {
       "integrity": "sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg=="
     },
-    "fetch-mock-cache@2.1.0": {
-      "integrity": "sha512-JUbM6qOrSDKNI6PSbXPWECjMMjp+N0T5z1QfIAFCMX2wTJo/1csnEwHgPDKyYPf09J5jHgG+v/KdwshkQBe1lg==",
+    "fetch-mock-cache@2.1.3": {
+      "integrity": "sha512-fiQO09fEhN6ZY7GMb71cs9P09B3lBgGQ9CygydJHKQWZQv95bzsyl6dJERHuy34tQyG0gsHZK1pR/6Pkj2b9Qw==",
       "dependencies": [
         "debug",
         "filenamify-url"
@@ -364,13 +460,14 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@gadicc/fetch-mock-cache@^2.1.0",
+      "jsr:@deno/dnt@~0.41.3",
+      "jsr:@gadicc/fetch-mock-cache@^2.1.3",
       "jsr:@std/expect@^1.0.13",
       "jsr:@std/fmt@^1.0.5",
       "jsr:@std/testing@^1.0.9",
       "npm:@jest/types@^29.6.3",
       "npm:@types/json-schema@^7.0.15",
-      "npm:fetch-mock-cache@^2.1.0",
+      "npm:fetch-mock-cache@^2.1.3",
       "npm:jest-get-type@^29.6.3",
       "npm:json-schema@0.4",
       "npm:oas-schema-walker@^1.1.5",
