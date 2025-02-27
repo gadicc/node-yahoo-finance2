@@ -11,8 +11,8 @@ jobs:
       # https://circleci.com/developer/images/image/cimg/node
       #- image: cimg/node:12.22.1
       #- currently we need this for dynamic import in module tests, ONLY.
-      # - image: cimg/node:20.18.3
-      - image: denoland/deno:2.1.0
+      - image: cimg/node:20.18.3
+      # - image: denoland/deno:2.1.0
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -24,8 +24,9 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      - run: apt-get update
-      - run: apt install -qq -y curl gpg git ssh
+      # - run: apt-get update
+      # - run: apt install -qq -y curl gpg git ssh
+      - run: curl -fsSL https://deno.land/install.sh | sh
 
       - checkout
 
@@ -59,4 +60,6 @@ jobs:
       #- run: yarn build
       #- run: yarn test:build
 
+      - run: deno task build:npm
       #- run: yarn semantic-release
+      - run: deno run -A npm:semantic-release
