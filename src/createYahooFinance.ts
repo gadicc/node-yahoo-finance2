@@ -1,7 +1,6 @@
 import defaultOptions, { type YahooFinanceOptions } from "./lib/options.ts";
 import yahooFinanceFetch from "./lib/yahooFinanceFetch.ts";
 import moduleExec from "./lib/moduleExec.ts";
-import fetchCache from "../tests/fetchCache.ts";
 
 class YahooFinance {
   _opts: YahooFinanceOptions;
@@ -23,7 +22,9 @@ class YahooFinance {
     this._env = {
       URLSearchParams,
       fetch,
-      fetchDevel() {
+      async fetchDevel() {
+        const { default: fetchCache } = await import("../tests/fetchCache.ts");
+
         function fetchDevel(
           input: Parameters<typeof fetch>[0],
           init?: Parameters<typeof fetch>[1], // & { devel?: boolean | string },
@@ -41,7 +42,7 @@ class YahooFinance {
 
           return fetch(input, init);
         }
-        return Promise.resolve(fetchDevel);
+        return fetchDevel;
       },
     };
   }
