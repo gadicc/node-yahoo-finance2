@@ -1,6 +1,4 @@
-// TODO, keep defaults there too?
-import type { ValidationOptions } from "./validateAndCoerceTypes.ts";
-import type { QueueOptions } from "./queue.ts";
+import type { YahooFinanceOptions as YahooFinanceOptionsJSON } from "./optionsJson.ts";
 import { ExtendedCookieJar } from "./cookieJar.ts";
 
 export interface Logger {
@@ -14,11 +12,8 @@ export interface Logger {
   debug: (...args: any[]) => void;
 }
 
-export interface YahooFinanceOptions {
-  YF_QUERY_HOST?: string;
+export interface YahooFinanceOptions extends YahooFinanceOptionsJSON {
   cookieJar?: ExtendedCookieJar;
-  queue?: QueueOptions;
-  validation?: ValidationOptions;
   logger?: Logger;
 }
 

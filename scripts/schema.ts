@@ -22,10 +22,7 @@ import yfFunctionIgnorer from "./schema/TypeFormatter/yfFunctionIgnorer.ts";
 const OUTPUT_PATH = Deno.stdout;
 
 const config: Config = {
-  // path: "src/{modules/**/!(*spec.ts),lib/options.ts}",
-  // XXX TODO
-  path:
-    "src/modules/{quote,chart,dailyGainers,dailyLosers,fundamentalsTimeSeries,historical,insights,options,quoteSummary,quoteSummary-iface,recommendationsBySymbol,screener,search,trendingSymbols}.ts",
+  path: "src/{modules/**/!(*test.ts),lib/optionsJson.ts}",
   tsconfig: "scripts/schema-tsconfig.json",
   type: "*",
 };
