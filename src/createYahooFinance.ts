@@ -11,9 +11,7 @@ class YahooFinance {
   _env: {
     URLSearchParams: typeof URLSearchParams;
     fetch: typeof fetch;
-    fetchDevel?: () => Promise<
-      (url: URL | RequestInfo, init?: RequestInit) => Promise<Response>
-    >;
+    fetchDevel?: () => Promise<typeof fetch>;
   };
 
   constructor(options?: YahooFinanceOptions) {
@@ -27,9 +25,9 @@ class YahooFinance {
       fetch,
       fetchDevel() {
         function fetchDevel(
-          input: RequestInfo | URL,
-          init?: RequestInit, // & { devel?: boolean | string },
-        ): Promise<Response> {
+          input: Parameters<typeof fetch>[0],
+          init?: Parameters<typeof fetch>[1], // & { devel?: boolean | string },
+        ): ReturnType<typeof fetch> {
           // @ts-expect-error: later
           const { devel, ..._init } = init || {};
           // console.log({ devel });

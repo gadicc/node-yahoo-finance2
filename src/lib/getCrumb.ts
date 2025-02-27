@@ -4,6 +4,7 @@ import type { Logger } from "./options.ts";
 import { Cookie } from "tough-cookie";
 import { showNotice } from "./notices.ts";
 
+type Fetch = typeof fetch;
 const CONFIG_FAKE_URL = "http://config.yf2/";
 
 let crumb: string | null = null;
@@ -17,7 +18,7 @@ const parseHtmlEntities = (str: string) =>
 type CrumbOptions = RequestInit & { devel?: boolean | string };
 export async function _getCrumb(
   cookieJar: ExtendedCookieJar,
-  fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>,
+  fetch: Fetch,
   fetchOptionsBase: CrumbOptions,
   logger: Logger,
   url = "https://finance.yahoo.com/quote/AAPL",
@@ -350,7 +351,7 @@ export async function getCrumbClear(cookieJar: ExtendedCookieJar) {
 
 export default function getCrumb(
   cookieJar: ExtendedCookieJar,
-  fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>,
+  fetch: Fetch,
   fetchOptionsBase: CrumbOptions,
   logger: Logger,
   url = "https://finance.yahoo.com/quote/AAPL",
