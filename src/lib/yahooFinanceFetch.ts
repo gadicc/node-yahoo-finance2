@@ -9,16 +9,15 @@ import getCrumb from "./getCrumb.ts";
 import { repository } from "../consts.ts";
 
 const userAgent = `${pkg.name}/${pkg.version} (+${repository})`;
+type Fetch = typeof fetch;
 
 interface YahooFinanceFetchThisEnv {
   // deno-lint-ignore no-explicit-any
   [key: string]: any;
   // deno-lint-ignore no-explicit-any
   URLSearchParams: (init?: any) => any;
-  fetch: (url: RequestInfo, init?: RequestInit) => Promise<Response>;
-  fetchDevel: () => Promise<
-    (url: RequestInfo, init?: RequestInit) => Promise<Response>
-  >;
+  fetch: Fetch;
+  fetchDevel: () => Promise<Fetch>;
 }
 
 interface YahooFinanceFetchThis {
