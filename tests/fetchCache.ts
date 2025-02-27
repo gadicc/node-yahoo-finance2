@@ -1,7 +1,8 @@
 "use strict";
 
-import { spy } from "jsr:@std/testing/mock";
-import { afterAll, beforeAll } from "jsr:@std/testing/bdd";
+import { spy } from "@std/testing/mock";
+import { afterAll, beforeAll } from "@std/testing/bdd";
+
 // XXX TODO npm?
 // import createFetchCache from "fetch-mock-cache/lib/runtimes/deno.ts";
 // import Store from "fetch-mock-cache/lib/stores/fs.ts";
