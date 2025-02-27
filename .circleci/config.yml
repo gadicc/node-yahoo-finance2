@@ -62,5 +62,7 @@ jobs:
       #- run: yarn test:build
 
       - run: deno task build:npm
-      #- run: yarn semantic-release
-      - run: deno run -A npm:semantic-release
+
+      # - run: deno run -A npm:semantic-release
+      - run: npm install -D @sebbo2002/semantic-release-jsr conventional-changelog-conventionalcommits
+      - run: npx semantic-release
