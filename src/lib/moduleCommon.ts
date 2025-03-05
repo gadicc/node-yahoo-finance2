@@ -1,4 +1,4 @@
-//import ModuleExec from "./moduleExec.js";
+// import type ModuleExec from "./moduleExec.js";
 
 export interface ModuleOptions {
   validateResult?: boolean;
@@ -21,4 +21,5 @@ export interface ModuleThis {
   // schema generation because json-schema does not support functions.
   // deno-lint-ignore no-explicit-any
   _moduleExec: any;
+  // _moduleExec: typeof ModuleExec;
 }

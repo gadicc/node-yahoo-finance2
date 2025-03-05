@@ -6,6 +6,11 @@ import type {
   ModuleOptionsWithValidateTrue,
   ModuleThis,
 } from "../lib/moduleCommon.ts";
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+
+// @yf-schema: see the docs on how this file is automatically updated.
+import schema from "./chart.schema.json" with { type: "json" };
+const definitions = getTypedDefinitions(schema);
 
 export interface ChartResultObject {
   [key: string]: unknown;
@@ -218,6 +223,7 @@ export default async function chart(
     query: {
       assertSymbol: symbol,
       url: "https://${YF_QUERY_HOST}/v8/finance/chart/" + symbol,
+      definitions,
       schemaKey: "#/definitions/ChartOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
@@ -261,6 +267,7 @@ export default async function chart(
     },
 
     result: {
+      definitions,
       schemaKey: "#/definitions/ChartResultObject",
       // deno-lint-ignore no-explicit-any
       transformWith(result: any) {

@@ -5,6 +5,12 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.ts";
 
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+
+// @yf-schema: see the docs on how this file is automatically updated.
+import schema from "./trendingSymbols.schema.json" with { type: "json" };
+const definitions = getTypedDefinitions(schema);
+
 export interface TrendingSymbol {
   [key: string]: unknown;
   symbol: string;
@@ -53,11 +59,13 @@ export default function trendingSymbols(
     moduleName: "trendingSymbols",
     query: {
       url: "https://${YF_QUERY_HOST}/v1/finance/trending/" + query,
+      definitions,
       schemaKey: "#/definitions/TrendingSymbolsOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
     },
     result: {
+      definitions,
       schemaKey: "#/definitions/TrendingSymbolsResult",
       // deno-lint-ignore no-explicit-any
       transformWith(result: any) {

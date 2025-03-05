@@ -6,6 +6,12 @@ import type {
 } from "../lib/moduleCommon.ts";
 
 import type { DateInMs, TwoNumberRange } from "../lib/commonTypes.ts";
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+
+// @yf-schema: see the docs on how this file is automatically updated.
+import schema from "./quote.schema.json" with { type: "json" };
+const definitions = getTypedDefinitions(schema);
+console.log({ definitions });
 
 export interface QuoteBase {
   // deno-lint-ignore no-explicit-any
@@ -281,6 +287,7 @@ export default async function quote(
     query: {
       url: "https://${YF_QUERY_HOST}/v7/finance/quote",
       needsCrumb: true,
+      definitions,
       schemaKey: "#/definitions/QuoteOptions",
       defaults: queryOptionsDefaults,
       runtime: { symbols },
@@ -297,6 +304,7 @@ export default async function quote(
     },
 
     result: {
+      definitions,
       schemaKey: "#/definitions/QuoteResponseArray",
       // deno-lint-ignore no-explicit-any
       transformWith(rawResult: any) {

@@ -5,6 +5,12 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.ts";
 
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+
+// @yf-schema: see the docs on how this file is automatically updated.
+import schema from "./search.schema.json" with { type: "json" };
+const definitions = getTypedDefinitions(schema);
+
 export interface SearchQuoteYahoo {
   [key: string]: unknown;
   symbol: string; // "BABA"
@@ -180,6 +186,7 @@ export default function search(
 
     query: {
       url: "https://${YF_QUERY_HOST}/v1/finance/search",
+      definitions,
       schemaKey: "#/definitions/SearchOptions",
       defaults: queryOptionsDefaults,
       runtime: { q: query },
@@ -187,6 +194,7 @@ export default function search(
     },
 
     result: {
+      definitions,
       schemaKey: "#/definitions/SearchResult",
     },
 

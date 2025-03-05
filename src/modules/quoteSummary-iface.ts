@@ -11,6 +11,7 @@
  *  4) RawNumberObj type to Date|number for coersion
  */
 
+// @yf-schema: see the docs on how this file is automatically updated.
 export interface QuoteSummaryResult {
   [key: string]: unknown;
   assetProfile?: AssetProfile;

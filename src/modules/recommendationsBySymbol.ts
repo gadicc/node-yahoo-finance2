@@ -5,6 +5,14 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.ts";
 
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+
+// @yf-schema: see the docs on how this file is automatically updated.
+import schema from "./recommendationsBySymbol.schema.json" with {
+  type: "json",
+};
+const definitions = getTypedDefinitions(schema);
+
 export interface RecommendationsBySymbolResponse {
   [key: string]: unknown;
   recommendedSymbols: Array<{
@@ -59,12 +67,14 @@ export default function recommendationsBySymbol(
     query: {
       url: "https://${YF_QUERY_HOST}/v6/finance/recommendationsbysymbol/" +
         symbols,
+      definitions,
       schemaKey: "#/definitions/RecommendationsBySymbolOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
     },
 
     result: {
+      definitions,
       schemaKey: "#/definitions/RecommendationsBySymbolResponseArray",
       // deno-lint-ignore no-explicit-any
       transformWith(result: any) {

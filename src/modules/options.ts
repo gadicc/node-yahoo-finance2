@@ -6,6 +6,11 @@ import type {
 } from "../lib/moduleCommon.ts";
 
 import type { Quote } from "./quote.ts";
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+
+// @yf-schema: see the docs on how this file is automatically updated.
+import schema from "./options.schema.json" with { type: "json" };
+const definitions = getTypedDefinitions(schema);
 
 export interface OptionsResult {
   [key: string]: unknown;
@@ -84,6 +89,7 @@ export default function options(
       assertSymbol: symbol,
       url: "https://${YF_QUERY_HOST}/v7/finance/options/" + symbol,
       needsCrumb: true,
+      definitions,
       schemaKey: "#/definitions/OptionsOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
@@ -104,6 +110,7 @@ export default function options(
     },
 
     result: {
+      definitions,
       schemaKey: "#/definitions/OptionsResult",
       // deno-lint-ignore no-explicit-any
       transformWith(result: any) {

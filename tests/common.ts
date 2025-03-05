@@ -7,7 +7,6 @@ import fetchCache, { fetchCacheSetup } from "./fetchCache.ts";
 
 import testSymbols from "./testSymbols.ts";
 import createYahooFinance from "../src/createYahooFinance.ts";
-import { disallowAdditionalProps } from "../src/lib/validateAndCoerceTypes.ts";
 import { suppressNotices } from "../src/lib/notices.ts";
 
 function each(table: Global.EachTable) {
@@ -69,10 +68,9 @@ export function createTestYahooFinance<
   opts: T,
 ): ReturnType<typeof createYahooFinance<T>> {
   // Note: currently these are global and can't be undone without reloading deno.
-  disallowAdditionalProps();
   suppressNotices(["yahooSurvey"]);
 
-  return createYahooFinance(opts);
+  return createYahooFinance({ _allowAdditionalProps: false, ...opts });
 }
 
 export { testSymbols };

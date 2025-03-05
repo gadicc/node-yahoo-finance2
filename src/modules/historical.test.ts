@@ -9,6 +9,7 @@ import {
 
 import historical from "./historical.ts";
 import chart from "./chart.ts";
+import { consoleRestore, consoleSilent } from "../../tests/console.js";
 
 const YahooFinance = createTestYahooFinance({ modules: { historical, chart } });
 const yf = new YahooFinance();
@@ -49,6 +50,7 @@ describe("historical", () => {
   });
 
   it("throws if period{1,2} gets an invalid string for new Date()", async () => {
+    consoleSilent();
     await expect(yf.historical("TSLA", { period1: "invalid" })).rejects.toThrow(
       // /invalid date provided/,
       /yahooFinance.historical called with invalid options/,
@@ -57,6 +59,7 @@ describe("historical", () => {
     await expect(
       yf.historical("TSLA", { period1: "2022-02-022", period2: "invalid" }),
     ).rejects.toThrow(/invalid date provided/);
+    consoleRestore();
   });
 
   it("dividends pass validation (#557)", async () => {

@@ -45,6 +45,16 @@ class YahooFinance {
         return fetchDevel;
       },
     };
+
+    if ("_createOpts" in this) {
+      const createOpts = this._createOpts as Record<string, unknown>;
+      if (createOpts) {
+        if ("_allowAdditionalProps" in createOpts) {
+          if (!this._opts.validation) this._opts.validation = {};
+          this._opts.validation.allowAdditionalProps = false;
+        }
+      }
+    }
   }
 }
 
@@ -70,6 +80,10 @@ type YahooFinanceWithModules<T extends CreateYahooFinanceOptions> =
 export default function createYahooFinance<T extends CreateYahooFinanceOptions>(
   createOpts: T,
 ): YahooFinanceWithModules<T> {
-  Object.assign(YahooFinance.prototype, createOpts.modules);
-  return YahooFinance as YahooFinanceWithModules<T>;
+  const { modules, ...rest } = createOpts;
+  Object.assign(YahooFinance.prototype, modules);
+  Object.assign(YahooFinance.prototype, { _createOpts: rest });
+  return YahooFinance as YahooFinanceWithModules<T> & {
+    _createOpts: typeof rest;
+  };
 }

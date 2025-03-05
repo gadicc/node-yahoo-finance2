@@ -7,6 +7,17 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.ts";
 
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+export type * from "./quoteSummary-iface.ts";
+
+// @yf-schema: see the docs on how this file is automatically updated.
+import optsSchema from "./quoteSummary.schema.json" with { type: "json" };
+import resultsSchema from "./quoteSummary-iface.schema.json" with {
+  type: "json",
+};
+const optsDefinitions = getTypedDefinitions(optsSchema);
+const resultsDefinitions = getTypedDefinitions(resultsSchema);
+
 export const quoteSummary_modules = [
   "assetProfile",
   "balanceSheetHistory",
@@ -115,6 +126,7 @@ export default function quoteSummary(
       assertSymbol: symbol,
       url: "https://${YF_QUERY_HOST}/v10/finance/quoteSummary/" + symbol,
       needsCrumb: true,
+      definitions: optsDefinitions,
       schemaKey: "#/definitions/QuoteSummaryOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
@@ -127,6 +139,7 @@ export default function quoteSummary(
     },
 
     result: {
+      definitions: resultsDefinitions,
       schemaKey: "#/definitions/QuoteSummaryResult",
       // deno-lint-ignore no-explicit-any
       transformWith(result: any) {

@@ -1,10 +1,9 @@
-import schema from "../../schema.json" with { type: "json" };
 import pkg from "../../deno.json" with { type: "json" };
 import { FailedYahooValidationError, InvalidOptionsError } from "./errors.ts";
 
 import validateAndCoerce from "./validate/index.ts";
 import { repository } from "../consts.ts";
-import type { ValidationError } from "./validate/index.ts";
+import type { JSONSchema, ValidationError } from "./validate/index.ts";
 
 // @ts-ignore: relevant for ts-json-schema-generator
 const logObj = Deno.stdout.isTerminal()
@@ -28,25 +27,34 @@ export function resolvePath(
 export interface ValidationOptions {
   logErrors?: boolean;
   logOptionsErrors?: boolean;
+  allowAdditionalProps?: boolean;
 }
 
 export interface ValidateParams {
   source: string;
   type: "options" | "result";
   object: object;
+  definitions: JSONSchema["definitions"];
   schemaKey: string;
   options: ValidationOptions;
 }
 
-function disallowAdditionalProps(show = false) {
+const doneAlready = new Map();
+
+function disallowAdditionalProps(
+  definitions: Record<string, unknown>,
+  show = false,
+) {
+  if (doneAlready.has(definitions)) return;
+  doneAlready.set(definitions, true);
+
   const disallowed = new Set();
-  // @ts-ignore: this can cause a breaking catch-22 on schema generation
-  for (const key of Object.keys(schema.definitions)) {
+  for (const key of Object.keys(definitions)) {
     if (key.match(/Options$/)) {
       continue;
     }
-    // @ts-ignore: TODO
-    const def = schema.definitions[key];
+
+    const def = definitions[key] as JSONSchema;
     if (def.type === "object") {
       if (
         def.additionalProperties === undefined ||
@@ -142,9 +150,10 @@ function validate({
   type,
   object,
   schemaKey,
+  definitions,
   options,
 }: ValidateParams): void {
-  const _errors = validateAndCoerce(object, schemaKey);
+  const _errors = validateAndCoerce(object, schemaKey, definitions);
   if (_errors === false || !_errors.length) return;
 
   const errors = aggregateErrors(_errors);

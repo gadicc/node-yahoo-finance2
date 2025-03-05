@@ -15,8 +15,11 @@
  * Further info below, inline.
  */
 
-import validateAndCoerceTypes from "./validateAndCoerceTypes.ts";
+import validateAndCoerceTypes, {
+  disallowAdditionalProps,
+} from "./validateAndCoerceTypes.ts";
 import csv2json from "./csv2json.ts";
+import type { JSONSchema } from "./validate/index.ts";
 
 // The consuming module itself will have a stricter return type.
 // deno-lint-ignore no-explicit-any
@@ -44,6 +47,10 @@ interface ModuleExecOptions {
      * URL of the API to query, WITHOUT query params.
      */
     url: string;
+    /**
+     * Schema definitions of which `schemaKey` below should exist.
+     */
+    definitions: JSONSchema["definitions"];
     /**
      * Key of schema used to validate user-provider query options.
      * e.g. yf.search('AAPL', { isThisAValidOption: "maybe" })
@@ -86,6 +93,10 @@ interface ModuleExecOptions {
 
   result: {
     /**
+     * Schema definitions of which `schemaKey` below should exist.
+     */
+    definitions: JSONSchema["definitions"];
+    /**
      * Key of schema to validate (and coerce) the retruned result from Yahoo.
      */
     schemaKey: string;
@@ -118,6 +129,17 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
   const moduleName = opts.moduleName;
   const resultOpts = opts.result;
 
+  if (!queryOpts.definitions) {
+    throw new Error(
+      "no definitions in queryOpts: " + JSON.stringify(queryOpts),
+    );
+  }
+  if (!resultOpts.definitions) {
+    throw new Error(
+      "no definitions in resultOpts: " + JSON.stringify(resultOpts),
+    );
+  }
+
   if (queryOpts.assertSymbol) {
     const symbol = queryOpts.assertSymbol;
     if (typeof symbol !== "string") {
@@ -128,11 +150,17 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
     }
   }
 
+  // TODO XXX, allow this to be reversed
+  if (this._opts.validation?.allowAdditionalProps === false) {
+    disallowAdditionalProps(resultOpts.definitions as Record<string, unknown>);
+  }
+
   // Check that query options passed by the user are valid for this module
   validateAndCoerceTypes({
     source: moduleName,
     type: "options",
     object: queryOpts.overrides ?? {},
+    definitions: queryOpts.definitions,
     schemaKey: queryOpts.schemaKey,
     options: this._opts.validation,
   });
@@ -201,6 +229,7 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
       source: moduleName,
       type: "result",
       object: result,
+      definitions: resultOpts.definitions,
       schemaKey: resultOpts.schemaKey,
       options: validationOpts,
     });

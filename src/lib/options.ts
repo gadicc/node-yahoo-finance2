@@ -27,6 +27,7 @@ const options: YahooFinanceOptions = {
   validation: {
     logErrors: true,
     logOptionsErrors: true,
+    allowAdditionalProps: true,
   },
   logger: {
     // deno-lint-ignore no-explicit-any

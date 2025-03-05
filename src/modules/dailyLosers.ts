@@ -5,6 +5,11 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.ts";
 
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+
+import schema from "./dailyGainers.schema.json" with { type: "json" };
+const definitions = getTypedDefinitions(schema);
+
 import type {
   DailyGainersOptions,
   DailyGainersResult,
@@ -40,12 +45,14 @@ export default function dailyLosers(
     moduleName: "dailyLosers",
     query: {
       url: "https://${YF_QUERY_HOST}/v1/finance/screener/predefined/saved",
+      definitions,
       schemaKey: "#/definitions/DailyGainersOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       needsCrumb: true,
     },
     result: {
+      definitions,
       schemaKey: "#/definitions/DailyGainersResult",
       // deno-lint-ignore no-explicit-any
       transformWith(result: any) {

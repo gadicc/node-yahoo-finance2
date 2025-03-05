@@ -1,13 +1,9 @@
-import fullSchema from "../../../schema.json" with { type: "json" };
-// @ts-ignore: relevant for ts-json-schema-generator
+// @ts-ignore: for ts-json-schema-geneartor
 import type { JSONSchema7 } from "json-schema";
+export type JSONSchema = JSONSchema7 & { yahooFinanceType?: string };
 
-type JSONSchema = JSONSchema7 & { yahooFinanceType?: string };
-// deno-lint-ignore no-explicit-any
-const definitions = (fullSchema as any).definitions as Record<
-  string,
-  JSONSchema
->;
+export const getTypedDefinitions = (schema: unknown) =>
+  (schema as JSONSchema).definitions;
 
 export type ValidationError = {
   keyword?: string;
@@ -24,6 +20,7 @@ const byType = {
   string(
     input: unknown,
     schema: JSONSchema,
+    _definitions: JSONSchema["definitions"],
     errors: ValidationError[],
     instancePath: string,
     _dataCtx: DataCtx | undefined,
@@ -53,6 +50,7 @@ const byType = {
   number(
     input: unknown,
     _schema: JSONSchema,
+    _definitions: JSONSchema["definitions"],
     errors: ValidationError[],
     instancePath: string,
     _dataCtx: DataCtx | undefined,
@@ -72,6 +70,7 @@ const byType = {
   boolean(
     input: unknown,
     _schema: JSONSchema,
+    _definitions: JSONSchema["definitions"],
     errors: ValidationError[],
     instancePath: string,
     _dataCtx: DataCtx | undefined,
@@ -91,6 +90,7 @@ const byType = {
   null(
     input: unknown,
     _schema: JSONSchema,
+    _definitions: JSONSchema["definitions"],
     errors: ValidationError[],
     instancePath: string,
     _dataCtx: DataCtx | undefined,
@@ -110,6 +110,7 @@ const byType = {
   undefined(
     input: unknown,
     schema: JSONSchema,
+    _definitions: JSONSchema["definitions"],
     errors: ValidationError[],
     instancePath: string,
     _dataCtx: DataCtx | undefined,
@@ -130,6 +131,7 @@ const byType = {
   object(
     _input: unknown,
     schema: JSONSchema,
+    definitions: JSONSchema["definitions"],
     errors: ValidationError[],
     instancePath: string,
     _dataCtx: DataCtx | undefined,
@@ -169,6 +171,7 @@ const byType = {
         validateAndCoerce(
           value,
           propSchema as JSONSchema,
+          definitions,
           errors,
           instancePath + "/" + key,
           dataCtx,
@@ -189,6 +192,7 @@ const byType = {
           validateAndCoerce(
             value,
             schema.additionalProperties as JSONSchema,
+            definitions,
             errors,
             instancePath + "/" + key,
             dataCtx,
@@ -202,6 +206,7 @@ const byType = {
   array(
     input: unknown,
     schema: JSONSchema,
+    definitions: JSONSchema["definitions"],
     errors: ValidationError[],
     instancePath: string,
     _dataCtx: DataCtx | undefined,
@@ -219,6 +224,7 @@ const byType = {
         validateAndCoerce(
           value,
           schema.items as JSONSchema,
+          definitions,
           errors,
           instancePath + "/" + idx,
           dataCtx,
@@ -252,6 +258,7 @@ function set(
 function yahooFinanceType(
   data: unknown,
   schema: string,
+  _definitions: JSONSchema["definitions"] | undefined,
   errors: ValidationError[],
   instancePath: string,
   dataCtx?: DataCtx,
@@ -464,9 +471,14 @@ function yahooFinanceType(
 
 function schemaFromSchemaOrSchemaKey(
   schemaOrSchemaKey: JSONSchema | string,
+  definitions: JSONSchema["definitions"],
 ): [JSONSchema, string] {
   let schema: JSONSchema;
   let path: string = "";
+
+  if (!definitions) {
+    throw new Error("No definitions provided");
+  }
 
   if (typeof schemaOrSchemaKey === "string") {
     const definition = schemaOrSchemaKey.match(/^#\/definitions\/(.*)$/)?.[1];
@@ -501,6 +513,7 @@ interface DataCtx {
 export default function validateAndCoerce(
   input: unknown,
   schemaOrSchemaKey: JSONSchema | string,
+  definitions: JSONSchema["definitions"],
   errors: ValidationError[] = [],
   instancePath: string = "",
   dataCtx?: DataCtx,
@@ -508,6 +521,7 @@ export default function validateAndCoerce(
 ) {
   const [schema, foundSchemaPath] = schemaFromSchemaOrSchemaKey(
     schemaOrSchemaKey,
+    definitions,
   );
   if (foundSchemaPath) schemaPath = foundSchemaPath;
 
@@ -525,6 +539,7 @@ export default function validateAndCoerce(
       validateAndCoerce(
         input,
         subSchema,
+        definitions,
         _errors,
         instancePath,
         dataCtx,
@@ -557,6 +572,7 @@ export default function validateAndCoerce(
     yahooFinanceType(
       input,
       schema.yahooFinanceType,
+      definitions,
       errors,
       instancePath,
       dataCtx,
@@ -585,7 +601,15 @@ export default function validateAndCoerce(
             `No validator for type ${JSON.stringify(type)} in ${instancePath}`,
           );
         }
-        validator(input, schema, _errors, instancePath, dataCtx, schemaPath);
+        validator(
+          input,
+          schema,
+          definitions,
+          _errors,
+          instancePath,
+          dataCtx,
+          schemaPath,
+        );
         if (!_errors.length) break;
       }
       if (_errors.length) {
@@ -606,7 +630,15 @@ export default function validateAndCoerce(
           } in ${instancePath}`,
         );
       }
-      validator(input, schema, errors, instancePath, dataCtx, schemaPath);
+      validator(
+        input,
+        schema,
+        definitions,
+        errors,
+        instancePath,
+        dataCtx,
+        schemaPath,
+      );
     }
   }
 

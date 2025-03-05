@@ -8,6 +8,14 @@ import type _chart from "./chart.ts";
 import validateAndCoerceTypes from "../lib/validateAndCoerceTypes.ts";
 import { showNotice } from "../lib/notices.ts";
 
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+
+// @yf-schema: see the docs on how this file is automatically updated.
+import historicalSchema from "./historical.schema.json" with { type: "json" };
+import chartSchema from "./chart.schema.json" with { type: "json" };
+const historicalDefinitions = getTypedDefinitions(historicalSchema);
+const chartDefinitions = getTypedDefinitions(chartSchema);
+
 export type HistoricalHistoryResult = Array<HistoricalRowHistory>;
 export type HistoricalDividendsResult = Array<HistoricalRowDividend>;
 export type HistoricalStockSplitsResult = Array<HistoricalRowStockSplit>;
@@ -128,6 +136,7 @@ export default async function historical(
     source: "historical",
     type: "options",
     object: queryOpts,
+    definitions: historicalDefinitions,
     schemaKey: "#/definitions/HistoricalOptions",
     options: this._opts.validation,
   });
@@ -144,6 +153,7 @@ export default async function historical(
     source: "historical",
     type: "options",
     object: chartQueryOpts,
+    definitions: chartDefinitions,
     schemaKey: "#/definitions/ChartOptions",
     options: this._opts.validation,
   });
@@ -219,6 +229,7 @@ export default async function historical(
     source: "historical",
     type: "result",
     object: out,
+    definitions: historicalDefinitions,
     schemaKey,
     options: validationOpts,
   });

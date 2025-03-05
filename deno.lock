@@ -9,6 +9,8 @@
     "jsr:@std/assert@0.226": "0.226.0",
     "jsr:@std/assert@^1.0.10": "1.0.11",
     "jsr:@std/assert@^1.0.11": "1.0.11",
+    "jsr:@std/async@*": "1.0.10",
+    "jsr:@std/async@^1.0.10": "1.0.10",
     "jsr:@std/bytes@0.223": "0.223.0",
     "jsr:@std/data-structures@^1.0.6": "1.0.6",
     "jsr:@std/expect@^1.0.13": "1.0.13",
@@ -17,6 +19,7 @@
     "jsr:@std/fmt@^1.0.5": "1.0.5",
     "jsr:@std/fs@0.223": "0.223.0",
     "jsr:@std/fs@1": "1.0.13",
+    "jsr:@std/fs@^1.0.13": "1.0.13",
     "jsr:@std/fs@^1.0.9": "1.0.13",
     "jsr:@std/fs@~0.229.3": "0.229.3",
     "jsr:@std/internal@^1.0.5": "1.0.5",
@@ -89,6 +92,9 @@
       "dependencies": [
         "jsr:@std/internal"
       ]
+    },
+    "@std/async@1.0.10": {
+      "integrity": "2ff1b1c7d33d1416159989b0f69e59ec7ee8cb58510df01e454def2108b3dbec"
     },
     "@std/bytes@0.223.0": {
       "integrity": "84b75052cd8680942c397c2631318772b295019098f40aac5c36cead4cba51a8"
@@ -2958,8 +2964,10 @@
     "dependencies": [
       "jsr:@deno/dnt@~0.41.3",
       "jsr:@gadicc/fetch-mock-cache@^2.1.3",
+      "jsr:@std/async@^1.0.10",
       "jsr:@std/expect@^1.0.13",
       "jsr:@std/fmt@^1.0.5",
+      "jsr:@std/fs@^1.0.13",
       "jsr:@std/testing@^1.0.9",
       "npm:@jest/types@^29.6.3",
       "npm:@types/json-schema@^7.0.15",

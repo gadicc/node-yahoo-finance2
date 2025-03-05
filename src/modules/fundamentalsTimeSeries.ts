@@ -4,7 +4,13 @@ import type {
   ModuleOptionsWithValidateTrue,
   ModuleThis,
 } from "../lib/moduleCommon.ts";
+
 import Timeseries_Keys from "../lib/timeseries.json" with { type: "json" };
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+
+// @yf-schema: see the docs on how this file is automatically updated.
+import schema from "./fundamentalsTimeSeries.schema.json" with { type: "json" };
+const definitions = getTypedDefinitions(schema);
 
 export type FundamentalsTimeSeries_Period = "3M" | "12M";
 export const FundamentalsTimeSeries_Types = ["quarterly", "annual", "trailing"];
@@ -670,6 +676,7 @@ export default function fundamentalsTimeSeries(
       url:
         `https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/${symbol}`,
       needsCrumb: false,
+      definitions,
       schemaKey: "#/definitions/FundamentalsTimeSeriesOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
@@ -677,6 +684,7 @@ export default function fundamentalsTimeSeries(
     },
 
     result: {
+      definitions,
       schemaKey: "#/definitions/FundamentalsTimeSeriesResults",
       // deno-lint-ignore no-explicit-any
       transformWith(response: any) {

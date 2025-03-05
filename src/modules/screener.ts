@@ -5,6 +5,12 @@ import type {
   ModuleThis,
 } from "../lib/moduleCommon.ts";
 
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+
+// @yf-schema: see the docs on how this file is automatically updated.
+import schema from "./screener.schema.json" with { type: "json" };
+const definitions = getTypedDefinitions(schema);
+
 export interface ScreenerResult {
   id: string;
   title: string;
@@ -202,12 +208,14 @@ export default function screener(
     moduleName: "screener",
     query: {
       url: "https://${YF_QUERY_HOST}/v1/finance/screener/predefined/saved",
+      definitions,
       schemaKey: "#/definitions/ScreenerOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       needsCrumb: true,
     },
     result: {
+      definitions,
       schemaKey: "#/definitions/ScreenerResult",
       // deno-lint-ignore no-explicit-any
       transformWith(result: any) {

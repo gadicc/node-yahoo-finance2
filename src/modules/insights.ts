@@ -6,6 +6,12 @@ import type {
 } from "../lib/moduleCommon.ts";
 
 import type { DateInMs } from "../lib/commonTypes.ts";
+import { getTypedDefinitions } from "../lib/validate/index.ts";
+
+// @yf-schema: see the docs on how this file is automatically updated.
+// @ts-ignore: tmp
+import schema from "./insights.schema.json" with { type: "json" };
+const definitions = getTypedDefinitions(schema);
 
 export interface InsightsResult {
   [key: string]: unknown;
@@ -191,12 +197,14 @@ export default function trendingSymbols(
     query: {
       assertSymbol: symbol,
       url: "https://${YF_QUERY_HOST}/ws/insights/v2/finance/insights",
+      definitions,
       schemaKey: "#/definitions/InsightsOptions",
       defaults: queryOptionsDefaults,
       overrides: queryOptionsOverrides,
       runtime: { symbol },
     },
     result: {
+      definitions,
       schemaKey: "#/definitions/InsightsResult",
       transformWith(result: Record<string, Record<string, unknown>>) {
         if (!result.finance) {
