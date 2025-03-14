@@ -1,22 +1,73 @@
 # Contributing to yahoo-finance2
 
+## Version 3
+
+We use the [deno](https://deno.com/) runtime for development. It can be
+installed with a single command and replaces node, npm, eslint, prettier, tsc;
+is super fast and relieves us of many pain points. The library is still
+published in npm and runs on node and other runties.
+
+### Import things to know
+
+#### Schema Generation
+
+To deliver a type-safe experience, we need to validate all input to ensure it
+conforms to what we expect. The single source of truth are the **typescript
+interfaces** in each module file. These are compiled into JSON schemas which are
+then used for runtime validation.
+
+In VSCode, this is done for you automatically. Otherwise, run `deno task schema`
+after changing a file, or `deno task schema --watch` to recompile after file
+changes. This only affects `.ts` files that contain a `@yf-schema` keyword.
+
+##### Testing
+
+`deno task test`
+
+NB: HTTP requests are cached to disk. This ensures we can run all tests quickly
+and consistently across repos. Guidance on how to retrieve fresh data will
+follow, in the meantime, just delete the relevant file in `tests/fixtures/http`.
+We use the [fetch-mock-cache](https://www.npmjs.com/package/fetch-mock-cache)
+library for this.
+
+##### Linting, formatting
+
+Done automatically for you in VSCode with the official Deno extension. If you
+use a different editor, please `deno lint` and `deno fmt` before submitting pull
+requests.
+
+##### VSCode
+
+Make sure you have the official
+[Deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
+installed. This includes the language server for super fast typescript, linting,
+formatting, etc.
+
+#### Other
+
+We're still writing these docs ahead of the official v3 release. Let us know if
+you need help.
+
+## Version 2 old docs
+
 1. [Local Development](#local-dev)
 1. General Guidelines
-    1. [Editing](#editing)
-    1. [Code](#code)
+   1. [Editing](#editing)
+   1. [Code](#code)
 1. Testing
-    1. [Devel Mode](#devel-mode)
+   1. [Devel Mode](#devel-mode)
 1. Specific Guidelines
-    1. [Fixing a bug](#fix-bug)
-    1. [Adding a module](#new-module)
+   1. [Fixing a bug](#fix-bug)
+   1. [Adding a module](#new-module)
 
 <a name="local-dev"></a>
+
 ## Local Development
 
 The following instructions will help you run the latest development release
-locally.  If you plan to make changes to the code and submit them back to us
-(in pull requests), please first FORK our repo and clone YOUR FORK instead
-of the URL used below.
+locally. If you plan to make changes to the code and submit them back to us (in
+pull requests), please first FORK our repo and clone YOUR FORK instead of the
+URL used below.
 
 1. Install [git](https://git-scm.com/) if you haven't already.
 1. Change to the directory where you want to keep these files.
@@ -27,12 +78,12 @@ of the URL used below.
 
 And now, in any of your own projects where you use `node-yahoo-finance2`:
 
-  `yarn link yahoo-finance2`
+`yarn link yahoo-finance2`
 
 Now your project will use the latest development version instead of the version
-on npm.  You can revert this for your project by typing:
+on npm. You can revert this for your project by typing:
 
-  `yarn unlink yahoo-finance2`.
+`yarn unlink yahoo-finance2`.
 
 To update your local development copy at any time:
 
@@ -43,28 +94,29 @@ To update your local development copy at any time:
 ## General Guidelines
 
 <a name="editing"></a>
+
 ## Editing
 
 **editorconfig**
 
-We have an [`.editorconfig`](./editorconfig) which specifies our
-requirements for indentation, newlines, etc.  If you're not sure, please
-check at https://editorconfig.org/ if your editor has built in support
-for this format or if you need to download a plugin (e.g. for
-[Atom](https://atom.io/packages/editorconfig)).  Alternatively, just read
+We have an [`.editorconfig`](./editorconfig) which specifies our requirements
+for indentation, newlines, etc. If you're not sure, please check at
+https://editorconfig.org/ if your editor has built in support for this format or
+if you need to download a plugin (e.g. for
+[Atom](https://atom.io/packages/editorconfig)). Alternatively, just read
 [.editorconfig](./editorconfig) and keep to this on your own.
 
 **prettier**
 
-We use [prettior](https://prettier.io/) to save time and energy otherwise
-wasted on styling and discussion thereof.  See their section on
-[editor integrations](https://prettier.io/docs/en/editors.html)
-if you haven't before - we suggest the configuration options to "run
-prettier on save", but "only if a prettierrc exists in the project".
-Alternatively, just run `yarn prettier --write .` before committing your
-work and submitting your PR.
+We use [prettior](https://prettier.io/) to save time and energy otherwise wasted
+on styling and discussion thereof. See their section on
+[editor integrations](https://prettier.io/docs/en/editors.html) if you haven't
+before - we suggest the configuration options to "run prettier on save", but
+"only if a prettierrc exists in the project". Alternatively, just run
+`yarn prettier --write .` before committing your work and submitting your PR.
 
 <a name="">code</a>
+
 ## Code
 
 **Default branch: devel**
@@ -79,53 +131,55 @@ the `schema.json` file which is used for run-time tests.
 **Commit Messages**
 
 Commit messages should follow the
-[conventionalcommits](https://www.conventionalcommits.org/) standard
-(basically Angular).  This is important as we use
-[semantic-release](https://github.com/semantic-release/semantic-release)
-to automate releases and [CHANGELOG](./CHANGELOG.md) entries when we merge
-back to master.
+[conventionalcommits](https://www.conventionalcommits.org/) standard (basically
+Angular). This is important as we use
+[semantic-release](https://github.com/semantic-release/semantic-release) to
+automate releases and [CHANGELOG](./CHANGELOG.md) entries when we merge back to
+master.
 
 ## Testing
 
 <a name="devel-mode"></a>
+
 ### Devel Mode
 
-In "devel" mode, any URL will only be fetched *once* and cached in memory
-and on the disk.  All future requests (for the rest of time) will return the
-cached result. This is very helpful to speed up development and is used
-extensively for our tests.
+In "devel" mode, any URL will only be fetched _once_ and cached in memory and on
+the disk. All future requests (for the rest of time) will return the cached
+result. This is very helpful to speed up development and is used extensively for
+our tests.
 
 ```js
-await search('AAPL', {}, { devel: true });                // uses sha1 from URL
-await search('AAPL', {}, { devel: 'search-AAPL.json' });  // fixed filename
+await search("AAPL", {}, { devel: true }); // uses sha1 from URL
+await search("AAPL", {}, { devel: "search-AAPL.json" }); // fixed filename
 ```
 
 Note: `require('yahooFinanceFetchDevel')` is called conditionally when
-`devel: true`.  It also uses packages from `devDependencies`.  As such,
-deployment to production is not supported.
+`devel: true`. It also uses packages from `devDependencies`. As such, deployment
+to production is not supported.
 
-Note: Even with fixed filename, URLs are verified and fetchDevel will
-throw if they don't match.  If you're returning a fake result, name
-your file `.fake.json`.
+Note: Even with fixed filename, URLs are verified and fetchDevel will throw if
+they don't match. If you're returning a fake result, name your file
+`.fake.json`.
 
-Occasionally we want to skip caching and only return live results, e.g.
-to check if our validation passes at different times of the day (when
-different markets are open):
+Occasionally we want to skip caching and only return live results, e.g. to check
+if our validation passes at different times of the day (when different markets
+are open):
 
 ```bash
 $ FETCH_DEVEL="nocache" yarn test
 ```
 
-**NOTE:** Setting the `devel` option to true will not work in the browser, as
-it requires a filesystem and some modules only available in node.
+**NOTE:** Setting the `devel` option to true will not work in the browser, as it
+requires a filesystem and some modules only available in node.
 
 ## Specific Guidelines
 
 <a name="fix-bug"></a>
+
 ### Fixing a bug
 
-It's greatly appreciated when bug fix include a test that fails without
-your fix and passes with it :pray:
+It's greatly appreciated when bug fix include a test that fails without your fix
+and passes with it :pray:
 
 TODO
 
@@ -143,17 +197,16 @@ Checklist:
 
 For a model example, see the
 [recommendationsBySymbol PR](https://github.com/gadicc/node-yahoo-finance2/pull/28)
-by [@pudgereyem](https://github.com/pudgereyem).  However, always base your work
+by [@pudgereyem](https://github.com/pudgereyem). However, always base your work
 on the most current code.
 
 Things to be aware of:
 
 1. Some Yahoo results vary by time, e.g. when particular markets are open,
-closed, in pre-trading etc.  It may help to run your validation tests with
-`FETCH_DEVEL=nocache` (see [Devel Mode](#devel-mode), above) at different
-times of the day to make sure you've covered all cases.  If you find something
-that doesn't pass, please add another permanent/cached test for it in the
-spec file.
+   closed, in pre-trading etc. It may help to run your validation tests with
+   `FETCH_DEVEL=nocache` (see [Devel Mode](#devel-mode), above) at different
+   times of the day to make sure you've covered all cases. If you find something
+   that doesn't pass, please add another permanent/cached test for it in the
+   spec file.
 
-<a name="new-module"></a>
-TODO
+<a name="new-module"></a> TODO
