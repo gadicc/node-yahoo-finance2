@@ -7,7 +7,7 @@ function camelize(str: string): string {
     .map((str, i) =>
       i === 0
         ? str.toLowerCase()
-        : str[0].toUpperCase() + str.substr(1).toLowerCase(),
+        : str[0].toUpperCase() + str.substr(1).toLowerCase()
     )
     .join("");
 }

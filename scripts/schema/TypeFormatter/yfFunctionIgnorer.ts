@@ -1,8 +1,8 @@
 import {
-  BaseType,
+  type BaseType,
+  type Definition,
   FunctionType,
-  Definition,
-  SubTypeFormatter,
+  type SubTypeFormatter,
 } from "ts-json-schema-generator";
 
 export default class yfNumberTypeFormatter implements SubTypeFormatter {
