@@ -11,7 +11,6 @@ import { getTypedDefinitions } from "../lib/validate/index.ts";
 // @yf-schema: see the docs on how this file is automatically updated.
 import schema from "./quote.schema.json" with { type: "json" };
 const definitions = getTypedDefinitions(schema);
-console.log({ definitions });
 
 export interface QuoteBase {
   // deno-lint-ignore no-explicit-any
