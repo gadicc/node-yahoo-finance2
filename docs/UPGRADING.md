@@ -3,19 +3,28 @@
 Please read this guide when upgrading MAJOR VERSIONS of the package, list the
 BREAKING CHANGES and required changes you'll need to make to your code.
 
-## Upgrading from v2 to v3
+* [From v2 to v3](#from-v2-to-v3) (2025)
+* [From v1 to v2](#from-v1-to-v2) (2021)
+
+<a name="from-v2-to-v3"></a>
+## Upgrading from v2 to v3 (2025)
+
+**v3 is still under active development**, however, it has been published and you
+can install it with the `@next` tag from npm, e.g. `npm install yahoo-finance2@next`,
+or even `npm install yahoo-finance2@3`.  Yes, the project is called "yahoo-finance2"
+and the version is "3".  **These docs are not yet complete**.
 
 Despite the major version change, and significant changes under-the-hood, most
 of the library retains a familiar API.
 
-The most impactful change is how to initialize the library, as explained in this
+The most impactful change is how to initialize the library, as explained by this
 diff:
 
 ```diff
-- import yahooFinance from "yahoo-finance";
+- import yahooFinance from "yahoo-finance2";
 - yahooFinance.setGlobalConfig(options); // optional
 
-+ import YahooFinance from "yahoo-finance";
++ import YahooFinance from "yahoo-finance2";
 + const yahooFinance = new YahooFinance(/* options */);
 ```
 
@@ -31,7 +40,9 @@ There were significant changes to the development environment, please see the
 [CONTRIBUTING.md](../CONTRIBUTING.md) file for more details.
 
 ````
-## Upgrading from yahoo-finance v1 to v2
+
+<a name="from-v1-to-v2"></a>
+## Upgrading from yahoo-finance v1 to v2 (2021)
 
 Table of Contents
 

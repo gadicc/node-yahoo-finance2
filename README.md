@@ -9,10 +9,10 @@ Copyright (c) 2021 by Gadi Cohen and Pilwon Huh.  [MIT licensed](./LICENSE).
 Supports Node 18.20.4 and up (tests are run against 18.20.4),
 e.g. all active LTS versions.
 
-**Stable release** - supersedes the ubiquitous
-[node-yahoo-finance](https://www.npmjs.com/package/yahoo-finance)
-v1. NB: The API has changed, see [UPGRADING](./docs/UPGRADING.md)
-for more information.
+You are reading the latest **Development docs**.  For the **v2 docs**, click
+[here](https://github.com/gadicc/node-yahoo-finance2/tree/2.x).  The dev
+docs are in the process of being updated for the upcoming **v3** - for more
+info see [UPGRADING](./docs/UPGRADING.md).
 
 [Live Demo on CodeSandbox](https://codesandbox.io/p/devbox/yahoo-finance2-nextjs-sy42pv)
 (Updated 2024-06-17; NextJS with both RSC and Hook-Relay examples)
