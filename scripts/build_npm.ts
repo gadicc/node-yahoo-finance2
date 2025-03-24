@@ -4,7 +4,7 @@ import denoJson from "../deno.json" with { type: "json" };
 await emptyDir("./npm");
 
 await build({
-  scriptModule: false,
+  scriptModule: "cjs",
   entryPoints: ["./src/index.ts"],
   outDir: "./npm",
   test: false,
