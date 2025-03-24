@@ -230,10 +230,13 @@ export async function _getCrumb(
         );
       }
     } else {
+      // These seems to happen frequently without causing issues.
+      /*
       logger.warn(
         "We expected a redirect to guce.yahoo.com, but got " + location + ". " +
           "We'll try to continue anyway - you can safely ignore this if the request succeeds",
       );
+      */
       // throw new Error(
       // "Unsupported redirect to " + location + ", please report.");
       // )
