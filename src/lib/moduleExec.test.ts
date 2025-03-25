@@ -41,6 +41,7 @@ describe("moduleExec", () => {
     });
 
     it("throws otherwise", async () => {
+      // deno-lint-ignore no-explicit-any
       const yfc = (symbol: any) => yf.chart(symbol, periodOpts);
       await expect(yfc(["AAPL"])).rejects.toThrow(/string symbol/);
     });
@@ -48,6 +49,7 @@ describe("moduleExec", () => {
 
   describe("options validation", () => {
     it("throws InvalidOptions on invalid options", async () => {
+      // deno-lint-ignore no-explicit-any
       const rwo = (options: any) => yf.search("symbol", options);
       await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError);
     });
@@ -73,6 +75,7 @@ describe("moduleExec", () => {
         logger,
         validation: { logOptionsErrors: true },
       });
+      // deno-lint-ignore no-explicit-any
       const rwo = (options: any) => yf.search("symbol", options);
       await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError);
       expect(
@@ -88,6 +91,7 @@ describe("moduleExec", () => {
         logger,
         validation: { logOptionsErrors: false },
       });
+      // deno-lint-ignore no-explicit-any
       const rwo = (options: any) => yf.search("symbol", options);
       await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError);
       expect(
@@ -98,7 +102,6 @@ describe("moduleExec", () => {
     });
   });
 
-  /* XXX TODO
   describe("result validation", () => {
     if (PERFORM_FAKE_TESTS) {
       it("throws on unexpected input", async () => {
@@ -106,12 +109,13 @@ describe("moduleExec", () => {
           yf.search("AAPL", {}, { devel: "search-badResult.fake.json" }),
         ).rejects.toThrow(/Failed Yahoo Schema/);
       });
-    }
 
-    it("dont throw or log on unexpected input with {validateResult: false}", async () => {
-      const logger = createNewLogger();
-      const yf = new YahooFinance({ logger, validation: { logErrors: false } });
-      if (PERFORM_FAKE_TESTS) {
+      it("dont throw or log on unexpected input with {validateResult: false}", async () => {
+        const logger = createNewLogger();
+        const yf = new YahooFinance({
+          logger,
+          validation: { logErrors: false },
+        });
         await expect(
           yf.search(
             "AAPL",
@@ -122,12 +126,15 @@ describe("moduleExec", () => {
             },
           ),
         ).resolves.toBeDefined();
-      }
 
-      expect(logger.info).not.toHaveBeenCalled();
-      expect(logger.error).not.toHaveBeenCalled();
-      expect(logger.dir).not.toHaveBeenCalled();
-    });
+        // expect(logger.info).not.toHaveBeenCalled();
+        // expect(logger.error).not.toHaveBeenCalled();
+        // expect(logger.dir).not.toHaveBeenCalled();
+        expect(
+          logger.info.calls.length + logger.error.calls.length +
+            logger.dir.calls.length,
+        ).toBe(0);
+      });
+    }
   });
-  */
 });
