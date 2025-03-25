@@ -1902,17 +1902,20 @@
     "ModuleOptions": {
       "type": "object",
       "properties": {
+        "validateOptions": {
+          "type": "boolean",
+          "description": "If false, lib won't validate and will leave that to Yahoo"
+        },
         "validateResult": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "If false, will pass back unvalidated / untyped result from Yahoo"
         },
         "devel": {
           "type": [
             "boolean",
             "string"
-          ]
-        },
-        "fetchOptions": {
-          "type": "object"
+          ],
+          "description": "Filename to use for cached result"
         }
       },
       "additionalProperties": false

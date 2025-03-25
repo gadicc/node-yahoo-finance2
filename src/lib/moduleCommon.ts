@@ -1,7 +1,7 @@
 // import type ModuleExec from "./moduleExec.js";
 
 export interface ModuleOptions {
-  /** If false, lib won't validaet and will leave that to Yahoo */
+  /** If false, lib won't validate and will leave that to Yahoo */
   validateOptions?: boolean;
   /** If false, will pass back unvalidated / untyped result from Yahoo  */
   validateResult?: boolean;
