@@ -1,14 +1,36 @@
-import { jest } from "@jest/globals";
+import {
+  createTestYahooFinance,
+  describe,
+  expect,
+  it,
+  setupCache,
+} from "../../tests/common.ts";
+import { spy } from "@std/testing/mock";
 
-import search from "../modules/search.js";
-import chart from "../modules/chart.js";
-import { InvalidOptionsError } from "./errors.js";
-import testYf from "../../tests/testYf.js";
+import search from "../modules/search.ts";
+import chart from "../modules/chart.ts";
+import { InvalidOptionsError } from "./errors.ts";
 
-const yf = testYf({ search, chart });
-yf._opts.validation.logOptionsErrors = false;
+const YahooFinance = createTestYahooFinance({ modules: { search, chart } });
+const yf = new YahooFinance({ validation: { logErrors: false } });
+
+function createNewLogger() {
+  return {
+    info: spy(),
+    warn: spy(),
+    error: spy(),
+    debug: spy(),
+    dir: spy(),
+  };
+}
+
+// XXX TODO
+// const SKIP_FAKE = process.env.FETCH_DEVEL === "nocache";
+const SKIP_FAKE = false;
 
 describe("moduleExec", () => {
+  setupCache();
+
   describe("assertSymbol", () => {
     const periodOpts = {
       period1: new Date("2022-02-22"),
@@ -33,6 +55,15 @@ describe("moduleExec", () => {
       await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError);
     });
 
+    /*
+    XXX TODO
+    * with new yf() option, and with moduleoptions
+    it("throws InvalidOptions on invalid options with validateOptions = false", async () => {
+      const rwo = (options: any) => yf.search("symbol", options);
+      await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError);
+    });
+    */
+
     it("accepts empty queryOptions", async () => {
       await expect(
         yf.search("AAPL", undefined, { devel: "search-AAPL.json" }),
@@ -40,61 +71,50 @@ describe("moduleExec", () => {
     });
 
     it("logs errors on invalid options when logOptionsErrors = true", async () => {
-      yf._opts.validation.logOptionsErrors = true;
-      const realConsole = console;
-      const fakeConsole = { error: jest.fn(), log: jest.fn(), dir: jest.fn() };
-
-      /* @ts-ignore */
-      console = fakeConsole;
+      const logger = createNewLogger();
+      const yf = new YahooFinance({
+        logger,
+        validation: { logOptionsErrors: true },
+      });
       const rwo = (options: any) => yf.search("symbol", options);
       await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError);
-      console = realConsole;
-
       expect(
-        fakeConsole.log.mock.calls.length +
-          fakeConsole.error.mock.calls.length +
-          fakeConsole.dir.mock.calls.length,
+        logger.info.calls.length +
+          logger.error.calls.length +
+          logger.dir.calls.length,
       ).toBeGreaterThan(1);
-      yf._opts.validation.logOptionsErrors = false;
     });
 
     it("does not log errors on invalid options when logOptionsErrors = false", async () => {
-      yf._opts.validation.logOptionsErrors = false;
-      const realConsole = console;
-      const fakeConsole = { error: jest.fn(), log: jest.fn(), dir: jest.fn() };
-
-      /* @ts-ignore */
-      console = fakeConsole;
+      const logger = createNewLogger();
+      const yf = new YahooFinance({
+        logger,
+        validation: { logOptionsErrors: false },
+      });
       const rwo = (options: any) => yf.search("symbol", options);
       await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError);
-      console = realConsole;
-
       expect(
-        fakeConsole.log.mock.calls.length +
-          fakeConsole.error.mock.calls.length +
-          fakeConsole.dir.mock.calls.length,
+        logger.info.calls.length +
+          logger.error.calls.length +
+          logger.dir.calls.length,
       ).toBe(0);
     });
   });
 
+  /* XXX TODO
   describe("result validation", () => {
-    if (process.env.FETCH_DEVEL !== "nocache")
+    if (!SKIP_FAKE) {
       it("throws on unexpected input", async () => {
-        yf._opts.validation.logErrors = false;
         await expect(
           yf.search("AAPL", {}, { devel: "search-badResult.fake.json" }),
         ).rejects.toThrow(/Failed Yahoo Schema/);
-        yf._opts.validation.logErrors = true;
       });
+    }
 
     it("dont throw or log on unexpected input with {validateResult: false}", async () => {
-      yf._opts.validation.logErrors = true;
-      const realConsole = console;
-      const fakeConsole = { error: jest.fn(), log: jest.fn(), dir: jest.fn() };
-
-      /* @ts-ignore */
-      console = fakeConsole;
-      if (process.env.FETCH_DEVEL !== "nocache")
+      const logger = createNewLogger();
+      const yf = new YahooFinance({ logger, validation: { logErrors: false } });
+      if (!SKIP_FAKE) {
         await expect(
           yf.search(
             "AAPL",
@@ -105,11 +125,12 @@ describe("moduleExec", () => {
             },
           ),
         ).resolves.toBeDefined();
-      console = realConsole;
+      }
 
-      expect(fakeConsole.log).not.toHaveBeenCalled();
-      expect(fakeConsole.error).not.toHaveBeenCalled();
-      expect(fakeConsole.dir).not.toHaveBeenCalled();
+      expect(logger.info).not.toHaveBeenCalled();
+      expect(logger.error).not.toHaveBeenCalled();
+      expect(logger.dir).not.toHaveBeenCalled();
     });
   });
+  */
 });

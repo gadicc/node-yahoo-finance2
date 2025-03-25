@@ -12,6 +12,7 @@ class YahooFinance {
     fetch: typeof fetch;
     fetchDevel?: () => Promise<typeof fetch>;
   };
+  _logObj: (obj: unknown) => void;
 
   constructor(options?: YahooFinanceOptions) {
     /// XXX TODO mergeoptions from setGlobalConfig
@@ -55,6 +56,13 @@ class YahooFinance {
         }
       }
     }
+
+    // @ts-ignore: relevant for ts-json-schema-generator
+    this._logObj = Deno.stdout.isTerminal()
+      // deno-lint-ignore no-explicit-any
+      ? (obj: any) => this._opts.logger!.dir(obj, { depth: 4, colors: true })
+      // deno-lint-ignore no-explicit-any
+      : (obj: any) => this._opts.logger!.info(JSON.stringify(obj, null, 2));
   }
 }
 

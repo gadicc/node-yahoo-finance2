@@ -4,13 +4,7 @@ import { FailedYahooValidationError, InvalidOptionsError } from "./errors.ts";
 import validateAndCoerce from "./validate/index.ts";
 import { repository } from "../consts.ts";
 import type { JSONSchema, ValidationError } from "./validate/index.ts";
-
-// @ts-ignore: relevant for ts-json-schema-generator
-const logObj = Deno.stdout.isTerminal()
-  // deno-lint-ignore no-explicit-any
-  ? (obj: any) => console.dir(obj, { depth: 4, colors: true })
-  // deno-lint-ignore no-explicit-any
-  : (obj: any) => console.log(JSON.stringify(obj, null, 2));
+import type { Logger } from "./options.ts";
 
 export function resolvePath(
   obj: Record<string, unknown>,
@@ -37,6 +31,8 @@ export interface ValidateParams {
   definitions: JSONSchema["definitions"];
   schemaKey: string;
   options: ValidationOptions;
+  logger: Logger;
+  logObj: (obj: unknown) => void;
 }
 
 const doneAlready = new Map();
@@ -152,8 +148,16 @@ function validate({
   schemaKey,
   definitions,
   options,
+  logger,
+  logObj,
 }: ValidateParams): void {
-  const _errors = validateAndCoerce(object, schemaKey, definitions);
+  const _errors = validateAndCoerce(
+    object,
+    schemaKey,
+    definitions,
+    logger,
+    logObj,
+  );
   if (_errors === false || !_errors.length) return;
 
   const errors = aggregateErrors(_errors);
@@ -235,12 +239,12 @@ function validate({
 
     if (options.logErrors === true) {
       const title = encodeURIComponent("Failed validation: " + schemaKey);
-      console.log(
+      logger.info(
         "The following result did not validate with schema: " + schemaKey,
       );
       logObj(errors);
       // logObj(object);
-      console.log(`
+      logger.info(`
 This may happen intermittently and you should catch errors appropriately.
 However:  1) if this recently started happening on every request for a symbol
 that used to work, Yahoo may have changed their API.  2) If this happens on
@@ -272,11 +276,12 @@ so help is always appreciated!
     });
   } /* if (type === 'options') */ else {
     if (options.logOptionsErrors === true) {
-      console.error(
+      logger.error(
         `[yahooFinance.${source}] Invalid options ("${schemaKey}")`,
       );
       logObj({ errors, input: object });
     }
+
     throw new InvalidOptionsError(
       `yahooFinance.${source} called with invalid options.`,
     );

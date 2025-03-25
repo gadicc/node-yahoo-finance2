@@ -108,15 +108,12 @@ interface ModuleExecOptions {
   };
 
   moduleOptions?: {
-    /**
-     * Allow validation failures to pass if false;
-     */
+    /** Allow validation failures to pass if false; */
+    validateOptions?: boolean;
+    /** Allow validation failures to pass if false; */
     validateResult?: boolean;
-    /**
-     * Any options to pass to fetch() just for this request.
-     */
-    // deno-lint-ignore no-explicit-any
-    fetchOptions?: any;
+    /** Any options to pass to fetch() just for this request. */
+    fetchOptions?: Parameters<typeof fetch>[1];
   };
 }
 
@@ -155,15 +152,25 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
     disallowAdditionalProps(resultOpts.definitions as Record<string, unknown>);
   }
 
+  const validateOptions = !moduleOpts ||
+    moduleOpts.validateOptions === undefined ||
+    moduleOpts.validateOptions === true;
+
   // Check that query options passed by the user are valid for this module
-  validateAndCoerceTypes({
-    source: moduleName,
-    type: "options",
-    object: queryOpts.overrides ?? {},
-    definitions: queryOpts.definitions,
-    schemaKey: queryOpts.schemaKey,
-    options: this._opts.validation,
-  });
+  try {
+    validateAndCoerceTypes({
+      source: moduleName,
+      type: "options",
+      object: queryOpts.overrides ?? {},
+      definitions: queryOpts.definitions,
+      schemaKey: queryOpts.schemaKey,
+      options: this._opts.validation,
+      logger: this._opts.logger,
+      logObj: this._logObj,
+    });
+  } catch (error) {
+    if (validateOptions) throw error;
+  }
 
   let queryOptions = {
     ...queryOpts.defaults, // Module defaults e.g. { period: '1wk', lang: 'en' }
@@ -232,6 +239,8 @@ async function moduleExec(this: ThisWithModExec, opts: ModuleExecOptions) {
       definitions: resultOpts.definitions,
       schemaKey: resultOpts.schemaKey,
       options: validationOpts,
+      logger: this._opts.logger,
+      logObj: this._logObj,
     });
   } catch (error) {
     if (validateResult) throw error;

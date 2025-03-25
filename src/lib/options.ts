@@ -10,6 +10,8 @@ export interface Logger {
   error: (...args: any[]) => void;
   // deno-lint-ignore no-explicit-any
   debug: (...args: any[]) => void;
+  // deno-lint-ignore no-explicit-any
+  dir: (...args: any[]) => void;
 }
 
 export interface YahooFinanceOptions extends YahooFinanceOptionsJSON {
@@ -36,6 +38,8 @@ const options: YahooFinanceOptions = {
     warn: (...args: any[]) => console.warn(...args),
     // deno-lint-ignore no-explicit-any
     error: (...args: any[]) => console.error(...args),
+    // deno-lint-ignore no-explicit-any
+    dir: (...args: any[]) => console.dir(...args),
     // deno-lint-ignore no-explicit-any
     debug: (..._args: any[]) => {
       // XXX TODO ability to easily toggle this.
