@@ -139,6 +139,8 @@ export default async function historical(
     definitions: historicalDefinitions,
     schemaKey: "#/definitions/HistoricalOptions",
     options: this._opts.validation,
+    logger: this._opts.logger,
+    logObj: this._logObj,
   });
 
   // Don't forget that queryOpts are already validated and safe-safe.
@@ -156,6 +158,8 @@ export default async function historical(
     definitions: chartDefinitions,
     schemaKey: "#/definitions/ChartOptions",
     options: this._opts.validation,
+    logger: this._opts.logger,
+    logObj: this._logObj,
   });
 
   /*
@@ -232,6 +236,8 @@ export default async function historical(
     definitions: historicalDefinitions,
     schemaKey,
     options: validationOpts,
+    logger: this._opts.logger,
+    logObj: this._logObj,
   });
 
   return out;
