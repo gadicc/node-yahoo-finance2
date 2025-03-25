@@ -9,6 +9,8 @@ import testSymbols from "./testSymbols.ts";
 import createYahooFinance from "../src/createYahooFinance.ts";
 import { suppressNotices } from "../src/lib/notices.ts";
 
+export const PERFORM_FAKE_TESTS = Deno.env.get("FETCH_DEVEL") !== "nocache";
+
 function each(table: Global.EachTable) {
   const _table = table.map((item) => Array.isArray(item) ? item : [item]);
 

@@ -2,6 +2,7 @@ import {
   createTestYahooFinance,
   describe,
   it,
+  PERFORM_FAKE_TESTS,
   setupCache,
 } from "../../tests/common.ts";
 
@@ -23,7 +24,7 @@ describe("trendingSymbols", () => {
   );
 
   /* TODO
-  if (process.env.FETCH_DEVEL !== "nocache") {
+  if (PERFORM_FAKE_TESTS) {
     it("throws on weird result", () => {
       const devel = "weirdJsonResult.fake.json";
       return expect(yf.trendingSymbols("GB", {}, { devel })).rejects.toThrow(

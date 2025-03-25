@@ -3,6 +3,7 @@ import {
   describe,
   expect,
   it,
+  PERFORM_FAKE_TESTS,
   setupCache,
   testSymbols,
 } from "../../tests/common.ts";
@@ -136,7 +137,7 @@ describe("historical", () => {
   if (false) {
     // Irrelevant for "via-chart"
     describe("null values", () => {
-      if (process.env.FETCH_DEVEL !== "nocache") {
+      if (PERFORM_FAKE_TESTS) {
         it("strips all-null rows", async () => {
           const createHistoricalPromise = () =>
             yf.historical(
@@ -162,7 +163,7 @@ describe("historical", () => {
         });
       }
 
-      if (process.env.FETCH_DEVEL !== "nocache") {
+      if (PERFORM_FAKE_TESTS) {
         it("throws on a row with some nulls", () => {
           consoleSilent();
           return expect(

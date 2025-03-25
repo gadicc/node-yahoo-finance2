@@ -2,6 +2,7 @@ import {
   createTestYahooFinance,
   describe,
   it,
+  PERFORM_FAKE_TESTS,
   setupCache,
   testSymbols,
 } from "../../tests/common.ts";
@@ -68,7 +69,7 @@ describe("quoteSummary", () => {
     // See also common module tests in moduleExec.spec.js
 
     /* TODO
-    if (process.env.FETCH_DEVEL !== "nocache") {
+    if (PERFORM_FAKE_TESTS) {
       it("throws on invalid result", async () => {
         await expect(
           yf.quoteSummary("AAPL", {}, { devel: "weirdJsonResult.fake.json" }),

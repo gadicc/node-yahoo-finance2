@@ -3,6 +3,7 @@ import {
   describe,
   expect,
   it,
+  PERFORM_FAKE_TESTS,
   setupCache,
   testSymbols,
 } from "../../tests/common.ts";
@@ -84,7 +85,7 @@ describe("quote", () => {
 
   /// XXX TODO
   /*
-  if (process.env.FETCH_DEVEL !== "nocache") {
+  if (PERFORM_FAKE_TESTS) {
     it("throws on unexpected result", async () => {
       await expect(
         yf.quote("AAPL", {}, { devel: "weirdJsonResult.fake.json" }),

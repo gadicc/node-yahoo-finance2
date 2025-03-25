@@ -3,6 +3,7 @@ import {
   describe,
   // expect,
   it,
+  PERFORM_FAKE_TESTS,
   setupCache,
   testSymbols,
 } from "../../tests/common.ts";
@@ -31,7 +32,7 @@ describe("insights", () => {
   });
 
   /* XXX TODO
-  if (process.env.FETCH_DEVEL !== "nocache") {
+  if (PERFORM_FAKE_TESTS) {
     it("throws on weird result", () => {
       const devel = "weirdJsonResult.fake.json";
       return expect(yf.insights("A", {}, { devel })).rejects.toThrow(

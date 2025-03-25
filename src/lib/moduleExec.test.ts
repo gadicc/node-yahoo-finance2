@@ -3,6 +3,7 @@ import {
   describe,
   expect,
   it,
+  PERFORM_FAKE_TESTS,
   setupCache,
 } from "../../tests/common.ts";
 import { spy } from "@std/testing/mock";
@@ -23,10 +24,6 @@ function createNewLogger() {
     dir: spy(),
   };
 }
-
-// XXX TODO
-// const SKIP_FAKE = process.env.FETCH_DEVEL === "nocache";
-const SKIP_FAKE = false;
 
 describe("moduleExec", () => {
   setupCache();
@@ -103,7 +100,7 @@ describe("moduleExec", () => {
 
   /* XXX TODO
   describe("result validation", () => {
-    if (!SKIP_FAKE) {
+    if (PERFORM_FAKE_TESTS) {
       it("throws on unexpected input", async () => {
         await expect(
           yf.search("AAPL", {}, { devel: "search-badResult.fake.json" }),
@@ -114,7 +111,7 @@ describe("moduleExec", () => {
     it("dont throw or log on unexpected input with {validateResult: false}", async () => {
       const logger = createNewLogger();
       const yf = new YahooFinance({ logger, validation: { logErrors: false } });
-      if (!SKIP_FAKE) {
+      if (PERFORM_FAKE_TESTS) {
         await expect(
           yf.search(
             "AAPL",
