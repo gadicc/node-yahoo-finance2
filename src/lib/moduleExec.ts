@@ -20,6 +20,7 @@ import validateAndCoerceTypes, {
 } from "./validateAndCoerceTypes.ts";
 import csv2json from "./csv2json.ts";
 import type { JSONSchema } from "./validate/index.ts";
+import type { ModuleOptions } from "./moduleCommon.ts";
 
 // The consuming module itself will have a stricter return type.
 // deno-lint-ignore no-explicit-any
@@ -107,14 +108,7 @@ interface ModuleExecOptions {
     transformWith?: TransformFunc;
   };
 
-  moduleOptions?: {
-    /** Allow validation failures to pass if false; */
-    validateOptions?: boolean;
-    /** Allow validation failures to pass if false; */
-    validateResult?: boolean;
-    /** Any options to pass to fetch() just for this request. */
-    fetchOptions?: Parameters<typeof fetch>[1];
-  };
+  moduleOptions?: ModuleOptions;
 }
 
 // deno-lint-ignore no-explicit-any

@@ -1,9 +1,14 @@
 // import type ModuleExec from "./moduleExec.js";
 
 export interface ModuleOptions {
+  /** If false, lib won't validaet and will leave that to Yahoo */
+  validateOptions?: boolean;
+  /** If false, will pass back unvalidated / untyped result from Yahoo  */
   validateResult?: boolean;
+  /** Filename to use for cached result */
   devel?: boolean | string;
-  fetchOptions?: object;
+  /** Any options to pass to fetch() just for this request. */
+  fetchOptions?: Parameters<typeof fetch>[1];
 }
 
 export interface ModuleOptionsWithValidateFalse extends ModuleOptions {

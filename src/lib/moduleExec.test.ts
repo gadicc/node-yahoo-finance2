@@ -54,14 +54,12 @@ describe("moduleExec", () => {
       await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError);
     });
 
-    /*
-    XXX TODO
-    * with new yf() option, and with moduleoptions
-    it("throws InvalidOptions on invalid options with validateOptions = false", async () => {
-      const rwo = (options: any) => yf.search("symbol", options);
-      await expect(rwo({ invalid: true })).rejects.toThrow(InvalidOptionsError);
+    it("does not throw InvalidOptions on invalid options with validateOptions = false", async () => {
+      // deno-lint-ignore no-explicit-any
+      const rwo = (options: any) =>
+        yf.search("symbol", options, { validateOptions: false });
+      await expect(rwo({ invalid: true })).resolves.toBeDefined();
     });
-    */
 
     it("accepts empty queryOptions", async () => {
       await expect(
