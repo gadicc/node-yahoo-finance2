@@ -1,0 +1,130 @@
+{
+  "request": {
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/AAPL?useYfid=true&interval=1d&includePrePost=true&events=div%7Csplit%7Cearn&lang=en-US&period1=1645488000&period2=1645574400",
+    "method": "GET",
+    "headers": {
+      "cookie": "",
+      "user-agent": "@gadicc/yahoo-finance2/0.0.1 (+https://github.com/gadicc/node-yahoo-finance2)"
+    }
+  },
+  "response": {
+    "ok": true,
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "age": "1",
+      "cache-control": "public, max-age=10, stale-while-revalidate=20",
+      "content-length": "1190",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 24 Mar 2025 13:51:33 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "ATS",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Origin,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-envoy-decorator-operation": "finance-chart-api--mtls-production-ir2.finance-k8s:4080/*",
+      "x-envoy-upstream-service-time": "42",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "y-rid": "1pdbsq1ju2or6"
+    },
+    "bodyJson": {
+      "chart": {
+        "result": [
+          {
+            "meta": {
+              "currency": "USD",
+              "symbol": "AAPL",
+              "exchangeName": "NMS",
+              "fullExchangeName": "NasdaqGS",
+              "instrumentType": "EQUITY",
+              "firstTradeDate": 345479400,
+              "regularMarketTime": 1742824293,
+              "hasPrePostMarketData": true,
+              "gmtoffset": -14400,
+              "timezone": "EDT",
+              "exchangeTimezoneName": "America/New_York",
+              "regularMarketPrice": 220.003,
+              "fiftyTwoWeekHigh": 260.1,
+              "fiftyTwoWeekLow": 164.08,
+              "regularMarketDayHigh": 221.021,
+              "regularMarketDayLow": 218.58,
+              "regularMarketVolume": 5800260,
+              "longName": "Apple Inc.",
+              "shortName": "Apple Inc.",
+              "chartPreviousClose": 167.3,
+              "priceHint": 2,
+              "currentTradingPeriod": {
+                "pre": {
+                  "timezone": "EDT",
+                  "start": 1742803200,
+                  "end": 1742823000,
+                  "gmtoffset": -14400
+                },
+                "regular": {
+                  "timezone": "EDT",
+                  "start": 1742823000,
+                  "end": 1742846400,
+                  "gmtoffset": -14400
+                },
+                "post": {
+                  "timezone": "EDT",
+                  "start": 1742846400,
+                  "end": 1742860800,
+                  "gmtoffset": -14400
+                }
+              },
+              "dataGranularity": "1d",
+              "range": "",
+              "validRanges": [
+                "1d",
+                "5d",
+                "1mo",
+                "3mo",
+                "6mo",
+                "1y",
+                "2y",
+                "5y",
+                "10y",
+                "ytd",
+                "max"
+              ]
+            },
+            "timestamp": [
+              1645540200
+            ],
+            "indicators": {
+              "quote": [
+                {
+                  "high": [
+                    166.69000244140625
+                  ],
+                  "volume": [
+                    91162800
+                  ],
+                  "low": [
+                    162.14999389648438
+                  ],
+                  "open": [
+                    164.97999572753906
+                  ],
+                  "close": [
+                    164.32000732421875
+                  ]
+                }
+              ],
+              "adjclose": [
+                {
+                  "adjclose": [
+                    161.6998748779297
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}
